@@ -1,0 +1,64 @@
+* Git Geography: http://github.com/alexch/mission/raw/master/git.png
+
+* MVC: http://github.com/alexch/mission/raw/master/mvc.png
+
+* REST:
+
+<table border=1 cellpadding=4>
+<tr>
+<th>DB</th>
+<th>HTTP</th>
+<th>REST</th>
+<th>Rails</th>
+<th>Notes</th>
+
+<tr>
+<td>
+<td>GET
+<td>/topics/new
+<td>new
+<td>shows the page with the "new topic" form
+
+<tr>
+<td>Create</td>
+<td>POST</td>
+<td>/topics</td>
+<td>create</td>
+<td>creates a new topic in the database</td>
+
+<tr>
+<td>Read
+<td>GET
+<td>/topics
+<td>index
+<td>shows the list of all topics
+
+<tr>
+<td>
+<td>GET
+<td>/topics/2
+<td>show
+<td>shows only topic number 2
+
+<tr>
+<td>
+<td>GET
+<td>/topics/2/edit
+<td>edit
+<td>shows the page with the "edit topic 2" form
+
+<tr>
+<td>Update
+<td>PUT
+<td>/topics/2
+<td>update
+<td>changes topic number 2
+
+<tr>
+<td>Delete
+<td>DELETE
+<td>/topics/2
+<td>destroy
+<td>deletes topic number 2
+
+</table>

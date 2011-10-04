@@ -1,0 +1,241 @@
+== About Rails on Windows==
+* These instructions should work for all versions of Windows from XP on to Windows 7.
+* You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
+
+
+== Install Rails== 
+* Go to http://railsinstaller.org/ and download the kit.  This kit includes Rails, Ruby, DevKit, Git, and SQLite.
+* Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. 
+** Be sure to check the box for &quot;Add executables for Ruby, Git and DevKit to the PATH&quot; 
+
+[[File:WinXPRailsInstaller.jpg]]
+
+* Rails will be installed in C:\RailsInstaller and the directory for your Rails projects will be C:\Sites
+* From the Windows Start menu, go to Programs, RailsInstaller, Command Prompt with Ruby and Rails
+* The first time you run this program, it will ask you to enter your name and email address. After doing this, test your Ruby install in the command prompt using the -v version flag
+<pre>
+ruby -v
+</pre>
+You should see something like
+<pre>
+ruby 1.9.2p290 (2011-07-09) [i386-mingw32]
+</pre>
+
+* Test your Rails install in the command prompt using the -v version flag
+<pre>
+rails -v
+</pre>
+You should see something like
+<pre>
+Rails 3.1.0
+</pre>
+
+== Open a Command Prompt ==
+* Much of  using Rails is typing commands and hitting '''&lt;enter&gt;'''.  Your experience using Rails on Windows greatly depends on your making friends with the command prompt window.  Normally you will work in a command prompt window and keep it open along with your browser.  
+* This is also called the command prompt, command window, command-line window, MS-DOS or DOS window. Follow these instructions if you need to open a normal DOS window:
+[[Opening a command prompt window]]
+* Rails Installer made a special DOS command prompt window for you to use when you're working on Ruby, Rails, or Git.  To open the special Rails window, choose "Programs" on the Start menu, then choose "RailsInstaller" and then "Command Prompt with Ruby and Rails".  You should do all your Rails work in this RailsInstaller DOS window.
+* Try these recommendations: 
+[[Recommended setup for command-line windows]]
+* Tip: '''clear screen''' <br/>If you ever want to clear the &quot;output history&quot; to get a clear screen, type:
+<pre>
+cls
+</pre>
+* Tip: '''command history''' <br/>The command prompt window stores a &quot;command history.&quot; To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it--this is handy for long commands, or fixing mistakes.
+* Tip: '''copy and paste''' <br/>In the instructions below, where it says: &quot;In the command prompt type:&quot;, you can, much more easily, copy the command from this page, and right click in the menu bar or command prompt window, then click on &quot;Paste&quot;, then hit the '''&lt;enter&gt;''' key.
+
+
+== Configure Colors ==
+The Rails server logging and test results are much easier to read with colored output but the Command Prompt with Ruby and Rails defaults to white on black.  Add colors by following these steps:
+* In the browser, visit '''http://adoxa.110mb.com/ansicon'''
+* Click "ANSICON 1.40" link to download the file and double-click to unzip it
+* Determine if you have a 32 or 64 bit Operating System
+** In Windows 7 or Vista, from the Start menu, type system in the Start Search box, and then click system in the Programs list.  System Type under System will say whether it's a 32 or 64 bit Operating System
+** In WIndows XP, right click on the "My Computer" icon, choose Properties, then General
+*** if System says Windows XP Professional x64 Edition Version <year> then yours is 64 bit
+*** if it says Windows XP Professional Version  <year> then it's 32 bit
+* If your OS is 32 bit, copy all the files from the subdirectory 'x86' of the downloaded files to C:\Windows\system32
+* If your OS is 64 bit, copy all the files from the subdirectory 'x64' of the downloaded files to C:\Windows\system32
+* When you need colors in the Command Prompt with Ruby and Rails window, type <code>ansicon</code> to set up the colors
+
+
+To have colored output in Git, in the command prompt type each line followed by '''<enter>''':
+<pre> 
+git config --global color.diff auto 
+git config --global color.status auto 
+git config --global color.branch auto 
+</pre>
+
+
+
+== Install SQLite Manager ==
+* If you already have Firefox installed, verify that it is '''version 3.6.13''' or greater. (Help -&gt; About Mozilla Firefox. The version number is right under the &quot;Firefox&quot; title.) 
+* If you don't have Firefox installed, or it's an older version, [http://www.mozilla.com/en-US/ install Firefox].
+* Once it's installed, open Firefox and go to Tools -&gt; Add-ons. At the top of the add-ons window, click &quot;Get Add-ons.&quot; 
+* There will be search box directly underneath &quot;Get Add-ons&quot; that says &quot;Search All Add-ons.&quot; Enter &quot;SQLite&quot; (without the quotes) in the box and hit enter. 
+* '''SQLite Manager''' should be the top result. Click &quot;Add to Firefox...&quot; (If SQLite Manager isn't in the results, check the spelling - SQLite only has one L. Also, check that you have at least Firefox 3.5.)
+* Wait for the countdown, then click &quot;Install Now.&quot;
+* In the Add-ons windows, click &quot;Restart Firefox.&quot;
+* Once Firefox restarts, the Add-ons window should say &quot;1 new add-on has been installed.&quot; Go to the Tools menu and verify that there is an option for '''SQLite Manager'''.
+
+
+== Install KomodoEdit ==
+You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word.  Notepad is not good for a programming editor. 
+
+'''When in doubt, use KomodoEdit.'''
+
+* [http://downloads.activestate.com/Komodo/releases/6.1.1/Komodo-Edit-6.1.1-7295.msi Download KomodoEdit here].
+* Double-click to install.
+
+== Create an ssh public key==
+You'll need one of these to create your Heroku account in the next section.
+* open up Program Files, RailsInstaller, Command Prompt with Ruby and Rails.
+* Be sure to use the same e-mail address that you used when you set up Git. 
+   $ ssh-keygen -C &quot;Your Actual Email&quot; -t rsa (email should match git config setting)
+* Hit enter to accept blank passphrase (if computer is shared with other people, as in a work laptop, you should enter a passphrase). Hit enter again to accept blank passphrase (or enter passphrase again). 
+* [[Output of ssh-keygen command]]
+* Your brand-new public key is now stored at <code>YOUR_HOME_DIRECTORY/.ssh/id_rsa.pub</code>.
+
+== Create a Heroku Account ==
+* http://heroku.com -&gt; Sign Up -&gt; enter email address (use the same email as you did with git and the ssh public key).
+* Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save.
+
+* '''If you have further heroku issues, try following [http://support.heroku.com/forums/43117/entries/32505 these directions] to install (or re-install) the client.'''
+
+== Verify you can create a new Rails app==
+* Open a Command Prompt with Ruby and Rails window and type the following with a return at the end of the line:
+    <pre>
+    rails new test_app
+    </pre>
+* The command's output is voluminous. :)
+* Once that's finished, type the following in the Command Prompt with Ruby and Rails window with a return at the end of each line:
+    <pre>
+    cd test_app
+    </pre>
+    <pre>
+    rails server
+    </pre>
+* The first command should produce no output. 
+If "rails server" starts up with no errors, you're golden! It'll look something like this:
+<pre>
+    => Booting WEBrick
+    => Rails 3.0.0 application starting in development on http://0.0.0.0:3000
+    => Call with -d to detach
+    => Ctrl-C to shutdown server
+    [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
+    [2010-09-30 21:04:12] INFO  ruby 1.9.2 (2010-08-18) [x86_64-darwin10.4.0]
+    [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid=24805 port=3000
+</pre>
+* If it does, congratulations! You've successfully installed Ruby AND Rails and started your server. ([[Ruby and Rails 3 Diagnostics|Here are some more diagnostics to try if it's not so smooth.]])
+* In your browser, go to http://localhost:3000 ([http://wiki.devchix.com/images/successful-rails-install.jpg screenshot of successful install])
+* Back in the Command Prompt with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
+
+== Verify your database is set up==
+* Open a Command Prompt with Ruby and Rails window.
+<pre>
+cd test_app</pre>
+<pre>
+rails generate scaffold user name:string email:string address:text active:boolean</pre>
+<pre>
+rake db:migrate</pre>
+<pre>
+rails server
+</pre>
+* In the browser, visit '''http://localhost:3000/users'''
+* Click ''New user'' to create a user to make sure we can save to the database. (The window where you ran <code>rails server</code> will display debugging information as you do so.)
+* In your Command Prompt with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
+
+
+== Verify git is working==
+* Open a command Prompt with Ruby and Rails window.
+* Type the following commands:
+<pre>
+cd test_app 
+</pre>
+<pre>
+git init
+</pre>
+This should generate output similar to:
+<pre>
+ Initialized empty Git repository in c:/Sites/test_app/.git/
+</pre>
+* Type the following commands:
+** <code> git add .</code>  (Note the dot) (May get line ending warnings; safe to ignore.)
+** <code> git commit -m &quot;initial commit&quot;</code>  ([[Output of initial check-in]])
+** <code>git log</code>  (We're just checking to make sure it worked. Verify that it has the  right user and commit message.)
+
+
+== Verify Heroku is set up ==
+* Install the heroku client:
+<pre>gem install heroku</pre>
+
+* Create your Heroku app like this:
+<pre>heroku create</pre> 
+
+* Enter your Heroku email address and password. ([[Output of heroku create command]])
+
+* To verify that the <code>heroku create</code> completed successfully, type:
+<pre>git remote show</pre> 
+and see if the list includes <code>heroku</code>.
+
+* If you get messages here complaining about public keys it's probably due to some confusion with SSH key usage by another app on your computer.  Call a volunteer over to help you figure it out.  Luckily this only needs to be done the first time you create a Heroku app.
+
+* Edit your Gemfile and change the line:
+<pre>gem 'sqlite3'</pre>
+To this:
+
+<pre>group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end</pre>
+
+Prepare your rails app for deploying to Heroku
+<pre>$ bundle install --without production
+$ bundle exec rake assets:precompile</pre>
+
+* Add the changes to git repository and push to heroku
+<pre>$ git add .
+$ git commit -m "Updates for heroku deployment"
+$ git push heroku master</pre>
+
+* It may ask: &quot;The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?&quot; Type <code>yes</code> and hit ''<enter>''.
+* [[Output of successful first deploy]]. Be sure to find your Heroku application name in the output. ([[What to do if git seems stuck]])
+* In the Command Prompt with Ruby and Rails window type: 
+<pre>heroku rake db:migrate</pre> 
+([[Output of heroku rake db:migrate]])
+* In the browser, go to your application's URL. You'll need your Heroku application name. The URL for your app is <code>''application name''.heroku.com</code> - so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open.
+* In the browser, add <code>/users</code> to the end of the URL. Verify you see the user list page. 
+* Create a new user to verify you can write to the db on Heroku.
+
+== Almost there! ==
+
+'''Find a volunteer and have them watch the next steps. If this works - get a sticker from them for your computer!'''
+<code>
+ rails new suggestotron -m http://ram9.cc/863314.txt
+ cd suggestotron
+ rake db:migrate
+ rails generate cucumber:install --rspec --capybara
+ rake cucumber
+</code>
+If rake cucumber says something like "Don't know how to build task 'cucumber'", try doing just
+<code>
+ cucumber
+</code>
+instead of <code>rake cucumber</code>.
+
+After running this, the last few lines of output should look something like this: 
+<pre>11 scenarios (5 failed, 6 skipped)
+84 steps (5 failed, 79 skipped)
+0m0.998s
+rake aborted!
+Command failed with status (1): [bundle exec /Users/sasha/.rvm/rubies/ruby-...]
+(See full trace by running task with --trace)
+</pre>
+
+== Cleanup ==
+Ok, there is one more step. You won't be using the test application in the workshop; we just created it to make sure everything was working. '''You should delete it now to reduce confusion during the workshop.''' Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
+
+* Right click on the test_app folder (inside C:\Sites) and choose Delete. 
+* Delete the app from Heroku. Go to https://heroku.com/myapps and then click on your app name. Scroll to the bottom of the page and click Destroy App.

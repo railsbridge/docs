@@ -1,3 +1,6 @@
+# http://daringfireball.net/projects/markdown/syntax#img
+# http://www.wiki.devchix.com/index.php?title=Help:Editing
+
 require 'sinatra'
 require 'digest/md5'
 require 'erector'
@@ -67,20 +70,25 @@ class InstallFest < Sinatra::Application
   end
   
   def mw2md md
-    md.gsub(/^== ?(.*)( *==)$/, '# \\1').
+    md.
       gsub(/^=== ?(.*)( *===)$/, '## \\1').
+      gsub(/^== ?(.*)( *==)$/, '# \\1').
       gsub(/\[\[([^\]]*)\]\]/) {|match|
-        d { match }
-        d { $1 }
-        title = $1.gsub(/[\(\)]/, '')
-        page = title.downcase.gsub(/\W/, '')
-        d { title }
-        d { page }
-        s="[#{title}](#{page})"
-        d { s }
-        s
+        match = $1
+        if match =~ /^File:/i
+          path = match.gsub(/^File:/i, '').strip
+          "![#{path.split('/').last}](/doc/#{path})".tap{|img| d { img }}          
+        else
+          title = match.gsub(/[\(\)]/, '')
+          page = title.downcase.gsub(/\W/, '')
+          d { title }
+          d { page }
+          s="[#{title}](#{page})"
+          d { s }
+          s
+        end
       }.      
-      gsub(/\[([^\] ]*)( [^\]]*)?\]/){
+      gsub(/(?<!\!)\[([^\] ]*)( [^\]]*)?\]/){
         url = $1
         name = $2 || url
         "[#{name}](#{url})"
@@ -103,6 +111,11 @@ class InstallFest < Sinatra::Application
     end
   end
   
+  get "/doc/:name.:ext" do
+    d { params[:name] }
+    send_file "#{here}/doc/#{params[:name]}.#{params[:ext]}"
+  end
+  
   get "/doc/:name" do
     begin
       d { src }
@@ -112,10 +125,10 @@ class InstallFest < Sinatra::Application
           title params[:name].capitalize
         }
         body {
-          div(:class=>:toc ){
+          div(:class=>:toc) {
             rawtext toc
           }
-          div( :class=>:doc ){
+          div(:class=>:doc) {
             rawtext md2html(src)
           }
         }

@@ -1,0 +1,680 @@
+== Construyendo una Aplicación web ==
+
+En este taller vamos a construir una aplicación web, la cual nos permitirá crear tópicos y votar acerca de ellos. 
+Hoy nos enfocaremos en la creación de tópicos y votos, basado en el siguiente diseño de interfaz de usuario:
+
+[[File:Mafalda_app.png|200px]]
+
+
+=== Empecemos a construir nuestra web. ===
+* Abrí la consola de commandos  
+* Luego crea un directorio de trabajo para archivar tu proyecto y demás archivos.
+<code>
+$ mkdir rubyonrails
+</code>
+
+* Ingresa a tu directorio 
+<code><pre>
+$ cd rubyonrails
+</pre></code>
+
+'''Usuarios de  Mac y Linux:'''
+* Configurando las gemas básicas necesarias
+<code> 
+curl -O https://raw.github.com/gist/1108601/eaa7979edf6ba2e93880f6925a62498ae9b8ac8d/taller_setup.txt</code>
+* Creando la aplicación 
+<code><pre>
+rails new mafalda -Tm taller-setup.txt
+</pre></code>
+
+'''''Nota:''''' En honor a [http://es.wikipedia.org/wiki/Mafalda Mafalda]. Personaje que interpreta a una niña de seis años, preocupada por la humanidad y paz mundial y sobre todo convencida del progreso social de la Mujer( algo adelantada para su época 1964 - 1973). 
+
+'''Usuarios de Windows'''<br />
+<code><pre>
+rails new mafalda -Tm http://blog.carmendiazechauri.com/public/windows_script.txt
+</pre></code>
+
+'''Breve explicación'''
+
+Con el comando  “rails new <nombre_aplicación> creamos una carpeta llamada nominar, el cual contiene la estructura necesaria para una aplicación Rails.
+Con la  opción-T (T de Test), le comunicamos al comando Rails que no utilizaremos Test::Unit, el cual viene por defecto, porque estaremos usando Rspec en su lugar.  <br/>
+La opción-m (m de teMplate [plantilla]) indica el path a una plantilla (template), en nuestro caso estamos indicando el path a una plantilla el cual establece las gemas imprescindibles y todo lo necesario para utilizar Cucumber. Es poco probable que utilices una plantilla, pero es una buena práctica crear una con las opciones de uso frecuente.
+
+=== Observando tu aplicación Rails ===
+
+<br/>
+'''Primer Paso:''' Accede a tu directorio rails y observa la estructura:
+<code><pre>
+cd mafalda 
+ls -la </pre>
+</code>
+
+{| border="1" cellspacing="0" cellpadding="3" align="center"
+! Archivo/Directorio
+! Propósito
+|- 
+| Gemfile 	
+| En este archivo se encuentra la lista de las gemas que seran instaladas con el programa bundler.
+|- 
+| Gemfile.lock	
+| Este archivo muestra las gemas que se han instalado para la aplicación. La extension lock indica que estas gemas estan bloqueadas para esta especifica aplicacion.
+|-
+| README 	 	
+| Breve manual de tu aplicación.
+|- 
+| Rakefile 	
+| TEste file contiene batch jobs que pueden ser corridos desde la terminal. 
+|- 
+| app/ 	 	
+| Contiene los controladores, modelos y vistas de la aplicación. 
+|- 
+| config/ 	
+| Configuración de la aplicación como base de datos, ruteadores, etc. 
+|- 
+| config.ru 	
+| Este archivo hace la que aplicación sea rack amigable (.ru proviene de rackup)
+|- 
+| db/ 	 	
+| Muestra la actual estructura de la base de datos, asi como las migraciones. 
+|- 
+| doc/ 	 	
+| Documentación de tu aplicación. 
+|- 
+| features/ 	
+| Agregado por la plantilla. Pertenece al cucumber, el cual no es parte de Rails core.
+|- 
+| lib/ 	 	
+| Modules extendidos de la aplicación.
+|- 
+| log/ 	 	
+| Log files
+|- 
+| public/ 	
+| Directorio que es público para todos. Aqui van las imagenes, JavaScript, stylesheets (CSS), y otras paginas estáticas.
+|- 
+| script/ 	
+| Scripts otorgado por Rails para ciertos tasks.
+|- 
+| spec/ 	 	
+| Unit tests, fixtures, y otros pruebas.
+|- 
+| tmp/ 	 	
+| Archivos temporales
+|- 
+| vendor/ 	
+| Códigos externos de terceros 
+|- 
+|}
+
+'''Nota:'''
+<br/>
+Notarás también  que existe un directorio llamado “features”, este directorio no es parte del Rails Core. Este directorio es parte del framework cucumber, generado por medio de la plantilla. (Observa con detalle el contenido el mismo "rails generate:cucumber" es el que genera el directorio "features" y todo lo necesario para utilizar cucumber)
+
+'''Siguiente paso:''' Ejecutar el Servidor
+<br/>
+a- Chequea que te encuentras en el directorio de tu aplicación 
+<code><pre>pwd </pre></code>
+De no ser así, ingresa a tu directorio rails 
+<code><pre>cd mafalda </pre></code>
+
+b- Ejecuta el servidor
+<code><pre>rails server</pre></code> 
+
+c- Luego, visualiza tu aplicación en tu browser http://localhost:3000. En ella notarás la página default de Rails que dice:
+<br/>
+'''Welcome aboard'''
+<br/>You’re riding Ruby on Rails!
+
+'''Nota:''' La página que estas visualizando en http://localhost:3000 es una página estática, que se encuentra en public/index.html. <br/>
+
+=== Modifica el indice de tu web ===
+
+'''Elige tu editor preferido'''
+<br/>Necesitarás un editor para realizar la codificación de tu aplicación. En el workshop utilizaremos.[http://www.activestate.com/komodo-ide Komodo]
+
+Has algún cambio en el indice, guárdalo y refresca la página para ver tu cambio. Por Ejemplo:
+<pre><h1>Ruby on Rails en Español!</h1></pre>
+
+== Una mirada a las características deseadas (Features) ==
+
+Como lo mencionamos en la sección estructura del Rails,  utilizaremos Cucumber para realizar nuestras pruebas. Si volvemos a listar el contenido de nuestro directorio,  podemos ver el subdirectorio "features".En este subdirectorio residen todos los escenarios cucumber esperados que describen nuestra aplicación, los cuales terminan en una extension '''.feature'''
+
+<code><pre> ls -la features/ </pre></code>
+
+<pre>
+-rw-r--r--   1 carmen  staff  587 May  4 03:16 1_topicos.feature
+-rw-r--r--   1 carmen  staff  742 May  4 04:00 2_topicos_y_detalles.feature
+-rw-r--r--   1 carmen  staff  616 May  4 04:45 3_votos.feature
+drwxr-xr-x   5 carmen  staff  170 May  3 21:52 step_definitions
+drwxr-xr-x   5 carmen  staff  170 May  3 12:08 support
+</pre>
+
+Observa el archivo 1_topicos.feature. Contiene informacion relevante de la aplicacion que construiremos. Cucumber nos permite utilizar un lenguaje natural y sencillo para expresar la funcionalidad de la aplicación.
+
+<code><pre>
+# language: es
+Característica: Topicos
+  Para ver una lista potencial de topicos
+  Los usuario deben crear y editar los mismos
+
+  Escenario: Nuevo Topico
+    Cuando visito la página topicos
+    Y hago click en "New Topico"
+    Entonces debo ver el botón "Create"
+</pre></code>
+
+
+Por ejemplo, para ejecutar  los escenarios de tópicos en la línea de comando utiliza el programa “rake” seguido de las siguientes opciones:   
+<code><pre>
+rake cucumber FEATURE=features/1_topicos.feature
+</pre></code>
+
+'''Nota''' 
+* '''para los Usuarios de Windows'''
+
+Hasta la fecha 5 de Diciembre del 2010, existía un error en cucumber que impidían que las pruebas se ejecuten correctamente. Para solucionar este problema abre el archivo localizado en features/support/env.rb y comenta la línea 19.
+
+* '''para los Usuarios de OS X''', 
+Algunos  pruebas pueden fallar también debido a un conflicto con Lib2XML, el cual puede ser resuelto comentando la línea 19  del archivo features/support/env.rb  <br />
+Al correr el comando lo primero que notarás es que falla! Esto es una buena señal ya que no hemos escrito ningún código todavía. <br/>
+Los escenarios en cucumber son pruebas pero a la vez  cumplen el rol de documentación. El típico proceso de desarrollo en Rails es:
+
+# Ejecutar la prueba
+# Obsevar el fallo
+# Implementar el código
+# Ejecutar la prueba y verla pasar esta vez. 
+Este es el desarrollo que estaremos usando hoy, llamado “Desarrollo basado en Pruebas (TDD)”
+
+Cabe destacar que '''1_topicos.feature''' se basa en algunos elementos básicos de una aplicación web,  lo cual construiremos primero. A medida que veamos los escenarios pasar, es decir sin ninguna falla, veremos más a fondo las carácteristicas que necesitamos para construir la aplicación.
+
+== Primera Característica: Tópicos ==
+
+Podemos observar  en los escenarios definidos y en la interfaz gráfica presentada al comienzo del taller  como los tópicos son definidos y cómo las personas interactuán con él. 
+
+Utilizaremos el programa '''rails scaffolding''' para generar algunas vistas y códigos.
+Para empezar crearemos el modelo '''tópico'''  el cual incluirá un título y descripción.
+Aplicaremos conceptos '''CRUD''' por sus siglas en English –Create, Read, Update & Delete”, básicamente:  Crear, Leer Modificar y Eliminar.
+
+* Create – crear un Nuevo tópico 
+* Read – Leer tópicos
+* Update – Editar / Modificar tópicos existentes 
+* Delete -  Elinar tópicos del sistema
+
+===Scaffolding===
+ 
+* Ejecuta el siguiente comando para generar un modelo Tópico con sus vistas y lógica básica.
+<code><pre>
+rails generate scaffold topico titulo:string descripcion:text
+</pre></code>
+* En el directorio db/migrate, encontraras tu primer archivo de migración, cuyo nombre es diferente para cada persona ya que está definido según la fecha/hora seguido del nombre <accion>_<nombre del modelo>.
+
+db/migrate/20110503202056_create_topicos.rb
+
+Este archivo contiene código Ruby que genera una tabla. Las migraciones pueden también ser utilizados para modificar tablas (crear,  eliminar, renombar columnas),  además de modificar información.
+* El siguiente paso es configurar  la base de datos de desarrollo y prueba, para ello ejecutemos el archivo de migración.
+<code><pre>rake db:migrate </pre></code>
+
+* Ahora si ejecutas de nuevo cucumber . El primer escenario pasará y el segundo fallará.
+
+<code><pre>rake cucumber FEATURE=features/1_topicos.feature </pre></code>
+
+'''''Tip: '''''
+Si deseas solo ejecutar un escenario, lo puedes hacer de la siguiente manera:
+<code><pre>rake cucumber FEATURE=features/1_topicos.feature:5:8 </pre></code>
+
+Este comando  indica a cucumber que solo debe ejecutar entre las líneas 5 y 8,  el cual es nuestra prueba sin fallas.
+
+* Para terminar este ciclo, inicia el server y visualiza tus cambios en el browser http://localhost :3000/topicos
+<code><pre>
+rails server  
+</pre></code>
+
+=== MVC Modelo, Vista Controlador ===
+Rails utiliza el patrón llamado  '''Modelo,Vista, Controlador''' (MVC - Model View Controller), el cual te guía en el desarrollo de una aplicación web, básicamente separando los datos de una aplicación, la interfaz de usuario y la lógica del control en tres components diferentes.
+
+; Modelo 
+: Representa lo existente en la base de datos  
+: Representado por el paquete o modulo ActiveRecord, ActiveModel 
+; Vista
+: El modelo es embebido en una página HTML  
+: Representado como ActionView, erb, haml  
+; Controlador 
+: Recibe las acciones  HTTP  (GET, POST, PUT, DELETE) 
+: Decide que hacer. Sería como el Puente entre la vista y los modelos
+: Representado por el modulo ActionController
+
+[[File:Mvc es.png]]
+
+'''Note:'''<br />
+Cuando ejecutaste  el comando '''$ rails generate scaffold'''. Rails generó archivos que implementan el modelo, las vistas y el controlador para tópicos.
+<code><pre>
+rails generate scaffold topico titulo:string descripcion:text
+</pre></code>
+
+; El Modelo 
+: create    db/migrate/20110503202056_create_topicos.rb
+: create    app/models/topico.rb
+
+; Las Vistas necesarias incluyendo el subdirectorio para el modelo ''tópico''.
+
+: create   app/views/topicos
+: create   app/views/topicos/index.html.erb
+: create   app/views/topicos/edit.html.erb
+: create   app/views/topicos/show.html.erb
+: create   app/views/topicos/new.html.erb
+: create   app/views/topicos/_form.html.erb
+
+; El Controlador
+: create  app/controllers/topicos_controller.rb
+Además de crear modelo, controlador y vistas, el generador también crea una nueva ruta en config/routes.rb
+:Mafalda::Application.routes.draw do
+::resources :topicos
+
+=== El modelo en detalle ===
+
+'''Console'''
+ 
+Rails te permite fácilmente interactuar con las librerías del framework y con el código de tu aplicación a traves de una consola.  Al ejecutar el siguiente comando tendrás acceso a todas las librerías de rails, incluyendo tus modelos.
+<code><pre>rails console </pre></code>
+
+Una vez que estemos dentro de la consola, para ver claramente que está pasando en la base de datos cuando creamos una nueva instancia de un objecto, necesitamos activar el Logger, para ello ejecutemos la siguiente sentencia en la consola. 
+<code><pre>
+ActiveRecord::Base.logger = Logger.new(STDOUT) 
+</pre></code>
+Obtendrás una visualización similar a:
+ <nowiki>
+ruby-1.9.2-head :002 > t = Topico.new
+ => #<Topico id: nil, titulo: nil, descripcion: nil, created_at: nil, updated_at: nil> 
+ruby-1.9.2-head :003 > t.titulo = "Taller Rails en espanol"
+ => "Taller Rails en espanol" 
+ruby-1.9.2-head :005 >   t.descripcion = "Es genial!"
+ => "Es genial!" 
+ruby-1.9.2-head :006 > t.save
+  SQL (0.3ms)   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  AREL (0.5ms)  INSERT INTO "topicos" ("titulo", "descripcion", "created_at", "updated_at") 
+VALUES ('Taller Rails en espanol', 'Es genial!', '2011-05-04 01:26:59.658737', '2011-05-04 01:26:59.658737')
+ => true 
+ </nowiki>
+
+'''Algo notorio.'''
+
+Observa que la clase Topico tiene los atributos título y descripción, los cuales no tuviste que declararlos explícitamente en la clase. Esta funcionalidad esta manejada por el módulo ActiveRecord, el cual implementa el mapeo relacional a una base de datos en Rails.
+
+===Observando la Base de Datos===
+
+Rails es compatible con la mayoría de las base de datos relacionales pero por defecto viene con una mini versión llamada. SQLite, asi que ninguna configuración es necesaria. 
+Utilizaremos SQLite es este taller.  Para ello hemos instalado un interfaz llamada SQLite Manager, el cual te permite inspeccionar de cerca la base de datos. 
+Para abrirla, open tu navegador Firefox y en selecciona la opcion “tools => sqlite manager  
+
+Luego, has clic en el icon [[File:Folder.jpg]]  ￼ o escoje la opción Database -> Connect Database  para abrir mafalda/db/development.sqlite3
+[[File:Sqlite_db.png]]
+
+
+Puedes acceder a la base de datos a través de la consola de comando.
+
+<code><pre>rails dbconsole</pre></code>
+
+{| border="1" cellspacing="0" cellpadding="5" align="center"
+|+Comandos Comúnes en SQL
+!  
+! sqlite
+! MySql
+
+|- 
+| Lista las tablas existentes en la base de datos  
+| .tables
+| show tables;
+|- 
+| Muestra la estructura de una tabla, o la estructura del esquema de la BD  
+| .schema
+.schema topics
+| show create table topicos;
+describe topics;
+|- 
+| Salir de la linea de comando
+| .quit
+| exit
+|- 
+| Muestra/Selecciona todas las filas de una tabla 
+| colspan="2" | select * from topicos;
+
+|- 
+| Selecciona el nro total de filas de una tabla 
+|  colspan="2" | select count(*) from topicos;
+ 
+|- 
+| Selecciona filas dada una condicion
+|  colspan="2" | select * from topicos where titulo = "Mi Topico";
+
+|}
+<br/>
+<span style="color:green;font-weight:bold: font-size:24px;">
+FELICIDADES!!! </span>
+
+Acabas de escribir una aplicación web que interactúa con una base de datos relacional. Ahora es tiempo de hacerlo visible al Mundo!
+
+----
+
+== Puesta a la Vista del Mundo ==
+'''Genial!'''. Ya tenemos nuestra aplicación. Ahora sólo nos falta ponerlo accesible  a todos en la WEB. 
+
+Para ello utilizaremos [http://git-scm.com/ '''git'''] el cual básicamente es un manejador de versiones.
+En tu directorio '''mafalda''' crea un repositorio tipeando el siguiente comando:
+<code><pre>git init </pre></code> 
+
+Este comando  comunica al programa git que queremos empezar a hacer un seguimiento de todos los cambios realizados en nuestra aplicación. Al ejecutar git init se crea un repositorio .git en tu directorio rails.
+<code><pre>ls -la 
+drwxr-xr-x   9 carmen  staff   306 Apr  3 11:04 .git
+</pre></code>
+
+=== Nota acerca del gitignore ===
+ 	
+Cada vez que hacemos un '''commit*''' del proyecto, git hace un seguimiento de todos los archivos por defecto. Sin embargo, existen archivos que preferimos omitirlos o ignorarlos. Existe un archivo oculto en el proyecto llamado '''gitignore''' el cual empieza con un período como primer carácter, seguido del nombre, el cual lo oculta de la vista normal de cualquier directorio al listar elementos (fue por eso que no lo vimos anteriormente). El objetivo de este archivo es decirle al programa git que ignore el seguimiento de cualquier cambio ocurrido en archivos o directorios declarados dentro del mismo.<br/>
+Dicho esto, si abrimos el gitignore podemos encontrar archivos y directorios que se desean ignorar.
+<code><pre>cat .gitignore </pre></code>
+<code>
+: .bundle 
+: db/*.sqlite3 
+: log/*.log 
+: tmp/**/*
+</code>
+
+===Realizando el primer commit===
+En la terminal de comando ingresa lo siguiente:
+<code><pre>
+git add . 
+git commit -m "Aplicación web básica, incluyendo el modelo topico" 
+</pre></code>
+
+'''git add''' y '''git commit''' agrega todos los archivos y luego guarda una copia de nuestro proyecto en tu repositorio '''git''' local. Para comprobar que todo haya sido guardado podemos ingresar los siguiente:
+
+<code><pre>
+git status</pre></code>
+Notaras un mensaje como:
+
+: # On branch master
+: nothing to commit (working directory clean)
+
+El cual te indica que no existe nada restante para guardar en el repositorio.
+<code><pre>
+git log </pre></code>
+git log te muestra la historia de todos los commits realizados en tu proyecto. Por el momento deberías ver la sola entrada que realizaste. 
+:carmen(mafalda)(master)$git log
+:commit b87a7dc72b190e8bb975bd982a86744df5c17bf6
+:Author: cde <cdechauri@gmail.com>
+:Date:   Tue Apr 3 11:12:30 2011 -0700
+::    Aplicación web básica, incluyendo el modelo topico
+
+=== Puesta a Producción/Staging (Deploy) ===
+
+En esta comunidad hay un dicho que promulga:  “Commit en una fase temprana & pon a producción frecuentemente”
+Esta es una forma de hacerlo:
+<code><pre>
+
+heroku create
+git push heroku master
+heroku rake db:migrate 
+</pre></code>
+
+
+Ejecuta ademas, ‘heroku rake db:migrate --app <app_name>’ para implementar el modelo topico, el cual ha sido especificado en nuestro primera caracteristica la prueba features/1_topicos.feature
+
+
+<span style="color:green;font-weight:bold: font-size:24px;">
+FELICIDADES!!! </span>
+
+Acabas de escribir una aplicación web que interactúa con una base de datos relacional y es visible a todos!
+----
+
+== Ruteadores ==
+En REST las URLs representan recursos y no acciones, por ello siempre tienen el mismo formato: primero aparece el controlador y luego el identificador del recurso. En nuestra aplicacion ''tópico'' es un recurso. La manipulación requerida es independiente de la URL y se expresa con la ayuda de los verbos HTTP.
+
+Podemos utilizar '''rake routes''' para listar los verbos HTTP, sus URLs REST y como se corresponden con acciones del controlador.
+<code><pre>
+$ rake routes
+</pre>
+</code>
+
+ <nowiki>
+    topicos GET    /topicos(.:format)          {:action=>"index", :controller=>"topicos"}
+            POST   /topicos(.:format)          {:action=>"create", :controller=>"topicos"}
+ new_topico GET    /topicos/new(.:format)      {:action=>"new", :controller=>"topicos"}
+edit_topico GET    /topicos/:id/edit(.:format) {:action=>"edit", :controller=>"topicos"}
+     topico GET    /topicos/:id(.:format)      {:action=>"show", :controller=>"topicos"}
+            PUT    /topicos/:id(.:format)      {:action=>"update", :controller=>"topicos"}
+            DELETE /topicos/:id(.:format)      {:action=>"destroy", :controller=>"topicos"}
+ </nowiki>
+=== Cómo explorar las rutas / mapeos ===
+Volvamos a aplicar lo que aprendimos. En la linea de comando, abre tu consola rails. Una vez que estes ahí, podrás utilizar metodos rails para explorar tus urls. 
+<code><pre>
+carmen(mafalda)(master)$rails console
+Loading development environment (Rails 3.0.5)
+ruby-1.9.2-head :001 > app.topicos_path
+ => "/topicos" 
+ruby-1.9.2-head :002 > app.topicos_url
+ => "http://www.example.com/topicos" 
+ruby-1.9.2-head :003 > 
+</pre></code>
+
+=== Re mapeo  ===
+Podrás especificar cómo Rails debe mapear la ruta "/" (usualmente llamado home) con el método '''root''' en el archivo routes.rb. Cómo buena práctica, debes colocar el '''root''' al final del archivo, dentro del bloque. (antes del 'end') 
+
+    root :to => 'topicos#index'
+
+Luego de agregar la ruta '''root''', el archivo routes.rb debe ser similar a:
+
+  Mafalda::Application.routes.draw do
+    resources :topicos
+    ...
+    root :to => 'topicos#index'
+  end
+
+Además debes eleminar el archivo index.html del directorio public.
+
+  git rm public/index.html
+
+== Escenario: Creando un tópico ==
+Ejecutemos nuevamente el '''feature''' y observemos que la prueba falla en el segundo escenario propuesto.
+    rake cucumber FEATURE=features/1_topicos.feature
+
+<code><pre>
+    Escenario: Creando un topico
+      Cuando visito topicos
+      Y hago click en "New Topico"
+      Cuando completo el campo "Titulo" con "Rails Fixtures"
+      Y completo el campo "Descripcion" con "Rails es genial"
+      Y oprimo "Create"
+      Entonces debo ver "Rails Fixtures"
+      Y debo estar en inicio
+</pre></code>
+
+Ejecuta server (<code>rails server</code>), y hecha un vistazo a la aplicación ([http://localhost:3000/topicoss/ http://localhost:3000/topicos]). Observa como las plantillas scaffolds difieren de lo que deseamos que la aplicación haga, según como lo describimos usando cucumber.
+Desamos que la aplicacion muestre la lista de topicos luego que el usuario crea un tópico por medio del formulario. Sin embargo, la plantilla scaffold despliega una página que solo muestra el topico individual recien creado.
+
+=== Controlador: ajustando el flujo de la aplicacion  ===
+Anteriormente, nos fijamos como el codigo generado por scaffold, hizo pasar nuestro primer test cumpliendo con las características deseadas.
+
+Ahora, nos fijaremos como TopicosController manipula el recurso Topico y controla el flujo general de la aplicacion por medio de acciones mapeadas con los verbos HTTP discutidos en el punto anterior. Expecíficamente, que paginas son desplegadas cuando un usuario hace click en una url o un boton. 
+
+* Abre <code>app/controllers/topicos_controller.rb</code> y fíjate en las acciones ''new''  y ''create''.
+
+* Nota que la acción <code>create</code> hay un re-ruteo a un unico topico.,
+    format.html { redirect_to(@topic) }  
+En vez, deseamos que el re-ruteo sea a una lista de topicos o en nuestro caso root_path ya que lo re mapeamos a topicos#index en la sección anterior:
+
+    format.html { redirect_to(root_path) }  # <-- Note que no lleva @
+
+* Ejecuta nuevamente la prueba
+    rake cucumber FEATURE=features/1_topicos.feature
+<div style="color:green;">
+Green! Los escenarios han pasado!
+</div>
+
+=== Commit & Push ===
+Felicidades! Definitivamente es tiempo de guardar tus cambios en tu repositorio local y remoto, y luego ponerlo en Heroku.   
+
+<code>
+ git add .
+ git commit -m "Super! Todos los escenarios de la Primera Caracteristica han pasado!"
+ git push heroku master
+</code>
+
+== Segunda Característica: Topicos y Detalles ==
+=== Una mirada a las Vistas y sus métodos ===
+Observe que tenemos un conjunto de escenarios, definidos anteriormente, que serán ejecutados antes que cada escenario de este archivo.  Ya que dependen del comportamiento que ya funciona, son prestados en verde, o sea han pasado la prueba.
+
+<code><pre>
+  Escenario: Visualizando un topico en detalle
+    Cuando navego a topicos
+    Y selecciono el link "Rails Fixtures"
+    Entonces debo ver "Rails es genial"
+    Y no debo ver "New Topic"
+</pre></code>
+
+* Ejecuta el escenario y observa el fallo:
+    rake cucumber FEATURE=features/2_topicos_y_detalles.feature
+
+* En el ultimo escenario hicimos que aplicación re-rutee a topicos_path después de crear un tópico. 
+Podemos usar <code>rake routes</code> para identificar la accion del controlador, y asi ver que la vista por defecto ha sido ejecutada. 
+Para que nuestro escenario pase, necesitamos agregar algo de logica a <code>app/views/topics/index.html.erb</code>:  
+     <td><%= link_to topico.titulo, topico %></td>
+'''Note:''' "link_to" es un método que genera <a href= > tags en Rails. Pertenece al Modulo '''ActionView::Helpers::UrlHelper''', el cual proporciona un conjunto de métodos para establecer vínculos y obtener las direcciones URL que dependerá del subsistema de enrutamiento (ActionDispatch:: Enrutamiento). Esto le permite utilizar el mismo formato de los enlaces en las vistas y controladores. 
+Observa por ejemplo el segundo argumento del siguiente '''link_to'''
+  link_to 'Edit', edit_topico_path(topico)  
+
+* Ejecuta el escenario de vuelta y veras que "selecciono el link Rails Fixtures" pasa, pero aun tenemos un error que podemos solucionarlo en el mismo archivo.  
+
+* Abre <code>app/views/topics/index.html.erb</code> y cambia "Destroy" to "Eliminar".
+
+=== Commit & Push ===
+Otro checkpoint! Es tiempo de guardar tus cambios en tu repositorio local y remoto, y luego ponerlo en Heroku. 
+<code>
+ git add .
+ git commit -m "Titulos son links"
+ git push heroku master
+</code>
+
+== Tercera caracteristica:  habilitar votos en topicos ==
+<code><pre>
+#language: es
+Característica: Habilitar votos en topicos
+  Para determinar que discurso dar
+  Los usuarios deben votar por sus favoritos topicos.
+
+  Background: Asegurarse que el topico existe
+    Dado que estoy en topicos
+    Y hago click en "New Topic"
+    Y completo "Titulo" con "Rails Fixtures"
+    Y completo  "Descripcion" con "Rails es genial"
+    Y pulso "Create"
+
+  Escenario: Viendo los votos
+    Cuando visito la página topicos
+    Entonces deberia ver  "0 votos"
+
+  Escenario: Votando un topico
+    Cuando visito la página topicos
+    Y hago click en "+1"
+    Entonces deberia ver "1 vote"
+</pre></code>
+
+    rake cucumber FEATURE=features/3_votes.feature
+
+=== Cómo construiremos esta caracteristica? ===
+
+* Cada voto sera un objeto. (fila en la tabla '''topicos ''' de la BD)
+* Cuando alguien vote por un tópico, crearemos un nuevo objeto '''voto''' y lo guardaremos.
+* Cada voto es asociado con un especifico '''tópico'''
+
+=== Asociaciones en Rails ===
+    * Topico has_many :votos
+    * Voto belongs_to :topico
+
+[[File:asociaciones_rails.png‎ ]]
+
+=== Agregar votos ===
+
+Utilizaremos el script generador para crear un modelo y controlador (sin las vistas):
+  
+    rails generate resource voto topico_id:integer
+
+Y luego migraremos 
+
+    rake db:migrate
+
+El script crea:
+* modelo (incluyendo la migracion, archivos de prueba, datos de prueba)
+* controlador (y el mapeo) sin codigo.
+
+Agrega el siguiento codigo a tus modelos para crear las asociaciones entre ellos:
+
+*<code>/app/models/topico.rb</code>
+<code><pre>
+ class Topico < ActiveRecord::Base
+   has_many :votos
+ end
+</pre></code>
+*<code>/app/models/voto.rb</code>
+<code><pre>
+ class Voto < ActiveRecord::Base
+   belongs_to :topico
+ end
+</pre></code>
+
+Pruebalo en la consola <code>rails console</code>:
+
+<code><pre>
+ruby-1.9.2-head :001 > t = Topico.new(:titulo => "Mi Topico")
+ => #<Topico id: nil, titulo: "Mi Topico", descripcion: nil, created_at: nil, updated_at: nil> 
+ruby-1.9.2-head :002 > t.votos
+=> []
+ruby-1.9.2-head :004 > t.votos.build
+ => #<Voto id: nil, topico_id: nil, created_at: nil, updated_at: nil> 
+ruby-1.9.2-head :005 > t.votos
+ => [#<Voto id: nil, topico_id: nil, created_at: nil, updated_at: nil>] 
+ruby-1.9.2-head :006 > t.save
+ => true 
+ruby-1.9.2-head :007 > t.votos
+ => [#<Voto id: 5, topico_id: 4, created_at: "2011-05-04 11:24:47", updated_at: "2011-05-04 11:24:47">] 
+</pre></code>
+
+Ahora puedes utilizar '''votos''' en tu vista (<code>/app/views/topicos/index.html.erb</code>):
+
+<code>
+    <td><%= pluralize(topico.votos.length, "voto") %></td>
+</code>
+
+=== Permitir que los usuarios voten ===
+
+Es una bueno práctica hacer pequenos progresos incrementales y dejar que el desarrollo basado en pruebas guie el proceso, en este caso que cual es el siguiente paso. 
+
+Utiliza <code>rake routes</code> para explorar las URLs de votos y luego edita la vista(<code>/app/views/topicos/index.html.erb</code>):
+
+<code>	<td><%= link_to '+1', votos_path(:topico_id => topico.id), :method => :post %></td></code>
+
+El siguiente paso sería crear la acción en el controlador. Abre el controlador Votos 
+(<code>/app/controllers/votos_controller.rb</code>) para agregar la acción <code>create</code>:
+<code><pre>
+class VotosController < ApplicationController
+   def create
+    topico = Topico.find(params[:topico_id])
+    voto   = topico.votos.build
+
+    if voto.save
+      flash[:notice] = 'El voto fue creado.'
+    else
+      flash[:notice] = 'Lo siento. No pudimos contar su voto.'
+    end
+    redirect_to(topicos_path)
+  end
+ end
+</pre></code>
+
+Si te fijas en este codigo, utilizamos algo llamado flash notice. Rail utiliza el hash flash para desplegar mensajes, en este caso "noticia"
+Agregala flas[:notice] a app/views/layouts/application.html.erb
+<code><pre>
+<p style="color:green"><%= flash[:notice] %></p>
+</pre></code>
