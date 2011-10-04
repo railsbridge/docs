@@ -1,3 +1,5 @@
+source :rubygems
+
 gem "erector" # , :path => "/Users/alex/dev/erector"
 gem "sinatra"
 gem "nokogiri"
