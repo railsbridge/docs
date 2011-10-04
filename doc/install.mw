@@ -1,0 +1,39 @@
+==Getting Started==
+Find your operating system in the list below, or the operating system closest to what you have. Follow the step-by-step instructions. If you get stuck or hit a problem you can't figure out - no worries. Once you get to the installfest, volunteers will help you pick up where you left off.
+
+'''Even if you get stuck, please go through the rest of the instructions and download all the things you'll need.''' Bandwidth will be at a premium during the installfest, so it will help immensely to have everything on your laptop already.
+
+There are a lot of steps, and the instructions may seem like they're in a foreign language, but: '''don't panic!''' By the end of the workshop, you'll know what each one is and how to use it.
+
+==What to Bring to the Event==
+'''For sure'''
+
+* '''Your laptop.''' If you have a choice between a Mac and a Windows laptop, please bring the Mac.
+* '''Power cord for your laptop'''
+* Mac users: Bring along your '''OS X DVD''', if you can, for the Xcode install (see below)
+
+
+'''Possibly also helpful'''
+
+* Extension cord/power strip - sometimes there are not enough of these
+* Camera
+
+==Overview==
+
+You will be installing the following tools:
+
+* Ruby
+* Rails
+* Git
+* Firefox and the SQLite manager Firefox add-on
+* Heroku
+* KomodoEdit
+* Various useful gems: bundler, cucumber, rspec, rspec-rails, webrat, sqlite
+
+During this process you'll create a Heroku account if you don't already have one. Heroku is the free Ruby on Rails hosting service that we're using for workshop projects.
+
+==Pick Your Laptop's Operating System==
+
+* Mac users: [[OS X 10.7 (Lion)]] | [[OS_X_10.6_(Snow_Leopard) | OS X 10.6 (Snow Leopard)]] | [[OS X 10.6 or 10.5 (Snow Leopard or Leopard)]]. [[Determining your OS X version|Click here if you're not sure what version of OS X you have.]]
+* Linux users: [[Ubuntu 10.04 - Rails 3 |Ubuntu 10.04]]
+* Windows users: [[WindowsInstaller - Rails 3|Windows 7/Vista/XP]]
