@@ -1,9 +1,3 @@
-PATH
-  remote: /Users/alex/dev/erector
-  specs:
-    erector (0.9.0.pre1)
-      treetop (>= 1.2.3)
-
 GEM
   specs:
     ParseTree (3.0.7)
@@ -12,14 +6,19 @@ GEM
     RubyInline (3.10.1)
       ZenTest (~> 4.3)
     ZenTest (4.6.2)
-    bluecloth (2.1.0)
     diff-lcs (1.1.3)
+    erector (0.8.3)
+      rake
+      rake
+      treetop
+      treetop (>= 1.2.3)
     file-tail (1.0.7)
       tins (~> 0.3)
     nokogiri (1.5.0)
     polyglot (0.3.2)
     predicated (0.2.6)
     rack (1.3.3)
+    rake (0.9.2)
     rdiscount (1.6.8)
     ruby2ruby (1.3.1)
       ruby_parser (~> 2.0)
@@ -54,8 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bluecloth
-  erector!
+  erector
   nokogiri
   rdiscount
   sinatra
