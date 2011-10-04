@@ -4,8 +4,8 @@
 require 'sinatra'
 require 'digest/md5'
 require 'erector'
-require 'wrong'
-include Wrong::D
+# require 'wrong'
+# include Wrong::D
 
 begin
   require 'rdiscount'
@@ -109,15 +109,11 @@ class InstallFest < Sinatra::Application
           else 
             "/doc/#{path}"
           end
-          "![#{path.split('/').last}](#{url})".tap{|img| d { img }}          
+          "![#{path.split('/').last}](#{url})"       
         else
           title = match.gsub(/[\(\)]/, '')
           page = title.downcase.gsub(/\W/, '')
-          d { title }
-          d { page }
-          s="[#{title}](#{page})"
-          d { s }
-          s
+          "[#{title}](#{page})"
         end
       }.      
       gsub(/(?<!\!)\[([^\] ]*)( [^\]]*)?\]/){
@@ -150,18 +146,14 @@ class InstallFest < Sinatra::Application
   end
   
   get "/doc/:name.:ext" do
-    d { params[:name] }
     send_file "#{here}/doc/#{params[:name]}.#{params[:ext]}"
   end
   
   get "/doc/:name" do
     begin
-      d { src }
       doc_title = params[:name].split('_').map do |w| 
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
-      d { params[:name] }
-      d { doc_title }
       erector {
         head {
           title doc_title

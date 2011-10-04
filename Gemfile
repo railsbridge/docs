@@ -4,4 +4,6 @@ gem "bluecloth"
 gem "nokogiri"
 
 gem "rdiscount"
-gem "wrong"
+group :development do
+  gem "wrong"
+end
