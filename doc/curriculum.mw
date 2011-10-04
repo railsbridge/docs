@@ -640,20 +640,18 @@ Add code to to your models  to create the associations:
 
 Check it out in <code>rails console</code>:
 
-<code><pre>
->> t = Topic.new(:title => "My Topic")
-=> #<Topic id: nil, title: "My Topic"), description: nil, created_at: nil, updated_at: nil>
->> t.votes
-=> []
->> t.votes.build
-=> #<Vote id: nil, topic_id: nil, created_at: nil, updated_at: nil>
->> t.votes
-=> [#<Vote id: nil, topic_id: nil, created_at: nil, updated_at: nil>]
->> t.save
-=> true
->> t.votes
-=> [#<Vote id: 2, topic_id: 2, created_at: "2010-02-22 01:42:27", updated_at: "2010-02-22 01:42:27">]
-</pre></code>
+    >> t = Topic.new(:title => "My Topic")
+    => #<Topic id: nil, title: "My Topic"), description: nil, created_at: nil, updated_at: nil>
+    >> t.votes
+    => []
+    >> t.votes.build
+    => #<Vote id: nil, topic_id: nil, created_at: nil, updated_at: nil>
+    >> t.votes
+    => [#<Vote id: nil, topic_id: nil, created_at: nil, updated_at: nil>]
+    >> t.save
+    => true
+    >> t.votes
+    => [#<Vote id: 2, topic_id: 2, created_at: "2010-02-22 01:42:27", updated_at: "2010-02-22 01:42:27">]
 
 Now you can use it in your view (<code>/app/views/topics/index.html.erb</code>):
 

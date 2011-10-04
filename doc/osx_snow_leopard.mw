@@ -4,6 +4,7 @@
 '''Special note for folks who upgraded to Snow Leopard:''' The SQLite gem does not compile with an older version of Xcode installed. If you upgraded your machine from an older version of OS X, and you have an older Xcode, you still need to reinstall it from your Snow Leopard DVD. The steps below should work fine to upgrade it.
 
 '''Steps:'''
+
 * Insert your Snow Leopard install DVD. ([[What to do if you don't have an OS X install DVD]])
 * Open "Optional Installs" folder.
 * Double-click Xcode.mkpg. It will bring up a window titled "Install Xcode."
