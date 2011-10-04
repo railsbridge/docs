@@ -136,6 +136,10 @@ class InstallFest < Sinatra::Application
     Markdown.new(gfm(md)).to_html
   end
 
+  get "/" do
+    redirect "/doc/topics"
+  end
+
   get "/doc/:name/src" do
     begin
       "<pre>#{source}</pre>"

@@ -5,7 +5,8 @@ The Friday night install process is very cut-and-paste, and people new to Ruby d
 * Remember that some people don't yet know that when you're at the command line, you're actually sitting in a folder, and when you change a directory it's like moving into a folder with a GUI. This is NOT obvious if you've never used it before. 
 * If they are learning this for the first time, give them a little challenge like: go into the Desktop folder, create a subfolder and then cd into it. Use pwd to prove you're in the right place. 
 * Check in to make sure everyone knows at least the following unix commands: <code>cd, ls, mkdir, irb, pwd</code>.
-* Explain what an argument and a flag are. <code>curl -O http://whatever.com/text.txt</code>
+* Explain what an argument and a flag are.
+        curl -O http://whatever.com/text.txt
 * (Someone who knows DOS should write the equivalent of this section for DOS)
 
 === Explain other foundational concepts. ===
