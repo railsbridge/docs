@@ -163,7 +163,7 @@ class InstallFest < Sinatra::Application
           title doc_title
           style <<-CSS
           body {
-            font-family: futura,helvetica,arial,sans;
+            font-family: helvetica,arial,sans;
           }
           h1 {
             font-size: 2em;
