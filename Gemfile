@@ -7,4 +7,5 @@ gem "rdiscount"
 
 group :development do
   gem "wrong"
+  gem "rspec"
 end

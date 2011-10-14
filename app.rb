@@ -1,5 +1,6 @@
 # http://daringfireball.net/projects/markdown/syntax#img
 # http://www.wiki.devchix.com/index.php?title=Help:Editing
+puts RUBY_VERSION
 
 require 'sinatra'
 require 'digest/md5'
@@ -15,8 +16,14 @@ rescue LoadError
   Markdown = BlueCloth
 end
 
+here = File.expand_path File.dirname(__FILE__)
+require "./mw2md"
+require "./github_flavored_markdown"
+
 class InstallFest < Sinatra::Application
   include Erector::Mixin
+  include MW2MD
+  include GithubFlavoredMarkdown
   
   def initialize
     super
@@ -24,34 +31,6 @@ class InstallFest < Sinatra::Application
   end
   
   attr_reader :here
-
-  # From http://github.github.com/github-flavored-markdown/
-  def gfm(text)
-    # Extract pre blocks
-    extractions = {}
-    text.gsub!(%r{<pre>.*?</pre>}m) do |match|
-      md5 = Digest::MD5.hexdigest(match)
-      extractions[md5] = match
-      "{gfm-extraction-#{md5}}"
-    end
-
-    # prevent foo_bar_baz from ending up with an italic word in the middle
-    text.gsub!(/(^(?! {4}|\t)\w+_\w+_\w[\w_]*)/) do |x|
-      x.gsub('_', '\_') if x.split('').sort.to_s[0..1] == '__'
-    end
-
-    # in very clear cases, let newlines become <br /> tags
-    text.gsub!(/^[\w\<][^\n]*\n+/) do |x|
-      x =~ /\n{2}/ ? x : (x.strip!; x << "  \n")
-    end
-
-    # Insert pre block extractions
-    text.gsub!(/\{gfm-extraction-([0-9a-f]{32})\}/) do
-      "\n\n" + extractions[$1]
-    end
-
-    text
-  end
 
   def src
     File.read("#{here}/doc/#{params[:name]}.md")
@@ -80,56 +59,6 @@ class InstallFest < Sinatra::Application
     end.join("\n")
 
     md2html md
-  end
-  
-  def mw2md md
-    md.
-      # headings
-      gsub(/^==== ?(.*)( *====)\s*$/, '### \\1').
-      gsub(/^=== ?(.*)( *===)\s*$/, '## \\1').
-      gsub(/^== ?(.*)( *==)\s*$/, '# \\1').
-      gsub(/^= ?(.*)( *=)\s*$/, '# \\1').
-      # bullet lists
-      gsub(/^\* /, "\n* ").
-      gsub(/^\*\* /, " * ").
-      gsub(/^\*\*\* /, "  * ").
-      # numbered lists
-      gsub(/^\# /, "\n1. ").
-      gsub(/^\#\# /, " 1. ").
-      gsub(/^\#\#\# /, "  1. ").
-      # links
-      gsub(%r{(?<![\(:])((https?|mailto)://\S*)}, '<\\1>').
-      
-      gsub(/\[\[([^\]]*)\]\]/) {|match|
-        match = $1
-        if match =~ /^File:/i
-          path = match.gsub(/^File:/i, '').strip
-          url = if path =~ /^http/
-            path
-          else 
-            "/doc/#{path}"
-          end
-          "![#{path.split('/').last}](#{url})"       
-        else
-          title = match.gsub(/[\(\)]/, '')
-          page = title.downcase.gsub(/\W/, '')
-          "[#{title}](#{page})"
-        end
-      }.      
-      gsub(/(?<!\!)\[([^\] ]*)( [^\]]*)?\]/){
-        url = $1
-        name = $2 || url
-        "[#{name}](#{url})"
-      }.
-      gsub(/'''(.+)'''/, '**\\1**').
-      gsub(/''(.+)''/, '*\\1*').
-      # tables
-      gsub(/^\{\|(.*)$/) {"<table #{$1}>\n<tr>\n"}.
-      gsub(/^\|-/, "<tr>").
-      gsub(/^\|\+(.*)/, "<tr><th>\\1<tr>").
-      gsub(/^\! /, "<th>").
-      gsub(/^\| /, "<td>").
-      gsub(/^\|\}/, "</table>")
   end
   
   def md2html(md)
