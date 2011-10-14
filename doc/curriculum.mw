@@ -608,7 +608,7 @@ Feature: Votes
     * Topic has_many :votes
     * Vote belongs_to :topic
 
-[[File:Rails-associations.jpg‎ ]]
+[[File:Rails-associations.jpg]]
 
 === Add votes ===
 
