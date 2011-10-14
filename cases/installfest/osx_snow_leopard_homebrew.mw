@@ -1,10 +1,11 @@
+Here are a few steps to getting ready for Ruby and Rails development using OS X 10.5.  '''NOTE:''' These instructions need to be tested and verified.
+
 == Install the Xcode Tools == 
-'''Advanced user note:''' Xcode is required on Snow Leopard. On some older versions of OS X, you could get away without it when installing Rails, as long as you weren't using MacPorts. Not so on Snow Leopard, unfortunately.
+It isn't always necessary to install Xcode, but it's best to do it anyway if you have access to the files.  You can get Xcode from a MacOS installation DVD or download it from Apple -- but at 2.5GB it's not going to be a fun download on shared WiFi.  See if you can get a burned copy or one available as a shared file on your local network.
 
-'''Special note for folks who upgraded to Snow Leopard:''' The SQLite gem does not compile with an older version of Xcode installed. If you upgraded your machine from an older version of OS X, and you have an older Xcode, you still need to reinstall it from your Snow Leopard DVD. The steps below should work fine to upgrade it.
+Installing Xcode is straightforward with one caveat.  When it asks you about the components to install you need to make sure "Unix Tools" is selected.  Other than that just click Continue/Ok/Yes/etc.  Or, in more detail:
 
-  '''Steps:'''
-
+'''Steps:'''
 * Insert your Snow Leopard install DVD. ([[xcode]])
 * Open "Optional Installs" folder.
 * Double-click Xcode.mkpg. It will bring up a window titled "Install Xcode."
@@ -19,26 +20,33 @@
 
 == Install Git, Ruby, Rails, and Gems ==
 
-* Create a folder called rubydownloads (all lower case, no punctuation or spaces) on the desktop.
-* Download the following files, and move them all into rubydownloads.
-** [http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz git (version control)] [https://github.com/git/git/tarball/v1.7.1 Alternate Download Source]
-** [ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p174.tar.gz ruby]
-** [http://files.rubyforge.vm.bytemark.co.uk/rubygems/rubygems-1.3.5.tgz rubygems (package management)]
-
 * Open '''Terminal.app'''. It's in Applications -> Utilities. Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)
-* Inside the Terminal window, type the following, with a return at the end of each line:
-    cd ~/Desktop
-    curl -o bootstrap_snow_leopard.sh https://raw.github.com/gist/574651/006a6b265ec153cc6ffc2e0f414f053db00e4110/bootstrap_snowleopard.sh
 
-If you're working with STEVEN, today, you should do this instead:  curl -o bootstrap_snow_leopard.sh https://gist.github.com/1207820
-    chmod u+x bootstrap_snow_leopard.sh
+* The first step is to create a directory where we'll store programs used to write and run your Ruby code.  Enter these two lines below in your Terminal.  Note that the '''sudo''' instruction will ask for your password.  Also, make sure you change '''yourusername''' to your actual Mac OS user name.  If you don't know your username, enter the command '''whoami''' in your terminal and it'll output your username.
 
-* Now you've downloaded the installation script and set appropriate permissions on it. Now you can run it! Inside the Terminal window, type the following, with a return at the end of the line:
-    ./bootstrap_snow_leopard.sh
-* You may need to enter your user password at some point during the installation. You'll see a prompt such as "Password:" in the Terminal window. It's safe to type your user password in there.
-* This will run for a while. Once you see "Done!" in the Terminal window, it's complete.
- # Note: this script installs rails 2.3.9, so afterwards run:
- sudo gem install rails --version 3.0 --no-rdoc --no-ri
+  sudo mkdir /usr/local
+  sudo chown -R yourusername /usr/local
+
+* We've created the directory with '''mkdir''' for "Make Directory" and set the owner to you with '''chown''' (or "CHange OWNer").  This is the folder where Homebrew itself will live along with any programs we install using Homebrew.  To install Homebrew in one step run this line in your Terminal:
+
+  curl -L http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local</pre>
+
+* Now you should have the '''brew''' command available.  Try it out by just entering '''brew''' at your terminal and you should see the help scroll by.
+
+* Next we'll install Git, the most popular source control system in the Ruby world:
+
+  brew install git
+
+== Install RVM, the Ruby Version Manager ==
+
+RVM is Ruby Version Manager and is the easiest way to install and manage Ruby.  The official RVM install instructions [http://rvm.beginrescueend.com/rvm/install/ are available here], but this should work for you:
+
+  bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+  echo 'if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi' >> ~/.bash_profile
+  source "$HOME/.rvm/scripts/rvm"
+  rvm install 1.8.7
+  rvm use 1.8.7
+  rvm --default 1.8.7
 
 == Install SQLite Firefox plugin ==
 * [http://www.mozilla.com/en-US/ Install Firefox], if you don't already have it. You may need to upgrade - SQLite Manager requires Firefox 3.5 or greater. 
@@ -48,10 +56,14 @@ If you're working with STEVEN, today, you should do this instead:  curl -o boots
 We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
 
 '''Installation steps:'''
-* Download the [http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg KomodoEdit installer].
+* Download the [http://downloads.activestate.com/Komodo/releases/5.2.1/Komodo-Edit-5.2.1-4108-macosx-x86.dmg KomodoEdit installer].
 * Select "Open with DiskImageMounter" in the file save dialog. This should be the default.
 * It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Drag KomodoEdit into your Applications folder.
 * Unmount the installer disk image by dragging it from your desktop to the trash.
+
+== Other required libraries ==
+* Open a Terminal window and type the following with a return at the end of each line:
+   gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat heroku --no-rdoc --no-ri
 
 == Verify successful installation ==
 In this step, we make sure the installation script actually installed everything correctly. 
@@ -75,22 +87,21 @@ It should say:
 It should say:
     *** LOCAL GEMS ***
     
-    actionmailer (2.3.9)
-    actionpack (2.3.9)
-    activerecord (2.3.9)
-    activeresource (2.3.9)
-    activesupport (2.3.9)
+    actionmailer (2.3.5)
+    actionpack (2.3.5)
+    activerecord (2.3.5)
+    activeresource (2.3.5)
+    activesupport (2.3.5)
     builder (2.1.2)
     configuration (1.1.0)
     cucumber (0.6.2)
     cucumber-rails (0.2.4)
     diff-lcs (1.1.2)
-    gherkin (1.0.30)
     heroku (1.8.0)
-    json (1.2.0) or json_pure (1.4.3)
+    json (1.2.0)
     launchy (0.3.5)
     nokogiri (1.4.1)
-    polyglot (0.3.0) (optional)
+    polyglot (0.3.0)
     rack (1.1.0)
     rails (2.3.5)
     rake (0.8.7)
@@ -99,9 +110,8 @@ It should say:
     rspec-rails (1.3.2)
     sqlite3-ruby (1.2.5)
     term-ansicolor (1.0.4)
-    treetop (1.4.3) (optional)
+    treetop (1.4.3)
     webrat (0.7.0)
-
 
 '''Finally''', make sure you can do everything in the following sections of the [http://wiki.devchix.com/index.php?title=Server_2003 Windows install directions] (from "Create a Test Application" onwards). Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name! 
 * [[Server_2003#Create_a_test_application|Create a test application]]

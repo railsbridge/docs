@@ -1,0 +1,7 @@
+step "What to bring", doc: "what_to_bring"
+
+step "Overview", doc: "overview"
+
+step("Choose your Operating System") {
+  
+}

@@ -47,7 +47,7 @@ cls
 
 == Configure Colors ==
 The Rails server logging and test results are much easier to read with colored output but the Command Prompt with Ruby and Rails defaults to white on black.  Add colors by following these steps:
-* In the browser, visit '''http://adoxa.110mb.com/ansicon'''
+* In the browser, visit http://adoxa.110mb.com/ansicon
 * Click "ANSICON 1.40" link to download the file and double-click to unzip it
 * Determine if you have a 32 or 64 bit Operating System
 ** In Windows 7 or Vista, from the Start menu, type system in the Start Search box, and then click system in the Programs list.  System Type under System will say whether it's a 32 or 64 bit Operating System

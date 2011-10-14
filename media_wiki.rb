@@ -5,10 +5,12 @@ module MediaWiki
     gsub(/^\* /, "\n* ").
     gsub(/^\*\* /, " * ").
     gsub(/^\*\*\* /, "  * ").
+    
     # square-bullet lists (turn into regular bullets)
     gsub(/^\# /, "\n* ").
     gsub(/^\#\# /, " * ").
     gsub(/^\#\#\# /, "  * ").
+    
     # headings
     gsub(/^==== ?(.*)( *====)\s*$/, "### \\1").
     gsub(/^=== ?(.*)( *===)\s*$/, "## \\1").
@@ -38,7 +40,7 @@ module MediaWiki
         "![#{path.split('/').last}](#{url})"       
       else
         title = match.gsub(/[\(\)]/, '')
-        page = title.downcase.gsub(/\W/, '').strip
+        page = title.downcase.gsub(/\W+/, '_').strip
         "[#{title}](#{page})"
       end
     }.      

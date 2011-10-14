@@ -43,8 +43,17 @@ class InstallFest < Sinatra::Application
     mw2md File.read("#{base}.mw")
   end
 
+  get '/favicon.ico' do
+    halt 404
+  end
+  
   get "/" do
     redirect "/installfest/start"
+  end
+
+  get "/:case" do
+    case_name = params[:case]
+    redirect "/#{case_name}/#{case_name}"
   end
 
   get "/:case/:name/src" do
