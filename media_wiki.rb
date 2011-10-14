@@ -1,7 +1,6 @@
 require "wrong"
 
-module MW2MD
-  include Wrong
+module MediaWiki
   def mw2md md
     md.
     # bullet lists

@@ -1,9 +1,9 @@
 require "wrong/adapters/rspec"
 
 here = File.expand_path File.dirname(__FILE__)
-require "./mw2md"
+require "./media_wiki"
 
-include MW2MD
+include MediaWiki
 
 describe "mw2md" do
   it "converts [[]]" do

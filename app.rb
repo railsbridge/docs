@@ -17,12 +17,12 @@ rescue LoadError
 end
 
 here = File.expand_path File.dirname(__FILE__)
-require "./mw2md"
+require "./media_wiki"
 require "./github_flavored_markdown"
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
-  include MW2MD
+  include MediaWiki
   include GithubFlavoredMarkdown
   
   def initialize
