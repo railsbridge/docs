@@ -1,5 +1,3 @@
-require "wrong"
-
 module MediaWiki
   def mw2md md
     md.
