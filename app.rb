@@ -18,12 +18,12 @@ end
 
 here = File.expand_path File.dirname(__FILE__)
 require "./media_wiki"
-require "./github_flavored_markdown"
+require "./markdown_page"
+require "./contents"
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
   include MediaWiki
-  include GithubFlavoredMarkdown
   
   def initialize
     super
@@ -41,33 +41,6 @@ class InstallFest < Sinatra::Application
     File.read("#{base}.md")
   rescue Errno::ENOENT
     mw2md File.read("#{base}.mw")
-  end
-
-  def docs ext = "mw,md"
-    Dir.glob("#{case_dir}/*.{#{ext}}").map{|file| file.split('.').first}
-  end
-  
-  def toc
-    md = ""
-    md << "# Contents\n"    
-    md << docs.map do |path|
-      title = path.split('/').last.capitalize
-      path = path.gsub(/^#{case_dir}\//, '')
-      "* [#{title}](#{path})"
-    end.join("\n")
-
-    md << "\n\n# Images\n"
-    md << Dir.glob("#{case_dir}/*.{jpg,png}").map do |path|
-      title = path.split('/').last.capitalize
-      path = path.gsub(/^#{case_dir}\//, '')
-      "* [#{title}](#{path})"
-    end.join("\n")
-
-    md2html md
-  end
-  
-  def md2html(md)
-    Markdown.new(gfm(md)).to_html
   end
 
   get "/" do
@@ -92,67 +65,13 @@ class InstallFest < Sinatra::Application
       doc_title = params[:name].split('_').map do |w| 
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
-      case_title = "Railsbridge #{params[:case].capitalize}"
-      erector {
-        head {
-          title "#{doc_title} - #{case_title}"
-          style <<-CSS
-          body {
-            font-family: helvetica,arial,sans;
-          }
-          h1 {
-            font-size: 2em;
-            -webkit-margin-before: 0;
-            -webkit-margin-after: 0;
-            -webkit-margin-start: 0;
-            -webkit-margin-end: 0;            
-          }
+      
+      MarkdownPage.new(
+        case_name: params[:case],
+        doc_title: doc_title,
+        markdown_src: src
+      ).to_html
 
-          .top {
-            margin-bottom: 1em;
-          }
-          .toc {
-            background: #e2f2f2;
-            padding: 1em;
-            margin: 0 1em;
-            float: left;
-            width: 18em;
-          }
-          .main {
-            padding-left: 24em;
-          }
-          .doc { 
-            max-width: 50em;
-          }
-          .main h1.doc_title {
-            background: #e2e2f2;
-            padding: .5em;
-            margin-bottom: .25em;
-            margin-left: -2em;
-          }          
-          .doc pre {
-            background: #f2f2f2;
-            padding: .5em 1em;
-            font-size: 12pt;
-          }
-          CSS
-        }
-        body {
-          div(:class=>:top) {
-            h1 case_title
-          }
-          div(:class=>:toc) {
-            rawtext toc
-          }
-          div(:class=>:main) {
-            h1 doc_title, :class=>"doc_title"
-            div(:class=>:doc) {
-              rawtext md2html(src)
-            }
-          }
-          
-        }
-      }
     rescue Errno::ENOENT => e
       p e
       halt 404
