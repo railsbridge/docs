@@ -34,6 +34,10 @@ class MarkdownPage < Erector::Widget
       .top {
         margin-bottom: 1em;
       }
+      .top h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+      }
       .top a {
         text-decoration: none;
       }
@@ -49,14 +53,14 @@ class MarkdownPage < Erector::Widget
       .toc {
         background: #e2f2f2;
         padding: 1em;
-        margin: 0 1em;
-        float: left;
+        margin: 0 0 1em 1em;
+        float: right;
         width: 18em;
         overflow-x: hidden;
       }
 
       .main {
-        padding-left: 24em;
+        padding-left: 4em;
       }
       .main h1.doc_title {
         background: #e2e2f2;
