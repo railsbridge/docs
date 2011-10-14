@@ -17,19 +17,21 @@ rescue LoadError
 end
 
 here = File.expand_path File.dirname(__FILE__)
-require "./media_wiki"
-require "./markdown_page"
-require "./contents"
+lib = File.expand_path "#{here}/lib"
+$:<<lib
+require "media_wiki"
+require "markdown_page"
+require "contents"
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
   include MediaWiki
-  
+
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
   end
-  
+
   attr_reader :here
 
   def case_dir
@@ -46,7 +48,7 @@ class InstallFest < Sinatra::Application
   get '/favicon.ico' do
     halt 404
   end
-  
+
   get "/" do
     redirect "/installfest"
   end
@@ -64,17 +66,17 @@ class InstallFest < Sinatra::Application
       halt 404
     end
   end
-  
+
   get "/:case/:name.:ext" do
     send_file "#{case_dir}/#{params[:name]}.#{params[:ext]}"
   end
-  
+
   get "/:case/:name" do
     begin
-      doc_title = params[:name].split('_').map do |w| 
+      doc_title = params[:name].split('_').map do |w|
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
-      
+
       MarkdownPage.new(
         case_name: params[:case],
         doc_title: doc_title,

@@ -1,14 +1,14 @@
-require "wrong/adapters/rspec"
-
 here = File.expand_path File.dirname(__FILE__)
-require "./media_wiki"
+require "#{here}/spec_helper"
+
+require "media_wiki"
 
 include MediaWiki
 
 describe "mw2md" do
   it "converts [[]]" do
     assert {
-      mw2md("[[OS X 10.7 (Lion)]]") == "[OS X 10.7 Lion](osx107lion)"
+      mw2md("[[OS X 10.7 (Lion)]]") == "[OS X 10.7 Lion](os_x_10_7_lion)"
     }
   end
 end
