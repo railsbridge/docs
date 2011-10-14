@@ -32,14 +32,19 @@ class InstallFest < Sinatra::Application
   
   attr_reader :here
 
+  def case_dir
+    "#{@here}/cases/#{params[:case]}"
+  end
+
   def src
-    File.read("#{here}/doc/#{params[:name]}.md")
+    base = "#{case_dir}/#{params[:name]}"
+    File.read("#{base}.md")
   rescue Errno::ENOENT
-    mw2md File.read("#{@here}/doc/#{params[:name]}.mw")
+    mw2md File.read("#{base}.mw")
   end
 
   def docs ext = "mw,md"
-    Dir.glob("#{here}/doc/*.{#{ext}}").map{|file| file.split('.').first}
+    Dir.glob("#{case_dir}/*.{#{ext}}").map{|file| file.split('.').first}
   end
   
   def toc
@@ -47,14 +52,14 @@ class InstallFest < Sinatra::Application
     md << "# Contents\n"    
     md << docs.map do |path|
       title = path.split('/').last.capitalize
-      path = path.gsub(/^#{here}/, '')
+      path = path.gsub(/^#{case_dir}\//, '')
       "* [#{title}](#{path})"
     end.join("\n")
 
     md << "\n\n# Images\n"
-    md << Dir.glob("#{here}/doc/*.{jpg,png}").map do |path|
+    md << Dir.glob("#{case_dir}/*.{jpg,png}").map do |path|
       title = path.split('/').last.capitalize
-      path = path.gsub(/^#{here}/, '')
+      path = path.gsub(/^#{case_dir}\//, '')
       "* [#{title}](#{path})"
     end.join("\n")
 
@@ -66,10 +71,10 @@ class InstallFest < Sinatra::Application
   end
 
   get "/" do
-    redirect "/doc/topics"
+    redirect "/installfest/start"
   end
 
-  get "/doc/:name/src" do
+  get "/:case/:name/src" do
     begin
       "<pre>#{source}</pre>"
     rescue Errno::ENOENT => e
@@ -78,18 +83,19 @@ class InstallFest < Sinatra::Application
     end
   end
   
-  get "/doc/:name.:ext" do
-    send_file "#{here}/doc/#{params[:name]}.#{params[:ext]}"
+  get "/:case/:name.:ext" do
+    send_file "#{case_dir}/#{params[:name]}.#{params[:ext]}"
   end
   
-  get "/doc/:name" do
+  get "/:case/:name" do
     begin
       doc_title = params[:name].split('_').map do |w| 
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
+      case_title = "Railsbridge #{params[:case].capitalize}"
       erector {
         head {
-          title doc_title
+          title "#{doc_title} - #{case_title}"
           style <<-CSS
           body {
             font-family: helvetica,arial,sans;
@@ -133,7 +139,7 @@ class InstallFest < Sinatra::Application
         }
         body {
           div(:class=>:top) {
-            h1 "Railsbridge Installfest and Workshop"
+            h1 case_title
           }
           div(:class=>:toc) {
             rawtext toc

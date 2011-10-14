@@ -35,7 +35,7 @@ module MediaWiki
         url = if path =~ /^http/
           path
         else
-          "/doc/#{path}"
+          "#{path}"
         end
         "![#{path.split('/').last}](#{url})"       
       else

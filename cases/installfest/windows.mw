@@ -8,7 +8,7 @@
 * Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. 
 ** Be sure to check the box for &quot;Add executables for Ruby, Git and DevKit to the PATH&quot; 
 
-[[File:WinXPRailsInstaller.jpg]]
+[[File:Winxprailsinstaller.jpg]]
 
 * Rails will be installed in C:\RailsInstaller and the directory for your Rails projects will be C:\Sites
 * From the Windows Start menu, go to Programs, RailsInstaller, Command Prompt with Ruby and Rails
