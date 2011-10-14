@@ -34,18 +34,29 @@ class MarkdownPage < Erector::Widget
       .top {
         margin-bottom: 1em;
       }
+      .top a {
+        text-decoration: none;
+      }
+      .top a:visited {
+        color: black;
+      }
+
+      .bottom {
+        min-height: 60px;
+        
+      }
+
       .toc {
         background: #e2f2f2;
         padding: 1em;
         margin: 0 1em;
         float: left;
         width: 18em;
+        overflow-x: hidden;
       }
+
       .main {
         padding-left: 24em;
-      }
-      .doc { 
-        max-width: 50em;
       }
       .main h1.doc_title {
         background: #e2e2f2;
@@ -53,16 +64,25 @@ class MarkdownPage < Erector::Widget
         margin-bottom: .25em;
         margin-left: -2em;
       }          
+      
+      .doc { 
+        max-width: 50em;
+      }
       .doc pre {
         background: #f2f2f2;
         padding: .5em 1em;
         font-size: 12pt;
       }
+      .doc h1 {
+        border-bottom: 1px solid blue;
+        margin-top: 1em;
+        margin-left: -.5em;
+      }
       CSS
     }
     body {
       div(:class=>:top) {
-        h1 case_title
+        h1 { a case_title, :href => "/#{case_name}" }
       }
 
       widget Contents, case_name: case_name
@@ -72,6 +92,10 @@ class MarkdownPage < Erector::Widget
         div(:class=>:doc) {
           rawtext md2html(markdown_src)
         }
+      }
+      
+      div(:class=>:bottom) {
+        
       }
       
     }

@@ -1,4 +1,4 @@
-# Step 1: Learn your Macintosh OS X Version
+# Step 1: Learn your Mac OS X Version
 
 * Click on the Apple icon in the top left of your screen.
 * Select "About this Mac"
@@ -27,5 +27,3 @@ Below is an example.
 
 ## Click here if you have [Snow Leopard](osx_snow_leopard_homebrew) and want to use Homebrew
 
-
-* Mac users: [[OS X 10.7 (Lion)]] | [[OS_X_10.6_(Snow_Leopard) | OS X 10.6 (Snow Leopard)]] | [[OS X 10.6 or 10.5 (Snow Leopard or Leopard)]]. [[Determining your OS X version|Click here if you're not sure what version of OS X you have.]]
