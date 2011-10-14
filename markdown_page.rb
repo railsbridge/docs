@@ -20,8 +20,9 @@ class MarkdownPage < Erector::Widget
     head {
       title "#{doc_title} - #{case_title}"
       style <<-CSS
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
       body {
-        font-family: helvetica,arial,sans;
+        font-family: 'Open Sans', helvetica,arial,sans-serif;
       }
       h1 {
         font-size: 2em;
@@ -36,7 +37,7 @@ class MarkdownPage < Erector::Widget
       }
       .top h1 {
         font-size: 2.5em;
-        font-weight: bold;
+        font-weight: 800;
       }
       .top a {
         text-decoration: none;
@@ -64,7 +65,7 @@ class MarkdownPage < Erector::Widget
       }
       .main h1.doc_title {
         background: #e2e2f2;
-        padding: .5em;
+        padding: .5em .5em .25em;
         margin-bottom: .25em;
         margin-left: -2em;
       }          
