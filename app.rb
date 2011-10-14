@@ -48,7 +48,7 @@ class InstallFest < Sinatra::Application
   end
   
   get "/" do
-    redirect "/installfest/start"
+    redirect "/installfest"
   end
 
   get "/:case" do
