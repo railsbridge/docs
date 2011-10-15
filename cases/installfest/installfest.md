@@ -11,6 +11,7 @@
 * Extension cord
 * Power strip
 * Camera
+* Snacks
 
 # Step 2: Don't Panic!
 

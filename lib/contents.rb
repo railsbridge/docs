@@ -10,21 +10,25 @@ class Contents < Erector::Widget
     end
   end
 
+  def case_files ext
+    Dir.glob("#{case_dir}/*.{#{ext}}").sort
+  end
+
   def docs ext = "mw,md"
-    Dir.glob("#{case_dir}/*.{#{ext}}").map{|file| file.split('.').first}
+    case_files(ext).map{|file| file.split('.').first}
   end
 
   def content
     div class: "toc" do
       h1 "Contents"
       docs.each do |path|
-        title = path.split('/').last.capitalize
+        title = path.split('/').last.split('_').map{|s|s.capitalize}.join(' ')
         path = path.gsub(/^#{case_dir}\//, '')
         li { a(title, :href => path) }
       end
 
       h1 "Images"
-      Dir.glob("#{case_dir}/*.{jpg,png}").each do |path|
+      case_files("jpg,png").each do |path|
         title = path.split('/').last.capitalize
         path = path.gsub(/^#{case_dir}\//, '')
         li { a(title, :href => path) }
