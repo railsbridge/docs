@@ -29,7 +29,7 @@ class Contents < Erector::Widget
 
       h1 "Images"
       case_files("jpg,png").each do |path|
-        title = path.split('/').last.capitalize
+        title = path.split('/').last
         path = path.gsub(/^#{case_dir}\//, '')
         li { a(title, :href => path) }
       end

@@ -13,7 +13,7 @@
 
 Below is an example.
 
-![OS X Snow Leopard](Macosxsnowleopard.png)
+![OS X Snow Leopard](MacOSXSnowLeopard.png)
 
 
 # Step 2: Choose your instructions
