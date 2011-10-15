@@ -14,7 +14,7 @@ class Contents < Erector::Widget
     Dir.glob("#{case_dir}/*.{#{ext}}").sort
   end
 
-  def docs ext = "mw,md"
+  def docs ext = "mw,md,checklist"
     case_files(ext).map{|file| file.split('.').first}
   end
 

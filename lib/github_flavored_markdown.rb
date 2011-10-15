@@ -24,6 +24,15 @@ module GithubFlavoredMarkdown
       "\n\n" + extractions[$1]
     end
 
+    # make bare URLs into hot links
+    text.gsub!(%r{(?<![\(:<])((https?|mailto)://\S*)}, '<\\1>')
+
+
     text
   end
+
+  def md2html(md)
+    Markdown.new(gfm(md)).to_html
+  end
+
 end

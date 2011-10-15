@@ -20,8 +20,10 @@ here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
 $:<<lib
 require "media_wiki"
+require "doc_page"
+require "checklist_page"
 require "markdown_page"
-require "contents"
+require "raw_page"
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
@@ -39,10 +41,32 @@ class InstallFest < Sinatra::Application
   end
 
   def src
-    base = "#{case_dir}/#{params[:name]}"
-    File.read("#{base}.md")
-  rescue Errno::ENOENT
-    mw2md File.read("#{base}.mw")
+    File.read(doc_path)
+  end
+
+  def ext
+    doc_path.split('.').last
+  end
+
+  def markdown_src
+    if ext == "md"
+      src
+    elsif ext == "mw"
+      mw2md src
+    else
+      raise "not a markdown file: #{doc_path}"
+    end
+  end
+
+  def doc_path
+    @doc_path ||= begin
+      base = "#{case_dir}/#{params[:name]}"
+      %w{checklist md mw}.each do |ext|
+        path = "#{base}.#{ext}"
+        return path if File.exist?(path)
+      end
+      raise Errno::ENOENT, base
+    end
   end
 
   get '/favicon.ico' do
@@ -60,7 +84,13 @@ class InstallFest < Sinatra::Application
 
   get "/:case/:name/src" do
     begin
-      "<pre>#{source}</pre>"
+
+      RawPage.new(
+      case_name: params[:case],
+      doc_title: doc_path.split('/').last,
+      doc_path: doc_path,
+      src: src
+      ).to_html
     rescue Errno::ENOENT => e
       p e
       halt 404
@@ -73,15 +103,33 @@ class InstallFest < Sinatra::Application
 
   get "/:case/:name" do
     begin
+
       doc_title = params[:name].split('_').map do |w|
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
 
-      MarkdownPage.new(
-        case_name: params[:case],
-        doc_title: doc_title,
-        markdown_src: src
-      ).to_html
+
+      case ext
+      when "mw", "md"
+
+        MarkdownPage.new(
+          case_name: params[:case],
+          doc_title: doc_title,
+          doc_path: doc_path,
+          src: markdown_src
+        ).to_html
+
+      when "checklist"
+        ChecklistPage.new(
+          case_name: params[:case],
+          doc_title: doc_title,
+          doc_path: doc_path,
+          src: src
+        ).to_html
+
+      else
+        raise "unknown file type #{doc_path}"
+      end
 
     rescue Errno::ENOENT => e
       p e

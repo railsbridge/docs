@@ -1,16 +1,16 @@
-== Install a GCC Compiler and Dev tools or the full Xcode tools suite == 
+== Install a GCC Compiler and Dev tools or the full Xcode tools suite ==
 '''Advanced user note:''' Xcode/the GCC compiler is required on Snow Leopard/Lion. On some older versions of OS X, you could get away without it when installing Rails, as long as you weren't using MacPorts. Not so on Snow Leopard and beyond, unfortunately.
 
 '''Special note for folks who upgraded to Snow Leopard:''' If you upgraded from an older version of OS X, and you have an older Xcode, '''you still need to reinstall it from your Snow Leopard DVD'''. (The SQLite gem does not compile with an older version of Xcode installed.) The steps below should work fine to upgrade it.
 
-'''Note about the GCC compiler option:''' It's smaller and faster to download and install, yet contains all the necessary tools to run the rest of the stack. 
+'''Note about the GCC compiler option:''' It's smaller and faster to download and install, yet contains all the necessary tools to run the rest of the stack.
 
 '''Steps for the GCC Compiler toolset:'''
-* Go to https://github.com/kennethreitz/osx-gcc-installer.
+* Go to https://github.com/kennethreitz/osx-gcc-installer
 * Download the pre-built binaries for your version of OS X (10.6 or 10.7).
 * Double-click the package to begin the install process.
 * Click Continue on Welcome screen.
-* Click Continue to notification that you can install XCode over these tools whenever you'd like. 
+* Click Continue to notification that you can install XCode over these tools whenever you'd like.
 * Click Continue to install these tools for all users.
 * Click Install to install in standard location.
 * Success!
@@ -29,7 +29,7 @@
 * Enter your user password in the popup to REALLY start installing. It takes a while.
 * Click "Close" button once you get "The installation was successful" on the Summary screen.
 
-== Install git == 
+== Install git ==
 
 It's an insult in British English, but git is also an awesome version control tool. Here's how you install it:
 
@@ -41,7 +41,7 @@ Double-click the .pkg file to install. Once that's done, close all your open Ter
 <pre>
     git --version
 </pre>
-It should respond with something like "git version 1.7.4.4". 
+It should respond with something like "git version 1.7.4.4".
 
 ==== Tell git who you are ====
 
@@ -63,7 +63,7 @@ IF YOU ARE RUNNING OSX 10.5 LEOPARD you will need to update your SQLite3 librari
  cd /tmp
  wget http://www.sqlite.org/sqlite-autoconf-3070600.tar.gz (*Note: if your system doesn't have the wget command, substitute with curl)
  curl -O http://www.sqlite.org/sqlite-autoconf-3070600.tar.gz
- tar zxvf sqlite-autoconf-3070600.tar.gz 
+ tar zxvf sqlite-autoconf-3070600.tar.gz
  cd sqlite-autoconf-3070600
  ./configure && make && sudo make install
  cd ..
@@ -78,7 +78,7 @@ Open up a terminal window, and cut & paste the following:
 <pre>
     bash < <(curl -k https://rvm.beginrescueend.com/install/rvm)
 </pre>
-This downloads and installs the latest version of RVM. It may take a little while. 
+This downloads and installs the latest version of RVM. It may take a little while.
 
 If you're behind a firewall, or the above command fails for some reason, try cutting & pasting this extra extra long version into your Terminal window instead. NOTE: you don't have to do both. If the shorter version completes normally, skip to "Setting up RVM."
 <pre>
@@ -129,7 +129,7 @@ gem install rails --no-rdoc --no-ri
 </pre>
 
 == Install SQLite Firefox plugin ==
-You'll need the latest version of the Firefox web browser. '''You may need to upgrade even if you already have Firefox installed.''' 
+You'll need the latest version of the Firefox web browser. '''You may need to upgrade even if you already have Firefox installed.'''
 
 ====If you already have Firefox====
 
@@ -137,7 +137,7 @@ Open it, and then go to the Firefox menu (top left of the screen). Select "About
 
 [[File:Firefox-menu.png]]
 
-You'll get a window, like the one below, that shows you what version of Firefox you have. Write down that number! 
+You'll get a window, like the one below, that shows you what version of Firefox you have. Write down that number!
 
 [[File:Firefox-version.png]]
 
@@ -167,10 +167,10 @@ We'll be using the KomodoEdit text editor during the workshop, though you are fr
 
 == Create an ssh public key ==
 You'll need one of these to create your Heroku account in the next section.
-* Open up a new Terminal window. 
+* Open up a new Terminal window.
 <pre>ssh-keygen -C "Your Actual Email" -t rsa</pre> (email should match git config setting)
 * Hit enter to accept default location for ssh key.
-* Hit enter to accept blank passphrase (if computer is shared with other people, as in a work laptop, you should create a passphrase). Hit enter again to accept blank passphrase (or enter passphrase again). 
+* Hit enter to accept blank passphrase (if computer is shared with other people, as in a work laptop, you should create a passphrase). Hit enter again to accept blank passphrase (or enter passphrase again).
 * [[Output of ssh-keygen command]]
 * Your brand-new public key is now stored at <code>~/.ssh/id_rsa.pub</code>.
 
@@ -185,18 +185,18 @@ You'll need one of these to create your Heroku account in the next section.
 * '''If you have further heroku issues, try following [http://support.heroku.com/forums/43117/entries/32505 these directions] to install (or re-install) the client.'''
 
 == Verify you can create a new Rails app ==
-Open a new Terminal and verify that you are running the right version of Rails. In Terminal: 
+Open a new Terminal and verify that you are running the right version of Rails. In Terminal:
 
 <pre>rails -v</pre>
 
-It should say <code>Rails 3.0.7</code>. 
+It should say <code>Rails 3.0.7</code>.
 
 
 * Create a folder in your User directory <code>ruby_on_rails</code>
     cd ~/
     mkdir ruby_on_rails
 * Open a new Terminal window and type the following with a return at the end of each line:
-    cd ~/ruby_on_rails 
+    cd ~/ruby_on_rails
     rails new test_app
 * The first command should produce no output. The second command's output is voluminous. :)
 * Once that's finished, type the following in the Terminal window with a return at the end of each line:
@@ -228,7 +228,7 @@ rails server</pre>
 
 == Verify git is working ==
 * Open a new Terminal window.
-* <code>cd ~/ruby_on_rails/test_app</code> 
+* <code>cd ~/ruby_on_rails/test_app</code>
 * <code>git init</code> ([[Output of "git init" command]])
 * <code>git add .</code> (Note the dot) (May get line ending warnings; safe to ignore.)
 * <code>git commit -m "initial commit"</code> ([[Output of initial check-in]])
@@ -296,7 +296,7 @@ Be sure to commit your changes and push your changes to Heroku
  cd suggestotron
  rake cucumber
 </pre>
-After running this, the last few lines of output should look something like this: 
+After running this, the last few lines of output should look something like this:
 <code>11 scenarios (5 failed, 6 skipped)
 84 steps (5 failed, 79 skipped)
 0m0.998s
