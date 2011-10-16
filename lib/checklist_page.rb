@@ -3,6 +3,12 @@ require 'doc_page'
 
 class ChecklistPage < DocPage
 
+  external :style, <<-CSS
+.step h2>span.prefix {
+  color: blue;
+}
+  CSS
+
   def initialize options
     super
     @step_stack = []
@@ -14,11 +20,13 @@ class ChecklistPage < DocPage
   end
 
   def step name = nil
-    h2 do
-      text "Step #{next_step}: "
-      text name
+    div :class => "step" do
+      h2 do
+        span "Step #{next_step}: ", :class => "prefix"
+        text name
+      end
+      yield if block_given?
     end
-    yield if block_given?
   end
 
   def option name
@@ -51,9 +59,10 @@ class ChecklistPage < DocPage
   end
 
   def verify text = nil
-    h2 "Step #{next_step}: Verify #{text}"
-    blockquote do
-      yield
+    step "Verify #{text}" do
+      blockquote do
+        yield
+      end
     end
   end
 
