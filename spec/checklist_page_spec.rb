@@ -13,12 +13,14 @@ describe ChecklistPage do
       doc_path: "/tmp/hello.step"
     )
     html_doc = Nokogiri.parse(page.to_html)
-    main_html = html_doc.css(".main").inner_html.chomp
+    main_html = html_doc.css(".main").first.serialize(:save_with => 0).chomp
     assert { main_html ==
-      "<h1 class=\"doc_title\">Hello</h1>\n" +
-      "<div class=\"doc\">" +
-        "<div class=\"step\">" +
-          "<h2>Step 1: hello</h2>" +
+      "<div class=\"main\">" +
+        "<h1 class=\"doc_title\">Hello</h1>" +
+        "<div class=\"doc\">" +
+          "<div class=\"step\">" +
+            "<h2><span class=\"prefix\">Step 1: </span>hello</h2>" +
+          "</div>" +
         "</div>" +
       "</div>"
     }

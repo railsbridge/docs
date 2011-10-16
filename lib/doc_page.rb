@@ -102,6 +102,7 @@ class DocPage < Erector::Widgets::Page
   .top a.src {
     float: right;
   }
+
   CSS
 
   def src_link
