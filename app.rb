@@ -21,7 +21,7 @@ lib = File.expand_path "#{here}/lib"
 $:<<lib
 require "media_wiki"
 require "doc_page"
-require "checklist_page"
+require "step_page"
 require "markdown_page"
 require "raw_page"
 
@@ -61,7 +61,7 @@ class InstallFest < Sinatra::Application
   def doc_path
     @doc_path ||= begin
       base = "#{case_dir}/#{params[:name]}"
-      %w{checklist md mw}.each do |ext|
+      %w{step md mw}.each do |ext|
         path = "#{base}.#{ext}"
         return path if File.exist?(path)
       end
@@ -119,8 +119,8 @@ class InstallFest < Sinatra::Application
           src: markdown_src
         ).to_html
 
-      when "checklist"
-        ChecklistPage.new(
+      when "step"
+        StepPage.new(
           case_name: params[:case],
           doc_title: doc_title,
           doc_path: doc_path,

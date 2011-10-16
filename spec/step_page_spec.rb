@@ -1,13 +1,13 @@
 here = File.expand_path File.dirname(__FILE__)
 require "#{here}/spec_helper"
 
-require "checklist_page"
+require "step_page"
 
-describe ChecklistPage do
+describe StepPage do
 
   it "renders a step file" do
     src = "step 'hello'"
-    page = ChecklistPage.new(src: src,
+    page = StepPage.new(src: src,
       case_name: "greetings",
       doc_title: "Hello",
       doc_path: "/tmp/hello.step"
@@ -19,7 +19,7 @@ describe ChecklistPage do
         "<h1 class=\"doc_title\">Hello</h1>" +
         "<div class=\"doc\">" +
           "<div class=\"step\">" +
-            "<h2><span class=\"prefix\">Step 1: </span>hello</h2>" +
+            "<h1><span class=\"prefix\">Step 1: </span>hello</h1>" +
           "</div>" +
         "</div>" +
       "</div>"
