@@ -1,0 +1,49 @@
+note "Installing Xcode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+
+choice do
+
+  option "install Xcode from a thumb drive or DVD" do
+
+    step "insert your OS X DVD or Thumb Drive"
+
+    step "Locate Xcode.mpkg" do
+      note "on the OS X DVD, it is inside the \"Optional Installs\" folder."
+    end
+
+    step 'Double-click Xcode.mkpg' do
+      note 'This will bring up a window titled *"Install Xcode."*'
+    end
+
+    step 'Click "Continue" at the Introduction screen.'
+
+    step 'Click "Continue" at the License screen.'
+
+    step 'Click "Agree" in the popup to agree to the license.'
+
+    step 'Click "Continue" at the Destination Select screen.'
+
+    step "Click \"Continue\" at the Installation Type screen." do
+     note "Don't change the checkboxes."
+   end
+
+    step 'Click "Install".' do
+      note "Enter your user password in the popup to REALLY start installing. It takes a while."
+    end
+
+    step 'Click "Close"' do
+      note 'once you get "The installation was successful" on the Summary screen.'
+    end
+
+  end
+
+  option "install Xcode from the app store" do
+    todo "more instructions"
+  end
+
+end
+
+verify "your compiler was installed" do
+  console "gcc --version"
+  result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
+end
+

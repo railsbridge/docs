@@ -1,88 +1,25 @@
-step "Install a C compiler" do
 
-  choice "between GCC and Xcode" do
+choice "between GCC and Xcode" do
 
-    option "install gcc" do
-      note "Note about the GCC compiler option: It's smaller and faster to download and install, yet contains all the necessary tools to run the rest of the stack."
+  option "install gcc" do
+    note "Note about the GCC compiler option: It's smaller and faster to download and install, yet contains all the necessary tools to run the rest of the stack."
 
-      step "Go to the osx-gcc-installer repository" do
-        note "https://github.com/kennethreitz/osx-gcc-installer"
-      end
-
-      step "Download the pre-built binaries for your version of OS X (10.6 or 10.7)."
-
-      step "Double-click the package to begin the install process."
-
-      step "Click Continue on Welcome screen."
-
-      step "Click Continue again." do
-        note "to the message that you can install XCode over these tools whenever you'd like."
-      end
-
-      step "Click Continue to install these tools for all users."
-
-      step "Click Install to install in standard location."
-
-    end
-
-    option "install xcode" do
-
-      note "You can get Xcode from a MacOS installation DVD or download it from Apple -- but at 2.5GB it's not going to be a fun download on shared WiFi. See if you can get a burned copy or one available as a shared file on your local network."
-
-      note "Installing Xcode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
-
-      choice do
-
-        option "install Xcode from a thumb drive or DVD" do
-
-          choice do
-            option "install Xcode from DVD" do
-              step "Insert your OS X DVD."
-              step "Open the \"Optional Installs\" folder."
-            end
-
-            option "install Xcode from a thumb drive" do
-              step "Insert your thumb drive."
-              step "Locate Xcode.mpkg"
-            end
-          end
-
-          step 'Double-click Xcode.mkpg.' do
-            note ' It will bring up a window titled "Install Xcode."'
-          end
-
-          step 'Click "Continue" at the Introduction screen.'
-
-          step 'Click "Continue" at the License screen.'
-
-          step 'Click "Agree" in the popup to agree to the license.'
-
-          step 'Click "Continue" at the Destination Select screen.'
-
-          step "Don't change the checkboxes. Click \"Continue\" at the Installation Type screen."
-
-          step 'Click "Install".' do
-            note "Enter your user password in the popup to REALLY start installing. It takes a while."
-          end
-
-          step 'Click "Close"' do
-            note 'once you get "The installation was successful" on the Summary screen.'
-          end
-
-        end
-
-        option "install Xcode from the app store"
-
-      end
-
-    end
+    step :install_gcc
 
   end
 
-  verify "your compiler was installed" do
-    console "gcc --version"
-    result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
-  end
+  option "install xcode" do
 
+    note "You can get Xcode from a MacOS installation DVD or download it from Apple -- but at 2.5GB it's not going to be a fun download on shared WiFi. See if you can get a burned copy or one available as a shared file on your local network."
+
+    step :install_xcode
+
+  end
 
 end
+
+verify "your compiler was installed" do
+  console "gcc --version"
+  result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
+end
+

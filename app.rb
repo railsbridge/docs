@@ -77,6 +77,10 @@ class InstallFest < Sinatra::Application
     redirect "/installfest"
   end
 
+  get "/asset/:file" do
+    send_file "#{here}/asset/#{params[:file]}"
+  end
+
   get "/:case" do
     case_name = params[:case]
     redirect "/#{case_name}/#{case_name}"

@@ -7,6 +7,19 @@ class Step < Erector::Widget
 .step h1>span.prefix {
   color: blue;
 }
+
+.step blockquote {
+  border-left: 1px dotted blue;
+  padding-left: 1.5em;
+  margin-left: .25em;
+}
+.step .todo span {
+  background-color: #f5e1f0;
+  font-style: italic;
+  padding: .25em 1em;
+}
+.step .todo:before { }
+.step .todo:after { }
   CSS
 
   def initialize options
@@ -20,18 +33,37 @@ class Step < Erector::Widget
   end
 
   def step name = nil
-    div :class => "step" do
-      h1 do
-        span "Step #{next_step}: ", :class => "prefix"
-        text name
+    if name.is_a? Symbol
+      p :class => "linked_step" do
+        text "Click here to learn how to "
+        # todo: extract StepFile with unified naming routines
+        step_title = name.to_s.split('_').map{|s| s.capitalize}.join(' ')
+        a step_title, :href => name
       end
-      yield if block_given?
+    else
+      div :class => "step" do
+        h1 do
+          span "Step #{next_step}: ", :class => "prefix"
+          text name
+        end
+        yield if block_given?
+      end
+    end
+  end
+
+  def choice name = "between..."
+    step "Choose #{name}" do
+      blockquote do
+        @step_stack.push 0
+        yield # if block_given?
+        @step_stack.pop
+      end
     end
   end
 
   def option name
-    h2 do
-      text "Option #{next_step}: "
+    h1 do
+      span "Option #{next_step}: "
       text name
     end
     if block_given?
@@ -42,16 +74,6 @@ class Step < Erector::Widget
       end
     end
 
-  end
-
-  def choice name = "between"
-    step "Choose #{name}" do
-      blockquote do
-        @step_stack.push 0
-        yield # if block_given?
-        @step_stack.pop
-      end
-    end
   end
 
   def note text
@@ -66,10 +88,20 @@ class Step < Erector::Widget
     end
   end
 
-  def console text
+  def console msg
     p do
       text "Type this on the console:"
-      pre text
+      pre msg
+    end
+  end
+
+  def todo message
+    div :class=>"todo" do
+      span do
+        text "[TODO: "
+        text message
+        text "]"
+      end
     end
   end
 

@@ -1,0 +1,32 @@
+step "Go to the osx-gcc-installer repository" do
+  note "https://github.com/kennethreitz/osx-gcc-installer"
+end
+
+step "Download the pre-built binaries" do
+  note "for your version of OS X (10.6 or 10.7)."
+  todo "find direct links to each package"
+end
+
+step "Double-click the package file" do
+  note "to begin the install process."
+end
+
+step "Click Continue on the Welcome screen."
+
+step "Click Continue again." do
+  note "to the message that you can install XCode over these tools whenever you'd like."
+end
+
+step "Click Continue again" do
+ note "to install these tools for all users."
+end
+
+step "Click Install" do
+ note "to install in standard location."
+end
+
+verify "your compiler was installed" do
+  console "gcc --version"
+  result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
+end
+

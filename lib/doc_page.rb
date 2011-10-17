@@ -29,7 +29,9 @@ class DocPage < Erector::Widgets::Page
   end
 
   external :style,  <<-CSS
+  /* todo: figure out how to load & set font later, in case we're offline
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+  */
   body {
     font-family: 'Open Sans', helvetica,arial,sans-serif;
   }
@@ -82,6 +84,7 @@ class DocPage < Erector::Widgets::Page
   .doc {
     max-width: 50em;
   }
+
   .doc pre {
     background: #f2f2f2;
     padding: .5em 1em;
@@ -94,11 +97,6 @@ class DocPage < Erector::Widgets::Page
     margin-left: -.5em;
   }
 
-  .doc blockquote {
-    border-left: 1px dotted blue;
-    padding-left: 1em;
-    margin-left: .25em;
-  }
   .top a.src {
     float: right;
   }
@@ -111,6 +109,12 @@ class DocPage < Erector::Widgets::Page
 
   def show_src?
     true
+  end
+
+  def head_content
+    super
+    script :src => "/asset/jquery-1.6.1.js"
+    script :src => "/asset/jquery-1.6.1.js"
   end
 
   def body_content
