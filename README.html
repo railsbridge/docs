@@ -1,0 +1,189 @@
+<head>
+<style>
+body {
+  font-family: georgia, arial, helvetica;
+  padding: 0 2em 2em;
+}
+p, ul, ol {
+  max-width: 40em;
+}
+h1 {
+  background-color: #f1f1fd;
+  border-bottom: 1px solid blue;
+  padding: .25em 1.5em;
+  margin: 1em -2em .25em;
+}
+</style>
+</head>
+<body>
+  <h1>Railsbridge Installfest StepList</h1>
+
+<p>Author: Alex Chaffee <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x61;&#108;&#x65;&#120;&#64;&#115;&#116;&#x69;&#x6e;&#x6b;&#121;&#46;&#x63;&#111;&#x6d;">&#x61;&#108;&#x65;&#120;&#x40;&#115;&#x74;&#x69;&#110;&#107;&#121;&#46;&#99;&#x6f;&#109;</a></p>
+
+<h1>Overview</h1>
+
+<p>This app creates <a href="http://installfest.heroku.com">http://installfest.heroku.com</a> which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.</p>
+
+<p>The site comprises files stored in a "case" directory; the one we care about now is ROOT/cases/installfest.</p>
+
+<p>These files can be in any one of three formats:</p>
+
+<ul>
+<li><code>.step</code> for StepFile</li>
+<li><code>.md</code> for Markdown</li>
+<li><code>.mw</code> for MediaWiki</li>
+</ul>
+
+
+<p>(If multiple files exist with the same base name, .step is preferred over .md, and .md over .mw.)</p>
+
+<p>Markdown is a lightweight markup language designed by John Gruber. The syntax is described at the <a href="http://google.com/search?q=markdown+syntax">Daring Fireball Markdown Page</a> plus <a href="http://github.github.com/github-flavored-markdown/">GitHub Flavored Markdown</a> extensions. (This README is written in Markdown.)</p>
+
+<p>MediaWiki is the format of pages on the Devchix Wiki. This format is not fully supported and is provided as a temporary bridge while we move materials from the Devchix Wiki into this app.</p>
+
+<p>StepFile is a new, Ruby-based DSL for describing complex, nested instructions in clear, reusable chunks.</p>
+
+<h1>StepFile Reference</h1>
+
+<p>A StepFile is a <a href="http://en.wikipedia.org/wiki/domain+specific+language">DSL</a> for describing a series of instructions, possibly nested inside other instructions. Technically speaking it is an <em>internal Ruby DSL</em> which means it parses as Ruby code. Nested blocks use Ruby's do..end structures, named options use Ruby's hash syntax, and string options may use any of Ruby's myriad string formats (double-quote, single-quote, here doc, percent-q, etc.)</p>
+
+<h2>notes</h2>
+
+<p>note: notes do not support nested blocks</p>
+
+<p><code>note "text"</code></p>
+
+<ul>
+<li>makes a paragraph of text anywhere in the document</li>
+<li>the text parameter is passed through a Markdown converter</li>
+<li>does not support nested blocks</li>
+</ul>
+
+
+<p><code>console "text"</code></p>
+
+<ul>
+<li>indicates that the student should type something on the console</li>
+<li>says "type this on the console:" and then puts the text in a <code>pre</code> block</li>
+<li>[should this be named <code>terminal</code> or <code>type</code> instead?]</li>
+</ul>
+
+
+<p><code>result "text"</code></p>
+
+<ul>
+<li>indicates that the student should see some output on the console</li>
+<li>says "expected result:" and then puts the text in a <code>pre</code> block</li>
+</ul>
+
+
+<p><code>todo "text"</code></p>
+
+<ul>
+<li>meant as a note to future list authors</li>
+<li>set aside from surrounding text (in brackets and italics)</li>
+<li>[should these be made invisible for students?]</li>
+</ul>
+
+
+<h2>steps</h2>
+
+<ul>
+<li>steps support nested content <code>do...end</code></li>
+<li>indents the nested block content</li>
+<li>inside the nested block, the step count is reset, then resumes, e.g.
+
+<ul>
+<li>Step 1</li>
+<li>Step 2</li>
+<li>Step 3
+
+<ul>
+<li>Step 1</li>
+<li>Step 2</li>
+</ul>
+</li>
+<li>Step 4</li>
+</ul>
+</li>
+</ul>
+
+
+<p><code>step "name"</code></p>
+
+<ul>
+<li>creates a new step heading</li>
+<li>maintains a count of steps at the same level</li>
+<li>prefixes name with e.g. "Step 1:"</li>
+</ul>
+
+
+<p><code>step :filename</code></p>
+
+<ul>
+<li>links to a step whose file name is <code>filename</code></li>
+<li>[should this be <code>link "name"</code>? or <code>step :file =&gt; "name"</code>?]</li>
+</ul>
+
+
+<p><code>choice do...end</code></p>
+
+<ul>
+<li>creates a step which is named "Choose between..."</li>
+<li>nested block usually contains <code>option</code> steps</li>
+</ul>
+
+
+<p><code>option "name"</code></p>
+
+<ul>
+<li>creates a step which is named "Option 1: foo" instead "Step 1: foo"</li>
+</ul>
+
+
+<p><code>option "name" do...end</code></p>
+
+<ul>
+<li>supports nested blocks, which reset the step count again</li>
+</ul>
+
+
+<p><code>verify do...end</code></p>
+
+<p><code>verify "name" do...end</code></p>
+
+<ul>
+<li>usually contains <code>console</code> and <code>result</code> notes</li>
+</ul>
+
+
+<h1>TODO</h1>
+
+<h2>step docs</h2>
+
+<ul>
+<li>big fat checkboxes</li>
+<li>checking the box should make the step go green</li>
+<li>unchecked steps should be orange</li>
+<li>maybe all unchecked but the next step should be gray</li>
+<li>JS expando-collapso doohickeys</li>
+<li>inlined steps, esp. verify, to share code without switching pages</li>
+</ul>
+
+
+<h2>links (<code>step :foo</code>)</h2>
+
+<ul>
+<li>rounded boxes with arrows</li>
+<li>side scrolling</li>
+<li>add a "back" link (or "next") to go back to the linking list</li>
+</ul>
+
+
+<h2>content</h2>
+
+<ul>
+<li>install ALL the operating systems!</li>
+</ul>
+
+

@@ -28,10 +28,9 @@ class DocPage < Erector::Widgets::Page
     "#{doc_title} - #{case_title}"
   end
 
+  # todo: figure out how to load & set font later, in case we're offline
   external :style,  <<-CSS
-  /* todo: figure out how to load & set font later, in case we're offline
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
-  */
   body {
     font-family: 'Open Sans', helvetica,arial,sans-serif;
   }
