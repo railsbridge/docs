@@ -1,10 +1,24 @@
+div do
+note <<-MARKDOWN
 There are several ways of opening a command prompt window.  You'll be using it often, so the best way is creating an shortcut icon on the Taskbar. 
 
-== Opening a command prompt ==
-=== Windows 7 ===
-* Click the Windows Icon. In the "Search programs and files" field, type: <tt>cmd <enter></tt>
-[[File:Win7_search_programs.jpg]]
+  MARKDOWN
+  end
 
-== Creating a command prompt shortcut icon on the Taskbar ==
-=== Windows 7 ===
+step "Opening a command prompt " do
+  note <<-MARKDOWN
+
+## Windows 7 
+* Click the Windows Icon. In the "Search programs and files" field, type: <tt>cmd <enter></tt>
+![Win7_search_programs.jpg](Win7_search_programs.jpg)
+
+  MARKDOWN
+  end
+
+step "Creating a command prompt shortcut icon on the Taskbar " do
+  note <<-MARKDOWN
+
+## Windows 7 
 * Click: Windows Icon, "All Programs", "Accessories". Right click on "Command Prompt", click on "Pin to Taskbar".
+  MARKDOWN
+end

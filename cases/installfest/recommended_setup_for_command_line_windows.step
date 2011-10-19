@@ -1,5 +1,14 @@
+div do
+note <<-MARKDOWN
+
 * Right-click on the menu bar and select "Properties"
+
 * Under the Options tab, check the box for "QuickEdit Mode" (this will let you visually cut and paste)
+
 * Under the Font tab, select Lucida Console from the font chooser box. This lets you view non-ascii characters.
+
 * Under the Layout tab, adjust Window Size so the window spans the screen horizontally and takes up about half the window space vertically (this may require some trial and error). Increase Screen Buffer Size Height to 1000.
+
 * Hit OK. In the dialog that comes up, select "Modify shortcut that started this window."
+  MARKDOWN
+end

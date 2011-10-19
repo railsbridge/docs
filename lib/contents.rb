@@ -15,7 +15,7 @@ class Contents < Erector::Widget
   end
 
   def docs ext = "mw,md,step"
-    case_files(ext).map{|file| file.split('.').first}
+    case_files(ext).map{|file| file.split('.').first}.uniq
   end
 
   def content

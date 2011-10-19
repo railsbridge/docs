@@ -1,32 +1,41 @@
+div do
+note <<-MARKDOWN
 OS X 10.3-10.5 (Panther, Tiger, Leopard)
 
-# Xcode tools
+  MARKDOWN
+  end
+
+step "Xcode tools " do
+  note <<-MARKDOWN
+
 These are part of OS X, but are not installed by default.
 
-[Install Xcode](install_xcode)
 
-# Git
+* Insert your OS X DVD. ([xcode](xcode))
 
-## On Leopard or Panther
+* Look for Xcode.mkpg - it may be under "Optional Installs"
 
-* Visit <http://code.google.com/p/git-osx-installer/>
-* Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac.
-* ([How to tell if you have an Intel or PPC Mac](how_to_tell_if_you_have_an_intel_or_ppc_mac))
+* Double click to run the installer. It will take a while - the Xcode tools are large.
 
-## On Tiger
+  MARKDOWN
+  end
 
-* Visit <http://metastatic.org/text/Concern/2008/03/08/git-package-1543-for-os-x/>
+step "Git " do
+  note <<-MARKDOWN
 
-# Ruby, RubyGems, and Rails
+* On Leopard or Panther: <http://code.google.com/p/git-osx-installer/> -- Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac. ([How to tell if you have an Intel or PPC Mac](how_to_tell_if_you_have_an_intel_or_ppc_mac))
 
-For Panther and Leopard, follow the directions here:
+* On Tiger: <http://metastatic.org/text/Concern/2008/03/08/git-package-1543-for-os-x/>
 
-<http://wiki.rubyonrails.org/getting-started/installation/mac>
+  MARKDOWN
+  end
 
-**EXCEPT when it says do this:*' <code>sudo gem install rails</code>, '*do this instead:** <code>sudo gem install rails --version 2.3.9 --no-rdoc --no-ri</code>
+step "Ruby, RubyGems, and Rails " do
+  note <<-MARKDOWN
+
+For Panther and Leopard, follow the directions here: [<http://wiki.rubyonrails.org/getting-started/installation/mac> Ruby, RubyGems, and Rails] **EXCEPT when it says do this:*' <code>sudo gem install rails</code>, '*do this instead:** <code>sudo gem install rails --version 2.3.9 --no-rdoc --no-ri</code>
 
 If you are having this error:
-
     ERROR:  Error installing rubygems-update: hoe requires RubyGems version >= 1.3.1
 
 Try the steps in this order:
@@ -51,7 +60,12 @@ For Tiger ONLY:
 
 * Rails: <code>sudo gem install rails --version 2.3.9 --no-rdoc --no-ri</code>
 
-# SQLite and SQLite Manager Firefox add-on
+  MARKDOWN
+  end
+
+step "SQLite and SQLite Manager Firefox add-on " do
+  note <<-MARKDOWN
+
 **SQLite**
 
 In some cases, SQLite was installed with Rails in the previous section. To check, do <code>gem list</code> in Terminal.app. If the list includes sqlite3-ruby, you're good.
@@ -83,7 +97,12 @@ Install the SQLite Manager Firefox add-on.
 
 * Once Firefox has restarted, look under the Tools menu. SQLite Manager should be one of the options.
 
-# Install KomodoEdit
+  MARKDOWN
+  end
+
+step "Install KomodoEdit " do
+  note <<-MARKDOWN
+
 We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
 
 **Installation steps:**
@@ -96,12 +115,22 @@ We'll be using the KomodoEdit text editor during the workshop, though you are fr
 
 * Unmount the installer disk image by dragging it from your desktop to the trash.
 
-# Other required libraries
+  MARKDOWN
+  end
+
+step "Other required libraries " do
+  note <<-MARKDOWN
+
 Open a Terminal window and type the following with a return at the end of each line:
     sudo gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
     sudo gem install heroku --no-rdoc --no-ri
 
-# Verify installation
+  MARKDOWN
+  end
+
+step "Verify installation " do
+  note <<-MARKDOWN
+
 Make sure you can do everything in the following sections of the [<http://wiki.devchix.com/index.php?title=Server_2003> Windows install directions] (from "Create a Test Application" onwards). Wherever it says "open git bash", substitute "open Terminal."
 
 * [Server_2003#Create_a_test_application|Create a test application](server_2003_create_a_test_application_create_a_test_application)
@@ -115,3 +144,5 @@ Make sure you can do everything in the following sections of the [<http://wiki.d
 * [Server_2003#Create a Heroku Account|Create a Heroku Account](server_2003_create_a_heroku_account_create_a_heroku_account)
 
 * [Server_2003#Deploy test_app to Heroku|Deploy test_app to Heroku](server_2003_deploy_test_app_to_heroku_deploy_test_app_to_heroku)
+  MARKDOWN
+end
