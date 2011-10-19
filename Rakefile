@@ -7,3 +7,7 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = "--color --format d --fail-fast --backtrace"
   # t.ruby_opts="-w"
 end
+
+task :run do
+  exec "rerun rackup"
+end

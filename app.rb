@@ -48,16 +48,6 @@ class InstallFest < Sinatra::Application
     doc_path.split('.').last
   end
 
-  def markdown_src
-    if ext == "md"
-      src
-    elsif ext == "mw"
-      mw2md src
-    else
-      raise "not a markdown file: #{doc_path}"
-    end
-  end
-
   def doc_path
     @doc_path ||= begin
       base = "#{case_dir}/#{params[:name]}"
@@ -112,15 +102,23 @@ class InstallFest < Sinatra::Application
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
 
-
       case ext
-      when "mw", "md"
+      when "md"
 
         MarkdownPage.new(
           case_name: params[:case],
           doc_title: doc_title,
           doc_path: doc_path,
-          src: markdown_src
+          src: src
+        ).to_html
+
+      when "mw"
+
+        MarkdownPage.new(
+          case_name: params[:case],
+          doc_title: doc_title,
+          doc_path: doc_path,
+          src: mw2md(src)
         ).to_html
 
       when "step"

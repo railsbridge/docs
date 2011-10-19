@@ -8,4 +8,5 @@ gem "rdiscount"
 group :development do
   gem "wrong"
   gem "rspec"
+  gem "rerun"
 end
