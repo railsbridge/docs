@@ -19,15 +19,14 @@ end
 here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
 $:<<lib
-require "media_wiki"
 require "doc_page"
 require "step_page"
 require "markdown_page"
+require "media_wiki_page"
 require "raw_page"
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
-  include MediaWiki
 
   def initialize
     super
@@ -114,11 +113,11 @@ class InstallFest < Sinatra::Application
 
       when "mw"
 
-        MarkdownPage.new(
+        MediaWikiPage.new(
           case_name: params[:case],
           doc_title: doc_title,
           doc_path: doc_path,
-          src: mw2md(src)
+          src: src
         ).to_html
 
       when "step"

@@ -26,6 +26,8 @@ StepFile is a new, Ruby-based DSL for describing complex, nested instructions in
 
 A StepFile is a [DSL](http://en.wikipedia.org/wiki/domain+specific+language) for describing a series of instructions, possibly nested inside other instructions. Technically speaking it is an *internal Ruby DSL* which means it parses as Ruby code. Nested blocks use Ruby's do..end structures, named options use Ruby's hash syntax, and string options may use any of Ruby's myriad string formats (double-quote, single-quote, here doc, percent-q, etc.)
 
+Here Docs are especially useful with `note`s since you can just dump in markdown between `<<-MARKDOWN` and `MARKDOWN` declarations.
+
 ## steps
 
 * steps support nested content via `do` and `end`
