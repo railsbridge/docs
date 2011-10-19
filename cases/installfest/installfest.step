@@ -65,10 +65,4 @@ If you already have accounts on Heroku or GitHub, make sure you know your userna
   MARKDOWN
 end
 
-step "Next: Choose your Operating System" do
-  note <<-MARKDOWN
-
-
-## Click here to [choose your Operating System](choose_your_operating_system)
-  MARKDOWN
-end
+next_step "choose_your_operating_system"

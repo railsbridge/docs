@@ -53,6 +53,15 @@ Here Docs are especially useful with `note`s since you can just dump in markdown
   * links to a step whose file name is `filename`
   * [should this be `link "name"`? or `step :file => "name"`?]
 
+`link "name"`
+
+  * links to a step whose file name is `filename`
+
+`next_step "name"`
+
+  * makes a new step named "Next Step:"
+  * links to a step whose file name is `filename`
+
 `choice`
 
   * creates a step which is named "Choose between..."

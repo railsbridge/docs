@@ -1,43 +1,10 @@
-div do
 note <<-MARKDOWN
 Here are a few steps to getting ready for Ruby and Rails development using OS X 10.5.  **NOTE:** These instructions need to be tested and verified.
+MARKDOWN
 
-  MARKDOWN
-  end
-
-step "Install the Xcode Tools " do
-  note <<-MARKDOWN
-
-It isn't always necessary to install Xcode, but it's best to do it anyway if you have access to the files.  You can get Xcode from a MacOS installation DVD or download it from Apple -- but at 2.5GB it's not going to be a fun download on shared WiFi.  See if you can get a burned copy or one available as a shared file on your local network.
-
-Installing Xcode is straightforward with one caveat.  When it asks you about the components to install you need to make sure "Unix Tools" is selected.  Other than that just click Continue/Ok/Yes/etc.  Or, in more detail:
-
-**Steps:**
-
-* Insert your Snow Leopard install DVD. ([xcode](xcode))
-
-* Open "Optional Installs" folder.
-
-* Double-click Xcode.mkpg. It will bring up a window titled "Install Xcode."
-
-* Click "Continue" button at the Introduction screen.
-
-* Click "Continue" button at the License screen.
-
-* Click "Agree" button in the popup to agree to the license.
-
-* Click "Continue" button at the Destination Select screen.
-
-* Don't change the checkboxes. Click "Continue" button at the Installation Type screen.
-
-* Click "Install" button to start installing.
-
-* Enter your user password in the popup to REALLY start installing. It takes a while.
-
-* Click "Close" button once you get "The installation was successful" on the Summary screen.
-
-  MARKDOWN
-  end
+step "Install Xcode " do
+  link "install_a_compiler"
+end
 
 step "Install Git, Ruby, Rails, and Gems " do
   note <<-MARKDOWN
@@ -84,7 +51,7 @@ RVM is Ruby Version Manager and is the easiest way to install and manage Ruby.  
 step "Install SQLite Firefox plugin " do
   note <<-MARKDOWN
 
-* [<http://www.mozilla.com/en-US/> Install Firefox], if you don't already have it. You may need to upgrade - SQLite Manager requires Firefox 3.5 or greater. 
+* [<http://www.mozilla.com/en-US/> Install Firefox], if you don't already have it. You may need to upgrade - SQLite Manager requires Firefox 3.5 or greater.
 
 * Install the [<https://addons.mozilla.org/en-US/firefox/addon/5817> SQLite Manager] Firefox plugin. If you have trouble installing, double-check that your Firefox version is at least 3.5.
 
@@ -121,7 +88,7 @@ step "Other required libraries " do
 step "Verify successful installation " do
   note <<-MARKDOWN
 
-In this step, we make sure the installation script actually installed everything correctly. 
+In this step, we make sure the installation script actually installed everything correctly.
 
 **Steps to verify installation:**
 
@@ -145,7 +112,7 @@ It should say:
     gem list --local
 It should say:
     *** LOCAL GEMS ***
-    
+
     actionmailer (2.3.5)
     actionpack (2.3.5)
     activerecord (2.3.5)
@@ -172,7 +139,7 @@ It should say:
     treetop (1.4.3)
     webrat (0.7.0)
 
-**Finally**, make sure you can do everything in the following sections of the [<http://wiki.devchix.com/index.php?title=Server_2003> Windows install directions] (from "Create a Test Application" onwards). Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name! 
+**Finally**, make sure you can do everything in the following sections of the [<http://wiki.devchix.com/index.php?title=Server_2003> Windows install directions] (from "Create a Test Application" onwards). Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name!
 
 * [Server_2003#Create_a_test_application|Create a test application](server_2003_create_a_test_application_create_a_test_application)
 

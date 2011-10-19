@@ -27,23 +27,28 @@ class Step < Erector::Widget
     @step_stack = []
   end
 
-  def next_step
+  def next_step_number
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
   end
 
+  def as_title name
+    name.to_s.split('_').map{|s| s.capitalize}.join(' ')
+  end
+
+  def prefix s
+    span s, :class => "prefix"
+  end
+
+  ## steps
+
   def step name = nil
-    if name.is_a? Symbol
-      p :class => "linked_step" do
-        text "Click here to learn how to "
-        # todo: extract StepFile with unified naming routines
-        step_title = name.to_s.split('_').map{|s| s.capitalize}.join(' ')
-        a step_title, :href => name
-      end
+    if name.is_a? Symbol  # todo: remove this weird symbol override?
+      link name
     else
       div :class => "step" do
         h1 do
-          span "Step #{next_step}: ", :class => "prefix"
+          prefix "Step #{next_step_number}: "
           text name
         end
         yield if block_given?
@@ -51,11 +56,28 @@ class Step < Erector::Widget
     end
   end
 
+  def link name
+    p :class => "link" do
+      text "Go on to "
+      # todo: extract StepFile with unified name/title/path routines
+      a as_title(name), :href => name
+    end
+  end
+
+  def next_step name
+    div :class => "step next" do
+      h1 do
+        prefix "Next Step:"
+      end
+      link name
+    end
+  end
+
   def choice name = "between..."
     step "Choose #{name}" do
       blockquote do
         @step_stack.push 0
-        yield # if block_given?
+        yield
         @step_stack.pop
       end
     end
@@ -63,7 +85,7 @@ class Step < Erector::Widget
 
   def option name
     h1 do
-      span "Option #{next_step}: "
+      span "Option #{next_step_number}: "
       text name
     end
     if block_given?
@@ -76,16 +98,18 @@ class Step < Erector::Widget
 
   end
 
-  def note text
-    p raw(md2html text)
-  end
-
   def verify text = nil
     step "Verify #{text}" do
       blockquote do
         yield
       end
     end
+  end
+
+  ## notes
+
+  def note text
+    p raw(md2html text)
   end
 
   def console msg
