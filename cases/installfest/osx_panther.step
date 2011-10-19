@@ -21,13 +21,19 @@ These are part of OS X, but are not installed by default.
   end
 
 step "Git " do
-  note <<-MARKDOWN
 
-* On Leopard or Panther: <http://code.google.com/p/git-osx-installer/> -- Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac. ([How to tell if you have an Intel or PPC Mac](how_to_tell_if_you_have_an_intel_or_ppc_mac))
+  option "Leopard or Panther" do
+    url "http://code.google.com/p/git-osx-installer/"
 
-* On Tiger: <http://metastatic.org/text/Concern/2008/03/08/git-package-1543-for-os-x/>
+    note %q{Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac.}
 
-  MARKDOWN
+    link "intel_or_ppc_mac"
+   end
+
+  option "Tiger" do
+    url "http://metastatic.org/text/Concern/2008/03/08/git-package-1543-for-os-x/"
+  end
+
   end
 
 step "Ruby, RubyGems, and Rails " do

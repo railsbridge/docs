@@ -35,6 +35,11 @@ step "Choose your instructions" do
 
 ## Click here if you have [Snow Leopard](osx_snow_leopard)
 
+
+---
+
+the following are experimental
+
 ## Click here if you have [Snow Leopard](osx_snow_leopard_gcc) and want to use GCC
 
 ## Click here if you have [Snow Leopard](osx_snow_leopard_homebrew) and want to use Homebrew
