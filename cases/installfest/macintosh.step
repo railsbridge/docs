@@ -1,4 +1,11 @@
-# Step 1: Learn your Mac OS X Version
+div do
+note <<-MARKDOWN
+  MARKDOWN
+end
+
+step "Learn your Mac OS X Version" do
+  note <<-MARKDOWN
+
 
 * Click on the Apple icon in the top left of your screen.
 * Select "About this Mac"
@@ -16,7 +23,12 @@ Below is an example.
 ![OS X Snow Leopard](MacOSXSnowLeopard.png)
 
 
-# Step 2: Choose your instructions
+  MARKDOWN
+end
+
+step "Choose your instructions" do
+  note <<-MARKDOWN
+
 
 ## Click here if you have [Panther, Tiger, or Leopard](osx_panther)
 
@@ -27,3 +39,5 @@ Below is an example.
 
 ## Click here if you have [Snow Leopard](osx_snow_leopard_homebrew) and want to use Homebrew
 
+  MARKDOWN
+end

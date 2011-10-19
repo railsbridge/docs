@@ -111,7 +111,7 @@ then:
   sudo gem install heroku --no-rdoc --no-ri
 
   MARKDOWN
-  end
+end
 
 step "KomodoEdit " do
   note <<-MARKDOWN
@@ -125,14 +125,16 @@ step "Create a test application " do
   note <<-MARKDOWN
 
 Using a terminal again, execute the following commands.
- cd ~/Desktop
- mkdir ruby_on_rails
- cd ruby_on_rails
- rails new test_app
- cd test_app
- rails server
+
+     cd ~/Desktop
+     mkdir ruby_on_rails
+     cd ruby_on_rails
+     rails new test_app
+     cd test_app
+     rails server
+
 In your browser, go to <http://0.0.0.0:3000/.>
 
-**Finally**, make sure you can do everything in the following sections of the [<http://www.wiki.devchix.com/index.php?title=WindowsInstaller_-_Rails_3> Windows install instructions] (everything from "Verify you can create a new Rails app" onwards).
+**Finally**, make sure you can do everything in the following sections of the [Windows install instructions](windows) (everything from "Verify you can create a new Rails app" onwards).
   MARKDOWN
 end
