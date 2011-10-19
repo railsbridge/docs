@@ -101,22 +101,8 @@ Install the SQLite Manager Firefox add-on.
   end
 
 step "Install KomodoEdit " do
-  note <<-MARKDOWN
-
-We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
-
-**Installation steps:**
-
-* Download the KomodoEdit installer (available for [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-macosx-x86.dmg> Intel] or [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-macosx-powerpc.dmg> PowerPC]). ([How_to_tell_if_you_have_an_Intel_or_PPC_Mac|Click here if you're not sure whether you have an Intel or PowerPC Mac.](how_to_tell_if_you_have_an_intel_or_ppc_mac_click_here_if_you_re_not_sure_whether_you_have_an_intel_or_powerpc_mac_))
-
-* Select "Open with DiskImageMounter" in the file save dialog. This should be the default.
-
-* It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Drag KomodoEdit into your Applications folder.
-
-* Unmount the installer disk image by dragging it from your desktop to the trash.
-
-  MARKDOWN
-  end
+  link "install_komodo_edit_for_mac"
+end
 
 step "Other required libraries " do
   note <<-MARKDOWN

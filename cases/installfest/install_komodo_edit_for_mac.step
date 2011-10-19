@@ -4,8 +4,18 @@ We'll be using the KomodoEdit text editor during the workshop, though you are fr
 
 MARKDOWN
 
-step "download" do
-  note "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg)"
+step "Download KomodoEdit" do
+
+  option "Intel Mac CPU" do
+    note "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg)"
+  end
+
+  option "PowerPC" do
+    note "Download the [KomodoEdit installer for PowerPC](http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-macosx-powerpc.dmg)."
+
+    todo "revive \"How_to_tell_if_you_have_an_Intel_or_PPC_Mac\" page"
+  end
+
 end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
