@@ -101,32 +101,22 @@ class InstallFest < Sinatra::Application
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
 
+      options = {
+          case_name: params[:case],
+          doc_title: doc_title,
+          doc_path: doc_path,
+          src: src,
+      }
+
       case ext
       when "md"
-
-        MarkdownPage.new(
-          case_name: params[:case],
-          doc_title: doc_title,
-          doc_path: doc_path,
-          src: src
-        ).to_html
+        MarkdownPage.new(options).to_html
 
       when "mw"
-
-        MediaWikiPage.new(
-          case_name: params[:case],
-          doc_title: doc_title,
-          doc_path: doc_path,
-          src: src
-        ).to_html
+        MediaWikiPage.new(options).to_html
 
       when "step"
-        StepPage.new(
-          case_name: params[:case],
-          doc_title: doc_title,
-          doc_path: doc_path,
-          src: src
-        ).to_html
+        StepPage.new(options).to_html
 
       else
         raise "unknown file type #{doc_path}"
