@@ -3,130 +3,62 @@ note <<-MARKDOWN
   MARKDOWN
   end
 
-step "Install the Xcode Tools " do
+step "install a compiler (Xcode or GCC)" do
   note <<-MARKDOWN
 
-**Advanced user note:** Xcode is required on Snow Leopard. On some older versions of OS X, you could get away without it when installing Rails, as long as you weren't using MacPorts. Not so on Snow Leopard, unfortunately.
-
-**Special note for folks who upgraded to Snow Leopard:** The SQLite gem does not compile with an older version of Xcode installed. If you upgraded your machine from an older version of OS X, and you have an older Xcode, you still need to reinstall it from your Snow Leopard DVD. The steps below should work fine to upgrade it.
-
-  **Steps:**
-
-
-* Insert your Snow Leopard install DVD. ([xcode](xcode))
-
-* Open "Optional Installs" folder.
-
-* Double-click Xcode.mkpg. It will bring up a window titled "Install Xcode."
-
-* Click "Continue" button at the Introduction screen.
-
-* Click "Continue" button at the License screen.
-
-* Click "Agree" button in the popup to agree to the license.
-
-* Click "Continue" button at the Destination Select screen.
-
-* Don't change the checkboxes. Click "Continue" button at the Installation Type screen.
-
-* Click "Install" button to start installing.
-
-* Enter your user password in the popup to REALLY start installing. It takes a while.
-
-* Click "Close" button once you get "The installation was successful" on the Summary screen.
-
+**Special note for folks who upgraded from Leopard to Snow Leopard:** The SQLite gem does not compile with an older version of Xcode installed. If you upgraded your machine from an older version of OS X, and you have an older Xcode, you still need to reinstall it from your **Snow Leopard** DVD. The steps below should work fine to upgrade it.
   MARKDOWN
-  end
 
-step "Install Git, Ruby, Rails, and Gems " do
-  note <<-MARKDOWN
+  link "install_a_compiler"
 
-* Create a folder called rubydownloads (all lower case, no punctuation or spaces) on the desktop.
+end
 
-* Download the following files, and move them all into rubydownloads.
- * [<http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz> git (version control)] [<https://github.com/git/git/tarball/v1.7.1> Alternate Download Source]
- * [ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p174.tar.gz ruby]
- * [<http://files.rubyforge.vm.bytemark.co.uk/rubygems/rubygems-1.3.5.tgz> rubygems (package management)]
+step "Install Git, Ruby, Rails, and Gems" do
 
+  link "snow_leopard_bootstrap"
 
-* Open **Terminal.app**. It's in Applications -> Utilities. Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)
+end
 
-* Inside the Terminal window, type the following, with a return at the end of each line:
-    cd ~/Desktop
-    curl -o bootstrap_snow_leopard.sh <https://raw.github.com/gist/574651/006a6b265ec153cc6ffc2e0f414f053db00e4110/bootstrap_snowleopard.sh>
+step "Install SQLite Manager" do
+  link "install_sqlite_manager"
+end
 
-If you're working with STEVEN, today, you should do this instead:  curl -o bootstrap_snow_leopard.sh <https://gist.github.com/1207820>
-    chmod u+x bootstrap_snow_leopard.sh
+step "Install KomodoEdit" do
+  link "install_komodo_edit_for_mac"
+end
 
-
-* Now you've downloaded the installation script and set appropriate permissions on it. Now you can run it! Inside the Terminal window, type the following, with a return at the end of the line:
-    ./bootstrap_snow_leopard.sh
-
-* You may need to enter your user password at some point during the installation. You'll see a prompt such as "Password:" in the Terminal window. It's safe to type your user password in there.
-
-* This will run for a while. Once you see "Done!" in the Terminal window, it's complete.
- # Note: this script installs rails 2.3.9, so afterwards run:
- sudo gem install rails --version 3.0 --no-rdoc --no-ri
-
-  MARKDOWN
-  end
-
-step "Install SQLite Firefox plugin " do
-  note <<-MARKDOWN
-
-* [<http://www.mozilla.com/en-US/> Install Firefox], if you don't already have it. You may need to upgrade - SQLite Manager requires Firefox 3.5 or greater. 
-
-* Install the [<https://addons.mozilla.org/en-US/firefox/addon/5817> SQLite Manager] Firefox plugin. If you have trouble installing, double-check that your Firefox version is at least 3.5.
-
-  MARKDOWN
-  end
-
-step "Install KomodoEdit " do
-  note <<-MARKDOWN
-
-We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
-
-**Installation steps:**
-
-* Download the [<http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg> KomodoEdit installer].
-
-* Select "Open with DiskImageMounter" in the file save dialog. This should be the default.
-
-* It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Drag KomodoEdit into your Applications folder.
-
-* Unmount the installer disk image by dragging it from your desktop to the trash.
-
-  MARKDOWN
-  end
 
 step "Verify successful installation " do
-  note <<-MARKDOWN
+  note "In this step, we make sure the installation script actually installed everything correctly."
 
-In this step, we make sure the installation script actually installed everything correctly. 
+  verify "git" do
+    console "which git"
+    result "/usr/local/bin/git"
+    console "git --version"
+    result "git version 1.7.4.4"
+  end
 
-**Steps to verify installation:**
+  verify "ruby" do
+    console "which ruby"
+    result "/usr/local/bin/ruby"
+    console "ruby -v"
+    result "ruby 1.9.2"
+  end
 
+  verify "rails" do
+    console "which rails"
+    result "/usr/local/bin/rails"
+    console "rails -v"
+    result "3.0 (or something???)"
+  end
 
-* In a Terminal window, type the following, followed by return:
-    which git
-It should say:
-    /usr/local/bin/git
+  verify "gems" do
 
-* In a Terminal window, type the following, followed by return:
-    which ruby
-It should say:
-    /usr/local/bin/ruby
+    console "gem list --local"
 
-* In a Terminal window, type the following, followed by return:
-    which rails
-It should say:
-    /usr/local/bin/rails
-
-* In a Terminal window, type the following, followed by return:
-    gem list --local
-It should say:
+    result <<-PRE
     *** LOCAL GEMS ***
-    
+
     actionmailer (2.3.9)
     actionpack (2.3.9)
     activerecord (2.3.9)
@@ -153,41 +85,33 @@ It should say:
     term-ansicolor (1.0.4)
     treetop (1.4.3) (optional)
     webrat (0.7.0)
+    PRE
+  end
+end
 
+next_step "create_a_test_application" do
 
-**Finally**, make sure you can do everything in the following sections of the [<http://wiki.devchix.com/index.php?title=Server_2003> Windows install directions] (from "Create a Test Application" onwards). Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name! 
-
-* [Server_2003#Create_a_test_application|Create a test application](server_2003_create_a_test_application_create_a_test_application)
-
-* [Server_2003#Create a model|Create a model](server_2003_create_a_model_create_a_model)
-
-* [Server_2003#Check test_app in to Local Git|Check test_app in to Local Git](server_2003_check_test_app_in_to_local_git_check_test_app_in_to_local_git)
-
-* [Server_2003#Create_an_ssh_public_key|Create an ssh public key](server_2003_create_an_ssh_public_key_create_an_ssh_public_key)
-
-* [Server_2003#Create a Heroku Account|Create a Heroku Account](server_2003_create_a_heroku_account_create_a_heroku_account)
-
-* [Server_2003#Deploy test_app to Heroku|Deploy test_app to Heroku](server_2003_deploy_test_app_to_heroku_deploy_test_app_to_heroku)
-
+  note <<-MARKDOWN
+**Finally**, make sure you can do everything in the Windows install directions. Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name!
   MARKDOWN
+end
+
+step "Congratulations!" do
+  note "You have everything you need to write a Ruby on Rails application."
+end
+
+step "Clean Up" do
+  note <<-MARKDOWN
+  You won't be using the test application in the workshop; we just created it to make sure everything was working. You should delete it now to reduce confusion during the workshop. Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
+MARKDOWN
+
+  step "Trash the test_app folder" do
+    note "Drag the test_app folder (inside ruby_on_rails) to the trash. Leave ruby_on_rails on the desktop."
   end
 
-step "Congratulations! " do
-  note <<-MARKDOWN
+  step "Destroy the heroku app" do
 
-You have everything you need to write a Ruby on Rails application.
-
-  MARKDOWN
+    note "Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App."
   end
 
-step "Cleanup " do
-  note <<-MARKDOWN
-
-You won't be using the test application in the workshop; we just created it to make sure everything was working. You should delete it now to reduce confusion during the workshop. Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
-
-
-* Drag the test_app folder (inside ruby_on_rails) to the trash. Leave ruby_on_rails on the desktop.
-
-* Delete the app from Heroku. Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App.
-  MARKDOWN
 end

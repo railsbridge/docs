@@ -48,11 +48,6 @@ Here Docs are especially useful with `note`s since you can just dump in markdown
   * maintains a count of steps at the same level
   * prefixes name with e.g. "Step 1:"
 
-`step :filename`
-
-  * links to a step whose file name is `filename`
-  * [should this be `link "name"`? or `step :file => "name"`?]
-
 `link "name"`
 
   * links to a step whose file name is `filename`
@@ -140,8 +135,10 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * JS expando-collapso doohickeys
 * inlined steps, esp. verify, to share code without switching pages
 * readme: examples
+* "result" should take a regexp; then it will have an input field where the user can paste in what they got and it'll check it... for partial version strings
+* "console" should start with a $
 
-## links (`step :foo`)
+## links
 * rounded boxes with arrows
 * side scrolling
 * add a "back" link (or "next") to go back to the linking list

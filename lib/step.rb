@@ -43,15 +43,17 @@ class Step < Erector::Widget
   ## steps
 
   def step name = nil
-    if name.is_a? Symbol  # todo: remove this weird symbol override?
-      link name
-    else
-      div :class => "step" do
-        h1 do
-          prefix "Step #{next_step_number}: "
-          text name
+    div :class => "step" do
+      h1 do
+        prefix "Step #{next_step_number}: "
+        text name
+      end
+      if block_given?
+        @step_stack.push 0
+        blockquote do
+          yield
         end
-        yield if block_given?
+        @step_stack.pop
       end
     end
   end
@@ -100,9 +102,7 @@ class Step < Erector::Widget
 
   def verify text = nil
     step "Verify #{text}" do
-      blockquote do
-        yield
-      end
+      yield
     end
   end
 

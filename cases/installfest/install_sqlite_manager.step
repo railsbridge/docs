@@ -1,0 +1,13 @@
+step "Install Firefox" do
+
+  note "[Install Firefox](http://www.mozilla.org/en-US/)"
+
+  note "Even if you already have Firefox, you may need to upgrade - SQLite Manager requires Firefox 3.5 or greater."
+end
+
+step "Install SQLite Manager" do
+
+  note "Install the [SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/5817) Firefox plugin."
+
+  note "If you have trouble installing, double-check that your Firefox version is at least 3.5."
+end
