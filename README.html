@@ -18,7 +18,7 @@ h1 {
 <body>
   <h1>Railsbridge Installfest StepList</h1>
 
-<p>Author: Alex Chaffee <a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x61;&#108;&#x65;&#120;&#64;&#115;&#116;&#x69;&#x6e;&#x6b;&#121;&#46;&#x63;&#111;&#x6d;">&#x61;&#108;&#x65;&#120;&#x40;&#115;&#x74;&#x69;&#110;&#107;&#121;&#46;&#99;&#x6f;&#109;</a></p>
+<p>Author: Alex Chaffee <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x61;&#x6c;&#101;&#120;&#64;&#115;&#x74;&#x69;&#x6e;&#107;&#x79;&#x2e;&#x63;&#111;&#109;">&#x61;&#x6c;&#x65;&#x78;&#x40;&#115;&#116;&#x69;&#x6e;&#x6b;&#121;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 
 <h1>Overview</h1>
 
@@ -47,9 +47,78 @@ h1 {
 
 <p>A StepFile is a <a href="http://en.wikipedia.org/wiki/domain+specific+language">DSL</a> for describing a series of instructions, possibly nested inside other instructions. Technically speaking it is an <em>internal Ruby DSL</em> which means it parses as Ruby code. Nested blocks use Ruby's do..end structures, named options use Ruby's hash syntax, and string options may use any of Ruby's myriad string formats (double-quote, single-quote, here doc, percent-q, etc.)</p>
 
+<h2>steps</h2>
+
+<ul>
+<li>steps support nested content via <code>do</code> and <code>end</code></li>
+<li>indents the nested block content</li>
+<li><p>inside the nested block, the step count is reset, then resumes afterwards, e.g.</p>
+
+<pre><code>  Step 1: steal underpants
+  Step 2: do the hokey pokey
+    | Step 1: put your left foot in
+    | Step 2: take your left foot out
+    | Step 3: put your left foot in again
+    | Step 4: shake it all about
+  Step 3: profit!
+</code></pre></li>
+</ul>
+
+
+<p><code>step "name"</code></p>
+
+<ul>
+<li>creates a new step heading</li>
+<li>maintains a count of steps at the same level</li>
+<li>prefixes name with e.g. "Step 1:"</li>
+</ul>
+
+
+<p><code>step :filename</code></p>
+
+<ul>
+<li>links to a step whose file name is <code>filename</code></li>
+<li>[should this be <code>link "name"</code>? or <code>step :file =&gt; "name"</code>?]</li>
+</ul>
+
+
+<p><code>choice</code></p>
+
+<ul>
+<li>creates a step which is named "Choose between..."</li>
+<li>choice doesn't make any sense without a nested block</li>
+<li>nested block usually contains <code>option</code> steps</li>
+</ul>
+
+
+<p><code>choice "name"</code></p>
+
+<ul>
+<li>same as above, but named "Choose name"</li>
+<li>if you want ellipses, add them yourself</li>
+</ul>
+
+
+<p><code>option "name"</code></p>
+
+<ul>
+<li>creates a step which is named "Option 1: foo" instead "Step 1: foo"</li>
+<li>supports nested blocks, which reset the step count again</li>
+</ul>
+
+
+<p><code>verify</code></p>
+
+<p><code>verify "name"</code></p>
+
+<ul>
+<li>usually contains <code>console</code> and <code>result</code> notes</li>
+</ul>
+
+
 <h2>notes</h2>
 
-<p>note: notes do not support nested blocks</p>
+<p>notes do not support nested blocks</p>
 
 <p><code>note "text"</code></p>
 
@@ -86,76 +155,24 @@ h1 {
 </ul>
 
 
-<h2>steps</h2>
+<h2>erector elements</h2>
 
-<ul>
-<li>steps support nested content <code>do...end</code></li>
-<li>indents the nested block content</li>
-<li>inside the nested block, the step count is reset, then resumes, e.g.
+<p>StepFile is an <a href="http://erector.rubyforge.org">Erector</a>-based DSL, so if you want to insert HTML tags or other stuff, use the appropriate Erector methods, e.g.</p>
 
-<ul>
-<li>Step 1</li>
-<li>Step 2</li>
-<li>Step 3
-
-<ul>
-<li>Step 1</li>
-<li>Step 2</li>
-</ul>
-</li>
-<li>Step 4</li>
-</ul>
-</li>
-</ul>
-
-
-<p><code>step "name"</code></p>
-
-<ul>
-<li>creates a new step heading</li>
-<li>maintains a count of steps at the same level</li>
-<li>prefixes name with e.g. "Step 1:"</li>
-</ul>
-
-
-<p><code>step :filename</code></p>
-
-<ul>
-<li>links to a step whose file name is <code>filename</code></li>
-<li>[should this be <code>link "name"</code>? or <code>step :file =&gt; "name"</code>?]</li>
-</ul>
-
-
-<p><code>choice do...end</code></p>
-
-<ul>
-<li>creates a step which is named "Choose between..."</li>
-<li>nested block usually contains <code>option</code> steps</li>
-</ul>
-
-
-<p><code>option "name"</code></p>
-
-<ul>
-<li>creates a step which is named "Option 1: foo" instead "Step 1: foo"</li>
-</ul>
-
-
-<p><code>option "name" do...end</code></p>
-
-<ul>
-<li>supports nested blocks, which reset the step count again</li>
-</ul>
-
-
-<p><code>verify do...end</code></p>
-
-<p><code>verify "name" do...end</code></p>
-
-<ul>
-<li>usually contains <code>console</code> and <code>result</code> notes</li>
-</ul>
-
+<pre><code>step "figure out your OS version" do
+  note "Mac OS has code names, including:"
+  table do
+    tr do
+     th "Leopard"
+     td "OS X 10.5"
+    end
+    tr do
+     th "Snow Leopard"
+     td "OS X 10.6"
+    end
+  end
+end
+</code></pre>
 
 <h1>TODO</h1>
 
