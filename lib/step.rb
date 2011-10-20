@@ -117,7 +117,7 @@ class Step < Erector::Widget
 
   def console msg
     p do
-      text "Type this on the console:"
+      text "Type this in the terminal:"
       pre msg
     end
   end

@@ -111,13 +111,10 @@ step "Install KomodoEdit " do
 end
 
 step "Other required libraries " do
-  note <<-MARKDOWN
-
-Open a Terminal window and type the following with a return at the end of each line:
-    sudo gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
-    sudo gem install heroku --no-rdoc --no-ri
-
-  MARKDOWN
+  console <<-BASH
+sudo gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
+sudo gem install heroku --no-rdoc --no-ri
+  BASH
   end
 
 step "Verify installation " do

@@ -22,25 +22,31 @@ Below is an example.
 
 ![OS X Snow Leopard](MacOSXSnowLeopard.png)
 
-
   MARKDOWN
 end
 
 step "Choose your instructions" do
-  note <<-MARKDOWN
 
-## Click here if you have [Panther, Tiger, or Leopard](osx_panther)
+  note "Please try the 'standard install' first. If you have problems, come back here, and choose instructions for your specific OS."
 
-## Click here if you have [Snow Leopard](osx_snow_leopard)
+  option "Standard Install" do
 
-## Click here if you have [Lion](osx_standard_install) or Snow Leopard and want to use Homebrew
+    note "Click here for Lion or Snow Leopard with Homebrew"
 
----
+    link "osx_standard_install"
+  end
 
-the following are experimental
+  option "Snow Leopard" do
+    note "If the stanard install instructions don't work, you can try these"
 
-## Click here if you have [Snow Leopard](osx_snow_leopard_gcc) and want to use GCC
+    link "osx_snow_leopard"
+   end
 
+  option "Panther, Tiger, or Leopard" do
+    link "osx_panther"
+  end
 
-  MARKDOWN
+  option "Snow Leopard (alternate)" do
+    link "osx_snow_leopard_gcc"
+  end
 end

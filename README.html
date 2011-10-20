@@ -18,7 +18,7 @@ h1 {
 <body>
   <h1>Railsbridge Installfest StepList</h1>
 
-<p>Author: Alex Chaffee <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#97;&#x6c;&#101;&#x78;&#x40;&#x73;&#x74;&#x69;&#x6e;&#107;&#x79;&#46;&#x63;&#111;&#x6d;">&#97;&#x6c;&#x65;&#120;&#64;&#115;&#116;&#x69;&#x6e;&#107;&#121;&#46;&#99;&#x6f;&#109;</a></p>
+<p>Author: Alex Chaffee <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#x61;&#x6c;&#101;&#x78;&#64;&#115;&#116;&#x69;&#x6e;&#x6b;&#121;&#46;&#99;&#x6f;&#x6d;">&#97;&#108;&#x65;&#x78;&#x40;&#x73;&#116;&#x69;&#110;&#107;&#121;&#x2e;&#99;&#111;&#x6d;</a></p>
 
 <h1>Overview</h1>
 
@@ -122,6 +122,7 @@ h1 {
 
 <ul>
 <li>usually contains <code>console</code> and <code>result</code> notes</li>
+<li>kind of like a step, but doesn't increment the number count</li>
 </ul>
 
 
@@ -141,8 +142,8 @@ h1 {
 <p><code>console "text"</code></p>
 
 <ul>
-<li>indicates that the student should type something on the console</li>
-<li>says "type this on the console:" and then puts the text in a <code>pre</code> block</li>
+<li>indicates that the student should type something in the terminal</li>
+<li>says "type this in the terminal:" and then puts the text in a <code>pre</code> block</li>
 <li>[should this be named <code>terminal</code> or <code>type</code> instead?]</li>
 </ul>
 
@@ -150,7 +151,7 @@ h1 {
 <p><code>result "text"</code></p>
 
 <ul>
-<li>indicates that the student should see some output on the console</li>
+<li>indicates that the student should see some output in the terminal</li>
 <li>says "expected result:" and then puts the text in a <code>pre</code> block</li>
 </ul>
 
@@ -195,6 +196,8 @@ end
 <li>JS expando-collapso doohickeys</li>
 <li>inlined steps, esp. verify, to share code without switching pages</li>
 <li>readme: examples</li>
+<li>"result" should take a regexp; then it will have an input field where the user can paste in what they got and it'll check it... for partial version strings</li>
+<li>"console" should start with a $</li>
 </ul>
 
 

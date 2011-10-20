@@ -14,9 +14,7 @@ step "install a compiler (Xcode or GCC)" do
 end
 
 step "Install Git, Ruby, Rails, and Gems" do
-
   link "snow_leopard_bootstrap"
-
 end
 
 step "Install SQLite Manager" do
@@ -26,7 +24,6 @@ end
 step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
-
 
 step "Verify successful installation " do
   note "In this step, we make sure the installation script actually installed everything correctly."

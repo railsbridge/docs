@@ -12,10 +12,13 @@ console "bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head 
 end
 
 step "Install Ruby 1.9.2 using RVM" do
+  console "rvm install 1.9.2"
+  
+  note "This downloads and compiles Ruby, which takes a while."
+
   console <<-BASH
-rvm install 1.9.2
 rvm use 1.9.2
-rvm --default 1.9.2"
+rvm --default 1.9.2
   BASH
   
   verify do

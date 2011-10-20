@@ -92,13 +92,13 @@ notes do not support nested blocks
 
 `console "text"`
 
-  * indicates that the student should type something on the console
-  * says "type this on the console:" and then puts the text in a `pre` block
+  * indicates that the student should type something in the terminal
+  * says "type this in the terminal:" and then puts the text in a `pre` block
   * [should this be named `terminal` or `type` instead?]
 
 `result "text"`
 
-  * indicates that the student should see some output on the console
+  * indicates that the student should see some output in the terminal
   * says "expected result:" and then puts the text in a `pre` block
 
 `todo "text"`

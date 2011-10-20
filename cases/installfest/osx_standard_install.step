@@ -23,6 +23,15 @@ step "Install Git" do
     console "git --version"
     result "git version 1.7.4.4"
   end
+  
+  note "To have colored output in Git:"
+  
+  console <<-BASH
+  git config --global color.diff auto 
+  git config --global color.status auto 
+  git config --global color.branch auto 
+  BASH
+  
 end
 
 step "Install RVM, the Ruby Version Manager " do
@@ -42,94 +51,37 @@ We'll be using the KomodoEdit text editor during the workshop, though you are fr
   link "install_komodo_edit_for_mac"
 end
 
-
 step "Other required libraries " do
-  note <<-MARKDOWN
+  console "gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat heroku"
+end
 
-* Open a Terminal window and type the following with a return at the end of each line:
-   gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat heroku --no-rdoc --no-ri
+verify "successful installation" do
 
-  MARKDOWN
-  end
+  console "which git"
+  result "/usr/local/bin/git"
 
-step "Verify successful installation " do
-  note <<-MARKDOWN
+  console "which ruby"
+  result "/usr/local/bin/ruby"
 
-In this step, we make sure the installation script actually installed everything correctly.
+  console "which rails"
+  result "/usr/local/bin/rails"
+end
 
-**Steps to verify installation:**
+step "Create a test application" do
+  step "Generate a test application"
+  step "Create a model"
+  step "'Check In' the test application"
+end
 
-
-* In a Terminal window, type the following, followed by return:
-    which git
-It should say:
-    /usr/local/bin/git
-
-* In a Terminal window, type the following, followed by return:
-    which ruby
-It should say:
-    /usr/local/bin/ruby
-
-* In a Terminal window, type the following, followed by return:
-    which rails
-It should say:
-    /usr/local/bin/rails
-
-* In a Terminal window, type the following, followed by return:
-    gem list --local
-It should say:
-    *** LOCAL GEMS ***
-
-    actionmailer (2.3.5)
-    actionpack (2.3.5)
-    activerecord (2.3.5)
-    activeresource (2.3.5)
-    activesupport (2.3.5)
-    builder (2.1.2)
-    configuration (1.1.0)
-    cucumber (0.6.2)
-    cucumber-rails (0.2.4)
-    diff-lcs (1.1.2)
-    heroku (1.8.0)
-    json (1.2.0)
-    launchy (0.3.5)
-    nokogiri (1.4.1)
-    polyglot (0.3.0)
-    rack (1.1.0)
-    rails (2.3.5)
-    rake (0.8.7)
-    rest-client (1.3.1)
-    rspec (1.3.0)
-    rspec-rails (1.3.2)
-    sqlite3-ruby (1.2.5)
-    term-ansicolor (1.0.4)
-    treetop (1.4.3)
-    webrat (0.7.0)
-
-**Finally**, make sure you can do everything in the following sections of the [<http://wiki.devchix.com/index.php?title=Server_2003> Windows install directions] (from "Create a Test Application" onwards). Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name!
-
-* [Server_2003#Create_a_test_application|Create a test application](server_2003_create_a_test_application_create_a_test_application)
-
-* [Server_2003#Create a model|Create a model](server_2003_create_a_model_create_a_model)
-
-* [Server_2003#Check test_app in to Local Git|Check test_app in to Local Git](server_2003_check_test_app_in_to_local_git_check_test_app_in_to_local_git)
-
-* [Server_2003#Create_an_ssh_public_key|Create an ssh public key](server_2003_create_an_ssh_public_key_create_an_ssh_public_key)
-
-* [Server_2003#Create a Heroku Account|Create a Heroku Account](server_2003_create_a_heroku_account_create_a_heroku_account)
-
-* [Server_2003#Deploy test_app to Heroku|Deploy test_app to Heroku](server_2003_deploy_test_app_to_heroku_deploy_test_app_to_heroku)
-
-  MARKDOWN
-  end
+step "Deploy the test application" do
+  step "Generate an ssh public key"
+  step "Create a Heroku account"
+  step "Deploy test_app to Heroku"
+end
 
 step "Congratulations! " do
-  note <<-MARKDOWN
-
-You have everything you need to write a Ruby on Rails application.
-
-  MARKDOWN
-  end
+  note "You have everything you need to write a Ruby on Rails application."
+end
 
 step "Cleanup " do
   note <<-MARKDOWN

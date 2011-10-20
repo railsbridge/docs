@@ -1,79 +1,31 @@
-div do
-note <<-MARKDOWN
-  MARKDOWN
-  end
 
-step "Install a GCC Compiler and Dev tools or the full Xcode tools suite " do
-  note <<-MARKDOWN
+step "Install a compiler" do
+  link "install_a_compiler"
+end
 
-**Advanced user note:** Xcode/the GCC compiler is required on Snow Leopard/Lion. On some older versions of OS X, you could get away without it when installing Rails, as long as you weren't using MacPorts. Not so on Snow Leopard and beyond, unfortunately.
-
-**Special note for folks who upgraded to Snow Leopard:*' If you upgraded from an older version of OS X, and you have an older Xcode, '*you still need to reinstall it from your Snow Leopard DVD**. (The SQLite gem does not compile with an older version of Xcode installed.) The steps below should work fine to upgrade it.
-
-**Note about the GCC compiler option:** It's smaller and faster to download and install, yet contains all the necessary tools to run the rest of the stack.
-
-**Steps for the GCC Compiler toolset:**
-
-* Go to <https://github.com/kennethreitz/osx-gcc-installer>
-
-* Download the pre-built binaries for your version of OS X (10.6 or 10.7).
-
-* Double-click the package to begin the install process.
-
-* Click Continue on Welcome screen.
-
-* Click Continue to notification that you can install XCode over these tools whenever you'd like.
-
-* Click Continue to install these tools for all users.
-
-* Click Install to install in standard location.
-
-* Success!
-
-
-**Steps for XCode:**
-
-* Insert your Snow Leopard install DVD. ([xcode](xcode))
-
-* Open "Optional Installs" folder.
-
-* Double-click Xcode.mkpg. It will bring up a window titled "Install Xcode."
-
-* Click "Continue" button at the Introduction screen.
-
-* Click "Continue" button at the License screen.
-
-* Click "Agree" button in the popup to agree to the license.
-
-* Click "Continue" button at the Destination Select screen.
-
-* Don't change the checkboxes. Click "Continue" button at the Installation Type screen.
-
-* Click "Install" button to start installing.
-
-* Enter your user password in the popup to REALLY start installing. It takes a while.
-
-* Click "Close" button once you get "The installation was successful" on the Summary screen.
-
-  MARKDOWN
-  end
-
-step "Install git " do
+step "Install git" do
   note <<-MARKDOWN
 
 It's an insult in British English, but git is also an awesome version control tool. Here's how you install it:
 
-Go to [<http://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount> this page on google code] and download the latest file ending in "-x86_64-leopard.dmg" (1.7.4.4 as of this writing). **If you're at a workshop and you need this file, please ask a volunteer - we have it on a thumb drive!** Once it's downloaded, double click to open. You'll see something like this:
+Go to [this page on google code](http://code.google.com/p/git-osx-installer/downloads/list?can=3&q=&sort=-uploaded&colspec=Filename+Summary+Uploaded+Size+DownloadCount) and download the latest file ending in "-x86_64-leopard.dmg" (1.7.4.4 as of this writing).
+
+**If you're at a workshop and you need this file, please ask a volunteer - we have it on a thumb drive!**
+
+Once it's downloaded, double click to open. You'll see something like this:
+
 <center>
 ![Git-screenshot.png](Git-screenshot.png)
 </center>
-Double-click the .pkg file to install. Once that's done, close all your open Terminal windows, and open a new one. Cut and paste the following into the new Terminal window:
-<pre>
-    git --version
-</pre>
-It should respond with something like "git version 1.7.4.4".
 
-### Tell git who you are 
+Double-click the .pkg file to install. Once that's done, close all your open Terminal windows, and open a new one.
+MARKDOWN
+
+  console "git --version"
+  result "git version 1.7.4.4"
+
+
+### Tell git who you are
 * Open up a new Terminal window.
 
 * <code>git config --global user.name "*Your Actual Name*"</code>
@@ -113,7 +65,7 @@ IF YOU ARE RUNNING OSX 10.5 LEOPARD you will need to update your SQLite3 librari
 step "Install and Set Up RVM (Ruby Version Manager) " do
   note <<-MARKDOWN
 
-### Installing RVM 
+### Installing RVM
 Open up a terminal window, and cut & paste the following:
 <pre>
     bash < <(curl -k <https://rvm.beginrescueend.com/install/rvm)>
@@ -125,7 +77,7 @@ If you're behind a firewall, or the above command fails for some reason, try cut
     mkdir -p ~/.rvm/src/ && cd ~/.rvm/src && rm -rf ./rvm/ && git clone --depth 1 <http://github.com/wayneeseguin/rvm.git> && cd rvm && ./install
 </pre>
 
-### Setting up RVM 
+### Setting up RVM
 Open up a terminal window (or, using an open one is fine), and cut & paste each line separately with a return at the end of each line:
 <pre>
     echo "[ -s \"$HOME/.rvm/scripts/rvm\" ](_s_home_rvm_scripts_rvm_) && . \"$HOME/.rvm/scripts/rvm\"" | cat >> ~/.bash_profile
@@ -195,10 +147,10 @@ You'll get a window, like the one below, that shows you what version of Firefox 
 Now go to [<http://www.mozilla.com/en-US/firefox/firefox.html> the Firefox homepage] and see what the current version of Firefox is. If it's the same major version (such as 3.6 - you can ignore the third part of the number) then you're good. You don't need to upgrade.
 If it's a different major version, then you need to upgrade. Download it from the Firefox homepage and double-click to install. **If you're at a workshop and you need this file, please ask a volunteer. We may have it on a thumb drive and it'll save you a bunch of download time.**
 
-### If you don't have Firefox yet 
+### If you don't have Firefox yet
 Go to [<http://www.mozilla.com/en-US/firefox/firefox.html> the Firefox homepage] and click the big download button. **If you're at a workshop, please ask a volunteer to see if we have it on a thumb drive. It'll save you a bunch of download time.** Once you have the file, double click and follow the instructions to install.
 
-### Install the SQLite Manager Firefox Plugin 
+### Install the SQLite Manager Firefox Plugin
 Open Firefox, and then go to the Tools menu and select "Add-ons." Click the "Get Add-ons" button at the top. Enter "SQLite" where it says "Search all Add-ons." The first thing that comes up should be SQLite Manager. Click "Add to Firefox" and then follow the instructions to install it.
 
 If you have trouble installing, double-check that your Firefox version is at least 3.6.
