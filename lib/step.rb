@@ -101,8 +101,11 @@ class Step < Erector::Widget
   end
 
   def verify text = nil
-    step "Verify #{text}" do
-      yield
+    div :class=> "verify" do
+      h1 "Verify #{text}"
+      blockquote do
+        yield
+      end
     end
   end
 

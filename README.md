@@ -78,6 +78,7 @@ Here Docs are especially useful with `note`s since you can just dump in markdown
 `verify "name"`
 
   * usually contains `console` and `result` notes
+  * kind of like a step, but doesn't increment the number count
 
 ## notes
 
