@@ -1,0 +1,29 @@
+
+note "Find a volunteer and have them watch the next steps."
+
+note "If this works - get a sticker from them for your computer!"
+
+console <<-BASH
+rails new suggestotron -m http://ram9.cc/863314.txt
+cd suggestotron
+rake db:migrate
+rails generate cucumber:install --rspec --capybara
+rake cucumber
+BASH
+
+note "If rake cucumber says something like \"Don't know how to build task 'cucumber'\", try doing just
+<code>
+ cucumber
+</code>
+instead of <code>rake cucumber</code>."
+
+note <<-MARKDOWN
+After running this, the last few lines of output should look something like this:
+<pre>11 scenarios (5 failed, 6 skipped)
+84 steps (5 failed, 79 skipped)
+0m0.998s
+rake aborted!
+Command failed with status (1): [bundle exec /Users/sasha/.rvm/rubies/ruby-...]
+(See full trace by running task with --trace)
+</pre>
+MARKDOWN
