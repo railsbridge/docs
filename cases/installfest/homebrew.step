@@ -1,9 +1,0 @@
-step "install Homebrew" do
-
-  console "/usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
-
-  verify do
-    console "brew -v"
-    result "0.8"
-  end
-end

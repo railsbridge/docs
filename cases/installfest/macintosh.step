@@ -29,12 +29,11 @@ end
 step "Choose your instructions" do
   note <<-MARKDOWN
 
-
 ## Click here if you have [Panther, Tiger, or Leopard](osx_panther)
-
 
 ## Click here if you have [Snow Leopard](osx_snow_leopard)
 
+## Click here if you have [Lion](osx_standard_install) or Snow Leopard and want to use Homebrew
 
 ---
 
@@ -42,7 +41,6 @@ the following are experimental
 
 ## Click here if you have [Snow Leopard](osx_snow_leopard_gcc) and want to use GCC
 
-## Click here if you have [Snow Leopard](osx_snow_leopard_homebrew) and want to use Homebrew
 
   MARKDOWN
 end
