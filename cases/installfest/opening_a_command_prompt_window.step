@@ -1,11 +1,11 @@
 div do
-note <<-MARKDOWN
-There are several ways of opening a command prompt window.  You'll be using it often, so the best way is creating an shortcut icon on the Taskbar. 
+  note <<-MARKDOWN
+There are several ways of opening a terminal window.  You'll be using it often, so the best way is creating an shortcut icon on the Taskbar. 
 
   MARKDOWN
   end
 
-step "Opening a command prompt " do
+step "Opening a terminal" do
   note <<-MARKDOWN
 
 ## Windows 7 
@@ -15,10 +15,10 @@ step "Opening a command prompt " do
   MARKDOWN
   end
 
-step "Creating a command prompt shortcut icon on the Taskbar " do
+step "Creating a terminal shortcut icon on the Taskbar " do
   note <<-MARKDOWN
 
 ## Windows 7 
-* Click: Windows Icon, "All Programs", "Accessories". Right click on "Command Prompt", click on "Pin to Taskbar".
+* Click: Windows Icon, "All Programs", "Accessories". Right click on "Terminal", click on "Pin to Taskbar".
   MARKDOWN
 end

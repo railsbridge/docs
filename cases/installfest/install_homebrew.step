@@ -1,6 +1,5 @@
 step "install Homebrew" do
 
-
   note <<-MARKDOWN
 
 * The first step is to create a directory where we'll store programs used to write and run your Ruby code.  Enter these two lines below in your Terminal.  Note that the **sudo*' instruction will ask for your password.  Also, make sure you change '''yourusername''' to your actual Mac OS user name.  If you don't know your username, enter the command '*whoami** in your terminal and it'll output your username.
@@ -8,6 +7,7 @@ step "install Homebrew" do
   sudo mkdir /usr/local
   sudo chown -R yourusername /usr/local
 
+  MARKDOWN
 
 step "run the Homebrew install script" do
 

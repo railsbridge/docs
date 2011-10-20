@@ -1,13 +1,13 @@
-There are several ways of opening a command prompt window.  You'll be using it often, so the best way is creating an shortcut icon on the Taskbar. 
+There are several ways of opening a terminal window.  You'll be using it often, so the best way is creating an shortcut icon on the Taskbar. 
 
-== Opening a command prompt ==
+== Opening a terminal ==
 === Windows 7 ===
 * Click the Windows Icon. In the "Search programs and files" field, type: <tt>cmd <enter></tt>
 [[File:Win7 search programs.jpg]]
 
-== Creating a command prompt shortcut icon on the Taskbar ==
+== Creating a terminal shortcut icon on the Taskbar ==
 === Windows 7 ===
-* Click: Windows Icon, "All Programs", "Accessories". Right click on "Command Prompt", click on "Pin to Taskbar".
+* Click: Windows Icon, "All Programs", "Accessories". Right click on "Terminal", click on "Pin to Taskbar".
 
 == Recommended setup for command-line windows ==
 

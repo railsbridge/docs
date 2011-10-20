@@ -26,20 +26,8 @@ step "Install Git" do
 end
 
 step "Install RVM, the Ruby Version Manager " do
-  note <<-MARKDOWN
-RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](http://rvm.beginrescueend.com/rvm/install/) are available here, but this should work for you:
-  MARKDOWN
-
-  console <<-TEXT
-bash <<( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
-echo 'if [ -s "$HOME/.rvm/scripts/rvm" ](_s_home_rvm_scripts_rvm_)  ; then source "$HOME/.rvm/scripts/rvm" ; fi' >> ~/.bash_profile
-source "$HOME/.rvm/scripts/rvm"
-rvm install 1.9.2
-rvm use 1.9.2
-rvm --default 1.9.2
-    TEXT
-
-  end
+  link "install_rvm"
+end
 
 step "Install SQLite Firefox plugin" do
   link "install_sqlite_manager"

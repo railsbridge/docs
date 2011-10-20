@@ -27,9 +27,9 @@ step "Install Rails" do
 
 * Rails will be installed in C:\RailsInstaller and the directory for your Rails projects will be C:\Sites
 
-* From the Windows Start menu, go to Programs, RailsInstaller, Command Prompt with Ruby and Rails
+* From the Windows Start menu, go to Programs, RailsInstaller, Terminal with Ruby and Rails
 
-* The first time you run this program, it will ask you to enter your name and email address. After doing this, test your Ruby install in the command prompt using the -v version flag
+* The first time you run this program, it will ask you to enter your name and email address. After doing this, test your Ruby install in the terminal using the -v version flag
 <pre>
 ruby -v
 </pre>
@@ -39,7 +39,7 @@ ruby 1.9.2p290 (2011-07-09) [i386-mingw32]
 </pre>
 
 
-* Test your Rails install in the command prompt using the -v version flag
+* Test your Rails install in the terminal using the -v version flag
 <pre>
 rails -v
 </pre>
@@ -51,15 +51,15 @@ Rails 3.1.0
   MARKDOWN
   end
 
-step "Open a Command Prompt " do
+step "Open a Terminal " do
   note <<-MARKDOWN
 
-* Much of  using Rails is typing commands and hitting **&lt;enter&gt;**.  Your experience using Rails on Windows greatly depends on your making friends with the command prompt window.  Normally you will work in a command prompt window and keep it open along with your browser.  
+* Much of  using Rails is typing commands and hitting **&lt;enter&gt;**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser.  
 
-* This is also called the command prompt, command window, command-line window, MS-DOS or DOS window. Follow these instructions if you need to open a normal DOS window:
-[Opening a command prompt window](opening_a_command_prompt_window)
+* This is also called the terminal, command window, command-line window, MS-DOS or DOS window. Follow these instructions if you need to open a normal DOS window:
+[Opening a terminal window](opening_a_command_prompt_window)
 
-* Rails Installer made a special DOS command prompt window for you to use when you're working on Ruby, Rails, or Git.  To open the special Rails window, choose "Programs" on the Start menu, then choose "RailsInstaller" and then "Command Prompt with Ruby and Rails".  You should do all your Rails work in this RailsInstaller DOS window.
+* Rails Installer made a special DOS terminal window for you to use when you're working on Ruby, Rails, or Git.  To open the special Rails window, choose "Programs" on the Start menu, then choose "RailsInstaller" and then "Terminal with Ruby and Rails".  You should do all your Rails work in this RailsInstaller DOS window.
 
 * Try these recommendations: 
 [Recommended setup for command-line windows](recommended_setup_for_command_line_windows)
@@ -69,9 +69,9 @@ step "Open a Command Prompt " do
 cls
 </pre>
 
-* Tip: **command history** <br/>The command prompt window stores a &quot;command history.&quot; To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it--this is handy for long commands, or fixing mistakes.
+* Tip: **command history** <br/>The terminal window stores a &quot;command history.&quot; To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it--this is handy for long commands, or fixing mistakes.
 
-* Tip: **copy and paste*' <br/>In the instructions below, where it says: &quot;In the command prompt type:&quot;, you can, much more easily, copy the command from this page, and right click in the menu bar or command prompt window, then click on &quot;Paste&quot;, then hit the '*&lt;enter&gt;** key.
+* Tip: **copy and paste*' <br/>In the instructions below, where it says: &quot;In the terminal type:&quot;, you can, much more easily, copy the command from this page, and right click in the menu bar or terminal window, then click on &quot;Paste&quot;, then hit the '*&lt;enter&gt;** key.
 
 
   MARKDOWN
@@ -80,7 +80,7 @@ cls
 step "Configure Colors " do
   note <<-MARKDOWN
 
-The Rails server logging and test results are much easier to read with colored output but the Command Prompt with Ruby and Rails defaults to white on black.  Add colors by following these steps:
+The Rails server logging and test results are much easier to read with colored output but the Terminal with Ruby and Rails defaults to white on black.  Add colors by following these steps:
 
 * In the browser, visit <http://adoxa.110mb.com/ansicon>
 
@@ -96,10 +96,10 @@ The Rails server logging and test results are much easier to read with colored o
 
 * If your OS is 64 bit, copy all the files from the subdirectory 'x64' of the downloaded files to C:\Windows\system32
 
-* When you need colors in the Command Prompt with Ruby and Rails window, type <code>ansicon</code> to set up the colors
+* When you need colors in the Terminal with Ruby and Rails window, type <code>ansicon</code> to set up the colors
 
 
-To have colored output in Git, in the command prompt type each line followed by **<enter>**:
+To have colored output in Git, in the terminal type each line followed by **<enter>**:
 <pre> 
 git config --global color.diff auto 
 git config --global color.status auto 
@@ -154,7 +154,7 @@ step "Create an ssh public key" do
 
 You'll need one of these to create your Heroku account in the next section.
 
-* open up Program Files, RailsInstaller, Command Prompt with Ruby and Rails.
+* open up Program Files, RailsInstaller, Terminal with Ruby and Rails.
 
 * Be sure to use the same e-mail address that you used when you set up Git. 
    $ ssh-keygen -C &quot;Your Actual Email&quot; -t rsa (email should match git config setting)
@@ -184,14 +184,14 @@ step "Create a Heroku Account " do
 step "Verify you can create a new Rails app" do
   note <<-MARKDOWN
 
-* Open a Command Prompt with Ruby and Rails window and type the following with a return at the end of the line:
+* Open a Terminal with Ruby and Rails window and type the following with a return at the end of the line:
     <pre>
     rails new test_app
     </pre>
 
 * The command's output is voluminous. :)
 
-* Once that's finished, type the following in the Command Prompt with Ruby and Rails window with a return at the end of each line:
+* Once that's finished, type the following in the Terminal with Ruby and Rails window with a return at the end of each line:
     <pre>
     cd test_app
     </pre>
@@ -215,7 +215,7 @@ If "rails server" starts up with no errors, you're golden! It'll look something 
 
 * In your browser, go to <http://localhost:3000> ([<http://wiki.devchix.com/images/successful-rails-install.jpg> screenshot of successful install])
 
-* Back in the Command Prompt with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
+* Back in the Terminal with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
 
   MARKDOWN
   end
@@ -223,7 +223,7 @@ If "rails server" starts up with no errors, you're golden! It'll look something 
 step "Verify your database is set up" do
   note <<-MARKDOWN
 
-* Open a Command Prompt with Ruby and Rails window.
+* Open a Terminal with Ruby and Rails window.
 <pre>
 cd test_app</pre>
 <pre>
@@ -238,7 +238,7 @@ rails server
 
 * Click *New user* to create a user to make sure we can save to the database. (The window where you ran <code>rails server</code> will display debugging information as you do so.)
 
-* In your Command Prompt with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
+* In your Terminal with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
 
 
   MARKDOWN
@@ -247,7 +247,7 @@ rails server
 step "Verify git is working" do
   note <<-MARKDOWN
 
-* Open a command Prompt with Ruby and Rails window.
+* Open a terminal with Ruby and Rails window.
 
 * Type the following commands:
 <pre>
@@ -318,7 +318,7 @@ $ git push heroku master</pre>
 
 * [Output of successful first deploy](output_of_successful_first_deploy). Be sure to find your Heroku application name in the output. ([What to do if git seems stuck](what_to_do_if_git_seems_stuck))
 
-* In the Command Prompt with Ruby and Rails window type: 
+* In the Terminal with Ruby and Rails window type: 
 <pre>heroku rake db:migrate</pre> 
 ([Output of heroku rake db:migrate](output_of_heroku_rake_db_migrate))
 
