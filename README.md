@@ -126,9 +126,8 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
     end
 
 
-# TODO
+# TODO (app)
 
-## Step HTML app
 * big fat checkboxes
 * checking the box should make the step go green
 * unchecked steps should be orange
@@ -136,13 +135,16 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * JS expando-collapso doohickeys
 * inlined steps, esp. verify, to share code without switching pages
 * readme: examples
-* "result" should take a regexp; then it will have an input field where the user can paste in what they got and it'll check it... for partial version strings
-* "console" should start with a $
-
-## links
-* rounded boxes with arrows
-* side scrolling
-* add a "back" link (or "next") to go back to the linking list
+* `result` should take a regexp; then it will have an input field where the user can paste in what they got and it'll check it... for partial version strings
+* `console` should start with a $
+  * but what about multi-line commands (with e.g. config data on line 2), or multiple commands?
+* put a [?] next to all the `terminal` boxes with a popup or link explaining what a terminal is
+* links to other docs (the `link` directive)
+  * rounded boxes with arrows
+  * add a "back" link (or "next") to go back to the linking list
+  * side scrolling effect
+* add a `tip` directive
+* add a `details` block (nested, maybe collapsed)
 
 ## content
 * install ALL the operating systems!

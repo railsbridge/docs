@@ -9,5 +9,30 @@ step "Install SQLite Manager" do
 
   note "Install the [SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/5817) Firefox plugin."
 
-  note "If you have trouble installing, double-check that your Firefox version is at least 3.5."
+  note "If you have trouble installing, follow these detailed instructions:"
+
+  note <<-MARKDOWN
+
+* If you already have Firefox installed, verify that it is **version 3.6.13** or greater. (Help -&gt; About Mozilla Firefox. The version number is right under the &quot;Firefox&quot; title.)
+
+* If you don't have Firefox installed, or it's an older version, [<http://www.mozilla.com/en-US/> install Firefox].
+
+* Once it's installed, open Firefox and go to Tools -&gt; Add-ons. At the top of the add-ons window, click &quot;Get Add-ons.&quot;
+
+* There will be search box directly underneath &quot;Get Add-ons&quot; that says &quot;Search All Add-ons.&quot; Enter &quot;SQLite&quot; (without the quotes) in the box and hit enter.
+
+* **SQLite Manager** should be the top result. Click &quot;Add to Firefox...&quot; (If SQLite Manager isn't in the results, check the spelling - SQLite only has one L. Also, check that you have at least Firefox 3.5.)
+
+* Wait for the countdown, then click &quot;Install Now.&quot;
+
+* In the Add-ons windows, click &quot;Restart Firefox.&quot;
+
+* Once Firefox restarts, the Add-ons window should say &quot;1 new add-on has been installed.&quot; 
+
+  MARKDOWN
 end
+
+verify do
+  note "Go to the Tools menu and verify that there is an option for **SQLite Manager**."
+end
+

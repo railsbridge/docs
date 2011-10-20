@@ -1,0 +1,28 @@
+note "The Rails server logging and test results are much easier to read with colored output but the Console with Ruby and Rails defaults to white on black.  Add colors by following these steps."
+
+step "Download ANSICON" do
+
+  note "In the browser, visit <http://adoxa.110mb.com/ansicon>"
+  note "Click the \"ANSICON 1.40\" link to download the file"
+  note "Double-click the file to unzip it"
+end
+
+step "Determine if you have a 32 or 64 bit Operating System" do
+ * In Windows 7 or Vista, from the Start menu, type system in the Start Search box, and then click system in the Programs list.  System Type under System will say whether it's a 32 or 64 bit Operating System
+ * In WIndows XP, right click on the "My Computer" icon, choose Properties, then General
+  * if System says Windows XP Professional x64 Edition Version <year> then yours is 64 bit
+  * if it says Windows XP Professional Version  <year> then it's 32 bit
+end
+
+option "if your OS is 32 bit" do
+ note "copy all the files from the subdirectory 'x86' of the downloaded files to C:\\Windows\\system32"
+end
+
+option "if your OS is 64 bit" do
+ note "copy all the files from the subdirectory 'x64' of the downloaded files to C:\\Windows\\system32"
+end
+ 
+step "Set up colors" do
+  note "open Console with Ruby and Rails"
+  console "ansicon"
+end

@@ -6,7 +6,6 @@ end
 step "Learn your Mac OS X Version" do
   note <<-MARKDOWN
 
-
 * Click on the Apple icon in the top left of your screen.
 * Select "About this Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
@@ -37,7 +36,7 @@ step "Choose your instructions" do
   end
 
   option "Snow Leopard" do
-    note "If the stanard install instructions don't work, you can try these"
+    note "If the standard install instructions don't work, you can try these"
 
     link "osx_snow_leopard"
    end
@@ -50,3 +49,8 @@ step "Choose your instructions" do
     link "osx_snow_leopard_gcc"
   end
 end
+
+step "Get a sticker!" do
+  link "get_a_sticker"
+end
+
