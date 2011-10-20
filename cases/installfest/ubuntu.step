@@ -27,17 +27,13 @@ step "Update rubygems (Ubuntu 8.04, 8.10 only)" do
 
   todo "These tinyurls DO NOT WORK"
 
-  note <<-MARKDOWN
+  console <<-TEXT
+wget http://tinyurl.com/qh7dev -O /tmp/rubygems1.8.deb
+wget http://tinyurl.com/qssyqv -O /tmp/rubygems.deb
+sudo dpkg -i /tmp/rubygems1.8.deb /tmp/rubygems.deb
+  TEXT
 
-Execute these three commands in a terminal.
-
-    wget http://tinyurl.com/qh7dev -O /tmp/rubygems1.8.deb
-    wget http://tinyurl.com/qssyqv -O /tmp/rubygems.deb
-    sudo dpkg -i /tmp/rubygems1.8.deb /tmp/rubygems.deb
-
-These install the rubygems packages from Ubuntu 9.04 that are required by rails.
-
-  MARKDOWN
+  note "These install the rubygems packages from Ubuntu 9.04 that are required by rails."
 end
 
 step "Rails " do
