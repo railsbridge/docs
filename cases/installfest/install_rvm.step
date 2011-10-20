@@ -2,16 +2,63 @@ note <<-MARKDOWN
 RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](http://rvm.beginrescueend.com/rvm/install/) are available here, but this should work for you:
 MARKDOWN
 
-console <<-TEXT
-bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
-echo 'if [ -s "$HOME/.rvm/scripts/rvm" ](_s_home_rvm_scripts_rvm_)  ; then source "$HOME/.rvm/scripts/rvm" ; fi' >> ~/.bash_profile
-source "$HOME/.rvm/scripts/rvm"
-rvm install 1.9.2
-rvm use 1.9.2
-rvm --default 1.9.2
-TEXT
+step "Install RVM" do
+console "bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )"
 
 verify do
   console "rvm -v"
   result "rvm 1.7.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
 end
+end
+
+step "Install Ruby 1.9.2 using RVM" do
+  console "rvm install 1.9.2
+  rvm use 1.9.2
+  rvm --default 1.9.2"
+
+  verify do
+    console "ruby -v"
+    result "1.9.2"
+  end
+end
+
+step "Configure "
+console "echo 'if [ -s "$HOME/.rvm/scripts/rvm" ](_s_home_rvm_scripts_rvm_)  ; then source "$HOME/.rvm/scripts/rvm" ; fi' >> ~/.bash_profile
+source "$HOME/.rvm/scripts/rvm"
+
+
+
+
+
+
+todo "fix the below notes"
+
+note <<-MARKDOWN
+## More RVM Notes: 
+
+edit .bashrc - put this line last in the file
+
+    [ -s "$HOME/.rvm/scripts/rvm" ](_s_home_rvm_scripts_rvm_) && . "$HOME/.rvm/scripts/rvm"
+
+or type this lines in the command line
+
+    echo '[ -s "$HOME/.rvm/scripts/rvm" ](_s_home_rvm_scripts_rvm_) && . "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
+
+
+* you can load the bash configuration file and install the ruby version 1.9.2 and set it up as default
+
+
+        source ~/.bashrc
+        rvm info
+        rvm install 1.9.2
+        rvm --default 1.9.2
+
+
+
+* also can switch between ruby installed in other ways
+
+       rvm use 1.9.2    # use rvm installed 1.9.2
+       rvm use 1.8.7    # use rvm installed 1.8.7 ruby
+       rvm use system # use default
+      
+MARKDOWN

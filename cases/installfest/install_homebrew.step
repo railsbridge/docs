@@ -2,24 +2,24 @@ step "install Homebrew" do
 
   note <<-MARKDOWN
 
-* The first step is to create a directory where we'll store programs used to write and run your Ruby code.  Enter these two lines below in your Terminal.  Note that the **sudo*' instruction will ask for your password.  Also, make sure you change '''yourusername''' to your actual Mac OS user name.  If you don't know your username, enter the command '*whoami** in your terminal and it'll output your username.
-
-  sudo mkdir /usr/local
-  sudo chown -R yourusername /usr/local
+* The first step is to create a directory where we'll store programs used to write and run your Ruby code.  Enter these two lines below in your Terminal.  Note that the **sudo** instruction will ask for your password.  Also, make sure you change '''yourusername''' to your actual Mac OS user name.  If you don't know your username, enter the command **whoami** in your terminal and it'll output your username.
 
   MARKDOWN
+  
+  console "sudo mkdir /usr/local"
+  console "sudo chown -R yourusername /usr/local"
+
+end
 
 step "run the Homebrew install script" do
 
   note <<-MARKDOWN
-We've created the directory with **mkdir*' for "Make Directory" and set the owner to you with '*chown** (or "CHange OWNer").  This is the folder where Homebrew itself will live along with any programs we install using Homebrew.  To install Homebrew in one step run this line in your Terminal:
-MARKDOWN
+We've created the `/usr/local/` directory with **mkdir** for "Make Directory" and set the owner to you with **chown** (for "CHange OWNer").  This is the folder where Homebrew itself will live along with any programs we install using Homebrew.  
+  MARKDOWN
+  
+  note "To install Homebrew in one step run this line in your Terminal:"
 
   console "/usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
-
-  note <<-MARKDOWN
-Now you should have the **brew* command available.  Try it out by just entering *brew** at your terminal and you should see the help scroll by.
-  MARKDOWN
 
   verify do
     console "brew -v"
