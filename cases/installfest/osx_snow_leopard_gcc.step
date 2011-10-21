@@ -199,23 +199,8 @@ You'll need one of these to create your Heroku account in the next section.
   end
 
 step "Create a Heroku Account " do
-  note <<-MARKDOWN
-
-* <http://heroku.com> -> Sign Up -> enter email address (use the same email as you did with git and the ssh public key).
-
-* Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save.
-
-* To Install the Heroku gem open up a new Terminal window
-<pre>rvm use 1.9.2@global</pre>
-<pre>gem install heroku --no-rdoc --no-ri</pre> ([Output of heroku gem install](output_of_heroku_gem_install))
-
-* Add SSH key to Heroku account:
-<pre>heroku keys:add</pre>
-
-* **If you have further heroku issues, try following [<http://support.heroku.com/forums/43117/entries/32505> these directions] to install (or re-install) the client.**
-
-  MARKDOWN
-  end
+  link "create_a_heroku_account"
+end
 
 step "Verify you can create a new Rails app " do
   note <<-MARKDOWN

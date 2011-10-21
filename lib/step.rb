@@ -18,8 +18,28 @@ class Step < Erector::Widget
   font-style: italic;
   padding: .25em 1em;
 }
+
 .step .todo:before { }
 .step .todo:after { }
+
+.step .important {
+  border: 1px solid red;
+  padding: .5em 1em;
+}
+
+.step .tip {
+  border: 1px solid blue;
+  padding: .5em 1em;
+  margin: 1em 0;
+}
+.step .tip span.name {
+  font-weight: bold;
+}
+.step .tip span.prefix {
+  font-weight: bold;
+  color: blue;
+}
+
   CSS
 
   def initialize options
@@ -114,9 +134,25 @@ class Step < Erector::Widget
   def note text
     p raw(md2html text)
   end
+  
+  def important text = nil
+    div :class=>"important" do
+      rawtext(md2html text) unless text.nil?
+      yield if block_given?
+    end
+  end
+
+  def tip name = nil
+    div :class=>"tip" do
+      span "Tip: ", :class => "prefix"
+      span name, :class=>"name" if name
+      yield if block_given?
+    end
+  end
+
 
   def console msg
-    p do
+    div :class => "console" do
       text "Type this in the terminal:"
       pre msg
     end

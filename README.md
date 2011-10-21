@@ -80,6 +80,12 @@ Here Docs are especially useful with `note`s since you can just dump in markdown
   * usually contains `console` and `result` notes
   * kind of like a step, but doesn't increment the number count
 
+`tip "name"`
+
+  * called out in a blue box
+  * the name is *not* markdown, but is a bold title for the tip box
+  * content should be inside a nested block
+
 ## notes
 
 notes do not support nested blocks
@@ -89,6 +95,10 @@ notes do not support nested blocks
   * makes a paragraph of text anywhere in the document
   * the text parameter is passed through a Markdown converter
   * does not support nested blocks
+  
+`important "text"`
+
+  * like a note, but called out in a red box
 
 `console "text"`
 
