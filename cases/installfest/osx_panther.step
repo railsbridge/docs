@@ -78,32 +78,10 @@ In some cases, SQLite was installed with Rails in the previous section. To check
 
 If the list does not include sqlite3-ruby, do <code>sudo gem install sqlite3-ruby</code> in Terminal app.
 
-**SQLite Manager Firefox add-on**
-
-Step 1 is [<http://www.mozilla.com/en-US/> install Firefox]. Even if it's already installed, you may need to upgrade; the add-on requires 3.5 or greater. ([How to find out which version of Firefox you have](how_to_find_out_which_version_of_firefox_you_have))
-
-Install the SQLite Manager Firefox add-on.
-
-* Open Firefox
-
-* Under the Tools menu, select Add-Ons
-
-* Click Get Add-Ons at the top of the small window that comes up
-
-* In the search box, enter "SQLite" without the quotes
-
-* The first search result should be SQLite Manager.
- * If SQLite Manager is not in the search results, you probably have a version of Firefox that is too old. [<http://www.mozilla.com/en-US/> Install a newer version of Firefox] and then try again to install the add-on.
-
-* Click the "Add to Firefox..." button.
-
-* Click "Install" in the small window that comes up
-
-* Click "Restart Firefox" in the add-ons window to complete the install. This will preserve the windows you have open, so it should bring you right back to this page.
-
-* Once Firefox has restarted, look under the Tools menu. SQLite Manager should be one of the options.
-
   MARKDOWN
+  
+  link "install_sqlite_manager"
+  
   end
 
 step "Install KomodoEdit " do
@@ -115,23 +93,19 @@ step "Other required libraries " do
 sudo gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
 sudo gem install heroku --no-rdoc --no-ri
   BASH
-  end
+end
+
+step "Create an SSH key" do
+  link "create_an_ssh_key"
+end
+
+step "Create a Heroku account" do
+  link "create_a_heroku_account"
+end
 
 step "Verify installation " do
-  note <<-MARKDOWN
-
-Make sure you can do everything in the following sections of the [<http://wiki.devchix.com/index.php?title=Server_2003> Windows install directions] (from "Create a Test Application" onwards). Wherever it says "open git bash", substitute "open Terminal."
-
-* [Server_2003#Create_a_test_application|Create a test application](server_2003_create_a_test_application_create_a_test_application)
-
-* [Server_2003#Create a model|Create a model](server_2003_create_a_model_create_a_model)
-
-* [Server_2003#Check test_app in to Local Git|Check test_app in to Local Git](server_2003_check_test_app_in_to_local_git_check_test_app_in_to_local_git)
-
-* [Server_2003#Create_an_ssh_public_key|Create an ssh public key](server_2003_create_an_ssh_public_key_create_an_ssh_public_key)
-
-* [Server_2003#Create a Heroku Account|Create a Heroku Account](server_2003_create_a_heroku_account_create_a_heroku_account)
-
-* [Server_2003#Deploy test_app to Heroku|Deploy test_app to Heroku](server_2003_deploy_test_app_to_heroku_deploy_test_app_to_heroku)
-  MARKDOWN
+ todo "create_a_test_application"
+ todo "create_a_model"
+ todo "check_test_app_in_to_local_git"
+ todo "deploy_test_app_to_heroku" 
 end

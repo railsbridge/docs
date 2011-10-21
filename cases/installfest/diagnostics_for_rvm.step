@@ -1,0 +1,15 @@
+
+
+console "which git"
+result "/usr/local/bin/git"
+
+console "which ruby"
+result "~/.rvm/rubies/ruby-1.9.2-p0/bin/ruby"
+
+console "which rails"
+result "~/.rvm/gems/ruby-1.9.2-p0@global/bin/rails"
+
+console "gem list --local"
+note "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
+
+

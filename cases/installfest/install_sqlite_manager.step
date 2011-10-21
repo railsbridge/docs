@@ -9,25 +9,35 @@ step "Install SQLite Manager" do
 
   note "Install the [SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/5817) Firefox plugin."
 
-  note "If you have trouble installing, follow these detailed instructions:"
+end
 
+step "If you have trouble installing, follow these detailed instructions:" do
+  
+  verify "Your Firefox Version" do
+    note "Open Firefox"
+    note "Select the *Help* menu"
+    note "Click *About Mozilla Firefox*"
+    note "The version number is right under the 'Firefox' title."
+    result "3.6 or higher"
+    note "If you have an old version, [upgrade firefox](http://www.mozilla.com/en-US/firefox/upgrade.html)"
+  end
+  
   note <<-MARKDOWN
 
-* If you already have Firefox installed, verify that it is **version 3.6.13** or greater. (Help -&gt; About Mozilla Firefox. The version number is right under the &quot;Firefox&quot; title.)
+* Once it's installed, open Firefox and go to Tools -> Add-ons. At the top of the add-ons window, click "Get Add-ons."
 
-* If you don't have Firefox installed, or it's an older version, [<http://www.mozilla.com/en-US/> install Firefox].
+* There will be search box directly underneath "Get Add-ons" that says "Search All Add-ons." Enter `SQLite` in the box and hit enter.
 
-* Once it's installed, open Firefox and go to Tools -&gt; Add-ons. At the top of the add-ons window, click &quot;Get Add-ons.&quot;
+* **SQLite Manager** should be the top result. Click "Add to Firefox..." 
 
-* There will be search box directly underneath &quot;Get Add-ons&quot; that says &quot;Search All Add-ons.&quot; Enter &quot;SQLite&quot; (without the quotes) in the box and hit enter.
+  * If SQLite Manager isn't in the results, check the spelling - SQLite only has one L.
 
-* **SQLite Manager** should be the top result. Click &quot;Add to Firefox...&quot; (If SQLite Manager isn't in the results, check the spelling - SQLite only has one L. Also, check that you have at least Firefox 3.5.)
+* Wait for the countdown, then click "Install Now."
 
-* Wait for the countdown, then click &quot;Install Now.&quot;
-
-* In the Add-ons windows, click &quot;Restart Firefox.&quot;
-
-* Once Firefox restarts, the Add-ons window should say &quot;1 new add-on has been installed.&quot; 
+* In the Add-ons window, click "Restart Firefox."
+  * This will preserve the windows you have open, so it should bring you right back to this page.
+  
+* Once Firefox restarts, the Add-ons window should say "1 new add-on has been installed." 
 
   MARKDOWN
 end

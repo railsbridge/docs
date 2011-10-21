@@ -4,7 +4,7 @@ Author: Alex Chaffee <mailto:alex@stinky.com>
 
 # Overview
 
-This app creates <http://installfest.heroku.com> which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.
+This is a Sinatra app, deployed at <http://installfest.heroku.com>, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.
 
 The site comprises files stored in a "case" directory; the one we care about now is ROOT/cases/installfest.
 
@@ -136,7 +136,7 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
     end
 
 
-# TODO (app)
+# TODO (features)
 
 * big fat checkboxes
 * checking the box should make the step go green
@@ -156,7 +156,15 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * add a `tip` directive
 * add a `details` block (nested, maybe collapsed)
 
-## content
+# TODO (technical)
+* upgrade to Erector 0.9
+* test all pages during "startup"
+  * growl if broken
+* 404 should show page with TOC and stuff
+* StepFile object
+* move fonts local
+
+# TODO (content)
 * install ALL the operating systems!
 
 

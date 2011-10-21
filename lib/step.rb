@@ -22,15 +22,16 @@ class Step < Erector::Widget
 .step .todo:before { }
 .step .todo:after { }
 
-.step .important {
-  border: 1px solid red;
-  padding: .5em 1em;
-}
-
-.step .tip {
-  border: 1px solid blue;
+.step .important, .step .tip {
   padding: .5em 1em;
   margin: 1em 0;
+}
+
+.step .important {
+  border: 1px solid red;
+}
+.step .tip {
+  border: 1px solid blue;
 }
 .step .tip span.name {
   font-weight: bold;
@@ -176,7 +177,9 @@ class Step < Erector::Widget
   end
 
   def content
-    eval @src, binding, @doc_path, 1
+    div :class => "step" do
+      eval @src, binding, @doc_path, 1
+    end
   end
 end
 

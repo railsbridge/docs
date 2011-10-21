@@ -74,9 +74,15 @@ step "Create a test application" do
 end
 
 step "Deploy the test application" do
-  step "Generate an ssh public key"
-  step "Create a Heroku account"
-  step "Deploy test_app to Heroku"
+  step "Generate an ssh public key" do
+    link "create_an_ssh_key"
+  end
+  step "Create a Heroku account" do
+    link "create_a_heroku_account"
+  end
+  step "Deploy test_app to Heroku" do
+    todo
+  end
 end
 
 step "Congratulations! " do

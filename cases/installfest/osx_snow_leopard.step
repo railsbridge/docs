@@ -49,49 +49,9 @@ step "Verify successful installation " do
     result "3.0 (or something???)"
   end
 
-  verify "gems" do
-
-    console "gem list --local"
-
-    result <<-PRE
-    *** LOCAL GEMS ***
-
-    actionmailer (2.3.9)
-    actionpack (2.3.9)
-    activerecord (2.3.9)
-    activeresource (2.3.9)
-    activesupport (2.3.9)
-    builder (2.1.2)
-    configuration (1.1.0)
-    cucumber (0.6.2)
-    cucumber-rails (0.2.4)
-    diff-lcs (1.1.2)
-    gherkin (1.0.30)
-    heroku (1.8.0)
-    json (1.2.0) or json_pure (1.4.3)
-    launchy (0.3.5)
-    nokogiri (1.4.1)
-    polyglot (0.3.0) (optional)
-    rack (1.1.0)
-    rails (2.3.5)
-    rake (0.8.7)
-    rest-client (1.3.1)
-    rspec (1.3.0)
-    rspec-rails (1.3.2)
-    sqlite3-ruby (1.2.5)
-    term-ansicolor (1.0.4)
-    treetop (1.4.3) (optional)
-    webrat (0.7.0)
-    PRE
-  end
 end
 
-next_step "create_a_test_application" do
-
-  note <<-MARKDOWN
-**Finally**, make sure you can do everything in the Windows install directions. Wherever it says "git bash", you can mentally substitute "Terminal" - git bash is the name for the Terminal-equivalent program on Windows. I know, strange name!
-  MARKDOWN
-end
+next_step "create_a_test_application"
 
 step "Congratulations!" do
   note "You have everything you need to write a Ruby on Rails application."
@@ -107,7 +67,6 @@ MARKDOWN
   end
 
   step "Destroy the heroku app" do
-
     note "Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App."
   end
 

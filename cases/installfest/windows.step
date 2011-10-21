@@ -50,7 +50,7 @@ step "Open a Terminal " do
 * Much of  using Rails is typing commands and hitting **&lt;enter&gt;**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser.
 
 * This is also called the terminal, command window, command-line window, MS-DOS or DOS window. Follow these instructions if you need to open a normal DOS window:
-[Opening a terminal window](opening_a_command_prompt_window)
+[Opening a terminal window](windows_terminal)
 
 * Rails Installer made a special DOS terminal window for you to use when you're working on Ruby, Rails, or Git.  To open the special Rails window, choose "Programs" on the Start menu, then choose "RailsInstaller" and then "Console with Ruby and Rails".  You should do all your Rails work in this RailsInstaller DOS window.
   MARKDOWN
@@ -114,25 +114,7 @@ Notepad is a good programming editor.
 end
 
 step "Create an ssh public key" do
-  note "You'll need one of these to create your Heroku account in the next section."
-
-  note "Be sure to use the same e-mail address that you used when you set up Git."
-  
-  note "**REPLACE** student@example.com with your **actual email address** below."
-
-  console "ssh-keygen -C student@example.com -t rsa"
-
-  choice "keyphrase" do
-    option "Hit enter to accept blank passphrase, then hit enter again"
-    option "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
-  end
-
-  todo "expected output of ssh-keygen command"
-  
-  verify do
-    note "Your brand-new public key is now stored at `HOME/.ssh/id_rsa.pub`"
-    todo "what is a home directory?"
-  end
+  link "create_an_ssh_key"  
 end
 
 step "Create a Heroku Account " do
@@ -163,10 +145,18 @@ If "rails server" starts up with no errors, you're golden! It'll look something 
 [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid=24805 port=3000
   TEXT
 
-  note <<-MARKDOWN
-* If it does, congratulations! You've successfully installed Ruby AND Rails and started your server. ([Ruby and Rails 3 Diagnostics|Here are some more diagnostics to try if it's not so smooth.](ruby_and_rails_3_diagnostics_here_are_some_more_diagnostics_to_try_if_it_s_not_so_smooth_))
+note "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
-* In your browser, go to <http://localhost:3000> ([<http://wiki.devchix.com/images/successful-rails-install.jpg> screenshot of successful install])
+tip "diagnostics" do
+  note "If it doesn't work..."
+  link "diagnostics_for_windows"
+end
+
+note <<-MARKDOWN
+
+* In your browser, go to <http://localhost:3000> 
+
+![Successful Rails Install](http://wiki.devchix.com/images/successful-rails-install.jpg) 
 
 * Back in the Console with Ruby and Rails window where you ran <code>rails server</code>, type control-c to kill(stop) the server.
 
@@ -222,11 +212,11 @@ This should generate output similar to:
   MARKDOWN
   end
 
-step "Verify Heroku is set up " do
-  note <<-MARKDOWN
+step "Deploy your app to Heroku" do
 
-* Install the heroku client:
-<pre>gem install heroku</pre>
+  link "create_a_heroku_account"
+
+  note <<-MARKDOWN
 
 
 * Create your Heroku app like this:

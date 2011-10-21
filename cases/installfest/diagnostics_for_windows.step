@@ -1,0 +1,15 @@
+
+
+console "which git"
+todo "result"
+
+console "which ruby"
+todo "result"
+
+console "which rails"
+todo "result"
+
+console "gem list --local"
+note "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
+
+

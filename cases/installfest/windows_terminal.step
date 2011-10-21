@@ -1,9 +1,7 @@
-div do
-  note <<-MARKDOWN
+note <<-MARKDOWN
 There are several ways of opening a terminal window.  You'll be using it often, so the best way is creating an shortcut icon on the Taskbar. 
 
-  MARKDOWN
-  end
+MARKDOWN
 
 step "Opening a terminal" do
   note <<-MARKDOWN

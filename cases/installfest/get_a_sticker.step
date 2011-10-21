@@ -35,3 +35,5 @@ verify "heroku deploy" do
 
 end
 
+link "diagnostics_for_windows"
+link "diagnostics_for_rvm"
