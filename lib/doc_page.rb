@@ -87,7 +87,7 @@ class DocPage < Erector::Widgets::Page
   .doc pre {
     background: #f2f2f2;
     padding: .5em 1em;
-    font-size: 14pt;
+    font-size: 13pt;
     overflow-x: auto;
   }
   .doc code {
