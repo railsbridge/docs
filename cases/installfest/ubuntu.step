@@ -39,7 +39,7 @@ end
 step "Rails " do
   note "Using a terminal again, execute the following command to install rails."
   
-  console "gem install rails --no-rdoc --no-ri"
+  console "gem install rails"
 end
 
 step "Firefox and the SQLite Firefox extension " do
@@ -59,23 +59,12 @@ step "Other required libraries " do
 sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
   BASH
 
-  option "if using RVM" do
-    console <<-BASH
+  console <<-BASH
 gem install rspec rspec-rails
 gem install gherkin cucumber cucumber-rails database_cleaner webrat
 gem install sqlite3-ruby
 gem install heroku
-    BASH
-  end
-  
-  option "otherwise" do
-    console <<-BASH
-sudo gem install rspec rspec-rails --no-rdoc --no-ri
-sudo gem install gherkin cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
-sudo gem install sqlite3-ruby --no-rdoc --no-ri
-sudo gem install heroku --no-rdoc --no-ri
-    BASH
-  end
+  BASH
 end
 
 step "KomodoEdit" do
