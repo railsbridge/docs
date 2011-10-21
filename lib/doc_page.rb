@@ -33,6 +33,8 @@ class DocPage < Erector::Widgets::Page
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
   body {
     font-family: 'Open Sans', helvetica,arial,sans-serif;
+    padding: 0;
+    margin: 0;
   }
   h1 {
     font-size: 2em;
@@ -58,7 +60,8 @@ class DocPage < Erector::Widgets::Page
 
   .bottom {
     min-height: 60px;
-
+    text-align: center;
+    border-top: 1px solid #333;
   }
 
   .toc {
@@ -137,7 +140,11 @@ class DocPage < Erector::Widgets::Page
     }
 
     div(:class=>:bottom) {
-
+      p "Railsbridge InstallFest"
+      p do
+        text "Source: "
+        url "https://github.com/railsbridge/installfest"
+      end
     }
   end
 

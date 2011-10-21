@@ -1,6 +1,7 @@
 
 step "Create a new Rails app" do
 
+  console "cd ~"
   console "rails new test_app"
 
   note "The command's output is voluminous. :-)"

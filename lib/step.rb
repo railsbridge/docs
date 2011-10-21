@@ -13,6 +13,11 @@ class Step < Erector::Widget
   padding-left: 1.5em;
   margin-left: .25em;
 }
+
+.step .todo {
+  margin: 1em;
+}
+
 .step .todo span {
   background-color: #f5e1f0;
   font-style: italic;

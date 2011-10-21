@@ -53,44 +53,39 @@ step "Firefox and the SQLite Firefox extension " do
 end
 
 step "Other required libraries " do
-  note <<-MARKDOWN
+  note "for Ubuntu 10.04 do this first"
 
-for Ubuntu 10.04 do this first:
+  console <<-BASH
+sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
+  BASH
 
-    sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
-
-then:
-
-    sudo gem install rspec rspec-rails --no-rdoc --no-ri
-    sudo gem install gherkin cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
-    sudo gem install sqlite3-ruby --no-rdoc --no-ri
-    sudo gem install heroku --no-rdoc --no-ri
+  option "if using RVM" do
+    console <<-BASH
+gem install rspec rspec-rails
+gem install gherkin cucumber cucumber-rails database_cleaner webrat
+gem install sqlite3-ruby
+gem install heroku
+    BASH
+  end
   
-  MARKDOWN
+  option "otherwise" do
+    console <<-BASH
+sudo gem install rspec rspec-rails --no-rdoc --no-ri
+sudo gem install gherkin cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
+sudo gem install sqlite3-ruby --no-rdoc --no-ri
+sudo gem install heroku --no-rdoc --no-ri
+    BASH
+  end
 end
 
 step "KomodoEdit" do
   note <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install KomodoEdit. It's available for [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86.tar.gz> 32-bit machines] and [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86_64.tar.gz> 64-bit machines]. (If you're not sure which one you have, it's 32-bit.)
+If you don't have a preferred code editor, you can install KomodoEdit. It's available for [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86.tar.gz> 32-bit machines] and [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86_64.tar.gz> 64-bit machines]. 
+
+(If you're not sure which one you have, it's probably 32-bit. Run `uname -i` and see. "x86" means 32-bit, and "x86_64" means 64-bit.)
 
   MARKDOWN
 end
 
-step "Create a test application " do
-  note <<-MARKDOWN
-
-Using a terminal again, execute the following commands.
-
-     cd ~/Desktop
-     mkdir ruby_on_rails
-     cd ruby_on_rails
-     rails new test_app
-     cd test_app
-     rails server
-
-In your browser, go to <http://0.0.0.0:3000/.>
-
-**Finally**, make sure you can do everything in the following sections of the [Windows install instructions](windows) (everything from "Verify you can create a new Rails app" onwards).
-  MARKDOWN
-end
+next_step "create_and_deploy_a_rails_app"
