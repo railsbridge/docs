@@ -159,6 +159,8 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * "result" should take "or"
 * "result" needs to distinguish between literal console output, and a description of what you will see
 * "yay" directive ("Congratulations!")
+* prerequisites
+* "sudo" directive -- for danger color and popup "what is sudo?" help
 
 # TODO (technical)
 * upgrade to Erector 0.9
@@ -170,6 +172,8 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 
 # TODO (content)
 * install ALL the operating systems!
+* troubleshooting page
+* "xcode" page -- it seems outdated. Delete it? Anything to scavenge?
 
 
 

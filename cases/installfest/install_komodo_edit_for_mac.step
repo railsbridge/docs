@@ -6,7 +6,7 @@ MARKDOWN
 
 step "Download KomodoEdit" do
 
-  link "intel_or_ppc"
+  link "intel_or_ppc_mac"
 
   option "Intel Mac CPU" do
     note "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg)"

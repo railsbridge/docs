@@ -103,9 +103,4 @@ step "Create a Heroku account" do
   link "create_a_heroku_account"
 end
 
-step "Verify installation " do
- todo "create_a_test_application"
- todo "create_a_model"
- todo "check_test_app_in_to_local_git"
- todo "deploy_test_app_to_heroku" 
-end
+next_step "create_and_deploy_a_rails_app"

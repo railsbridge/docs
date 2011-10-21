@@ -8,10 +8,12 @@ step "Download ANSICON" do
 end
 
 step "Determine if you have a 32 or 64 bit Operating System" do
+  note <<-MARKDOWN
  * In Windows 7 or Vista, from the Start menu, type system in the Start Search box, and then click system in the Programs list.  System Type under System will say whether it's a 32 or 64 bit Operating System
  * In WIndows XP, right click on the "My Computer" icon, choose Properties, then General
   * if System says Windows XP Professional x64 Edition Version <year> then yours is 64 bit
   * if it says Windows XP Professional Version  <year> then it's 32 bit
+  MARKDOWN
 end
 
 option "if your OS is 32 bit" do

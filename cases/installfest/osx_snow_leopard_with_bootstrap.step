@@ -51,8 +51,16 @@ step "Verify successful installation " do
 
 end
 
-next_step "create_a_test_application"
+step "Create an ssh public key" do
+  link "create_an_ssh_key"  
+end
+
+step "Create a Heroku Account " do
+  link "create_a_heroku_account"
+end
 
 step "Congratulations!" do
   note "You have everything you need to write a Ruby on Rails application."
 end
+
+next_step "create_and_deploy_a_rails_app"
