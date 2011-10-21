@@ -23,7 +23,7 @@ class Contents < Erector::Widget
       h1 "Contents"
       docs.each do |path|
         title = path.split('/').last.split('_').map{|s|s.capitalize}.join(' ')
-        path = path.gsub(/^#{case_dir}\//, '')
+        path = path.gsub(/^#{case_dir}\//, "/#{@case_name}/")
         li { a(title, :href => path) }
       end
 
