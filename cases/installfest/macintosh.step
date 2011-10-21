@@ -36,17 +36,14 @@ step "Choose your instructions" do
   end
 
   option "Snow Leopard" do
-    note "If the standard install instructions don't work, you can try these"
+    note "If the standard install instructions don't work, you can try these:"
 
-    link "osx_snow_leopard"
+    link "osx_snow_leopard_with_bootstrap"
+    link "osx_snow_leopard_without_homebrew"
    end
 
   option "Panther, Tiger, or Leopard" do
     link "osx_panther"
-  end
-
-  option "Snow Leopard (alternate)" do
-    link "osx_snow_leopard_gcc"
   end
 end
 

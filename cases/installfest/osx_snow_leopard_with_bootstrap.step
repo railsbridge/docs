@@ -13,7 +13,7 @@ step "install a compiler (Xcode or GCC)" do
 
 end
 
-step "Install Git, Ruby, Rails, and Gems" do
+step "Run the Bootstrap Script (to install Git, Ruby, Rails, and Gems)" do
   link "snow_leopard_bootstrap"
 end
 
