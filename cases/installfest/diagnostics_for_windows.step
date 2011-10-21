@@ -1,15 +1,32 @@
 
+verify do
+  console "which git"
+  todo "result"
 
-console "which git"
-todo "result"
+  console "which ruby"
+  todo "result"
 
-console "which ruby"
-todo "result"
+  console "which rails"
+  todo "result"
 
-console "which rails"
-todo "result"
+  console "gem list --local"
+  note "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
+end
 
-console "gem list --local"
-note "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
+link "what_to_do_if_git_seems_stuck"
 
+tip "if you have cucumber errors on windows " do
+  note <<-MARKDOWN
+
+to fix this error:
+
+    uninitialized constant Cucumber::CODEPAGE (NameError)
+
+add this to your ~/.bashrc
+
+    export CUCUMBER_OUTPUT_ENCODING='cp1252'
+  MARKDOWN
+  
+  todo "troubleshooting page"
+end
 

@@ -19,6 +19,11 @@ end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
   note "This should be the default."
+
+  note "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:"
+  
+  note "![Komodo-Edit-5.png](Komodo-Edit-5.png)"
+
 end
 
 step "Drag KomodoEdit into your Applications folder." do

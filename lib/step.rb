@@ -33,6 +33,9 @@ class Step < Erector::Widget
 .step .tip {
   border: 1px solid blue;
 }
+.step .tip > span {
+  font-size: 14pt;
+}
 .step .tip span.name {
   font-weight: bold;
 }

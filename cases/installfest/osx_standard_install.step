@@ -9,9 +9,7 @@ step "open Terminal" do
 end
 
 step "Install Homebrew" do
-
   link "install_homebrew"
-
 end
 
 step "Install Git" do
@@ -23,15 +21,8 @@ step "Install Git" do
     console "git --version"
     result "git version 1.7.4.4"
   end
-  
-  note "To have colored output in Git:"
-  
-  console <<-BASH
-  git config --global color.diff auto 
-  git config --global color.status auto 
-  git config --global color.branch auto 
-  BASH
-  
+ 
+  link "configure_git"
 end
 
 step "Install RVM, the Ruby Version Manager " do
@@ -43,15 +34,14 @@ step "Install SQLite Firefox plugin" do
 end
 
 step "Install KomodoEdit " do
-  note <<-MARKDOWN
-
-We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
-  MARKDOWN
-
+  note "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work."
+  
+  important "When in doubt, use KomodoEdit."
+  
   link "install_komodo_edit_for_mac"
 end
 
-step "Other required libraries " do
+step "Install more gems" do
   console "gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat heroku"
 end
 
@@ -67,36 +57,16 @@ verify "successful installation" do
   result "/usr/local/bin/rails"
 end
 
-step "Create a test application" do
-  step "Generate a test application"
-  step "Create a model"
-  step "'Check In' the test application"
+step "Generate an ssh public key" do
+  link "create_an_ssh_key"
 end
 
-step "Deploy the test application" do
-  step "Generate an ssh public key" do
-    link "create_an_ssh_key"
-  end
-  step "Create a Heroku account" do
-    link "create_a_heroku_account"
-  end
-  step "Deploy test_app to Heroku" do
-    todo
-  end
+step "Create a Heroku account" do
+  link "create_a_heroku_account"
 end
 
-step "Congratulations! " do
+step "Congratulations!" do
   note "You have everything you need to write a Ruby on Rails application."
 end
 
-step "Cleanup " do
-  note <<-MARKDOWN
-
-You won't be using the test application in the workshop; we just created it to make sure everything was working. You should delete it now to reduce confusion during the workshop. Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
-
-
-* Drag the test_app folder (inside ruby_on_rails) to the trash. Leave ruby_on_rails on the desktop.
-
-* Delete the app from Heroku. Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App.
-  MARKDOWN
-end
+next_step "create_and_deploy_a_rails_app"

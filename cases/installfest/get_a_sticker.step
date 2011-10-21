@@ -35,5 +35,9 @@ verify "heroku deploy" do
 
 end
 
-link "diagnostics_for_windows"
-link "diagnostics_for_rvm"
+step "Congratulations!" do
+  note "You got a sticker!"
+end
+
+next_step "clean_up"
+

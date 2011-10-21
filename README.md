@@ -155,6 +155,10 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
   * side scrolling effect
 * add a `tip` directive
 * add a `details` block (nested, maybe collapsed)
+* each page/step could say which OS it's for, either for information, or to actively hide other OS step
+* "result" should take "or"
+* "result" needs to distinguish between literal console output, and a description of what you will see
+* "yay" directive ("Congratulations!")
 
 # TODO (technical)
 * upgrade to Erector 0.9

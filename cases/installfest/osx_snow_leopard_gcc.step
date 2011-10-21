@@ -1,4 +1,3 @@
-
 step "Install a compiler" do
   link "install_a_compiler"
 end
@@ -12,34 +11,17 @@ Go to [this page on google code](http://code.google.com/p/git-osx-installer/down
 
 **If you're at a workshop and you need this file, please ask a volunteer - we have it on a thumb drive!**
 
-Once it's downloaded, double click to open. You'll see something like this:
-
-<center>
-![Git-screenshot.png](Git-screenshot.png)
-</center>
+Once it's downloaded, double click to open.
 
 Double-click the .pkg file to install. Once that's done, close all your open Terminal windows, and open a new one.
-MARKDOWN
+  MARKDOWN
 
   console "git --version"
   result "git version 1.7.4.4"
 
+  link "configure_git"
 
-### Tell git who you are
-* Open up a new Terminal window.
-
-* <code>git config --global user.name "*Your Actual Name*"</code>
-
-* <code>git config --global user.email "*Your Actual Email*"</code> (Must be same email you use to sign up for Heroku [see below]. Also must be accessible from the workshop.)
-
-If this doesn't produce an error, congratulations! You have a successful install of git and you can move on to the next section.
-
-You can confirm your git user settings by running the following command:
-
-* <code>echo "Git user: `git config --get user.name` (`git config --get user.email`)"</code>
-
-  MARKDOWN
-  end
+end
 
 step "Update SQLite3 " do
   note <<-MARKDOWN
@@ -48,50 +30,24 @@ IF YOU ARE RUNNING OSX 10.5 LEOPARD you will need to update your SQLite3 librari
 
 
 * Open up a new Terminal window.
-<pre>
- cd /tmp
- wget <http://www.sqlite.org/sqlite-autoconf-3070600.tar.gz> (*Note: if your system doesn't have the wget command, substitute with curl)
- curl -O <http://www.sqlite.org/sqlite-autoconf-3070600.tar.gz>
- tar zxvf sqlite-autoconf-3070600.tar.gz
- cd sqlite-autoconf-3070600
- ./configure && make && sudo make install
- cd ..
- rm -rf sqlite-autoconf-3070600*
-</pre>
+
+    cd /tmp
+    wget http://www.sqlite.org/sqlite-autoconf-3070600.tar.gz
+    curl -O http://www.sqlite.org/sqlite-autoconf-3070600.tar.gz
+    tar zxvf sqlite-autoconf-3070600.tar.gz
+    cd sqlite-autoconf-3070600
+    ./configure && make && sudo make install
+    cd ..
+    rm -rf sqlite-autoconf-3070600*
+
+ (*Note: if your system doesn't have the wget command, substitute with curl)
 
   MARKDOWN
-  end
+end
 
 step "Install and Set Up RVM (Ruby Version Manager) " do
-  note <<-MARKDOWN
-
-### Installing RVM
-Open up a terminal window, and cut & paste the following:
-<pre>
-    bash < <(curl -k <https://rvm.beginrescueend.com/install/rvm)>
-</pre>
-This downloads and installs the latest version of RVM. It may take a little while.
-
-If you're behind a firewall, or the above command fails for some reason, try cutting & pasting this extra extra long version into your Terminal window instead. NOTE: you don't have to do both. If the shorter version completes normally, skip to "Setting up RVM."
-<pre>
-    mkdir -p ~/.rvm/src/ && cd ~/.rvm/src && rm -rf ./rvm/ && git clone --depth 1 <http://github.com/wayneeseguin/rvm.git> && cd rvm && ./install
-</pre>
-
-### Setting up RVM
-Open up a terminal window (or, using an open one is fine), and cut & paste each line separately with a return at the end of each line:
-<pre>
-    echo "[ -s \"$HOME/.rvm/scripts/rvm\" ](_s_home_rvm_scripts_rvm_) && . \"$HOME/.rvm/scripts/rvm\"" | cat >> ~/.bash_profile
-    echo 'rvm_project_rvmrc_default=1' | cat >>  ~/.rvmrc
-</pre>
-
-Now close all your open Terminal windows, and then open a new one. Cut and paste the following into the new Terminal window:
-<pre>
-    type rvm | head -n1
-</pre>
-It should say "rvm is a function". If it does, congratulations! You have RVM installed and can move on to the next section.
-
-  MARKDOWN
-  end
+  link "install_rvm"
+end
 
 step "Install Ruby " do
   note <<-MARKDOWN
@@ -101,83 +57,36 @@ Open up a new Terminal window, and cut & paste the following, with a return afte
 <pre>
 rvm install 1.9.2 -C --with-readline-dir=/usr/local,--build=x86_64-apple-darwin10
 rvm --create 1.9.2@global
-rvm --default 1.9.2@global
+rvm --default 1.9.2
 </pre>
 
 *If you're having trouble with a "Error running 'make '" on Snow Leopard message try this work around: [<http://bparanj.blogspot.com/2010/07/installing-ruby-192-using-rvm-on-snow.html]>
 
   MARKDOWN
-  end
+end
 
 step "Install global gems " do
   note <<-MARKDOWN
 
 Open up a new Terminal window, and cut & paste the following, with a return after each line:
-
-<pre>
-rvm use @global
-</pre>
 (if this doesn't work, use the following, substituting your version of ruby with 1.9.2)
 <pre>
-rvm use 1.9.2@global
-rvm install ruby-1.9.2-p290
+rvm use 1.9.2
 </pre>
 <pre>
-gem install bundler --no-rdoc --no-ri
-gem install rails --no-rdoc --no-ri
+rvm @global gem install bundler rails
 </pre>
 
   MARKDOWN
   end
 
 step "Install SQLite Firefox plugin " do
-  note <<-MARKDOWN
-
-You'll need the latest version of the Firefox web browser. **You may need to upgrade even if you already have Firefox installed.**
-
-### If you already have Firefox
-Open it, and then go to the Firefox menu (top left of the screen). Select "About Mozilla Firefox."
-
-![Firefox-menu.png](Firefox-menu.png)
-
-You'll get a window, like the one below, that shows you what version of Firefox you have. Write down that number!
-
-![Firefox-version.png](Firefox-version.png)
-
-Now go to [<http://www.mozilla.com/en-US/firefox/firefox.html> the Firefox homepage] and see what the current version of Firefox is. If it's the same major version (such as 3.6 - you can ignore the third part of the number) then you're good. You don't need to upgrade.
-If it's a different major version, then you need to upgrade. Download it from the Firefox homepage and double-click to install. **If you're at a workshop and you need this file, please ask a volunteer. We may have it on a thumb drive and it'll save you a bunch of download time.**
-
-### If you don't have Firefox yet
-Go to [<http://www.mozilla.com/en-US/firefox/firefox.html> the Firefox homepage] and click the big download button. **If you're at a workshop, please ask a volunteer to see if we have it on a thumb drive. It'll save you a bunch of download time.** Once you have the file, double click and follow the instructions to install.
-
-### Install the SQLite Manager Firefox Plugin
-Open Firefox, and then go to the Tools menu and select "Add-ons." Click the "Get Add-ons" button at the top. Enter "SQLite" where it says "Search all Add-ons." The first thing that comes up should be SQLite Manager. Click "Add to Firefox" and then follow the instructions to install it.
-
-If you have trouble installing, double-check that your Firefox version is at least 3.6.
-
-  MARKDOWN
-  end
+  link "install_sqlite_manager"
+end
 
 step "Install KomodoEdit " do
-  note <<-MARKDOWN
-
-We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
-
-**Installation steps:**
-
-* Download the [<http://downloads.activestate.com/Komodo/releases/6.1.1/Komodo-Edit-6.1.1-7295-macosx-x86.dmg> KomodoEdit installer]. **If you're at a workshop and you need this file, ask a volunteer. We may have it on a thumb drive, which will save you a lot of download time.**
-
-* Double-click the file once it's downloaded.
-
-* It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:
-![Komodo-Edit-5.png](Komodo-Edit-5.png)
-
-* Drag KomodoEdit into your Applications folder.
-
-* Unmount the installer disk image by dragging it from your desktop to the trash.
-
-  MARKDOWN
-  end
+  link "install_komodo_edit_for_mac"
+end
 
 step "Create an ssh public key" do
   link "create_an_ssh_key"  
@@ -187,193 +96,4 @@ step "Create a Heroku Account " do
   link "create_a_heroku_account"
 end
 
-step "Verify you can create a new Rails app " do
-  note <<-MARKDOWN
-
-Open a new Terminal and verify that you are running the right version of Rails. In Terminal:
-
-<pre>rails -v</pre>
-
-It should say <code>Rails 3.0.7</code>.
-
-
-
-* Create a folder in your User directory <code>ruby_on_rails</code>
-    cd ~/
-    mkdir ruby_on_rails
-
-* Open a new Terminal window and type the following with a return at the end of each line:
-    cd ~/ruby_on_rails
-    rails new test_app
-
-* The first command should produce no output. The second command's output is voluminous. :)
-
-* Once that's finished, type the following in the Terminal window with a return at the end of each line:
-    cd test_app
-    bundle install
-    rails server
-If "rails server" starts up with no errors, you're golden! It'll look something like this:
-<pre>
-    => Booting WEBrick
-    => Rails 3.0.0 application starting in development on <http://0.0.0.0:3000>
-    => Call with -d to detach
-    => Ctrl-C to shutdown server
-    [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
-    [2010-09-30 21:04:12] INFO  ruby 1.9.2 (2010-08-18) [x86_64-darwin10.4.0]
-    [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid=24805 port=3000
-</pre>
-If it does, congratulations! You've successfully installed Ruby AND Rails and started your server. ([Ruby and Rails 3 Diagnostics|Here are some more diagnostics to try if it's not so smooth.](ruby_and_rails_3_diagnostics_here_are_some_more_diagnostics_to_try_if_it_s_not_so_smooth_)) Let's check it in the browser.
-
-* In your browser, go to <http://localhost:3000>
-
-![Successful Rails Install](http://wiki.devchix.com/images/successful-rails-install.jpg) 
-
-* Back in the Terminal window where you ran <code>rails server</code>, type control-c to kill the server.
-
-  MARKDOWN
-  end
-
-step "Verify your database is set up " do
-  note <<-MARKDOWN
-
-* Open a new Terminal window.
-<pre>cd ~/ruby_on_rails/test_app
-rails generate scaffold user name:string email:string address:text active:boolean
-rake db:migrate
-rails server</pre>
-
-* Go to <http://localhost:3000/users> -> New user -> create a user to make sure we can save to db. (The window where you ran <code>rails server</code> will display debugging information as you do so.)
-
-* In your Terminal window where you ran <code>rails server</code>, type control-c to kill the server.
-
-  MARKDOWN
-  end
-
-step "Verify git is working " do
-  note <<-MARKDOWN
-
-* Open a new Terminal window.
-
-* <code>cd ~/ruby_on_rails/test_app</code>
-
-* <code>git init</code> ([Output of "git init" command](output_of_git_init_command))
-
-* <code>git add .</code> (Note the dot) (May get line ending warnings; safe to ignore.)
-
-* <code>git commit -m "initial commit"</code> ([Output of initial check-in](output_of_initial_check_in))
-
-* <code>git log</code> (We're just checking to make sure it worked. Verify that it has the  right user and commit message.)
-
-  MARKDOWN
-  end
-
-step "Verify Heroku is set up " do
-  note <<-MARKDOWN
-
-Be sure that you're in your app's directory by typing the following command into your terminal:
-
-<code><pre>
-cd ~/ruby_on_rails/test_app
-</pre></code>
-
-Add the following to your Gemfile so that Rails 3.1.0 can work with heroku:
-
-<code><pre>
-group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3'
-  gem 'pg'
-end
-</pre></code>
-
-Then in your terminal, type the following command:
-
-<code><pre>
-bundle install
-</pre></code>
-
-If you're running into an issue with installing postgresql, you can update your gemset with the following command:
-
-<code><pre>
-bundle install --without production
-</pre></code>
-
-
-* Open a new Terminal window.
-
-<pre>cd ~/ruby_on_rails/test_app
-
-heroku create --stack bamboo-mri-1.9.2 </pre>
-
-
-* It may ask: Enter your Heroku email address and password. ([Output of heroku create command](output_of_heroku_create_command))
-
-
-* To verify that the <code>heroku create</code> completed successfully, do <code>git remote show</code> and see if the list includes <code>heroku</code>.
-<pre>git push heroku master</pre>
-
-
-* It may ask: "The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?" Type <code>yes</code> and hit enter.
-
-* [Output of successful first deploy](output_of_successful_first_deploy). Be sure to find your Heroku application name in the output. ([What to do if git seems stuck](what_to_do_if_git_seems_stuck))
-
-<pre>heroku rake db:migrate</pre>
-
-
-* Go to your application's URL. You'll need your Heroku application name. The URL for your app is <code>*application name*.heroku.com</code> - so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. To see the test_app, add <code> /users</code> to the end of the URL.  Leave this window open.
-
-
-* If you're getting an error when you go to your Heroku application, run one more command
-
-<pre>bundle exec rake assets:precompile</pre>
-
-Be sure to commit your changes and push your changes to Heroku
-
-  MARKDOWN
-  end
-
-step "Almost there! " do
-  note <<-MARKDOWN
-
-**Find a volunteer and have them watch the next steps. If they work, get a sticker from them for your computer!**
-<pre>
- cd ~/ruby_on_rails
- curl -O <https://raw.github.com/gist/1143443/f4db3f9aa41ebb0726b98fe783e01f02e0f5ba09/workshop_template.txt>
- rails new suggestotron -m workshop_template.txt
- cd suggestotron
- rake cucumber
-</pre>
-After running this, the last few lines of output should look something like this:
-<code>11 scenarios (5 failed, 6 skipped)
-84 steps (5 failed, 79 skipped)
-0m0.998s
-rake aborted!
-Command failed with status (1): [bundle exec /Users/sasha/.rvm/rubies/ruby-...]
-
-(See full trace by running task with --trace)
-</code>
-
-  MARKDOWN
-  end
-
-step "Cleanup " do
-  note <<-MARKDOWN
-
-Ok, there is one more step. You won't be using the test application in the workshop; we just created it to make sure everything was working. **You should delete it now to reduce confusion during the workshop.** Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
-
-* Close Terminal
-
-* In Finder go to your home directory and open "ruby_on_rails"
-
-* Drag the test_app folder to the trash. Leave ruby_on_rails folder.
-
-* Delete the app from Heroku. Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App.
-
-  MARKDOWN
-  end
-
-step "Congratulations! " do
-  note <<-MARKDOWN
-
-You have everything you need to write a Ruby on Rails application. Cowabunga dude!
-  MARKDOWN
-end
+next_step "create_and_deploy_a_rails_app"

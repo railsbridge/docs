@@ -2,7 +2,7 @@ note "An SSH key uniquely identifies you (and your computer) when your computer 
 
 note "You'll need one of these to create your Heroku and Github accounts."
 
-important "Be sure to use the same email address that you used when you set up Git."
+important "Use the same email address for heroku, git, github, and ssh."
 
 important "**REPLACE** `student@example.com` with your **actual email address** below."
 

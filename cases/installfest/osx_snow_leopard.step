@@ -56,18 +56,3 @@ next_step "create_a_test_application"
 step "Congratulations!" do
   note "You have everything you need to write a Ruby on Rails application."
 end
-
-step "Clean Up" do
-  note <<-MARKDOWN
-  You won't be using the test application in the workshop; we just created it to make sure everything was working. You should delete it now to reduce confusion during the workshop. Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
-MARKDOWN
-
-  step "Trash the test_app folder" do
-    note "Drag the test_app folder (inside ruby_on_rails) to the trash. Leave ruby_on_rails on the desktop."
-  end
-
-  step "Destroy the heroku app" do
-    note "Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App."
-  end
-
-end
