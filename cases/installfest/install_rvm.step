@@ -4,6 +4,7 @@ MARKDOWN
 
 step "Install RVM" do
   console "bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )"
+  note "This will do some stuff and print a long message which you can ignore."
 end
 
 step "Configure your shell" do
@@ -13,13 +14,12 @@ step "Configure your shell" do
   console <<-BASH
 echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
   BASH
-
   console "source ~/.bash_profile"
   
-  console "type rvm | head -1"
-  result "rvm is a function"
-    
   verify do
+    console "type rvm | head -1"
+    result "rvm is a function"
+    
     console "rvm -v"
     result "rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"    
   end
