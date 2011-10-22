@@ -27,4 +27,5 @@ end
 step "Set up colors" do
   note "open Console with Ruby and Rails"
   console "ansicon"
+  note "now, when you use git and rspec, the output will not be all white-on-black"
 end

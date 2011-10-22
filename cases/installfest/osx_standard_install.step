@@ -1,4 +1,4 @@
-step "Install Xcode" do
+step "Install A Compiler (Xcode or GCC)" do
   link "install_a_compiler"
 end
 
