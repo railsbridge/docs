@@ -125,6 +125,8 @@ bundle install --without production
 bundle exec rake assets:precompile
     BASH
     
+    note "if this fails, edit `config/environments/production.rb` "
+    
     
   end
   
