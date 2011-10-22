@@ -4,11 +4,6 @@ MARKDOWN
 
 step "Install RVM" do
   console "bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )"
-
-  verify do
-    console "rvm -v"
-    result "rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"    
-  end
 end
 
 step "Configure your shell" do
@@ -16,13 +11,19 @@ step "Configure your shell" do
   note "This step will assure that every time you open a new terminal window, rvm will be active inside it."
 
   console <<-BASH
-echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile'
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
   BASH
 
   console "source ~/.bash_profile"
+  
   console "type rvm | head -1"
   result "rvm is a function"
-  
+    
+  verify do
+    console "rvm -v"
+    result "rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"    
+  end
+
 end
 
 step "Install Ruby 1.9.2 using RVM" do
