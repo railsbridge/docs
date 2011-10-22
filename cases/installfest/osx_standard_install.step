@@ -29,6 +29,10 @@ step "Install RVM, the Ruby Version Manager " do
   link "install_rvm"
 end
 
+step "Install Rails" do
+  console "gem install rails"
+end
+
 step "Install SQLite Firefox plugin" do
   link "install_sqlite_manager"
 end

@@ -45,9 +45,9 @@ end
 step "Firefox and the SQLite Firefox extension " do
   note <<-MARKDOWN
 
-* Download and install [<http://www.mozilla.com/products/download.html?product=firefox-3.5.3&os=linux&lang=en-US> Firefox]
+* Download and install the latest firefox [<http://www.mozilla.org/en-US/firefox/all.html> Firefox]
 
-* Download and install the [<https://addons.mozilla.org/en-US/firefox/addon/5817> SQLite Manager Firefox extension]
+* Download and install the [<https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/> SQLite Manager Firefox extension]
 
   MARKDOWN
 end
@@ -71,10 +71,11 @@ step "KomodoEdit" do
   note <<-MARKDOWN
 
 If you don't have a preferred code editor, you can install KomodoEdit. It's available for [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86.tar.gz> 32-bit machines] and [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86_64.tar.gz> 64-bit machines]. 
+MARKDOWN
 
-(If you're not sure which one you have, it's probably 32-bit. Run `uname -i` and see. "x86" means 32-bit, and "x86_64" means 64-bit.)
-
-  MARKDOWN
+  tip "How many bits?" do
+    note %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" means 32-bit, and "x86_64" means 64-bit.}
+  end
 end
 
 next_step "create_and_deploy_a_rails_app"
