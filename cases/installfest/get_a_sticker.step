@@ -16,13 +16,14 @@ rake cucumber
 
   note <<-MARKDOWN
   After running this, the last few lines of output should look something like this:
-  <pre>11 scenarios (5 failed, 6 skipped)
-  84 steps (5 failed, 79 skipped)
-  0m0.998s
-  rake aborted!
-  Command failed with status (1): [bundle exec /Users/sasha/.rvm/rubies/ruby-...]
-  (See full trace by running task with --trace)
-  </pre>
+
+    11 scenarios (5 failed, 6 skipped)
+    84 steps (5 failed, 79 skipped)
+    0m0.998s
+    rake aborted!
+    Command failed with status (1): [bundle exec /Users/sasha/.rvm/rubies/ruby-...]
+    (See full trace by running task with --trace)
+
   MARKDOWN
 
 end

@@ -47,7 +47,7 @@ step "Generate a database model" do
 
   console <<-BASH
 cd test_app
-rails generate scaffold user name:string email:string address:text active:boolean</pre>
+rails generate scaffold user name:string email:string address:text active:boolean
 rake db:migrate
 rails server
   BASH
@@ -106,21 +106,26 @@ Git remote heroku added
   step "Prepare your rails app for deploying to Heroku" do
     note <<-MARKDOWN
 Edit your Gemfile and change the line:
-<pre>gem 'sqlite3'</pre>
+
+    gem 'sqlite3'
+    
 To this:
 
-<pre>group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end</pre>
+    group :development, :test do
+      gem 'sqlite3'
+    end
+    group :production do
+      gem 'pg'
+    end
+    
     MARKDOWN
     
     console <<-BASH
 bundle install --without production
 bundle exec rake assets:precompile
     BASH
+    
+    
   end
   
   step "Add the changes to git" do
@@ -168,7 +173,13 @@ To git@heroku.com:floating-winter-18.git
 
   step "Visit your new application" do
 
-    note "In the browser, go to your application's URL. You'll need your Heroku application name. The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+    note "In the browser, go to your application's URL. You'll need your Heroku application name."
+    
+    tip "To find your Heroku application name" do
+      console "heroku info"
+    end
+    
+    note "The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
     
     tip "To quickly open your heroku application in a browser" do
       console "heroku open"

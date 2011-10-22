@@ -31,7 +31,6 @@ step "Git " do
    end
 
   option "Tiger" do
-    url "http://metastatic.org/text/Concern/2008/03/08/git-package-1543-for-os-x/"
   end
 
   end
