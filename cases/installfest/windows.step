@@ -65,11 +65,11 @@ step "Open a Terminal " do
   end
 
   tip "command history" do
-   note "The terminal window stores a &quot;command history.&quot; To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes."
+   note "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes."
  end
 
  tip "copy and paste" do
-  note "In these instructions, where it says: &quot;Type this in the terminal:&quot;, you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on &quot;Paste&quot;, then hit the **[enter]** key."
+  note "In these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
   end
 end
 
