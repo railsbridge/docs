@@ -2,6 +2,17 @@
 
 Author: Alex Chaffee <mailto:alex@stinky.com>
 
+# Usage
+
+    bundle install
+    rake run
+
+If the above fails (say, because `rerun` doesn't work on your system), try
+
+    rackup
+    
+Then open <http://localhost:9292> in a web browser.
+ 
 # Overview
 
 This is a Sinatra app, deployed at <http://installfest.heroku.com>, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.
