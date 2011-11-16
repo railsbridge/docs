@@ -1,10 +1,13 @@
-step "Go to the osx-gcc-installer repository" do
-  note "https://github.com/kennethreitz/osx-gcc-installer"
-end
-
-step "Download the pre-built binaries" do
-  note "for your version of OS X (10.6 or 10.7)."
-  todo "find direct links to each package"
+step "Download the appropriate GCC Installer package for your version of OS X" do
+  option "10.7 (Lion)" do
+    note "https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg"
+  end
+  option "10.6 (Snow Leopard)" do
+    note "https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.6.pkg"
+  end
+  option "Any other version" do
+    link "install_xcode"
+  end
 end
 
 step "Double-click the package file" do
