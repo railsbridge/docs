@@ -5,10 +5,8 @@ note "If this works - get a sticker from them for your computer!"
 
 verify "rails installation" do
   console <<-BASH
-rails new suggestotron -m http://ram9.cc/863314.txt
+rails new suggestotron -m https://raw.github.com/boscomonkey/workshop-kickstart/master/bash.rb
 cd suggestotron
-rake db:migrate
-rails generate cucumber:install --rspec --capybara
 rake cucumber
   BASH
 
