@@ -28,14 +28,24 @@ class DocPage < Erector::Widgets::Page
     "#{doc_title} - #{case_title}"
   end
 
-  # todo: figure out how to load & set font later, in case we're offline
+
+  # this is how to load the Open Sans font when we know we're online
+  # external :style,  <<-CSS
+  # @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+  # CSS
+  
+  # but this is to load the Open Sans font when we might be offline
   external :style,  <<-CSS
-  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+  @import url(/font/opensans.css);
+  CSS
+
+  external :style,  <<-CSS
   body {
-    font-family: 'Open Sans', helvetica,arial,sans-serif;
+    font-family: 'Open Sans',helvetica,arial,sans-serif;
     padding: 0;
     margin: 0;
   }
+  
   h1 {
     font-size: 2em;
     -webkit-margin-before: 0;
@@ -118,8 +128,7 @@ class DocPage < Erector::Widgets::Page
 
   def head_content
     super
-    script :src => "/asset/jquery-1.6.1.js"
-    script :src => "/asset/jquery-1.6.1.js"
+    script :src => "/jquery-1.6.1.js"
   end
 
   def body_content
