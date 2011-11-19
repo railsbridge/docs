@@ -45,7 +45,7 @@ class DocPage < Erector::Widgets::Page
     padding: 0;
     margin: 0;
   }
-  
+    
   h1 {
     font-size: 2em;
     -webkit-margin-before: 0;
@@ -56,6 +56,7 @@ class DocPage < Erector::Widgets::Page
 
   .top {
     margin-bottom: 1em;
+    padding: 2px 6px;
   }
   .top h1 {
     font-size: 2.5em;
@@ -81,6 +82,7 @@ class DocPage < Erector::Widgets::Page
     float: right;
     width: 18em;
     overflow-x: hidden;
+    display: none;
   }
 
   .main {
@@ -112,14 +114,19 @@ class DocPage < Erector::Widgets::Page
     margin-left: -.5em;
   }
 
-  .top a.src {
+  .top a.top_link {
     float: right;
+    margin: 2px;
   }
 
   CSS
 
   def src_link
-    a "[src]", :class=> "src", :href => "#{@doc_path.split('/').last.split('.').first}/src"
+    a "[src]", :class=> "top_link", :href => "#{@doc_path.split('/').last.split('.').first}/src"
+  end
+
+  def toc_link
+    a "[toc]", :class=> "top_link", :href => "#", :onclick => "$('div.toc').toggle();"
   end
 
   def show_src?
@@ -133,6 +140,7 @@ class DocPage < Erector::Widgets::Page
 
   def body_content
     div(:class=>:top) {
+      toc_link
       src_link if show_src?
       h1 { a case_title, :href => "/#{case_name}" }
     }
