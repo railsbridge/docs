@@ -114,6 +114,10 @@ class DocPage < Erector::Widgets::Page
     margin-left: -.5em;
   }
 
+  .top .top_links {
+    float: right;
+    margin-right: 8px;
+  }
   .top a.top_link {
     float: right;
     margin: 2px;
@@ -121,27 +125,34 @@ class DocPage < Erector::Widgets::Page
 
   CSS
 
-  def src_link
-    a "[src]", :class=> "top_link", :href => "#{@doc_path.split('/').last.split('.').first}/src"
+  class TopLink < Erector::Widget
+    needs :name, :href, :onclick => nil
+    def content
+      a "[#{@name}]", :class => "top_link", :href => @href, :onclick => @onclick
+    end
   end
-
-  def toc_link
-    a "[toc]", :class=> "top_link", :href => "#", :onclick => "$('div.toc').toggle();"
+  
+  def top_links
+    file_name = @doc_path.split('/').last
+    [
+      TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
+      TopLink.new(:name => "toc", :href => "#", :onclick => "$('div.toc').toggle();"),
+      TopLink.new(:name => "git", :href => "https://github.com/railsbridge/installfest/blob/master/cases/#{@case_name}/#{file_name}"),
+    ]
   end
-
-  def show_src?
-    true
-  end
-
+  
   def head_content
     super
     script :src => "/jquery-1.6.1.js"
   end
 
   def body_content
-    div(:class=>:top) {
-      toc_link
-      src_link if show_src?
+    div.top {
+      div.top_links {
+        top_links.each do |top_link|
+          widget top_link
+        end
+      }
       h1 { a case_title, :href => "/#{case_name}" }
     }
 
