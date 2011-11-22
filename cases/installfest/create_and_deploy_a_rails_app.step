@@ -1,4 +1,3 @@
-
 step "Create a new Rails app" do
 
   console "cd ~"
@@ -170,7 +169,14 @@ To git@heroku.com:floating-winter-18.git
 
     console "heroku rake db:migrate"
 
-    todo "expected output of heroku rake db:migrate"
+    result <<-RAKE_DB_MIGRATE
+Migrating to CreateUsers (20111122233946)
+==  CreateUsers: migrating ====================================================
+-- create_table(:users)
+   -> 0.0136s
+==  CreateUsers: migrated (0.0137s) ===========================================
+    RAKE_DB_MIGRATE
+
   end
 
   step "Visit your new application" do
