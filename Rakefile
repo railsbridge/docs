@@ -9,5 +9,5 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 task :run do
-  exec "rerun rackup"
+  exec "rerun -- rackup -s thin"
 end
