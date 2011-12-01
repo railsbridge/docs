@@ -30,7 +30,6 @@ end
 step "Add your SSH key to your Heroku account" do
   link "create_an_ssh_key"
   console "heroku keys:add"
-  todo "link to ssh key setup instructions"
 end
 
 tip "If you have further Heroku issues" do

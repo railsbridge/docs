@@ -1,64 +1,65 @@
-
-step "About Rails on Windows" do
   note "These instructions should work for all versions of Windows from XP on to Windows 7."
+
   note "You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings."
-end
 
 step "Run RailsInstaller" do
 
-  note "RailsInstaller includes Rails, Ruby, DevKit, Git, and SQLite."
+  note "RailsInstaller includes Rails, Ruby, Git, and SQLite."
 
-  note <<-MARKDOWN
+  note "Go to <http://railsinstaller.org/> and download the kit."
 
-* Go to <http://railsinstaller.org/> and download the kit.  
+  note "Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults."
 
-* Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  note "Be sure to check the box for *Add executables for Ruby, Git and DevKit to the PATH*"
 
- * Be sure to check the box for "Add executables for Ruby, Git and DevKit to the PATH"
+  note "![WinXPRailsInstaller.jpg](WinXPRailsInstaller.jpg)"
 
-![WinXPRailsInstaller.jpg](WinXPRailsInstaller.jpg)
+  note "Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites"
 
-* Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
+end
 
-* From the Windows Start menu, go to Programs, RailsInstaller, Console with Ruby and Rails
+step "Configure your git and ssh environment" do
 
-* The first time you run this program, it will ask you to enter your name and email address. After doing this, test your Ruby install in the terminal using the -v version flag
-<pre>
-ruby -v
-</pre>
-You should see something like
-<pre>
-ruby 1.9.2p290 (2011-07-09) [i386-mingw32]
-</pre>
-
-
-* Test your Rails install in the terminal using the -v version flag
-<pre>
-rails -v
-</pre>
-You should see something like
-<pre>
-Rails 3.1.0
-</pre>
-
-  MARKDOWN
+  important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+  
+  note "*Please enter your name, for example mine is: Wayne E. Seguin*"
+  console "(your actual full name)"
+  
+  note "*Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
+  console "(your actual email address)"
+  
+  important "Use the **same email address** for heroku, git, github, and ssh."
+  
+  tip do
+    note "After this step you will have some **git config settings** and you will also have an **ssh key**."
   end
 
-step "Open a Terminal " do
-  note <<-MARKDOWN
+end
 
-* Much of  using Rails is typing commands and hitting **&lt;enter&gt;**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser.
+step "Sanity Check" do
 
-* This is also called the terminal, command window, command-line window, MS-DOS or DOS window. Follow these instructions if you need to open a normal DOS window:
-[Opening a terminal window](windows_terminal)
-
-* Rails Installer made a special DOS terminal window for you to use when you're working on Ruby, Rails, or Git.  To open the special Rails window, choose "Programs" on the Start menu, then choose "RailsInstaller" and then "Console with Ruby and Rails".  You should do all your Rails work in this RailsInstaller DOS window.
-  MARKDOWN
+  console "ruby -v"
+  result "ruby 1.9.2p290 (2011-07-09) [i386-mingw32]"
   
-  tip "Try these recommendations" do
-    link "recommended_setup_for_command_line_windows"
-  end
+  console "rails -v"
+  result "Rails 3.1.1"
+
+end
+
+step "Open a Terminal" do
+  note "Much of using Rails is typing commands and hitting **&lt;enter&gt;**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser."
+
+  tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
+
+  note "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
   
+  note "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+end
+
+step "Configure the Windows Terminal" do
+  note "Take a moment to configure the Command Prompt with Ruby and Rails so that it is a good height and width and has a nice font."
+  link "configure_the_windows_terminal"
+
   tip "clearing the terminal" do
     note "If you ever want to clear the terminal of all its cluttered output"
     console "cls"
@@ -68,8 +69,11 @@ step "Open a Terminal " do
    note "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes."
  end
 
- tip "copy and paste" do
-  note "In these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
+  tip "copy and paste" do
+    
+    note "It's usually better to type commands in yourself. It takes a little longer but you learn more."
+
+    note "But if you must... in these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
   end
 end
 
@@ -89,24 +93,15 @@ step "Install SQLite Manager " do
   link "install_sqlite_manager"
 end
 
-step "Install KomodoEdit " do
-  note <<-MARKDOWN
+step "Install a Text Editor" do
+  note "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
 
-You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad.  
+  note "Notepad is not a good programming editor, but it will work in a pinch."
 
-Notepad is not a good programming editor, but it will work in a pinch.
+  important "**When in doubt, use KomodoEdit.**"
 
-**When in doubt, use KomodoEdit.**
+  note "Download KomodoEdit here: <http://downloads.activestate.com/Komodo/releases/6.1.1/Komodo-Edit-6.1.1-7295.msi>"
 
-* [<http://downloads.activestate.com/Komodo/releases/6.1.1/Komodo-Edit-6.1.1-7295.msi> Download KomodoEdit here].
-
-* Double-click to install.
-
-  MARKDOWN
-end
-
-step "Create an ssh public key" do
-  link "create_an_ssh_key"  
 end
 
 step "Create a Heroku Account " do

@@ -2,6 +2,11 @@ note "An SSH key uniquely identifies you (and your computer) when your computer 
 
 note "You'll need one of these to create your Heroku and Github accounts."
 
+option "Did you use RailsInstaller on Windows?" do
+  note "Congratulations, you already have an ssh key!"
+end
+
+option "otherwise" do
 important "Use the same email address for heroku, git, github, and ssh."
 
 important "**REPLACE** `student@example.com` with your **actual email address** below."
@@ -25,3 +30,6 @@ verify do
     note "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
   end
 end
+
+end
+
