@@ -105,6 +105,7 @@ class InstallFest < Sinatra::Application
           case_name: params[:case],
           doc_title: doc_title,
           doc_path: doc_path,
+          back: params[:back],
           src: src,
       }
 

@@ -51,6 +51,9 @@ class Step < Erector::Widget
 
   CSS
 
+  needs :src
+  needs :doc_path
+  
   def initialize options
     super
     @step_stack = []
@@ -60,7 +63,7 @@ class Step < Erector::Widget
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
   end
-
+  
   def as_title name
     name.to_s.split('_').map{|s| s.capitalize}.join(' ')
   end
@@ -69,12 +72,25 @@ class Step < Erector::Widget
     span s, :class => "prefix"
   end
 
+  def current_anchor_num
+    nested_steps = @step_stack.dup
+    nested_steps.pop if nested_steps.last == 0
+    nested_steps.join("-")
+  end
+  
+  # todo: move into proper Doc class
+  def page_name
+    @doc_path.split('/').last.split('.').first
+  end
+  
   ## steps
 
-  def step name = nil
-    div :class => "step" do
+  def step name = nil, options = {}
+    num = next_step_number
+    a(:name => "step#{current_anchor_num}")
+    div :class => "step", :title => name do
       h1 do
-        prefix "Step #{next_step_number}: "
+        prefix "Step #{num}: "
         text name
       end
       if block_given?
@@ -91,7 +107,10 @@ class Step < Erector::Widget
     p :class => "link" do
       text "Go on to "
       # todo: extract StepFile with unified name/title/path routines
-      a as_title(name), :href => name
+      require 'uri'
+      hash = URI.escape '#'
+      href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
+      a as_title(name), :href => href, :class => 'link'
     end
   end
 
@@ -115,8 +134,10 @@ class Step < Erector::Widget
   end
 
   def option name
+    num = next_step_number
+    a(:name => "step#{current_anchor_num}")  # todo: test
     h1 do
-      span "Option #{next_step_number}: "
+      span "Option #{num}: "
       text name
     end
     if block_given?
@@ -185,9 +206,7 @@ class Step < Erector::Widget
   end
 
   def content
-    div :class => "step" do
-      eval @src, binding, @doc_path, 1
-    end
+    eval @src, binding, @doc_path, 1
   end
 end
 

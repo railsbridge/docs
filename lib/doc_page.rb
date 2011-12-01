@@ -15,6 +15,7 @@ class DocPage < Erector::Widgets::Page
   include GithubFlavoredMarkdown
 
   needs :case_name, :doc_title, :doc_path
+  needs :back => nil
   attr_reader :case_name, :doc_title
 
   needs :src
@@ -160,11 +161,17 @@ class DocPage < Erector::Widgets::Page
 
     div(:class=>:main) {
       h1 doc_title, :class=>"doc_title"
-
-
       div(:class=>:doc) {
         doc_content
       }
+      if @back
+        div.back {
+          text "Back to "
+          a(:class => "back", :href => @back) do
+            text @back.split('#').first #todo: titleize etc, use real doc object
+          end
+        }
+      end      
     }
 
     div(:class=>:bottom) {
