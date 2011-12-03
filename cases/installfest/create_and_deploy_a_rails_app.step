@@ -1,7 +1,15 @@
 
+step "Change to your home directory" do
+  option "Windows" do
+    console "cd c:\\Sites"
+  end
+  option "Mac or Linux" do
+    console "cd ~"
+  end
+end
+
 step "Create a new Rails app" do
 
-  console "cd ~"
   console "rails new test_app"
 
   note "The command's output is voluminous. :-)"
