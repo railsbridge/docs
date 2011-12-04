@@ -1,4 +1,3 @@
-
 step "Change to your home directory" do
   option "Windows" do
     console "cd c:\\Sites"
@@ -176,9 +175,19 @@ To git@heroku.com:floating-winter-18.git
 
     note "[What to do if git seems stuck](what_to_do_if_git_seems_stuck)"
 
-    console "heroku rake db:migrate"
+    console "heroku run rake db:migrate"
 
-    todo "expected output of heroku rake db:migrate"
+    result <<-OUTPUT
+Running rake db:migrate attached to terminal... up, run.1
+Migrating to CreateUsers (20111204065949)
+==  CreateUsers: migrating ====================================================
+-- create_table(:users)
+   -> 0.0122s
+==  CreateUsers: migrated (0.0123s) ===========================================
+    OUTPUT
+
+    note "The long number after CreateUsers is a timestamp. Yours will be different!"
+    
   end
 
   step "Visit your new application" do
