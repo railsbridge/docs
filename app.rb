@@ -58,6 +58,10 @@ class InstallFest < Sinatra::Application
     end
   end
 
+  before do
+    expires 3600, :public
+  end
+
   get '/favicon.ico' do
     halt 404
   end
