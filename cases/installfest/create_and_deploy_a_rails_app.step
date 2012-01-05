@@ -187,7 +187,6 @@ Migrating to CreateUsers (20111204065949)
     OUTPUT
 
     note "The long number after CreateUsers is a timestamp. Yours will be different!"
-    
   end
 
   step "Visit your new application" do
