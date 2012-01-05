@@ -185,6 +185,8 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * install ALL the operating systems!
 * troubleshooting page
 * "xcode" page -- it seems outdated. Delete it? Anything to scavenge?
-
+* look into installation scripts
+  https://github.com/joshfng/railsready
+  
 
 
