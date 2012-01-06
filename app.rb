@@ -94,6 +94,11 @@ class InstallFest < Sinatra::Application
     send_file "#{case_dir}/#{params[:name]}.#{params[:ext]}"
   end
 
+  # todo: make this work in a general way, without hardcoded 'img'
+  get "/:case/img/:name.:ext" do
+    send_file "#{case_dir}/img/#{params[:name]}.#{params[:ext]}"
+  end
+
   get "/:case/:name" do
     begin
 

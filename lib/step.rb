@@ -85,6 +85,12 @@ class Step < Erector::Widget
   
   ## steps
 
+  def steps
+    div :class => "steps" do
+      yield
+    end
+  end
+
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
@@ -158,6 +164,17 @@ class Step < Erector::Widget
       end
     end
   end
+  
+  def goals
+    div :class => "goals" do
+      h1 "Goals"
+      ul do
+        yield
+      end
+    end
+  end
+  
+  alias_method :goal, :li
 
   ## notes
 
@@ -179,7 +196,6 @@ class Step < Erector::Widget
       yield if block_given?
     end
   end
-
 
   def console msg
     div :class => "console" do

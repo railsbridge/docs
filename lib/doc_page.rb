@@ -123,6 +123,10 @@ class DocPage < Erector::Widgets::Page
     float: right;
     margin: 2px;
   }
+  
+  img {
+    border: 1px solid #333;
+  }
 
   CSS
 
