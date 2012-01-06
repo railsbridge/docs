@@ -1,5 +1,5 @@
 goals {
-  note "Let's fire up the application locally"
+  goal "Let's fire up the application locally"
 }
 
 

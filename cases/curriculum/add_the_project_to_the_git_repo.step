@@ -1,6 +1,6 @@
 
 goals do
-  note "The previous step didn't do anything with our application. It is time to add them to the repo now."
+  goal "The previous step didn't do anything with our application. It is time to add all the files to the repo now."
 end
 
 steps do
