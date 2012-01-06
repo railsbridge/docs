@@ -5,6 +5,8 @@ gem "sinatra"
 gem "nokogiri"
 gem "rdiscount"
 gem "thin"
+gem 'rack-codehighlighter'
+gem 'coderay'
 
 group :development do
   gem "wrong"

@@ -266,5 +266,12 @@ div.back:before {
   def content
     eval @src, binding, @doc_path, 1
   end
+  
+  def source_code *args
+    src = args.pop
+    lang = args.pop
+    src = "\n:::#{lang}\n#{src}" if lang
+    pre src, :class => "code"
+  end
 end
 

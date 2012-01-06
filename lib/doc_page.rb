@@ -41,6 +41,10 @@ class DocPage < Erector::Widgets::Page
   CSS
 
   external :style,  <<-CSS
+  @import url(/css/coderay.css);
+  CSS
+
+  external :style,  <<-CSS
   body {
     font-family: 'Open Sans',helvetica,arial,sans-serif;
     padding: 0;
@@ -108,6 +112,9 @@ class DocPage < Erector::Widgets::Page
   }
   .doc code {
     font-size: 13pt;
+    background: #f2f2f2;
+    padding-left: 4px;
+    padding-right: 4px;
   }
   .doc h1 {
     border-bottom: 1px solid blue;

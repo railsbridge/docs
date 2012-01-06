@@ -14,8 +14,8 @@ describe Step do
       step = Step.new(src: src,
         doc_path: "/tmp/hello.step"
       )
-      html = step.to_html
-      Nokogiri.parse("<html>#{html}</html>")
+      @html = step.to_html
+      Nokogiri.parse("<html>#{@html}</html>")
     end
   end
   
@@ -79,6 +79,22 @@ RUBY
       a = html_doc.css(".step[title=breakfast] a.link").first
       hash = URI.escape '#'
       assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
+    end
+  end
+  
+  describe 'source_code' do
+    it "emits a block of code as a pre with class 'code'" do
+      html_doc(<<-RUBY)
+      source_code "x = 2"
+      RUBY
+      assert { @html == "<pre class=\"code\">x = 2</pre>" }
+    end
+
+    it "emits a block of code with a language directive" do
+      html_doc( <<-RUBY)
+      source_code :ruby, "x = 2"
+      RUBY
+      assert { @html == "<pre class=\"code\">\n:::ruby\nx = 2</pre>" }
     end
   end
 end
