@@ -1,0 +1,84 @@
+
+img :src => "img/Start_page.png", :alt => "Start Page"
+
+goals do
+  goal "Create Your New Application"
+note "Let's get started! By the end of this step, we'll have  brand-spankin'-new (empty) rails app."
+end
+
+steps do
+
+  tip "If you have _any_ problems, contact a TA immediately."
+  
+  console <<-SHELL  
+mkdir railsbridge
+cd railsbridge
+rails new suggestotron
+cd suggestotron
+ls
+  SHELL
+
+  note "Here's a step-by-step breakdown, with explanations:"
+
+  step do
+    console "mkdir railsbridge"
+    note "'mkdir' stands for make directory (folder)."
+    note "We've made a folder called `railsbridge`."
+  end
+  
+  step do
+    console "cd railsbridge"
+    note "'cd' stands for change directory."
+    note "'cd railsbridge' makes railsbridge our current directory."
+  end
+
+  step do
+    console "rails new suggestotron"
+    note "'rails new' creates a new rails project with the name you give."
+    note "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
+  end
+  
+  step do
+    console "cd suggestotron"
+    note "'cd' stands for change directory."
+    note "'cd suggestotron' makes suggestotron our current directory."
+  end
+
+  step do
+    console "ls"
+    note "'ls' stands for 'list (stuff)'."
+    note "It shows you the contents of the current folder."
+  end
+
+  note <<-MARKDOWN
+  You can see that <code>rails new</code> created a lot directories and
+  files. The ones we want to focus on today are:
+  MARKDOWN
+
+  table :border=>"1", :cellspacing=>"0", :cellpadding=>"3", :align=>"center" do
+    tr {
+      th " File/Folder"
+      th " Purpose"
+    }
+    tr {
+      td " app/"
+      td " Contains the controllers, models, and views for your application.  You will do most of your work here."
+    }
+    tr {
+      td " config/"
+      td " Configure your application’s runtime rules, routes, database, and more."
+    }
+    tr {
+      td " db/"
+      td " Shows your current database schema, as well as the database migrations."
+    }
+    tr {
+      td " public/"
+      td " The only folder seen to the world as-is.  This is where your images, JavaScript,  stylesheets (CSS), and other static files go"
+    }
+  end
+
+  note "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
+end
+
+next_step "create_a_new_git_repo"

@@ -55,3 +55,5 @@ All of these methods are available for any string. You can then use
 * [Why's (poignant) Guide to Ruby](http://www.scribd.com/doc/8545174/whys-Poignant-Guide-to-Ruby) - the (crazy) guide to ruby... Try it, you might like it.
 
 MARKDOWN
+
+next_step "04_getting_started"

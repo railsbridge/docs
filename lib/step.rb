@@ -4,6 +4,7 @@ class Step < Erector::Widget
   include GithubFlavoredMarkdown
 
   external :style, <<-CSS
+  
 .step h1>span.prefix {
   color: blue;
 }
@@ -27,7 +28,7 @@ class Step < Erector::Widget
 .step .todo:before { }
 .step .todo:after { }
 
-.step .important, .step .tip {
+.step .important, .tip {
   padding: .5em 1em;
   margin: 1em 0;
 }
@@ -35,20 +36,28 @@ class Step < Erector::Widget
 .step .important {
   border: 1px solid red;
 }
-.step .tip {
+
+
+.tip {
   border: 1px solid blue;
+  padding: 1em;
 }
-.step .tip > span {
+.tip > span {
   font-size: 14pt;
 }
-.step .tip span.name {
+.tip span.name {
   font-weight: bold;
 }
-.step .tip span.prefix {
+.tip span.prefix {
   font-weight: bold;
-  color: blue;
+  color: #E77902;
 }
 
+  CSS
+  
+  external :style, <<-CSS
+.steps {
+}
   CSS
 
   needs :src
@@ -87,6 +96,7 @@ class Step < Erector::Widget
 
   def steps
     div :class => "steps" do
+      h1 "Steps"
       yield
     end
   end
