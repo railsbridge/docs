@@ -1,0 +1,32 @@
+goals do
+  note "OK. We've got an empty app and it has been added to git. What now? _**Ship it!**_"
+end
+
+steps do
+  
+  console "
+heroku create
+git push heroku master
+heroku open
+"
+
+  step {
+    note "`heroku create` registers a new application on heroku's system."
+  }
+
+  step { note "`git push` takes all changes you've committed locally and pushes them to heroku." }
+  step { note "`heroku open` opens the new application in your browser." }
+  
+  explanation {
+    note "While I realize that at this point this isn't all that exciting, the point is that it doesn't get more difficult than this as we add more functionality to the application. Your typical workflow will look like:"
+    img :src => "img/workflow.png", :alt => "workflow", :style => "border: none"
+    ol {
+      li { note "Add or change some code" }
+      li { note "Commit your changes (`git commit`)" }
+      li { note "Deploy your changes (`git push heroku`)" }
+      li { note "(repeat)" }
+    }
+    note "and boom! Your changes are live!"
+  }
+end
+

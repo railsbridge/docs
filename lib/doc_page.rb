@@ -125,7 +125,9 @@ class DocPage < Erector::Widgets::Page
   }
   
   img {
-    border: 1px solid #333;
+    border: 1px solid #aaa;
+    margin: auto;
+    display: block;  /* otherwise centering doesn't happen */
   }
 
   CSS

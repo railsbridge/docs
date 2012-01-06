@@ -1,0 +1,36 @@
+
+goals do
+  note "The previous step didn't do anything with our application. It is time to add them to the repo now."
+end
+
+steps do
+  
+  console <<-SH
+git status
+git add .
+git commit -m "Added all the things"
+git status
+  SH
+
+  step do
+    console "git status"
+  
+    note "`git status` tells you everything git sees as modified, new, or missing."
+  note "The first time you run this, you should see a ton of stuff."
+  note "The second time you run this, you shouldn't see much of anything."
+  end
+
+  step do
+    console "git add ."
+    note "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
+  end
+
+  step do
+    console "git commit -m \"Added all the things\""
+    note "`git commit` tells git to actually _do_ all things you've said you wanted to do."
+    note "This is done in two steps so you can group multiple changes together."
+    note "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+  end
+end
+
+next_step "running_your_application_locally"

@@ -1,0 +1,20 @@
+goals do
+  
+  note "In order to publish our application, we need to add our application
+  and any changes we make over time to a \"revision control system\". In
+  our case we're going to use *git* because it is (relatively) easy and it
+  is what our app server, *Heroku*, uses."
+end
+
+step do
+  console "git init"
+end
+
+explanation do
+  note "
+  It doesn't look like anything really happened, but 'git init'
+  initialized its repository (repo) in a hidden directory called `.git`.
+  You can see this by typing `ls -a` (list all files)."
+end
+
+next_step "add_the_project_to_the_git_repo"

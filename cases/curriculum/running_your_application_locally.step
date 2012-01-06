@@ -1,0 +1,23 @@
+goals {
+  note "Let's fire up the application locally"
+}
+
+
+steps {
+  step {
+    console "bundle\nrails server"
+  }
+  step {
+    text "Point your web browser to "
+    url "http://localhost:3000" 
+    p "See your web app actually running!"
+  }
+}
+
+explanation {
+  note "`bundle` installs software your application needs and prepares it to run."
+  note "`rails server` ran your application locally just like heroku is running it on their servers."
+  note "This provides a very simple means to see your changes before you commit and push them to heroku."
+}
+
+next_step "deploy_to_heroku"

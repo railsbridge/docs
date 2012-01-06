@@ -53,10 +53,15 @@ class Step < Erector::Widget
   color: #E77902;
 }
 
-  CSS
-  
-  external :style, <<-CSS
 .steps {
+}
+
+.step.next_step p.link:after {
+  content: " \u2192";
+}
+
+div.back:before {
+  content: "\u2190 ";
 }
   CSS
 
@@ -97,7 +102,18 @@ class Step < Erector::Widget
   def steps
     div :class => "steps" do
       h1 "Steps"
-      yield
+      blockquote do
+        yield
+      end
+    end
+  end
+
+  def explanation
+    div :class => "explanation" do
+      h1 "Explanation"
+      blockquote do
+        yield
+      end
     end
   end
 
@@ -131,7 +147,7 @@ class Step < Erector::Widget
   end
 
   def next_step name
-    div :class => "step next" do
+    div :class => "step next_step" do
       h1 do
         prefix "Next Step:"
       end
