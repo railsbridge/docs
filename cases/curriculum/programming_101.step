@@ -79,4 +79,4 @@ end
   end
 end
 
-next_step "03_tools"
+next_step "tools"
