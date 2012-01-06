@@ -53,15 +53,31 @@ class Step < Erector::Widget
   color: #E77902;
 }
 
-.steps {
-}
-
 .step.next_step p.link:after {
   content: " \u2192";
 }
-
 div.back:before {
   content: "\u2190 ";
+}
+
+
+.steps {
+}
+
+.doc>div>h1 {
+  padding-left: .25em;
+}
+.doc>div {
+  padding-bottom: 1em;
+}
+.goals>h1 {
+  background-color: #FECACD;
+}
+.steps>h1 {
+  background-color: #FBFFCA;
+}
+.explanation>h1 {
+  background-color: #C8FFC9;
 }
   CSS
 
