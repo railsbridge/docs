@@ -1,0 +1,20 @@
+h1 "Authors"
+
+ul {
+  li "Sarah Allen"
+  li "Sarah Mei"
+  li "Alex Chaffee"
+  li "Ryan Davis"
+  li "Steven! Ragnarok"
+  li "...and many others"
+}
+
+h1 "What next?"
+
+ul {
+  li "Learn More Ruby"
+  li "Learn More Rails"
+  li "Take a class"
+  li "Be a TA at an upcoming workshop"
+  li "...?"
+}

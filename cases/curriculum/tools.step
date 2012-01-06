@@ -48,8 +48,9 @@ All of these methods are available for any string. You can then use
 ### online resources
 
 * [Ruby Quickref](http://www.zenspider.com/Languages/Ruby/QuickRef.html)
-* The Google - searching "ruby" and whatever you're looking for usually leads to good stuff.
+* Google - searching "ruby" and whatever you're looking for usually leads to good stuff.
 * [Ruby Koans](http://rubykoans.com/) - a great set of lessons in an interactive form.
+* [Test First Training](http://testfirst.org) - learn Ruby, one test at a time.
 * [Learn to Program by Chris Pine](http://pine.fm/LearnToProgram) - also available as [a book](http://pragprog.com/book/ltp2/learn-to-program).
 * [The Pickaxe](http://pragprog.com/book/ruby3/programming-ruby-1-9) - The definitive ruby reference (and has a great tutorial too).
 * [Why's (poignant) Guide to Ruby](http://www.scribd.com/doc/8545174/whys-Poignant-Guide-to-Ruby) - the (crazy) guide to ruby... Try it, you might like it.

@@ -84,9 +84,6 @@ browser gets confusing and wastes time.
 Each lesson will look like this:
 
 <div style="background: white; border: 1px solid black; margin: 2em; padding: 1em;">
-<h2>Section Title</h2>
-<div class="top-goal">
-section desc
 <h3>Step Title</h3>
 <div class="goal">
 <h4>Goal:</h4>
@@ -96,7 +93,7 @@ section desc
 <div class="steps">
 <h4>Steps:</h4>
 <pre class="term">
-% steps to take.
+steps to take.
 </pre>
 <pre class="code">
 def code_to_write

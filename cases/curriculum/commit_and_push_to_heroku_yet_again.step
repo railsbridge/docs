@@ -1,0 +1,21 @@
+goals {  
+  goal "Push to heroku, again"
+}
+
+steps {
+  console <<-SHELL
+git add .
+git commit -m "Made stuff look prettier"
+git push heroku master
+  SHELL
+}
+
+explanation {
+  note "
+  Nothing new here... Except... _**you're done!!!**_ Congratulations, you just \"finished\" your first rails app! 
+  
+  (They're never _really_ ever finished... have fun tweaking it!)
+  "
+}
+
+next_step "credits_and_next_steps"

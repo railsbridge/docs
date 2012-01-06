@@ -1,0 +1,60 @@
+goals {
+  
+  note "
+  When a user creates a new topic they are currently shown a page with
+  just that topic. For our voting app it makes more sense that they
+  would be taken back to the topic list."
+  
+  goal "In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic."
+}
+
+steps {
+
+  step "Change the topics controller" do
+    
+    note "Open `app/controllers/topics_controller.rb` and look at the create method. "
+
+    note "Find the line:"
+  
+    source_code :ruby, "format.html { redirect_to @topic, :notice => 'Topic was successfully created.' }"
+  
+    note 'and change `@topic` to `topics_path` like this:'
+  
+    source_code :ruby, "format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }"
+
+    note 'so that the file looks like this:'
+  
+    source_code :ruby, <<-RUBY
+def create
+  @topic = Topic.new(params[:topic])
+
+  respond_to do |format|
+    if @topic.save
+      format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }
+      format.json { render :json => @topic, :status => :created, :location => @topic }
+    else
+      format.html { render :action => "new" }
+      format.json { render :json => @topic.errors, :status => :unprocessable_entity }
+    end
+  end
+end
+    RUBY
+  end
+  
+  step "Confirm your changes" do
+    note "Look at <http://localhost:3000>."
+  end
+}
+
+
+explanation {
+  
+  note <<-MARKDOWN
+  * `format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }`:
+    * `format.html` means that the server should send html back to the browser
+    * `redirect_to topics_path` means show the **topics list page** when we're done creating a topic
+    * `:notice => 'Topic was successfully created.'` puts the message into the flash so it will be displayed on the topics list
+  MARKDOWN
+}
+
+next_step "make_the_topic_title_a_link"
