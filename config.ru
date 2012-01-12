@@ -9,5 +9,8 @@ use Rack::ShowStatus
 use Rack::Static, :urls => ["/css", "/img"], :root => "public"
 use Rack::Codehighlighter, :coderay, :element => "pre.code", :pattern => /\A\s*:::(\w+)\s*\n/
 
+# require 'thin/logging'
+# Thin::Logging.debug = true
+
 require './app'
 run InstallFest

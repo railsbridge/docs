@@ -17,7 +17,7 @@ Then open <http://localhost:9292> in a web browser.
 
 This is a Sinatra app, deployed at <http://installfest.heroku.com>, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.
 
-The site comprises files stored in a "case" directory; the one we care about now is ROOT/cases/installfest.
+The site comprises files stored in a "site" directory; the one we care about now is ROOT/sites/installfest.
 
 These files can be in any one of three formats:
 

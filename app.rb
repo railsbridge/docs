@@ -5,6 +5,7 @@ puts RUBY_VERSION
 require 'sinatra'
 require 'digest/md5'
 require 'erector'
+
 # require 'wrong'
 # include Wrong::D
 
@@ -25,18 +26,40 @@ require "markdown_page"
 require "media_wiki_page"
 require "raw_page"
 
-class InstallFest < Sinatra::Application
+class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead?
   include Erector::Mixin
 
-  def initialize
+  def initialize 
     super
     @here = File.expand_path(File.dirname(__FILE__))
+    @default_site = "installfest"
   end
 
-  attr_reader :here
+  attr_reader :here  
+  attr_writer :default_site
+  
+  def default_site
+    if (host && sites.include?(site = host.split(".").first))
+      site
+    else
+      @default_site
+    end
+  end
 
-  def case_dir
-    "#{@here}/cases/#{params[:case]}"
+  def host
+    request && request.host
+  end
+
+  def site_dir
+    "#{sites_dir}/#{params[:site]}"
+  end
+  
+  def sites_dir
+    "#{@here}/sites"
+  end
+  
+  def sites
+    Dir["#{sites_dir}/*"].map{|path| path.split('/').last}
   end
 
   def src
@@ -49,7 +72,7 @@ class InstallFest < Sinatra::Application
 
   def doc_path
     @doc_path ||= begin
-      base = "#{case_dir}/#{params[:name]}"
+      base = "#{site_dir}/#{params[:name]}"
       %w{step md mw}.each do |ext|
         path = "#{base}.#{ext}"
         return path if File.exist?(path)
@@ -67,19 +90,19 @@ class InstallFest < Sinatra::Application
   end
 
   get "/" do
-    redirect "/installfest"
+    redirect "/#{default_site}"
   end
 
-  get "/:case" do
-    case_name = params[:case]
-    redirect "/#{case_name}/#{case_name}"
+  get "/:site" do
+    site_name = params[:site]
+    redirect "/#{site_name}/#{site_name}"
   end
 
-  get "/:case/:name/src" do
+  get "/:site/:name/src" do
     begin
 
       RawPage.new(
-      case_name: params[:case],
+      site_name: params[:site],
       doc_title: doc_path.split('/').last,
       doc_path: doc_path,
       src: src
@@ -90,16 +113,16 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  get "/:case/:name.:ext" do
-    send_file "#{case_dir}/#{params[:name]}.#{params[:ext]}"
+  get "/:site/:name.:ext" do
+    send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
   end
 
   # todo: make this work in a general way, without hardcoded 'img'
-  get "/:case/img/:name.:ext" do
-    send_file "#{case_dir}/img/#{params[:name]}.#{params[:ext]}"
+  get "/:site/img/:name.:ext" do
+    send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
   end
 
-  get "/:case/:name" do
+  get "/:site/:name" do
     begin
 
       doc_title = params[:name].split('_').map do |w|
@@ -107,7 +130,7 @@ class InstallFest < Sinatra::Application
       end.join(' ')
 
       options = {
-          case_name: params[:case],
+          site_name: params[:site],
           doc_title: doc_title,
           doc_path: doc_path,
           back: params[:back],

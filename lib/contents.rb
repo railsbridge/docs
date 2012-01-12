@@ -1,21 +1,21 @@
 
 class Contents < Erector::Widget
-  needs :case_name
+  needs :site_name
 
-  def case_dir
-    @case_dir ||= begin
+  def site_dir
+    @site_dir ||= begin
       here = File.expand_path File.dirname(__FILE__)
       top = File.expand_path "#{here}/.."
-      "#{top}/cases/#{@case_name}"
+      "#{top}/sites/#{@site_name}"
     end
   end
 
-  def case_files ext
-    Dir.glob("#{case_dir}/*.{#{ext}}").sort
+  def site_files ext
+    Dir.glob("#{site_dir}/*.{#{ext}}").sort
   end
 
   def docs ext = "mw,md,step"
-    case_files(ext).map{|file| file.split('.').first}.uniq
+    site_files(ext).map{|file| file.split('.').first}.uniq
   end
 
   def content
@@ -23,14 +23,14 @@ class Contents < Erector::Widget
       h1 "Contents"
       docs.each do |path|
         title = path.split('/').last.split('_').map{|s|s.capitalize}.join(' ')
-        path = path.gsub(/^#{case_dir}\//, "/#{@case_name}/")
+        path = path.gsub(/^#{site_dir}\//, "/#{@site_name}/")
         li { a(title, :href => path) }
       end
 
       h1 "Images"
-      case_files("jpg,png").each do |path|
+      site_files("jpg,png").each do |path|
         title = path.split('/').last
-        path = path.gsub(/^#{case_dir}\//, '')
+        path = path.gsub(/^#{site_dir}\//, '')
         li { a(title, :href => path) }
       end
     end

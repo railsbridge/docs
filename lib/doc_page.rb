@@ -3,9 +3,9 @@ require "github_flavored_markdown"
 require "contents"
 
 # class Doc
-#   def initialize path_from_cases
-#     parts = @path_from_cases.split('/')
-#     @case_name = parts.shift
+#   def initialize path_from_sites
+#     parts = @path_from_sites.split('/')
+#     @site_name = parts.shift
 #     @file_name = parts.last
 #     @file_type = @file_name.split('.').last
 #     @base_name = @file_name.split('.').first
@@ -14,19 +14,19 @@ require "contents"
 class DocPage < Erector::Widgets::Page
   include GithubFlavoredMarkdown
 
-  needs :case_name, :doc_title, :doc_path
+  needs :site_name, :doc_title, :doc_path
   needs :back => nil
-  attr_reader :case_name, :doc_title
+  attr_reader :site_name, :doc_title
 
   needs :src
   attr_reader :src
 
-  def case_title
-    "Railsbridge #{case_name.capitalize}"
+  def site_title
+    "Railsbridge #{site_name.capitalize}"
   end
 
   def page_title
-    "#{doc_title} - #{case_title}"
+    "#{doc_title} - #{site_title}"
   end
 
 
@@ -151,7 +151,7 @@ class DocPage < Erector::Widgets::Page
     [
       TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
       TopLink.new(:name => "toc", :href => "#", :onclick => "$('div.toc').toggle();"),
-      TopLink.new(:name => "git", :href => "https://github.com/railsbridge/installfest/blob/master/cases/#{@case_name}/#{file_name}"),
+      TopLink.new(:name => "git", :href => "https://github.com/railsbridge/installfest/blob/master/sites/#{@site_name}/#{file_name}"),
     ]
   end
   
@@ -167,10 +167,10 @@ class DocPage < Erector::Widgets::Page
           widget top_link
         end
       }
-      h1 { a case_title, :href => "/#{case_name}" }
+      h1 { a site_title, :href => "/#{site_name}" }
     }
 
-    widget Contents, case_name: case_name
+    widget Contents, site_name: site_name
 
     div(:class=>:main) {
       h1 doc_title, :class=>"doc_title"

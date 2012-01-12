@@ -9,7 +9,7 @@ describe StepPage do
   it "renders a step file" do
     src = "step 'hello'"
     page = StepPage.new(src: src,
-      case_name: "greetings",
+      site_name: "greetings",
       doc_title: "Hello",
       doc_path: "/tmp/hello.step"
     )
