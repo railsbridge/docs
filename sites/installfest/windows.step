@@ -54,6 +54,10 @@ step "Open a Terminal" do
   note "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
 
   note "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+  
+    note "![railsbridge_findingCommandPrompt.png](railsbridge_findingCommandPrompt.png)"
+
+  
 end
 
 step "Configure the Windows Terminal" do
