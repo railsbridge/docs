@@ -1,9 +1,8 @@
 note "The Rails server logging and test results are much easier to read with colored output but the Console with Ruby and Rails defaults to white on black.  Add colors by following these steps."
 
 step "Download ANSICON" do
-
-  note "In the browser, visit <http://adoxa.110mb.com/ansicon>"
-  note "Click the \"ANSICON 1.40\" link to download the file"
+  note "In the browser, visit <https://github.com/adoxa/ansicon/downloads>"
+  note "Click the `ansi140.zip` link to download the file"
   note "Double-click the file to unzip it"
 end
 
