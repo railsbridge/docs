@@ -3,36 +3,57 @@ note "Find a volunteer and have them watch the next steps."
 
 note "If this works - get a sticker from them for your computer!"
 
-verify "rails installation" do
-  console <<-BASH
-rails new suggestotron -m http://ram9.cc/863314.txt
-cd suggestotron
-rake db:migrate
-rails generate cucumber:install --rspec --capybara
-rake cucumber
-  BASH
+verify "tool installation" do
 
-  note "If rake cucumber says something like \"Don't know how to build task 'cucumber'\", try doing just <code>cucumber</code> instead of <code>rake cucumber</code>."
+  note "if you're on OSX or Linux:"
+  console <<-TERMINAL
+$ rvm -v
+rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]
+$ sqlite3 --version
+3.7.5
+  TERMINAL
+  
+  note "on all operating systems:"
+  console <<-TERMINAL
+$ ruby -v
+ruby 1.9.2p290 (2011-07-09 revision 32553) [x86_64-darwin11.0.1]
 
-  note <<-MARKDOWN
-  After running this, the last few lines of output should look something like this:
+$ git --version
+git version 1.7.4.4
 
-    11 scenarios (5 failed, 6 skipped)
-    84 steps (5 failed, 79 skipped)
-    0m0.998s
-    rake aborted!
-    Command failed with status (1): [bundle exec /Users/sasha/.rvm/rubies/ruby-...]
-    (See full trace by running task with --trace)
+$ gem -v
+1.8.6
 
-  MARKDOWN
+$ rake --version
+rake, version 0.9.2.2
 
+$ rspec -v
+2.8.0
+  TERMINAL
+  
+end
+
+verify "rails" do
+  
+  console <<-TERMINAL
+$ rails -v
+Rails 3.1.1
+  TERMINAL
+    
+  todo "rails new; rails generate; rails server; etc."
+  
+end
+
+verify "git" do
+  todo "git init; git add .; git commit"
 end
 
 verify "heroku deploy" do
 
-  console "heroku info"
-
-  console "heroku open"
+  todo "heroku create?"
+  todo "git push heroku"
+  todo "heroku info"
+  todo "heroku open"
 
 end
 

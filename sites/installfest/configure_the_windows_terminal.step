@@ -1,4 +1,4 @@
-step "Configure the Windows Terminal" Do
+step "Configure the Windows Terminal" do
   note "Right-click on the menu bar and select **Properties**"
 
   note "Under the *Options* tab, check the box for **QuickEdit Mode**. This will let you visually cut and paste."
