@@ -10,5 +10,5 @@ step "Configure the Windows Terminal" do
   note "In the *Layout* tab, increase **Screen Buffer Size** Height to 1000."
 
   note "Click OK. In the dialog that comes up, select **Modify shortcut that started this window.**"
-
 end
+

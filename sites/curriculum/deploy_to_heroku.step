@@ -4,7 +4,7 @@ goals do
 end
 
 steps do
-  
+
   console "
 heroku create
 git push heroku master

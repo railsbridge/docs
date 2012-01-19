@@ -3,11 +3,11 @@ goals {
 }
 
 steps {
-  
+
   step "Add the button to the view" do
-    
+
     note "Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:"
-  
+
     source_code :erb, <<-HTML
   <% @topics.each do |topic| %>
     <tr>
@@ -36,7 +36,7 @@ class VotesController < ApplicationController
 end
     RUBY
   end
-  
+
   step "Confirm your changes in the browser" do
     note "Go back to <http://localhost:3000/topics> and play."
     note "Revel in the fact that you didn't have to restart the server to see these changes. Hawt, no?"
@@ -44,20 +44,20 @@ end
 }
 
 explanation {
- 
+
   note "First we added this line to `app/views/topics/index.html.erb`"
   source_code :erb, <<-HTML
   <td><%= button_to '+1', votes_path(:topic_id => topic.id), :method => :post %></td>
   HTML
-  
+
   note <<-MARKDOWN
   * `button_to '+1'` creates an html button with the value '+1'
   * `votes_path(:topic_id => topic.id)` creates the right url for the action we want to invoke. In this case, we want to create a vote for the current topic.
     * `votes_path(:topic_id => 42)` would output `/votes?topic_id=42`
   * `:method => :post` ensures we do the create action of CRUD, not the read action.
-  
+
   The changes we made to votes controller are a bit more complicated so let's work through them line by line.
-  
+
   * topic = Topic.find(params[:topic_id])
     * Finds the topic in the database with that id and stores it in the variable 'topic'.
     * params[:topic_id] corresponds to the topic_id part of the votes_path above (eg `?topic_id=42`).

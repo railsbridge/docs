@@ -26,7 +26,7 @@ add this to your ~/.bashrc
 
     export CUCUMBER_OUTPUT_ENCODING='cp1252'
   MARKDOWN
-  
+
   todo "troubleshooting page"
 end
 

@@ -12,7 +12,7 @@ rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueen
 $ sqlite3 --version
 3.7.5
   TERMINAL
-  
+
   note "on all operating systems:"
   console <<-TERMINAL
 $ ruby -v
@@ -32,20 +32,20 @@ $ rspec -v
 
 $ bundle -v
 Bundler version 1.0.21
-  
+
   TERMINAL
-  
+
 end
 
 verify "rails" do
-  
+
   console <<-TERMINAL
 $ rails -v
 Rails 3.1.1
   TERMINAL
-    
+
   todo "rails new; rails generate; rails server; etc."
-  
+
 end
 
 verify "git" do

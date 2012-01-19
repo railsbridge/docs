@@ -4,14 +4,14 @@ end
 
 step "Create an account" do
   note "click the big **Sign Up** button (it's about halfway down the page)"
-  note "Enter your email address."  
+  note "Enter your email address."
   important "Use the same email address for heroku, git, github, and ssh."
 end
 
 step "Activate your account" do
 
   note "Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save."
-  
+
 end
 
 step "Install the heroku gem" do
@@ -35,5 +35,5 @@ end
 tip "If you have further Heroku issues" do
 
   note "try following [<http://support.heroku.com/forums/43117/entries/32505> these directions] to install (or re-install) the `heroku` client."
-  
 end
+

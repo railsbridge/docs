@@ -21,15 +21,15 @@ end
 step "Configure your git and ssh environment" do
 
   important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
-  
+
   note "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
   note "Type *your actual full name* into the console and press **[enter]**"
-  
+
   note "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
   note "Type *your actual email address* into the console and press **[enter]**"
-  
+
   important "Use the **same email address** for heroku, git, github, and ssh."
-  
+
   tip do
     note "After this step you will have some **git config settings** and you will also have an **ssh key**."
   end
@@ -40,7 +40,7 @@ step "Sanity Check" do
 
   console "ruby -v"
   result "ruby 1.9.2p290 (2011-07-09) [i386-mingw32]"
-  
+
   console "rails -v"
   result "Rails 3.1.1"
 
@@ -71,7 +71,7 @@ step "Configure the Windows Terminal" do
  end
 
   tip "copy and paste" do
-    
+
     note "It's usually better to type commands in yourself. It takes a little longer but you learn more."
 
     note "But if you must... in these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
@@ -83,7 +83,7 @@ step "Install Windows Colors" do
   note "This step is optional, but **highly** recommended."
 
   link "windows_colors"
-  
+
 end
 
 step "Configure Git" do

@@ -52,7 +52,7 @@ step "Verify successful installation " do
 end
 
 step "Create an ssh public key" do
-  link "create_an_ssh_key"  
+  link "create_an_ssh_key"
 end
 
 step "Create a Heroku Account " do

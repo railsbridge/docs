@@ -28,7 +28,7 @@ steps do
 my_variable + 2
 my_variable * 3
     RUBY
-    
+
     note "Ruby remembers that we are holding a `5` with the words `my_variable` and can use that `5` do to math."
 
   end
@@ -52,7 +52,7 @@ my_variable * 3
 fruits + ["orange"]
 fruits - ["kiwi"]
     RUBY
-  
+
     note "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
 
   end
