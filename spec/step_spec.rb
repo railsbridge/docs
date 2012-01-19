@@ -4,7 +4,7 @@ require "#{here}/spec_helper"
 require "step_page"
 
 describe Step do
-  
+
   def to_html nokogiri_node
     nokogiri_node.serialize(:save_with => 0).chomp
   end
@@ -18,7 +18,7 @@ describe Step do
       Nokogiri.parse("<html>#{@html}</html>")
     end
   end
-  
+
   it "renders a step file" do
     steps = html_doc.css(".step")
     html = to_html(steps.first)
@@ -29,14 +29,13 @@ describe Step do
     HTML
     assert { html == expected }
   end
-  
+
   it "puts titles in based on step names" do
     steps = html_doc.css(".step")
     assert { steps.first["title"] == "hello" }
     assert { steps[1]["title"] == "goodbye" }
   end
-  
-  
+
   it "puts anchors in based on step numbers" do
     steps = html_doc.css(".step")
     steps.each_with_index do |step, i|
@@ -54,12 +53,12 @@ describe Step do
     step "lunch" do
       step "salad"
       step "sandwich"
-    end    
+    end
     RUBY
 
     titles = html_doc.css('.step').map{|div| div["title"]}
     assert { titles = ["breakfast", "cereal", "eggs", "lunch", "salad", "sandwich"] }
-    
+
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
     assert { names == ["step1", "step1-1", "step1-2", "step2", "step2-1", "step2-2"] }
@@ -74,14 +73,14 @@ end
 step "lunch" do
   step "salad"
   step "sandwich"
-end    
+end
 RUBY
       a = html_doc.css(".step[title=breakfast] a.link").first
       hash = URI.escape '#'
       assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
     end
   end
-  
+
   describe 'source_code' do
     it "emits a block of code as a pre with class 'code'" do
       html_doc(<<-RUBY)
