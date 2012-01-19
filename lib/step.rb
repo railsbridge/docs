@@ -4,7 +4,7 @@ class Step < Erector::Widget
   include GithubFlavoredMarkdown
 
   external :style, <<-CSS
-  
+
 .step h1>span.prefix {
   color: blue;
 }
@@ -83,7 +83,7 @@ div.back:before {
 
   needs :src
   needs :doc_path
-  
+
   def initialize options
     super
     @step_stack = []
@@ -93,7 +93,7 @@ div.back:before {
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
   end
-  
+
   def as_title name
     name.to_s.split('_').map{|s| s.capitalize}.join(' ')
   end
@@ -107,12 +107,12 @@ div.back:before {
     nested_steps.pop if nested_steps.last == 0
     nested_steps.join("-")
   end
-  
+
   # todo: move into proper Doc class
   def page_name
     @doc_path.split('/').last.split('.').first
   end
-  
+
   ## steps
 
   def steps
@@ -206,7 +206,7 @@ div.back:before {
       end
     end
   end
-  
+
   def goals
     div :class => "goals" do
       h1 "Goals"
@@ -215,7 +215,7 @@ div.back:before {
       end
     end
   end
-  
+
   alias_method :goal, :li
 
   ## notes
@@ -223,7 +223,7 @@ div.back:before {
   def note text
     p raw(md2html text)
   end
-  
+
   def important text = nil
     div :class=>"important" do
       rawtext(md2html text) unless text.nil?
@@ -266,7 +266,7 @@ div.back:before {
   def content
     eval @src, binding, @doc_path, 1
   end
-  
+
   def source_code *args
     src = args.pop
     lang = args.pop

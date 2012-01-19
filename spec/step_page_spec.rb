@@ -25,7 +25,7 @@ describe StepPage do
     </div>
   </div>
 </div>
-    
+
     HTML
     assert { main_html == expected }
   end

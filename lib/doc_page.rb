@@ -34,7 +34,7 @@ class DocPage < Erector::Widgets::Page
   # external :style,  <<-CSS
   # @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
   # CSS
-  
+
   # but this is to load the Open Sans font when we might be offline
   external :style,  <<-CSS
   @import url(/font/opensans.css);
@@ -50,7 +50,7 @@ class DocPage < Erector::Widgets::Page
     padding: 0;
     margin: 0;
   }
-    
+
   h1 {
     font-size: 2em;
     -webkit-margin-before: 0;
@@ -130,7 +130,7 @@ class DocPage < Erector::Widgets::Page
     float: right;
     margin: 2px;
   }
-  
+
   img {
     border: 1px solid #aaa;
     margin: auto;
@@ -145,7 +145,7 @@ class DocPage < Erector::Widgets::Page
       a "[#{@name}]", :class => "top_link", :href => @href, :onclick => @onclick
     end
   end
-  
+
   def top_links
     file_name = @doc_path.split('/').last
     [
@@ -154,7 +154,7 @@ class DocPage < Erector::Widgets::Page
       TopLink.new(:name => "git", :href => "https://github.com/railsbridge/installfest/blob/master/sites/#{@site_name}/#{file_name}"),
     ]
   end
-  
+
   def head_content
     super
     script :src => "/jquery-1.6.1.js"
@@ -184,7 +184,7 @@ class DocPage < Erector::Widgets::Page
             text @back.split('#').first #todo: titleize etc, use real doc object
           end
         }
-      end      
+      end
     }
 
     div(:class=>:bottom) {

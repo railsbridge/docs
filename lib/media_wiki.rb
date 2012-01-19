@@ -5,12 +5,12 @@ module MediaWiki
     gsub(/^\* /, "\n* ").
     gsub(/^\*\* /, " * ").
     gsub(/^\*\*\* /, "  * ").
-    
+
     # square-bullet lists (turn into regular bullets)
     gsub(/^\# /, "\n* ").
     gsub(/^\#\# /, " * ").
     gsub(/^\#\#\# /, "  * ").
-    
+
     # headings
     gsub(/^==== ?(.*)( *====)\s*$/, "### \\1").
     gsub(/^=== ?(.*)( *===)\s*$/, "## \\1").
@@ -19,14 +19,14 @@ module MediaWiki
 
     # plain links
     gsub(%r{(?<![\(:])((https?|mailto)://\S*)}, '<\\1>').
-    
+
     # # [name url] links
     # gsub(/(?<!\!\[)\[([^\] ]*)( [^\]]*)?\]/){
     #   url = $1
     #   name = $2 || url
     #   "[#{name}](#{url})"
     # }.
-    
+
     # [[]] links
     gsub(/\[\[([^\]]*)\]\]/) {|match|
       match = $1
@@ -37,13 +37,13 @@ module MediaWiki
         else
           "#{path}"
         end
-        "![#{path.split('/').last}](#{url})"       
+        "![#{path.split('/').last}](#{url})"
       else
         title = match.gsub(/[\(\)]/, '')
         page = title.downcase.gsub(/\W+/, '_').strip
         "[#{title}](#{page})"
       end
-    }.      
+    }.
     gsub(/'''(.+)'''/, '**\\1**').
     gsub(/''(.+)''/, '*\\1*').
     # tables

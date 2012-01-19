@@ -27,7 +27,6 @@ module GithubFlavoredMarkdown
     # make bare URLs into hot links
     text.gsub!(%r{(?<![\(:<])((https?|mailto)://\S*)}, '<\\1>')
 
-
     text
   end
 
