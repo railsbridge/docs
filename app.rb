@@ -19,7 +19,8 @@ end
 
 here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
-$:<<lib
+$: << lib
+
 require "doc_page"
 require "step_page"
 require "markdown_page"
@@ -35,9 +36,9 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     @default_site = "installfest"
   end
 
-  attr_reader :here  
+  attr_reader :here
   attr_writer :default_site
-  
+
   def default_site
     if (host && sites.include?(site = host.split(".").first))
       site
@@ -53,11 +54,11 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def site_dir
     "#{sites_dir}/#{params[:site]}"
   end
-  
+
   def sites_dir
     "#{@here}/sites"
   end
-  
+
   def sites
     Dir["#{sites_dir}/*"].map{|path| path.split('/').last}
   end
