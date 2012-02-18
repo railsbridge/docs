@@ -16,20 +16,21 @@ step "Create a new Rails app" do
   console "cd test_app"
   console "rails server"
 
+  tip "Shortcut: Just type 'S'" do
+    note <<-MARKDOWN
+Throughout your Rails programming career you're going to type `rails server` a
+lot.  In fact, you'll type this so much that DHH and the Rails Core team
+decided to save you 6 keystrokes per server restart.  Simply typing `rails s`
+is the same as `rails server`.
+  MARKDOWN
+  end
+
   note <<-MARKDOWN
 The first command should produce no output.
 If "rails server" starts up with no errors, you're golden! It'll look something like this:
   MARKDOWN
 
-  result <<-TEXT
-=> Booting WEBrick
-=> Rails 3.0.0 application starting in development on http://0.0.0.0:3000
-=> Call with -d to detach
-=> Ctrl-C to shutdown server
-[2010-09-30 21:04:12] INFO  WEBrick 1.3.1
-[2010-09-30 21:04:12] INFO  ruby 1.9.2 (2010-08-18) [x86_64-darwin10.4.0]
-[2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid=24805 port=3000
-  TEXT
+note "![Rails Server Startup](railsbridge_windowsScreenshot-command-railss.png)"
 
 note "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
