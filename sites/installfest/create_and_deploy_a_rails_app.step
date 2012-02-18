@@ -16,6 +16,15 @@ step "Create a new Rails app" do
   console "cd test_app"
   console "rails server"
 
+  tip "Shortcut: Just type 's'" do
+    note <<-MARKDOWN
+Throughout your Rails programming career you're going to type `rails server` a
+lot.  In fact, you'll type this so much that DHH and the Rails Core team
+decided to save you 6 keystrokes per server restart.  Simply typing `rails s`
+is the same as `rails server`.
+  MARKDOWN
+  end
+
   note <<-MARKDOWN
 The first command should produce no output.
 If "rails server" starts up with no errors, you're golden! It'll look something like this:
