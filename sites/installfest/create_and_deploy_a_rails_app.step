@@ -30,7 +30,15 @@ The first command should produce no output.
 If "rails server" starts up with no errors, you're golden! It'll look something like this:
   MARKDOWN
 
-note "![Rails Server Startup](railsbridge_windowsScreenshot-command-railss.png)"
+  result <<-TEXT
+=> Booting WEBrick
+=> Rails 3.0.0 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2010-09-30 21:04:12] INFO  WEBrick 1.3.1
+[2010-09-30 21:04:12] INFO  ruby 1.9.2 (2010-08-18) [x86_64-darwin10.4.0]
+[2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid=24805 port=3000
+  TEXT
 
 note "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
