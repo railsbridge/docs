@@ -14,12 +14,12 @@ verify do
   console "git config --get user.email"
   result "your email address"
 end
-  
-tip "Colored output in Git" do  
+
+tip "Colored output in Git" do
   console <<-BASH
-git config --global color.diff auto 
-git config --global color.status auto 
-git config --global color.branch auto 
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
   BASH
 end
 

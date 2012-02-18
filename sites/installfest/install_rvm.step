@@ -15,27 +15,27 @@ step "Configure your shell" do
 echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
   BASH
   console "source ~/.bash_profile"
-  
+
   verify do
     console "type rvm | head -1"
     result "rvm is a function"
-    
+
     console "rvm -v"
-    result "rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"    
+    result "rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
   end
 
 end
 
 step "Install Ruby 1.9.2 using RVM" do
   console "rvm install 1.9.2"
-  
+
   note "This downloads and compiles Ruby, which takes a while."
 
   console <<-BASH
 rvm use 1.9.2
 rvm --default 1.9.2
   BASH
-  
+
   verify do
     console "ruby -v"
     result "1.9.2"

@@ -21,7 +21,7 @@ step "Install Git" do
     console "git --version"
     result "git version 1.7.4.4"
   end
- 
+
   link "configure_git"
 end
 
@@ -39,9 +39,9 @@ end
 
 step "Install KomodoEdit " do
   note "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work."
-  
+
   important "When in doubt, use KomodoEdit."
-  
+
   link "install_komodo_edit_for_mac"
 end
 

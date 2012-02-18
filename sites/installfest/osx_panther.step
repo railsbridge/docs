@@ -54,7 +54,7 @@ sudo update_rubygems
 sudo gem update --system
 sudo gem install rails
   BASH
-  
+
   note <<-MARKDOWN
 
 If you are having this error:
@@ -96,9 +96,9 @@ In some cases, SQLite was installed with Rails in the previous section. To check
 If the list does not include sqlite3-ruby, do <code>sudo gem install sqlite3-ruby</code> in Terminal app.
 
   MARKDOWN
-  
+
   link "install_sqlite_manager"
-  
+
   end
 
 step "Install KomodoEdit " do

@@ -22,7 +22,7 @@ end
 option "if your OS is 64 bit" do
  note "copy all the files from the subdirectory 'x64' of the downloaded files to C:\\Windows\\system32"
 end
- 
+
 step "Set up colors" do
   note "open Console with Ruby and Rails"
   console "ansicon"

@@ -1,4 +1,4 @@
-goals {  
+goals {
   goal "Push to heroku, again"
 }
 
@@ -12,8 +12,8 @@ git push heroku master
 
 explanation {
   note "
-  Nothing new here... Except... _**you're done!!!**_ Congratulations, you just \"finished\" your first rails app! 
-  
+  Nothing new here... Except... _**you're done!!!**_ Congratulations, you just \"finished\" your first rails app!
+
   (They're never _really_ ever finished... have fun tweaking it!)
   "
 }

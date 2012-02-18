@@ -1,7 +1,7 @@
 goals {
 
   img :alt => "topics_and_votes_table", :src => "img/topics_and_votes_table.png"
-  
+
   goal "Because there is an explicit relationship between a topic and its
   votes, we need to specify that. In this step, we'll explicitly
   declare the relationship between votes and topics."
@@ -11,7 +11,7 @@ steps {
 
   step {
     note "Edit app/models/topic.rb so that it looks like this:"
-  
+
     source_code :ruby, <<-RUBY
 class Topic < ActiveRecord::Base
   has_many :votes
@@ -30,9 +30,9 @@ end
 }
 
 explanation {
-  
+
   note <<-MARKDOWN
-  
+
   `has_many` and `belongs_to`:
 
   * In rails, relationships between models are called associations.

@@ -1,14 +1,14 @@
 
 goals {
   goal "Create a model for votes"
-  
+
   img :alt => "Topics Table", :src => "img/votes_table.png"
-  
+
   note "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
 }
 
-steps { 
-  console <<-SHELL  
+steps {
+  console <<-SHELL
 rails generate resource vote topic_id:integer
 rake db:migrate
   SHELL

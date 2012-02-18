@@ -1,8 +1,8 @@
-goals {  
+goals {
   goal "We just made some awesome changes. Let's push them so our friends can play with it."
 }
 
-steps { 
+steps {
   console <<-SHELL
 rake assets:precompile
 git add .

@@ -1,14 +1,14 @@
---- 
+---
 goals {
-  
+
   note <<-MARKDOWN
   At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
-  
+
   * **C**reate new records in the database
   * **R**ead or show the records in the database
   * **U**pdate existing records
   * **D**estroy or delete records
-  
+
   Because these 4 actions (CRUD) are so common rails includes the scaffold command to make creating them easier.
   MARKDOWN
 }
@@ -19,10 +19,10 @@ steps {
     note "Run `rails server` in your terminal."
   }
 
-  step { 
+  step {
     note "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
     note "You should see a page listing topics that looks something like this:"
-  
+
     img :src => "img/Seattle_topic_list_page.png", :alt => "Topic List Page"
   }
 
@@ -40,9 +40,9 @@ steps {
     note <<-MARKDOWN
   * Click on "back"
   * You should see the topic list again, this time with your new topic listed
-  
+
   ![list with topic](img/Seattle_list_with_topic.png)
-  
+
   * Try the 'show', 'edit', and 'destroy' links to see what they do
   * You've created a basic database driven web site, congrats!
     MARKDOWN
@@ -53,9 +53,9 @@ explanation {
 
   note <<-MARKDOWN
   How did all those pages get created and hooked together? The rails scaffold did it for you.
-  
+
   Let's take a closer look at some of the files rails created:
-  
+
   * `app/models/topic.rb`
     * This file contains code for our topic model. If you look at it
       its nearly blank. Creating, reading, updating, and deleting

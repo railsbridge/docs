@@ -9,8 +9,8 @@ end
 steps do
 
   tip "If you have _any_ problems, contact a TA immediately."
-  
-  console <<-SHELL  
+
+  console <<-SHELL
 mkdir railsbridge
 cd railsbridge
 rails new suggestotron
@@ -25,7 +25,7 @@ ls
     note "'mkdir' stands for make directory (folder)."
     note "We've made a folder called `railsbridge`."
   end
-  
+
   step do
     console "cd railsbridge"
     note "'cd' stands for change directory."
@@ -37,7 +37,7 @@ ls
     note "'rails new' creates a new rails project with the name you give."
     note "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
   end
-  
+
   step do
     console "cd suggestotron"
     note "'cd' stands for change directory."
@@ -66,7 +66,7 @@ ls
     }
     tr {
       td " config/"
-      td " Configure your application’s runtime rules, routes, database, and more."
+      td " Configure your application's runtime rules, routes, database, and more."
     }
     tr {
       td " db/"
