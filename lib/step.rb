@@ -220,9 +220,11 @@ div.back:before {
 
   ## notes
 
-  def note text
+  def markdown text
     p raw(md2html text)
   end
+
+  alias_method :note, :markdown
 
   def important text = nil
     div :class=>"important" do
