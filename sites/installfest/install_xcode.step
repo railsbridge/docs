@@ -36,8 +36,18 @@ choice do
 
   end
 
-  option "install Xcode from the app store" do
-    todo "more instructions"
+  option "Install Xcode from the Apple App Store" do
+    step "Open the App Store application"
+    step "Install XCode" do
+      note "Search for 'XCode' and click the 'Install' button"
+      note "![XCode in the App Store](appstore.jpg)"
+    end
+    step "Launch XCode"
+    step "Install the Command Line Tools" do
+      note "Open the Preferences menu and select the Downloads tab."
+      note "Then click the 'Install' button next to 'Command Line Tools'."
+      note "![XCode Preferences](xcode-prefs.jpg)"
+    end
   end
 
 end
