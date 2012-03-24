@@ -32,7 +32,7 @@ step "Choose your instructions" do
 
     note "Click here for Lion or Snow Leopard with Homebrew"
 
-    link "osx_standard_install"
+    link "osx_lion"
   end
 
   option "Snow Leopard" do

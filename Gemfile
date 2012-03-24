@@ -9,7 +9,7 @@ gem 'rack-codehighlighter'
 gem 'coderay'
 
 group :development do
-  gem "wrong"
+  gem "wrong", ">=0.6.2"
   gem "rspec"
   gem "rerun"
   gem "rake"
