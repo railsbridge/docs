@@ -26,19 +26,19 @@ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM
 
 end
 
-step "Install Ruby 1.9.2 using RVM" do
-  console "rvm install 1.9.2"
+step "Install Ruby 1.9.3 using RVM" do
+  console "rvm install 1.9.3"
 
   note "This downloads and compiles Ruby, which takes a while."
 
   console <<-BASH
-rvm use 1.9.2
-rvm --default 1.9.2
+rvm use 1.9.3
+rvm --default 1.9.3
   BASH
 
   verify do
     console "ruby -v"
-    result "1.9.2"
+    result "1.9.3"
   end
 end
 

@@ -38,7 +38,7 @@ day... unless I really screwed something up. :D
 
 We're going to be working with:
 
-* ruby 1.9.2 installed via rvm (mac or linux) or railsinstaller (windows)
+* ruby 1.9.3 installed via rvm (mac or linux) or railsinstaller (windows)
 * rails 3.0.x (**note:** _not_ rails 3.1!)
 * bundler
 * sqlite

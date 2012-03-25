@@ -39,7 +39,7 @@ step "Verify successful installation " do
     console "which ruby"
     result "/usr/local/bin/ruby"
     console "ruby -v"
-    result "ruby 1.9.2"
+    result "ruby 1.9.3"
   end
 
   verify "rails" do

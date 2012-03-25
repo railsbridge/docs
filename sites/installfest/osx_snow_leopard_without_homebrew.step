@@ -55,9 +55,9 @@ step "Install Ruby " do
 Open up a new Terminal window, and cut & paste the following, with a return after each line. Note: the first one takes a while. When it's done, it will say something similar to "Install of ruby-1.9.2-p0 - #complete." Once it's done, paste in the second line.
 
 <pre>
-rvm install 1.9.2 -C --with-readline-dir=/usr/local,--build=x86_64-apple-darwin10
-rvm --create 1.9.2@global
-rvm --default 1.9.2
+rvm install 1.9.3 -C --with-readline-dir=/usr/local,--build=x86_64-apple-darwin10
+rvm --create 1.9.3@global
+rvm --default 1.9.3
 </pre>
 
 *If you're having trouble with a "Error running 'make '" on Snow Leopard message try this work around: [<http://bparanj.blogspot.com/2010/07/installing-ruby-192-using-rvm-on-snow.html]>
@@ -69,9 +69,9 @@ step "Install global gems " do
   note <<-MARKDOWN
 
 Open up a new Terminal window, and cut & paste the following, with a return after each line:
-(if this doesn't work, use the following, substituting your version of ruby with 1.9.2)
+(if this doesn't work, use the following, substituting your version of ruby with 1.9.3)
 <pre>
-rvm use 1.9.2
+rvm use 1.9.3
 </pre>
 <pre>
 rvm @global gem install bundler rails
