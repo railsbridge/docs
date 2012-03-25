@@ -39,10 +39,10 @@ end
 step "Sanity Check" do
 
   console "ruby -v"
-  result "ruby 1.9.2p290 (2011-07-09) [i386-mingw32]"
+  result "ruby 1.9.3p125"
 
   console "rails -v"
-  result "Rails 3.1.1"
+  result "Rails 3.2"
 
 end
 
