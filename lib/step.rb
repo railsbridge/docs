@@ -28,12 +28,12 @@ class Step < Erector::Widget
 .step .todo:before { }
 .step .todo:after { }
 
-.step .important, .tip {
+.important, .tip {
   padding: .5em 1em;
   margin: 1em 0;
 }
 
-.step .important {
+.important {
   border: 1px solid red;
 }
 
@@ -223,6 +223,8 @@ div.back:before {
   def markdown text
     p raw(md2html text)
   end
+
+  alias_method :md, :markdown
 
   alias_method :note, :markdown
 

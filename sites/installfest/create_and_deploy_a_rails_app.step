@@ -20,7 +20,7 @@ step "Create a new Rails app" do
     note <<-MARKDOWN
 Throughout your Rails programming career you're going to type `rails server` a
 lot.  In fact, you'll type this so much that DHH and the Rails Core team
-decided to save you 6 keystrokes per server restart.  Simply typing `rails s`
+decided to save you 5 keystrokes per server restart.  Simply typing `rails s`
 is the same as `rails server`.
   MARKDOWN
   end

@@ -5,17 +5,16 @@ OS X 10.3-10.5 (Panther, Tiger, Leopard)
   MARKDOWN
   end
 
-step "Xcode tools " do
+step "XCode tools " do
   note <<-MARKDOWN
 
 These are part of OS X, but are not installed by default.
-
 
 * Insert your OS X DVD. ([xcode](xcode))
 
 * Look for Xcode.mkpg - it may be under "Optional Installs"
 
-* Double click to run the installer. It will take a while - the Xcode tools are large.
+* Double click to run the installer. It will take a while - the XCode tools are large.
 
   MARKDOWN
   end
@@ -101,11 +100,11 @@ If the list does not include sqlite3-ruby, do <code>sudo gem install sqlite3-rub
 
   end
 
-step "Install KomodoEdit " do
+step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
 
-step "Other required libraries " do
+step "Other required libraries" do
   console <<-BASH
 sudo gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
 sudo gem install heroku --no-rdoc --no-ri

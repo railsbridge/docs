@@ -20,17 +20,20 @@ end
 
 step "install RVM" do
   link "install_rvm"
-  console "bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)"
+  console "bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)"
+  note "This will do some stuff and print a long message which you can ignore."
+  important "Type the command exactly as shown, including a space between the two less-than signs."
 end
 
 step "Update rubygems (Ubuntu 8.04, 8.10 only)" do
 
-  todo "These tinyurls DO NOT WORK"
+  note "You may need to run wget on some packages in this directory: <http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/>"
+
+  note "this is **not verified** but something like this might work:"
 
   console <<-TEXT
-wget http://tinyurl.com/qh7dev -O /tmp/rubygems1.8.deb
-wget http://tinyurl.com/qssyqv -O /tmp/rubygems.deb
-sudo dpkg -i /tmp/rubygems1.8.deb /tmp/rubygems.deb
+wget http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/rubygems1.8_1.3.7-3_all.deb -O /tmp/rubygems1.8.deb
+sudo dpkg -i /tmp/rubygems1.8.deb
   TEXT
 
   note "These install the rubygems packages from Ubuntu 9.04 that are required by rails."
@@ -45,7 +48,7 @@ end
 step "Firefox and the SQLite Firefox extension " do
   note <<-MARKDOWN
 
-* Download and install the latest firefox [<http://www.mozilla.org/en-US/firefox/all.html> Firefox]
+* Download and install the latest Firefox [<http://www.mozilla.org/en-US/firefox/all.html> Firefox]
 
 * Download and install the [<https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/> SQLite Manager Firefox extension]
 

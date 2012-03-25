@@ -1,8 +1,10 @@
 note <<-MARKDOWN
 
-We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work. If in doubt, use KomodoEdit.
+We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. 
 
 MARKDOWN
+
+important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
 
 step "Download KomodoEdit" do
 

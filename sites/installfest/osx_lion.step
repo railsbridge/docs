@@ -1,5 +1,5 @@
-step "Install A Compiler (Xcode or GCC)" do
-  link "install_a_compiler"
+step "Install A Compiler (XCode or GCC)" do
+  link "install_xcode"
 end
 
 step "open Terminal" do
@@ -29,8 +29,12 @@ step "Install RVM, the Ruby Version Manager " do
   link "install_rvm"
 end
 
-step "Install Rails" do
+step "Install Rails" do  
   console "gem install rails"
+  verify do
+    console "rails -v"
+    result "Rails 3.2.2"
+  end
 end
 
 step "Install SQLite Firefox plugin" do

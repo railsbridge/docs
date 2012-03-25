@@ -1,5 +1,3 @@
-
-
 console "which git"
 result "/usr/local/bin/git"
 
@@ -11,5 +9,4 @@ result "~/.rvm/gems/ruby-1.9.3-p0@global/bin/rails"
 
 console "gem list --local"
 note "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
-
 

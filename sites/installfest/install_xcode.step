@@ -1,8 +1,13 @@
-note "Installing Xcode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+note "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
 
-choice do
+note <<-MARKDOWN
 
-  option "install Xcode from a thumb drive or DVD" do
+**Special note for folks who upgraded from Leopard to Snow Leopard:** The SQLite gem does not compile with an older version of XCode installed. If you upgraded your machine from an older version of OS X, and you have an older XCode, you still need to reinstall it from your **Snow Leopard** DVD. The steps below should work fine to upgrade it.
+  MARKDOWN
+
+choice "installing from a drive or from the App Store" do
+
+  option "install XCode from a thumb drive or DVD" do
 
     step "insert your OS X DVD or Thumb Drive"
 
@@ -11,19 +16,15 @@ choice do
     end
 
     step 'Double-click Xcode.mkpg' do
-      note 'This will bring up a window titled *"Install Xcode."*'
+      note 'This will bring up a window titled *"Install XCode."*'
     end
-
-    step 'Click "Continue" at the Introduction screen.'
-
-    step 'Click "Continue" at the License screen.'
-
-    step 'Click "Agree" in the popup to agree to the license.'
-
-    step 'Click "Continue" at the Destination Select screen.'
-
-    step "Click \"Continue\" at the Installation Type screen." do
-     note "Don't change the checkboxes."
+    
+    step "Keep on clicking..." do
+      li 'Click "Continue" at the Introduction screen.'
+      li 'Click "Continue" at the License screen.'
+      li 'Click "Agree" in the popup to agree to the license.'
+      li 'Click "Continue" at the Destination Select screen.'
+      li "Click \"Continue\" at the Installation Type screen. (Don't change the checkboxes.)"
    end
 
     step 'Click "Install".' do
@@ -36,7 +37,7 @@ choice do
 
   end
 
-  option "Install Xcode from the Apple App Store" do
+  option "Install XCode from the Apple App Store" do
     step "Open the App Store application"
     step "Install XCode" do
       note "Search for 'XCode' and click the 'Install' button"

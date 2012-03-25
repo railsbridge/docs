@@ -3,8 +3,9 @@ RVM stands for Ruby Version Manager and is the easiest way to install and manage
 MARKDOWN
 
 step "Install RVM" do
-  console "bash < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )"
+  console "bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)"
   note "This will do some stuff and print a long message which you can ignore."
+  important "Type the command exactly as shown, including a space between the two less-than signs."
 end
 
 step "Configure your shell" do
@@ -14,6 +15,8 @@ step "Configure your shell" do
   console <<-BASH
 echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
   BASH
+  todo "verify that RVM doesn't write that to your bash_profile on its own"
+  
   console "source ~/.bash_profile"
 
   verify do
@@ -21,7 +24,7 @@ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM
     result "rvm is a function"
 
     console "rvm -v"
-    result "rvm 1.8.6 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
+    result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
   end
 
 end

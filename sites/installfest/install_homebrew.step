@@ -1,23 +1,18 @@
-step "install Homebrew" do
+step "Prepare your /usr/local directory" do
 
-  note <<-MARKDOWN
-
-* The first step is to create a directory where we'll store programs used to write and run your Ruby code.  Enter these two lines below in your Terminal.  Note that the **sudo** instruction will ask for your password.  Also, make sure you change '''yourusername''' to your actual Mac OS user name.  If you don't know your username, enter the command **whoami** in your terminal and it'll output your username.
-
-  MARKDOWN
+  note "Enter these two lines below in your Terminal.  Note that the **sudo** instruction will ask for your password."
 
   console "sudo mkdir /usr/local"
-  console "sudo chown -R yourusername /usr/local"
+  console "sudo chown -R $USER /usr/local"
 
+  md "'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
+  
+![sudo make me a sandwich](http://imgs.xkcd.com/comics/sandwich.png)
+
+$USER is a variable that contains your username. You can also run the command **whoami** in your terminal and it'll output your username."
 end
 
-step "run the Homebrew install script" do
-
-  note <<-MARKDOWN
-We've created the `/usr/local/` directory with **mkdir** for "Make Directory" and set the owner to you with **chown** (for "CHange OWNer").  This is the folder where Homebrew itself will live along with any programs we install using Homebrew.
-  MARKDOWN
-
-  note "To install Homebrew in one step run this line in your Terminal:"
+step "Install Homebrew" do
 
   console "/usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
 
