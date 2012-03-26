@@ -93,8 +93,8 @@
 
 <!SLIDE bullets>
 # Materials
-* Slides: <http://railsbridge.github.com/workshop>
-* Curriculum: <http://curriculum.railsbridge.org>
+* Slides: <http://curriculum.railsbridge.org/workshop>
+* Suggestotron Curriculum: <http://curriculum.railsbridge.org/>
 
 <!SLIDE bullets>
 # Two Tracks Today

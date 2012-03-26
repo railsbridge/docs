@@ -1,7 +1,7 @@
 !SLIDE subsection
 # Introduction to Ruby for Programmers
 
-<img src="ruby-logo.jpg" width="250">
+<img src="img/ruby-logo.jpg" width="250">
 
 This section is intended as a brief, lightweight overview of the Ruby language; following sections will cover all these topics in much more detail. Students are encouraged to ask questions, but instructors are encouraged to answer, "We'll cover that later."
 
@@ -12,10 +12,10 @@ This section is intended as a brief, lightweight overview of the Ruby language; 
 # Ruby vs. Rails
 
 ### Ruby is a Language
-<img src="ruby-logo.jpg" height="125" width="125">
+<img src="img/ruby-logo.jpg" height="125" width="125">
 
 ### Rails is a Framework
-<img src="rails_logo.jpg" height="125" width="125">
+<img src="img/rails_logo.jpg" height="125" width="125">
 
 ### Rails is written in Ruby
 

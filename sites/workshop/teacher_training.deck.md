@@ -49,10 +49,11 @@
 
 <!SLIDE bullets incremental>
 # Stress vs. Learning
+* Excitement is good, but stress is bad for learning
 * Before anyone touches a keyboard, set up a welcoming classroom environment.
 
 <!SLIDE smbullets incremental>
-# How to set up a welcoming classroom environment?
+# How to set up a welcoming classroom environment? 1
 
 * Smile `:-)`
   * but don't be creepy `>;-{`
@@ -61,11 +62,17 @@
 *  Admit your ignorance
 *  Tell people it's ok to make mistakes
 *  Tell people to take breaks when you're frustrated
+
+# How to set up a welcoming classroom environment? 2
+
 *  Assume that anyone you're teaching to has 0 knowledge but infinite intelligence
 *  Check in a lot
 *  Use normal language over jargon
 * Call newly arrived people in to circle or table
 *  Ask new people to introduce themselves
+
+# How to set up a welcoming classroom environment? 3
+
 *  Say up front that it'll be a collaborative learning environment
     * Encourage students to answer each others questions
 *  Ask students "What do you want to get out of class?"
@@ -73,6 +80,9 @@
 *  Keep track of students' backgrounds and call back during the class
     * "Oh, you're a DBA, you'll like this part"
 *  Humor
+
+# How to set up a welcoming classroom environment? 4
+
 * Students have diverse backgrounds
   * Treat them with respect and humility
   * Try to learn from your students' expertise
@@ -163,15 +173,12 @@ As a teacher or TA...
 # Web Resources
 You should be aware of these, even if you don't tell the students all of them right away.
 
-* devchix wiki
-  * <http://www.wiki.devchix.com/index.php?title=Workshop_Topics>
-  * <http://www.wiki.devchix.com/index.php?title=Rails_3_Curriculum>
-* diagrams:
-  * REST  <http://www.wiki.devchix.com/index.php?title=Workshop_Diagrams>
+* Diagrams:
+  * REST  <http://curriculum.railsbridge.org/workshop/rest>
   * MVC <https://github.com/alexch/mission/raw/master/mvc.png>
   * git <https://github.com/alexch/mission/raw/master/git.png>
-* workshop github repo (slides and diagrams)
-  * <http://github.com/alexch/workshop>
+* Workshop Github repo (slides and diagrams)
+  * <http://github.com/railsbridge/installfest> (currently misnamed -- "installfest" includes curriculum and workshop materials too)
 
 <!SLIDE subsection>
 # General Teaching Advice
