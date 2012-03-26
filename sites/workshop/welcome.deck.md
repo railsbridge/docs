@@ -102,3 +102,6 @@
   * focus on learning to program
 * Learn Rails (and Heroku and Github)
   * focus on tools and building web applications
+  
+---
+Proceed to next slide deck: [Today's Workshop Info and Schedule](current)
