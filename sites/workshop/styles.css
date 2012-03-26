@@ -1,0 +1,23 @@
+.centereverything {
+  text-align: center;
+}
+
+.slide-hilite {
+  text-color: red;
+}
+
+.big-text {
+  font-size: 150%;
+}
+
+.table-code {
+  font-family: Bitstream Vera Sans Mono;
+}
+li {
+    padding: 8;
+}
+
+td {
+    font-size: 32px; 
+    padding: 8;
+}

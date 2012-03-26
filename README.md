@@ -19,11 +19,12 @@ This is a Sinatra app, deployed at <http://installfest.heroku.com>, which leads 
 
 The site comprises files stored in a "site" directory; the one we care about now is ROOT/sites/installfest.
 
-These files can be in any one of three formats:
+These files can be in any of these formats:
 
 * `.step` for StepFile
 * `.md` for Markdown
 * `.mw` for MediaWiki
+* `.deck.md` for deck.rb
 
 (If multiple files exist with the same base name, .step is preferred over .md, and .md over .mw.)
 
@@ -32,6 +33,8 @@ Markdown is a lightweight markup language designed by John Gruber. The syntax is
 MediaWiki is the format of pages on the Devchix Wiki. This format is not fully supported and is provided as a temporary bridge while we move materials from the Devchix Wiki into this app.
 
 StepFile is a new, Ruby-based DSL for describing complex, nested instructions in clear, reusable chunks.
+
+[Deck.rb](https://github.com/alexch/deck.rb) converts Markdown files into an interactive in-browser HTML+JavaScript slide deck.
 
 # StepFile Reference
 

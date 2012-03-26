@@ -1,0 +1,10 @@
+{
+  "name": "RailsBridge Ruby Workshop",
+  "description": "Slides and links to a full-day Ruby immersion workshop in New York",
+  "sections": [
+	{"section":"welcome"},
+	{"section":"nyc"},
+	{"section":"ruby_for_programmers"},
+	{"section":"suggestotron"}
+  ]
+}
