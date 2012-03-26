@@ -5,3 +5,7 @@ $: << "#{top}/lib"
 require "rspec"
 require "wrong/adapters/rspec"
 require "nokogiri"
+
+require "files"
+include Files   # todo: include this in an RSpec config block instead
+

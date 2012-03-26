@@ -26,14 +26,17 @@ require "step_page"
 require "markdown_page"
 require "media_wiki_page"
 require "raw_page"
+require "deck"
+require "deck/rack_app"
 
 class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead?
   include Erector::Mixin
 
-  def initialize 
+  def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
     @default_site = "installfest"
+    set_downstream_app # todo: test
   end
 
   attr_reader :here
@@ -55,8 +58,16 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     "#{sites_dir}/#{params[:site]}"
   end
 
+  def sites_dir= dir
+    @sites_dir = dir.tap { set_downstream_app }
+  end
+  
+  def set_downstream_app
+    @app = ::Deck::RackApp.public_file_server
+  end
+  
   def sites_dir
-    "#{@here}/sites"
+    @sites_dir || "#{@here}/sites"
   end
 
   def sites
@@ -74,7 +85,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def doc_path
     @doc_path ||= begin
       base = "#{site_dir}/#{params[:name]}"
-      %w{step md mw}.each do |ext|
+      %w{step md deck.md mw}.each do |ext|
         path = "#{base}.#{ext}"
         return path if File.exist?(path)
       end
@@ -96,12 +107,15 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/:site" do
     site_name = params[:site]
-    redirect "/#{site_name}/#{site_name}"
+    if sites.include? site_name
+      redirect "/#{site_name}/#{site_name}"
+    else
+      forward  # send it on to the downstream file server
+    end
   end
 
   get "/:site/:name/src" do
     begin
-
       RawPage.new(
       site_name: params[:site],
       doc_title: doc_path.split('/').last,
@@ -115,17 +129,24 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   get "/:site/:name.:ext" do
-    send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
+    if not sites.include?(params[:site])
+      forward  # send it on to the downstream file server
+    else
+      send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
+    end
   end
 
   # todo: make this work in a general way, without hardcoded 'img'
   get "/:site/img/:name.:ext" do
-    send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
+    if not sites.include?(params[:site])
+      forward  # send it on to the downstream file server
+    else
+      send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
+    end
   end
 
   get "/:site/:name" do
     begin
-
       doc_title = params[:name].split('_').map do |w|
         w == "osx" ? "OS X" : w.capitalize
       end.join(' ')
@@ -139,8 +160,15 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
       }
 
       case ext
+        
       when "md"
-        MarkdownPage.new(options).to_html
+        if doc_path =~ /\.deck\.md$/   # todo: refactor
+          # todo: render with page nav elements too
+          slides = Deck::Slide.split(src)
+          Deck::SlideDeck.new(:slides => slides).to_pretty
+        else
+          MarkdownPage.new(options).to_html
+        end
 
       when "mw"
         MediaWikiPage.new(options).to_html
