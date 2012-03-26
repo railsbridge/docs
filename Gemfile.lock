@@ -1,16 +1,3 @@
-PATH
-  remote: ../deck.rb
-  specs:
-    deckrb (0.3.0.dev)
-      coderay
-      erector (>= 0.9.0.pre1)
-      json
-      nokogiri
-      rack
-      rack-codehighlighter
-      redcarpet (~> 2)
-      trollop
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -22,6 +9,15 @@ GEM
     ZenTest (4.7.0)
     coderay (1.0.5)
     daemons (1.1.5)
+    deckrb (0.3.0)
+      coderay
+      erector (>= 0.9.0.pre1)
+      json
+      nokogiri
+      rack
+      rack-codehighlighter
+      redcarpet (~> 2)
+      trollop
     diff-lcs (1.1.3)
     erector (0.9.0.pre1)
       treetop (>= 1.2.3)
@@ -29,7 +25,7 @@ GEM
     file-tail (1.0.8)
       tins (~> 0.3)
     files (0.2.1)
-    json (1.6.5)
+    json (1.6.6)
     nokogiri (1.5.0)
     polyglot (0.3.3)
     predicated (0.2.6)
@@ -93,7 +89,7 @@ PLATFORMS
 
 DEPENDENCIES
   coderay
-  deckrb!
+  deckrb (>= 0.3.0)
   erector (~> 0.9.0.pre1)
   files
   nokogiri

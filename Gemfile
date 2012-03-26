@@ -7,7 +7,7 @@ gem "rdiscount"
 gem "thin"
 gem 'rack-codehighlighter'
 gem 'coderay'
-gem "deckrb", :path => "../deck.rb"
+gem "deckrb", ">=0.3.0"
 
 group :development do
   gem "wrong", ">=0.6.2"
