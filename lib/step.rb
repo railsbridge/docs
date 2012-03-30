@@ -21,23 +21,22 @@ class Step < Erector::Widget
     margin-left: .25em;
   }
 
-  .todo {
-    margin: 1em;
-
-    span {
-      background-color: #f5e1f0;
-      font-style: italic;
-      padding: .25em 1em;
-    }
-    :before { }
-    :after { }
-  }
 }
 
 .message img.icon {
   float: left;
   border: none;
   margin-right: 1em;
+
+}
+
+.message.todo {
+  margin: 1em;
+  background-color: #f5e1f0;
+  font-style: italic;
+  padding: .25em 1em;
+  :before { }
+  :after { }
 }
 
 .important, .tip {
@@ -289,15 +288,11 @@ div.back:before {
   end
 
   def tip text = nil, &block
-    message nil, class: "tip", icon: "info" do
-      span "Tip: ", :class => "prefix"
-      span raw(md2html text), :class=>"name" if text
-      block.call if block
-    end
+    message nil, class: "tip", icon: "info", &block
   end
   
   def todo todo_text
-    message nil, :todo do
+    message nil, class: "todo" do
       span do
         text "[TODO: "
         text todo_text
