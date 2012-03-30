@@ -1,5 +1,4 @@
-
-note <<-MARKDOWN
+markdown <<-MARKDOWN
 ## Other Tools to help you learn Ruby
 
 ### ri
@@ -19,16 +18,20 @@ ri is a tool to look up ruby documentation:
     these substrings.
     ...
 
+MARKDOWN
+
+important "If running ri doesn't work and you've installed ruby using rvm, try
+running this command first:
+
+    $ rvm docs generate
+"
+
+markdown <<-MARKDOWN
 You can do a lot with it:
 
 * `ri Class` -- looks up the class documentation and shows all the methods available.
 * `ri Class.method` -- looks up a specific method on a class or module.
 * `ri method` -- searches all classes for matching methods
-
-If running ri doesn't work and you've installed ruby using rvm, try
-running this command first:
-
-    $ rvm docs generate
 
 ### irb
 
