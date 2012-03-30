@@ -17,4 +17,5 @@ group :development do
   gem "rake"
   gem "rack-test"
   gem "files"
+  gem "bourbon"  # do 'cd public/css; bourbon update' to get new bourbon
 end

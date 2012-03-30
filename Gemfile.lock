@@ -7,6 +7,8 @@ GEM
     RubyInline (3.11.2)
       ZenTest (~> 4.3)
     ZenTest (4.7.0)
+    bourbon (1.4.0)
+      sass (>= 3.1)
     coderay (1.0.5)
     daemons (1.1.8)
     deckrb (0.3.0)
@@ -89,6 +91,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   coderay
   deckrb (>= 0.3.0)
   erector (~> 0.9.0.pre1)

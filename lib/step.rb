@@ -4,7 +4,12 @@ require 'sass' # todo: move into erector
 class Step < Erector::Widget
   include GithubFlavoredMarkdown
 
-  external :style, Sass.compile(<<-CSS)
+  def self.scss content
+    here = File.dirname __FILE__
+    Sass.compile("@import '#{here}/../public/css/bourbon/css3/_border-radius'; #{content}")
+  end    
+
+  external :style, scss(<<-CSS)
 
 .step {
   h1>span.prefix {
@@ -135,7 +140,7 @@ div.back:before {
   
   # todo: extract into a module somehow
   size = 48
-  external :style, Sass.compile(<<-CSS)
+  external :style, scss(<<-CSS)
   input.big_checkbox[type=checkbox] {
     display:none;
     + label {
@@ -143,25 +148,21 @@ div.back:before {
        width: #{size}px;
        display:inline-block;
        padding: 0 0 0 0px;
-       border: 1px solid black;
        margin: 0 4px -8px 0;
        background-color: white;
+       z-index: 2;
+       border: 4px solid #dadada;
+       @include border-radius(10px);
     }
      
     + label:hover {
-         background-image: url(/img/check.png);
-         opacity:0.4;
-         filter:alpha(opacity=40); /* For IE8 and earlier */         
+       background-image: url(/img/check-dim.png);
     }
   }
   
   input.big_checkbox[type=checkbox]:checked {
     + label {
       background-image: url(/img/check.png);
-    }
-    + label, + label:hover {
-      opacity:1.0;
-      filter:alpha(opacity=100); /* For IE8 and earlier */
     }
   }
   CSS
