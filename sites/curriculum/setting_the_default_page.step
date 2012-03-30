@@ -2,18 +2,18 @@ goals {
 
   goal "Now that the structure is complete, let's make the flow work smoothly."
 
-  note "Currently when you go to <http://localhost:3000> you see the \"Welcome
+  message "Currently when you go to <http://localhost:3000> you see the \"Welcome
   aboard\" message."
 
-  note "It would be easier to use our app if <http://localhost:3000> went directly to the topics list."
+  message "It would be easier to use our app if <http://localhost:3000> went directly to the topics list."
 
-  note "In this step we'll make that happen and learn a bit about routes in Rails."
+  message "In this step we'll make that happen and learn a bit about routes in Rails."
 }
 
 steps {
 
   step "Add a root route" do
-    note "Open `config/routes.rb`. Near the end of the file but before the final end add `root :to => 'topics#index'`. When you are done the last few lines should look like this:"
+    message "Open `config/routes.rb`. Near the end of the file but before the final end add `root :to => 'topics#index'`. When you are done the last few lines should look like this:"
 
     source_code :ruby, <<-RUBY
 # This is a legacy wild controller route that's not recommended for RESTful applications.
@@ -26,20 +26,20 @@ root :to => 'topics#index'
 
   step "Remove the static welcome file" do
 
-    note "  You also need to remove the welcome aboard page for the new route to work."
+    message "  You also need to remove the welcome aboard page for the new route to work."
 
     console "git rm public/index.html"
 
   end
 
   step "Confirm your changes" do
-    note "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
+    message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
   end
 }
 
 explanation {
 
- note <<-MARKDOWN
+ message <<-MARKDOWN
   * root :to => 'topics#index' is a rails route that says the default
     address for your site is topics#index. topics#index is the topics
     list page (the topics controller with the index action).

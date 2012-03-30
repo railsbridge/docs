@@ -8,7 +8,7 @@ steps {
 
   step "Edit Gemfile" do
 
-    note <<-MARKDOWN
+    message <<-MARKDOWN
   Open the file called `Gemfile` in KomodoEdit, or your preferred editor, and find the line containing:
 
       gem 'sqlite3'
@@ -42,7 +42,7 @@ SHELL
 
 explanation {
 
-  note <<-MARKDOWN
+  message <<-MARKDOWN
   * The Gemfile is a list of all the Ruby libraries your application needs.
     What we've declared here is that we want to use the `sqlite3` library
     while we're developing on our computer (the development group) but when

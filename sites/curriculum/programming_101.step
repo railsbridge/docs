@@ -9,18 +9,18 @@ end
 steps do
   step do
     console "irb"
-    note "Starts up the **I**nteractive **R**u**b**y Shell an environment where you can try bits of ruby code and they'll be run automatically."
+    message "Starts up the **I**nteractive **R**u**b**y Shell an environment where you can try bits of ruby code and they'll be run automatically."
   end
 
   step do
     console "3 + 3\n7 * 6"
-    note "Ruby can do simple math automatically. `*` is used for multiplication and `/` for division."
+    message "Ruby can do simple math automatically. `*` is used for multiplication and `/` for division."
   end
 
   step do
     console "my_variable = 5"
 
-    note "Variables are words that hold information. Here we're holding a 5 with the word `my_variable`."
+    message "Variables are words that hold information. Here we're holding a 5 with the word `my_variable`."
   end
 
   step do
@@ -29,21 +29,21 @@ my_variable + 2
 my_variable * 3
     RUBY
 
-    note "Ruby remembers that we are holding a `5` with the words `my_variable` and can use that `5` do to math."
+    message "Ruby remembers that we are holding a `5` with the words `my_variable` and can use that `5` do to math."
 
   end
 
   step do
     console "puts my_variable"
 
-    note "`puts` prints the value of what comes after it. In this case it should print 5 since `my_variable` is holding a `5`."
+    message "`puts` prints the value of what comes after it. In this case it should print 5 since `my_variable` is holding a `5`."
 
   end
 
   step do
     console 'fruits = ["kiwi", "strawberry", "plum"]'
 
-    note "Variables can also hold more than one value. Here were using the variable fruits to hold a collection of fruit names. This type of collection is called an array."
+    message "Variables can also hold more than one value. Here were using the variable fruits to hold a collection of fruit names. This type of collection is called an array."
 
   end
 
@@ -53,7 +53,7 @@ fruits + ["orange"]
 fruits - ["kiwi"]
     RUBY
 
-    note "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
+    message "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
 
   end
 
@@ -63,7 +63,7 @@ fruits.each do |f|
   puts f
 end
     RUBY
-    note "This code goes through the fruits array item by item and runs the code between do and end for each item. These lines should print a list of the fruits."
+    message "This code goes through the fruits array item by item and runs the code between do and end for each item. These lines should print a list of the fruits."
 
   end
 
@@ -74,7 +74,7 @@ if my_variable > 1 then
 end
     RUBY
 
-    note "This prints `YAY!` if the value stored in `my_variable` is greater than 1. Since the code only runs when certain conditions are met if is called a conditional."
+    message "This prints `YAY!` if the value stored in `my_variable` is greater than 1. Since the code only runs when certain conditions are met if is called a conditional."
 
   end
 end

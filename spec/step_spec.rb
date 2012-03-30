@@ -22,9 +22,10 @@ describe Step do
   it "renders a step file" do
     steps = html_doc.css(".step")
     html = to_html(steps.first)
+    checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
     expected = (<<-HTML).gsub("\n", '')
 <div class="step" title="hello">
-<h1><span class="prefix">Step 1: </span>hello</h1>
+<h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
 </div>
     HTML
     assert { html == expected }

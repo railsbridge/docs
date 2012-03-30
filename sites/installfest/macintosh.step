@@ -1,10 +1,10 @@
 div do
-note <<-MARKDOWN
+message <<-MARKDOWN
   MARKDOWN
 end
 
 step "Learn your Mac OS X Version" do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 * Click on the Apple icon in the top left of your screen.
 * Select "About this Mac"
@@ -26,7 +26,7 @@ end
 
 step "Choose your instructions" do
 
-  note "Please try the 'standard install' first. If you have problems, come back here, and choose instructions for your specific OS."
+  message "Please try the 'standard install' first. If you have problems, come back here, and choose instructions for your specific OS."
 
   option "Lion" do
     link "osx_lion"
@@ -34,7 +34,7 @@ step "Choose your instructions" do
 
   option "Snow Leopard" do
     link "osx_lion"
-    note "The instructions for Lion and Snow Leopard are mostly the same."
+    message "The instructions for Lion and Snow Leopard are mostly the same."
    end
 
   option "Panther" do
@@ -44,7 +44,7 @@ step "Choose your instructions" do
   option "Tiger, or Leopard" do
     important "Panther and Tiger are **very** old and you should seriously consider upgrading, or buying a new computer!"
     link "osx_panther"
-    note "Follow the Panther instructions but be prepared for some things to be difficult."
+    message "Follow the Panther instructions but be prepared for some things to be difficult."
   end
 end
 

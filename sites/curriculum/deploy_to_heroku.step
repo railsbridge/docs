@@ -1,6 +1,6 @@
 goals do
   goal "OK. We've got an empty app and it has been added to git. What now?"
-  note "_**Ship it!**_"
+  message "_**Ship it!**_"
 end
 
 steps do
@@ -12,23 +12,23 @@ heroku open
 "
 
   step {
-    note "`heroku create` registers a new application on heroku's system."
+    message "`heroku create` registers a new application on heroku's system."
   }
 
-  step { note "`git push` takes all changes you've committed locally and pushes them to heroku." }
-  step { note "`heroku open` opens the new application in your browser." }
+  step { message "`git push` takes all changes you've committed locally and pushes them to heroku." }
+  step { message "`heroku open` opens the new application in your browser." }
 end
 
 explanation {
-  note "While I realize that at this point this isn't all that exciting, the point is that it doesn't get more difficult than this as we add more functionality to the application. Your typical workflow will look like:"
+  message "While I realize that at this point this isn't all that exciting, the point is that it doesn't get more difficult than this as we add more functionality to the application. Your typical workflow will look like:"
   img :src => "img/workflow.png", :alt => "workflow", :style => "border: none"
   ol {
-    li { note "Add or change some code" }
-    li { note "Commit your changes (`git commit`)" }
-    li { note "Deploy your changes (`git push heroku`)" }
-    li { note "(repeat)" }
+    li { message "Add or change some code" }
+    li { message "Commit your changes (`git commit`)" }
+    li { message "Deploy your changes (`git push heroku`)" }
+    li { message "(repeat)" }
   }
-  note "and boom! Your changes are live!"
+  message "and boom! Your changes are live!"
 }
 
 next_step "creating_a_migration"

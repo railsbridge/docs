@@ -1,6 +1,6 @@
-note "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+message "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
 
-note <<-MARKDOWN
+message <<-MARKDOWN
 
 **Special note for folks who upgraded from Leopard to Snow Leopard:** The SQLite gem does not compile with an older version of XCode installed. If you upgraded your machine from an older version of OS X, and you have an older XCode, you still need to reinstall it from your **Snow Leopard** DVD. The steps below should work fine to upgrade it.
   MARKDOWN
@@ -12,11 +12,11 @@ choice "installing from a drive or from the App Store" do
     step "insert your OS X DVD or Thumb Drive"
 
     step "Locate Xcode.mpkg" do
-      note "on the OS X DVD, it is inside the \"Optional Installs\" folder."
+      message "on the OS X DVD, it is inside the \"Optional Installs\" folder."
     end
 
     step 'Double-click Xcode.mkpg' do
-      note 'This will bring up a window titled *"Install XCode."*'
+      message 'This will bring up a window titled *"Install XCode."*'
     end
     
     step "Keep on clicking..." do
@@ -28,11 +28,11 @@ choice "installing from a drive or from the App Store" do
    end
 
     step 'Click "Install".' do
-      note "Enter your user password in the popup to REALLY start installing. It takes a while."
+      message "Enter your user password in the popup to REALLY start installing. It takes a while."
     end
 
     step 'Click "Close"' do
-      note 'once you get "The installation was successful" on the Summary screen.'
+      message 'once you get "The installation was successful" on the Summary screen.'
     end
 
   end
@@ -40,14 +40,14 @@ choice "installing from a drive or from the App Store" do
   option "Install XCode from the Apple App Store" do
     step "Open the App Store application"
     step "Install XCode" do
-      note "Search for 'XCode' and click the 'Install' button"
-      note "![XCode in the App Store](appstore.jpg)"
+      message "Search for 'XCode' and click the 'Install' button"
+      message "![XCode in the App Store](appstore.jpg)"
     end
     step "Launch XCode"
     step "Install the Command Line Tools" do
-      note "Open the Preferences menu and select the Downloads tab."
-      note "Then click the 'Install' button next to 'Command Line Tools'."
-      note "![XCode Preferences](xcode-prefs.jpg)"
+      message "Open the Preferences menu and select the Downloads tab."
+      message "Then click the 'Install' button next to 'Command Line Tools'."
+      message "![XCode Preferences](xcode-prefs.jpg)"
     end
   end
 

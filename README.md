@@ -40,7 +40,7 @@ StepFile is a new, Ruby-based DSL for describing complex, nested instructions in
 
 A StepFile is a [DSL](http://en.wikipedia.org/wiki/domain+specific+language) for describing a series of instructions, possibly nested inside other instructions. Technically speaking it is an *internal Ruby DSL* which means it parses as Ruby code. Nested blocks use Ruby's do..end structures, named options use Ruby's hash syntax, and string options may use any of Ruby's myriad string formats (double-quote, single-quote, here doc, percent-q, etc.)
 
-Here Docs are especially useful with `note`s since you can just dump in markdown between `<<-MARKDOWN` and `MARKDOWN` declarations.
+Here Docs are especially useful with `message`s since you can just dump in markdown between `<<-MARKDOWN` and `MARKDOWN` declarations.
 
 ## steps
 
@@ -100,19 +100,26 @@ Here Docs are especially useful with `note`s since you can just dump in markdown
   * the name is *not* markdown, but is a bold title for the tip box
   * content should be inside a nested block
 
-## notes
+## messages
 
-notes do not support nested blocks
-
-`note "text"`
+`message "text"`
 
   * makes a paragraph of text anywhere in the document
   * the text parameter is passed through a Markdown converter
-  * does not support nested blocks
   
 `important "text"`
 
-  * like a note, but called out in a red box
+  * like a message, but called out in a red box
+
+`todo "text"`
+
+  * meant as a note to future authors
+  * set aside from surrounding text (in brackets and italics)
+  * [should these be made invisible for students?]
+  
+## special
+
+Special elements do *not* format their text as Markdown.
 
 `console "text"`
 
@@ -125,18 +132,14 @@ notes do not support nested blocks
   * indicates that the student should see some output in the terminal
   * says "expected result:" and then puts the text in a `pre` block
 
-`todo "text"`
 
-  * meant as a note to future list authors
-  * set aside from surrounding text (in brackets and italics)
-  * [should these be made invisible for students?]
 
 ## erector elements
 
 StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want to insert HTML tags or other stuff, use the appropriate Erector methods, e.g.
 
     step "figure out your OS version" do
-      note "Mac OS has code names, including:"
+      message "Mac OS has code names, including:"
       table do
         tr do
          th "Leopard"
@@ -192,4 +195,8 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
   https://github.com/joshfng/railsready
   
 
+
+# Credits
+
+some icons from https://github.com/kennethreitz/open-icons
 

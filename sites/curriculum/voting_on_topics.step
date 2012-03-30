@@ -4,7 +4,7 @@ goals {
 
   img :alt => "Topics Table", :src => "img/votes_table.png"
 
-  note "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
+  message "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
 }
 
 steps {
@@ -15,7 +15,7 @@ rake db:migrate
 }
 
 explanation {
-  note <<-MARKDOWN
+  message <<-MARKDOWN
   * Just like before, we're creating a new model named "vote"
   * The only thing really different is the integer we added called `topic_id`.
     * `topic_id` is the data we need to draw the line between votes and topics.

@@ -1,11 +1,11 @@
 step "Prepare your /usr/local directory" do
 
-  note "Enter these two lines below in your Terminal.  Note that the **sudo** instruction will ask for your password."
+  message "Enter these two lines below in your Terminal.  Note that the **sudo** instruction will ask for your password."
 
   console "sudo mkdir /usr/local"
   console "sudo chown -R $USER /usr/local"
 
-  md "'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
+  message "'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
   
 ![sudo make me a sandwich](http://imgs.xkcd.com/comics/sandwich.png)
 

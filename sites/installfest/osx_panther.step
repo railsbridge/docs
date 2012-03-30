@@ -1,12 +1,12 @@
 div do
-note <<-MARKDOWN
+message <<-MARKDOWN
 OS X 10.3-10.5 (Panther, Tiger, Leopard)
 
   MARKDOWN
   end
 
 step "XCode tools " do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 These are part of OS X, but are not installed by default.
 
@@ -24,14 +24,14 @@ step "Git " do
   option "Leopard or Panther" do
     url "http://code.google.com/p/git-osx-installer/"
 
-    note %q{Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac.}
+    message %q{Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac.}
 
     link "intel_or_ppc_mac"
    end
 
   option "Tiger" do
-    note "ask a TA to help you install git on Tiger"
-    note "(you probably want to use MacPorts)"
+    message "ask a TA to help you install git on Tiger"
+    message "(you probably want to use MacPorts)"
   end
 
   end
@@ -39,12 +39,12 @@ step "Git " do
 step "Ruby, RubyGems, and Rails " do
 
   option "Tiger (10.4) and Panther (10.3)" do
-    note "visit <http://rubyosx.rubyforge.org/>"
-    note "Select the correct download in the right side of the page"
+    message "visit <http://rubyosx.rubyforge.org/>"
+    message "Select the correct download in the right side of the page"
   end
 
   option "Leopard (10.5)" do
-    note "use the built-in version of Ruby"
+    message "use the built-in version of Ruby"
     important "Whenever you install a gem using the built-in Ruby you should precede 'gem install' with 'sudo'"
   end
   console <<-BASH
@@ -54,7 +54,7 @@ sudo gem update --system
 sudo gem install rails
   BASH
 
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 If you are having this error:
     ERROR:  Error installing rubygems-update: hoe requires RubyGems version >= 1.3.1
@@ -86,7 +86,7 @@ For Tiger ONLY:
   end
 
 step "SQLite and SQLite Manager Firefox add-on " do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 **SQLite**
 

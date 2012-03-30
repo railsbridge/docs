@@ -1,7 +1,7 @@
 ---
 goals {
 
-  note <<-MARKDOWN
+  message <<-MARKDOWN
   At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
 
   * **C**reate new records in the database
@@ -16,18 +16,18 @@ goals {
 steps {
 
   step {
-    note "Run `rails server` in your terminal."
+    message "Run `rails server` in your terminal."
   }
 
   step {
-    note "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    note "You should see a page listing topics that looks something like this:"
+    message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
+    message "You should see a page listing topics that looks something like this:"
 
     img :src => "img/Seattle_topic_list_page.png", :alt => "Topic List Page"
   }
 
   step {
-    note <<-MARKDOWN
+    message <<-MARKDOWN
   * Click on "New Topic"
   * Fill in the form to and click "Create Topic"
   * You should see a confirmation page like this:
@@ -37,7 +37,7 @@ steps {
   }
 
   step {
-    note <<-MARKDOWN
+    message <<-MARKDOWN
   * Click on "back"
   * You should see the topic list again, this time with your new topic listed
 
@@ -51,7 +51,7 @@ steps {
 
 explanation {
 
-  note <<-MARKDOWN
+  message <<-MARKDOWN
   How did all those pages get created and hooked together? The rails scaffold did it for you.
 
   Let's take a closer look at some of the files rails created:

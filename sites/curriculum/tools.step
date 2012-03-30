@@ -1,4 +1,4 @@
-markdown <<-MARKDOWN
+message <<-MARKDOWN
 ## Other Tools to help you learn Ruby
 
 ### ri
@@ -26,7 +26,7 @@ running this command first:
     $ rvm docs generate
 "
 
-markdown <<-MARKDOWN
+message <<-MARKDOWN
 You can do a lot with it:
 
 * `ri Class` -- looks up the class documentation and shows all the methods available.

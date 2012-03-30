@@ -1,5 +1,5 @@
 goals {
-  note "Your friends recommended two changes for the site:"
+  message "Your friends recommended two changes for the site:"
   goal "Don't show the description on the list page"
   goal "Make the title a link and when its clicked show the description"
 }
@@ -9,24 +9,24 @@ steps {
 
   step("Remove the description") {
 
-    note "Let's start by removing the description. Open `app/views/topics/index.html.erb` and delete the line that looks like this:"
+    message "Let's start by removing the description. Open `app/views/topics/index.html.erb` and delete the line that looks like this:"
 
     source_code :erb, "<td><%= topic.description %></td>"
 
-    note "Also delete the line that looks like this:"
+    message "Also delete the line that looks like this:"
   source_code :erb, "<th>Description</th>"
 
-    note "If you save and try to load it in the browser you should see that the description no longer appears."
+    message "If you save and try to load it in the browser you should see that the description no longer appears."
 
   }
 
   step("Make the title a link") {
 
-    note "Now make the title a link by editing `app/views/topics/index.html.erb` (again) and replacing this line:"
+    message "Now make the title a link by editing `app/views/topics/index.html.erb` (again) and replacing this line:"
 
     source_code :erb, "<td><%= topic.title %></td>"
 
-    note "with this:"
+    message "with this:"
 
     source_code :erb, "<td><%= link_to topic.title, topic %></td>"
   }
@@ -36,11 +36,11 @@ explanation {
 
   source_code :erb, "<td><%= topic.description %></td>"
 
-  note "This line was getting the description using .description and just printing it out."
+  message "This line was getting the description using .description and just printing it out."
 
   source_code :erb, "<th>Description</th>"
 
-  note "
+  message "
   `<th>` stands for table header and everything between `<th>` and
   `</th>` was being printed as a table header (bold). We removed it
   since we removed the description and it would look funny to have the
@@ -50,7 +50,7 @@ explanation {
 
   source_code :erb, "<td><%= link_to topic.title, topic %></td>"
 
-  note "
+  message "
   Here's another use of `link_to` to create a link on the page. This
   `link_to` creates a link using the text from the topic title and goes
   to the topic#show page."

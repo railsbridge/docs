@@ -3,7 +3,7 @@ img :src => "img/Start_page.png", :alt => "Start Page"
 
 goals do
   goal "Create Your New Application"
-note "Let's get started! By the end of this step, we'll have  brand-spankin'-new (empty) rails app."
+message "Let's get started! By the end of this step, we'll have  brand-spankin'-new (empty) rails app."
 end
 
 steps do
@@ -18,39 +18,39 @@ cd suggestotron
 ls
   SHELL
 
-  note "Here's a step-by-step breakdown, with explanations:"
+  message "Here's a step-by-step breakdown, with explanations:"
 
   step do
     console "mkdir railsbridge"
-    note "'mkdir' stands for make directory (folder)."
-    note "We've made a folder called `railsbridge`."
+    message "'mkdir' stands for make directory (folder)."
+    message "We've made a folder called `railsbridge`."
   end
 
   step do
     console "cd railsbridge"
-    note "'cd' stands for change directory."
-    note "'cd railsbridge' makes railsbridge our current directory."
+    message "'cd' stands for change directory."
+    message "'cd railsbridge' makes railsbridge our current directory."
   end
 
   step do
     console "rails new suggestotron"
-    note "'rails new' creates a new rails project with the name you give."
-    note "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
+    message "'rails new' creates a new rails project with the name you give."
+    message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
   end
 
   step do
     console "cd suggestotron"
-    note "'cd' stands for change directory."
-    note "'cd suggestotron' makes suggestotron our current directory."
+    message "'cd' stands for change directory."
+    message "'cd suggestotron' makes suggestotron our current directory."
   end
 
   step do
     console "ls"
-    note "'ls' stands for 'list (stuff)'."
-    note "It shows you the contents of the current folder."
+    message "'ls' stands for 'list (stuff)'."
+    message "It shows you the contents of the current folder."
   end
 
-  note <<-MARKDOWN
+  message <<-MARKDOWN
   You can see that <code>rails new</code> created a lot directories and
   files. The ones we want to focus on today are:
   MARKDOWN
@@ -78,7 +78,7 @@ ls
     }
   end
 
-  note "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
+  message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
 end
 
 next_step "create_a_new_git_repo"

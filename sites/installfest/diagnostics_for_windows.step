@@ -10,13 +10,13 @@ verify do
   todo "result"
 
   console "gem list --local"
-  note "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
+  message "this will show a lot of gems... check with a TA to make sure you have all the gems you need"
 end
 
 link "what_to_do_if_git_seems_stuck"
 
 tip "if you have cucumber errors on windows " do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 to fix this error:
 

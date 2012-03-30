@@ -1,4 +1,4 @@
-note <<-MARKDOWN
+message <<-MARKDOWN
 
 We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. 
 
@@ -11,29 +11,29 @@ step "Download KomodoEdit" do
   link "intel_or_ppc_mac"
 
   option "Intel Mac CPU" do
-    note "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg)"
+    message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/6.1.2/Komodo-Edit-6.1.2-8334-macosx-x86.dmg)"
   end
 
   option "PowerPC" do
-    note "Download the [KomodoEdit installer for PowerPC](http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-macosx-powerpc.dmg)."
+    message "Download the [KomodoEdit installer for PowerPC](http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-macosx-powerpc.dmg)."
   end
 end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
-  note "This should be the default."
+  message "This should be the default."
 
-  note "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:"
+  message "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:"
 
-  note "![Komodo-Edit-5.png](Komodo-Edit-5.png)"
+  message "![Komodo-Edit-5.png](Komodo-Edit-5.png)"
 
 end
 
 step "Drag KomodoEdit into your Applications folder." do
-  note "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Drag KomodoEdit into your Applications folder."
+  message "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Drag KomodoEdit into your Applications folder."
 end
 
 step "Unmount the installer disk image" do
-  note "by dragging it from your desktop to the trash"
+  message "by dragging it from your desktop to the trash"
 end
 
 

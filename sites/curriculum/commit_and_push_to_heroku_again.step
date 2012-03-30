@@ -14,7 +14,7 @@ heroku rake db:migrate
 
 explanation {
 
-  note "
+  message "
   We must precompile the assets again, since they changed when we added the
   votes resource. Now we can commit our changes, push them out and run the
   remote migration... By this time it should be fairly old hat.

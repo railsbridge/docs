@@ -1,5 +1,5 @@
 
-note "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
+message "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
 
 console <<-BASH
 git config --global user.name "Your Actual Name"

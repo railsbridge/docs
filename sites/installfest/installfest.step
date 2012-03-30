@@ -1,7 +1,7 @@
-markdown "This [InstallFest](http://installfest.railsbridge.org) is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
+message "This [InstallFest](http://installfest.railsbridge.org) is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
 
 step "Prepare for the Install Fest" do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 
 ## You must bring:
@@ -22,7 +22,7 @@ step "Prepare for the Install Fest" do
 end
 
 step "Don't Panic!" do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 
 Even if you get stuck, please go through the rest of the instructions and download all the things you'll need. Bandwidth will be at a premium during the workshop, so it will help immensely to have everything on your laptop already.
@@ -33,7 +33,7 @@ There are a lot of steps, and the instructions may seem like they're in a foreig
 end
 
 step "Read This Overview" do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 
 You will be installing the following tools:

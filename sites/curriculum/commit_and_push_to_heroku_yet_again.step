@@ -11,7 +11,7 @@ git push heroku master
 }
 
 explanation {
-  note "
+  message "
   Nothing new here... Except... _**you're done!!!**_ Congratulations, you just \"finished\" your first rails app!
 
   (They're never _really_ ever finished... have fun tweaking it!)

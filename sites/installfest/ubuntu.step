@@ -1,4 +1,4 @@
-note <<-MARKDOWN
+message <<-MARKDOWN
 Ubuntu 8.04 and 8.10 redirect here.  These versions require one extra step below.
 
 Ubuntu 9.04 and 9.10 also redirect here.
@@ -9,7 +9,7 @@ You will need sudo access in order to complete these directions (The first user 
 MARKDOWN
 
 step "Install packaged software and libraries" do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and firefox icons in the top panel.
   MARKDOWN
 
@@ -21,32 +21,32 @@ end
 step "install RVM" do
   link "install_rvm"
   console "bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)"
-  note "This will do some stuff and print a long message which you can ignore."
+  message "This will do some stuff and print a long message which you can ignore."
   important "Type the command exactly as shown, including a space between the two less-than signs."
 end
 
 step "Update rubygems (Ubuntu 8.04, 8.10 only)" do
 
-  note "You may need to run wget on some packages in this directory: <http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/>"
+  message "You may need to run wget on some packages in this directory: <http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/>"
 
-  note "this is **not verified** but something like this might work:"
+  message "this is **not verified** but something like this might work:"
 
   console <<-TEXT
 wget http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/rubygems1.8_1.3.7-3_all.deb -O /tmp/rubygems1.8.deb
 sudo dpkg -i /tmp/rubygems1.8.deb
   TEXT
 
-  note "These install the rubygems packages from Ubuntu 9.04 that are required by rails."
+  message "These install the rubygems packages from Ubuntu 9.04 that are required by rails."
 end
 
 step "Rails " do
-  note "Using a terminal again, execute the following command to install rails."
+  message "Using a terminal again, execute the following command to install rails."
 
   console "gem install rails"
 end
 
 step "Firefox and the SQLite Firefox extension " do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 * Download and install the latest Firefox [<http://www.mozilla.org/en-US/firefox/all.html> Firefox]
 
@@ -56,7 +56,7 @@ step "Firefox and the SQLite Firefox extension " do
 end
 
 step "Other required libraries " do
-  note "for Ubuntu 10.04 do this first"
+  message "for Ubuntu 10.04 do this first"
 
   console <<-BASH
 sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
@@ -71,13 +71,13 @@ gem install heroku
 end
 
 step "KomodoEdit" do
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 If you don't have a preferred code editor, you can install KomodoEdit. It's available for [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86.tar.gz> 32-bit machines] and [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86_64.tar.gz> 64-bit machines].
 MARKDOWN
 
   tip "How many bits?" do
-    note %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" means 32-bit, and "x86_64" means 64-bit.}
+    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" means 32-bit, and "x86_64" means 64-bit.}
   end
 end
 

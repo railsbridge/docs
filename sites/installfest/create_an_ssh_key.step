@@ -1,9 +1,9 @@
-note "An SSH key uniquely identifies you (and your computer) when your computer is communicating with other computers. Think of an SSH key as a fancy password."
+message "An SSH key uniquely identifies you (and your computer) when your computer is communicating with other computers. Think of an SSH key as a fancy password."
 
-note "You'll need one of these to create your Heroku and Github accounts."
+message "You'll need one of these to create your Heroku and Github accounts."
 
 option "Did you use RailsInstaller on Windows?" do
-  note "Congratulations, you already have an ssh key!"
+  message "Congratulations, you already have an ssh key!"
 end
 
 option "otherwise" do
@@ -21,13 +21,13 @@ end
 todo "expected output of ssh-keygen command"
 
 verify do
-  note "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
+  message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
   todo "what is a home directory? what is tilde?"
   tip "Public vs. Private Keys" do
-    note "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
-    note "`id_rsa.pub` is your **public key** and can be shared freely."
-    note "`id_rsa` is your **private key** and must be kept secret."
-    note "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+    message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
+    message "`id_rsa.pub` is your **public key** and can be shared freely."
+    message "`id_rsa` is your **private key** and must be kept secret."
+    message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
   end
 end
 

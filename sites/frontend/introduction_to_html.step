@@ -3,7 +3,7 @@ goals do
 end
 
 explanation do
-  markdown <<-MARKDOWN
+  message <<-MARKDOWN
 ## What is HTML? ##
 
 HTML stands for __H__yper-__t__ext __M__arkup __L__anguage.
@@ -28,7 +28,7 @@ Do we want people to be creating HTML documents yet? I'm tempted to have everyon
   # hello.html
   source_code "HTML", "Hello World!"
 
-  markdown <<-MARKDOWN
+  message <<-MARKDOWN
 If you were to save that to a file, and then open it in $BROWSER, you would see
 
 ---
@@ -47,7 +47,7 @@ In order to add special meaning to text, we need give the browser clues about ho
   # hello.html
   source_code "HTML", "<em>Hello</em> World!"
 
-  markdown <<-MARKDOWN
+  message <<-MARKDOWN
 Update your hello.html file to include the `<em></em>` tags.  `em` is short for <em>em</em>phasis.  It's a tag that means we want the text to stand out in front of the user.  If you reopen or refresh the file in $BROWSER, you should see something like
 
 ---

@@ -15,9 +15,9 @@ steps {
 }
 
 explanation {
-  note "`bundle` installs software your application needs and prepares it to run."
-  note "`rails server` ran your application locally just like heroku is running it on their servers."
-  note "This provides a very simple means to see your changes before you commit and push them to heroku."
+  message "`bundle` installs software your application needs and prepares it to run."
+  message "`rails server` ran your application locally just like heroku is running it on their servers."
+  message "This provides a very simple means to see your changes before you commit and push them to heroku."
 }
 
 next_step "deploy_to_heroku"

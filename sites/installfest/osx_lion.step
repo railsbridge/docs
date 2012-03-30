@@ -3,9 +3,9 @@ step "Install A Compiler (XCode or GCC)" do
 end
 
 step "open Terminal" do
-  note "Look for **Terminal.app** inside Applications -> Utilities."
+  message "Look for **Terminal.app** inside Applications -> Utilities."
 
-  note "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
+  message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
 end
 
 step "Install Homebrew" do
@@ -13,7 +13,7 @@ step "Install Homebrew" do
 end
 
 step "Install Git" do
-  note "Next we'll install Git, the most popular version control system in the Ruby world:"
+  message "Next we'll install Git, the most popular version control system in the Ruby world:"
 
   console "brew install git"
 
@@ -42,7 +42,7 @@ step "Install SQLite Firefox plugin" do
 end
 
 step "Install KomodoEdit " do
-  note "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work."
+  message "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work."
 
   important "When in doubt, use KomodoEdit."
 
@@ -74,7 +74,7 @@ step "Create a Heroku account" do
 end
 
 step "Congratulations!" do
-  note "You have everything you need to write a Ruby on Rails application."
+  message "You have everything you need to write a Ruby on Rails application."
 end
 
 next_step "create_and_deploy_a_rails_app"

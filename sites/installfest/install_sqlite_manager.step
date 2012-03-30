@@ -1,28 +1,28 @@
 step "Install Firefox" do
 
-  note "[Install Firefox](http://www.mozilla.org/en-US/)"
+  message "[Install Firefox](http://www.mozilla.org/en-US/)"
 
-  note "Even if you already have Firefox, you may need to upgrade - SQLite Manager requires Firefox 3.5 or greater."
+  message "Even if you already have Firefox, you may need to upgrade - SQLite Manager requires Firefox 3.5 or greater."
 end
 
 step "Install SQLite Manager" do
 
-  note "Install the [SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/5817) Firefox plugin."
+  message "Install the [SQLite Manager](https://addons.mozilla.org/en-US/firefox/addon/5817) Firefox plugin."
 
 end
 
 step "If you have trouble installing, follow these detailed instructions:" do
 
   verify "Your Firefox Version" do
-    note "Open Firefox"
-    note "Select the *Help* menu"
-    note "Click *About Mozilla Firefox*"
-    note "The version number is right under the 'Firefox' title."
+    message "Open Firefox"
+    message "Select the *Help* menu"
+    message "Click *About Mozilla Firefox*"
+    message "The version number is right under the 'Firefox' title."
     result "3.6 or higher"
-    note "If you have an old version, [upgrade firefox](http://www.mozilla.com/en-US/firefox/upgrade.html)"
+    message "If you have an old version, [upgrade firefox](http://www.mozilla.com/en-US/firefox/upgrade.html)"
   end
 
-  note <<-MARKDOWN
+  message <<-MARKDOWN
 
 * Once it's installed, open Firefox and go to Tools -> Add-ons. At the top of the add-ons window, click "Get Add-ons."
 
@@ -43,6 +43,6 @@ step "If you have trouble installing, follow these detailed instructions:" do
 end
 
 verify do
-  note "Go to the Tools menu and verify that there is an option for **SQLite Manager**."
+  message "Go to the Tools menu and verify that there is an option for **SQLite Manager**."
 end
 

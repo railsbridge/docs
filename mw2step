@@ -10,9 +10,9 @@ ARGV.each do |arg|
   puts new_path
   File.open(new_path, "w") do |f|
     f.puts "div do"
-    f.puts "note <<-MARKDOWN"
+    f.puts "message <<-MARKDOWN"
     f.write mw2md(old).
-      gsub(/^# (.*)$/, "  MARKDOWN\n  end\n\nstep \"\\1\" do\n  note <<-MARKDOWN\n")
+      gsub(/^# (.*)$/, "  MARKDOWN\n  end\n\nstep \"\\1\" do\n  message <<-MARKDOWN\n")
     f.puts "  MARKDOWN"
     f.puts "end"
   end

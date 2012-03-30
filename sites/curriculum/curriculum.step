@@ -1,4 +1,4 @@
-note <<-MARKDOWN
+message <<-MARKDOWN
 ### Goal
 
 To teach you Ruby on Rails we are going to use a "Real World"

@@ -34,6 +34,12 @@ class Step < Erector::Widget
   }
 }
 
+.message img.icon {
+  float: left;
+  border: none;
+  margin-right: 1em;
+}
+
 .important, .tip {
   padding: .5em 1em;
   margin: 1em 0;
@@ -157,6 +163,7 @@ div.back:before {
      
     + label:hover {
        background-image: url(/img/check-dim.png);
+       cursor: pointer;
     }
   }
   
@@ -176,8 +183,8 @@ div.back:before {
       @checkbox_number = 0
     end
     @checkbox_number += 1
-    input.big_checkbox type:"checkbox", name: "thing#{@checkbox_number}", value:"valuable", id:"thing#{@checkbox_number}"
-    label for: "thing#{@checkbox_number}"
+    input.big_checkbox type:"checkbox", name: "big_checkbox_#{@checkbox_number}", value:"valuable", id:"big_checkbox_#{@checkbox_number}"
+    label for: "big_checkbox_#{@checkbox_number}"
   end
 
   def step name = nil, options = {}
@@ -266,45 +273,45 @@ div.back:before {
 
   alias_method :goal, :li
 
-  ## notes
+  ## message
 
-  def markdown text
-    p raw(md2html text)
-  end
-
-  alias_method :md, :markdown
-
-  alias_method :note, :markdown
-
-  def important text = nil
-    div :class=>"important" do
+  def message text = nil, options = {}
+    classes = (["message"] + [options[:class]]).compact
+    div :class => classes do
+      img.icon src: "/img/#{options[:icon]}.png" if options[:icon]
       rawtext(md2html text) unless text.nil?
       yield if block_given?
     end
   end
 
-  def tip name = nil
-    div :class=>"tip" do
+  def important text = nil, &block
+    message text, class: "important", icon: "warning", &block
+  end
+
+  def tip text = nil, &block
+    message nil, class: "tip", icon: "info" do
       span "Tip: ", :class => "prefix"
-      span name, :class=>"name" if name
-      yield if block_given?
+      span raw(md2html text), :class=>"name" if text
+      block.call if block
+    end
+  end
+  
+  def todo todo_text
+    message nil, :todo do
+      span do
+        text "[TODO: "
+        text todo_text
+        text "]"
+      end
     end
   end
 
+  ## special
+  
   def console msg
     div :class => "console" do
       text "Type this in the terminal:"
       pre msg
-    end
-  end
-
-  def todo message
-    div :class=>"todo" do
-      span do
-        text "[TODO: "
-        text message
-        text "]"
-      end
     end
   end
 
