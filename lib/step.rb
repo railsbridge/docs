@@ -132,12 +132,58 @@ div.back:before {
       end
     end
   end
+  
+  def big_checkbox
+    size = 48
+# check.png from http://findicons.com/icon/251632/check?id=396591
+    if @checkbox_number.nil?
+      @checkbox_number = 0
+      style "
+      input.bigcheckbox[type=checkbox] {
+        display:none;
+      }
+
+      input.bigcheckbox[type=checkbox] + label
+       {
+           height: #{size}px;
+           width: #{size}px;
+           display:inline-block;
+           padding: 0 0 0 0px;
+           border: 1px solid black;
+           margin: 0 4px -8px 0;
+           background-color: white;
+       }
+
+       input.bigcheckbox[type=checkbox]:checked + label, input.bigcheckbox[type=checkbox] + label:hover
+        {
+            background-image: url(/img/check.png);
+        }
+        
+        input.bigcheckbox[type=checkbox]:checked + label, input.bigcheckbox[type=checkbox]:checked + label:hover        
+        {
+            opacity:1.0;
+            filter:alpha(opacity=100); /* For IE8 and earlier */
+        }
+        
+        input.bigcheckbox[type=checkbox] + label:hover
+        {
+          opacity:0.4;
+          filter:alpha(opacity=40); /* For IE8 and earlier */
+        }
+        
+      "
+    end
+    @checkbox_number += 1
+    input.bigcheckbox type:"checkbox", name: "thing#{@checkbox_number}", value:"valuable", id:"thing#{@checkbox_number}"
+    label for: "thing#{@checkbox_number}"
+  end
 
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     div :class => "step", :title => name do
       h1 do
+        big_checkbox
         prefix "Step #{num}: "
         text name
       end
