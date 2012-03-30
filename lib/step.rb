@@ -8,9 +8,8 @@ class Step < Erector::Widget
     here = File.dirname __FILE__
     Sass.compile("@import '#{here}/../public/css/bourbon/css3/_border-radius'; #{content}")
   end    
-
+  
   external :style, scss(<<-CSS)
-
 .step {
   h1>span.prefix {
     color: blue;
@@ -139,13 +138,14 @@ div.back:before {
   end
   
   # todo: extract into a module somehow
-  size = 48
   external :style, scss(<<-CSS)
+  $big_checkbox_size: 48px;
+  
   input.big_checkbox[type=checkbox] {
     display:none;
     + label {
-       height: #{size}px;
-       width: #{size}px;
+       height: $big_checkbox_size;
+       width: $big_checkbox_size;
        display:inline-block;
        padding: 0 0 0 0px;
        margin: 0 4px -8px 0;
