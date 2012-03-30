@@ -8,6 +8,7 @@ gem "thin"
 gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", ">=0.3.0"
+gem "sass"
 
 group :development do
   gem "wrong", ">=0.6.2"

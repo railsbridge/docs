@@ -1,32 +1,34 @@
 require 'erector'
+require 'sass' # todo: move into erector
 
 class Step < Erector::Widget
   include GithubFlavoredMarkdown
 
-  external :style, <<-CSS
+  external :style, Sass.compile(<<-CSS)
 
-.step h1>span.prefix {
-  color: blue;
+.step {
+  h1>span.prefix {
+    color: blue;
+  }
+
+  blockquote {
+    border-left: 1px dotted blue;
+    padding-left: 1.5em;
+    margin-left: .25em;
+  }
+
+  .todo {
+    margin: 1em;
+
+    span {
+      background-color: #f5e1f0;
+      font-style: italic;
+      padding: .25em 1em;
+    }
+    :before { }
+    :after { }
+  }
 }
-
-.step blockquote {
-  border-left: 1px dotted blue;
-  padding-left: 1.5em;
-  margin-left: .25em;
-}
-
-.step .todo {
-  margin: 1em;
-}
-
-.step .todo span {
-  background-color: #f5e1f0;
-  font-style: italic;
-  padding: .25em 1em;
-}
-
-.step .todo:before { }
-.step .todo:after { }
 
 .important, .tip {
   padding: .5em 1em;
@@ -36,7 +38,6 @@ class Step < Erector::Widget
 .important {
   border: 1px solid red;
 }
-
 
 .tip {
   border: 1px solid blue;
@@ -59,7 +60,6 @@ class Step < Erector::Widget
 div.back:before {
   content: "\u2190 ";
 }
-
 
 .steps {
 }
@@ -133,48 +133,49 @@ div.back:before {
     end
   end
   
+  # todo: extract into a module somehow
+  size = 48
+  external :style, Sass.compile(<<-CSS)
+  input.big_checkbox[type=checkbox] {
+    display:none;
+    + label {
+       height: #{size}px;
+       width: #{size}px;
+       display:inline-block;
+       padding: 0 0 0 0px;
+       border: 1px solid black;
+       margin: 0 4px -8px 0;
+       background-color: white;
+    }
+     
+    + label:hover {
+         background-image: url(/img/check.png);
+         opacity:0.4;
+         filter:alpha(opacity=40); /* For IE8 and earlier */         
+    }
+  }
+  
+  input.big_checkbox[type=checkbox]:checked {
+    + label {
+      background-image: url(/img/check.png);
+    }
+    + label, + label:hover {
+      opacity:1.0;
+      filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+  }
+  CSS
+  
   def big_checkbox
-    size = 48
 # check.png from http://findicons.com/icon/251632/check?id=396591
+# technique thanks to http://nicolasgallagher.com/css-background-image-hacks/
+# and http://stackoverflow.com/questions/3772273/pure-css-checkbox-image-replacement
+# https://gist.github.com/592332 
     if @checkbox_number.nil?
       @checkbox_number = 0
-      style "
-      input.bigcheckbox[type=checkbox] {
-        display:none;
-      }
-
-      input.bigcheckbox[type=checkbox] + label
-       {
-           height: #{size}px;
-           width: #{size}px;
-           display:inline-block;
-           padding: 0 0 0 0px;
-           border: 1px solid black;
-           margin: 0 4px -8px 0;
-           background-color: white;
-       }
-
-       input.bigcheckbox[type=checkbox]:checked + label, input.bigcheckbox[type=checkbox] + label:hover
-        {
-            background-image: url(/img/check.png);
-        }
-        
-        input.bigcheckbox[type=checkbox]:checked + label, input.bigcheckbox[type=checkbox]:checked + label:hover        
-        {
-            opacity:1.0;
-            filter:alpha(opacity=100); /* For IE8 and earlier */
-        }
-        
-        input.bigcheckbox[type=checkbox] + label:hover
-        {
-          opacity:0.4;
-          filter:alpha(opacity=40); /* For IE8 and earlier */
-        }
-        
-      "
     end
     @checkbox_number += 1
-    input.bigcheckbox type:"checkbox", name: "thing#{@checkbox_number}", value:"valuable", id:"thing#{@checkbox_number}"
+    input.big_checkbox type:"checkbox", name: "thing#{@checkbox_number}", value:"valuable", id:"thing#{@checkbox_number}"
     label for: "thing#{@checkbox_number}"
   end
 
