@@ -39,12 +39,13 @@ step "Install Rails" do
   end
 end
 
-step "Install SQLite Firefox plugin" do
+step "Install 'SQLite Manager' Firefox plugin" do
   link "install_sqlite_manager"
+  message "This step is *optional*. If it doesn't work, don't spend too much time trying to get it to work."  
 end
 
-step "Install KomodoEdit " do
-  message "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. Microsoft Word and other word processing programs won't work."
+step "Install KomodoEdit" do
+  message "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
 
   important "When in doubt, use KomodoEdit."
 
@@ -52,11 +53,13 @@ step "Install KomodoEdit " do
 end
 
 step "Install more gems" do
-  console "gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat heroku"
+  console "gem install heroku"
+
+  message "If you are in an advanced class, you will also want these gems:"
+  console "gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat"
 end
 
 verify "successful installation" do
-
   console "which git"
   result "/usr/bin/git"
 

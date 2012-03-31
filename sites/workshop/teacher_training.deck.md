@@ -223,7 +223,7 @@ You should be aware of these, even if you don't tell the students all of them ri
 * get the students talking to each other
 
 <!SLIDE bullets incremental>
-# What if a student feels the class is going too slow?
+# What if a student feels the class is going x?
 * Talk to her privately
 * Suggest moving up from noob to post-noob
 * Suggest field promotion to TA
@@ -250,7 +250,7 @@ You should be aware of these, even if you don't tell the students all of them ri
 
 <!SLIDE bullets incremental>
 # More general teaching tips
-* Don't think about what you're doing to do in the class, think about what they're going to do. 
+* Don't think about what you're going to do in the class, think about what they're going to do. 
 * tell them what you’re going to tell them, tell them, and tell them what you told them
 * ...?
 
@@ -258,16 +258,18 @@ You should be aware of these, even if you don't tell the students all of them ri
 # How do you check their understanding? 
 
 * Some things that don't work:  
-  * “Stop me if you don’t understand.”  (because they’ll be too shy) 
-  * “Do you get it?” (because it’s too easy to say yes when the answer is no) 
+  * "Stop me if you don’t understand." (because they’ll be too shy) 
+  * "Do you get it?" (because it’s too easy to say yes when the answer is no) 
 
-* ask them a question about the material. but how to do this without putting them on the spot?
-* ask questions about something that has already been built on top of. Spiral.
+* What works?
 
 <!SLIDE smbullets incremental>
 # How do you check their understanding? (more) 
+
+* ask them a question about the material. but how to do this without putting them on the spot?
+* ask questions about something that has already been built on top of. Spiral.
 * keep an eye on body language/facial expressions
-  * 'i see some confusion. let’s get a question.'
+  * "i see some confusion. let’s get a question."
 * pairing off and discussing/explaining
 * ask a less binary question to check understanding
   * how would you do ___
@@ -279,8 +281,8 @@ You should be aware of these, even if you don't tell the students all of them ri
 * explain while loops, have them build one
 * pair them off and debug
 * ok to ask the same question twice with slightly different variables
-* don’t let the ringer dictate the pace  
- 
+* don’t let the most advanced student dictate the pace  
+
 <!SLIDE subsection>
 # Teaching Programming
 
