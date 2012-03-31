@@ -5,13 +5,6 @@ end
 
 steps do
 
-  console <<-SH
-git status
-git add .
-git commit -m "Added all the things"
-git status
-  SH
-
   step do
     console "git status"
 
