@@ -7,17 +7,10 @@
 * This will be a conversation, not a lecture. 
   * You will share your experiences and advice
 * (yes, this is a sneaky way of modeling how you should teach your class)
-* We will also walk through the whole curriculum (so there's no surprises)
 
-<!SLIDE bullets>
-# About this presentation
-* Structured around questions
-  * Instructor will ask the question
-  * Participants will discuss
-  * Instructor will eventually reveal answers
-  * Answers were mostly provided during earlier sessions
-* We probably won't have time to cover it all
-  * Please look over it on the web later
+## Make sure to go over the entire curriculum tonight
+* to make sure there are no surprises
+* if you can, do it with another teacher
 
 <!SLIDE bullets incremental>
 # Who are you?
@@ -25,10 +18,6 @@
 * Who has taught before?
 * Who has TA'd before?
 * Why are you here?
-
-<!SLIDE bullets>
-# Who am I?
-.notes Tell the class about yourself, your experience, your motivation.
 
 <!SLIDE bullets incremental>
 # What are the goals of the Railsbridge Open Workshop?
@@ -41,16 +30,19 @@
   * Yes!
 * increase number of female programmers and teachers
 * show that programming is totally not scary
-  
+
 <!SLIDE bullets incremental>
 # What special challenges do we face as teachers of women?
 * Madeline Kunin's research: women self-filter more than men
-
 
 <!SLIDE bullets incremental>
 # Stress vs. Learning
 * Excitement is good, but stress is bad for learning
 * Before anyone touches a keyboard, set up a welcoming classroom environment.
+
+# How to set up a welcoming classroom environment?
+
+Discuss!
 
 <!SLIDE smbullets incremental>
 # How to set up a welcoming classroom environment? 1
