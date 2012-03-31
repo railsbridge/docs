@@ -27,7 +27,6 @@ class Step < Erector::Widget
   float: left;
   border: none;
   margin-right: 1em;
-
 }
 
 .message.todo {
@@ -288,7 +287,7 @@ div.back:before {
   end
 
   def tip text = nil, &block
-    message nil, class: "tip", icon: "info", &block
+    message text, class: "tip", icon: "info", &block
   end
   
   def todo todo_text
