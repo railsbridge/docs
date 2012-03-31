@@ -5,7 +5,7 @@
 
 <!SLIDE bullets>
 # Please thank our awesome sponsor!
-![Pivotal](img/pivotal_log.png)
+![Pivotal](img/pivotal_logo.png)
 
 <!SLIDE bullets>
 # After-party: Thirsty Bear, Howard & 3rd
