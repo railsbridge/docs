@@ -43,20 +43,198 @@ $ rails -v
 Rails 3.2.2
   TERMINAL
 
-  todo "rails new; rails generate; rails server; etc."
+  console <<-TERMINAL
+$ rails new sticker
+# ...most output omitted for brevity...
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+$ cd sticker
+$ rails generate scaffold drink name:string temperature:integer
+      invoke  active_record
+      create    db/migrate/20120331005122_create_drinks.rb
+      create    app/models/drink.rb
+      invoke    test_unit
+      create      test/unit/drink_test.rb
+      create      test/fixtures/drinks.yml
+       route  resources :drinks
+      invoke  scaffold_controller
+      create    app/controllers/drinks_controller.rb
+      invoke    erb
+      create      app/views/drinks
+      create      app/views/drinks/index.html.erb
+      create      app/views/drinks/edit.html.erb
+      create      app/views/drinks/show.html.erb
+      create      app/views/drinks/new.html.erb
+      create      app/views/drinks/_form.html.erb
+      invoke    test_unit
+      create      test/functional/drinks_controller_test.rb
+      invoke    helper
+      create      app/helpers/drinks_helper.rb
+      invoke      test_unit
+      create        test/unit/helpers/drinks_helper_test.rb
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/drinks.js.coffee
+      invoke    scss
+      create      app/assets/stylesheets/drinks.css.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.css.scss
 
+$ rake db:migrate
+==  CreateDrinks: migrating ===================================================
+-- create_table(:drinks)
+   -> 0.0030s
+==  CreateDrinks: migrated (0.0033s) ==========================================
+
+$ rails server
+=> Booting WEBrick
+=> Rails 3.2.3 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-03-30 17:56:02] INFO  WEBrick 1.3.1
+[2012-03-30 17:56:02] INFO  ruby 1.9.3 (2012-02-16) [x86_64-linux]
+[2012-03-30 17:56:02] INFO  WEBrick::HTTPServer#start: pid=27148 port=3000
+  TERMINAL
+
+  message <<-BROWSER_VERIFY
+In your web browser, go to <http://localhost:3000/drinks>
+
+1. Click on "New drink"
+2. Enter Cappuccino for the name 
+3. Enter 135 for the temperature.
+4. Click on "Create Drink".
+
+You should see: ![Drink was successfully created](get_a_sticker_you_should_see.png)
+
+In your terminal, Hold Control and hit C to stop the rails server.
+  BROWSER_VERIFY
+
+  console <<-TERMINAL
+=> Booting WEBrick
+=> Rails 3.2.3 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2012-03-30 17:56:02] INFO  WEBrick 1.3.1
+[2012-03-30 17:56:02] INFO  ruby 1.9.3 (2012-02-16) [x86_64-linux]
+[2012-03-30 17:56:02] INFO  WEBrick::HTTPServer#start: pid=27148 port=3000
+# ...most output omitted for brevity...
+^C>> Stopping ...
+
+18:00:58 - Installfest stopping
+>> Stopping ...
+  TERMINAL
 end
 
 verify "git" do
-  todo "git init; git add .; git commit"
+  message "Make sure you're still in the sticker directory."
+
+  console <<-TERMINAL
+
+$ git init
+Initialized empty Git repository in /home/steven/Code/ruby/sticker/.git/
+
+$ git add .
+
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#       new file:   .gitignore
+#       new file:   Gemfile
+#       new file:   Gemfile.lock
+#       new file:   README.rdoc
+#       new file:   Rakefile
+# ...most output omitted for brevity...
+
+$ git commit -m"Getting that sticker"
+[master (root-commit) 8cd0e44] Getting that sticker
+ 54 files changed, 1531 insertions(+)
+ create mode 100644 .gitignore
+# ...most output omitted for brevity...
+ create mode 100644 test/unit/helpers/drinks_helper_test.rb
+ create mode 100644 vendor/assets/javascripts/.gitkeep
+ create mode 100644 vendor/assets/stylesheets/.gitkeep
+ create mode 100644 vendor/plugins/.gitkeep
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+  TERMINAL
 end
 
 verify "heroku deploy" do
 
-  todo "heroku create?"
-  todo "git push heroku"
-  todo "heroku info"
-  todo "heroku open"
+  message "Use your editor to open the Gemfile and add the following:"
+
+  # TODO: Change from console to `ruby` method for future styling semantics
+  source_code :ruby, <<-RUBY
+group :production do
+  gem 'pg'
+end
+  RUBY
+
+  console <<-BUNDLE_INSTALL
+$ bundle install --without production
+Fetching gem metadata from https://rubygems.org/.........
+# ...most output omitted for brevity...
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+  BUNDLE_INSTALL
+
+  console <<-GIT_COMMIT
+$ git add .
+
+$ git commit -m"Add pg gem for Heroku."
+[master 4a275be] Add pg gem for Heroku.
+ 2 files changed, 6 insertions(+)
+  GIT_COMMIT
+
+  message "The name of your heroku app will be different. That is fine."
+
+  console <<-HEROKU_CREATE
+$ heroku create
+Creating evening-wind-5284... done, stack is bamboo-mri-1.9.2
+http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git
+Git remote heroku added
+  HEROKU_CREATE
+
+  console <<-HEROKU_PUSH
+$ git push heroku master
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 453 bytes, done.
+Total 4 (delta 3), reused 0 (delta 0)
+
+-----> Heroku receiving push
+-----> Ruby/Rails app detected
+-----> Detected Rails is not set to serve static_assets
+       Installing rails3_serve_static_assets... done
+-----> Configure Rails 3 to disable x-sendfile
+       Installing rails3_disable_x_sendfile... done
+-----> Configure Rails to log to stdout
+       Installing rails_log_stdout... done
+-----> Gemfile detected, running Bundler version 1.0.7
+       Unresolved dependencies detected; Installing...
+       Using --without development:test
+# ...most output omitted for brevity...
+-----> Compiled slug size is 6.1MB
+-----> Launching...
+  HEROKU_PUSH
+
+  console <<-HEROKU_OPEN
+$ heroku open"
+Opening http://evening-wind-5284.heroku.com/
+  HEROKU_OPEN
+
+  message <<-BROWSER_VERIFY
+Append drinks to the end of your heroku url. For example, if your url was
+`http://evening-wind-5284.heroku.com/`, then change it to `http://evening-wind-5284.heroku.com/drinks`.
+
+You should see the same screen as you did at `http://localhost:3000/drinks` and be able to click "New Drink" and "Create Drink" as expected.
+  BROWSER_VERIFY
 
 end
 
