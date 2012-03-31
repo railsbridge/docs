@@ -14,6 +14,7 @@ steps {
 
     source_code :ruby, <<-RUBY
 class Topic < ActiveRecord::Base
+  attr_accessible :description, :title
   has_many :votes
 end
     RUBY
@@ -23,6 +24,7 @@ end
     message "Edit app/models/vote.rb so that it looks like this:"
     source_code :ruby, <<-RUBY
 class Vote < ActiveRecord::Base
+  attr_accessible :topic_id
   belongs_to :topic
 end
     RUBY
