@@ -1,23 +1,16 @@
-step "Prepare your /usr/local directory" do
 
-  message "Enter these two lines below in your Terminal.  Note that the **sudo** instruction will ask for your password."
+console %q{/usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"}
 
-  console "sudo mkdir /usr/local"
-  console "sudo chown -R $USER /usr/local"
+important "If that doesn't work, visit <https://github.com/mxcl/homebrew/wiki/installation> and follow the instructions there."
 
-  message "'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
-  
+verify do
+  console "brew -v"
+  result "0.8"
+end
+
+tip "Homebrew uses `sudo` to prepare your `/usr/local` directory. 'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
+
 ![sudo make me a sandwich](http://imgs.xkcd.com/comics/sandwich.png)
 
 $USER is a variable that contains your username. You can also run the command **whoami** in your terminal and it'll output your username."
-end
 
-step "Install Homebrew" do
-
-  console "/usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
-
-  verify do
-    console "brew -v"
-    result "0.8"
-  end
-end
