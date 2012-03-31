@@ -1,11 +1,13 @@
-step "Install A Compiler (XCode or GCC)" do
-  link "install_xcode"
-end
-
-step "open Terminal" do
+step "Open Terminal" do
   message "Look for **Terminal.app** inside Applications -> Utilities."
 
   message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
+  
+  tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
+end
+
+step "Install A Compiler (XCode or GCC)" do
+  link "install_xcode"
 end
 
 step "Install Homebrew" do
