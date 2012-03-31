@@ -79,8 +79,9 @@ I tried to make people enjoy programming and concentrate on the fun and creative
 
 # IRB: Interactive RuBy
 
+Type `irb` in the terminal to launch IRB
+
     @@@ ruby
-    $ irb
     >> 4
     => 4
     >> 4+4

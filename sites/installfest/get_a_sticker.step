@@ -8,47 +8,43 @@ verify "tool installation" do
   tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
 
   message "If you're on OSX or Linux:"
-  console <<-TERMINAL
-$ rvm -v
-rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]
-$ sqlite3 --version
-3.7.5
-  TERMINAL
+  
+  console "rvm -v"
+  result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
+  
+  console "sqlite3 --version"
+  result "3.7.5"
 
   message "On all operating systems:"
-  console <<-TERMINAL
-$ ruby -v
-ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]
+  console "ruby -v"
+  result "ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]"
 
-$ git --version
-git version 1.7.4.4
+  console "git --version"
+  result "git version 1.7.4.4"
 
-$ gem -v
-1.8.21
+  console "gem -v"
+  result "1.8.21"
 
-$ rake --version
-rake, version 0.9.2.2
+  console "rake --version"
+  result "rake, version 0.9.2.2"
 
-$ bundle -v
-Bundler version 1.1.3
-
-  TERMINAL
+  console "bundle -v"
+  result "Bundler version 1.1.3"
 
 end
 
 verify "rails" do
 
-  console <<-TERMINAL
-$ rails -v
-Rails 3.2.2
-  TERMINAL
+  console "rails -v"
+  result "Rails 3.2.2"
 
-  console <<-TERMINAL
-$ rails new sticker
-# ...most output omitted for brevity...
-Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-$ cd sticker
-$ rails generate scaffold drink name:string temperature:integer
+
+  console "rails new sticker"
+  result "# ...most output omitted for brevity...
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed."
+
+  console "cd sticker\nrails generate scaffold drink name:string temperature:integer"
+  result "
       invoke  active_record
       create    db/migrate/20120331005122_create_drinks.rb
       create    app/models/drink.rb
@@ -77,15 +73,18 @@ $ rails generate scaffold drink name:string temperature:integer
       invoke    scss
       create      app/assets/stylesheets/drinks.css.scss
       invoke  scss
-      create    app/assets/stylesheets/scaffolds.css.scss
-
-$ rake db:migrate
+      create    app/assets/stylesheets/scaffolds.css.scss"
+      
+  console "rake db:migrate"
+  result "
 ==  CreateDrinks: migrating ===================================================
 -- create_table(:drinks)
    -> 0.0030s
 ==  CreateDrinks: migrated (0.0033s) ==========================================
+"
 
-$ rails server
+  console "rails server"
+  result "
 => Booting WEBrick
 => Rails 3.2.3 application starting in development on http://0.0.0.0:3000
 => Call with -d to detach
@@ -93,8 +92,8 @@ $ rails server
 [2012-03-30 17:56:02] INFO  WEBrick 1.3.1
 [2012-03-30 17:56:02] INFO  ruby 1.9.3 (2012-02-16) [x86_64-linux]
 [2012-03-30 17:56:02] INFO  WEBrick::HTTPServer#start: pid=27148 port=3000
-  TERMINAL
-
+  TERMINAL"
+  
   message <<-BROWSER_VERIFY
 In your web browser, go to <http://localhost:3000/drinks>
 
@@ -127,14 +126,12 @@ end
 verify "git" do
   message "Make sure you're still in the sticker directory."
 
-  console <<-TERMINAL
+  console "git init"
+  result "Initialized empty Git repository in /home/steven/Code/ruby/sticker/.git/"
 
-$ git init
-Initialized empty Git repository in /home/steven/Code/ruby/sticker/.git/
-
-$ git add .
-
-$ git status
+  console "git add ."
+  console "git status"
+  result <<-RESULT
 # On branch master
 #
 # Initial commit
@@ -148,8 +145,10 @@ $ git status
 #       new file:   README.rdoc
 #       new file:   Rakefile
 # ...most output omitted for brevity...
-
-$ git commit -m"Getting that sticker"
+  RESULT
+  
+  console 'git commit -m"Getting that sticker"'
+  result "
 [master (root-commit) 8cd0e44] Getting that sticker
  54 files changed, 1531 insertions(+)
  create mode 100644 .gitignore
@@ -157,12 +156,12 @@ $ git commit -m"Getting that sticker"
  create mode 100644 test/unit/helpers/drinks_helper_test.rb
  create mode 100644 vendor/assets/javascripts/.gitkeep
  create mode 100644 vendor/assets/stylesheets/.gitkeep
- create mode 100644 vendor/plugins/.gitkeep
+ create mode 100644 vendor/plugins/.gitkeep"
 
-$ git status
+ console "git status"
+ result "
 # On branch master
-nothing to commit (working directory clean)
-  TERMINAL
+nothing to commit (working directory clean)"
 end
 
 verify "heroku deploy" do
@@ -176,32 +175,30 @@ group :production do
 end
   RUBY
 
-  console <<-BUNDLE_INSTALL
-$ bundle install --without production
-Fetching gem metadata from https://rubygems.org/.........
+  console "bundle install --without production"
+  result "Fetching gem metadata from https://rubygems.org/.........
 # ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-  BUNDLE_INSTALL
+"
 
   console <<-GIT_COMMIT
-$ git add .
-
-$ git commit -m"Add pg gem for Heroku."
-[master 4a275be] Add pg gem for Heroku.
- 2 files changed, 6 insertions(+)
-  GIT_COMMIT
+git add .
+git commit -m"Add pg gem for Heroku."
+GIT_COMMIT
+  result "[master 4a275be] Add pg gem for Heroku.
+ 2 files changed, 6 insertions(+)"
 
   message "The name of your heroku app will be different. That is fine."
 
-  console <<-HEROKU_CREATE
-$ heroku create
+  console "heroku create"
+  result <<-HEROKU_CREATE
 Creating evening-wind-5284... done, stack is bamboo-mri-1.9.2
 http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git
 Git remote heroku added
   HEROKU_CREATE
 
-  console <<-HEROKU_PUSH
-$ git push heroku master
+  console "git push heroku master"
+  result <<-HEROKU_PUSH
 Counting objects: 7, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (4/4), done.
@@ -224,10 +221,8 @@ Total 4 (delta 3), reused 0 (delta 0)
 -----> Launching...
   HEROKU_PUSH
 
-  console <<-HEROKU_OPEN
-$ heroku open"
-Opening http://evening-wind-5284.heroku.com/
-  HEROKU_OPEN
+  console "heroku open"
+  result "Opening http://evening-wind-5284.heroku.com/"
 
   message <<-BROWSER_VERIFY
 Append drinks to the end of your heroku url. For example, if your url was
