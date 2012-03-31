@@ -15,7 +15,7 @@ heroku open
     message "`heroku create` registers a new application on heroku's system."
   }
 
-  step { message "`git push` takes all changes you've committed locally and pushes them to heroku." }
+  step { message "`git push heroku master` takes all changes you've committed locally and pushes them to heroku." }
   step { message "`heroku open` opens the new application in your browser." }
 end
 
