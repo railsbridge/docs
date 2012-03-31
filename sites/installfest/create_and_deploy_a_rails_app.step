@@ -114,13 +114,16 @@ Git remote heroku added
   OUTPUT
 
   console "git remote show"
-  result "the list includes heroku"
+  result "heroku"
 
   message "If you get messages here complaining about public keys it's probably due to some confusion with SSH key usage by another app on your computer.  Call a volunteer over to help you figure it out.  Luckily this only needs to be done the first time you create a Heroku app."
   end
 
   step "Prepare your rails app for deploying to Heroku" do
     message <<-MARKDOWN
+
+Find your test_app and open it in a text-editor.
+Inside, find a file named Gemfile.
 Edit your Gemfile and change the line:
 
     gem 'sqlite3'
