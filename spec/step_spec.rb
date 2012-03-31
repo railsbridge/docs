@@ -97,5 +97,23 @@ RUBY
       assert { @html == "<pre class=\"code\">\n:::ruby\nx = 2</pre>" }
     end
   end
+  
+  describe 'console' do
+    it "emits a 'console' div with a 'pre' block" do
+      html_doc(<<-RUBY)
+      console "echo 'hi'"
+      RUBY
+      assert { @html == "<div class=\"console\"><span>#{Step::TERMINAL_CAPTION}</span><pre>echo 'hi'</pre></div>" }
+    end
+  end
+
+  describe 'result' do
+    it "emits a 'result' div with a 'pre' block" do
+      html_doc(<<-RUBY)
+      result "hi"
+      RUBY
+      assert { @html == "<div class=\"result\"><span>#{Step::RESULT_CAPTION}</span><pre>hi</pre></div>" }
+    end
+  end
 end
 

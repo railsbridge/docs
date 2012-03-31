@@ -314,16 +314,19 @@ div.back:before {
 
   ## special
   
+  TERMINAL_CAPTION = "Type this in the terminal:"
+  RESULT_CAPTION = "Expected result:"
+  
   def console msg
     div :class => "console" do
-      span "Type this in the terminal:"
+      span TERMINAL_CAPTION
       pre msg
     end
   end
 
   def result text
     div :class => "result" do
-      span "Expected result:"
+      span RESULT_CAPTION
       pre text
     end
   end
