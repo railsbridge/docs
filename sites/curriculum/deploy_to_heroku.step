@@ -6,7 +6,7 @@ end
 steps do
 
   console "
-heroku create
+heroku create --stack cedar
 git push heroku master
 heroku open
 "
