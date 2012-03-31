@@ -14,12 +14,13 @@ describe Step do
       step = Step.new(src: src,
         doc_path: "/tmp/hello.step"
       )
-      @html = step.to_html
+      @html = step.to_html 
       Nokogiri.parse("<html>#{@html}</html>")
     end
   end
 
   it "renders a step file" do
+    BigCheckbox.number = 1
     steps = html_doc.css(".step")
     html = to_html(steps.first)
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}

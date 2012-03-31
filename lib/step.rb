@@ -1,14 +1,10 @@
 require 'erector'
-require 'sass' # todo: move into erector
+require 'big_checkbox'
+require 'erector_scss'
 
 class Step < Erector::Widget
   include GithubFlavoredMarkdown
 
-  def self.scss content
-    here = File.dirname __FILE__
-    Sass.compile("@import '#{here}/../public/css/bourbon/css3/_border-radius'; #{content}")
-  end    
-  
   external :style, scss(<<-CSS)
 .step {
   h1>span.prefix {
@@ -152,57 +148,14 @@ div.back:before {
       end
     end
   end
-  
-  # todo: extract into a module somehow
-  external :style, scss(<<-CSS)
-  $big_checkbox_size: 48px;
-  
-  input.big_checkbox[type=checkbox] {
-    display:none;
-    + label {
-       height: $big_checkbox_size;
-       width: $big_checkbox_size;
-       display:inline-block;
-       padding: 0 0 0 0px;
-       margin: 0 4px -8px 0;
-       background-color: white;
-       z-index: 2;
-       border: 4px solid #dadada;
-       @include border-radius(10px);
-    }
-     
-    + label:hover {
-       background-image: url(/img/check-dim.png);
-       cursor: pointer;
-    }
-  }
-  
-  input.big_checkbox[type=checkbox]:checked {
-    + label {
-      background-image: url(/img/check.png);
-    }
-  }
-  CSS
-  
-  def big_checkbox
-# check.png from http://findicons.com/icon/251632/check?id=396591
-# technique thanks to http://nicolasgallagher.com/css-background-image-hacks/
-# and http://stackoverflow.com/questions/3772273/pure-css-checkbox-image-replacement
-# https://gist.github.com/592332 
-    if @checkbox_number.nil?
-      @checkbox_number = 0
-    end
-    @checkbox_number += 1
-    input.big_checkbox type:"checkbox", name: "big_checkbox_#{@checkbox_number}", value:"valuable", id:"big_checkbox_#{@checkbox_number}"
-    label for: "big_checkbox_#{@checkbox_number}"
-  end
 
+  
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     div :class => "step", :title => name do
       h1 do
-        big_checkbox
+        widget BigCheckbox
         prefix "Step #{num}: "
         text name
       end

@@ -7,6 +7,8 @@ describe StepPage do
 
   # functional test -- brittle
   it "renders a step file" do
+    BigCheckbox.number = 1
+    
     src = "step 'hello'"
     page = StepPage.new(src: src,
       site_name: "greetings",
