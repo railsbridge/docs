@@ -69,12 +69,12 @@ end
 
   step do
     console <<-RUBY
-if my_variable > 1 then
+if my_variable > 1
   puts "YAY!"
 end
     RUBY
 
-    message "This prints `YAY!` if the value stored in `my_variable` is greater than 1. Since the code only runs when certain conditions are met if is called a conditional."
+    message "This prints `YAY!` if the value stored in `my_variable` is greater than 1. Since the code only runs when certain conditions are met if is called a __conditional__."
 
   end
 end

@@ -29,7 +29,7 @@ steps {
   step {
     message <<-MARKDOWN
   * Click on "New Topic"
-  * Fill in the form to and click "Create Topic"
+  * Fill in the form and click "Create Topic"
   * You should see a confirmation page like this:
     MARKDOWN
 

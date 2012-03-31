@@ -5,13 +5,6 @@ end
 
 steps do
 
-  console <<-SH
-git status
-git add .
-git commit -m "Added all the things"
-git status
-  SH
-
   step do
     console "git status"
 
@@ -31,6 +24,12 @@ git status
     message "This is done in two steps so you can group multiple changes together."
     message "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
   end
+end
+
+explanation do
+  message <<-MARKDOWN
+By checking your application into git now, you're creating a record of your starting point. Whenever you make a change during today's workshop, we'll add it to git before moving on. This way, if anything ever breaks, or you make a change you don't like. You can use git as an all-powerful "undo" technique. But that only works when you remember to commit early and often!
+  MARKDOWN
 end
 
 next_step "running_your_application_locally"

@@ -20,7 +20,7 @@ When you have completed today's goal of getting the basic
 application online you should understand:
 
 * Basic Ruby syntax
-* How to test your Ruby code (irb)
+* How to try your Ruby code (irb)
 * How to go from requirements to a new working Rails application
 * How to get your application online
 * The basic tools a RoR developer uses (source control, editor, console, local server)
@@ -39,7 +39,7 @@ day... unless I really screwed something up. :D
 We're going to be working with:
 
 * ruby 1.9.3 installed via rvm (mac or linux) or railsinstaller (windows)
-* rails 3.0.x (**note:** _not_ rails 3.1!)
+* rails 3.2.x
 * bundler
 * sqlite
 * the text editor of your choice
@@ -81,6 +81,7 @@ browser gets confusing and wastes time.
 
 ### Format
 
+# TODO: Style the examples below to actually be red, yellow, and green.
 Each lesson will look like this:
 
 <div style="background: white; border: 1px solid black; margin: 2em; padding: 1em;">
