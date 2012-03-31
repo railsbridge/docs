@@ -69,7 +69,7 @@ end
 
   step do
     console <<-RUBY
-if my_variable > 1 then
+if my_variable > 1
   puts "YAY!"
 end
     RUBY
