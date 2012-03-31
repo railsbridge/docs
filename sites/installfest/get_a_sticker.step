@@ -108,7 +108,7 @@ You should see: ![Drink was successfully created](get_a_sticker_you_should_see.p
 In your terminal, Hold Control and hit C to stop the rails server.
   BROWSER_VERIFY
 
-  console <<-TERMINAL
+  result <<-TERMINAL
 => Booting WEBrick
 => Rails 3.2.3 application starting in development on http://0.0.0.0:3000
 => Call with -d to detach
