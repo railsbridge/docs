@@ -87,6 +87,18 @@ div.back:before {
 .explanation>h1 {
   background-color: #C8FFC9;
 }
+
+.console > pre {
+  border: 4px solid #dde;
+  @include border-radius(4px);
+  background-color: black;
+  color: white;
+}
+
+.result > pre {
+  border: 4px solid #dde;
+  @include border-radius(4px);
+}
   CSS
 
   needs :src
@@ -304,14 +316,14 @@ div.back:before {
   
   def console msg
     div :class => "console" do
-      text "Type this in the terminal:"
+      span "Type this in the terminal:"
       pre msg
     end
   end
 
   def result text
-    p do
-      text "Expected result:"
+    div :class => "result" do
+      span "Expected result:"
       pre text
     end
   end

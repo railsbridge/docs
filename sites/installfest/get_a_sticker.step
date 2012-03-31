@@ -7,7 +7,7 @@ verify "tool installation" do
 
   tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
 
-  message "If you're on OSX or Linux:"
+  h3 "If you're on OSX or Linux:"
   
   console "rvm -v"
   result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
@@ -15,7 +15,8 @@ verify "tool installation" do
   console "sqlite3 --version"
   result "3.7.5"
 
-  message "On all operating systems:"
+  h3 "On all operating systems:"
+  
   console "ruby -v"
   result "ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]"
 
