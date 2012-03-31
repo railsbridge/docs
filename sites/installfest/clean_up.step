@@ -19,7 +19,7 @@ step "Delete test_app from your computer" do
   option "Mac" do
     message "Open your home directory and drag the test_app folder to the trash."
   end
-  option "Linux or Mac" do
+  option "Linux" do
     console "rm -rf ~/test_app"
   end
 end

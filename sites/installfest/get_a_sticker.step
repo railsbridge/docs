@@ -39,8 +39,7 @@ verify "rails" do
   console "rails -v"
   result "Rails 3.2.2"
 
-
-  console "rails new sticker"
+  console "cd ~\nrails new sticker"
   result "# ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed."
 
@@ -148,7 +147,7 @@ verify "git" do
 # ...most output omitted for brevity...
   RESULT
   
-  console 'git commit -m"Getting that sticker"'
+  console 'git commit -m "Getting that sticker"'
   result "
 [master (root-commit) 8cd0e44] Getting that sticker
  54 files changed, 1531 insertions(+)
@@ -226,7 +225,7 @@ Total 4 (delta 3), reused 0 (delta 0)
   result "Opening http://evening-wind-5284.heroku.com/"
 
   message <<-BROWSER_VERIFY
-Append drinks to the end of your heroku url. For example, if your url was
+Append `drinks` to the end of your heroku url. For example, if your url was
 `http://evening-wind-5284.heroku.com/`, then change it to `http://evening-wind-5284.heroku.com/drinks`.
 
 You should see the same screen as you did at `http://localhost:3000/drinks` and be able to click "New Drink" and "Create Drink" as expected.
