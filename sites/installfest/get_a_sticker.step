@@ -44,6 +44,7 @@ Rails 3.2.2
   TERMINAL
 
   console <<-TERMINAL
+$ cd ~
 $ rails new sticker
 # ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
@@ -225,7 +226,7 @@ Total 4 (delta 3), reused 0 (delta 0)
   HEROKU_PUSH
 
   console <<-HEROKU_OPEN
-$ heroku open"
+$ heroku open
 Opening http://evening-wind-5284.heroku.com/
   HEROKU_OPEN
 
