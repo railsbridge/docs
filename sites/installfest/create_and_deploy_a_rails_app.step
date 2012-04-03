@@ -16,7 +16,7 @@ step "Create a new Rails app" do
   console "cd test_app"
   console "rails server"
 
-  tip "Shortcut: Just type 's'" do
+  tip "Shortcut: Just type 'rails s'" do
     message <<-MARKDOWN
 Throughout your Rails programming career you're going to type `rails server` a
 lot.  In fact, you'll type this so much that DHH and the Rails Core team
