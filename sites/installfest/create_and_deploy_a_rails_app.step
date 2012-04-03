@@ -103,7 +103,7 @@ step "Deploy your app to Heroku" do
 
   message "The very first time you use `heroku` you must enter your Heroku email address and password."
 
-  console "heroku create"
+  console "heroku create --stack cedar"
   result <<-OUTPUT
 Enter your Heroku credentials.
 Email: myemail@example.com
@@ -141,7 +141,6 @@ To this:
 
     console <<-BASH
 bundle install --without production
-bundle exec rake assets:precompile
     BASH
 
     message "if this fails, edit `config/environments/production.rb` "

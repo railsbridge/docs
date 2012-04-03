@@ -6,13 +6,13 @@ end
 steps do
 
   console "
-heroku create
+heroku create --stack cedar
 git push heroku master
 heroku open
 "
 
   step {
-    message "`heroku create` registers a new application on heroku's system."
+    message "`heroku create` registers a new application on heroku's system. The default 'stack' is currently Bamboo, which is a little old, so `--stack cedar` specifies that we'll use the newer Cedar stack."
   }
 
   step { message "`git push heroku master` takes all changes you've committed locally and pushes them to heroku." }
