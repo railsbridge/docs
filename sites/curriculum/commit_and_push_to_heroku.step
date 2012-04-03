@@ -1,34 +1,14 @@
 goals {
 
-  goal "We just added a whole new feature. Let's push it to heroku so our friends can play with it. In order to do so, we need to make a small change to our `Gemfile`"
+  goal "We just added a whole new feature. Let's push it to heroku so our friends can play with it."
 
 }
 
 steps {
 
-  step "Edit Gemfile" do
-
-    message <<-MARKDOWN
-  Open the file called `Gemfile` in KomodoEdit, or your preferred editor, and find the line containing:
-
-      gem 'sqlite3'
-
-  Remove this line and replace it with:
-
-      group :development do
-        gem 'sqlite3'
-      end
-
-      group :production do
-        gem 'pg'
-      end
-    MARKDOWN
-  end
-
   step "Redeploy" do
 
 console <<-SHELL
-bundle install --without production
 git add .
 git commit -m "Added topics"
 git push heroku master
@@ -49,21 +29,8 @@ You should see a page that looks shockingly similar to the one you had locally. 
 }
 
 explanation {
-
   message <<-MARKDOWN
-  * The Gemfile is a list of all the Ruby libraries your application needs.
-    What we've declared here is that we want to use the `sqlite3` library
-    while we're developing on our computer (the development group) but when
-    deploying to heroku (the production group) we want to use the `pg` library,
-    which is made for the type of database that Heroku uses.
-
-  * Bundler is how Ruby projects keep track of the gems that they use. We told
-    bundler what we wanted to use in the `Gemfile`, now we need make sure those
-    gems are installed. Since we don't have the type of database heroku does, we
-    skip the production gems. Don't worry though! Bundler still logs them so
-    Heroku will install them when they get your code.
-
-  * We've done the next three steps before, so we won't go over that again...
+  * We've done the 'git' steps before, so we won't go over that again...
 
   * `heroku rake` executes a rake task on your server, in this case,
     `db:migrate`, just like you did locally.
