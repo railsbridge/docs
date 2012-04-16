@@ -1,4 +1,3 @@
-
 message "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
 
 console <<-BASH
@@ -21,5 +20,10 @@ git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
   BASH
+
+  important do
+    message "If you are using Windows, you may need to install AnsiCon to see colors (otherwise you'll see gibberish)."
+    link "windows_colors"
+  end
 end
 
