@@ -5,21 +5,73 @@ end
 
 steps do
 
-  console "
-heroku create
-git push heroku master
-heroku open
-"
+  step "Create a heroku application" do
+    console "heroku create --stack cedar"
+    message "`heroku create` registers a new application on heroku's system. The default 'stack' is currently Bamboo, which is a little old, so `--stack cedar` specifies that we'll use the newer Cedar stack."
+  end
 
-  step {
-    message "`heroku create` registers a new application on heroku's system."
-  }
+  step "Edit the Gemfile" do
+    message "Heroku will run our application slightly differently than our development computer does, which requires us to make a small change to our `Gemfile`."
 
-  step { message "`git push heroku master` takes all changes you've committed locally and pushes them to heroku." }
-  step { message "`heroku open` opens the new application in your browser." }
+    message "Open the file called `Gemfile` in KomodoEdit, or your preferred editor, and find the line containing:"
+
+    source_code :ruby, <<-RUBY
+gem 'sqlite3'
+    RUBY
+  
+    message "**Remove that line** and replace it with:"
+
+    source_code :ruby, <<-RUBY
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+    RUBY
+  end
+
+  step "Apply the Gemfile changes" do
+    console "bundle install --without production"
+    message "Every time the Gemfile changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
+  end
+
+  step "Commit the Gemfile changes" do
+    message "There are now changes to Gemfile and Gemfile.lock that need to be committed before we can push to heroku."
+    console <<-SHELL
+git add .
+git commit -m "Changed Gemfile for heroku"
+    SHELL
+    tip "there is a period after the word add in the third line"
+  end
+
+  step "Push changes to heroku" do
+    console "git push heroku master"
+    message "This takes all changes you've committed locally and pushes them to heroku."
+  end
+
+  step "Visit your application" do
+    console "heroku open"
+    message "This opens the new application in your browser."
+  end
 end
 
 explanation {
+  message <<-MARKDOWN
+  * The Gemfile is a list of all the Ruby libraries your application needs.
+    What we've declared here is that we want to use the `sqlite3` library
+    while we're developing on our computer (the development group) but when
+    deploying to heroku (the production group) we want to use the `pg` library,
+    which is made for the type of database that heroku uses.
+
+  * Bundler is how Ruby projects keep track of the gems that they use. We told
+    bundler what we wanted to use in the `Gemfile`, now we need make sure those
+    gems are installed. Since we don't have the type of database heroku does, we
+    skip the production gems. Don't worry though! Bundler still logs them so
+    Heroku will install them when they get your code.
+  MARKDOWN
+
   message "While I realize that at this point this isn't all that exciting, the point is that it doesn't get more difficult than this as we add more functionality to the application. Your typical workflow will look like:"
   img :src => "img/workflow.png", :alt => "workflow", :style => "border: none"
   ol {

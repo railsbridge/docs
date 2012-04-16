@@ -166,10 +166,19 @@ end
 
 verify "heroku deploy" do
 
-  message "Use your editor to open the Gemfile and add the following:"
+  message "Use your editor to open the Gemfile and find the line containing:"
 
-  # TODO: Change from console to `ruby` method for future styling semantics
   source_code :ruby, <<-RUBY
+gem 'sqlite3'
+  RUBY
+  
+  message "Remove this line and replace it with:"
+
+  source_code :ruby, <<-RUBY
+group :development do
+  gem 'sqlite3'
+end
+
 group :production do
   gem 'pg'
 end
@@ -190,9 +199,9 @@ GIT_COMMIT
 
   message "The name of your heroku app will be different. That is fine."
 
-  console "heroku create"
+  console "heroku create --stack cedar"
   result <<-HEROKU_CREATE
-Creating evening-wind-5284... done, stack is bamboo-mri-1.9.2
+Creating evening-wind-5284... done, stack is cedar
 http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git
 Git remote heroku added
   HEROKU_CREATE
