@@ -1,5 +1,6 @@
 goals do
-  goal "Provide an introduction to HTML"
+  goal "Write some simple HTML"
+  goal "Learn basic HTML tags and structure"
 end
 
 explanation do
