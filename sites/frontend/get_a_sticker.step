@@ -1,0 +1,68 @@
+# encoding: utf-8
+message "Find a volunteer and have them watch the next steps."
+
+message "If this works - get a sticker from them for your computer!"
+
+
+
+verify "git is installed" do
+  tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+
+  console "git --version"
+  result "git version 1.7.10"
+end
+
+verify "you can open a local webpage in a browser" do
+  message <<-MESSAGE
+Create a new file called `sticker.html` by opening it in Komodo Edit or your preferred editor.
+Make a note of where you save it, you'll need to know in a second.
+
+Fill it with the following contents:
+  MESSAGE
+
+  source_code :html,<<-HTML
+I want a sticker! <em>Please?</em>
+  HTML
+
+  message "Now open the file in Chrome. You should see something like:"
+  img :src => "get_a_sticker_output.png"
+end
+
+verify "you can clone from GitHub do" do
+  steps do
+    step "Fork the Repo" do
+      message "Log in to [GitHub.com](https://github.com) using the username and password you created earlier."
+      message "Go to the Railsbridge [Frontend Lesson Repository](https://github.com/railsbridge/front-end-lesson)"
+      message 'Find the "Fork" button near the upper right of the page and click it.'
+      img :src => "get_a_sticker_fork_button.png"
+      message "When the page finishes loading you will be on your own copy of the project"
+    end
+
+    step "Change the Name" do
+      message 'Find and click on the "Admin" button.'
+      img :src => "get_a_sticker_admin_button.png"
+      message "On the Admin page, you will see a settings box."
+      img :src => "get_a_sticker_admin_settings.png"
+      message "Change the repository name from `front-end-lesson` to `your_github_username.github.com`"
+      message "For example, if your github username is `superhacker` change the repository name to `superhacker.github.com`"
+      message "GitHub will warn you about \"bad things\". You can safely ignore this since none of them apply to you."
+    end
+  end
+
+  step "Clone it Locally" do
+    message "On the page for your GitHub project, find the \"https\" button"
+    img :src => "get_a_sticker_https.png"
+    message "Copy the linked url and clone the repository using git"
+    tip "On Mac OS X, you can paste into the Terminal like normal using `⌘+v`, Windows users can paste by right-clicking on the terminal and selecting Paste from the menu."
+    console "git clone <THAT LINK YOU COPIED>"
+
+    result <<-OUTPUT
+Cloning into 'mrsteven.github.com'...
+remote: Counting objects: 27, done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 27 (delta 6), reused 26 (delta 5)
+Unpacking objects: 100% (27/27), done.
+    OUTPUT
+
+  end
+end
