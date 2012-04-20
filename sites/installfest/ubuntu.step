@@ -1,10 +1,4 @@
 message <<-MARKDOWN
-Ubuntu 8.04 and 8.10 redirect here.  These versions require one extra step below.
-
-Ubuntu 9.04 and 9.10 also redirect here.
-
-Ubuntu 10.04 is also know as Lucid Lynx.
-
 You will need sudo access in order to complete these directions (The first user account has this by default).
 MARKDOWN
 
