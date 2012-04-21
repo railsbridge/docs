@@ -1,0 +1,124 @@
+goals do
+  goal "Add some tags to your HTML file"
+  goal "Learn more about available tags"
+end
+
+steps do
+
+  step do
+    message "Add some more lines of content to your HTML file. Introduce yourself."
+    source_code "HTML", "Hello <em>World</em>!\n\nMy name is Rachel."
+    message "Now save the file and refresh your browser."
+    message "<img src='img/hello_world_2line.png'>"
+  end
+
+  step do
+    message "Even though we put in some blank lines, the browser ignored them. So we'll have to use tags to break up our content."
+    message "Update your HTML with an `h1` tag and a `p` tag:"
+    source_code "HTML", "<h1>Hello <em>World</em>!</h1>\n\n<p>My name is Rachel.</p>"
+    message "Now save the file and refresh your browser."
+    message "<img src='img/hello_world_2line2.png'>"
+  end
+
+end
+
+
+explanation do
+
+  message <<-MARKDOWN
+
+## Use Tags to Separate Blocks of Content
+
+You'll notice that even if you put in extra lines and spaces, HTML will treat any number of
+new line or space characters like there's just one space there. When you're getting started
+with HTML, this can seem like a pain, because you have to type 
+
+MARKDOWN
+source_code "HTML", "<p>first sentence</p>\n<p>second sentence</p>"
+message <<-MARKDOWN
+
+when all you want is a blank line between two sentences. But as you get more advanced, this
+aspect of HTML will feel more useful, because it means you can format your code however is
+most readable for **you**, without worrying about what the browser will think of your blank
+lines and spaces.
+
+### Nested Tags
+
+It's common for an HTML tag to be nested inside another tag. In the example above, you saw:
+
+MARKDOWN
+source_code "HTML", "<h1><em></em></h1>"
+
+important "Just make sure that the tags are correctly _nested_. For example, you can't do:"
+
+source_code "HTML", "<h1><em>Hello World!</h1> I like you!</em>"
+message <<-MARKDOWN
+
+The inner tag, `em`, needs to close before the outer tag closes.
+
+## Tags for Every Occasion
+
+The meteoric rise in popularity of the world-wide-web and the recent proliferation of web
+applications has made HTML hugely popular.  While originally used only for simple documents,
+HTML now has tags for embedded video and music playback, embedding images, filling out
+web forms, and all kinds of other useful tags.
+
+You just used two well-known tags, `h1` for a headline and `p` for a paragraph. But there
+are a ton of other tags you might use:
+
+MARKDOWN
+
+
+table :border=>"1", :cellspacing=>"0", :cellpadding=>"3", :align=>"center" do
+  tr {
+    th " Tag"
+    th " Purpose"
+  }
+  tr {
+    td " a"
+    td " A link (the 'a' stands for Anchor)"
+  }
+  tr {
+    td " ul"
+    td " Start a bulleted list (an 'unordered list')"
+  }
+  tr {
+    td " ol"
+    td " Start a numbered list (an 'ordered list')"
+  }
+  tr {
+    td " li"
+    td " Add a list item to a bulleted or numbered list"
+  }
+  tr {
+    td " audio"
+    td " Link to an audio file (allows users to play the file in the page)"
+  }
+  tr {
+    td " table, tr, td"
+    td " Data tables with table rows and data cells"
+  }
+  tr {
+    td " form"
+   td " A form that can collect data from user input"
+  }
+  tr {
+    td " input"
+    td " A text input, a button, or a checkbox in a form"
+  }
+end
+
+message <<-MARKDOWN
+
+Don't try to memorize all the tags! You can always look them up on sites like:
+
+* [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
+* [Dochub](http://dochub.io/#html/)
+
+MARKDOWN
+
+end
+
+next_step "03_HTML_structure"
+
+
