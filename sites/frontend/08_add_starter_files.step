@@ -26,7 +26,6 @@ steps do
     message "You just added all your changed files to the stage, commited those changes, and pushed the changed files up to github."
   end
 
-
 end
 
 explanation do

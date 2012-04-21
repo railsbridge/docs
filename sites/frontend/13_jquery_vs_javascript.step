@@ -1,1 +1,65 @@
+goals do
+  goal "Write some straight JavaScript"
+  goal "Compare that JavaScript to jQuery"
+end
+
+steps do
+  
+  step do
+    message "First, let's include the jQuery code in our HTML file, so we can start working with it. Google and Microsoft both host public copies of jQuery that you can link to, so you don't even need to download it. (The browser can download files from other sites, if you include links to them.) Add this line inside the `head` of your document:"
+    source_code "HTML", "<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\" type=\"text/javascript\"></script>"
+    message "Save and refresh your browser window. Your page should look the same, but now you've included jQuery in the page."
+  end
+  
+  step do
+    message "jQuery is a JavaScript library that is designed to make it easy to interact with the contents of your HTML document. When you're writing jQuery, you're writing JavaScript &mdash; you're just interacting with objects and functions that jQuery has already defined."
+    message "Since you're using jQuery to interact with your document, you'll want to wait until your document is ready and loaded before you run your code. jQuery has a built-in method called 'ready' that checks for this, and runs your code after. Let's add this to your 'javascript.js' file, so you can write some jQuery."
+    source_code "js", "$(document).ready(function() {\n\s\s// Add code from the next steps here.\n});"
+  end
+  
+  step do
+    message "Let's use jQuery to interact with the page. You'll usually write jQuery by giving it a selector to work with (jQuery can use the same selector syntax as CSS) and then using a jQuery method to handle actions on elements that match that selector. You'll see lots of lines of jQuery that are structured like this:"
+    source_code "js", "$(\"selector\").click(function(){ // do something });"
+    message "Let's put in a real selector and have our function do something:"
+    source_code "js", "$(\"#copyright\").click(function(){ \n\s\s$(this).css('color','purple'); \n});"
+    message "When you click on the copyright line at the bottom of the page, you should see a result like this:"
+    message "<img src='img/jquery_result.png'>"
+  end
+  
+end
+  
+explanation do
+
+  message <<-MARKDOWN
+
+## What We Did With jQuery
+
+We just used jQuery to handle a click event and follow instructions to change that
+element's style when it's clicked. We wrapped all of that code in a
+`$(document).ready(function(){ // do stuff });` call to make sure it only runs when the
+browser has read our document and is ready to act on it.
+
+
+## Why jQuery
+
+jQuery is a library of code written in JavaScript. Anything you can do with jQuery, you could
+also write in straight JavaScript without jQuery, but there are some advantages:
+
+* jQuery allows you to write code that will run in lots of browsers without modification. Although
+  this is improving as years go by, there are currently differences between how you'd write JavaScript
+  for one popular browser (like Chrome) versus another (like Internet Explorer 8). jQuery lets you
+  write your functions one way, and then when your code is loaded in the user's browser, jQuery
+  does the work of translating it into the right format for the browser it's currently running in.
+
+* jQuery is designed to make life easier for web developers, so it has lots of shorthand functions
+  for doing common things like animations and showing and hiding elements.
+
+jQuery is not the only choice for a JavaScript framework, it's just a very popular one.
+You can also check out other libraries like Dojo, Zepto, or YUI.
+
+  MARKDOWN
+  
+end
+
 next_step "14_dev_tools"
+
