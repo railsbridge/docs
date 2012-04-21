@@ -1,8 +1,97 @@
 message <<-MARKDOWN
-### Goal ###
 
-Learn to use HTML and CSS to create and embellish sites on the world wide web.
-As well as provide an introduction to interactive applications scripting with
-Javascript and jQuery.
+### Goal
+
+To get you started with HTML, CSS, and JavaScript, the most essential building blocks 
+of web experiences, we'll have you create a basic web page about yourself and deploy
+it to the web. You'll:
+
+* Write some content and give it some structure with **HTML**,
+* Use **CSS** to adjust the layout and style of that content,
+* Manage your code and push it to a remote server with **git**, and
+* Use **JavaScript** to add interactive components.
+
+Here's a sample sketch of what your page could look like:
+
+![screenshot](img/page_sample.jpg)
+
+### Meta-Goal
+
+Many introductions to programming start on the command line and stay
+there for a long time before you see any results besides strings of text.
+
+We want to give you tools to make a visual, shareable product
+_right away_, and then start programming on top of that, adding
+interactivity to enhance your content.
+
+### Schedule
+
+* 1-ish hour of playing with basic HTML, CSS and Javascript
+* 4-ish hours of building our page and pushing it to github
+
+This is just a rough guideline, not a mandate. Some steps you'll go
+over and some you'll go under. It'll all work out by the end of the
+day. :D
+
+### Requirements
+
+We're going to be working with:
+
+* [Chrome](https://www.google.com/chrome)
+  (If you're experienced with the developer tools in another browser, that may work too.)
+* Git
+* A [github](http://github.com) account of your own
+* The code editor of your choice.
+  [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
+
+
+### Working Effectively and Efficiently
+
+I highly recommend you do the following:
+
+* Open your browser fresh or hide any windows you already have open.
+  * Bring up one window with two tabs
+    * One for this content
+    * One for interacting with your app.
+* Open your text editor and _do not ever close it_. We're not quitters. 
+* Hide all extra applications. Turn off twitter, IM, and all other distractions.
+
+By minimizing the number of things you interact with, you reduce the
+amount of time spent switching between them and the context lost as
+you work through the lessons. Having 50 tabs open in your web
+browser gets confusing and wastes time.
+
+### Format
+
+Each lesson will look like this:
+
+<div style="background: white; border: 1px solid black; margin: 2em; padding: 1em;">
+<h3>Step Title</h3>
+<div class="goal">
+<h4>Goal:</h4>
+<p>Description of the current step.
+<p>Red because big goals are scary.
+</div> <!-- goal -->
+<div class="steps">
+<h4>Steps:</h4>
+<pre class="term">
+steps to take.
+</pre>
+<pre class="code">
+def code_to_write
+  1 + 1
+end
+</pre>
+<p>Yellow because we've gotten it done, but we have no clue what's going on.
+</div> <!-- steps -->
+<div class="what">
+<h4>What Just Happened?</h4>
+<p>details of what the steps actually did... spell out the cause and effect.
+<p>Green because we can tie everything together now.
+</div> <!-- what -->
+</div> <!-- top-goal -->
+</div>
 MARKDOWN
 
+
+next_step "01_introduction_to_html"
