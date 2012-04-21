@@ -22,7 +22,7 @@ steps do
   
   step do
     message "Save your work, commit and push to github."
-    console "git add .\ngit commit -m 'Added starter files'\ngit push -u origin master'"
+    console "git add .\ngit commit -m 'Added starter files'\ngit push -u origin master"
     message "You just added all your changed files to the stage, commited those changes, and pushed the changed files up to github."
   end
 
@@ -53,7 +53,7 @@ have to involve opening up the browser, downloading a zip file, and dragging and
 files &mdash; it all could have been done from the command line with git.
 
 As you memorize git commands and get comfortable on the command line, you'll find
-it's frequently faster to do these tasks from there, but we wanted to take this change
+it's frequently faster to do these tasks from there, but we wanted to take this chance
 to introduce you to the Github web interface. It's powerful enough to let you download
 whole projects, fork repositories, and even make basic edits to files, right from
 the browser.

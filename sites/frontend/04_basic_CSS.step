@@ -14,7 +14,7 @@ steps do
   step do
     message "Write some styles that will apply to your `h1` and `p` tags."
     source_code "HTML", "<style type=\"text/css\" media=\"screen\">\nh1 { \n\s\sfont-size: 20px;\n\s\sborder-bottom: 1px solid #cccccc;\n}\n\np { \n\s\spadding: 10px; \n\s\sbackground-color: papayaWhip;\n}\n</style>"
-    message "When you refresh your browser, you should see the styles you added:"
+    message "When you save and refresh your browser, you should see the styles you added:"
     message "<img src='img/hello_style.png'>"
   end
 
@@ -41,10 +41,10 @@ can **select** various elements on the page and change their **visual properties
   since it means you can write your rules once and then include them everywhere on your site with
   a single link on each page.
 
-## CSS Rules Are Made of a Selector and Properties
+## CSS Rules Are Made of a Selector and Attributes
 
 * The **Selector** tells the browser what elements to add that style to.
-* The **Properties** tell the browser how to style the elements you selected.
+* The **Attributes** (or **Properties**) tell the browser how to style the elements you selected.
 
 <img src='img/css.png'>
 
@@ -55,14 +55,14 @@ Don't try to memorize all the CSS properties! You can always look them up on sit
 
 ## You Can Get Crazy with CSS
 
-Most of the fancy effects you'll see around the web are done with CSS. For example, here's
-the same HTML page, but on the right side, I've turned off all the CSS that was applied to it.
-Almost all of the color and formatting disappear. The code snippets and buttons that were
-obvious with CSS styles now just look like text.
+Most of the fancy effects you'll see on the web are done with CSS. For example, here's two
+pictures of the same HTML page, but on the right side, I've turned off all the CSS that was
+applied to it. Almost all of the color and formatting disappear. The code snippets and buttons
+that were obvious with CSS styles now just look like text.
 
 <img src='img/css_bundler.png'>
 
-For some great examples of the power of CSS, check out the CSS Zen Garden site. It takes
+For some great examples of the power of CSS, check out the [CSS Zen Garden](http://www.csszengarden.com/). It takes
 the same HTML, but shows it with stylesheets from a bunch of different designers applied to
 it. Here are two different designers' interpretations of the same HTML:
 

@@ -8,7 +8,7 @@ steps do
   step do
     message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive. Add a script tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
     source_code "HTML", "<script type=\"text/javascript\">\n\n</script>"
-    message "Refresh the page in the browser. It should look unchanged."
+    message "Save and refresh the page in the browser. It should look unchanged."
   end
 
   step do
@@ -18,7 +18,7 @@ steps do
     message "<img src='img/prompt.png'>"
     message "Once you answer the prompt, you should see the bold text that was your name change to whatever you entered."
     message "<img src='img/hello_omg.png'>"
-    important "It takes years to become a Javascript expert. Don't worry if you found the last step confusing or had trouble getting your script to run. The most important thing to note is that you can put Javascript **directly** into your document if you want to, by wrapping it in a `script` tag."
+    important "It takes years to become a Javascript expert. Don't worry if you found the last step confusing or had trouble getting your script to run. The most important thing to note is that you can put Javascript **directly** into your document if you want to, by wrapping it in a `script` tag, and use this script to add interactivity to the page."
   end
 end
 
@@ -77,7 +77,7 @@ MARKDOWN
 source_code "javascript", "document.onclick = replaceName;"
 
 
-important "Some elements of this script, like 'document.onclick' or the '.innerHTML' property, are a little out of date. Thathey're great ways to start playing with Javascript, but when you write your own pro Javascript, you may want to use more contemporary techniques or a library like jQuery that will do these things for you in a less clunky way."
+tip "Some elements of this script, like 'document.onclick' or the '.innerHTML' property, are a little out of date. They're great ways to start playing with Javascript, but when you write your own pro Javascript, you may want to use more contemporary techniques or a library like jQuery that will do these things for you in a less clunky way."
 
 end
 

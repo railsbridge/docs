@@ -13,16 +13,16 @@ steps do
   end
 
   step do
-    message "As always, we'll started with a simple Hello World."
+    message "As always, we'll get started with a simple Hello World."
     message "Add some text to the document so you have something to look at. Type this:"
     source_code "Hello World!"
-    message "Save it some place you'll be able to find easily, like your Desktop."
+    message "Save the file some place you'll be able to find easily, like your Desktop."
   end
 
   step do
     message "Now, open Chrome, find the file on your Desktop (or wherever you put it) and drag it into a new Chrome window."
     message "<img src='img/hello_world.png'>"
-    message "Even though you haven't sent any HTML tags, browsers are <i>great</i> at showing text on screen, so your browser will just show you your text."
+    message "Even though you haven't coded any HTML tags, browsers are <i>great</i> at showing text on screen, so your browser will just show you your text."
   end
 
   step do
@@ -51,7 +51,8 @@ Now that you've used some HTML, let's go through each of those words in reverse 
 
 * __M__arkup - Being a *markup* language means that HTML is mixed in with plain content text. 
   Think of a time when you turned in an essay to your teacher.  Your teacher reads your essay
-  and *marks* it *up* with comments or suggestions.
+  and *marks* it *up* with comments or suggestions, adding extra information on top of the plain text
+  content.
 
 - __H__yper-__t__ext - This term comes from the fact that early computers could only work with plain text
   files.  Computer users as early as the 1960s wanted to enrich this text and make it easier to work with.

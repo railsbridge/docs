@@ -11,6 +11,11 @@ steps do
     message "If you get hung up on what CSS property to use, see if you can look it up on [dochub](http://dochub.io/#css/)."
   end
   
+  step do
+    message "CHALLENGE: If you styled the #main div in the previous step by using a style rule like `#main { property: value; }`, see if you can come up with a second rule that could also apply the same style, but use a different selector."
+    message "Hint: You can select an element that's _inside_ of another element by listing one selector after another. The selector `.content div {}` would apply to any divs inside of an element with class `content`"
+  end
+  
   step do  
     message "CHALLENGE: See if you can turn the page into a two-column layout. Make the 'nav' div the left column, and the 'main' div the right column." 
     message "Two hints: it may be helpful to give these divs a fixed width, and you may need the `float` property."
@@ -31,11 +36,11 @@ explanation do
 ## More CSS!
 
 It takes a long time to master CSS, but there are lots of great-looking resources out there 
-to help. One great resource is the [CSS Zen Garden](http://www.csszengarden.com/), a site with dozens of examples of
+to help. One cool resource is the [CSS Zen Garden](http://www.csszengarden.com/), a site with dozens of examples of
 the _same_ HTML page styled with different user-submitted stylesheets. It's a great place
 to get a sense of how limitless the possibilities are with CSS.
 
-### CSS References
+### CSS Reference Sites
 
 * [Sitepoint](http://reference.sitepoint.com/css/elements-structural)
 * [Mozilla Developer Network](https://developer.mozilla.org/en/CSS)
@@ -45,4 +50,4 @@ to get a sense of how limitless the possibilities are with CSS.
 
 end
 
-next_step "11_make_columns"
+next_step "12_jquery"

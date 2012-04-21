@@ -14,7 +14,7 @@ steps do
   step do
     message "Add the class 'important' to your first paragraph. It'll look something like this:"
     source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"important\">My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
-    message "Refresh the page in the browser. You should see the new paragraph, but many HTML attributes, like classes and ids, don't directly convey visual information. Your paragraph should look the same."
+    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes. Many HTML attributes, like classes and ids, don't directly convey visual information. Your paragraph will look the same until we use the class to add CSS styling."
   end
 
   step do
@@ -27,7 +27,7 @@ steps do
   step do
     message "Let's wrap your name in a `span` tag and give that an ID of 'user-name'. It'll look something like this:"
     source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"important\">My name is\n\s\s <span id=\"user-name\">Rachel</span>.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
-    message "Refresh the page in the browser. You shouldn't see any difference."
+    message "Save and refresh the page in the browser. You shouldn't see any difference."
   end
 
   step do
@@ -46,7 +46,7 @@ explanation do
 
 ## Why Attributes?
 
-HTML tags don't just wrap content. They can also convey information about that element, with attributes. For example, on the last page you coded a style tag with a `media` attribute that you set equal to `screen`, which told the browser, 'Use these styles when you're displaying content on screen, but not when you're printing it on the laser printer:'
+HTML tags don't just wrap content. They can also convey information about that element, with attributes. For example, on the last page you coded a `style` tag with a `media` attribute that you set equal to `screen`, which told the browser, 'Use these styles when you're displaying content on screen, but not when you're printing it on the laser printer:'
 
   MARKDOWN
   source_code "HTML", "<style type=\"text/css\" media=\"screen\">"
@@ -69,16 +69,16 @@ looks like a password text input: <input type='password' name='rando-radio' valu
 
 ## Classes vs. IDs
 
-* A **class** attribute is something that _could_ exist more than once on a
-  given page. For example, you might give certain paragraphs a class of
-  "important" and use that class to highlight them. Even if you only have one
-  now, you might consider adding more later.
+* A **class** attribute should be used to group elements that _could_ exist
+  more than once on a given page. For example, you might give certain
+  paragraphs a class of "important" and use that class to highlight them.
+  Even if you only have one paragraph that's important now, you might
+  want to add more later.
   
 * An **id** is a unique label. Use it to identify things you'd only have one
   of. For example, if you ran a news website, you would only have one element
   on a page that would serve as a masthead, and you could give it an id
   like `id="handsome-header"`
-
 
   MARKDOWN
 

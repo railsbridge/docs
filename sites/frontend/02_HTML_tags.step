@@ -8,7 +8,7 @@ steps do
   step do
     message "Add some more lines of content to your HTML file. Introduce yourself."
     source_code "HTML", "Hello <em>World</em>!\n\nMy name is Rachel."
-    message "Now refresh your browser."
+    message "Now save the file and refresh your browser."
     message "<img src='img/hello_world_2line.png'>"
   end
 
@@ -16,7 +16,7 @@ steps do
     message "Even though we put in some blank lines, the browser ignored them. So we'll have to use tags to break up our content."
     message "Update your HTML with an `h1` tag and a `p` tag:"
     source_code "HTML", "<h1>Hello <em>World</em>!</h1>\n\n<p>My name is Rachel.</p>"
-    message "Now refresh your browser."
+    message "Now save the file and refresh your browser."
     message "<img src='img/hello_world_2line2.png'>"
   end
 
@@ -44,7 +44,7 @@ lines and spaces.
 
 ### Nested Tags
 
-Notice that it's usually fine to put a tag inside another tag. In in the example above, you saw:
+It's common for an HTML tag to be nested inside another tag. In the example above, you saw:
 
 MARKDOWN
 source_code "HTML", "<h1><em></em></h1>"
@@ -60,8 +60,8 @@ The inner tag, `em`, needs to close before the outer tag closes.
 
 The meteoric rise in popularity of the world-wide-web and the recent proliferation of web
 applications has made HTML hugely popular.  While originally used only for simple documents,
-HTML now has features for embedded video and music playback, embedding images, filling out
-web forms, and all kinds of useful tags.
+HTML now has tags for embedded video and music playback, embedding images, filling out
+web forms, and all kinds of other useful tags.
 
 You just used two well-known tags, `h1` for a headline and `p` for a paragraph. But there
 are a ton of other tags you might use:
@@ -92,7 +92,19 @@ table :border=>"1", :cellspacing=>"0", :cellpadding=>"3", :align=>"center" do
   }
   tr {
     td " audio"
-    td " link to an audio file (allows users to play the file in the page)"
+    td " Link to an audio file (allows users to play the file in the page)"
+  }
+  tr {
+    td " table, tr, td"
+    td " Data tables with table rows and data cells"
+  }
+  tr {
+    td " form"
+   td " A form that can collect data from user input"
+  }
+  tr {
+    td " input"
+    td " A text input, a button, or a checkbox in a form"
   }
 end
 

@@ -9,7 +9,7 @@ steps do
   tip "If you have a 'railsbridge' folder on your computer or some other place you like to keep project files, `cd` to that directory and then follow the steps below."
   
   step do
-    message "To get started on the project, you'll need to open up your command line. If you have a Mac, open up the Terminal app. If you're on a PC, look for a program called Command Prompt. You'll also need to know your Github user name and password, so go ahead and double-check it if you don't remember."
+    message "To get started on the project, you'll need to open up your command line. If you have a Mac, open up the Terminal app. If you're on a PC, look for a program called Command Prompt. You'll also need to know your Github user name and password, so go ahead and double-check it if you don't remember. Wherever you see `[your-github-user-name]`, you'll replace that with your user name (and delete the braces)."
     console "mkdir [your-github-user-name].github.com"
     message "`mkdir` stands for 'make directory.' You just made a new directory that you'll put your project files in."
   end
@@ -44,8 +44,8 @@ steps do
 
   step do
     message "Woohoo!!! Take a breath and wait 15 minutes."
-    message "Because you gave your github respository a special name (in the format [your-github-user-name].github.com), github will automatically take the contents of this one repository and make them your personal web page on github. But there's a small lag between the first push and being able to see your content on the web."
-    message "In 15 minutes, when you visit `http://[your-github-user-name].github.com` in a browser, you should see a blank white page. This is great! You're looking at the index.html file you just created, now live on the web!"
+    message "Because you gave your github repository a special name (in the format [your-github-user-name].github.com), github will automatically take the contents of this one repository and make them your personal web page on github. But there's a small lag between the first push and being able to see your content on the web."
+    message "In 15 minutes, when you visit [your-github-user-name].github.com in a browser, you should see a blank white page. This is great! You're looking at the index.html file you just created, now live on the web!"
   end
   
 end
