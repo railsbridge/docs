@@ -33,13 +33,19 @@ describe InstallFest do
     get "/"
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/installfest" }
+    assert { last_request.path == "/installfest/" }
   end
 
-  it "redirects /site to /site/site" do
+  it "redirects /site to /site/" do
     get "/installfest"
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/installfest" }
+    assert { last_request.path == "/installfest/" }
+  end
+
+  it "redirects /site/page/ to /site/page" do
+    get "/installfest/foo/"
+    follow_redirect! while last_response.redirect?
+    assert { last_request.path == "/installfest/foo" }
   end
 
   it "has a default site" do
@@ -72,7 +78,7 @@ describe InstallFest do
     get "/", {}, {"HTTP_HOST" => "curriculum.example.com"}
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/curriculum/curriculum" }
+    assert { last_request.path == "/curriculum/" }
   end
 
   describe "an app with slides" do

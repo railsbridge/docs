@@ -93,6 +93,49 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     end
   end
 
+  def title_for_page page_name
+    page_name.split('_').map do |w|
+      w == "osx" ? "OS X" : w.capitalize
+    end.join(' ')    
+  end
+
+  def render_page
+    begin
+      options = {
+          site_name: params[:site],
+          doc_title: title_for_page(params[:name]),
+          doc_path: doc_path,
+          back: params[:back],
+          src: src,
+      }
+
+      case ext
+        
+      when "md"
+        if doc_path =~ /\.deck\.md$/   # todo: refactor
+          # todo: render with page nav elements too
+          slides = Deck::Slide.split(src)
+          Deck::SlideDeck.new(:slides => slides).to_pretty
+        else
+          MarkdownPage.new(options).to_html
+        end
+
+      when "mw"
+        MediaWikiPage.new(options).to_html
+
+      when "step"
+        StepPage.new(options).to_html
+
+      else
+        raise "unknown file type #{doc_path}"
+      end
+
+    rescue Errno::ENOENT => e
+      p e
+      halt 404
+    end
+  end
+
   before do
     expires 3600, :public
   end
@@ -103,15 +146,6 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/" do
     redirect "/#{default_site}"
-  end
-
-  get "/:site" do
-    site_name = params[:site]
-    if sites.include? site_name
-      redirect "/#{site_name}/#{site_name}"
-    else
-      forward  # send it on to the downstream file server
-    end
   end
 
   get "/:site/:name/src" do
@@ -145,45 +179,36 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     end
   end
 
+  get "/:site/:name/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}"
+  end
+
   get "/:site/:name" do
-    begin
-      doc_title = params[:name].split('_').map do |w|
-        w == "osx" ? "OS X" : w.capitalize
-      end.join(' ')
+    render_page
+  end
 
-      options = {
-          site_name: params[:site],
-          doc_title: doc_title,
-          doc_path: doc_path,
-          back: params[:back],
-          src: src,
-      }
+  get "/:file.:ext" do
+    # treat root URLs with dots in them like static assets and serve them
+    #   from the downstream file server (coderay.css, jquery-1.6.1.js)
+    forward
+  end
 
-      case ext
-        
-      when "md"
-        if doc_path =~ /\.deck\.md$/   # todo: refactor
-          # todo: render with page nav elements too
-          slides = Deck::Slide.split(src)
-          Deck::SlideDeck.new(:slides => slides).to_pretty
-        else
-          MarkdownPage.new(options).to_html
-        end
+  get "/:site" do
+    # add a slash to any URLs that contain only a site
+    #   (otherwise paths in that site's pages would resolve
+    #    relative to the root)
+    redirect "#{params[:site]}/"
+  end
 
-      when "mw"
-        MediaWikiPage.new(options).to_html
-
-      when "step"
-        StepPage.new(options).to_html
-
-      else
-        raise "unknown file type #{doc_path}"
-      end
-
-    rescue Errno::ENOENT => e
-      p e
-      halt 404
+  get "/:site/" do
+    site_name = params[:site]
+    if sites.include? site_name
+      # render the site's index page
+      params[:name] = site_name
+      render_page
+    else
+      forward  # send it on to the downstream file server
     end
   end
 end
-
