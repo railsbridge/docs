@@ -145,7 +145,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   get "/" do
-    redirect "/#{default_site}"
+    redirect "/#{default_site}/"
   end
 
   get "/:site/:name/src" do
