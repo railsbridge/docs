@@ -230,7 +230,14 @@ Total 4 (delta 3), reused 0 (delta 0)
 -----> Launching...
   HEROKU_PUSH
 
-  console "heroku rake db:migrate"
+  console "heroku run rake db:migrate"
+  result <<-HEROKU_DB_MIGRATE
+Migrating to CreateDrinks (20120428044153)
+==  CreateDrinks: migrating ===================================================
+-- create_table(:drinks)
+   -> 0.0084s
+==  CreateDrinks: migrated (0.0085s) ==========================================
+  HEROKU_DB_MIGRATE
 
   console "heroku open"
   result "Opening http://evening-wind-5284.heroku.com/"
