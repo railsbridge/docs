@@ -1,0 +1,36 @@
+
+steps do
+  step "Install Google Chrome" do
+    message "In order to provide consistent instructions for the workshop, we are all going to use the same browser, Google Chrome. Download and install it from <http://google.com/chrome>"
+  end
+
+  choice "your operating system" do
+    option "Windows" do
+      message "On Windows, the easiest way to install git and set everything up is with the Rails Installer"
+      message "Stop after __Step 9: Install a Text Editor__"
+      a "Rails Installer Instructions", :href => "/installfest/windows", :class => 'link'
+    end
+
+    option "Mac OS X" do
+      step "Install git" do
+        link "mac_os_git_installation"
+      end
+
+      step "Install Komodo Edit" do
+        a "Install Komodo Edit for Mac OS X", :href => "/installfest/install_komodo_edit_for_mac"
+      end
+    end
+  end
+
+  step "Create a GitHub account" do
+    message "In your web browser open <https://github.com>."
+    message "GitHub is is a service for hosting and sharing source code with others. They also host static web pages for free! We'll be using them to put our web page up later today."
+
+    message "Click the big blue signup button in the middle of the page. On the next page select a Free account. Make a note of your username, you'll be using it a lot."
+
+    tip "A note about your password. In order to push to GitHub, you'll need to type your password in at the terminal. So make it something easy to remember and type but hard to guess."
+  end
+
+  next_step "get_a_sticker"
+end
+

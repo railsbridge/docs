@@ -230,6 +230,8 @@ Total 4 (delta 3), reused 0 (delta 0)
 -----> Launching...
   HEROKU_PUSH
 
+  console "heroku rake db:migrate"
+
   console "heroku open"
   result "Opening http://evening-wind-5284.heroku.com/"
 
