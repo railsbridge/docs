@@ -40,10 +40,13 @@ We're going to be working with:
 * [Chrome](https://www.google.com/chrome)
   (If you're experienced with the developer tools in another browser, that may work too.)
 * Git
-* A [github](http://github.com) account of your own
+* A [GitHub](http://github.com) account of your own
 * The code editor of your choice.
   [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
 
+MARKDOWN
+
+message <<-MARKDOWN
 
 ### Working Effectively and Efficiently
 
@@ -93,5 +96,13 @@ end
 </div>
 MARKDOWN
 
+choice  do
+  option "Are your tools installed?" do
+    link "get_a_sticker"
+  end
 
-next_step "01_introduction_to_html"
+  option "Do you need to set up your tools?" do
+    link "tool_installation"
+  end
+end
+
