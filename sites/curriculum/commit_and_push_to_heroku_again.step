@@ -7,7 +7,7 @@ steps {
 git add .
 git commit -m "Added votes"
 git push heroku master
-heroku rake db:migrate
+heroku run rake db:migrate
   SHELL
 }
 

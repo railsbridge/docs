@@ -12,7 +12,7 @@ console <<-SHELL
 git add .
 git commit -m "Added topics"
 git push heroku master
-heroku rake db:migrate
+heroku run rake db:migrate
 SHELL
 
     tip "there is a period after the word add in the third line"
@@ -32,7 +32,7 @@ explanation {
   message <<-MARKDOWN
   * We've done the 'git' steps before, so we won't go over that again...
 
-  * `heroku rake` executes a rake task on your server, in this case,
+  * `heroku run rake` executes a rake task on your server, in this case,
     `db:migrate`, just like you did locally.
   MARKDOWN
 }
