@@ -51,6 +51,11 @@ git commit -m "Changed Gemfile for heroku"
     message "This takes all changes you've committed locally and pushes them to heroku."
   end
 
+  step "Migrate your database" do
+    console "heroku run db:migrate"
+    message "This runs the migrations (found in db/migrate) on heroku's database."
+  end
+
   step "Visit your application" do
     console "heroku open"
     message "This opens the new application in your browser."
