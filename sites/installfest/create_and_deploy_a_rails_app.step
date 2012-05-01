@@ -56,7 +56,7 @@ message <<-MARKDOWN
 * Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** to kill(stop) the server.
 
   MARKDOWN
-  warning "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break."
+  important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break."
   end
 
 step "Generate a database model" do
