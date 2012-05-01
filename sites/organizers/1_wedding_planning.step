@@ -1,0 +1,28 @@
+goals do
+  goal "Pre-workshop logistics, a.k.a wedding planning. It includes coordinating with the venue, planning food, talking with with volunteers and participants and making sure the invites get sent out on time, all in an effort to make the big day beautiful for the lucky...nevermind"
+end
+
+steps do
+
+  step do
+  	message"Set the day."
+
+  	message "Contact the venue and make sure everyone's on board for the day you have in mind."
+  	message "Post two events on <a href="http://www.sfruby.info/events/calendar/">meetup</a>", one for volunteers and one for participants. Make sure to set a limit on RSVPs that's appropriate for the venue.
+		message "Second, post it to the RailsBridge calendar (http://workshops.railsbridge.org/list/) with links to the meetup events, where people should look to RSVP."
+		message "Promote it!"
+  end
+
+  step do
+    message "Feed people!"
+		message "Plan pizza and beer for Friday's Installfest."
+		message "Plan bagels and coffee for Saturday Morning."
+		message "Plan lunch for Saturday."
+  end
+
+  step do
+    message "Interact with participants. Make sure they download XCode. "
+    message "Interact with volunteers. Plan a teacher training."
+    message "A few days before the event, ask people to confirm that they're able to come and change their RSVP if they realize they're unable to come."
+  end
+end

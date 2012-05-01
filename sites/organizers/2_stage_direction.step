@@ -1,0 +1,22 @@
+goals do
+  goal "Stage Direction is the logistics role during the installfest, teacher training and workshop. This role is to make make sure there's a volunteer handing out extension cords, a volunteer with display adapters, a volunteer directing people to install instructions and teacher training, as appropriate."
+end
+
+steps do
+
+  step do
+  	message "Teacher Training"
+  end
+
+  step do
+    message "Installfest"
+  end
+
+  step do
+    message "Workshop"
+    message "Sign people in."
+    message "Divide people into classes"
+    message "Get ready for lunch"
+    message "Remind people of breaks"
+  end
+end
