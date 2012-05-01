@@ -8,8 +8,8 @@ steps do
   	message"Set the day."
 
   	message "Contact the venue and make sure everyone's on board for the day you have in mind."
-  	message "Post two events on <a href="http://www.sfruby.info/events/calendar/">meetup</a>", one for volunteers and one for participants. Make sure to set a limit on RSVPs that's appropriate for the venue.
-		message "Second, post it to the RailsBridge calendar (http://workshops.railsbridge.org/list/) with links to the meetup events, where people should look to RSVP."
+  	message "Post two events on [meetup](http://www.sfruby.info/events/calendar/), one for volunteers and one for participants. Make sure to set a limit on RSVPs that's appropriate for the venue."
+		message "Second, post it to the [RailsBridge calendar](http://workshops.railsbridge.org/list/) with links to the meetup events, where people should look to RSVP."
 		message "Promote it!"
   end
 
