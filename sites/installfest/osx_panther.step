@@ -10,7 +10,7 @@ step "XCode tools " do
 
 These are part of OS X, but are not installed by default.
 
-* Insert your OS X DVD. ([xcode](xcode))
+* Insert your OS X DVD.
 
 * Look for Xcode.mkpg - it may be under "Optional Installs"
 
@@ -115,8 +115,4 @@ step "Create an SSH key" do
   link "create_an_ssh_key"
 end
 
-step "Create a Heroku account" do
-  link "create_a_heroku_account"
-end
-
-next_step "create_and_deploy_a_rails_app"
+next_step "create_a_heroku_account"
