@@ -97,8 +97,6 @@ end
 
 step "Deploy your app to Heroku" do
 
-  link "create_a_heroku_account"
-
   step "Create a Heroku application from this local Rails application." do
 
   message "The very first time you use `heroku` you must enter your Heroku email address and password."
