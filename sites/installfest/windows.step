@@ -119,8 +119,4 @@ step "Install a Text Editor" do
 
 end
 
-step "Create a Heroku Account " do
-  link "create_a_heroku_account"
-end
-
-next_step "create_and_deploy_a_rails_app"
+next_step "create_a_heroku_account"

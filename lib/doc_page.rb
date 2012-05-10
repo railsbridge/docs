@@ -85,7 +85,7 @@ class DocPage < Erector::Widgets::Page
     padding: 1em;
     margin: 0 0 1em 1em;
     float: right;
-    width: 18em;
+    width: 26em;
     overflow-x: hidden;
     display: none;
   }

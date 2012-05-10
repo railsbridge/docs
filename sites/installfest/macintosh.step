@@ -46,7 +46,3 @@ step "Choose your instructions" do
   end
 end
 
-step "Get a sticker!" do
-  link "get_a_sticker"
-end
-
