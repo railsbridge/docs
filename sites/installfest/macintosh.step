@@ -26,8 +26,6 @@ end
 
 step "Choose your instructions" do
 
-  message "Please try the 'standard install' first. If you have problems, come back here, and choose instructions for your specific OS."
-
   option "Lion" do
     link "osx_lion"
   end

@@ -11,6 +11,11 @@ choice "installing from a drive or from the App Store" do
   option "Install XCode from the Apple App Store" do
     link "install_xcode_from_app_store"
   end
+  
+  option "Install Command Line Tools for XCode" do
+    step "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
+    step "Download and install the latest **Command Line Tools for Xcode** package"
+  end
 
 end
 

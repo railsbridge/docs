@@ -112,7 +112,10 @@ step "Install a Text Editor" do
 
   important "**When in doubt, use KomodoEdit.**"
 
-  message "Download KomodoEdit here: <http://downloads.activestate.com/Komodo/releases/6.1.1/Komodo-Edit-6.1.1-7295.msi>"
+  message "Download KomodoEdit here: <http://downloads.activestate.com/Komodo/releases/>"
+  
+  message "[Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet."
+  
 
 end
 

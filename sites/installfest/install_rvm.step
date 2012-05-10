@@ -7,7 +7,7 @@ step "Install RVM" do
   message "This will do some stuff and print a long message which you can ignore."
   important "Type the command exactly as shown, including a space between the two less-than signs."
   
-  message "If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
+  message "[Mac OS only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
 
     brew install automake
 
@@ -16,13 +16,8 @@ end
 
 step "Configure your shell" do
 
-  message "This step will assure that every time you open a new terminal window, rvm will be active inside it."
+  message "Every time you open a new terminal window, rvm will be active inside it. But for **this** terminal window, you need to run this command:"
 
-  console <<-BASH
-echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
-  BASH
-  todo "verify that RVM doesn't write that to your bash_profile on its own"
-  
   console "source ~/.bash_profile"
 
   verify do
@@ -32,7 +27,7 @@ echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM
     console "rvm -v"
     result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
   end
-
+  
 end
 
 step "Install Ruby 1.9.3 using RVM" do
@@ -42,7 +37,7 @@ step "Install Ruby 1.9.3 using RVM" do
 
   console <<-BASH
 rvm use 1.9.3
-rvm --default 1.9.3
+rvm --default use 1.9.3
   BASH
 
   verify do
