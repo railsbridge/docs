@@ -13,8 +13,8 @@ choice "installing from a drive or from the App Store" do
   end
   
   option "Install Command Line Tools for XCode" do
-    step "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
-    step "Download and install the latest **Command Line Tools for Xcode** package"
+    message "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
+    message "Download and install the latest **Command Line Tools for Xcode** package"
   end
 
 end
