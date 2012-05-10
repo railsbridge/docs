@@ -52,11 +52,8 @@ step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
 
-step "Install more gems" do
+step "Install the heroku tool" do
   console "gem install heroku"
-
-  message "If you are in an advanced class, you will also want these gems:"
-  console "gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat"
 end
 
 verify "successful installation" do
@@ -68,6 +65,9 @@ verify "successful installation" do
 
   console "which rails"
   result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/rails"
+
+  console "which heroku"
+  result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/heroku"
 end
 
 step "Generate an ssh public key" do
