@@ -3,7 +3,7 @@ RVM stands for Ruby Version Manager and is the easiest way to install and manage
 MARKDOWN
 
 step "Install RVM" do
-  console "bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)"
+  console "curl -L get.rvm.io | bash -s stable"
   message "This will do some stuff and print a long message which you can ignore."
   important "Type the command exactly as shown, including a space between the two less-than signs."
   
