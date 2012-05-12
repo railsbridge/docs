@@ -35,7 +35,7 @@ step "Install Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
-    result "Rails 3.2.2"
+    result "Rails 3.2.3"
   end
 end
 
