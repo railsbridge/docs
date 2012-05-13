@@ -35,13 +35,8 @@ step "Install Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
-    result "Rails 3.2.2"
+    result "Rails 3.2.3"
   end
-end
-
-step "Install 'SQLite Manager' Firefox plugin" do
-  link "install_sqlite_manager"
-  message "This step is *optional*. If it doesn't work, don't spend too much time trying to get it to work."  
 end
 
 step "Install KomodoEdit" do

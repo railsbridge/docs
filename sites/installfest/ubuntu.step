@@ -39,16 +39,6 @@ step "Rails " do
   console "gem install rails"
 end
 
-step "Firefox and the SQLite Firefox extension " do
-  message <<-MARKDOWN
-
-* Download and install the latest Firefox [<http://www.mozilla.org/en-US/firefox/all.html> Firefox]
-
-* Download and install the [<https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/> SQLite Manager Firefox extension]
-
-  MARKDOWN
-end
-
 step "Other required libraries " do
   message "for Ubuntu 10.04 do this first"
 
@@ -57,10 +47,7 @@ sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
   BASH
 
   console <<-BASH
-gem install rspec rspec-rails
-gem install gherkin cucumber cucumber-rails database_cleaner webrat
-gem install sqlite3-ruby
-gem install heroku
+gem install heroku --no-rdoc --no-ri
   BASH
 end
 
