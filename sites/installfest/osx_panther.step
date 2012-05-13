@@ -3,7 +3,7 @@ message <<-MARKDOWN
 OS X 10.3-10.5 (Panther, Tiger, Leopard)
 
   MARKDOWN
-  end
+end
 
 step "XCode tools " do
   message <<-MARKDOWN
@@ -17,7 +17,7 @@ These are part of OS X, but are not installed by default.
 * Double click to run the installer. It will take a while - the XCode tools are large.
 
   MARKDOWN
-  end
+end
 
 step "Git " do
 
@@ -27,14 +27,14 @@ step "Git " do
     message %q{Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac.}
 
     link "intel_or_ppc_mac"
-   end
+  end
 
   option "Tiger" do
     message "ask a TA to help you install git on Tiger"
     message "(you probably want to use MacPorts)"
   end
 
-  end
+end
 
 step "Ruby, RubyGems, and Rails " do
 
@@ -83,22 +83,20 @@ For Tiger ONLY:
 * Rails: <code>sudo gem install rails --version 2.3.9 --no-rdoc --no-ri</code>
 
   MARKDOWN
-  end
+end
 
-step "SQLite and SQLite Manager Firefox add-on " do
+step "SQLite gem" do
   message <<-MARKDOWN
 
 **SQLite**
 
-In some cases, SQLite was installed with Rails in the previous section. To check, do <code>gem list</code> in Terminal.app. If the list includes sqlite3-ruby, you're good.
+In some cases, SQLite was installed with Rails in the previous section. To check, do <code>gem list</code> in Terminal.app. If the list includes `sqlite3`, you're good.
 
-If the list does not include sqlite3-ruby, do <code>sudo gem install sqlite3-ruby</code> in Terminal app.
+If the list does not include sqlite3-ruby, do <code>gem install sqlite3</code> in Terminal app.
 
   MARKDOWN
 
-  link "install_sqlite_manager"
-
-  end
+end
 
 step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
