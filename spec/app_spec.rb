@@ -24,6 +24,11 @@ describe InstallFest do
     true_app
   end
 
+  def get! *args
+    get *args
+    assert { last_response.status == 200 }
+  end
+  
   it "is a sinatra app" do
     assert { true_app.is_a? InstallFest }
     assert { true_app.class.ancestors.include? Sinatra::Application }
@@ -97,11 +102,6 @@ describe InstallFest do
         end
       end
       @breakfast = breakfast
-    end
-    
-    def get! *args
-      get *args
-      assert { last_response.status == 200 }
     end
     
     it "renders a deck" do
