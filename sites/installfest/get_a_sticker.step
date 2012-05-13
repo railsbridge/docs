@@ -37,7 +37,7 @@ end
 verify "rails" do
 
   console "rails -v"
-  result "Rails 3.2.2"
+  result "Rails 3.2.3"
 
   console "cd ~\nrails new sticker"
   result "# ...most output omitted for brevity...

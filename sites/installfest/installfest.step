@@ -41,24 +41,15 @@ You will be installing the following tools:
 * Ruby
 * Rails
 * Git
-* Firefox
-* SQLite Manager (a Firefox plugin)
 * Heroku
 * KomodoEdit
 * Various useful "ruby gems", including...
   * bundler
-  * cucumber
-  * rspec
-  * rspec-rails
-  * webrat
   * sqlite
 
-You will also create accounts on two web sites:
+You will also create an account on Heroku, an application hosting platform.
 
-* Heroku
-* GitHub
-
-If you already have accounts on Heroku or GitHub, make sure you know your username and password.
+If you already have an account on Heroku, make sure you know your username and password.
 
   MARKDOWN
 end

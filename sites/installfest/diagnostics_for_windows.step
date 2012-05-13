@@ -14,19 +14,3 @@ verify do
 end
 
 link "what_to_do_if_git_seems_stuck"
-
-tip "if you have cucumber errors on windows " do
-  message <<-MARKDOWN
-
-to fix this error:
-
-    uninitialized constant Cucumber::CODEPAGE (NameError)
-
-add this to your ~/.bashrc
-
-    export CUCUMBER_OUTPUT_ENCODING='cp1252'
-  MARKDOWN
-
-  todo "troubleshooting page"
-end
-
