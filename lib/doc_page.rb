@@ -80,10 +80,13 @@ class DocPage < Erector::Widgets::Page
     border-top: 1px solid #333;
   }
 
+  /* toc = Table of Contents */
+
   .toc {
     background: #e2f2f2;
-    padding: 1em;
+    padding: 0 0 1em 0;
     margin: 0 0 1em 1em;
+    border: 1px solid blue;
     float: right;
     width: 26em;
     overflow-x: hidden;
@@ -91,6 +94,36 @@ class DocPage < Erector::Widgets::Page
     /* if the toc isn't "positioned", images will show on top of it */
     position: relative;
   }
+  
+  .toc h1 {
+    border-bottom: 1px solid blue;
+    padding-left: 12px;
+  }
+  
+  .toc ul {
+    margin-left: 12px;
+    padding-left: 12px;
+  }
+  
+  .toc ul li {
+    font-size: 11pt;
+    border: 1px solid #e2f2f2;
+    padding: 1px 2px;
+  }
+
+  .toc ul li:hover {
+    background: #a2aBFD;
+    border: 1px solid blue;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .toc ul li a {
+    text-decoration: none;
+  }
+
+
+  /**/
 
   .main {
     padding-left: 4em;
