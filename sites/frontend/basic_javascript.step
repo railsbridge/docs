@@ -81,5 +81,5 @@ tip "Some elements of this script, like 'document.onclick' or the '.innerHTML' p
 
 end
 
-next_step "07_git_your_project"
+next_step "git_your_project"
 
