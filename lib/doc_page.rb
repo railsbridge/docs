@@ -88,6 +88,8 @@ class DocPage < Erector::Widgets::Page
     width: 26em;
     overflow-x: hidden;
     display: none;
+    /* if the toc isn't "positioned", images will show on top of it */
+    position: relative;
   }
 
   .main {
