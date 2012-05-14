@@ -67,4 +67,4 @@ Unpacking objects: 100% (27/27), done.
 end
 
 message "If you've done all that then get a sticker from a volunteer. Happy Hacking!"
-next_step "01_introduction_to_html"
+next_step "introduction_to_html"

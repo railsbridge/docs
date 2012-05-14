@@ -84,5 +84,5 @@ looks like a password text input: <input type='password' name='rando-radio' valu
 
 end
 
-next_step "06_basic_javascript"
+next_step "basic_javascript"
 

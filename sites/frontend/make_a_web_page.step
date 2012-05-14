@@ -70,4 +70,4 @@ change it in just one place, instead of having to update every page.
 
 end
 
-next_step "10_add_more_elements"
+next_step "add_more_elements"
