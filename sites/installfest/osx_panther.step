@@ -85,26 +85,12 @@ For Tiger ONLY:
   MARKDOWN
 end
 
-step "SQLite gem" do
-  message <<-MARKDOWN
-
-**SQLite**
-
-In some cases, SQLite was installed with Rails in the previous section. To check, do <code>gem list</code> in Terminal.app. If the list includes `sqlite3`, you're good.
-
-If the list does not include sqlite3-ruby, do <code>gem install sqlite3</code> in Terminal app.
-
-  MARKDOWN
-
-end
-
 step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
 
 step "Other required libraries" do
   console <<-BASH
-sudo gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat --no-rdoc --no-ri
 sudo gem install heroku --no-rdoc --no-ri
   BASH
 end

@@ -55,21 +55,20 @@ sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
   BASH
 
   console <<-BASH
-gem install rspec rspec-rails
-gem install gherkin cucumber cucumber-rails database_cleaner webrat
-gem install sqlite3-ruby
-gem install heroku
+gem install heroku --no-rdoc --no-ri
   BASH
 end
 
 step "KomodoEdit" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install KomodoEdit. It's available for [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86.tar.gz> 32-bit machines] and [<http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-linux-libcpp6-x86_64.tar.gz> 64-bit machines].
+If you don't have a preferred code editor, you can install KomodoEdit. It's available for [32-bit machines](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-linux-x86.tar.gz) and [64-bit machines](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-linux-x86_64.tar.gz)
+
+Check <http://downloads.activestate.com/Komodo/releases/> for the latest version.
 MARKDOWN
 
   tip "How many bits?" do
-    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" means 32-bit, and "x86_64" means 64-bit.}
+    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
   end
 end
 
