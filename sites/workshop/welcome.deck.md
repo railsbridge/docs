@@ -10,11 +10,12 @@
   * Many individuals
   * RailsBridge
   * DevChix
+  * RailsGirls
 
 * All materials are open!
-  * DevChix wiki, RailsBridge wiki
-  * Slides: github, slidedown
-  * See github.com/railsbridge
+  * RailsBridge wiki
+  * Slides: github, deck
+  * See <http://github.com/railsbridge>
 
 <!SLIDE bullets>
 # Why are we here?

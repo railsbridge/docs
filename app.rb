@@ -1,7 +1,3 @@
-# http://daringfireball.net/projects/markdown/syntax#img
-# http://www.wiki.devchix.com/index.php?title=Help:Editing
-puts RUBY_VERSION
-
 require 'sinatra'
 require 'digest/md5'
 require 'erector'
