@@ -120,6 +120,7 @@ class DocPage < Erector::Widgets::Page
 
   .toc ul li a {
     text-decoration: none;
+    display: block; /* fill the entire containing li */
   }
 
 
