@@ -128,7 +128,7 @@ class Contents < Erector::Widget
   def create_link page
     link_text = page.split('_').map{|s|s.capitalize}.join(' ')
     path = "/#{@site_name}/" + page
-    li(:onclick => "document.location='#{path}'") { a(link_text, :href => path) }
+    li { a(link_text, :href => path) }
   end
 
   def create_list toc_items
