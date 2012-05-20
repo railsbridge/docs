@@ -13,7 +13,7 @@ end
 step "Install Homebrew" do
   console "which git"
   result "/usr/bin/git"
-  message "If you get the result above skip to: <a href='#step5'>Step 5</a>" 
+  message "If you get the result above skip to: <a href='#install_rvm'>Install RVM</a>" 
   link "install_homebrew"
 end
 
@@ -30,7 +30,7 @@ step "Install Git" do
   link "configure_git"
 end
 
-step "Install RVM, the Ruby Version Manager " do
+step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm'} do
   link "install_rvm"
 end
 
