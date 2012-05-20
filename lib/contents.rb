@@ -125,20 +125,24 @@ class Contents < Erector::Widget
     @nextpages ||= _page_links("next_step")
   end
 
-  def create_link page
+  def toc_link page
     link_text = page.split('_').map{|s|s.capitalize}.join(' ')
     path = "/#{@site_name}/" + page
-    li { a(link_text, :href => path) }
+    li do
+      a(link_text, :href => path)
+      yield if block_given?
+    end
   end
 
-  def create_list toc_items
+  def toc_list toc_items
     ul do
       toc_items.each do |toc_item|
         if toc_item.instance_of? Array
-          create_link toc_item.first
-          create_list toc_item[1..toc_item.length]
+          toc_link toc_item.first do
+            toc_list toc_item[1..toc_item.length]
+          end
         else
-          create_link toc_item
+          toc_link toc_item
         end
       end
     end
@@ -147,21 +151,12 @@ class Contents < Erector::Widget
   def content
     div class: "toc" do
       h1 "Contents"
-      create_list hierarchy
+      toc_list hierarchy
 
       unless orphans.empty?
         h1 "Other Pages"
         ul do
-          orphans.each { |orphan| create_link orphan }
-        end
-      end
-
-      h1 "Images"
-      ul do
-        site_files("jpg,png").each do |path|
-          title = File.basename(path)
-          path = path.gsub(/^#{site_dir}\//, '')
-          li { a(title, :href => path) }
+          orphans.each { |orphan| toc_link orphan }
         end
       end
     end

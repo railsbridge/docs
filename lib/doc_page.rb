@@ -131,24 +131,20 @@ class DocPage < Erector::Widgets::Page
     padding-left: 12px;
   }
   
-  .toc ul li {
+  .toc li a {
     font-size: 11pt;
-    border: 1px solid #e2f2f2;
     padding: 1px 2px;
-  }
-
-  .toc ul li:hover {
-    background: #a2aBFD;
-    border: 1px solid blue;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  .toc ul li a {
+    border: 1px solid #e2f2f2;
     text-decoration: none;
     display: block; /* fill the entire containing li */
   }
 
+  .toc li a:hover {
+    background: #a2aBFD;
+    border-color: blue;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
   /**/
 
