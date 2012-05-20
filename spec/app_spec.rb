@@ -86,6 +86,30 @@ describe InstallFest do
     assert { last_request.path == "/curriculum/" }
   end
 
+  describe "page headers" do
+    before :all do
+      get "/"
+      follow_redirect! while last_response.redirect?
+      @body = last_response.body
+    end
+
+    it "should contain the html5 doctype" do
+      @body.should match(/<!doctype html>/i)
+    end
+
+    it "should render style tags without any attributes" do
+      @body.should match(/<style>/i)
+    end
+
+    it "should render meta tags in the terse html5 style" do
+      pending <<GRIPE
+For whatever reason, erector (or something else?!) always makes a meta tag with 'http-equiv...' etc.
+Adding `meta :charset => 'UTF-8'` in head_content should fix this, but it just adds an extra meta tag instead.
+GRIPE
+      @body.should match(/<meta charset=['"]UTF-8['"]>/i)
+    end
+  end
+
   describe "an app with slides" do
     require "deck"
     before do

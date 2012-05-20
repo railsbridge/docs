@@ -2,14 +2,21 @@ require 'erector'
 require "github_flavored_markdown"
 require "contents"
 
-# class Doc
-#   def initialize path_from_sites
-#     parts = @path_from_sites.split('/')
-#     @site_name = parts.shift
-#     @file_name = parts.last
-#     @file_type = @file_name.split('.').last
-#     @base_name = @file_name.split('.').first
-# end
+class InstallfestExternalRenderer < ExternalRenderer
+  # render <style> tags plainly, without "text/css" (which browsers will assume by default)
+  #   or the xml:space attribute (not allowed or required in html5)
+  def inline_styles
+    rendered_externals(:style).each do |external|
+      style(external.options) { rawtext external.text }
+    end
+
+    if Object.const_defined?(:Sass)
+      rendered_externals(:scss).each do |external|
+        style(external.options) { rawtext Sass.compile(external.text) }
+      end
+    end
+  end  
+end
 
 class DocPage < Erector::Widgets::Page
   include GithubFlavoredMarkdown
@@ -20,6 +27,25 @@ class DocPage < Erector::Widgets::Page
 
   needs :src
   attr_reader :src
+
+  # wire up the InstallfestExternalRenderer
+  def included_head_content
+    included_widgets = [self.class] + output.widgets.to_a + extra_widgets
+    InstallfestExternalRenderer.new(:classes => included_widgets).to_html
+  end
+
+  def doctype
+    '<!doctype html>'
+  end
+
+  def html_attributes
+    {:lang => 'en'}
+  end
+
+  def head_content
+    title page_title
+    script :src => "/jquery-1.6.1.js"
+  end
 
   def site_title
     "Railsbridge #{site_name.capitalize}"
@@ -186,14 +212,9 @@ class DocPage < Erector::Widgets::Page
     file_name = @doc_path.split('/').last
     [
       TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
-      TopLink.new(:name => "toc", :href => "#", :onclick => "$('div.toc').toggle();"),
+      TopLink.new(:name => "toc", :href => "#", :onclick => "$('div.toc').toggle(); return false;"),
       TopLink.new(:name => "git", :href => "https://github.com/railsbridge/installfest/blob/master/sites/#{@site_name}/#{file_name}"),
     ]
-  end
-
-  def head_content
-    super
-    script :src => "/jquery-1.6.1.js"
   end
 
   def body_content
