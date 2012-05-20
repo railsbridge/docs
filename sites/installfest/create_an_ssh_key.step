@@ -18,7 +18,17 @@ choice "keyphrase" do
   option "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
 end
 
-todo "expected output of ssh-keygen command"
+result <<-OUTPUT
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/student/.ssh/id_rsa): 
+Created directory '/Users/student/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/student/.ssh/id_rsa.
+Your public key has been saved in /Users/student/.ssh/id_rsa.pub.
+The key fingerprint is:
+88:54:ab:77:fe:5c:c3:7s:14:37:28:8c:1d:ef:2a:8d student@example.com
+  OUTPUT
 
 verify do
   message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
