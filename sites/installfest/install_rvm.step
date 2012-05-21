@@ -5,7 +5,6 @@ MARKDOWN
 step "Install RVM" do
   console "curl -L get.rvm.io | bash -s stable"
   message "This will do some stuff and print a long message which you can ignore."
-  important "Type the command exactly as shown, including a space between the two less-than signs."
   
   message "[Mac OS only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
 
