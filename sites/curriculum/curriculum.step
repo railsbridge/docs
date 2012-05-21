@@ -50,13 +50,14 @@ show up for railsbridge on Saturday.
 
 You can verify that you have everything working by trying this out in your terminal:
 
-    $ irb
-    >> 1 + 2
-    => 3
-    >> require "active_support"
-    => true
-    >> exit
-    $
+<div class="console"><pre>
+$ irb
+>> 1 + 2
+=> 3
+>> require "active_support"
+=> true
+>> exit
+$</pre></div>
 
 If you can do that, you are probably good to go.
 
@@ -81,34 +82,31 @@ browser gets confusing and wastes time.
 
 ### Format
 
-<!-- TODO: Style the examples below to actually be red, yellow, and green. -->
 Each lesson will look like this:
 
-<div style="background: white; border: 1px solid black; margin: 2em; padding: 1em;">
-<h3>Step Title</h3>
-<div class="goal">
-<h4>Goal:</h4>
-<p>Description of the current step.
-<p>Red because big goals are scary.
-</div> <!-- goal -->
-<div class="steps">
-<h4>Steps:</h4>
-<pre class="term">
-steps to take.
-</pre>
-<pre class="code">
+<div style="background: white; border: 1px solid black; padding-left: 4em;">
+  <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
+  <div class="goals">
+    <h1>Goal:</h1>
+    <p>Description of the current step.
+    <p>Red because big goals are scary.
+  </div>
+  <div class="steps">
+    <h1>Steps:</h1>
+    <pre class="term">steps to take.</pre>
+    <div class="console">
+      <pre>
 def code_to_write
   1 + 1
-end
-</pre>
-<p>Yellow because we've gotten it done, but we have no clue what's going on.
-</div> <!-- steps -->
-<div class="what">
-<h4>What Just Happened?</h4>
-<p>details of what the steps actually did... spell out the cause and effect.
-<p>Green because we can tie everything together now.
-</div> <!-- what -->
-</div> <!-- top-goal -->
+end</pre>
+    </div>
+    <p>Yellow because we've gotten it done, but we have no clue what's going on.
+  </div>
+  <div class="explanation">
+    <h1>Explanation</h1>
+    <p>Details of what the steps actually did... spell out the cause and effect.
+    <p>Green because we can tie everything together now.
+  </div>
 </div>
 MARKDOWN
 
