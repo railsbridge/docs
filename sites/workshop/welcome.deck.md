@@ -10,12 +10,19 @@
   * Many individuals
   * RailsBridge
   * DevChix
-  * RailsGirls
 
 * All materials are open!
   * RailsBridge wiki
   * Slides: github, deck
   * See <http://github.com/railsbridge>
+
+* Spin-off Workshops
+  * RailsGirls, PyStar, Python Ladies, Scala
+  * Learn the Front End, Confident Coding JS, and...?
+
+<!SLIDE bullets>
+# Why are we here?
+We want the community of software developers to reflect the diversity of our society
 
 <!SLIDE bullets>
 # Why are we here?
@@ -98,11 +105,11 @@
 * Suggestotron Curriculum: <http://curriculum.railsbridge.org/>
 
 <!SLIDE bullets>
-# Two Tracks Today
-* Learn Ruby from the ground up
-  * focus on learning to program
-* Learn Rails (and Heroku and Github)
-  * focus on tools and building web applications
+# What will you learn today?
+* Ruby
+  * understanding the Ruby programming language
+* Rails
+  * learn tools and patterns for building web apps in Ruby on Rails
   
 ---
 Proceed to next slide deck: [Today's Workshop Info and Schedule](current)
