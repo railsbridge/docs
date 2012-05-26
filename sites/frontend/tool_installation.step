@@ -16,8 +16,8 @@ steps do
         link "mac_os_git_installation"
       end
 
-      step "Install Komodo Edit" do
-        a "Install Komodo Edit for Mac OS X", :href => "/installfest/install_komodo_edit_for_mac"
+      step "Install Emacs" do
+        a "Install Emacs for Mac OS X", :href => "/installfest/install_emacs_for_mac"
       end
     end
   end

@@ -18,7 +18,7 @@ installfest.railsbridge.org/
  - github
  - heroku
  - Firefox 
- - KomodoEdit
+ - Emacs
  - Various useful gems: bundler, cucumber, rspec, rspec-rails, webrat, sqlite
 
 

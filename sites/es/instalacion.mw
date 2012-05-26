@@ -21,7 +21,7 @@ Estarás instalando las siguientes herramientas / programas:
 * Rails
 * Git
 * Heroku
-* KomodoEdit
+* Emacs
 * Algunas gemas muy útiles: bundler, cucumber, rspec, rspec-rails, webrat, sqlite
 
 Durante este proceso crearas una cuenta [http://www.heroku.com Heroku], si no tienes una ya. Heroku es un servicio de hosting gratis para Ruby on Rails apps. y nosotros lo estaremos utilizando para los talleres.

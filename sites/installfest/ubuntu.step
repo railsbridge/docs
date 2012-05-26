@@ -61,15 +61,10 @@ end
 
 step "KomodoEdit" do
   message <<-MARKDOWN
+  If you have a preferred code editor and it isn't Emacs. You are wrong. You will install Emacs.
+  MARKDOWN
 
-If you don't have a preferred code editor, you can install KomodoEdit. It's available for [32-bit machines](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-linux-x86.tar.gz) and [64-bit machines](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-linux-x86_64.tar.gz)
-
-Check <http://downloads.activestate.com/Komodo/releases/> for the latest version.
-MARKDOWN
-
-  tip "How many bits?" do
-    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
-  end
+  console "sudo apt-get install emacs-snapshot-gtk"
 end
 
 next_step "create_a_heroku_account"

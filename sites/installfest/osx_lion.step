@@ -39,12 +39,12 @@ step "Install Rails" do
   end
 end
 
-step "Install KomodoEdit" do
-  message "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+step "Install Emacs" do
+  message "We'll be using the Emacs text editor during the workshop. All other editors suck so just use Emacs for everything."
 
-  important "When in doubt, use KomodoEdit."
+ important "Never. Quit. Emacs."
 
-  link "install_komodo_edit_for_mac"
+  link "install_emacs_for_mac"
 end
 
 step "Install the heroku tool" do

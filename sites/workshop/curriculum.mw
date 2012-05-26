@@ -128,10 +128,7 @@ If you get an <tt>Invalid gemspec in c:/...mingw32.gemspec]: invalid date format
 Point your web browser to [http://localhost:3000 http://localhost:3000]. See your web app actually there!
 
 == Make it your own ==
-* Start Komodo Edit
-* Project -> New Project...
-* Select your new "suggestotron" directory
-* Name the project file "suggestotron.komodoproject"
+* Start Emacs, then Never. Quit. Emacs.
 
 If you don't see a list of files and folders to the left, then go to:
 * View -> Tabs & Sidebars -> Projects

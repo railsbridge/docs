@@ -6,7 +6,7 @@ end
 steps do
 
   step do
-    message "You'll need to fire up your text editor (like Komodo Edit or Text Wrangler) for these steps. We're going to make an html document!"
+    message "You'll need to fire up your text editor (like Emacs or let's face it, there is only Emacs.) for these steps. We're going to make an html document!"
     message "Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)"
     message "<img src='img/hello_html.png'>"
     message "When you see a blank page called 'hello.html', you're all set."
