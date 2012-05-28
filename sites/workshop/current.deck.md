@@ -29,6 +29,15 @@
 * 4:00 Grab a drink (or 2 or 3?) at ?
 
 <!SLIDE bullets>
+# Who is here?
+![Student Survey](img/student_survey.png)
+
+<!SLIDE bullets>
+# Who is here?
+![Student Experience](img/student_experience.png)
+
+
+<!SLIDE bullets>
 # 3 Groups
 * one will go slowly through programming concepts
 * two will focus on what is different about Ruby and Rails

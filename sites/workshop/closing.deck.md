@@ -8,7 +8,9 @@
 ![EngineYard](img/ey_logo_rgb.png)
 
 <!SLIDE bullets>
-# After-party
+# Celebrate!
+* After-party 
+* Conference Party
 
 <!SLIDE bullets>
 # What did we learn?
@@ -20,9 +22,11 @@
 # Resources:
 * http://installfest.railsbridge.org/workshop/resources
 * Follow-up:
-* HACK NIGHT!!! 585 Howard Street. 6pm. See sfruby.info for details. Ignore the waiting list. 
-* Women Who Code Meetup - Tuesdays
-* Want to organize? join railsbridge-workshops@googlegroups.com
+* Ruby Users of Minnesota — a fine group of Ruby enthusiasts from around the Twin Cities metro area, or pretty much wherever they feel like driving from. Our group meets on the last Monday of each month at 7 PM http://ruby.mn/
+* RailsBridge IRC channel
+* DevChix E-mail list http://www.devchix.com/
+* Systers mailing list
+* Want to organize a workshop? join railsbridge-workshops@googlegroups.com
 
 <!SLIDE bullets>
 # RIGHT NOW
