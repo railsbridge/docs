@@ -8,15 +8,15 @@ verify "tool installation" do
   tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
 
   h3 "If you're on OSX or Linux:"
-  
+
   console "rvm -v"
   result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
-  
+
   console "sqlite3 --version"
   result "3.7.5"
 
   h3 "On all operating systems:"
-  
+
   console "ruby -v"
   result "ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]"
 
@@ -74,7 +74,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
       create      app/assets/stylesheets/drinks.css.scss
       invoke  scss
       create    app/assets/stylesheets/scaffolds.css.scss"
-      
+
   console "rake db:migrate"
   result "
 ==  CreateDrinks: migrating ===================================================
@@ -93,12 +93,12 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
 [2012-03-30 17:56:02] INFO  ruby 1.9.3 (2012-02-16) [x86_64-linux]
 [2012-03-30 17:56:02] INFO  WEBrick::HTTPServer#start: pid=27148 port=3000
   TERMINAL"
-  
+
   message <<-BROWSER_VERIFY
 In your web browser, go to <http://localhost:3000/drinks>
 
 1. Click on "New drink"
-2. Enter Cappuccino for the name 
+2. Enter Cappuccino for the name
 3. Enter 135 for the temperature.
 4. Click on "Create Drink".
 
@@ -146,7 +146,7 @@ verify "git" do
 #       new file:   Rakefile
 # ...most output omitted for brevity...
   RESULT
-  
+
   console 'git commit -m "Getting that sticker"'
   result "
 [master (root-commit) 8cd0e44] Getting that sticker
@@ -171,7 +171,7 @@ verify "heroku deploy" do
   source_code :ruby, <<-RUBY
 gem 'sqlite3'
   RUBY
-  
+
   message "Remove this line and replace it with:"
 
   source_code :ruby, <<-RUBY
@@ -192,7 +192,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
 
   console <<-GIT_COMMIT
 git add .
-git commit -m"Add pg gem for Heroku."
+git commit -m "Add pg gem for Heroku."
 GIT_COMMIT
   result "[master 4a275be] Add pg gem for Heroku.
  2 files changed, 6 insertions(+)"
