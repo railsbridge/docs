@@ -10,6 +10,8 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
   console "sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev"
 
   console "sudo apt-get install git"
+
+  message "If this results in the error, you may try installing git-core instead of git"
 end
 
 step "install RVM" do
@@ -17,6 +19,8 @@ step "install RVM" do
   console "bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)"
   message "This will do some stuff and print a long message which you can ignore."
   important "Type the command exactly as shown, including a space between the two less-than signs."
+  console "echo 'source ~/.rvm/scripts/rvm' >> $HOME/.bashrc"
+  message "Restart your terminal before continuing."
 end
 
 step "Update rubygems (Ubuntu 8.04, 8.10 only)" do
