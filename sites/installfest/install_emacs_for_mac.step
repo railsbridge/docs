@@ -1,0 +1,12 @@
+message <<-MARKDOWN
+We'll be using the Emacs text editor during the workshop. No other editors exist, if you think that they do. You are wrong and should feel bad.
+MARKDOWN
+
+important "Microsoft Word and other word processing programs work fine, but not as well as Emacs"
+
+step "Install Emacs via Homebrew" do
+  console "brew install emacs"
+end
+
+important "Never. Quit. Emacs."
+

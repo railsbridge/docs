@@ -130,7 +130,7 @@ c- Luego, visualiza tu aplicación en tu browser http://localhost:3000. En ella 
 === Modifica el indice de tu web ===
 
 '''Elige tu editor preferido'''
-<br/>Necesitarás un editor para realizar la codificación de tu aplicación. En el workshop utilizaremos.[http://www.activestate.com/komodo-ide Komodo]
+<br/>Necesitarás un editor para realizar la codificación de tu aplicación. En el workshop utilizaremos.[http://gnu.org/software/emacs Emacs]
 
 Has algún cambio en el indice, guárdalo y refresca la página para ver tu cambio. Por Ejemplo:
 <pre><h1>Ruby on Rails en Español!</h1></pre>

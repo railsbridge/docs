@@ -101,17 +101,14 @@ step "Configure Git" do
   link "configure_git"
 end
 
-step "Install a Text Editor" do
-  message "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
+step "Install a Emacs" do
+  message "You need Emacs to do anything at all. If you already have a preferred text editor, and it isn't Emacs. You are wrong. Get Emacs."
 
-  message "Notepad is not a good programming editor, but it will work in a pinch."
+  message "Microsoft Word is not a good programming editor, but it will work in a pinch."
 
-  important "**When in doubt, use KomodoEdit.**"
+  important "**Always use Emacs for everything.**"
 
-  message "Download KomodoEdit here: <http://downloads.activestate.com/Komodo/releases/>"
-  
-  message "[Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet."
-  
+  message "Download Emacs here: <emacs-23.4-bin-i386.zip>"
 
 end
 

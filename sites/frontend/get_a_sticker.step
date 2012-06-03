@@ -14,7 +14,7 @@ end
 
 verify "you can open a local webpage in a browser" do
   message <<-MESSAGE
-Create a new file called `sticker.html` by opening it in Komodo Edit or your preferred editor.
+Create a new file called `sticker.html` by opening it in Emacs or your preferred editor.
 Make a note of where you save it, you'll need to know in a second.
 
 Fill it with the following contents:
