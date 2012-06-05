@@ -15,7 +15,7 @@ class InstallfestExternalRenderer < ExternalRenderer
         style(external.options) { rawtext Sass.compile(external.text) }
       end
     end
-  end  
+  end
 end
 
 class DocPage < Erector::Widgets::Page
@@ -120,17 +120,17 @@ class DocPage < Erector::Widgets::Page
     /* if the toc isn't "positioned", images will show on top of it */
     position: relative;
   }
-  
+
   .toc h1 {
     border-bottom: 1px solid blue;
     padding-left: 12px;
   }
-  
+
   .toc ul {
     margin-left: 12px;
     padding-left: 12px;
   }
-  
+
   .toc li a {
     font-size: 11pt;
     padding: 1px 2px;
@@ -204,12 +204,21 @@ class DocPage < Erector::Widgets::Page
     end
   end
 
+  # todo: test
+  def file_name
+    @doc_path.split('/').last
+  end
+
+  # todo: test
+  def git_url
+    "https://github.com/railsbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
+  end
+
   def top_links
-    file_name = @doc_path.split('/').last
     [
       TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
       TopLink.new(:name => "toc", :href => "#", :onclick => "$('div.toc').toggle(); return false;"),
-      TopLink.new(:name => "git", :href => "https://github.com/railsbridge/installfest/blob/master/sites/#{@site_name}/#{file_name}"),
+      TopLink.new(:name => "git", :href => git_url),
     ]
   end
 
