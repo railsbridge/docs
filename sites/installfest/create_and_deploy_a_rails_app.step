@@ -85,6 +85,12 @@ git init
 
   result "Initialized empty Git repository in c:/Sites/test_app/.git/"
 
+  console "touch README"
+
+  tip "touch" do
+    message "`touch README` creates a file named README in the current directory" 
+  end
+
   console "git add -A"
   tip "git add" do
     message <<-MARKDOWN
