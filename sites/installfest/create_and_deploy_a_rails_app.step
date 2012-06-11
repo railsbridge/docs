@@ -100,7 +100,7 @@ With Git, there are usually many ways to do very similar things.
   end
 
   console "git commit -m \"initial commit\""
-  result "a lot of lines like create mode 100644 README"
+  result "a lot of lines like create mode 100644 Gemfile"
 
   console "git log"
   result "(Your git name and \"initial commit\" message.)"
