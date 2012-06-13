@@ -15,7 +15,7 @@ git push heroku master
 heroku run rake db:migrate
 SHELL
 
-    tip "there is a period after the word add in the third line"
+    tip "there is a period after the word add in the first line"
   end
 
   step "Check that it worked" do
