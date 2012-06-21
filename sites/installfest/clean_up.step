@@ -4,12 +4,7 @@ Ok, there is one more step. You won't be using the test application in the works
 MARKDOWN
 
 step "Delete the app from Heroku" do
-  option "from the browser" do
-    message "Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App."
-  end
-  option "from the command line" do
-    console "heroku apps:destroy"
-  end
+  message "Go to <https://heroku.com/myapps> and then click on your app name. Scroll to the bottom of the page and click Destroy App."
 end
 
 step "Delete test_app from your computer" do
