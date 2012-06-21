@@ -217,6 +217,15 @@ div.back:before {
 
   end
 
+  def section text
+    div do
+      h1 text
+      blockquote do
+        yield
+      end
+    end
+  end
+
   def verify text = nil
     div :class=> "verify" do
       h1 "Verify #{text}"

@@ -34,12 +34,21 @@ verify "tool installation" do
 
 end
 
+section "Change to your home directory" do
+  option "Windows" do
+    console "cd c:\\Sites"
+  end
+  option "Mac or Linux" do
+    console "cd ~"
+  end
+end
+
 verify "rails" do
 
   console "rails -v"
   result "Rails 3.2.3"
 
-  console "cd ~\nrails new sticker"
+  console "rails new sticker"
   result "# ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed."
 
