@@ -199,7 +199,7 @@ GIT_COMMIT
 
   message "The name of your heroku app will be different. That is fine."
 
-  console "heroku create --stack cedar"
+  console "heroku create"
   result <<-HEROKU_CREATE
 Creating evening-wind-5284... done, stack is cedar
 http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git

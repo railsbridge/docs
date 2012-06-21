@@ -112,13 +112,14 @@ step "Deploy your app to Heroku" do
 
   message "The very first time you use `heroku` you must enter your Heroku email address and password."
 
-  console "heroku create --stack cedar"
+  console "heroku create"
   result <<-OUTPUT
 Enter your Heroku credentials.
 Email: myemail@example.com
 Password:
 Uploading ssh public key /Users/smei/.ssh/id_rsa.pub
-Created http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
+Creating floating-winter-18... done, stack is cedar
+http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
 Git remote heroku added
   OUTPUT
 

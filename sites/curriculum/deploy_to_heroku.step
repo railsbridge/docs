@@ -6,8 +6,8 @@ end
 steps do
 
   step "Create a heroku application" do
-    console "heroku create --stack cedar"
-    message "`heroku create` registers a new application on heroku's system. The default 'stack' is currently Bamboo, which is a little old, so `--stack cedar` specifies that we'll use the newer Cedar stack."
+    console "heroku create"
+    message "`heroku create` registers a new application on heroku's system."
   end
 
   step "Edit the Gemfile" do
