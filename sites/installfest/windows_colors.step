@@ -2,7 +2,7 @@ message "The Rails server logging and test results are much easier to read with 
 
 step "Download ANSICON" do
   message "In the browser, visit <https://github.com/adoxa/ansicon/downloads>"
-  message "Click the `ansi140.zip` link to download the file"
+  message "Click the `ansi153.zip` link to download the file (or whatever the most recent version is)"
   message "Double-click the file to unzip it"
 end
 
