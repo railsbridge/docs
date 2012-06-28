@@ -24,7 +24,7 @@ step "Install Git" do
 
   verify do
     console "git --version"
-    result "git version 1.7.4.4"
+    result "git version 1.7.4.4 (or some higher number)"
   end
 
   link "configure_git"
@@ -38,7 +38,7 @@ step "Install Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
-    result "Rails 3.2.3"
+    result "Rails 3.2.x (where x will be 6 or higher)"
   end
 end
 
@@ -59,13 +59,13 @@ verify "successful installation" do
   result "/usr/bin/git"
 
   console "which ruby"
-  result "/Users/alex/.rvm/rubies/ruby-1.9.2-p290/bin/ruby"
+  result "/Users/<your username>/.rvm/rubies/ruby-1.9.2-p290/bin/ruby" (or 1.9.3 if that's what you installed)
 
   console "which rails"
-  result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/rails"
+  result "/Users/<your username>/.rvm/gems/ruby-1.9.2-p290/bin/rails"
 
   console "which heroku"
-  result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/heroku"
+  result "/Users/<your username>/.rvm/gems/ruby-1.9.2-p290/bin/heroku"
 end
 
 step "Generate an ssh public key" do
