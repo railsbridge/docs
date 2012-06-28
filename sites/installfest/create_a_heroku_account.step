@@ -24,7 +24,10 @@ step "Install the heroku gem" do
     console "gem install heroku"
   end
 
-  todo "Output of heroku gem install"
+  verify do
+    console "heroku -v"
+    result "2.26.7"
+  end
 end
 
 step "Add your SSH key to your Heroku account" do
