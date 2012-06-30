@@ -26,13 +26,13 @@ step "Install Ruby 1.9.3 using RVM" do
 
   message "This downloads and compiles Ruby, which takes a while."
   
-  message "[Mac OS only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
+  important "[Mac OS only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
 
       brew install automake
       
   and retry."
   
-  message "[Ubuntu only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
+  important "[Ubuntu only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
   
     sudo apt-get install automake
   
