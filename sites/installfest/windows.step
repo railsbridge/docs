@@ -44,7 +44,7 @@ step "Sanity Check" do
   result "ruby 1.9.3p125"
 
   console "rails -v"
-  result "Rails 3.2"
+  result "Rails 3.2.6"
 
 end
 
