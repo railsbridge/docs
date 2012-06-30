@@ -15,7 +15,7 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
 end
 
 step "install RVM" do
-  link "install_rvm"
+  link "install_rvm_and_ruby"
   message "Restart your terminal before continuing."
 end
 
