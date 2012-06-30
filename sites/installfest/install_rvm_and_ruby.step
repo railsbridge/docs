@@ -4,13 +4,7 @@ MARKDOWN
 
 step "Install RVM" do
   console "curl -L get.rvm.io | bash -s stable"
-  message "This will do some stuff and print a long message which you can ignore."
-  
-  message "[Mac OS only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
-
-    brew install automake
-
-and retry."
+  message "This will do some stuff and print a long message which you can ignore."  
 end
 
 step "Configure your shell" do
@@ -22,7 +16,7 @@ step "Configure your shell" do
     result "rvm is a function"
 
     console "rvm -v"
-    result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
+    result "rvm 1.14.5 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
   end
   
 end
@@ -31,6 +25,19 @@ step "Install Ruby 1.9.3 using RVM" do
   console "rvm install 1.9.3"
 
   message "This downloads and compiles Ruby, which takes a while."
+  
+  important "[Mac OS only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
+
+      brew install automake
+      
+  and retry."
+  
+  important "[Ubuntu only] If `rvm install 1.9.3` says `autoreconf was not found in the PATH` then run
+  
+    sudo apt-get install automake
+  
+  and retry."
+  
 
   console <<-BASH
 rvm use 1.9.3
