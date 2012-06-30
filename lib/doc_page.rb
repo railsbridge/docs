@@ -253,7 +253,7 @@ class DocPage < Erector::Widgets::Page
       p "Railsbridge InstallFest"
       p do
         text "Source: "
-        url "https://github.com/railsbridge/installfest"
+        url "https://github.com/railsbridge/docs"
       end
     }
   end
