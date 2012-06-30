@@ -24,7 +24,7 @@ step "Install Git" do
 
   verify do
     console "git --version"
-    result "git version 1.7.4.4"
+    result "git version 1.7.7.5"
   end
 
   link "configure_git"
