@@ -446,7 +446,7 @@ edit_topico GET    /topicos/:id/edit(.:format) {:action=>"edit", :controller=>"t
 Volvamos a aplicar lo que aprendimos. En la linea de comando, abre tu consola rails. Una vez que estes ahí, podrás utilizar metodos rails para explorar tus urls. 
 <code><pre>
 carmen(mafalda)(master)$rails console
-Loading development environment (Rails 3.0.5)
+Loading development environment (Rails 3.2.6)
 ruby-1.9.2-head :001 > app.topicos_path
  => "/topicos" 
 ruby-1.9.2-head :002 > app.topicos_url
