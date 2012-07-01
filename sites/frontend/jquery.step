@@ -8,6 +8,7 @@ steps do
   step do
     message "First, let's include the jQuery code in our HTML file, so we can start working with it. Google and Microsoft both host public copies of jQuery that you can link to, so you don't even need to download it. (The browser can download files from other sites, if you include links to them.) Add this line inside the `head` of your document:"
     source_code "HTML", "<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\" type=\"text/javascript\"></script>"
+    important "Make sure you add the above line *before* any of your javascript that uses jQuery or you will get an error because jQuery hasn't yet loaded."
     message "Save and refresh your browser window. Your page should look the same, but now you've included jQuery in the page."
   end
   
