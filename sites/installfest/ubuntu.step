@@ -40,7 +40,7 @@ end
 step "Rails " do
   message "Using a terminal again, execute the following command to install rails."
 
-  console "gem install rails"
+  console "gem install rails --no-rdoc --no-ri"
 end
 
 step "Firefox" do

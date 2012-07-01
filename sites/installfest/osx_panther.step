@@ -48,10 +48,10 @@ step "Ruby, RubyGems, and Rails " do
     important "Whenever you install a gem using the built-in Ruby you should precede 'gem install' with 'sudo'"
   end
   console <<-BASH
-sudo gem install rubygems-update
+sudo gem install rubygems-update --no-rdoc --no-ri
 sudo update_rubygems
 sudo gem update --system
-sudo gem install rails
+sudo gem install rails --no-rdoc --no-ri
   BASH
 
   message <<-MARKDOWN
@@ -62,9 +62,9 @@ If you are having this error:
 Try the steps in this order:
 
     sudo gem update --system
-    sudo gem install rubygems-update
+    sudo gem install rubygems-update --no-rdoc --no-ri
     sudo update_rubygems
-    sudo gem install rails
+    sudo gem install rails --no-rdoc --no-ri
 
 For Tiger ONLY:
 
