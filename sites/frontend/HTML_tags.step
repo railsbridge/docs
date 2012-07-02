@@ -47,14 +47,18 @@ lines and spaces.
 It's common for an HTML tag to be nested inside another tag. In the example above, you saw:
 
 MARKDOWN
+
 source_code "HTML", "<h1><em></em></h1>"
 
-important "Just make sure that the tags are correctly _nested_. For example, you can't do:"
+important do
+  message "Just make sure that the tags are correctly _nested_. For example, you can't do:"
 
-source_code "HTML", "<h1><em>Hello World!</h1> I like you!</em>"
+  source_code "HTML", "<h1><em>Hello World!</h1> I like you!</em>"
+
+  message "The inner tag, `em`, needs to close before the outer tag closes."
+end
+
 message <<-MARKDOWN
-
-The inner tag, `em`, needs to close before the outer tag closes.
 
 ## Tags for Every Occasion
 
