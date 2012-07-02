@@ -23,6 +23,8 @@ end
 
 step "Install Ruby 1.9.3 using RVM" do
   console "rvm install 1.9.3"
+  
+  important "If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip."
 
   message "This downloads and compiles Ruby, which takes a while."
   
