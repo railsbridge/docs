@@ -1,4 +1,4 @@
-# Railsbridge Installfest StepList
+# The Railsbridge Documentation Project
 
 Author: Alex Chaffee <mailto:alex@stinky.com>
 
@@ -15,9 +15,9 @@ Then open <http://localhost:9292> in a web browser.
  
 # Overview
 
-This is a Sinatra app, deployed at <http://installfest.heroku.com>, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.
+This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The Railsbridge documentation project is home to a few subprojects, including the Railsbridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring the the workshop!), as well as the Railsbridge workshop "Suggestotron" curriculum.
 
-The site comprises files stored in a "site" directory; the one we care about now is ROOT/sites/installfest.
+Each subproject (a "site") comprises files stored under the "site" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the curriculum can be found under ROOT/sites/curriculum.
 
 These files can be in any of these formats:
 
@@ -38,7 +38,7 @@ StepFile is a new, Ruby-based DSL for describing complex, nested instructions in
 
 #Organizer Instructions
 
-Slide contents that change with each workshop are contained in three files. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned' slides are in closing.deck.md.
+Slide contents that change with each workshop are contained in three files unders the workshop project. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned' slides are in closing.deck.md.
 
 To change those contents, clone this repo, make changes, and then to include your changes in the publicly available repo, send a pull request.
 
