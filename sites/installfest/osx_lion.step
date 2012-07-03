@@ -50,8 +50,17 @@ step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
 
-step "Install the heroku tool" do
-  console "gem install heroku"
+step "Install the heroku gem" do
+
+  option "if you are using rvm" do
+    console "rvm @global gem install heroku"
+  end
+
+  option "otherwise" do
+    console "gem install heroku"
+  end
+
+  todo "Output of heroku gem install -- see jbx72487's commit 11 days ago that fixes this 'todo'"
 end
 
 verify "successful installation" do
