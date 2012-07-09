@@ -16,10 +16,9 @@ end
 
 step "install RVM" do
   link "install_rvm"
-  console "bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)"
+  console "curl -L https://get.rvm.io | bash -s stable"
   message "This will do some stuff and print a long message which you can ignore."
-  important "Type the command exactly as shown, including a space between the two less-than signs."
-  console "echo 'source ~/.rvm/scripts/rvm' >> $HOME/.bashrc"
+  important "Type the command exactly as shown, including spaces."
   message "Restart your terminal before continuing."
 end
 
