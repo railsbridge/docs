@@ -30,8 +30,8 @@ step "Install Git" do
   link "configure_git"
 end
 
-step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm'} do
-  link "install_rvm"
+step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and_ruby'} do
+  link "install_rvm_and_ruby"
 end
 
 step "Install Rails" do  
