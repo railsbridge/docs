@@ -42,7 +42,8 @@ end
 step "Firefox" do
   message <<-MARKDOWN
 
-* Download and install the [latest Firefox](http://www.mozilla.org/en-US/firefox/all.html) web browser.
+* Ubuntu comes bundled with the Firefox browser.  If you already have Firefox installed, open it and select Help -> About Firefox to confirm that you have the latest version (13.01).
+* If you don't have Firefox, download and install the [latest Firefox](http://www.mozilla.org/en-US/firefox/all.html) web browser.
 
   MARKDOWN
 end
