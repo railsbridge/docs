@@ -39,14 +39,6 @@ step "Rails " do
   console "gem install rails"
 end
 
-step "Firefox" do
-  message <<-MARKDOWN
-
-* Download and install the [latest Firefox](http://www.mozilla.org/en-US/firefox/all.html) web browser.
-
-  MARKDOWN
-end
-
 step "Other required libraries " do
   message "for Ubuntu 10.04 do this first"
 
