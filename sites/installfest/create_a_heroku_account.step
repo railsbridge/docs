@@ -17,11 +17,11 @@ end
 step "Install the heroku gem" do
 
   option "if you are using rvm" do
-    console "rvm @global gem install heroku"
+    console "rvm @global gem install heroku --no-rdoc --no-ri"
   end
 
   option "otherwise" do
-    console "gem install heroku"
+    console "gem install heroku --no-rdoc --no-ri"
   end
 
   verify do

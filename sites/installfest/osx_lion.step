@@ -35,7 +35,7 @@ step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and
 end
 
 step "Install Rails" do  
-  console "gem install rails"
+  console "gem install rails --no-rdoc --no-ri"
   verify do
     console "rails -v"
     result "Rails 3.2.6"
@@ -51,7 +51,7 @@ step "Install KomodoEdit" do
 end
 
 step "Install the heroku tool" do
-  console "gem install heroku"
+  console "gem install heroku --no-rdoc --no-ri"
 end
 
 verify "successful installation" do

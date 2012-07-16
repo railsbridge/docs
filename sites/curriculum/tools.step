@@ -1,38 +1,6 @@
 message <<-MARKDOWN
 ## Other Tools to help you learn Ruby
 
-### ri
-
-ri is a tool to look up ruby documentation:
-
-    $ ri String.split
-    = String.split
-
-    (from ruby core)
-    ------------------------------------------------------------------------------
-      str.split(pattern=$;, [limit])   => anArray
-
-    ------------------------------------------------------------------------------
-
-    Divides str into substrings based on a delimiter, returning an array of
-    these substrings.
-    ...
-
-MARKDOWN
-
-important "If running ri doesn't work and you've installed ruby using rvm, try
-running this command first:
-
-    $ rvm docs generate
-"
-
-message <<-MARKDOWN
-You can do a lot with it:
-
-* `ri Class` -- looks up the class documentation and shows all the methods available.
-* `ri Class.method` -- looks up a specific method on a class or module.
-* `ri method` -- searches all classes for matching methods
-
 ### irb
 
 We've already introduced irb above, but it can't be stressed enough
@@ -45,8 +13,7 @@ You can do stuff like:
     >> "blah".methods
     => [:<=>, :==, :===, :eql?, :hash, :casecmp, :+, :*, :%, :[], :[]=, :insert, :length, :size...]
 
-All of these methods are available for any string. You can then use
-`ri` to look up the method documentation. It is a great way to find goodies!
+All of these methods are available for any string. To find out more about what these methods do and how to use them, try searching for "String" on [ruby-doc.org](http://www.ruby-doc.org). It is a great way to find goodies!
 
 ### online resources
 
