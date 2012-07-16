@@ -6,9 +6,11 @@ step "Prepare for the Install Fest" do
 
 ## You must bring:
 
-* **Your laptop.** If you have a choice between a Mac and a Windows laptop, please bring the Mac.
+* **Your laptop.** You need to have a working wifi connection and a browser.
+  * If you have a choice between a Mac and a Windows laptop, please bring the Mac.
+    * Mac users: your **OS X DVD**
+  * Linux is an acceptable alternative, but the Installfest is only tested on Ubuntu.
 * **Power cord for your laptop**
-* Mac users: your **OS X DVD**
 * If you already have accounts on Heroku or GitHub, make sure you know your username and password.
 
 ## Possibly also helpful to bring:
@@ -41,7 +43,6 @@ You will be installing the following tools:
 * Rails
 * Git
 * Heroku
-* Firefox (or some browser)
 * KomodoEdit (or some editor)
 * Various useful "ruby gems", including...
   * bundler
