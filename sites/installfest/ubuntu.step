@@ -19,6 +19,7 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
     libsqlite3-0
     libsqlite3-dev
     libssl-dev
+    libtool
     libxml2-dev
     libxslt-dev
     libxslt1-dev
