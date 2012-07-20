@@ -12,7 +12,13 @@ If the above fails (say, because `rerun` doesn't work on your system), try
     rackup
     
 Then open <http://localhost:9292> in a web browser.
- 
+
+If you make any changes, and especially before a pull request, run
+
+    rake spec
+
+which will run some unit tests and also do syntax validation on all pages, to make sure you didn't break anything.
+
 # Overview
 
 This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The Railsbridge documentation project is home to a few subprojects, including the Railsbridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring the the workshop!), as well as the Railsbridge workshop "Suggestotron" curriculum.
