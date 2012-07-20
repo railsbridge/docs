@@ -52,6 +52,11 @@ verify "rails" do
   result "# ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed."
 
+  tip do
+    message "On Linux, you may have to add this line to your Gemfile:"
+    pre "gem 'therubyracer', :platforms => :ruby"
+  end
+
   console "cd sticker\nrails generate scaffold drink name:string temperature:integer"
   result "
       invoke  active_record

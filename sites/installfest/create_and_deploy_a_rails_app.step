@@ -13,6 +13,11 @@ step "Create a new Rails app" do
 
   message "The command's output is voluminous. :-)"
 
+  tip do
+    message "On Linux, you may have to add this line to your Gemfile:"
+    pre "gem 'therubyracer', :platforms => :ruby"
+  end
+
   console "cd test_app"
   console "rails server"
 
