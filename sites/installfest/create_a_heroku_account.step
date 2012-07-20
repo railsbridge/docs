@@ -16,23 +16,32 @@ end
 
 step "Install the heroku gem" do
 
-  option "if you are using rvm" do
+  option "if you are using rvm (on OS X or Linux)" do
     console "rvm @global gem install heroku"
   end
 
-  option "otherwise" do
+  option "otherwise (on Windows)" do
     console "gem install heroku"
   end
 
   verify do
     console "heroku -v"
-    result "2.26.7"
+    result "2.26.7 or higher"
   end
 end
 
 step "Add your SSH key to your Heroku account" do
-  link "create_an_ssh_key"
+
+  option "on OS X or Linux" do 
+    link "create_an_ssh_key"
+  end
+
+  option "on Windows, Railsinstaller already did this for you" do
+  end
+  
   console "heroku keys:add"
+  
+  message "hit enter to accept the default key file to use"
 end
 
 tip "If you have further Heroku issues" do
