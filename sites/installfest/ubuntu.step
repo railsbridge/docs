@@ -48,11 +48,11 @@ end
 step "Install Rails" do
   message "Using a terminal again, execute the following command to install rails."
 
-  console "gem install rails"
+  console "gem install --no-ri --no-rdoc rails"
 end
 
 step "Install Heroku" do
-  console "gem install heroku"
+  console "gem install --no-ri --no-rdoc heroku"
   tip "This only installs a local command-line `heroku` tool. You will still need to sign up for a Heroku account later."
 end
 
