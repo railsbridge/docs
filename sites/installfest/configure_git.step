@@ -22,7 +22,8 @@ git config --global color.branch auto
   BASH
 
   important do
-    message "If you are using Windows, you may need to install AnsiCon to see colors (otherwise you'll see gibberish)."
+    message "If you are using Windows, you may need to install AnsiCon to see colors (otherwise you'll see gibberish).  If you didn't do this earlier, then you should do it now."
+
     link "windows_colors"
   end
 end
