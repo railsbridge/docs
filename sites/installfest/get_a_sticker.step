@@ -13,7 +13,7 @@ verify "tool installation" do
   result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
 
   console "sqlite3 --version"
-  result "3.7.5"
+  result "3.6.22"
 
   h3 "On all operating systems:"
 
@@ -21,7 +21,7 @@ verify "tool installation" do
   result "ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]"
 
   console "git --version"
-  result "git version 1.7.4.4"
+  result "git version 1.7.0.4"
 
   console "gem -v"
   result "1.8.16"
