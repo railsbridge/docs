@@ -7,48 +7,53 @@ step "Install packaged software and libraries" do
 Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and firefox icons in the top panel.
   MARKDOWN
 
-  console "sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev curl zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev"
+  apts = %w{
+    autoconf
+    automake
+    bison
+    build-essential
+    curl
+    libc6-dev
+    libreadline6
+    libreadline6-dev
+    libsqlite3-0
+    libsqlite3-dev
+    libssl-dev
+    libxml2-dev
+    libxslt-dev
+    libxslt1-dev
+    libyaml-dev
+    ncurses-dev
+    openssl
+    sqlite3
+    zlib1g
+    zlib1g-dev
+  }
 
-  console "sudo apt-get install git"
+  console "sudo apt-get install #{apts.join(' ')}"
 
-  message "If this results in the error, you may try installing git-core instead of git"
 end
 
-step "install RVM" do
+step "Install git" do
+  console "sudo apt-get install git"
+
+  message "If this results in an error, you may try installing `git-core` instead of `git`"
+end
+
+step "Install RVM" do
   link "install_rvm_and_ruby"
   message "Restart your terminal before continuing."
 end
 
-step "Update rubygems (Ubuntu 8.04, 8.10 only)" do
-
-  message "You may need to run wget on some packages in this directory: <http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/>"
-
-  message "this is **not verified** but something like this might work:"
-
-  console <<-TEXT
-wget http://mirrors.kernel.org/ubuntu/pool/universe/libg/libgems-ruby/rubygems1.8_1.3.7-3_all.deb -O /tmp/rubygems1.8.deb
-sudo dpkg -i /tmp/rubygems1.8.deb
-  TEXT
-
-  message "These install the rubygems packages from Ubuntu 9.04 that are required by rails."
-end
-
-step "Rails " do
+step "Install Rails" do
   message "Using a terminal again, execute the following command to install rails."
 
   console "gem install rails"
 end
 
-step "Other required libraries " do
-  message "for Ubuntu 10.04 do this first"
-
-  console <<-BASH
-sudo apt-get install libxml2-dev libxslt1-dev libxslt-dev libsqlite3-dev
-  BASH
-
-  console <<-BASH
-gem install heroku --no-rdoc --no-ri
-  BASH
+step "Install Heroku" do
+  console "gem install heroku"
+  tip "This only installs a local command-line `heroku` tool. You will still need to sign up for a Heroku account later."
 end
 
 step "KomodoEdit" do
