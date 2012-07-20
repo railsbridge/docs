@@ -21,6 +21,8 @@
 <!SLIDE bullets>
 # Resources:
 * http://installfest.railsbridge.org/workshop/resources
+* http://pinterest.com/pvnrtmol/ruby-and-rails-resources/
+* http://pinterest.com/eanakashima/learn-the-front-end/
 * Follow-up:
 * Ruby Users of Minnesota — a fine group of Ruby enthusiasts from around the Twin Cities metro area, or pretty much wherever they feel like driving from. Our group meets on the last Monday of each month at 7 PM http://ruby.mn/
 * RailsBridge IRC channel
