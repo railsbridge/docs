@@ -285,11 +285,3 @@ then open a browser to <http://localhost:4567/>
 
 ...now it'll automatically reload when you edit a file.
 
-!SLIDE
-## Web App Network Architecture
-![](img/web-application.png)
-
-!SLIDE
-## Web App MVC Architecture
-![](img/mvc_simple.png)
-

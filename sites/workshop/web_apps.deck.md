@@ -1,4 +1,12 @@
 !SLIDE
+## Web App Network Architecture
+![](img/web-application.png)
+
+!SLIDE
+## Web App MVC Architecture
+![](img/mvc_simple.png)
+
+!SLIDE
 # REST
 * Representational State Transfer
 * Application state and functionality are abstracted into resources
