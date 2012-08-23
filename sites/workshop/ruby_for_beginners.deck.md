@@ -1,221 +1,543 @@
 !SLIDE subsection
+# Ruby Programming for Beginners
 
-# The Complete Beginner's Guide to Programming
+<!SLIDE bullets incremental>
+# What we'll cover
+
+* Programming: languages & applications
+* What is Ruby?
+* Ruby's common objects
+* Ruby syntax basics
+* Object oriented programming concepts
+* Passing code to a Ruby interpreter
 
 !SLIDE
-
-# What is a program?
+# Programming
 
 !SLIDE
-# Operating Systems
+# Operating System (OS)
+Talk to a computer's `hardware`.
 
 <table>
   <tr>
-    <td>
-      <img src='img/os_x_logo.jpg'>
-    <td>
-      <img src='img/windows_logo.gif'>
-    <td>
-      <img src='img/linux_logo.gif'>
+  <td>
+  <img src='img/os_x_logo.jpg'>
+  <td>
+  <img src='img/windows_logo.gif'>
+  <td>
+  <img src='img/linux_logo.gif'>
   </tr>
 </table>
 
 !SLIDE
-# Applications
+# Application
+The `software`.  It sends `input` (`commands`, `data`, etc) to the operating system and receive `output` after the operating system has acted on it.
 
 ![](img/acrobat.jpg)
-![](img/finder.png)
 ![](img/firefox.png)
 ![](img/itunes.png)
-![](img/quicktime.jpg)
-![](img/safari.png)
-![](img/ms_office.png)
 ![](img/wordpress.jpg)
+
+!SLIDE
+# Language
+A set of code that can be used to create an application.
+
+* Ruby
+* Python
+* Perl
+* Java
+* C++
+
+Many others.
+
+# Library
+A collection of resuable code to accomplish a generic activity.
+
+!SLIDE
+# Framework
+Collection of resuable code to facilitate development of a particular product or solution.
+
+!SLIDE
+## Ruby vs. Rails
+
+### Ruby is a language
+<img src="img/ruby-logo.jpg" height="125" width="125">
+
+### Gems are Ruby libraries
+<img src="img/rubygems.png" height="125" width="125">
+
+### Rails is a framework 
+<img src="img/rails_logo.jpg" height="125" width="125">
+
+
+!SLIDE
+## Ruby vs. Rails
+* Rails is written in Ruby language.
+* Rails contains many Ruby gems.
+* Rails is a framework.
+* Rails' purpose is to build websites.
+
+The rest of this tutorial isn't about Rails.
+You're learning how to do _any_ kind of programming with Ruby.
+
+<!SLIDE subsection incremental>
+# Ruby Philosophy
+
+
+```
+I believe people want to express themselves when they program.
+  
+They don't want to fight with the language.
+
+Programming languages must feel natural to programmers.
+
+I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby.
+```
+ -- [Matz](http://linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html) (Yukihiro Matsumoto), Ruby creator
+
+
+!SLIDE bullets
+# Ruby is a scripting language
+
+* Scripting languages:
+  * Don't require a compiler.
+  * Have an interpreter _(more on that later...)_
+  * Run "on the fly"
+  * Easy to change frequently
+
+Python, Perl, and JavaScript are scripting languages too.
+
+Java and C++ are examples of compiled languages.
+
 
 !SLIDE centereverything
 
-# Web Application In Rails
-![](img/web_app_in_rails.jpg)
-
-!SLIDE incremental smbullets
-# How do I write one?
-
-* Learn about customer's requirements
-* Translate to "stories"
-* Pick a story that seems doable
-* Write code that does it
-* Show your work to the customer, get feedback
-* Based on feedback, adjust your stories
-* When a story is done, go back to "pick a story"
-* Repeat until app is finished!
 
 !SLIDE subsection
 
-# Let's start writing code!
+# Let's start coding!
 
 !SLIDE bullets
-# "The Terminal"
+# Open Your Terminal
+You may also hear it called "command Line", "console", "shell", or "Bash"
 
-* Windows: git bash ![](img/git_bash.png)
+* Windows: `git bash` ![](img/git_bash.png)
 
-* Mac OS X: Terminal ![](img/mac_terminal_sm.png)
+* Mac OS X & Ubuntu: `Terminal` ![](img/mac_terminal_sm.png)
 
-* aka "The Shell" or "The Command Line" or "The Console" or "Bash" or "Shell"
+
+!SLIDE
+# Prompt
+
+* Terminals show a line of text when you login & after a command finishes
+* It's called the `prompt`, and customarily ends with a dollar sign
+
+Whenever instructions start with `"$ "`, type the rest of the line into terminal.
+
+Let's give the terminal a `command`, to open Interactive Ruby (IRB)
+
+```bash
+  $ irb
+```
+
 
 !SLIDE commandline
-# irb: the Interactive Ruby Browser
+# irb: Interactive Ruby
 
-    $ irb
+IRB has its own prompt, which customarily ends with `>`
+
+```
+  $ irb
+  >
+```
+
+You can use `Control-C` to exit IRB any time.
+Or type `exit` on its own line.
+
+```ruby
+  > exit
+  $ 
+```
+
+Now you're back to the terminal's prompt.
 
 !SLIDE
 
 ## Variables
-### words that hold information
+### A variable holds information.
+* We give it a name so we can refer to it
+* The info it holds can be changed
 
-    > my_variable = 5
-    => 5
-    > my_other_variable = "hi"
-    => "hi"
+```
+  $ irb
+  > my_variable = 5
+  => 5
+  > another_variable = "hi"
+  => "hi"
+  > my_variable = 10
+  => 10
+```
+
+What is happening on the lines beginning with `=>` ?
 
 !SLIDE
-## Many types of information
+## Variable
+### Variable Assignment
 
-* Strings
-* Numbers
+Variables are assigned using a single equals sign (`=`).
+
+The *right* side of the equals sign is evaluated first, then the value is assigned to the variable named on the *left* side of the equals.
+
+```ruby
+  apples = 5
+  bananas = 10 + 5
+  fruits = 2 + apples + bananas
+  bananas = fruits - apples
+```
+
+What happened on each line?  Is it what you expected?
+
+<!-- TODO: Define & discuss return values -->
+
+What could you do to see each's `return value` for confirmation?
+
+
+!SLIDE !bullets
+## Variable
+### Variable Naming
+
+Create a variable whose name has:
+
+* all letters (like 'folders')
+
+* all numbers like '2000'
+
+* an underscore (like `first_name`)
+  
+* a dash (like 'last-name')
+  
+* a number anywhere (like `y2k`)
+
+* a number at the start (like '101dalmations')
+
+* a number at the end  (like 'starwars2')
+
+What did you learn?
+
+
+!SLIDE bullets
+# Common types of information
+
+* String
+* Number
 * Collections
-* Dates
-* Booleans (true/false)
-* etc.
+* Booleans
+
+!SLIDE bullets
+## String
+
+A string is text. It must be wrapped in a matched pair of quotation marks.
+
+```ruby
+  $ irb
+  > 'Single quotes work'
+  => "Single quotes work"
+  > "Double quotes work"
+  => "Double quotes work"
+  > "Start and end have to match'
+  ">
+```
+  
+What is happening on the last two lines?  How would you solve it?
+
 
 !SLIDE
-## Strings (text)
+## Number
+### Integer
+### Float
 
 !SLIDE
-## Numbers
+## Number
+### Integer
+"Whole number" (no decimal)
+
+```
+  42
+  101
+  0
+```
 
 !SLIDE
-## Collections
+## Number
+### Float
+"Real number" (decimal)
 
-* Arrays
-* Hashes
-
-!SLIDE
-## Arrays
-
-An Array is a list of objects.
-
-    >> fruits = ["kiwi", "strawberry", "plum"]
-    => ["kiwi", "strawberry", "plum"]
+```
+  4.99
+  98.7
+  6000.0
+```
 
 !SLIDE
-# Array Indexing
-
-Ruby starts counting at zero.
-
-    >> fruits[0]
-    => "kiwi"
-    >> fruits[2]
-    => "plum"
-    >> fruits[3]
-    => nil
+## Collection
+### Array
+### Hash
 
 !SLIDE
-# Array methods
+## Collection
+### Array
+An array is a list.
 
-* first, last
-* push, pop
-* shift, unshift
+Each array must be surrounded by `square braces` aka `square brackets`. A comma separates each `member`.
 
-        fruits.first #=> "kiwi"
+```
+  > fruits = ["kiwi", "strawberry", "plum"]
+  => ["kiwi", "strawberry", "plum"]
+```
+```
+  > letters = ['a', 'b', 'c']
+  => ["a", "b", "c"]
+```
 
 !SLIDE
-# Hashes
+## Collection
+### Array
+#### Indexing
 
-* aka Dictionary or Map
-* collection of key/value pairs
+Members are stored in order. Each can be accessed by its `index`. Ruby starts counting at _zero_.
 
-        >> states = {"CA" => "California",
-            "DE" => "Delaware"}
-        => {"CA"=>"California", "DE"=>"Delaware"}
+```
+  > fruits[0]
+  => "kiwi"
+  > fruits[1]
+  => "strawberry"
+  > fruits[2]
+  => "plum"
+```
 
-        >> states["CA"]
-        => "California"
+!SLIDE
+## Collection
+### Hash
+A hash has key/value pairs.  It must be surrounded by `curly braces` aka `curly brackets`. A comma separates each member pair. A `key` uses `=>` (the `rocket`) to point to its `value`.
+
+```
+  > states = {"CA" => "California",
+  "DE" => "Delaware"}
+  => {"CA"=>"California", "DE"=>"Delaware"}
+```
+
+A hash is also known as a `dictionary` or `map`.
+
+!SLIDE
+## Collection 
+### Hash
+#### Hash Indexing
+
+Member pairs can be accessed by their key.
+
+```
+  > states["CA"]
+  => "California"
+```
+
+
+!SLIDE
+## Boolean
+
+A boolean is one of only two possible values: `true` or `false`.
+
+```
+  > 1 + 1 == 2
+  => true
+  > 1 + 1 == 0
+  => false
+```
+
+( `==` means "is equal to". _More on that later._)
 
 !SLIDE
 ## Operators
 
-### doing stuff with variables
+### Do stuff with objects
 
-    > my_variable + 2
-    => 7
-    > my_variable * 3
-    => 15
-    > my_fruits = my_fruits + ["lychee"]
-    => ["kiwi", "strawberry", "plum", "lychee"]
-    > my_fruits = my_fruits - ["lychee"]
-    => ["kiwi", "strawberry", "plum"]
-
-!SLIDE
-# Loops
-
-### doing the same thing a bunch of times
-
-The hard way:
-
-    >> puts fruits[0]
-    kiwi
-    => nil
-    >> puts fruits[1]
-    strawberry
-    => nil
-    >> puts fruits[2]
-    plum
-    => nil
+```
+  > my_variable + 2
+  => 7
+  > my_variable * 3
+  => 15
+```
+```
+  > fruits = my_fruits + ["lychee"]
+  => ["kiwi", "strawberry", "plum", "lychee"]
+  > fruits = my_fruits - ["lychee"]
+  => ["kiwi", "strawberry", "plum"]
+```
 
 !SLIDE
-# Loops
+## Loop
+### Does something repeatedly
+#### Single-line syntax
 
-### doing the same thing a bunch of times
+We can put a single-line action into curly braces.
 
-The easy way:
+```
+  >> fruits.each {|fruit| puts fruit}
+  kiwi
+  strawberry
+  plum
+  => ["kiwi", "strawberry", "plum"]
+```
 
-    >> fruits.each {|f| puts f}
-    kiwi
-    strawberry
-    plum
-    => ["kiwi", "strawberry", "plum"]
-
-!SLIDE
-# Loops (multi-line)
-
-The easy way, with "do...end" rather than "{...}"
-
-    >> fruits.each do |f|
-    ?> puts f
-    >> end
-    kiwi
-    strawberry
-    plum
-    => ["kiwi", "strawberry", "plum"]
+(`puts` means to print the result.  _More on that later._)
 
 !SLIDE
-## Conditionals
+## Loop
+### Does something repeatedly
+#### Multi-line syntax
 
-### doing something only if a condition is met
+Put a multi-line action between `do` and `end`
 
-    >> fruits.each do |f|
-    ?> puts f if f == "plum"
-    >> end
-    plum
-    => ["kiwi", "strawberry", "plum"]
+```
+  > fruits.each do |fruit|
+  ?> puts fruit
+  > end
+  kiwi
+  strawberry
+  plum
+  => ["kiwi", "strawberry", "plum"]
+```
+On the second line, what does `?>` indicate?
+
+!SLIDE
+## Conditional
+
+### Do something only if a condition is true
+
+```
+  > fruits.each do |fruit|
+  ?> puts fruit if fruit == "plum"
+  > end
+  plum
+  => ["kiwi", "strawberry", "plum"]
+```
+
+!SLIDE
+# Running Your Code
 
 !SLIDE subsection
-# Command-Line Programs
+# Interpreter
+
+Ruby is an interpreted language. Its code can't run by the computer directly.  It first must go through a Ruby interpreter.
+
+The most common interpreter is Matz's Ruby Interpreter ("MRI").  There are many others.
+
+There are various ways to run code through a Ruby interpreter:
+
+!SLIDE commandline
+## Pass code to interpreter
+### *Directly*...
+
+```
+  $ ruby -e "puts 'Hello World'"
+  Hello World
+
+  $ ruby -e "1+2"
+
+  $ ruby -e "puts 1+2"
+  3
+```
+
+Why did we get an unexpected outcome for the second example?  What was the output of that command?
+
+!SLIDE commandline
+## Pass code to interpreter
+### ...Or via *IRB*...
+
+
+```bash
+  $ irb
+  ruby > puts 'Hello World'
+  Hello World
+```
+
+How is interactive Ruby different from speaking directly to the interpreter?
+
+
+!SLIDE
+## Pass code to interpreter
+### ...Or via a *file*...
+
+Why use a file? What's different from, say, irb?
+
+!SLIDE
+## Running code from a file
+### Create the file
+
+Note which folder your terminal is currently in, this is your `working directory`
+
+In your text editor, create a file named `my_program.rb` inside your working directory.
+
+@@@ruby
+    class Sample
+    def hello
+    puts "Hello World!"
+    end
+    end
+
+    s = Sample.new
+    s.hello
+
+
+
+!SLIDE commandline
+## Passing code from a file
+### Give permission to run the new file
+
+You need to set 'execute' permission on the file first.
+
+
+```bash
+  $ ruby chmod u+x my_program.rb
+````
+
+(This is an operating system command, not Ruby.  You only need to do it once per file.)
+
+!SLIDE commandline
+## Passing code from a file
+### Run the saved code
+
+```
+  $ ruby my_program.rb
+  Hello World!
+```
+
+
+!SLIDE commandline
+## Passing code from a file
+### We can even load that file's code into IRB!
+
+```bash
+  $ irb
+  ruby > load 'my_program.rb'
+  ruby > second_time=Sample.new
+  ruby > second_time.hello
+```
+
+When might it be useful to do this?
+
+
+
+
+
+
+!SLIDE subsection
+# Your Own Command Line Program
 
 !SLIDE bullets
 # Hello World
 
-hello.rb:
+
+`hello.rb`
 
     @@@ Ruby
     puts "Hello, World!"
@@ -223,29 +545,31 @@ hello.rb:
 !SLIDE bullets
 # Arguments (ARGV)
 
-hello.rb:
+`hello.rb`
 
     @@@ Ruby
     puts "Hello, #{ARGV.first}!"
 
-terminal:
+`terminal`
 
-    $ ruby hello.rb Alice
-    Hello, Alice!
+```
+$ ruby hello.rb Alice
+Hello, Alice!
+```
 
 !SLIDE bullets
 # Conditionals
 
-hello.rb:
+`hello.rb`
 
     @@@ Ruby
     if ARGV.empty?
-      puts "Hello, World!"
+    puts "Hello, World!"
     else
-      puts "Hello, #{ARGV.first}!"
+    puts "Hello, #{ARGV.first}!"
     end
 
-terminal:
+`terminal`
 
     $ ruby hello.rb
     Hello, World!
@@ -253,35 +577,86 @@ terminal:
     Hello, Alice!
 
 !SLIDE
-# Sinatra
+# Object Oriented Programming (OOP)
 
-hello_app.rb:
+!SLIDE subsection
+## Ruby is very object oriented
+### Nearly everything in Ruby is an object.
 
-    @@@ Ruby
-    require 'rubygems'
-    require 'sinatra'
 
-    get '/' do
-      "<b>Hello, <i>bang bang</i>!"
-    end
+!SLIDE
+## Class
+Describes the generic characteristics of a single type of object.
 
-!SLIDE commandline
-# Sinatra
+e.g. Dog, Vehicle, Baby
 
-    $ gem install sinatra
-    $ ruby hello_app.rb
-    == Sinatra/1.2.6 has taken the stage on 4567 for development with backup from Thin
-    >> Thin web server (v1.2.7 codename No Hup)
-    >> Maximum connections set to 1024
-    >> Listening on 0.0.0.0:4567, CTRL+C to stop
 
-then open a browser to <http://localhost:4567/>
+!SLIDE
+## Method
+Defines behavioral characteristic.
 
-!SLIDE bullets
-# sinatra with rerun
+e.g. Chase, Drive, Talk
 
-    gem install rerun
-    rerun hello_app.rb
 
-...now it'll automatically reload when you edit a file.
+!SLIDE
+## Variable
+Defines attribute characteristic.
 
+e.g. Breed, Model Year, Favorite Ice Cream
+
+
+!SLIDE
+## Instance
+A specific incarnation of the class.
+
+e.g. Rin Tin Tin, garbage truck, the neighbor's kid
+
+
+
+
+!SLIDE
+# Let's Create Projects!
+
+!SLIDE
+## Project 1:
+### [Personal Chef Lab](http://tutorials.jumpstartlab.com/projects/ruby_in_100_minutes.html)
+_(start at "4. Objects, Attributes, and Methods")_
+
+Topics:
+
+* Practice in Ruby syntax and OOP concepts, and creating commandline programs.
+
+* Explore strings: concatenation, manipulation, interpolation, coersion.
+
+* Symbols, nil, basic math operators, blocks, method chaining, passing parameters to methods, iteration, branching, conditionals & conditional looping.
+
+!SLIDE
+## Project 2:
+### [Encryptor Lab](http://tutorials.jumpstartlab.com/projects/encryptor.html)
+
+Topics:
+
+* Creating a commandline program that reinforces skills learned in Personal Chef.
+
+* Explore how to manipulate arrays, do more elaborate strings manipulations, refactor code, take advantage of character mapping, and  access the filesystem from within code.
+
+
+!SLIDE
+## Project 3:
+### [Event Manager Lab](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
+
+Topics:
+
+* Extract-Translate-Load operations against a large dataset
+
+!SLIDE
+## Project 4:
+### Testing & More
+
+A follow-up to EventManager focusing more on Ruby object decomposition and working with Command Line Interfaces and program control flow.
+
+4. [Testing](http://tutorials.jumpstartlab.com/topics/internal_testing/rspec_and_bdd.html) Topics: TDD, BDD, Rspec
+_(stop at "Exceptions")_
+4. [Event Reporter Lab](http://tutorials.jumpstartlab.com/projects/event_reporter.html) Topics: Object decomposition, working with Command Line Interfaces, and program control flow. Continues project created in Event Manager lab.
+
+6. [Rspec](http://tutorials.jumpstartlab.com/topics/internal_testing/rspec_practices.html )
