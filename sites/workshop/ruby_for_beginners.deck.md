@@ -179,7 +179,7 @@ The hard way:
 
 The easy way:
 
-    >> fruits.each {|f| puts f}
+    >> fruits.each { |fruit| puts fruit }
     kiwi
     strawberry
     plum
@@ -190,8 +190,8 @@ The easy way:
 
 The easy way, with "do...end" rather than "{...}"
 
-    >> fruits.each do |f|
-    ?> puts f
+    >> fruits.each do |fruit|
+    ?> puts fruit
     >> end
     kiwi
     strawberry
@@ -203,8 +203,8 @@ The easy way, with "do...end" rather than "{...}"
 
 ### doing something only if a condition is met
 
-    >> fruits.each do |f|
-    ?> puts f if f == "plum"
+    >> fruits.each do |fruit|
+    ?> puts fruit if fruit == "plum"
     >> end
     plum
     => ["kiwi", "strawberry", "plum"]
