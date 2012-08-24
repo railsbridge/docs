@@ -599,21 +599,27 @@ Hello, Alice!
 
 !SLIDE
 ## Class
-Describes the generic characteristics of a single type of object.
+Describes the generic characteristics of a single _type_ of object.
+
+What things of this type _are_.
 
 e.g. Dog, Vehicle, Baby
 
 
 !SLIDE
 ## Method
-Defines behavioral characteristic.
+Defines _behavioral_ characteristic.
+
+What the things of the class's type _do_.
 
 e.g. Chase, Drive, Talk
 
 
 !SLIDE
 ## Variable
-Defines attribute characteristic.
+Defines _attribute_ characteristic.
+
+What things of the class's type _have_.
 
 e.g. Breed, Model Year, Favorite Ice Cream
 
