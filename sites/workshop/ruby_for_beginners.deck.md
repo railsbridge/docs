@@ -295,9 +295,12 @@ Each array must be surrounded by `square braces` aka `square brackets`. A comma 
   => ["kiwi", "strawberry", "plum"]
 ```
 ```
+<!--
+  ```
   > letters = ['a', 'b', 'c']
   => ["a", "b", "c"]
 ```
+-->
 
 !SLIDE
 ## Collection
