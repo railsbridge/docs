@@ -321,28 +321,48 @@ Members are stored in order. Each can be accessed by its `index`. Ruby starts co
 !SLIDE
 ## Collection
 ### Hash
-A hash has key/value pairs.  It must be surrounded by `curly braces` aka `curly brackets`. A comma separates each member pair. A `key` uses `=>` (the `rocket`) to point to its `value`.
+In a `hash` we can refer to a member by a keyword instead of a number. Each member is a pair:
+
+* *Key*: address of the hash member
+
+* *Value*: variable contained by the member, and located by key name
 
 ```
-  > states = {"CA" => "California",
-  "DE" => "Delaware"}
-  => {"CA"=>"California", "DE"=>"Delaware"}
+    > states["CA"]
+    => "California"
 ```
 
-A hash is also known as a `dictionary` or `map`.
+A hash may also be known as a `dictionary`, `associative array`, or `map`.
+
+
+!SLIDE
+## Collection
+### Hash
+#### Hash Syntax
+
+A hash is surrounded by `curly braces` aka `curly brackets`. A comma separates each member pair. A key uses `=>` (the `rocket`) to point to its value.
+
+    @@@ Ruby
+    > states = {"CA" => "California",
+    "DE" => "Delaware"}
+    => {"CA"=>"California", "DE"=>"Delaware"}
+
+In real life, what lists do we make in key/value pairs?
+
 
 !SLIDE
 ## Collection 
 ### Hash
 #### Hash Indexing
 
-Member pairs can be accessed by their key.
+Member pairs can be accessed by their key.  So each hash key has to be unique.
 
-```
-  > states["CA"]
-  => "California"
-```
+Values don't have to be unique.
 
+    @ Ruby
+    > states = {"CA" => "California",
+    "DE" => "Delaware"}
+    => {"CA"=>"California", "DE"=>"Delaware"}
 
 !SLIDE
 ## Boolean
