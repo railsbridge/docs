@@ -666,7 +666,10 @@ Topics:
 
 Topics:
 
-* Extract-Translate-Load operations against a large dataset
+* Commandline program. Reusing others code & data, refactoring your own code & cleaning up data, writing custom code to solve requirements.
+
+* Gems, `initialize` method, parameters, file input/output, processing/sanitizing data, looping, conditional branching, using file-based data storage (CSV, XML, JSON), accessing an external API, nils, DRY principle, constants, sort_by, more string manipulations.
+
 
 !SLIDE
 ## Project 4:
