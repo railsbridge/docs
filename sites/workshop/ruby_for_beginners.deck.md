@@ -165,6 +165,10 @@ Now you're back to the terminal's prompt.
 
     $ irb --noreadline
 
+    Windows Users! Some people have experienced trouble with backspace, delete, and arrow keys working properly in irb - what a pain! If you run into this problem, use this command instead to launch irb.
+
+    $ irb --noreadline
+
 !SLIDE
 
 ## Variables
