@@ -13,12 +13,17 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
     bison
     build-essential
     curl
-    libc6-dev
+	git-core
+	libapr1
+	libaprutil1
+	libc6-dev
+	libltdl-dev
     libreadline6
     libreadline6-dev
     libsqlite3-0
     libsqlite3-dev
     libssl-dev
+	libtool
     libxml2-dev
     libxslt-dev
     libxslt1-dev
@@ -37,7 +42,11 @@ end
 step "Install git" do
   console "sudo apt-get install git"
 
-  message "If this results in an error, you may try installing `git-core` instead of `git`"
+  message "If this results in an error, you should be ok, as the prior step should have installed `git-core`"
+end
+
+step "Configure Git" do
+  link "configure_git"
 end
 
 step "Install RVM" do
