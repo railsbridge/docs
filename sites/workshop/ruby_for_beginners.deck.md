@@ -501,7 +501,7 @@ In your text editor, create a file named `my_program.rb` inside your working dir
 
 
 
-!SLIDE commandline
+<!-- !SLIDE commandline
 ## Passing code from a file
 ### Give permission to run the new file
 
@@ -509,10 +509,11 @@ You need to set 'execute' permission on the file first.
 
 
 ```bash
-  $ ruby chmod u+x my_program.rb
+  $ chmod u+x my_program.rb
 ````
 
 (This is an operating system command, not Ruby.  You only need to do it once per file.)
+-->
 
 !SLIDE commandline
 ## Passing code from a file
