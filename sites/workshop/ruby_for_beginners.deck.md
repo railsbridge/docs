@@ -643,7 +643,7 @@ _(start at "4. Objects, Attributes, and Methods")_
 
 Topics:
 
-* Practice in Ruby syntax and OOP concepts, and creating commandline programs.
+* Commandline program. Practice in Ruby syntax and OOP concepts, and creating commandline programs.
 
 * Explore strings: concatenation, manipulation, interpolation, coersion.
 
