@@ -463,14 +463,7 @@ There are various ways to run code through a Ruby interpreter:
 ```
   $ ruby -e "puts 'Hello World'"
   Hello World
-
-  $ ruby -e "1+2"
-
-  $ ruby -e "puts 1+2"
-  3
 ```
-
-Why did we get an unexpected outcome for the second example?  What was the output of that command?
 
 !SLIDE commandline
 ## Pass code to interpreter
