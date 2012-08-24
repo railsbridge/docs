@@ -290,11 +290,10 @@ An array is a list.
 
 Each array must be surrounded by `square braces` aka `square brackets`. A comma separates each `member`.
 
-```
-  > fruits = ["kiwi", "strawberry", "plum"]
-  => ["kiwi", "strawberry", "plum"]
-```
-```
+    @@@ Ruby
+    > fruits = ["kiwi", "strawberry", "plum"]
+    => ["kiwi", "strawberry", "plum"]
+
 <!--
   ```
   > letters = ['a', 'b', 'c']
@@ -469,12 +468,9 @@ There are various ways to run code through a Ruby interpreter:
 ## Pass code to interpreter
 ### ...Or via *IRB*...
 
-
-```bash
-  $ irb
-  ruby > puts 'Hello World'
-  Hello World
-```
+    @@@ Ruby
+    > puts 'Hello World'
+    => Hello World
 
 How is interactive Ruby different from speaking directly to the interpreter?
 
@@ -493,7 +489,7 @@ Note which folder your terminal is currently in, this is your `working directory
 
 In your text editor, create a file named `my_program.rb` inside your working directory.
 
-@@@ruby
+    @@@ Ruby
     class Sample
     def hello
     puts "Hello World!"
