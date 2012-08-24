@@ -44,7 +44,7 @@ step "Sanity Check" do
   result "ruby 1.9.3p125"
 
   console "rails -v"
-  result "Rails 3.2.6"
+  result "Rails 3.2.1"
 
 end
 
@@ -70,7 +70,7 @@ step "Open a Terminal" do
 end
 
 step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font."
+  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
 
   link "configure_the_windows_terminal"
 
@@ -80,7 +80,7 @@ step "Configure the Windows Terminal" do
   end
 
   tip "command history" do
-   message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes."
+   message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
  end
 
   tip "copy and paste" do
@@ -93,7 +93,7 @@ end
 
 step "Install Windows Colors" do
 
-  message "This step is optional, but **highly** recommended."
+  message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
 
   link "windows_colors"
 
