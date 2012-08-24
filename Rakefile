@@ -11,3 +11,7 @@ end
 task :run do
   exec "rerun -- rackup -s thin"
 end
+
+task :present do
+  exec "rerun --pattern *.deck.md -- rackup -s thin"
+end
