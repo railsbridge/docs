@@ -655,7 +655,7 @@ Topics:
 
 Topics:
 
-* Creating a commandline program that reinforces skills learned in Personal Chef.
+* Commandline program.  Reinforce skills learned in Personal Chef.
 
 * Explore how to manipulate arrays, do more elaborate strings manipulations, refactor code, take advantage of character mapping, and  access the filesystem from within code.
 
