@@ -381,8 +381,8 @@ A boolean is one of only two possible values: `true` or `false`.
 ```
   > my_fruits = fruits + ["lychee"]
   => ["kiwi", "strawberry", "plum", "lychee"]
-  > fruits = my_fruits - ["lychee"]
-  => ["kiwi", "strawberry", "plum"]
+  > my_fruits = my_fruits - ["plum"]
+  => ["kiwi", "strawberry", "lychee"]
 ```
 
 !SLIDE
