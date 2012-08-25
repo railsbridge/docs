@@ -294,14 +294,16 @@ An array is a list.
 
 Each array must be surrounded by `square braces` aka `square brackets`. A comma separates each `member`.
 
-```
-  > fruits = ["kiwi", "strawberry", "plum"]
-  => ["kiwi", "strawberry", "plum"]
-```
-```
+    @@@ Ruby
+    > fruits = ["kiwi", "strawberry", "plum"]
+    => ["kiwi", "strawberry", "plum"]
+
+<!--
+  ```
   > letters = ['a', 'b', 'c']
   => ["a", "b", "c"]
 ```
+-->
 
 !SLIDE
 ## Collection
@@ -322,28 +324,48 @@ Members are stored in order. Each can be accessed by its `index`. Ruby starts co
 !SLIDE
 ## Collection
 ### Hash
-A hash has key/value pairs.  It must be surrounded by `curly braces` aka `curly brackets`. A comma separates each member pair. A `key` uses `=>` (the `rocket`) to point to its `value`.
+In a `hash` we can refer to a member by a keyword instead of a number. Each member is a pair:
+
+* *Key*: address of the hash member
+
+* *Value*: variable contained by the member, and located by key name
 
 ```
-  > states = {"CA" => "California",
-  "DE" => "Delaware"}
-  => {"CA"=>"California", "DE"=>"Delaware"}
+    > states["CA"]
+    => "California"
 ```
 
-A hash is also known as a `dictionary` or `map`.
+A hash may also be known as a `dictionary`, `associative array`, or `map`.
+
+
+!SLIDE
+## Collection
+### Hash
+#### Hash Syntax
+
+A hash is surrounded by `curly braces` aka `curly brackets`. A comma separates each member pair. A key uses `=>` (the `rocket`) to point to its value.
+
+    @@@ Ruby
+    > states = {"CA" => "California",
+    "DE" => "Delaware"}
+    => {"CA"=>"California", "DE"=>"Delaware"}
+
+In real life, what lists do we make in key/value pairs?
+
 
 !SLIDE
 ## Collection 
 ### Hash
 #### Hash Indexing
 
-Member pairs can be accessed by their key.
+Member pairs can be accessed by their key.  So each hash key has to be unique.
 
-```
-  > states["CA"]
-  => "California"
-```
+Values don't have to be unique.
 
+    @ Ruby
+    > states = {"CA" => "California",
+    "DE" => "Delaware"}
+    => {"CA"=>"California", "DE"=>"Delaware"}
 
 !SLIDE
 ## Boolean
@@ -444,25 +466,15 @@ There are various ways to run code through a Ruby interpreter:
 ```
   $ ruby -e "puts 'Hello World'"
   Hello World
-
-  $ ruby -e "1+2"
-
-  $ ruby -e "puts 1+2"
-  3
 ```
-
-Why did we get an unexpected outcome for the second example?  What was the output of that command?
 
 !SLIDE commandline
 ## Pass code to interpreter
 ### ...Or via *IRB*...
 
-
-```bash
-  $ irb
-  ruby > puts 'Hello World'
-  Hello World
-```
+    @@@ Ruby
+    > puts 'Hello World'
+    => Hello World
 
 How is interactive Ruby different from speaking directly to the interpreter?
 
@@ -575,21 +587,27 @@ Hello, Alice!
 
 !SLIDE
 ## Class
-Describes the generic characteristics of a single type of object.
+Describes the generic characteristics of a single _type_ of object.
+
+What things of this type _are_.
 
 e.g. Dog, Vehicle, Baby
 
 
 !SLIDE
 ## Method
-Defines behavioral characteristic.
+Defines _behavioral_ characteristic.
+
+What the things of the class's type _do_.
 
 e.g. Chase, Drive, Talk
 
 
 !SLIDE
 ## Variable
-Defines attribute characteristic.
+Defines _attribute_ characteristic.
+
+What things of the class's type _have_.
 
 e.g. Breed, Model Year, Favorite Ice Cream
 
@@ -613,7 +631,7 @@ _(start at "4. Objects, Attributes, and Methods")_
 
 Topics:
 
-* Practice in Ruby syntax and OOP concepts, and creating commandline programs.
+* Commandline program. Practice in Ruby syntax and OOP concepts, and creating commandline programs.
 
 * Explore strings: concatenation, manipulation, interpolation, coersion.
 
@@ -625,7 +643,7 @@ Topics:
 
 Topics:
 
-* Creating a commandline program that reinforces skills learned in Personal Chef.
+* Commandline program.  Reinforce skills learned in Personal Chef.
 
 * Explore how to manipulate arrays, do more elaborate strings manipulations, refactor code, take advantage of character mapping, and  access the filesystem from within code.
 
@@ -636,7 +654,10 @@ Topics:
 
 Topics:
 
-* Extract-Translate-Load operations against a large dataset
+* Commandline program. Reusing others code & data, refactoring your own code & cleaning up data, writing custom code to solve requirements.
+
+* Gems, `initialize` method, parameters, file input/output, processing/sanitizing data, looping, conditional branching, using file-based data storage (CSV, XML, JSON), accessing an external API, nils, DRY principle, constants, sort_by, more string manipulations.
+
 
 !SLIDE
 ## Project 4:
