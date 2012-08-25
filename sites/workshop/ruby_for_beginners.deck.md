@@ -298,13 +298,6 @@ Each array must be surrounded by `square braces` aka `square brackets`. A comma 
     > fruits = ["kiwi", "strawberry", "plum"]
     => ["kiwi", "strawberry", "plum"]
 
-<!--
-  ```
-  > letters = ['a', 'b', 'c']
-  => ["a", "b", "c"]
-```
--->
-
 !SLIDE
 ## Collection
 ### Array
@@ -312,14 +305,13 @@ Each array must be surrounded by `square braces` aka `square brackets`. A comma 
 
 Members are stored in order. Each can be accessed by its `index`. Ruby starts counting at _zero_.
 
-```
-  > fruits[0]
-  => "kiwi"
-  > fruits[1]
-  => "strawberry"
-  > fruits[2]
-  => "plum"
-```
+    @@@ Ruby
+    > fruits[0]
+    => "kiwi"
+    > fruits[1]
+    => "strawberry"
+    > fruits[2]
+    => "plum"
 
 !SLIDE
 ## Collection
@@ -329,11 +321,6 @@ In a `hash` we can refer to a member by a keyword instead of a number. Each memb
 * *Key*: address of the hash member
 
 * *Value*: variable contained by the member, and located by key name
-
-```
-    > states["CA"]
-    => "California"
-```
 
 A hash may also be known as a `dictionary`, `associative array`, or `map`.
 
@@ -362,10 +349,9 @@ Member pairs can be accessed by their key.  So each hash key has to be unique.
 
 Values don't have to be unique.
 
-    @ Ruby
-    > states = {"CA" => "California",
-    "DE" => "Delaware"}
-    => {"CA"=>"California", "DE"=>"Delaware"}
+    @@@ Ruby
+    > states["CA"]
+    => "California"
 
 !SLIDE
 ## Boolean
