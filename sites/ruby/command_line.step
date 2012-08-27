@@ -1,0 +1,76 @@
+goals do
+  goal "Learn about the command line"
+  goal "Make a new directory"
+  goal "Browse some directories on your computer"
+  goal do 
+    rawtext md2html("Learn the commands `pwd`, `mkdir`, `ls`, `cd` and `man`")
+  end
+end
+
+step do
+  message 'Open up a command line application on your computer. On Macs, this program is called Terminal. On Windows, you might want to use the "Command Line With Ruby and Rails" shortcut that came with RailsInstaller.'
+  console "pwd"
+  message '`pwd` means "print working directory". It shows you what **directory** you\'re currently in. Directories are also often called **folders**.'
+  message '`pwd` can help orient you in the command line if you get lost somewhere in your computer.'
+end
+
+step do
+  irb 'mkdir railsbridge_ruby'
+  message '`mkdir` means **m**ake **d**irectory. You use mkdir when you want to create a new directory.'
+  message 'The command line is just one way of manipulating the files on your computer. Try to find the new directory you created in Finder or Windows Explorer.'
+  message 'If you get an error saying the directory already exists, maybe someone did these steps on your computer before. Don\'t fret.'
+end
+
+step do
+  console 'cd railsbridge_ruby'
+  message '`cd` means **c**hange **d**irectory. You use cd when you want to move from the current directory into some other directory.'
+end
+
+step do
+  message "If you're on a Mac or Linux computer:"
+  console 'cd ~'
+  message "`~` indicates your **home directory**, a directory owned by the account currently logged in to the computer. Your home directory might be something like `/home/sparklepants` (Linux) or `/Users/saucyfrank` (Mac)"
+  message "Practice moving in and out of various directories. Remember that you can always get back to your home with `cd ~`."
+end
+
+step do
+  console 'ls'
+  message '`ls` stands for **list**, and shows the contents of the current directory.'
+  message 'Since you moved back to your Home directory, you should see the newly-created railsbridge_ruby directory in the output of `ls`.'
+end
+
+step do
+  console 'man ls'
+  message '`man` stands for **manual** and shows you the documentation for a command. This can include various options used to run the command in different ways.'
+  message "If you see a colon at the bottom of your terminal when viewing a man page, it means you're in a **pager**. Pagers are special programs for showing text that spans multiple pages. You can press the up and down arrows to page through the text, or type `q` to exit."
+end
+
+explanation do
+  message "The command line is an essential tool for computer programmers. While daunting at first, it offers great flexibility in moving around your computer and manipulating files."
+  message "There are many, many, many more commands available on the command line than what we've seen here, but these are enough to get you going."
+  message 'Command summary:'
+  table class: 'bordered' do
+    tr do
+      td 'pwd'
+      td 'print working directory'
+      td 'print the full path to your current directory'
+    end
+    tr do
+      td 'ls'
+      td 'list directory'
+      td 'display the contents of the current directory'
+    end
+    tr do
+      td 'cd [directory]'
+      td 'change directory'
+      td 'make this directory the current directory'
+    end
+    tr do
+      td 'man [cmd]'
+      td 'manual'
+      td "show the manual for this command. press 'q' to quit."
+    end
+  end
+end
+
+next_step "irb"

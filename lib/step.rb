@@ -94,6 +94,18 @@ div.back:before {
 .deploying>h1 {
   background-color: #B0DEE7;
 }
+.further-reading>h1 {
+  background-color: rgb(135, 229, 242);
+}
+
+table.bordered td,
+table.bordered tr {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 .requirements>h1 {
   background-color: #93B5DA;
@@ -133,6 +145,13 @@ div.back:before {
   .fuzzy-lightened {
     color: #aaa;
   }
+}
+
+.in_file > pre {
+  border: 4px solid #dde;
+  @include border-radius(4px);
+  background-color: gray;
+  color: white;
 }
 
 .result > pre {
@@ -321,6 +340,7 @@ div.back:before {
   ## special
 
   TERMINAL_CAPTION = "Type this in the terminal:"
+  IRB_CAPTION = "Type this in irb:"
   RESULT_CAPTION = "Expected result:"
   FUZZY_RESULT_CAPTION = "Approximate expected result:"
 
@@ -328,6 +348,29 @@ div.back:before {
     div :class => "console" do
       span TERMINAL_CAPTION
       pre msg
+    end
+  end
+  
+  def irb msg
+    div :class => "console" do
+      span IRB_CAPTION
+      pre msg
+    end
+  end
+
+  def type_in_file filename, msg
+    div do
+      span "Type this in the file #{filename}:"
+      source_code :ruby, msg
+    end
+  end
+
+  def further_reading
+    div :class => "further-reading" do
+      h1 "Further Reading"
+      blockquote do
+        yield
+      end
     end
   end
 
