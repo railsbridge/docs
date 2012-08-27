@@ -16,7 +16,7 @@ goals {
 steps {
 
   step {
-    message "Run `rails server` in your terminal."
+    console "rails server" 
   }
 
   step {
