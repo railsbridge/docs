@@ -19,6 +19,8 @@ If you make any changes, and especially before a pull request, run
 
 which will run some unit tests and also do syntax validation on all pages, to make sure you didn't break anything.
 
+When you submit a Pull Request, Travis CI will also run all the tests.
+
 # Overview
 
 This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The Railsbridge documentation project is home to a few subprojects, including the Railsbridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring the the workshop!), as well as the Railsbridge workshop "Suggestotron" curriculum.
