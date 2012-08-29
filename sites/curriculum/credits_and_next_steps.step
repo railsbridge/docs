@@ -1,20 +1,21 @@
 h1 "Authors"
 
-ul {
+ul do
   li "Sarah Allen"
   li "Sarah Mei"
   li "Alex Chaffee"
   li "Ryan Davis"
   li "Steven! Ragnarok"
-  li "...and many others"
-}
+  li "...and many, many others"
+end
 
 h1 "What next?"
 
-ul {
-  li "Learn More Ruby"
-  li "Learn More Rails"
-  li "Take a class"
-  li "Be a TA at an upcoming workshop"
-  li "...?"
-}
+ul do
+  li "Probably time for the closing presentation." 
+  li "After that, start a project, tutorial, and come back again!"
+  li do 
+    span "All our favorite resources can be found on the RailsBridge site: " 
+    a "http://workshops.railsbridge.org/whats-next/", href: "http://workshops.railsbridge.org/whats-next/"
+  end
+end
