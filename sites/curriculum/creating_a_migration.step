@@ -18,13 +18,6 @@ goals {
 
 steps {
 
-  console <<-SHELL
-rails generate scaffold topic title:string description:text
-rake db:migrate
-rails server
-  SHELL
-
-  message "If you want, take some time to poke around the files listed in the generate step."
 
   step {
     console "rails generate scaffold topic title:string description:text"
@@ -34,6 +27,7 @@ rails server
 * `title:string` says that topics have a title, which is a string.
 * `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too).
     MARKDOWN
+    message "If you want, take some time to poke around the files listed in this step."
   }
 
   step {
