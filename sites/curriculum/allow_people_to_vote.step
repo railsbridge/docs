@@ -52,7 +52,7 @@ explanation {
   HTML
 
   message <<-MARKDOWN
-  * `pluralize(topic.votes.length, "vote")' displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
+  * `pluralize(topic.votes.length, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
   * `button_to '+1'` creates an html button with the value '+1'.
   * `votes_path(topic_id: topic.id)` creates the right url for the action we want to invoke. In this case, we want to create a vote for the current topic.
     * `votes_path(topic_id: 42)` would output `/votes?topic_id=42`
@@ -60,9 +60,9 @@ explanation {
 
   The changes we made to votes controller are a bit more complicated so let's work through them line by line.
 
-  * topic = Topic.find(params[:topic_id])
+  * `topic = Topic.find(params[:topic_id])`
     * Finds the topic in the database with that id and stores it in the variable 'topic'.
-    * params[:topic_id] corresponds to the topic_id part of the votes_path above (eg `?topic_id=42`).
+    * `params[:topic_id]` corresponds to the topic_id part of the votes_path above (eg `?topic_id=42`).
   * `vote = topic.votes.build` creates a new vote for the current topic.
   * `vote.save!` saves the vote to the database.
   * `redirect_to(topics_path)` tells the browser to go back to topics_path (the topics list).
