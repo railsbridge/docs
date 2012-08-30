@@ -66,7 +66,7 @@ anyone who wants to contribute do so. His email is behind that profile link.
 If you haven't taken the time to go through the Git Immersion lab.
 
 Do it. It's worth it no matter how much git-fu you have.
-http://git-immersion.com
+http://gitimmersion.com
 
 Well. I hope you're all sick of me talking, but I think I addressed
 everything in the thread with respect to git, contributors, and github
