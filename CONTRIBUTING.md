@@ -15,7 +15,8 @@ to love you. :heart:*
 ## Before You Start!
 
 - If you have an existing fork, please make sure it's up to date.
-  It just makes your life easier!
+  It just makes your life easier! If not, make sure you fork *before* cloning,
+  otherwise you'll need to spend some time juggling remotes.
 
 - Create a local topic branch before you start working. This branch is going to
   be named for what you plan to change. `fix-typo-in-slides`, `move-resources`,
