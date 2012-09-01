@@ -1,7 +1,6 @@
+step "Have a volunteer check your tool versions" do
 
 message "Find a volunteer and have them watch the next steps."
-
-message "If this works - get a sticker from them for your computer!"
 
 verify "tool installation" do
 
@@ -13,7 +12,7 @@ verify "tool installation" do
   result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
 
   console "sqlite3 --version"
-  result "3.7.5"
+  result "3.6.22"
 
   h3 "On all operating systems:"
 
@@ -21,32 +20,38 @@ verify "tool installation" do
   result "ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]"
 
   console "git --version"
-  result "git version 1.7.4.4"
+  result "git version 1.7.0.4"
 
   console "gem -v"
-  result "1.8.21"
+  result "1.8.16"
 
   console "rake --version"
   result "rake, version 0.9.2.2"
 
   console "bundle -v"
-  result "Bundler version 1.1.3"
+  result "Bundler version 1.0.22"
+
+  console "rails -v"
+  result "Rails 3.2.1"
 
 end
 
-section "Change to your home directory" do
-  option "Windows" do
-    console "cd c:\\Sites"
-  end
-  option "Mac or Linux" do
-    console "cd ~"
-  end
+message "If this works - proceed to build the sticker app."
+
 end
+
+step "Build the sticker app" do
 
 verify "rails" do
 
-  console "rails -v"
-  result "Rails 3.2.6"
+	section "Change to your home directory" do
+	  option "Windows" do
+		console "cd c:\\Sites"
+	  end
+	  option "Mac or Linux" do
+		console "cd ~"
+	  end
+	end
 
   console "rails new sticker"
   result "# ...most output omitted for brevity...
@@ -96,6 +101,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
    -> 0.0030s
 ==  CreateDrinks: migrated (0.0033s) ==========================================
 "
+
 
   console "rails server"
   result "
@@ -265,8 +271,12 @@ You should see the same screen as you did at `http://localhost:3000/drinks` and 
 
 end
 
+message "If this works -- find a volunteer and show them"
+
+end
+
 step "Congratulations!" do
-  message "You got a sticker!"
+  message "Show a volunteer -- you get a sticker!"
 end
 
 next_step "clean_up"
