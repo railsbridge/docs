@@ -4,10 +4,10 @@ Ok, there is one more step. You won't be using the test applications in the work
 MARKDOWN
 
 step "Delete the apps from Heroku" do
-  message "Go to <https://heroku.com/myapps>, login if needed, and then click on your (lyrical) app name. Scroll to the bottom of the page and click Destroy App. Confirm, and then repeat for the second app."
+  message "Go to <https://heroku.com/myapps>, login if needed, and then click on your first (lyrical) app name. Scroll to the bottom of the page and click Destroy App. Confirm, and then repeat for the second app."
 end
 
-step "Delete the apps from your computer" do
+step "Delete the test_app from your computer" do
   option "Windows" do
     message "From the Explorer, right click on the test_app folder (inside C:\\Sites) and choose Delete."
   end
@@ -17,9 +17,9 @@ step "Delete the apps from your computer" do
   option "Linux" do
     console "rm -rf ~/test_app"
   end
-  
-  option "All" do
+end 
+step "Delete the sticker app from your computer" do
     message "Do the same for the sticker folder."
-  end
+	message "Now you're really done!"
 end
 

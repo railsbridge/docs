@@ -1,7 +1,6 @@
+step "Have a volunteer check your tool versions" do
 
 message "Find a volunteer and have them watch the next steps."
-
-message "If this works - get a sticker from them for your computer!"
 
 verify "tool installation" do
 
@@ -37,7 +36,13 @@ verify "tool installation" do
 
 end
 
-Create the "sticker" application do
+message "If this works - proceed to build the sticker app."
+
+end
+
+step "Build the sticker app" do
+
+verify "rails" do
 
 	section "Change to your home directory" do
 	  option "Windows" do
@@ -96,6 +101,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
    -> 0.0030s
 ==  CreateDrinks: migrated (0.0033s) ==========================================
 "
+
 
   console "rails server"
   result "
@@ -265,8 +271,12 @@ You should see the same screen as you did at `http://localhost:3000/drinks` and 
 
 end
 
+message "If this works -- find a volunteer and show them"
+
+end
+
 step "Congratulations!" do
-  message "You got a sticker!"
+  message "Show a volunteer -- you get a sticker!"
 end
 
 next_step "clean_up"

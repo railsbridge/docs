@@ -70,7 +70,7 @@ message "In Windows, you may need to let Ruby and Rails communicate through your
 step "Generate a database model" do
 
   option "if your prompt doesn't already show that you are (still) in the test_app folder" do
-    cd test_app
+    console "cd test_app"
   end
   
   console <<-BASH
@@ -90,7 +90,7 @@ end
 step "Use git" do
 
   option "if your prompt doesn't already show that you are (still) in the test_app folder" do
-    cd test_app
+    console "cd test_app"
   end
   
   console <<-BASH
