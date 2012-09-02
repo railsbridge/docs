@@ -1,7 +1,8 @@
 here = File.expand_path File.dirname(__FILE__)
 require "#{here}/spec_helper"
-
 require "#{here}/../app"
+require "site"
+
 require "rack/test"
 
 # todo: use a dummy set of sites instead of the real "installfest" and "curriculum"
