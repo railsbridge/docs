@@ -17,7 +17,7 @@ def rerun cmd, rerun_opts = nil
 
 end
 
-desc "run the site locally (visit http://localhost:9292"
+desc "run the site locally (visit http://localhost:9292)"
 task :run do
   rerun "rackup -s thin"
 end
