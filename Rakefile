@@ -8,10 +8,16 @@ RSpec::Core::RakeTask.new(:spec) do |t|
   # t.ruby_opts="-w"
 end
 
-task :run do
-  exec "rerun -- rackup -s thin"
+def rerun cmd, rerun_opts = nil
+  if Rake::Win32.windows?
+    exec cmd
+  else
+    exec "rerun #{rerun_opts} -- #{cmd}"
+  end
+
 end
 
-task :present do
-  exec "rerun --pattern *.deck.md -- rackup -s thin"
+desc "run the site locally (visit http://localhost:9292"
+task :run do
+  rerun "rackup -s thin"
 end
