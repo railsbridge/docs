@@ -6,17 +6,18 @@ We ask that contributions be made as pull requests via GitHub. If those words
 are totally foreign to you
 [see here](#its-my-first-time-on-github-ever-what-do-i-do)
 
-
 # When Submitting a Pull Request
 
-*Here's a couple tricks to grease the wheels and make it easy for the maintainers
-to love you. :heart:*
+*Here's a couple of tricks to grease the wheels and make it easy for the
+maintainers to love you. :heart:*
 
 ## Before You Start!
 
 - If you have an existing fork, please make sure it's up to date.
   It just makes your life easier! If not, make sure you fork *before* cloning,
   otherwise you'll need to spend some time juggling remotes.
+  Look at the section "Pull in upstream changes" in GitHub's
+  [Fork A Repo](https://help.github.com/articles/fork-a-repo) article.
 
 - Create a local topic branch before you start working. This branch is going to
   be named for what you plan to change. `fix-typo-in-slides`, `move-resources`,
@@ -32,7 +33,22 @@ to love you. :heart:*
 - Push to a branch on GitHub. Just like you developed in a local branch, you
   should push to a branch of your repo on GitHub as well. The `master` branch is
   best used as a clean copy of the upstream docs repo in case you need to make
-  some unrelated changes. To push to a branch, use `git push origin pr-branch`.
+  some unrelated changes. To push to a branch,
+  if your branch is named "fix-typo-in-slides",
+  use `git push origin fix-typo-in-slides`.
+
+## Submitting a Pull Request
+
+- Read the article ["Using Pull Requests"](https://help.github.com/articles/using-pull-requests)
+  on GitHub.
+
+- When you submit a pull request (PR), make sure your topic branch is selected
+  on the right-hand side of the Pull Request Preview page, like this:
+
+  ![choosing pull request branch](https://github-images.s3.amazonaws.com/help/change-branches.png)
+
+- Remember, pull requests are submitted *from* your repo, but show up on the
+  *upstream* repo.
 
 ## Discussion and Waiting On A Merge
 
@@ -40,7 +56,21 @@ to love you. :heart:*
 - Not every pull request will be merged as is.
 - Not every pull request will be merged at all.
 - If a pull request falls significantly behind master, we may ask that you close
-it, rebase your changes off of master, and submit a new pull request.
+  it, rebase your changes off of master, and submit a new pull request.
+- feel free to "ping" the team by adding a short comment to your pull request
+  if it's been more than a week with no reply
+
+## After your merge has been accepted
+
+- go back to your fork and keep it up to date, e.g.
+
+        git checkout master
+        git pull upstream master
+        git push origin master
+
+- you can also delete your topic branch if you like
+
+        git branch -dr fix-typo-in-slides
 
 # It's My First Time on GitHub Ever What Do I Do?
 
@@ -52,13 +82,17 @@ be fine.
 First, you'll need a GitHub account, which is totally free. You can sign up
 [here](https://github.com/signup/free).
 
+Next, browse the [GitHub Help site](https://help.github.com).
+
 You'll want to read about
 [forking](https://help.github.com/articles/fork-a-repo) and then make your own
 fork of [railsbridge/docs](https://github.com/railsbridge/docs). Once you've
 done so, you can clone it and get started by reading up on [what to do when
 submitting a pull request](#when-submitting-a-pull-request), read up on
 [pull requests](https://help.github.com/articles/using-pull-requests)
-themselves. If this is all too much, or you'd like a helping hand,
+themselves.
+
+If this is all too much, or you'd like a helping hand,
 [@nuclearsandwich](https://github.com/nuclearsandwich) has volunteered to help
 anyone who wants to contribute do so. His email is behind that profile link.
 
@@ -69,7 +103,11 @@ If you haven't taken the time to go through the Git Immersion lab.
 Do it. It's worth it no matter how much git-fu you have.
 http://gitimmersion.com
 
-Well. I hope you're all sick of me talking, but I think I addressed
-everything in the thread with respect to git, contributors, and github
-to the best of my knowledge. Let me know if you think I'm wild crazy or
-have a better suggestion. I'm always on the lookout.
+Also, [Pro Git](http://git-scm.com/book) is a great (and free!) book about Git.
+
+We apologize for how long this document is! Hopefully it addressed
+most of your concerns about git, contributing, and github. Feel free
+to ask more questions on the
+[railsbridge-workshops](http://groups.google.com/group/railsbridge-workshops)
+mailing list. And we're open to any suggestions about improvements,
+including to this document.
