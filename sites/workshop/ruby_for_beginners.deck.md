@@ -77,6 +77,9 @@
     > my_other_variable = "hi"
     => "hi"
 
+* Setting a variable equal to something is called "assignment." In the above examples, we are assigning my_variable to 5 and my_other_variable to "hi."
+* What types of information can we hold in a variable? (see next slide for answers)
+
 !SLIDE
 ## Many types of information
 
@@ -90,14 +93,48 @@
 !SLIDE
 ## Strings (text)
 
+* "This is a string."
+* This is not a string.
+
+
+### exercise
+* Create variables called first_name, last_name, and favorite_color.
+* Assign the variables to strings.
+* Can you print out a sentence that reads "Hi, my name is (first name) (last name) and my favorite color is (favorite color)." with these variables? 
+	* Hint: you can use a "+" to add strings together.
+
 !SLIDE
 ## Numbers
+* Numbers without decimal points are called **integers** and numbers with decimal points are called **floats**.
+* Examples of integers:	
+	* 0
+	* -105
+	* 898989898
+	* 2
+* Examples of floats:	
+	* .0.0
+	* -105.56
+	* .33
+	* .00004
+* You can perform operations on both types of numbers with these characters: +, -, /, *
+	
+### exercises	
+* Try dividing an integer by an integer. Try dividing an integer by a float. How are the results different? 
+* Create two integer variables called num1 and num2 and assign them your favorite numbers.
+* Next, compute the sum, difference, quotient, and product of these two numbers and assign these values to variables called sum, difference, quotient, and product, respectively.
+
 
 !SLIDE
 ## Collections
 
 * Arrays
+ * In the following slides, we will cover the following topics:
+	* Definition of an Array
+	* Array indexing
+	* Array methods
+
 * Hashes
+	* We will cover what a hash is and how you can use it.
 
 !SLIDE
 ## Arrays
@@ -106,6 +143,10 @@ An Array is a list of objects.
 
     >> fruits = ["kiwi", "strawberry", "plum"]
     => ["kiwi", "strawberry", "plum"]
+
+### exercises	
+* Make your own array and name it grocery_list. 
+* Include at least 5 items from your grocery list in the array.
 
 !SLIDE
 # Array Indexing
@@ -119,6 +160,10 @@ Ruby starts counting at zero.
     >> fruits[3]
     => nil
 
+### exercises	
+* Still have your grocery_list array? Good, because we're going to use it in this exercise.
+* What is at index zero in your grocery_list array? How about index 5? Guess the answers and then use the syntax in the examples above (eg: fruits[0]) to see if your guesses were right. 
+
 !SLIDE
 # Array methods
 
@@ -126,7 +171,16 @@ Ruby starts counting at zero.
 * push, pop
 * shift, unshift
 
-        fruits.first #=> "kiwi"
+### exercises	
+* Assign the first item in your grocery_list array to a variable named "first".
+* Assign the last item in your grocery_list array to a variable named "last".
+* Use the pop method to take the last item off of your grocery_list array.
+* Has the value of your "last" variable changed? Why?
+* Use the shift method to take off the first item in your grocery_list array.
+* Has the value of your "first" variable changed? Why?
+* Use the unshift and push methods to return your grocery_list array to its original state. 
+ * Hint: it will look something like this: grocery_list.push("bananas")
+
 
 !SLIDE
 # Hashes
@@ -141,6 +195,14 @@ Ruby starts counting at zero.
         >> states["CA"]
         => "California"
 
+### exercises	
+* When do you think you would use a hash vs an array?
+* Define a Hash variable called my_info which has the following keys:
+	* :first_name
+	* :last_name
+	* :hometown
+	* :favorite_food
+
 !SLIDE
 ## Operators
 
@@ -154,6 +216,30 @@ Ruby starts counting at zero.
     => ["kiwi", "strawberry", "plum", "lychee"]
     > my_fruits = my_fruits - ["lychee"]
     => ["kiwi", "strawberry", "plum"]
+
+* You can perform operations on variables and arrays the same way you perform operations on numbers.
+
+### exercises
+
+* Create an array called "vegetables" than contains 3 vegetables you like and 1 vegetable you don't like.
+* Using the vegetables array, create an array called "my_vegetables" that contains only the vegetables you like.
+* Extra: can you use the first two arrays to create a third array called "your_vegetables" that only contains the vegetable you don't like?
+
+!SLIDE
+## Methods
+
+### things that do stuff.
+
+* "If objects (like strings, integers, and floats) are the nouns in the Ruby language, then methods are like the verbs." - Chris Pine's "Learn to Program"
+* Methods are called (used) with a "."  
+ 	* Example: 5.to_s (to_s is the method)
+* As it turns out, 5 + 5 is really just a shortcut way of writing 5.+ 5.
+* Each data type (string, integer, float) has a set of built in methods. You can see all of the string methods here: http://ruby-doc.org/core-1.9.3/String.html (there are tons - don't worry about memorizing them, just good to know where you can go to find out more)
+
+### exercises
+* Create a String variable called old_string and assign it the value "Ruby is cool"
+* Use String methods to modify the old_string variable so that it is now "LOOC SI YBUR" and assign this to another variable called new_string.
+ * Hint: look at the string methods "upcase" and "reverse"
 
 !SLIDE
 # Loops
@@ -172,6 +258,11 @@ The hard way:
     plum
     => nil
 
+### exercises
+* Create an array of 4 places you would like to visit.
+* Print out each of these places.
+	* Example: "I would like to visit " + places[0]
+
 !SLIDE
 # Loops
 
@@ -179,24 +270,19 @@ The hard way:
 
 The easy way:
 
-    >> fruits.each {|f| puts f}
+	>> fruits.each do |f|
+	?>   puts f 
+	>> end
+	
     kiwi
     strawberry
     plum
     => ["kiwi", "strawberry", "plum"]
 
-!SLIDE
-# Loops (multi-line)
-
-The easy way, with "do...end" rather than "{...}"
-
-    >> fruits.each do |f|
-    ?> puts f
-    >> end
-    kiwi
-    strawberry
-    plum
-    => ["kiwi", "strawberry", "plum"]
+### exercises
+* Still have that array of places you'd like to visit?
+* Print out each of these places with a loop.
+* Wasn't that better?
 
 !SLIDE
 ## Conditionals
@@ -208,6 +294,10 @@ The easy way, with "do...end" rather than "{...}"
     >> end
     plum
     => ["kiwi", "strawberry", "plum"]
+
+### exercises 
+* Create an array called "class" that contains the names of some of the people in your Railsbridge class. Make sure you include your own name.
+* Using your class array, create a conditional that prints "My Name is (your name)" for your name only. 
 
 !SLIDE subsection
 # Command-Line Programs
