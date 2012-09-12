@@ -1,0 +1,53 @@
+message <<-MARKDOWN
+RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](http://rvm.beginrescueend.com/rvm/install/) are available here, but this should work for you:
+MARKDOWN
+
+step "Install RVM" do
+  console "curl -L get.rvm.io | bash -s stable"
+  message "This will do some stuff and print a long message which you can ignore."  
+end
+
+step "Configure your shell" do
+
+  message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
+
+  verify do
+    console "type rvm | head -1"
+    result "rvm is a function"
+
+    console "rvm -v"
+    result "rvm 1.14.5 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
+  end
+  
+end
+
+step "Install Ruby 1.9.3 using RVM" do
+  console "rvm install 1.9.3"
+  
+  important "If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip."
+
+  message "This downloads and compiles Ruby, which takes a while."
+  
+  important "If `rvm install 1.9.3` says `autoreconf was not found in the PATH`" do
+    option "Mac OS" do
+      console "brew install automake"
+    end
+
+    option "Ubuntu Linux" do
+      console "sudo apt-get install automake"
+    end
+
+    message "Once that completes, retry `rvm install 1.9.3`"
+  end  
+
+  console <<-BASH
+rvm use 1.9.3
+rvm --default use 1.9.3
+  BASH
+
+  verify do
+    console "ruby -v"
+    result "1.9.3"
+  end
+end
+

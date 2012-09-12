@@ -23,12 +23,14 @@ GEM
     diff-lcs (1.1.3)
     erector (0.9.0.pre1)
       treetop (>= 1.2.3)
-    eventmachine (0.12.10)
+    eventmachine (1.0.0.rc.4)
+    eventmachine (1.0.0.rc.4-x86-mingw32)
     file-tail (1.0.8)
       tins (~> 0.3)
     files (0.2.1)
     json (1.6.6)
     nokogiri (1.5.2)
+    nokogiri (1.5.2-x86-mingw32)
     polyglot (0.3.3)
     predicated (0.2.6)
     rack (1.4.1)
@@ -89,12 +91,14 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bourbon
   coderay
   deckrb (>= 0.3.0)
   erector (~> 0.9.0.pre1)
+  eventmachine (= 1.0.0.rc.4)
   files
   nokogiri
   rack-codehighlighter

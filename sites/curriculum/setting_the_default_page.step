@@ -40,15 +40,15 @@ root :to => 'topics#index'
 explanation {
 
  message <<-MARKDOWN
-  * root :to => 'topics#index' is a rails route that says the default
-    address for your site is topics#index. topics#index is the topics
+  * `root :to => 'topics#index'` is a rails route that says the default
+    address for your site is `topics#index`. `topics#index` is the topics
     list page (the topics controller with the index action).
   * Rails routes control how URLs (web addresses) get matched with
     code on the server. Similar to how addresses match with houses and
     apartments.
-  * The file config/routes.rb is like an address directory listing the
+  * The file `config/routes.rb` is like an address directory listing the
     possible addresses and which code goes with each one
-  * routes.rb uses some shortcuts so it doesn't always show all the
+  * `routes.rb` uses some shortcuts so it doesn't always show all the
     possible URLs. To explore the URLs in more detail we can use the
     terminal.
 

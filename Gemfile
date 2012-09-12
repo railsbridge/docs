@@ -5,6 +5,7 @@ gem "sinatra"
 gem "nokogiri"
 gem "rdiscount"
 gem "thin"
+gem "eventmachine", "1.0.0.rc.4"
 gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", ">=0.3.0"

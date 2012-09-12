@@ -170,7 +170,7 @@ You should be aware of these, even if you don't tell the students all of them ri
   * MVC <https://github.com/alexch/mission/raw/master/mvc.png>
   * git <https://github.com/alexch/mission/raw/master/git.png>
 * Workshop Github repo (slides and diagrams)
-  * <http://github.com/railsbridge/installfest> (currently misnamed -- "installfest" includes curriculum and workshop materials too)
+  * <http://github.com/railsbridge/docs>
 
 <!SLIDE subsection>
 # General Teaching Advice

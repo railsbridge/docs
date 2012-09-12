@@ -9,6 +9,7 @@ step "Learn your Mac OS X Version" do
 * Click on the Apple icon in the top left of your screen.
 * Select "About this Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
+  * If it starts with 10.8, you have **Mountain Lion**.
   * If it starts with 10.7, you have **Lion**.
   * If it starts with 10.6, you have **Snow Leopard**.
   * If it starts with 10.5, you have **Leopard**.
@@ -25,8 +26,11 @@ Below is an example.
 end
 
 step "Choose your instructions" do
-
-  message "Please try the 'standard install' first. If you have problems, come back here, and choose instructions for your specific OS."
+  
+  option "Mountain Lion" do
+    link "osx_lion"
+  message "The instructions for Mountain Lion and Lion are mostly the same."
+  end
 
   option "Lion" do
     link "osx_lion"
@@ -46,9 +50,5 @@ step "Choose your instructions" do
     link "osx_panther"
     message "Follow the Panther instructions but be prepared for some things to be difficult."
   end
-end
-
-step "Get a sticker!" do
-  link "get_a_sticker"
 end
 

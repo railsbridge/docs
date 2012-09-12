@@ -10,16 +10,6 @@ steps do
 
   tip "If you have _any_ problems, contact a TA immediately."
 
-  console <<-SHELL
-mkdir railsbridge
-cd railsbridge
-rails new suggestotron
-cd suggestotron
-ls
-  SHELL
-
-  message "Here's a step-by-step breakdown, with explanations:"
-
   step do
     console "mkdir railsbridge"
     message "'mkdir' stands for make directory (folder)."

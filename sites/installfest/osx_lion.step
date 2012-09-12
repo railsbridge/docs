@@ -11,6 +11,9 @@ step "Install A Compiler (XCode or GCC)" do
 end
 
 step "Install Homebrew" do
+  console "which git"
+  result "/usr/bin/git"
+  message "If you get the result above skip to: <a href='install_rvm_and_ruby'>Install RVM</a>" 
   link "install_homebrew"
 end
 
@@ -21,27 +24,22 @@ step "Install Git" do
 
   verify do
     console "git --version"
-    result "git version 1.7.4.4"
+    result "git version 1.7.7.5"
   end
 
   link "configure_git"
 end
 
-step "Install RVM, the Ruby Version Manager " do
-  link "install_rvm"
+step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and_ruby'} do
+  link "install_rvm_and_ruby"
 end
 
 step "Install Rails" do  
   console "gem install rails"
   verify do
     console "rails -v"
-    result "Rails 3.2.2"
+    result "Rails 3.2.6"
   end
-end
-
-step "Install 'SQLite Manager' Firefox plugin" do
-  link "install_sqlite_manager"
-  message "This step is *optional*. If it doesn't work, don't spend too much time trying to get it to work."  
 end
 
 step "Install KomodoEdit" do
@@ -52,11 +50,8 @@ step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
 
-step "Install more gems" do
+step "Install the heroku tool" do
   console "gem install heroku"
-
-  message "If you are in an advanced class, you will also want these gems:"
-  console "gem install rspec rspec-rails cucumber cucumber-rails database_cleaner webrat"
 end
 
 verify "successful installation" do
@@ -68,18 +63,17 @@ verify "successful installation" do
 
   console "which rails"
   result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/rails"
+
+  console "which heroku"
+  result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/heroku"
 end
 
 step "Generate an ssh public key" do
   link "create_an_ssh_key"
 end
 
-step "Create a Heroku account" do
-  link "create_a_heroku_account"
-end
-
 step "Congratulations!" do
   message "You have everything you need to write a Ruby on Rails application."
 end
 
-next_step "create_and_deploy_a_rails_app"
+next_step "create_a_heroku_account"

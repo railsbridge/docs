@@ -1,0 +1,64 @@
+goals do
+  goal "Add standard HTML head and body tags"
+  goal "Add a page title"
+  goal "Understand the use of non-visible tags like head"
+end
+
+steps do
+
+  step do
+    message "We started simple, but most HTML pages have some other tags we left out. Those tags are `doctype`, `html`, `head`, and `body`. Try adding them to your HTML file now, matching this order:"
+    message "<img src='img/hello_structure.png'>"
+    message "Now refresh your browser. Everything should look mostly the same."
+  end
+
+  step do
+    message "The `head` tag doesn't even show up on the page &mdash; it's meant to contain extra info _about_ your file. Let's add a title to it. Put this line inside the `head` tag:"
+    source_code "HTML", "<title>My Sample HTML page</title>"
+    message "When you refresh your browser, you should see the title at the top of the window:"
+    message "<img src='img/hello_title.png'>"
+  end
+
+end
+
+
+explanation do
+
+  message <<-MARKDOWN
+
+## The HTML tag and Doctype Clarify the Obvious
+
+The `<!DOCTYPE html>` tells the browser which flavor of HTML you're using. You may see 
+older doctypes out there that are longer and a lot more complicated, from when people
+used various HTML and XHTML versions, but if you create a new page, you can usually just
+use this short version. It tells your browser you're using the latest version of HTML,
+HTML 5, and it's easy to type.
+
+The `<html>` tag tells your browser something it could probably guess, that your page is
+HTML, but it's polite to add it anyway. It wraps all the content of the page (except the
+`doctype`) and states unequivocally, "Here is my HTML!!!"
+
+## Pages, Like People, Have a Head and a Body
+
+MARKDOWN
+source_code "HTML", "<!DOCTYPE html>\n<html>\n\s\s<head></head>\n\s\s<body>Content...</body>\n</html>"
+message <<-MARKDOWN
+
+### The Head
+
+The Head doesn't contain information that you want to see printed on the page. It contains
+info _about_ the document, including what language or character set you're using, what
+the page title should be, and what CSS and JavaScript files to include when the page is
+loaded. It might even contain metadata tags that can tell a search engine or another
+program more about the file, like who wrote it or what keywords are relevant.
+
+### The Body
+
+The Body contains the actual content of your file, the things you'll want your users
+to be able to see, read, or interact with at some point.
+
+MARKDOWN
+
+end
+
+next_step "basic_CSS"

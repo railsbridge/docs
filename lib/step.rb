@@ -153,6 +153,7 @@ div.back:before {
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
+    a(:name => options[:anchor_name]) if options[:anchor_name]
     div :class => "step", :title => name do
       h1 do
         widget BigCheckbox
@@ -214,6 +215,15 @@ div.back:before {
       end
     end
 
+  end
+
+  def section text
+    div do
+      h1 text
+      blockquote do
+        yield
+      end
+    end
   end
 
   def verify text = nil

@@ -1,0 +1,73 @@
+goals do
+  goal "Check out your starter files in the browser"
+  goal "Compare strategies for CSS and JavaScript inclusion (inline vs. link)"
+end
+
+steps do
+  
+  step do
+    message "Check out your page on the web (at [your-github-user-name].github.com). You should see content there, now that you've pushed to github."
+    message "<img src='img/page.png'>"
+  end
+  
+  step do
+    message "Now, drag the 'index.html' page from your project into a web browser, **and** open it up in a text editor. The web browser should look the same as above. The text editor should look like this:"
+    message "<img src='img/page_html.png'>"
+    message "While it's great that you can push files to github quickly, you'll usually want to have an even more immediate way to see your changes. Opening the same file in a browser and in a text editor lets you see the effects of each code change right after you make it."
+  end
+  
+  step do
+    message "You'll remember when we were working on our hello.html file, we put JavaScript and CSS directly into the HTML document. But you can also include js and css in external files, with a link."
+    message "This file, 'index.html', includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!')."
+    message "HTML comment tags begin with `<!--` and end with `-->`. Here's an example:"
+    source_code "HTML", "<!-- this is a comment. the browser ignores it -->"
+    message "Look through index.html and find the links to the CSS and JavaScript files. Delete the comment tags from around them, so the browser will read them."
+  end
+  
+
+end
+
+explanation do
+  
+  message <<-MARKDOWN
+
+## Inline vs. Linked 
+
+Javascript and CSS can both be put directly into the HTML page, but on bigger projects,
+you'll usually want to place your js and CSS in separate files and include those files
+in your HTML with a link.
+
+Linking files will help you keep your code organized and easier to maintain. It means,
+for example, that if you change the style of buttons on your website, you'll be able to
+change it in just one place, instead of having to update every page.
+
+### Javascript
+
+* A JavaScript tag looks like this when it's wrapping code written right into the HTML page:
+
+  MARKDOWN
+  source_code "HTML", "<script type=\"text/javascript\">\n\s\s// Your code goes here! \n</script>"
+  message <<-MARKDOWN
+
+* A JavaScript tag looks like this when it's a link:
+
+  MARKDOWN
+  source_code "HTML", "<script src=\"resources/javascript.js\" type=\"text/javascript\"></script>"
+  message <<-MARKDOWN
+
+### CSS
+
+* A CSS stylesheet looks like this when it's written right into the HTML page:
+
+  MARKDOWN
+  source_code "HTML", "<style type=\"text/css\" media=\"all\">\n\s\s/* Your styles go here! */ \n</style>"
+  message <<-MARKDOWN
+
+* A CSS tag looks like this when it's a link:
+
+  MARKDOWN
+  source_code "HTML", "<link rel=\"stylesheet\" href=\"resources/layout.css\" type=\"text/css\">"
+
+end
+
+next_step "add_more_elements"

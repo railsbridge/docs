@@ -4,19 +4,17 @@ goals {
 
 steps {
   console <<-SHELL
-rake assets:precompile
 git add .
 git commit -m "Added votes"
 git push heroku master
-heroku rake db:migrate
+heroku run rake db:migrate
   SHELL
 }
 
 explanation {
 
   message "
-  We must precompile the assets again, since they changed when we added the
-  votes resource. Now we can commit our changes, push them out and run the
+  We commit our changes, push them out and run the
   remote migration... By this time it should be fairly old hat.
   "
 }

@@ -45,6 +45,16 @@ describe Step do
       assert { to_html(step.previous) == "<a name=\"step#{i+1}\"></a>" }
     end
   end
+  
+  it "puts anchors in based on optional step name" do
+    html_doc(<<-RUBY)
+    step "Test", {:anchor_name => 'happy_step'}
+    RUBY
+    
+    anchors = html_doc.css("a")
+    names = anchors.map{|a| a["name"]}
+    assert { names == ["step1", "happy_step"] }
+  end
 
   it "nests anchor numbers" do
     html_doc(<<-RUBY)

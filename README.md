@@ -1,4 +1,4 @@
-# Railsbridge Installfest StepList
+# The Railsbridge Documentation Project
 
 Author: Alex Chaffee <mailto:alex@stinky.com>
 
@@ -12,12 +12,20 @@ If the above fails (say, because `rerun` doesn't work on your system), try
     rackup
     
 Then open <http://localhost:9292> in a web browser.
- 
+
+If you make any changes, and especially before a pull request, run
+
+    rake spec
+
+which will run some unit tests and also do syntax validation on all pages, to make sure you didn't break anything.
+
+When you submit a Pull Request, Travis CI will also run all the tests.
+
 # Overview
 
-This is a Sinatra app, deployed at <http://installfest.heroku.com>, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on whatever combination of computer, OS, and version they happened to bring the the workshop.
+This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The Railsbridge documentation project is home to a few subprojects, including the Railsbridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring the the workshop!), as well as the Railsbridge workshop "Suggestotron" curriculum.
 
-The site comprises files stored in a "site" directory; the one we care about now is ROOT/sites/installfest.
+Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the curriculum can be found under ROOT/sites/curriculum.
 
 These files can be in any of these formats:
 
@@ -28,13 +36,38 @@ These files can be in any of these formats:
 
 (If multiple files exist with the same base name, .step is preferred over .md, and .md over .mw.)
 
-Markdown is a lightweight markup language designed by John Gruber. The syntax is described at the [Daring Fireball Markdown Page](http://google.com/search?q=markdown+syntax) plus [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) extensions. (This README is written in Markdown.)
+Markdown is a lightweight markup language designed by John Gruber. The syntax is described at the [Daring Fireball Markdown Page](http://daringfireball.net/projects/markdown/syntax) plus [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) extensions. (This README is written in Markdown.)
 
 MediaWiki is the format of pages on the Devchix Wiki. This format is not fully supported and is provided as a temporary bridge while we move materials from the Devchix Wiki into this app.
 
 StepFile is a new, Ruby-based DSL for describing complex, nested instructions in clear, reusable chunks.
 
 [Deck.rb](https://github.com/alexch/deck.rb) converts Markdown files into an interactive in-browser HTML+JavaScript slide deck.
+
+#Organizer Instructions
+
+Slide contents that change with each workshop are contained in three files under the workshop project. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned' slides are in closing.deck.md.
+
+To change those contents, clone this repo, make changes, and then to include your changes in the publicly available repo, send a pull request.
+
+##clone the repo
+
+On a command line cd into a directory for the installfest app to live on your machine. For example, to put it in your home directory: `cd ~`
+
+Then clone the repository from github:
+`git clone git://github.com/railsbridge/docs.git`
+
+And open it in the editor of your choice. 
+
+## changes
+
+If you want to change the name of the hosts and sponsors in the intro slides, open current.deck.md, find and replace the name of the previous hosts and sponsors on the slide deck. To include their logos, drop an image inside the public/img folder. If their are more or fewer hosts and sponsors than in the previous workshop, create new slides!
+
+Check that the current.deck.md and closing.deck.md files fit the workshop.
+
+## pull request
+
+When you're happy with how you've changed the repository, commit it. In the command line, add your changes with `git add .` and commit them locally with `git commit -m "super descriptive message "`. Push it to your own fork of the repository with`git push`. The next step, submitting a pull request is used to incorporate your changes into RailsBridge's version of the repository. Navigate to your forked version of the repository on github (and check the commits tab to see your changes!). There's a pull request button near the top of the page, and after clicking you can add a title and explanations of your changes. After submitting, it may take a while for people to review and accept your changes. Poke people. Make sure they check it out. Check out Github's <a href="http://help.github.com/send-pull-requests/">help page</a> on the pull requests. 
 
 # StepFile Reference
 

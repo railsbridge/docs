@@ -306,12 +306,7 @@ Observa que la clase Topico tiene los atributos título y descripción, los cual
 ===Observando la Base de Datos===
 
 Rails es compatible con la mayoría de las base de datos relacionales pero por defecto viene con una mini versión llamada. SQLite, asi que ninguna configuración es necesaria. 
-Utilizaremos SQLite es este taller.  Para ello hemos instalado un interfaz llamada SQLite Manager, el cual te permite inspeccionar de cerca la base de datos. 
-Para abrirla, open tu navegador Firefox y en selecciona la opcion “tools => sqlite manager  
-
-Luego, has clic en el icon [[File:Folder.jpg]]  ￼ o escoje la opción Database -> Connect Database  para abrir mafalda/db/development.sqlite3
-[[File:Sqlite_db.png]]
-
+Utilizaremos SQLite es este taller.  
 
 Puedes acceder a la base de datos a través de la consola de comando.
 
@@ -451,7 +446,7 @@ edit_topico GET    /topicos/:id/edit(.:format) {:action=>"edit", :controller=>"t
 Volvamos a aplicar lo que aprendimos. En la linea de comando, abre tu consola rails. Una vez que estes ahí, podrás utilizar metodos rails para explorar tus urls. 
 <code><pre>
 carmen(mafalda)(master)$rails console
-Loading development environment (Rails 3.0.5)
+Loading development environment (Rails 3.2.6)
 ruby-1.9.2-head :001 > app.topicos_path
  => "/topicos" 
 ruby-1.9.2-head :002 > app.topicos_url

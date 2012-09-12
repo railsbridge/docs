@@ -24,6 +24,11 @@ describe InstallFest do
     true_app
   end
 
+  def get! *args
+    get *args
+    assert { last_response.status == 200 }
+  end
+  
   it "is a sinatra app" do
     assert { true_app.is_a? InstallFest }
     assert { true_app.class.ancestors.include? Sinatra::Application }
@@ -33,13 +38,19 @@ describe InstallFest do
     get "/"
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/installfest" }
+    assert { last_request.path == "/installfest/" }
   end
 
-  it "redirects /site to /site/site" do
+  it "redirects /site to /site/" do
     get "/installfest"
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/installfest" }
+    assert { last_request.path == "/installfest/" }
+  end
+
+  it "redirects /site/page/ to /site/page" do
+    get "/installfest/foo/"
+    follow_redirect! while last_response.redirect?
+    assert { last_request.path == "/installfest/foo" }
   end
 
   it "has a default site" do
@@ -72,7 +83,31 @@ describe InstallFest do
     get "/", {}, {"HTTP_HOST" => "curriculum.example.com"}
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/curriculum/curriculum" }
+    assert { last_request.path == "/curriculum/" }
+  end
+
+  describe "page headers" do
+    before :all do
+      get "/"
+      follow_redirect! while last_response.redirect?
+      @body = last_response.body
+    end
+
+    it "should contain the html5 doctype" do
+      @body.should match(/<!doctype html>/i)
+    end
+
+    it "should render style tags without any attributes" do
+      @body.should match(/<style>/i)
+    end
+
+    it "should render meta tags in the terse html5 style" do
+      pending <<GRIPE
+For whatever reason, erector (or something else?!) always makes a meta tag with 'http-equiv...' etc.
+Adding `meta :charset => 'UTF-8'` in head_content should fix this, but it just adds an extra meta tag instead.
+GRIPE
+      @body.should match(/<meta charset=['"]UTF-8['"]>/i)
+    end
   end
 
   describe "an app with slides" do
@@ -97,11 +132,6 @@ describe InstallFest do
         end
       end
       @breakfast = breakfast
-    end
-    
-    def get! *args
-      get *args
-      assert { last_response.status == 200 }
     end
     
     it "renders a deck" do

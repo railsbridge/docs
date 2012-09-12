@@ -1,47 +1,66 @@
+step "Have a volunteer check your tool versions" do
 
 message "Find a volunteer and have them watch the next steps."
-
-message "If this works - get a sticker from them for your computer!"
 
 verify "tool installation" do
 
   tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
 
   h3 "If you're on OSX or Linux:"
-  
+
   console "rvm -v"
   result "rvm 1.11.2 by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
-  
+
   console "sqlite3 --version"
-  result "3.7.5"
+  result "3.6.22"
 
   h3 "On all operating systems:"
-  
+
   console "ruby -v"
   result "ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]"
 
   console "git --version"
-  result "git version 1.7.4.4"
+  result "git version 1.7.0.4"
 
   console "gem -v"
-  result "1.8.21"
+  result "1.8.16"
 
   console "rake --version"
   result "rake, version 0.9.2.2"
 
   console "bundle -v"
-  result "Bundler version 1.1.3"
+  result "Bundler version 1.0.22"
+
+  console "rails -v"
+  result "Rails 3.2.1"
 
 end
 
+message "If this works - proceed to build the sticker app."
+
+end
+
+step "Build the sticker app" do
+
 verify "rails" do
 
-  console "rails -v"
-  result "Rails 3.2.2"
+	section "Change to your home directory" do
+	  option "Windows" do
+		console "cd c:\\Sites"
+	  end
+	  option "Mac or Linux" do
+		console "cd ~"
+	  end
+	end
 
-  console "cd ~\nrails new sticker"
+  console "rails new sticker"
   result "# ...most output omitted for brevity...
 Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed."
+
+  tip do
+    message "On Linux, you may have to add this line to your Gemfile:"
+    pre "gem 'therubyracer', :platforms => :ruby"
+  end
 
   console "cd sticker\nrails generate scaffold drink name:string temperature:integer"
   result "
@@ -74,7 +93,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
       create      app/assets/stylesheets/drinks.css.scss
       invoke  scss
       create    app/assets/stylesheets/scaffolds.css.scss"
-      
+
   console "rake db:migrate"
   result "
 ==  CreateDrinks: migrating ===================================================
@@ -83,22 +102,23 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
 ==  CreateDrinks: migrated (0.0033s) ==========================================
 "
 
+
   console "rails server"
   result "
 => Booting WEBrick
-=> Rails 3.2.3 application starting in development on http://0.0.0.0:3000
+=> Rails 3.2.6 application starting in development on http://0.0.0.0:3000
 => Call with -d to detach
 => Ctrl-C to shutdown server
 [2012-03-30 17:56:02] INFO  WEBrick 1.3.1
 [2012-03-30 17:56:02] INFO  ruby 1.9.3 (2012-02-16) [x86_64-linux]
 [2012-03-30 17:56:02] INFO  WEBrick::HTTPServer#start: pid=27148 port=3000
   TERMINAL"
-  
+
   message <<-BROWSER_VERIFY
 In your web browser, go to <http://localhost:3000/drinks>
 
 1. Click on "New drink"
-2. Enter Cappuccino for the name 
+2. Enter Cappuccino for the name
 3. Enter 135 for the temperature.
 4. Click on "Create Drink".
 
@@ -109,7 +129,7 @@ In your terminal, Hold Control and hit C to stop the rails server.
 
   result <<-TERMINAL
 => Booting WEBrick
-=> Rails 3.2.3 application starting in development on http://0.0.0.0:3000
+=> Rails 3.2.6 application starting in development on http://0.0.0.0:3000
 => Call with -d to detach
 => Ctrl-C to shutdown server
 [2012-03-30 17:56:02] INFO  WEBrick 1.3.1
@@ -146,7 +166,7 @@ verify "git" do
 #       new file:   Rakefile
 # ...most output omitted for brevity...
   RESULT
-  
+
   console 'git commit -m "Getting that sticker"'
   result "
 [master (root-commit) 8cd0e44] Getting that sticker
@@ -166,10 +186,19 @@ end
 
 verify "heroku deploy" do
 
-  message "Use your editor to open the Gemfile and add the following:"
+  message "Use your editor to open the Gemfile and find the line containing:"
 
-  # TODO: Change from console to `ruby` method for future styling semantics
   source_code :ruby, <<-RUBY
+gem 'sqlite3'
+  RUBY
+
+  message "Remove this line and replace it with:"
+
+  source_code :ruby, <<-RUBY
+group :development do
+  gem 'sqlite3'
+end
+
 group :production do
   gem 'pg'
 end
@@ -183,7 +212,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
 
   console <<-GIT_COMMIT
 git add .
-git commit -m"Add pg gem for Heroku."
+git commit -m "Add pg gem for Heroku."
 GIT_COMMIT
   result "[master 4a275be] Add pg gem for Heroku.
  2 files changed, 6 insertions(+)"
@@ -192,7 +221,7 @@ GIT_COMMIT
 
   console "heroku create"
   result <<-HEROKU_CREATE
-Creating evening-wind-5284... done, stack is bamboo-mri-1.9.2
+Creating evening-wind-5284... done, stack is cedar
 http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git
 Git remote heroku added
   HEROKU_CREATE
@@ -221,6 +250,15 @@ Total 4 (delta 3), reused 0 (delta 0)
 -----> Launching...
   HEROKU_PUSH
 
+  console "heroku run rake db:migrate"
+  result <<-HEROKU_DB_MIGRATE
+Migrating to CreateDrinks (20120428044153)
+==  CreateDrinks: migrating ===================================================
+-- create_table(:drinks)
+   -> 0.0084s
+==  CreateDrinks: migrated (0.0085s) ==========================================
+  HEROKU_DB_MIGRATE
+
   console "heroku open"
   result "Opening http://evening-wind-5284.heroku.com/"
 
@@ -233,8 +271,12 @@ You should see the same screen as you did at `http://localhost:3000/drinks` and 
 
 end
 
+message "If this works -- find a volunteer and show them"
+
+end
+
 step "Congratulations!" do
-  message "You got a sticker!"
+  message "Show a volunteer -- you get a sticker!"
 end
 
 next_step "clean_up"

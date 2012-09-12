@@ -20,7 +20,6 @@ Estarás instalando las siguientes herramientas / programas:
 * Ruby
 * Rails
 * Git
-* Firefox and the SQLite manager Firefox add-on
 * Heroku
 * KomodoEdit
 * Algunas gemas muy útiles: bundler, cucumber, rspec, rspec-rails, webrat, sqlite

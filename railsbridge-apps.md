@@ -18,7 +18,6 @@ installfest.railsbridge.org/
  - github
  - heroku
  - Firefox 
- - SQLite Manager Firefox add-on
  - KomodoEdit
  - Various useful gems: bundler, cucumber, rspec, rspec-rails, webrat, sqlite
 
