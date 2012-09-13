@@ -2,19 +2,24 @@ require 'rspec/core/rake_task'
 
 task :default => :spec
 
+def windows?
+  Rake::Win32.windows?
+end
+
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.pattern = "spec/**/*_spec.rb"
-  t.rspec_opts = "--color --format d --fail-fast --backtrace"
+  t.rspec_opts =
+      "--format d --fail-fast --backtrace"
+  t.rspec_opts += " --color" if !windows?
   # t.ruby_opts="-w"
 end
 
 def rerun cmd, rerun_opts = nil
-  if Rake::Win32.windows?
+  if windows?
     exec cmd
   else
     exec "rerun #{rerun_opts} -- #{cmd}"
   end
-
 end
 
 desc "run the site locally (visit http://localhost:9292)"
