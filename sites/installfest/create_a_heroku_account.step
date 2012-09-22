@@ -25,7 +25,7 @@ step "Install the heroku gem" do
   end
 
   verify do
-    console "heroku -v"
+    console "heroku version"
     result "2.26.7 or higher"
   end
 end
