@@ -1,13 +1,16 @@
-goals do
-  goal "OK. We've got an empty app and it has been added to git. What now?"
-  message "_**Ship it!**_"
+h2 do 
+  span "If you haven't yet deployed to heroku, start at "
+  a 'First-time setup', :href => '#first-time'
+  span ". Otherwise, start at "
+  a 'Every time', :href => '#every-time'
+  span "."
 end
 
-steps do
-
+a :name => 'first-time'
+situation "First-time setup" do
   step "Create a heroku application" do
     console "heroku create"
-    message "`heroku create` registers a new application on heroku's system."
+    message "`heroku create` registers a new application on heroku's system. You should see some output including your new app's URL."
   end
 
   step "Edit the Gemfile" do
@@ -45,10 +48,30 @@ git commit -m "Changed Gemfile for heroku"
     SHELL
     tip "There is a period after the word add in the third line."
   end
+end
+
+a :name => 'every-time'
+situation "Every time" do
+  step "Commit any pending changes to git" do
+    message "Heroku will only receive the files we've committed into our local git repository. So we need to make sure all changed files have been committed."
+    console "git status"
+    message "`git status` shows you any pending changes you've created. If it has no output, you're already ready to deploy! Otherwise..."
+
+    console <<-SHELL
+git add .
+git commit -m "Some helpful message for your future self"
+    SHELL
+    message "Your commit reference should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
+  end
 
   step "Push changes to heroku" do
     console "git push heroku master"
     message "This takes all changes you've committed locally and pushes them to heroku."
+  end
+
+  step "Run database migrations on Heroku" do
+    console "heroku run rake db:migrate"
+    message "This tells Heroku to run your migrations on its database, like running rake db:migrate locally. Since Heroku's database is separate from the one on your computer, it needs to be updated every time you make database changes"
   end
 
   step "Visit your application" do
@@ -57,8 +80,10 @@ git commit -m "Changed Gemfile for heroku"
   end
 end
 
-explanation {
+explanation do
   message <<-MARKDOWN
+  First, we had to do some work to make Heroku happy with our application. This required updating the Gemfile and bundling.
+
   * The Gemfile is a list of all the Ruby libraries your application needs.
     What we've declared here is that we want to use the `sqlite3` library
     while we're developing on our computer (the development group) but when
@@ -72,15 +97,12 @@ explanation {
     Heroku will install them when they get your code.
   MARKDOWN
 
-  message "While I realize that at this point this isn't all that exciting, the point is that it doesn't get more difficult than this as we add more functionality to the application. Your typical workflow will look like:"
+  message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
   img :src => "img/workflow.png", :alt => "workflow", :style => "border: none"
-  ol {
+  ol do
     li { message "Add or change some code" }
     li { message "Commit your changes (`git commit`)" }
-    li { message "Deploy your changes (`git push heroku`)" }
     li { message "(repeat)" }
-  }
-  message "and boom! Your changes are live!"
-}
-
-next_step "creating_a_migration"
+  end
+  message "Any time your changes are committed, you should feel free to `git push heroku master` and boom! Your changes are live!"
+end

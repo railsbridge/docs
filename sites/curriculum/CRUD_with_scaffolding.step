@@ -104,4 +104,6 @@ explanation {
     MARKDOWN
 }
 
-next_step "commit_and_push_to_heroku"
+consider_deploying
+
+next_step "voting_on_topics"
