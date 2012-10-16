@@ -52,7 +52,7 @@ explanation {
     possible URLs. To explore the URLs in more detail we can use the
     terminal.
 
-  At the terminal type `rake routes` you should get something that
+  At the terminal type `rake routes`. You should get something that
   looks like this:
 
     $ rake routes

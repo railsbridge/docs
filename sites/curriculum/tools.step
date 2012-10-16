@@ -2,7 +2,7 @@ message <<-MARKDOWN
 ## Other Tools to help you learn Ruby
 
 ### ri
-ri is a tool to look up ruby documentation. It lives on your computer, so if you're in a plane or underground bunker and can't get to google, all the information right within the terminal! If you do prefer the internet, you can get the same information at [ruby-doc.org](http://ruby-doc.org).
+ri is a tool to look up ruby documentation. It lives on your computer, so if you're in a plane or underground bunker and can't get to google, all the information is right within the terminal! If you do prefer the internet, you can get the same information at [ruby-doc.org](http://ruby-doc.org).
 
     $ ri String.split
     = String.split
@@ -27,8 +27,8 @@ important "If running ri doesn't work and you've installed ruby using rvm, try r
 message <<-MARKDOWN
 You can do a lot with it:
 
-* `ri Class` -- looks up the class documentation and shows all the methods available.
-* `ri Class.method` -- looks up a specific method on a class or module.
+* `ri Class` -- looks up the class documentation and shows all the methods available
+* `ri Class.method` -- looks up a specific method on a class or module
 * `ri method` -- searches all classes for matching methods
 
 ### irb

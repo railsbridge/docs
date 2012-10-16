@@ -1,7 +1,7 @@
 goals {
   message "Your friends recommended two changes for the site:"
   goal "Don't show the description on the list page"
-  goal "Make the title a link and when its clicked show the description"
+  goal "Make the title a link and when it's clicked show the description"
 }
 
 steps {
