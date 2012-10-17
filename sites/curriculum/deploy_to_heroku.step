@@ -43,7 +43,7 @@ end
 git add .
 git commit -m "Changed Gemfile for heroku"
     SHELL
-    tip "there is a period after the word add in the third line"
+    tip "There is a period after the word add in the third line."
   end
 
   step "Push changes to heroku" do
@@ -66,7 +66,7 @@ explanation {
     which is made for the type of database that heroku uses.
 
   * Bundler is how Ruby projects keep track of the gems that they use. We told
-    bundler what we wanted to use in the `Gemfile`, now we need make sure those
+    bundler what we wanted to use in the `Gemfile`, now we need to make sure those
     gems are installed. Since we don't have the type of database heroku does, we
     skip the production gems. Don't worry though! Bundler still logs them so
     Heroku will install them when they get your code.

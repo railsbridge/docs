@@ -22,17 +22,17 @@ steps {
   step {
     console "rails generate scaffold topic title:string description:text"
     message <<-MARKDOWN
-* `generate scaffold` tells rails to create everything necessary to get up and running with topics
-* `topic` tells rails the name of the new model
+* `generate scaffold` tells rails to create everything necessary to get up and running with topics.
+* `topic` tells rails the name of the new model.
 * `title:string` says that topics have a title, which is a string.
-* `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too).
+* `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too.)
     MARKDOWN
     message "If you want, take some time to poke around the files listed in this step."
   }
 
   step {
     console "rake db:migrate"
-    message "tells rails to update the database to include a table for our new model"
+    message "This tells rails to update the database to include a table for our new model."
   }
 }
 
@@ -60,7 +60,7 @@ explanation {
   h3 "Controller"
   message <<-MARKDOWN
 * acts as the glue between the models and the views
-* combines data from multple models
+* combines data from multiple models
 * summarizes and filters data
   MARKDOWN
 

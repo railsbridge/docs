@@ -9,7 +9,7 @@ goals {
   * **U**pdate existing records
   * **D**estroy or delete records
 
-  Because these 4 actions (CRUD) are so common rails includes the scaffold command to make creating them easier.
+  Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
   MARKDOWN
 }
 
@@ -39,7 +39,7 @@ steps {
   step {
     message <<-MARKDOWN
   * Click on "back"
-  * You should see the topic list again, this time with your new topic listed
+  * You should see the topic list again, this time with your new topic listed:
 
   ![list with topic](img/Seattle_list_with_topic.png)
 
@@ -57,10 +57,10 @@ explanation {
   Let's take a closer look at some of the files rails created:
 
   * `app/models/topic.rb`
-    * This file contains code for our topic model. If you look at it
-      its nearly blank. Creating, reading, updating, and deleting
-      records is built into rails.
-    * If you've written HTML before many lines in the views should
+    * This file contains code for our topic model. If you look at it,
+      it's nearly blank. Creating, reading, updating, and deleting
+      records are built into rails.
+    * If you've written HTML before, many lines in the views should
       look familiar. Rails views are HTML with some extra code added
       to display data from the database.
 
@@ -71,13 +71,13 @@ explanation {
 
   * `app/views/topics/index.html.erb`
     * This is the code for the page that lists all the topics.
-    * Index is the name given to the "default" page for a website or a
-      section of a website. When you navigate to
+    * Index is the name given to the "default" page for a web site or a
+      section of a web site. When you navigate to
       http://localhost:3000/topics the topics index page is what is
       sent to your computer.
 
   * `app/views/topics/show.html.erb`
-    * This the page you get when you click the "show" link on the
+    * This is the page you get when you click the "show" link on the
       "Listing topics" page.
 
   * `app/views/topics/new.html.erb`
@@ -96,7 +96,7 @@ explanation {
   * Challenge question: Can you find the line of code in new.html.erb
     and edit.html.erb that makes the form partial appear?
 
-  * app/controllers/topics_controller.rb
+  * `app/controllers/topics_controller.rb`
     * This is the controller file that rails created as part of the scaffold
     * If you look you'll see a method (a line beginning with
       <code>def</code>) for each of the views listed above (except
