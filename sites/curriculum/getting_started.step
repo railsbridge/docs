@@ -3,7 +3,7 @@ img :src => "img/Start_page.png", :alt => "Start Page"
 
 goals do
   goal "Create Your New Application"
-message "Let's get started! By the end of this step, we'll have  brand-spankin'-new (empty) rails app."
+message "Let's get started! By the end of this step, we'll have a brand-spankin'-new (empty) rails app."
 end
 
 steps do
@@ -64,7 +64,7 @@ steps do
     }
     tr {
       td " public/"
-      td " The only folder seen to the world as-is.  This is where your images, JavaScript,  stylesheets (CSS), and other static files go"
+      td " The only folder seen to the world as-is.  This is where your images, JavaScript,  stylesheets (CSS), and other static files go."
     }
   end
 

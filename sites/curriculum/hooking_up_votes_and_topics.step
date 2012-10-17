@@ -10,7 +10,7 @@ goals {
 steps {
 
   step {
-    message "Edit app/models/topic.rb so that it looks like this:"
+    message "Edit `app/models/topic.rb` so that it looks like this:"
 
     source_code :ruby, <<-RUBY
 class Topic < ActiveRecord::Base
@@ -21,7 +21,7 @@ end
   }
 
   step {
-    message "Edit app/models/vote.rb so that it looks like this:"
+    message "Edit `app/models/vote.rb` so that it looks like this:"
     source_code :ruby, <<-RUBY
 class Vote < ActiveRecord::Base
   attr_accessible :topic_id

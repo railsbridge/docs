@@ -29,7 +29,7 @@ my_variable + 2
 my_variable * 3
     RUBY
 
-    message "Ruby remembers that we are holding a `5` with the words `my_variable` and can use that `5` do to math."
+    message "Ruby remembers that we are holding a `5` with the words `my_variable` and can use that `5` to do math."
 
   end
 
@@ -43,7 +43,7 @@ my_variable * 3
   step do
     console 'fruits = ["kiwi", "strawberry", "plum"]'
 
-    message "Variables can also hold more than one value. Here were using the variable fruits to hold a collection of fruit names. This type of collection is called an array."
+    message "Variables can also hold more than one value. Here we're using the variable `fruits` to hold a collection of fruit names. This type of collection is called an array."
 
   end
 
