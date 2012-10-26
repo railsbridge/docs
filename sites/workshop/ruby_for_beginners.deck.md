@@ -184,6 +184,9 @@ Now you're back to the terminal's prompt.
 
 What is happening on the lines beginning with `=>` ?
 
+* Setting a variable equal to something is called "assignment." In the above examples, we are assigning my_variable to 5 and my_other_variable to "hi."
+* What types of information can we hold in a variable? (see next slide for answers)
+
 !SLIDE
 ## Variable
 ### Variable Assignment
@@ -231,11 +234,13 @@ What did you learn?
 
 !SLIDE bullets
 # Common types of information
-
-* String
-* Number
-* Collections
-* Booleans
+* Variables can hold many types of information, including:
+	* String
+	* Number
+	* Collections
+	* Booleans
+	
+* Don't know what these are? Don't worry! We're about to find out!
 
 !SLIDE bullets
 ## String
@@ -255,37 +260,45 @@ A string is text. It must be wrapped in a matched pair of quotation marks.
 What is happening on the last two lines?  How would you solve it?
 
 
-!SLIDE
-## Number
-### Integer
-### Float
+### exercise
+* Create variables called first_name, last_name, and favorite_color.
+* Assign the variables to strings.
+* Can you print out a sentence that reads "Hi, my name is (first name) (last name) and my favorite color is (favorite color)." with these variables? 
+	* Hint: you can use a "+" to add strings together.
+
 
 !SLIDE
-## Number
-### Integer
-"Whole number" (no decimal)
-
-```
-  42
-  101
-  0
-```
-
-!SLIDE
-## Number
-### Float
-"Real number" (decimal)
-
-```
-  4.99
-  98.7
-  6000.0
-```
+## Numbers
+* Numbers without decimal points are called **integers** and numbers with decimal points are called **floats**.
+* Examples of integers:	
+	* 0
+	* -105
+	* 898989898
+	* 2
+* Examples of floats:	
+	* .0.0
+	* -105.56
+	* .33
+	* .00004
+* You can perform operations on both types of numbers with these characters: +, -, /, *
+	
+### exercises	
+* Try dividing an integer by an integer. Try dividing an integer by a float. How are the results different? 
+* Create two integer variables called num1 and num2 and assign them your favorite numbers.
+* Next, compute the sum, difference, quotient, and product of these two numbers and assign these values to variables called sum, difference, quotient, and product, respectively.
 
 !SLIDE
 ## Collection
-### Array
-### Hash
+### Collection types: Array, Hash
+
+ * In the following slides, we will cover the following topics:
+	* Definition of an Array
+	* Array syntax
+	* Array indexing
+	* Array methods
+	* Definition of a hash
+	* Hash syntax
+	* Hash indexing
 
 !SLIDE
 ## Collection
@@ -297,6 +310,10 @@ Each array must be surrounded by `square braces` aka `square brackets`. A comma 
     @@@ Ruby
     > fruits = ["kiwi", "strawberry", "plum"]
     => ["kiwi", "strawberry", "plum"]
+
+### exercises	
+* Make your own array and name it grocery_list. 
+* Include at least 5 items from your grocery list in the array.
 
 !SLIDE
 ## Collection
@@ -312,6 +329,10 @@ Members are stored in order. Each can be accessed by its `index`. Ruby starts co
     => "strawberry"
     > fruits[2]
     => "plum"
+
+### exercises	
+* Still have your grocery_list array? Good, because we're going to use it in this exercise.
+* What is at index zero in your grocery_list array? How about index 5? Guess the answers and then use the syntax in the examples above (eg: fruits[0]) to see if your guesses were right. 
 
 !SLIDE
 ## Collection
@@ -340,6 +361,13 @@ A hash is surrounded by `curly braces` aka `curly brackets`. A comma separates e
 In real life, what lists do we make in key/value pairs?
 
 
+### exercises	
+* Define a Hash variable called my_info which has the following keys:
+	* "first_name"
+	* "last_name"
+	* "hometown"
+	* "favorite_food"
+
 !SLIDE
 ## Collection 
 ### Hash
@@ -352,6 +380,27 @@ Values don't have to be unique.
     @@@ Ruby
     > states["CA"]
     => "California"
+
+### exercises	
+* Add the key "good_food" to your my_info hash and give it the same value as your favorite_food key. What happens?
+* Add a second "favorite_food" key to your my_info hash. What happens when you print out the has hash again? Why?
+
+
+!SLIDE
+## Methods
+
+### things that do stuff.
+
+* "If objects (like strings, integers, and floats) are the nouns in the Ruby language, then methods are like the verbs." - Chris Pine's "Learn to Program"
+* Methods are called (used) with a "."  
+ 	* Example: 5.to_s (to_s is the method)
+* As it turns out, 5 + 5 is really just a shortcut way of writing 5.+ 5.
+* Each data type (string, integer, float) has a set of built in methods. You can see all of the string methods here: http://ruby-doc.org/core-1.9.3/String.html (there are tons - don't worry about memorizing them, just good to know where you can go to find out more)
+
+### exercises
+* Create a String variable called old_string and assign it the value "Ruby is cool"
+* Use String methods to modify the old_string variable so that it is now "LOOC SI YBUR" and assign this to another variable called new_string.
+ * Hint: look at the string methods "upcase" and "reverse"
 
 !SLIDE
 ## Boolean
@@ -366,6 +415,11 @@ A boolean is one of only two possible values: `true` or `false`.
 ```
 
 ( `==` means "is equal to". _More on that later._)
+
+### exercises	
+* Create a variable named favorite_color and assign it to your favorite color.
+* Create a variable named not_favorite_color and assign it to a different color.
+* Test to see if these variables are equal.
 
 !SLIDE
 ## Operators
@@ -385,29 +439,15 @@ A boolean is one of only two possible values: `true` or `false`.
   => ["kiwi", "strawberry", "lychee"]
 ```
 
-!SLIDE
-## Loop
-### Does something repeatedly
-#### Single-line syntax
+### exercises	
 
-We can put a single-line action into curly braces.
-
-```
-  >> fruits.each {|fruit| puts fruit}
-  kiwi
-  strawberry
-  plum
-  => ["kiwi", "strawberry", "plum"]
-```
-
-(`puts` means to print the result.  _More on that later._)
+* Create an array called "vegetables" than contains 3 vegetables you like and 1 vegetable you don't like.
+* Using the vegetables array, create an array called "my_vegetables" that contains only the vegetables you like.
+* Extra: can you use the first two arrays to create a third array called "your_vegetables" that only contains the vegetable you don't like?
 
 !SLIDE
 ## Loop
 ### Does something repeatedly
-#### Multi-line syntax
-
-Put a multi-line action between `do` and `end`
 
 ```
   > fruits.each do |fruit|
@@ -419,6 +459,18 @@ Put a multi-line action between `do` and `end`
   => ["kiwi", "strawberry", "plum"]
 ```
 On the second line, what does `?>` indicate?
+
+### exercises
+* Create an array of 4 places you would like to visit.
+* Print out each of these places using a loop.
+	* Example: 
+
+```
+"I would like to visit Barcelona"
+"I would like to visit Antigua"
+"I would like to visit Alaska"
+"I would like to visit New Orleans"
+```
 
 !SLIDE
 ## Conditional
@@ -433,6 +485,10 @@ On the second line, what does `?>` indicate?
   => ["kiwi", "strawberry", "plum"]
 ```
 
+### exercises 
+* Create an array called "class" that contains the names of some of the people in your Railsbridge class. Make sure you include your own name.
+* Using your class array, create a conditional that prints "My Name is (your name)" for your name only.
+
 !SLIDE
 # Running Your Code
 
@@ -443,37 +499,13 @@ Ruby is an interpreted language. Its code can't run by the computer directly.  I
 
 The most common interpreter is Matz's Ruby Interpreter ("MRI").  There are many others.
 
-There are various ways to run code through a Ruby interpreter:
-
-!SLIDE commandline
-## Pass code to interpreter
-### *Directly*...
-
-```
-  $ ruby -e "puts 'Hello World'"
-  Hello World
-```
-
-!SLIDE commandline
-## Pass code to interpreter
-### ...Or via *IRB*...
-
-    @@@ Ruby
-    > puts 'Hello World'
-    => Hello World
-
-How is interactive Ruby different from speaking directly to the interpreter?
-
-
-!SLIDE
-## Pass code to interpreter
-### ...Or via a *file*...
-
-Why use a file? What's different from, say, irb?
+There are various ways to run code through a Ruby interpreter. We were using IRB earlier and now we will use a file.
 
 !SLIDE
 ## Running code from a file
 ### Create the file
+
+* Why use a file? What's different from, say, irb?
 
 Note which folder your terminal is currently in, this is your `working directory`
 
@@ -511,11 +543,7 @@ In your text editor, create a file named `my_program.rb` inside your working dir
 ```
 
 When might it be useful to do this?
-
-
-
-
-
+ 
 
 !SLIDE subsection
 # Your Own Command Line Program
