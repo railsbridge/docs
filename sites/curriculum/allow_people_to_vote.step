@@ -69,4 +69,6 @@ explanation {
   MARKDOWN
 }
 
-next_step "commit_and_push_to_heroku_again"
+consider_deploying
+
+next_step "setting_the_default_page"
