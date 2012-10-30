@@ -83,6 +83,9 @@ div.back:before {
 .explanation>h1 {
   background-color: #C8FFC9;
 }
+.deploying>h1 {
+  background-color: #B0DEE7;
+}
 
 .console > pre {
   border: 4px solid #dde;
@@ -149,6 +152,15 @@ div.back:before {
     end
   end
 
+  def consider_deploying
+    div :class => "deploying" do
+      h1 "Deploying"
+      blockquote do
+        message "Before the next step, you could try deploying your app to Heroku!"
+        link 'deploying_to_heroku'
+      end
+    end
+  end
   
   def step name = nil, options = {}
     num = next_step_number
@@ -160,13 +172,7 @@ div.back:before {
         prefix "Step #{num}: "
         text name
       end
-      if block_given?
-        @step_stack.push 0
-        blockquote do
-          yield
-        end
-        @step_stack.pop
-      end
+      _render_inner_content &Proc.new if block_given?
     end
   end
 
@@ -190,13 +196,14 @@ div.back:before {
     end
   end
 
+  def situation name
+    h1 name
+    _render_inner_content &Proc.new if block_given?
+  end
+
   def choice name = "between..."
     step "Choose #{name}" do
-      blockquote do
-        @step_stack.push 0
-        yield
-        @step_stack.pop
-      end
+      _render_inner_content &Proc.new if block_given?
     end
   end
 
@@ -207,14 +214,7 @@ div.back:before {
       span "Option #{num}: "
       text name
     end
-    if block_given?
-      blockquote do
-        @step_stack.push 0
-        yield # if block_given?
-        @step_stack.pop
-      end
-    end
-
+    _render_inner_content &Proc.new if block_given?
   end
 
   def section text
@@ -304,5 +304,14 @@ div.back:before {
     src = "\n:::#{lang}\n#{src}" if lang
     pre src, :class => "code"
   end
-end
 
+  private
+
+  def _render_inner_content
+    blockquote do
+      @step_stack.push 0
+      yield
+      @step_stack.pop
+    end
+  end
+end

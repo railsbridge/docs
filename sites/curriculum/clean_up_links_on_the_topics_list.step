@@ -39,4 +39,6 @@ explanation {
   MARKDOWN
 }
 
-next_step "commit_and_push_to_heroku_yet_again"
+consider_deploying
+
+next_step "credits_and_next_steps"

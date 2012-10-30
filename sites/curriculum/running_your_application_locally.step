@@ -30,4 +30,6 @@ explanation do
   message "Control+C is a way of closing or cancelling terminal programs. Since rails server runs forever, you need to interrupt it with Control+C."
 end
 
-next_step "deploy_to_heroku"
+consider_deploying
+
+next_step "creating_a_migration"
