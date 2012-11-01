@@ -1,0 +1,36 @@
+requirements do
+message <<-MARKDOWN
+* The user should be able to create a post with a name, author, date published, and content.
+* The complete post should appear on its own page (aka its show page).
+* The user should be able to see each post’s name, author, and date published on the overview page (aka the index page).
+* The name of the post should link to the post show page.
+* The index page should include a “New Post” link or button.
+* If the user doesn’t submit all required fields, they should see some error messaging, but shouldn’t lose any of their work.
+MARKDOWN
+end
+
+discussion do
+message <<-MARKDOWN
+* How do you create a resource? What parameters do you need to pass?
+* Then: what did rails make for you when you called resource? Find all the new files. Maybe even list them out on a whiteboard.
+* You’re gonna need a posts controller, a post model, and probably a couple of different views. What’s the best order to make them in?
+* The command rake routes: what does it give you? How is it helpful?
+* What is Active Record?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Active Record Validations and Callbacks http://guides.rubyonrails.org/active_record_validations_callbacks.html
+* RailsGuides - Layout and Rendering in Rails http://guides.rubyonrails.org/layouts_and_rendering.html
+* RailsGuides - Form Helpers http://guides.rubyonrails.org/form_helpers.html
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* Rails has a built-in way to note when something was stored in the database. Probably handy for showing the date / time a post was created.
+MARKDOWN
+end
+
+next_step "add_commenting"

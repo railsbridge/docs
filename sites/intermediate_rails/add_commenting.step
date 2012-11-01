@@ -1,0 +1,23 @@
+requirements do
+message <<-MARKDOWN
+* The user should be able to reply to a post on the post’s show page.
+* The user should see all the replies to a post on the post’s show page.
+* If the user doesn’t submit all required fields, they should see some error messaging, but they shouldn’t lose any of their work.
+MARKDOWN
+end
+
+discussion do
+message <<-MARKDOWN
+* What is a nested resource? When is it appropriate and how does it help?
+* How do the replies_controller and posts_controller interact?
+* What should happen to the routes file for this nesting business to work?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Rails Routing from the Outside In http://guides.rubyonrails.org/routing.html
+MARKDOWN
+end
+
+next_step "add_other_features_of_your_choosing"

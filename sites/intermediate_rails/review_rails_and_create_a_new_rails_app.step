@@ -1,0 +1,19 @@
+requirements do
+message <<-MARKDOWN
+* Make a new rails app & open it up in your text editor of choice.
+* Know where the views, models, and controllers live.
+* Show your teacher, TA, or neighbor where the routes file is.
+* Start up a rails server and go to the default page in your favorite browser.
+MARKDOWN
+end
+
+discussion do
+message <<-MARKDOWN
+* What is MVC? Somebody should probably whiteboard it.
+* After you’ve created your app, you can look through some of the most important files and directories that rails made for you.
+* What is a route?
+* We’re using `rails g resource` instead of `rails g scaffold` because it forces you, the developer, to do more understanding-building brain work. The teacher/TAs can perhaps comment on what they would do in the real world and their thoughts on the excellence of this choice for learning-purposes.
+MARKDOWN
+end
+
+next_step "install_devise_and_make_a_static_home_page"
