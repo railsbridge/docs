@@ -184,7 +184,7 @@ git commit -m "Updates for heroku deployment"
 
     console "git push heroku master"
 
-    message "It may ask: \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" Type <code>yes</code> and hit *<enter>*."
+    message "It may ask: \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" Type <code>yes</code> and hit *enter*."
 
     result <<-OUTPUT
 The authenticity of host 'heroku.com (75.101.145.87)' can't be established.
