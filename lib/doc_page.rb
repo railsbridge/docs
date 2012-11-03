@@ -250,7 +250,7 @@ class DocPage < Erector::Widgets::Page
     }
 
     div(:class=>:bottom) {
-      p "Railsbridge InstallFest"
+      p "Railsbridge Docs"
       p do
         text "Source: "
         url "https://github.com/railsbridge/docs"
