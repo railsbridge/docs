@@ -149,7 +149,7 @@ class Contents < Erector::Widget
   end
 
   def content
-    div class: "toc" do
+    div id: "table_of_contents", class: "toc" do
       h1 "Contents"
       toc_list hierarchy
 

@@ -1,6 +1,7 @@
 require 'erector'
 require "github_flavored_markdown"
 require "contents"
+require "site_index"
 
 class InstallfestExternalRenderer < ExternalRenderer
   # render <style> tags plainly, without "text/css" (which browsers will assume by default)
@@ -216,8 +217,9 @@ class DocPage < Erector::Widgets::Page
 
   def top_links
     [
+      TopLink.new(:name => "sites", :href => "#", :onclick => "$('#site_index').toggle(); return false;"),
       TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
-      TopLink.new(:name => "toc", :href => "#", :onclick => "$('div.toc').toggle(); return false;"),
+      TopLink.new(:name => "toc", :href => "#", :onclick => "$('#table_of_contents').toggle(); return false;"),
       TopLink.new(:name => "git", :href => git_url),
     ]
   end
@@ -233,6 +235,7 @@ class DocPage < Erector::Widgets::Page
     }
 
     widget Contents, site_name: site_name
+    widget SiteIndex
 
     div(:class=>:main) {
       h1 doc_title, :class=>"doc_title"
