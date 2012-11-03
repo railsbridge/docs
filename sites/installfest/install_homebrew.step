@@ -1,5 +1,5 @@
 
-console %q{/usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"}
+console %q{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
 
 important "If that doesn't work, visit <https://github.com/mxcl/homebrew/wiki/installation> and follow the instructions there."
 
