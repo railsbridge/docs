@@ -11,7 +11,7 @@ step "Download KomodoEdit" do
   link "intel_or_ppc_mac"
 
   option "Intel Mac CPU" do
-    message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-macosx-x86.dmg)"
+    message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/7.1.3/Komodo-Edit-7.1.3-11027-macosx-x86.dmg)"
   end
 
   option "PowerPC" do
