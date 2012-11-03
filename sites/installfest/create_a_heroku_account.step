@@ -17,7 +17,7 @@ end
 step "Install the heroku gem" do
 
   option "if you are using rvm (on OS X or Linux)" do
-    console "rvm @global gem install heroku"
+    console "rvm @global exec gem install heroku"
   end
 
   option "otherwise (on Windows)" do
