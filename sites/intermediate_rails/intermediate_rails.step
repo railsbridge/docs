@@ -14,13 +14,14 @@ message <<-MARKDOWN
 ## What’s Going to Happen?
 * We’re going to build a message board system, where there are posts on the front page and you click through to see the original post plus discussion below.
 
-* We’ve divided this into five challenges (with one bonus item):
+* We’ve divided this into six challenges (with one bonus item):
   * Challenge 0: review rails & create your app
-  * Challenge 1: install devise & make a static home page
-  * Challenge 2: make it pretty with Twitter bootstrap
-  * Challenge 3: add posts functionality
-  * Challenge 4: add commenting
-  * Challenge 5: other features of your choice
+  * Challenge 1: make a static home page
+  * Challenge 2: install devise
+  * Challenge 3: make it pretty with Twitter bootstrap
+  * Challenge 4: add posts functionality
+  * Challenge 5: add commenting
+  * Challenge 6: other features of your choice
 
 * Each time you get your app into a functional state, before adding any more features, COMMIT TO GIT! The new features will probably break things, which is neat, but you’ll want to be able to roll back to a prior version if necessary.
 

@@ -15,4 +15,4 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
-next_step "install_devise_and_make_a_static_home_page"
+next_step "make_a_static_home_page"
