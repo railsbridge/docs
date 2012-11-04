@@ -20,6 +20,7 @@ end
 
 tools_and_references do
 message <<-MARKDOWN
+* Rails Guides has a nice overview of controllers: <http://guides.rubyonrails.org/action_controller_overview.html>.
 MARKDOWN
 end
 
