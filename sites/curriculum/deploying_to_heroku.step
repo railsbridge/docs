@@ -46,7 +46,7 @@ end
 git add .
 git commit -m "Changed Gemfile for heroku"
     SHELL
-    tip "There is a period after the word add in the third line."
+    tip "There is a period after the word add in the first line."
   end
 end
 
