@@ -1,6 +1,6 @@
 requirements do
 message <<-MARKDOWN
-* The site should use Bootstrap for superfun modern look. 
+* The site should use Bootstrap for a superfun modern look. 
 * When logged in, the user's email address shoudl appear in the upper-right corner of a navigation bar.
 MARKDOWN
 end

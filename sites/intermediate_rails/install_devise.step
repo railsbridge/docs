@@ -14,13 +14,14 @@ discussion do
 message <<-MARKDOWN
 * What is devise?
 * What files did devise add to your rails app?
+* How will you add the log out link? What's the syntax for a DELETE action?
 MARKDOWN
 end
 
 tools_and_references do
 message <<-MARKDOWN
 * Devise: authentication magic! Learn more about it here: https://github.com/plataformatec/devise
- * In the readme, scroll down to "Getting Started". You'll need to add it to your gem file. If you don't remember how, ask your neighbor! 
+ * In the readme, scroll down to "Getting Started." You'll need to add it to your gem file. If you don't remember how, ask your neighbor! 
  * You probably don't want to just start typing commands from the devise readme. You probably want to read through that whole section first. (i.e., don't skip bundle!)
 MARKDOWN
 end
@@ -32,6 +33,7 @@ message <<-MARKDOWN
 * When you run rails generate devise:install, you get four instructions for things to configure. 2 & 3 are good to do. 
 * The routes file goes through many common types of routes in the comments. This is also your friend.
 * Any time you generate a model in rails, you can use Rails Console to look at that model's 
+* Devise has some magic that will help you with your logout link. Run rake routes and look for a route that helps you sign out. 
 MARKDOWN
 end
 
