@@ -1,6 +1,6 @@
 requirements do
 message <<-MARKDOWN
-* The user should be able to create a post with a name, author, date published, and content.
+* The user should be able to create a post with a name, author, date published, and content. The author should be the current user. 
 * The complete post should appear on its own page (aka its show page).
 * The user should be able to see each post’s name, author, and date published on the overview page (aka the index page).
 * The name of the post should link to the post show page.
@@ -29,7 +29,7 @@ end
 
 hints do
 message <<-MARKDOWN
-* 
+* Don't hand code the form! You don't have to! Rails will help. 
 * Rails has a built-in way to note when something was stored in the database. Probably handy for showing the date / time a post was created.
 MARKDOWN
 end
