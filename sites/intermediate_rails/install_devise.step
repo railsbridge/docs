@@ -38,4 +38,4 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
-next_step "make_it_pretty_with_twitter_bootstrap"
+next_step "make_it_pretty_with_bootstrap"

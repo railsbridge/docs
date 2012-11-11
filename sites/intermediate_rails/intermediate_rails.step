@@ -2,8 +2,8 @@ message <<-MARKDOWN
 # Let's build a message board!
 
 ## Assumptions made by this curriculum
-* You’ve gone through the standard RailsBridge installfest and have all the the various Rubies, Railses, Gits, RVMs, a text editor, and anything else in the installfest.
-* You’ve gone through the RailsBridge “Suggestotron” curriculum at least once before, or maybe a couple of times, or maybe you feel decently comfortable with Rails for some other reason.
+* You’ve gone through the standard RailsBridge installfest and have successfully completed the [Get a Sticker](http://installfest.railsbridge.org/installfest/get_a_sticker) step.
+* You’ve gone through the RailsBridge [Suggestotron curriculum](http://installfest.railsbridge.org/curriculum/) at least once before, or maybe a couple of times, or maybe you feel decently comfortable with Rails for some other reason.
 * You want to learn more Rails!!!
 
 ## Goals
@@ -14,14 +14,14 @@ message <<-MARKDOWN
 ## What’s Going to Happen?
 * We’re going to build a message board system, where there are posts on the front page and you click through to see the original post plus discussion below.
 
-* We’ve divided this into six challenges (with one bonus item):
-  * Challenge 0: review rails & create your app
-  * Challenge 1: make a static home page
+* We’ve divided this into challenges:
+  * Challenge 1: create a new rails app with a static home page
   * Challenge 2: install devise
-  * Challenge 3: make it pretty with Twitter bootstrap
-  * Challenge 4: add posts functionality
-  * Challenge 5: add commenting
-  * Challenge 6: other features of your choice
+  * Challenge 3: make it pretty with bootstrap
+  * Challenge 4: add pages to create and look at individual posts
+  * Challenge 5: make a posts index page
+  * Challenge 6: add commenting
+  * Challenge 7: other features of your choice
 
 * Each time you get your app into a functional state, before adding any more features, COMMIT TO GIT! The new features will probably break things, which is neat, but you’ll want to be able to roll back to a prior version if necessary.
 
