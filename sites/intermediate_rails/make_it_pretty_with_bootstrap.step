@@ -27,9 +27,9 @@ hints do
 message <<-MARKDOWN
 * Don't forget to read the readme!
 * You’ll need to make your application.css file into a .scss file. (just add .scss to the end!)
-* There are a couple of Bootstrappy ways to move text around — you'll want to put your look for "Component alignment" in the docs. 
+* There are a couple of Bootstrappy ways to move text around — look for "Component alignment" in the docs. 
 * Devise has a helper method for accessing the current user's info - go back to the devise readme to find it.
 MARKDOWN
 end
 
-next_step "add_posts_functionality"
+next_step "add_pages_to_create_and_look_at_individual_posts"
