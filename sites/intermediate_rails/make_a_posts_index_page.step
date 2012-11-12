@@ -21,6 +21,4 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
-end
-
 next_step "add_replying"
