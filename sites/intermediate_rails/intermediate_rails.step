@@ -20,8 +20,9 @@ message <<-MARKDOWN
   * Challenge 3: make it pretty with bootstrap
   * Challenge 4: add pages to create and look at individual posts
   * Challenge 5: make a posts index page
-  * Challenge 6: add commenting
-  * Challenge 7: other features of your choice
+  * Challenge 6: add replying
+  * Challenge 7: inline replying on a post
+  * Challenge ∞: other features of your choice
 
 * Each time you get your app into a functional state, before adding any more features, COMMIT TO GIT! The new features will probably break things, which is neat, but you’ll want to be able to roll back to a prior version if necessary.
 

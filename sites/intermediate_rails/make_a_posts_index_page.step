@@ -4,6 +4,7 @@ message <<-MARKDOWN
 * The name of the post should link to the post show page.
 * The index page should include a “New Post” link or button.
 MARKDOWN
+  img class: 'noborder', src: 'img/post_index.png'
 end
 
 discussion do
@@ -26,4 +27,4 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
-next_step "add_commenting"
+next_step "add_replying"

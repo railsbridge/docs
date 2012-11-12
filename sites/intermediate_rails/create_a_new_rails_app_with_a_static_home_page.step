@@ -1,12 +1,9 @@
-section 'mockup' do
-  img class: 'noborder', src: 'img/static_home_page.png'
-end
-
 requirements do
 message <<-MARKDOWN
 * You should have a new rails app with with a static home page that's under your control. Make sure the controller for this page is called **HomeController**.
 * You, the developer, should explain to a teacher, TA, or fellow student how Rails knows to render the home view.
 MARKDOWN
+  img class: 'noborder', src: 'img/static_home_page.png'
 end
 
 discussion do

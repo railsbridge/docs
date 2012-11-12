@@ -1,4 +1,9 @@
-  section 'mockup' do
+requirements do
+message <<-MARKDOWN
+* The user should be able to create a post with a name, author, date published, and content. The author should be the current user. 
+* The complete post should appear on its own page (aka its show page).
+* If the user doesn’t submit all required fields, they should see some error messaging, but shouldn’t lose any of their work.
+MARKDOWN
   table do
     tr do
       td do
@@ -17,14 +22,6 @@
       end
     end
   end
-end
-
-requirements do
-message <<-MARKDOWN
-* The user should be able to create a post with a name, author, date published, and content. The author should be the current user. 
-* The complete post should appear on its own page (aka its show page).
-* If the user doesn’t submit all required fields, they should see some error messaging, but shouldn’t lose any of their work.
-MARKDOWN
 end
 
 discussion do

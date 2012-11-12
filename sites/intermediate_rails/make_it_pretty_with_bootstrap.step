@@ -1,12 +1,9 @@
-section 'mockup' do
-  img class: 'noborder', src: 'img/header.png'
-end
-
 requirements do
 message <<-MARKDOWN
 * The site should use Bootstrap for a superfun modern look. 
 * When logged in, the user's email address shoudl appear in the upper-right corner of a navigation bar.
 MARKDOWN
+  img class: 'noborder', src: 'img/header.png'
 end
 
 discussion do
