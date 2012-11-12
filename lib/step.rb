@@ -16,7 +16,15 @@ class Step < Erector::Widget
     padding-left: 1.5em;
     margin-left: .25em;
   }
+}
 
+img.noborder {
+  border: none;
+  display: inline;
+}
+
+.centered {
+  text-align: center;
 }
 
 .message img.icon {

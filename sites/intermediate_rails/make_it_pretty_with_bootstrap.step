@@ -1,3 +1,7 @@
+section 'mockup' do
+  img class: 'noborder', src: 'img/header.png'
+end
+
 requirements do
 message <<-MARKDOWN
 * The site should use Bootstrap for a superfun modern look. 

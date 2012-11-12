@@ -1,3 +1,24 @@
+  section 'mockup' do
+  table do
+    tr do
+      td do
+        h2 'Create View', class: 'centered'
+      end
+      td do
+        h2 'Show View', class: 'centered'
+      end
+    end
+    tr do
+      td do
+        img class: 'noborder', src: 'img/create_post.png'
+      end
+      td do
+        img class: 'noborder', src: 'img/show_post.png'
+      end
+    end
+  end
+end
+
 requirements do
 message <<-MARKDOWN
 * The user should be able to create a post with a name, author, date published, and content. The author should be the current user. 
