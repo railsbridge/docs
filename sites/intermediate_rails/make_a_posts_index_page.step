@@ -21,10 +21,6 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
-hints do
-message <<-MARKDOWN
-
-MARKDOWN
 end
 
 next_step "add_replying"
