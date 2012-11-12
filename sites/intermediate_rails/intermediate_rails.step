@@ -33,7 +33,6 @@ MAJORLY IMPORTANT NOTE: We called the sections challenges because they are chall
 * Requirements in this curriculum are not entirely divorced from what a requirement is in the agile software development methodology — things that should be in the application as defined by whoever is designing/deciding things about the product. Except here, we’ve also thrown in some non-application requirements, like the ability to explain a concept to a peer.
 * Discussions are led by the teacher; this is the closest this curriculum gets to lecture-y teaching.
 * Hints are what they sound like, as are Tools & References.
-* You'll want to spend the bulk of the day on challenges three and four; there's a lot of Rails to do in those two.
 MARKDOWN
 
 next_step "create_a_new_rails_app_with_a_static_home_page"
