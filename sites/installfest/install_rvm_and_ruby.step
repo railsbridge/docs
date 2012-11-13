@@ -12,11 +12,11 @@ step "Configure your shell" do
   message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
 
   verify do
-    console "type rvm | head -1"
+    console "type rvm | head -1"    //One not L
     result "rvm is a function"
 
     console "rvm -v"
-    result "rvm 1.14.5 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
+    result "rvm 1.16.3 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
   end
   
 end
