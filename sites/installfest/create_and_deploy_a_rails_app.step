@@ -57,7 +57,7 @@ message <<-MARKDOWN
 
 * In your browser, go to <http://localhost:3000>
 
-message "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes."
+* In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes.
 
 ![Successful Rails Install](successful-rails-install.jpg)
 
