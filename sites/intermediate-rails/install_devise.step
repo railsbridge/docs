@@ -5,8 +5,6 @@ message <<-MARKDOWN
 * Once logged in, the user should see a static page with some kind of greeting.
 * The page should display the logged-in user's email address and a link to log out.
 * You, the developer, should explain to a teacher, TA, or fellow student how Rails knows to render the home view.
-
-NB: This is all written assuming you run rails g controller home to create the home controller
 MARKDOWN
 end
 
