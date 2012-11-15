@@ -22,9 +22,9 @@ end
 class DocPage < Erector::Widgets::Page
   include GithubFlavoredMarkdown
 
-  needs :site_name, :doc_title, :doc_path
+  needs :site_name, :doc_title, :doc_path, :page_name
   needs :back => nil
-  attr_reader :site_name, :doc_title
+  attr_reader :site_name, :doc_title, :page_name
 
   needs :src
   attr_reader :src
@@ -147,6 +147,11 @@ class DocPage < Erector::Widgets::Page
     font-weight: bold;
   }
 
+  .toc .current {
+    font-weight: bold;
+    padding: 1px 2px
+  }
+
   /**/
 
   .main {
@@ -234,8 +239,8 @@ class DocPage < Erector::Widgets::Page
       h1 { a site_title, :href => "/#{site_name}" }
     }
 
-    widget Contents, site_name: site_name
-    widget SiteIndex
+    widget Contents, site_name: site_name, page_name: page_name
+    widget SiteIndex, site_name: site_name
 
     div(:class=>:main) {
       h1 doc_title, :class=>"doc_title"

@@ -12,6 +12,7 @@ describe StepPage do
     src = "step 'hello'"
     page = StepPage.new(src: src,
       site_name: "greetings",
+      page_name: 'hello',
       doc_title: "Hello",
       doc_path: "/tmp/hello.step"
     )

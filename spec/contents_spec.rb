@@ -6,7 +6,7 @@ require "#{here}/../lib/contents"
 
 describe Contents do
   before :all do
-    @meals_toc = Contents.new(site_name: 'meals', site_dir: "#{here}/sites/meals")
+    @meals_toc = Contents.new(site_name: 'meals', site_dir: "#{here}/sites/meals", page_name: 'clean_up')
   end
 
   it "scans for subpage links" do
@@ -57,5 +57,24 @@ describe Contents do
 
   it "finds orphaned pages" do
     @meals_toc.orphans.should == ["orphaned_page"]
+  end
+
+  it "renders the current page as bold text, all others as links" do
+    toc_html = Nokogiri.parse(@meals_toc.to_html)
+
+    current_page = toc_html.css(".current").first.text
+    current_page.should == 'Clean Up'
+
+    other_pages = toc_html.css('a').map(&:text)
+    other_pages.should =~ [
+        "Breakfast",
+        "Eat A Meal",
+        "Find Some Vegetables",
+        "Meals",
+        "Omnivorous",
+        "Orphaned Page",
+        "Prepare A Meal",
+        "Vegetarian"
+    ]
   end
 end

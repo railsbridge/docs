@@ -1,10 +1,13 @@
 
 class Contents < Erector::Widget
   attr_accessor :site_dir
-  needs :site_name, :site_dir => nil
+  attr_accessor :page_name
+  needs :page_name, :site_name, :site_dir => nil
 
   def initialize options
     super options
+
+    self.page_name = options[:page_name]
 
     if options.include? :site_dir
       self.site_dir = options[:site_dir]
@@ -126,7 +129,13 @@ class Contents < Erector::Widget
   end
 
   def toc_link page
-    link_text = page.split('_').map{|s|s.capitalize}.join(' ')
+    link_text = page.split(/[-_]/).map{|s|s.capitalize}.join(' ')
+
+    if page == page_name
+      return li do
+        span link_text, class: 'current'
+      end
+    end
     path = "/#{@site_name}/" + page
     li do
       a(link_text, :href => path)

@@ -99,6 +99,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     begin
       options = {
           site_name: params[:site],
+          page_name: params[:name],
           doc_title: title_for_page(params[:name]),
           doc_path: doc_path,
           back: params[:back],
