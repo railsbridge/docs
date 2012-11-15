@@ -49,7 +49,7 @@ class DocPage < Erector::Widgets::Page
   end
 
   def site_title
-    "Railsbridge #{site_name.capitalize}"
+    "Railsbridge #{site_name.split("_").map(&:capitalize).join(" ")}"
   end
 
   def page_title

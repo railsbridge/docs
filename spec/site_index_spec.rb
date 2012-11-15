@@ -10,6 +10,6 @@ describe Contents do
   end
 
   it "lists all sites in the /sites/ directory, sorted, except 'es'" do
-    @site_index.sites.should == ["curriculum", "frontend", "installfest", "workshop"]
+    @site_index.sites.should =~ ["curriculum", "frontend", "installfest", "intermediate-rails", "workshop"]
   end
 end

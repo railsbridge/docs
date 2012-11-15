@@ -16,7 +16,15 @@ class Step < Erector::Widget
     padding-left: 1.5em;
     margin-left: .25em;
   }
+}
 
+img.noborder {
+  border: none;
+  display: inline;
+}
+
+.centered {
+  text-align: center;
 }
 
 .message img.icon {
@@ -87,6 +95,22 @@ div.back:before {
   background-color: #B0DEE7;
 }
 
+.requirements>h1 {
+  background-color: #93B5DA;
+}
+
+.discussion>h1 {
+  background-color: #92F59A;
+}
+
+.hints>h1 {
+  background-color: #86DFD4;
+}
+
+.tools_and_references>h1 {
+  background-color: #C8A9E0;
+}
+
 .console > pre {
   border: 4px solid #dde;
   @include border-radius(4px);
@@ -134,20 +158,22 @@ div.back:before {
 
   ## steps
 
-  def steps
-    div :class => "steps" do
-      h1 "Steps"
-      blockquote do
-        yield
-      end
-    end
-  end
+  @@header_sections = {
+    steps:"Steps",
+    explanation:"Explanation",
+    discussion:"Discussion Items",
+    hints:"Hints",
+    tools_and_references:"Tools and References",
+    requirements:"Requirements to advance",
+  }
 
-  def explanation
-    div :class => "explanation" do
-      h1 "Explanation"
-      blockquote do
-        yield
+  @@header_sections.each do |type, header|
+    define_method type do |&block|
+      div :class => type do
+        h1 header
+        blockquote do
+          block.call if block
+        end
       end
     end
   end
@@ -161,7 +187,7 @@ div.back:before {
       end
     end
   end
-  
+
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
@@ -264,7 +290,7 @@ div.back:before {
   def tip text = nil, &block
     message text, class: "tip", icon: "info", &block
   end
-  
+
   def todo todo_text
     message nil, class: "todo" do
       span do
@@ -276,10 +302,10 @@ div.back:before {
   end
 
   ## special
-  
+
   TERMINAL_CAPTION = "Type this in the terminal:"
   RESULT_CAPTION = "Expected result:"
-  
+
   def console msg
     div :class => "console" do
       span TERMINAL_CAPTION

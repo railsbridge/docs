@@ -1,0 +1,24 @@
+requirements do
+message <<-MARKDOWN
+* The user should be able to see each post’s name, author, and date published on the overview page (aka the index page).
+* The name of the post should link to the post show page.
+* The index page should include a “New Post” link or button.
+MARKDOWN
+  img class: 'noborder', src: 'img/post_index.png'
+end
+
+discussion do
+message <<-MARKDOWN
+* Maybe now would be a good time to discuss Active Record! Can anyone explain it? 
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Listing All Posts: http://guides.rubyonrails.org/getting_started.html#listing-all-posts
+  * Feel free to disregard the JSON stuff on this page, if you're so inclined.
+* Bootstrap - Style that table! http://twitter.github.com/bootstrap/base-css.html#tables
+MARKDOWN
+end
+
+next_step "add_replying"
