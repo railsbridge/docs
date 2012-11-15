@@ -90,7 +90,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   def title_for_page page_name
-    page_name.split('_').map do |w|
+    page_name.split(/[-_]/).map do |w|
       w == "osx" ? "OS X" : w.capitalize
     end.join(' ')    
   end
