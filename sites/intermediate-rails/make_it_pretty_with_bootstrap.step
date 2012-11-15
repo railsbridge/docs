@@ -1,0 +1,36 @@
+requirements do
+message <<-MARKDOWN
+* The site should use Bootstrap for a superfun modern look. 
+* When logged in, the user's email address shoudl appear in the upper-right corner of a navigation bar.
+MARKDOWN
+  img class: 'noborder', src: 'img/header.png'
+end
+
+discussion do
+message <<-MARKDOWN
+* Chrome developer tools / Firefox Firebug plugin — how to use ’em!
+* What’s Bootstrap and (optional) why is everyone totally in love with it (or at least using it all over the place)?
+* What's Sass? Does anyone know? 
+* Maybe review the home/index.html.erb view file as it relates to the layouts/application.html.erb view file again, and where you might want to make some edits to take advantage of bootstrap.
+* Someone should explain how erb works — you'll be using it to show the user email address in right side
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* A gem for Bootstrap!! Let’s use the gem bootstrap-sass: https://github.com/thomas-mcdonald/bootstrap-sass
+* Bootstrap docs: http://twitter.github.com/bootstrap/base-css.html
+* Here's a link to the navbar section: http://twitter.github.com/bootstrap/components.html#navbar
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* Don't forget to read the readme!
+* You’ll need to make your application.css file into a .scss file. (just add .scss to the end!)
+* There are a couple of Bootstrappy ways to move text around — look for "Component alignment" in the docs. 
+* Devise has a helper method for accessing the current user's info - go back to the devise readme to find it.
+MARKDOWN
+end
+
+next_step "add_pages_to_create_and_look_at_individual_posts"
