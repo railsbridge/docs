@@ -10,7 +10,8 @@ discussion do
 message <<-MARKDOWN
 * In order to have a static home page, you will need a route, a controller, a view. Discuss!
   * Seriously. If you don't discuss this stuff, things will be SO much harder.
-* We’re using `rails g resource` instead of `rails g scaffold` because it forces you, the developer, to do more understanding-building brain work. The teacher/TAs can perhaps comment on what they would do in the real world and their thoughts on the excellence of this choice for learning-purposes.
+* Generators! Rails has lots of them. Try exploring the output of `rails generate`.
+* We’re not using `rails generate scaffold` in this curriculum. Because you will generate all your Models, Views and Controllers yourself, this will force you, to do more understanding-building brain work. The teacher/TAs can perhaps comment on what they would do in the real world and their thoughts on the excellence of this choice for learning-purposes.
 * What do you need to add to your home controller (after you've made it) to have a static home page?  
 * How does the home/index.html.erb view file relate to the layouts/application.html.erb view file?
 * What’s the significance of yield in the application view?
