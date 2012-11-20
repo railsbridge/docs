@@ -1,0 +1,22 @@
+message <<MARKDOWN
+# [Installfest](/installfest)
+
+Instructions for installing Ruby and Rails on your computer. You are required to do this before going to a Rails workshop!
+
+# [Curriculum](/curriculum)
+
+The "classic" railsbridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
+
+# [Intermediate Rails](/intermediate-rails)
+
+Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
+
+# [Frontend](/frontend)
+
+HTML + CSS for beginners. Make a website, no server required!
+
+# [Workshop](/workshop)
+
+The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
+
+MARKDOWN
