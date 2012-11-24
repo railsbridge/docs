@@ -47,7 +47,7 @@ rvm --default use 1.9.3
 
   verify do
     console "ruby -v"
-    result "1.9.3"
+    result "ruby 1.9.3p327 (2012-11-10 revision 37606) [x86_64-darwin11.4.2]"
   end
 end
 
