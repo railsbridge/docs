@@ -38,11 +38,11 @@ If "rails server" starts up with no errors, you're golden! It'll look something 
 
   result <<-TEXT
 => Booting WEBrick
-=> Rails 3.2.6 application starting in development on http://0.0.0.0:3000
+=> Rails 3.2.9 application starting in development on http://0.0.0.0:3000
 => Call with -d to detach
 => Ctrl-C to shutdown server
 [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
-[2010-09-30 21:04:12] INFO  ruby 1.9.2 (2010-08-18) [x86_64-darwin10.4.0]
+[2010-09-30 21:04:12] INFO  ruby 1.9.3 (2012-11-10) [x86_64-darwin10.4.2]
 [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid=24805 port=3000
   TEXT
 
