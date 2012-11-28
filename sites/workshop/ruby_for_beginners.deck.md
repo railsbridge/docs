@@ -1,88 +1,23 @@
 !SLIDE subsection
 # Ruby Programming for Beginners
 
-<!SLIDE bullets incremental>
-# What we'll cover
-
-* Programming: languages & applications
-* What is Ruby?
-* Ruby's common objects
-* Ruby syntax basics
-* Object oriented programming concepts
-* Passing code to a Ruby interpreter
-
 !SLIDE
-# Programming
+## Language/Library/Framework
 
-!SLIDE
-# Operating System (OS)
-Talk to a computer's `hardware`.
+A **language** is a set of code that can be used to create an application.
 
-<table>
-  <tr>
-  <td>
-  <img src='img/os_x_logo.jpg'>
-  <td>
-  <img src='img/windows_logo.gif'>
-  <td>
-  <img src='img/linux_logo.gif'>
-  </tr>
-</table>
+* Ruby, Java, C/C++, etc.
 
-!SLIDE
-# Application
-The `software`.  It sends `input` (`commands`, `data`, etc) to the operating system and receive `output` after the operating system has acted on it.
+A **library** is a collection of resuable code to accomplish a generic activity.
 
-![](img/acrobat.jpg)
-![](img/firefox.png)
-![](img/itunes.png)
-![](img/wordpress.jpg)
+* Gems: XML parser, spell checker, etc.
 
-!SLIDE
-# Language
-A set of code that can be used to create an application.
+A **framework** is collection of resuable code to facilitate development of a particular product or solution.
 
-* Ruby
-* Python
-* Perl
-* Java
-* C++
-
-Many others.
-
-# Library
-A collection of resuable code to accomplish a generic activity.
-
-!SLIDE
-# Framework
-Collection of resuable code to facilitate development of a particular product or solution.
-
-!SLIDE
-## Ruby vs. Rails
-
-### Ruby is a language
-<img src="img/ruby-logo.jpg" height="125" width="125">
-
-### Gems are Ruby libraries
-<img src="img/rubygems.png" height="125" width="125">
-
-### Rails is a framework 
-<img src="img/rails_logo.jpg" height="125" width="125">
-
-
-!SLIDE
-## Ruby vs. Rails
-* Rails is written in Ruby language.
-* Rails contains many Ruby gems.
-* Rails is a framework.
-* Rails' purpose is to build websites.
-
-The rest of this tutorial isn't about Rails.
-You're learning how to do _any_ kind of programming with Ruby.
+* Ruby on Rails, Zend Framework (PHP), ASP.Net (C#), etc.
 
 <!SLIDE subsection incremental>
-# Ruby Philosophy
-
+## Ruby Philosophy
 
 ```
 I believe people want to express themselves when they program.
@@ -95,39 +30,32 @@ I tried to make people enjoy programming and concentrate on the fun and creative
 ```
  -- [Matz](http://linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html) (Yukihiro Matsumoto), Ruby creator
 
-
 !SLIDE bullets
-# Ruby is a scripting language
+## The Ruby Language
 
-* Scripting languages:
+Ruby is a **interpreted language**.
+
   * Don't require a compiler.
-  * Have an interpreter _(more on that later...)_
-  * Run "on the fly"
+  * Run "on the fly" (via a **interpreter**)
   * Easy to change frequently
 
-Python, Perl, and JavaScript are scripting languages too.
-
-Java and C++ are examples of compiled languages.
-
+Other interpreted languages include **Python**, **Perl**, and **JavaScript**.
 
 !SLIDE centereverything
-
 
 !SLIDE subsection
 
 # Let's start coding!
 
 !SLIDE bullets
-# Open Your Terminal
-You may also hear it called "command Line", "console", "shell", or "Bash"
+## Open Your Terminal
 
-* Windows: `git bash` ![](img/git_bash.png)
-
-* Mac OS X & Ubuntu: `Terminal` ![](img/mac_terminal_sm.png)
-
+* Windows: **git bash** ![](img/git_bash.png)
+* Mac: **Terminal.app** ![](img/mac_terminal_sm.png)
+* Ubuntu/Linux: **Terminal**, **xterm**, etc.
 
 !SLIDE
-# Prompt
+## Prompt
 
 * Terminals show a line of text when you login & after a command finishes
 * It's called the `prompt`, and customarily ends with a dollar sign
@@ -140,9 +68,8 @@ Let's give the terminal a `command`, to open Interactive Ruby (IRB)
   $ irb
 ```
 
-
 !SLIDE commandline
-# irb: Interactive Ruby
+## irb: Interactive Ruby
 
 IRB has its own prompt, which customarily ends with `>`
 
@@ -151,7 +78,7 @@ IRB has its own prompt, which customarily ends with `>`
   >
 ```
 
-You can use `Control-C` to exit IRB any time.
+You can use `Control-D` to exit IRB any time.
 Or type `exit` on its own line.
 
 ```ruby
@@ -166,9 +93,9 @@ Now you're back to the terminal's prompt.
     $ irb --noreadline
 
 !SLIDE
-
 ## Variables
-### A variable holds information.
+
+* A variable holds information.
 * We give it a name so we can refer to it
 * The info it holds can be changed
 
@@ -182,18 +109,15 @@ Now you're back to the terminal's prompt.
   => 10
 ```
 
-What is happening on the lines beginning with `=>` ?
-
-* Setting a variable equal to something is called "assignment." In the above examples, we are assigning my_variable to 5 and my_other_variable to "hi."
-* What types of information can we hold in a variable? (see next slide for answers)
+Giving a variable value via the `=` sign is called **assignment**. In the above examples, we are assigning `my_variable` to `5` and `my_other_variable` to `"hi"`.
 
 !SLIDE
-## Variable
+## Variables
 ### Variable Assignment
 
 Variables are assigned using a single equals sign (`=`).
 
-The *right* side of the equals sign is evaluated first, then the value is assigned to the variable named on the *left* side of the equals.
+The **right side** of the equals sign is evaluated first, then the value is assigned to the variable named on the **left side** of the equal sign.
 
 ```ruby
   apples = 5
@@ -202,15 +126,8 @@ The *right* side of the equals sign is evaluated first, then the value is assign
   bananas = fruits - apples
 ```
 
-What happened on each line?  Is it what you expected?
-
-<!-- TODO: Define & discuss return values -->
-
-What could you do to see each's `return value` for confirmation?
-
-
 !SLIDE !bullets
-## Variable
+## Variables
 ### Variable Naming
 
 Create a variable whose name has:
@@ -233,17 +150,18 @@ What did you learn?
 
 
 !SLIDE bullets
-# Common types of information
-* Variables can hold many types of information, including:
-	* String
-	* Number
-	* Collections
-	* Booleans
-	
-* Don't know what these are? Don't worry! We're about to find out!
+## Data types
+
+Variables can hold many types of information, including:
+
+* String (`"Parturient Purus"`, `'Adipiscing Mollis Tellus'`)
+* Numbers (integer/float; `1`, `1.5`)
+* Boolean (`true`/`false`)
+* Object (Collection, etc.)
 
 !SLIDE bullets
-## String
+## Data types
+### String
 
 A string is text. It must be wrapped in a matched pair of quotation marks.
 
@@ -263,24 +181,28 @@ What is happening on the last two lines?  How would you solve it?
 ### exercise
 * Create variables called first_name, last_name, and favorite_color.
 * Assign the variables to strings.
-* Can you print out a sentence that reads "Hi, my name is (first name) (last name) and my favorite color is (favorite color)." with these variables? 
-	* Hint: you can use a "+" to add strings together.
-
 
 !SLIDE
-## Numbers
-* Numbers without decimal points are called **integers** and numbers with decimal points are called **floats**.
-* Examples of integers:	
-	* 0
-	* -105
-	* 898989898
-	* 2
-* Examples of floats:	
-	* .0.0
-	* -105.56
-	* .33
-	* .00004
-* You can perform operations on both types of numbers with these characters: +, -, /, *
+## Data types
+### Numbers
+
+Numbers without decimal points are called **integers** and numbers with decimal points are called **floats**.
+
+Examples of integers:	
+
+* 0
+* -105
+* 898989898
+* 2
+
+Examples of floats:	
+
+* .0.0
+* -105.56
+* .33
+* .00004
+
+You can perform operations on both types of numbers with these characters: +, -, /, *
 	
 ### exercises	
 * Try dividing an integer by an integer. Try dividing an integer by a float. How are the results different? 
@@ -288,122 +210,8 @@ What is happening on the last two lines?  How would you solve it?
 * Next, compute the sum, difference, quotient, and product of these two numbers and assign these values to variables called sum, difference, quotient, and product, respectively.
 
 !SLIDE
-## Collection
-### Collection types: Array, Hash
-
- * In the following slides, we will cover the following topics:
-	* Definition of an Array
-	* Array syntax
-	* Array indexing
-	* Array methods
-	* Definition of a hash
-	* Hash syntax
-	* Hash indexing
-
-!SLIDE
-## Collection
-### Array
-An array is a list.
-
-Each array must be surrounded by `square braces` aka `square brackets`. A comma separates each `member`.
-
-    @@@ Ruby
-    > fruits = ["kiwi", "strawberry", "plum"]
-    => ["kiwi", "strawberry", "plum"]
-
-### exercises	
-* Make your own array and name it grocery_list. 
-* Include at least 5 items from your grocery list in the array.
-
-!SLIDE
-## Collection
-### Array
-#### Indexing
-
-Members are stored in order. Each can be accessed by its `index`. Ruby starts counting at _zero_.
-
-    @@@ Ruby
-    > fruits[0]
-    => "kiwi"
-    > fruits[1]
-    => "strawberry"
-    > fruits[2]
-    => "plum"
-
-### exercises	
-* Still have your grocery_list array? Good, because we're going to use it in this exercise.
-* What is at index zero in your grocery_list array? How about index 5? Guess the answers and then use the syntax in the examples above (eg: fruits[0]) to see if your guesses were right. 
-
-!SLIDE
-## Collection
-### Hash
-In a `hash` we can refer to a member by a keyword instead of a number. Each member is a pair:
-
-* *Key*: address of the hash member
-
-* *Value*: variable contained by the member, and located by key name
-
-A hash may also be known as a `dictionary`, `associative array`, or `map`.
-
-
-!SLIDE
-## Collection
-### Hash
-#### Hash Syntax
-
-A hash is surrounded by `curly braces` aka `curly brackets`. A comma separates each member pair. A key uses `=>` (the `rocket`) to point to its value.
-
-    @@@ Ruby
-    > states = {"CA" => "California",
-    "DE" => "Delaware"}
-    => {"CA"=>"California", "DE"=>"Delaware"}
-
-In real life, what lists do we make in key/value pairs?
-
-
-### exercises	
-* Define a Hash variable called my_info which has the following keys:
-	* "first_name"
-	* "last_name"
-	* "hometown"
-	* "favorite_food"
-
-!SLIDE
-## Collection 
-### Hash
-#### Hash Indexing
-
-Member pairs can be accessed by their key.  So each hash key has to be unique.
-
-Values don't have to be unique.
-
-    @@@ Ruby
-    > states["CA"]
-    => "California"
-
-### exercises	
-* Add the key "good_food" to your my_info hash and give it the same value as your favorite_food key. What happens?
-* Add a second "favorite_food" key to your my_info hash. What happens when you print out the has hash again? Why?
-
-
-!SLIDE
-## Methods
-
-### things that do stuff.
-
-* "If objects (like strings, integers, and floats) are the nouns in the Ruby language, then methods are like the verbs." - Chris Pine's "Learn to Program"
-* Methods are called (used) with a "."  
- 	* Example: 5.to_s (to_s is the method)
-* As it turns out, 5 + 5 is really just a shortcut way of writing 5.+ 5.
-* Each data type (string, integer, float) has a set of built in methods. You can see all of the string methods here: http://ruby-doc.org/core-1.9.3/String.html (there are tons - don't worry about memorizing them, just good to know where you can go to find out more)
-
-### exercises
-* Create a String variable called old_string and assign it the value "Ruby is cool"
-* Use String methods to modify the old_string variable so that it is now "LOOC SI YBUR" and assign this to another variable called new_string.
- * Hint: look at the string methods "upcase" and "reverse"
-
-!SLIDE
-## Boolean
+## Data types
+### Boolean
 
 A boolean is one of only two possible values: `true` or `false`.
 
@@ -416,7 +224,7 @@ A boolean is one of only two possible values: `true` or `false`.
 
 ( `==` means "is equal to". _More on that later._)
 
-### exercises	
+### exercises 
 * Create a variable named favorite_color and assign it to your favorite color.
 * Create a variable named not_favorite_color and assign it to a different color.
 * Test to see if these variables are equal.
@@ -424,76 +232,314 @@ A boolean is one of only two possible values: `true` or `false`.
 !SLIDE
 ## Operators
 
-### Do stuff with objects
+Operators are used to manipulate variables and values.
 
-```
-  > my_variable + 2
-  => 7
-  > my_variable * 3
-  => 15
-```
-```
-  > my_fruits = fruits + ["lychee"]
-  => ["kiwi", "strawberry", "plum", "lychee"]
-  > my_fruits = my_fruits - ["plum"]
-  => ["kiwi", "strawberry", "lychee"]
-```
+    > my_variable = 5
+    => 5
+    > my_variable + 2
+    => 7
+    > my_variable * 3
+    => 15
 
-### exercises	
+    > string_one = "this is a string."
+    => "this is a string."
+    > string_two = " this is also a string."
+    => " this is also a string."
+    > string_one + string_two
+    => "this is a string. this is also a string."
 
-* Create an array called "vegetables" than contains 3 vegetables you like and 1 vegetable you don't like.
-* Using the vegetables array, create an array called "my_vegetables" that contains only the vegetables you like.
-* Extra: can you use the first two arrays to create a third array called "your_vegetables" that only contains the vegetable you don't like?
+### exercises 
+
+* Create variables for your **first name** and **last name** as well as **favorite colour**
+* Print out a sentence that reads "Hi, my name is (first name) (last name) and my favorite color is (favorite color)."
+* Extra: string concatenation with `#{}` 
+
+!SLIDE
+## Conditionals
+
+Do something only if a condition is true
+
+    > age = 15
+    => 15
+    > if age >= 12
+    ?> puts "teenager!"
+    ?> end
+    => "teenager!"
+
+... or **else**
+
+    > if age >= 12
+    ?> puts "teenager!"
+    ?> else
+    ?> puts "child!"
+    ?> end
 
 !SLIDE
 ## Loop
-### Does something repeatedly
 
-```
-  > fruits.each do |fruit|
-  ?> puts fruit
-  > end
-  kiwi
-  strawberry
-  plum
-  => ["kiwi", "strawberry", "plum"]
-```
-On the second line, what does `?>` indicate?
+Repeately do something a certain number of times
+
+    > 3.times do
+    ?> puts "hello"
+    ?> end
+    "hello"
+    "hello"
+    "hello"
+    => 3
 
 ### exercises
-* Create an array of 4 places you would like to visit.
-* Print out each of these places using a loop.
-	* Example: 
 
-```
-"I would like to visit Barcelona"
-"I would like to visit Antigua"
-"I would like to visit Alaska"
-"I would like to visit New Orleans"
-```
+* Create a loop that counts from `0` to `10`
+* Hint: use a variable
 
 !SLIDE
-## Conditional
+## Collection
+### Array
 
-### Do something only if a condition is true
+An array is a list.
 
-```
-  > fruits.each do |fruit|
-  ?> puts fruit if fruit == "plum"
-  > end
-  plum
-  => ["kiwi", "strawberry", "plum"]
-```
+Array is defined between **square brackets** (`[`, `]`). A comma separates each **element**.
 
-### exercises 
-* Create an array called "class" that contains the names of some of the people in your Railsbridge class. Make sure you include your own name.
-* Using your class array, create a conditional that prints "My Name is (your name)" for your name only.
+    > fruits = ["kiwi", "strawberry", "plum"]
+    => ["kiwi", "strawberry", "plum"]
+
+### exercises	
+* Make your own array and name it `grocery_list`.
+* Include at least 5 items from your grocery list in the array.
+
+!SLIDE
+## Collection
+### Array
+#### Indexing
+
+Elements of an array are stored in order. Each can be accessed by its `index`. In programming, array index **start at 0**.
+
+    > fruits[0]
+    => "kiwi"
+    > fruits[1]
+    => "strawberry"
+    > fruits[2]
+    => "plum"
+
+### exercises	
+
+* Use your `grocery_list` from previous exercises
+* Print out the element at index 0, 3, and 5
+
+!SLIDE
+## Collection
+### Hash
+
+Hash is defined between **curly braces** (`{`, `}`). A comma separates each **entry**. A entry is consist of a **key** and a **value**, separated by a "arrow" (`=>`).
+
+    > provinces = { "BC" => "British Columbia", "AB" => "Alberta" }
+    => {"BC"=>"British Columbia", "AB"=>"Alberta"}
+
+Hash is alos known as **dictionary** or **associative array**. The keys within a hash must be unique.
+
+### exercises
+
+* Create a hash for all of Canadian provinces
+
+!SLIDE
+## Collection 
+### Hash
+#### Hash Access
+
+Entries in a hash can be accessed by their key:
+
+    > provinces["AB"]
+    => "Alberta"
+
+### exercises
+
+* Try assigning a different value to an existing entry
+* Try assigning a value to an non-existing entry
+
+!SLIDE
+## Methods
+
+A **method** is a sequence of instructions that accomplishes a specific purpose.
+
+The act of getting the method to perform its job is call **invoking** (or **calling**) it. Some methods **returns** a value:
+
+    secret = rand()
+
+Some methods while does not return anything, perform other functions instead:
+
+    puts(secret)
+
+Method is a great way of collecting useful sets of instructions and reuse them later.
+
+Method is defined between `def` and `end`:
+
+    def say_something()
+      puts("Hello World!")
+    end
+
+To call the methods:
+
+    say_something()
+
+### exercises
+
+* Create a method that prints "Hi, my name is (my name)."
+
+!SLIDE
+## Methods
+### Method Parameters
+
+The build-in `puts` method accepts a **parameter**. A parameter is a piece of information **passed into** the method.
+
+To define a methods that accept a parameter:
+
+    def say_text(input)
+        puts(input)
+    end
+
+Additional parameters are separated by comma (`,`):
+
+    def say_two_things(input1, input2)
+        puts(input1)
+        puts(input2)
+    end
+
+Inside the method, parameters are just like variables.
+
+### exercises
+
+* Create a method that takes a `name` parameter and prints "Hi, my name is (the name parameter)."
+
+!SLIDE
+## Methods
+### Method Return
+
+A method can optionally **return** something. The build-int `rand` method returns a random number between 0 and 1. When a method returns, its execution is also terminated. What the method returns is called the **return value** of a method.
+
+To return from a method:
+
+    def hello()
+      return "Hello World!"
+    end
+    
+    def age()
+      return 28
+    end
+    
+    def weight(age)
+      if age < 10
+        return 5
+      else
+        return 10
+      end
+    end
+
+The return value can be assigned, and used just like any other values:
+
+    my_text = hello()
+    my_age = age()
+
+!SLIDE
+## Objects
+
+An **object** is a entity that contains **attributes** and **methods**. The attributes of an object describe its properties, and the methods of an object describe the actions the object can perform.
+
+We interact with objects via the **dot notation**. For example:
+
+    puts plane.altitude
+    plane.call_sign = "oceanic 815"
+    plane.take_off()
+
+!SLIDE
+## Objects
+### Objects in Ruby
+
+All the data-types in Ruby are objects.
+
+**Array** (http://www.ruby-doc.org/core-1.9.3/Array.html)
+
+    [7,1,0,3,4].length
+    [1,2,3].concat([4,5,6])
+    [1,2,8,3,6,3,1,9,8].uniq.sort
+
+**Hash** (http://www.ruby-doc.org/core-1.9.3/Hash.html)
+
+    { name: "Billy", age: 27 }.empty?
+
+**String** (http://www.ruby-doc.org/core-1.9.3/String.html)
+
+    "My Name is ".concat("Billy")
+
+**Integer** (http://www.ruby-doc.org/core-1.9.3/Integer.html)
+
+    13.even?
+
+!SLIDE
+## Class
+
+A **class** is the blueprint that we use to create objects. An object created from a class is called a **instance** of that class.
+
+A class is defined between `class` and `end`:
+
+    class Plane
+      attr_accessor :altitude
+      attr_accessor :call_sign
+      
+      def take_off
+        puts "#{self.call_sign} is taking off"
+      end
+      
+      def land
+        puts "#{self.call_sign} is landing"
+      end
+      
+      def report
+        puts "Current altitude: #{self.altitude}"
+      end
+    end
+
+In the above example:
+
+* The class is called "Plane"
+* A "Plane" has two properties: `altitude` and `call_sign`
+* A "Plane" can `take_off`, `land`, and `report`
+
+To actually create a "Plane":
+
+    plane1 = Plane.new
+    plane1.altitude = 500
+    plane1.call_sign = "oceanic 815"
+    plane1.take_off
+
+!SLIDE
+## Class
+### Inheritance
+
+Inheritance is the mean by which one class extends the functionalities/properties of another. The class the new class is based on is called the **parent**, and the new class is called the **child**.
+
+The child has all the attributes and methods of its parent, as well as any additional attributes and methods that the child defines. The parent on the other hand, does not gain any additional attributes and methods from its child.
+
+Inheritance is achieved with the `<` symbol:
+
+    class Jet < Plane
+      attr_accessor :weapon
+      
+      def fire
+        puts "#{self.call_sign} is firing #{self.weapon}"
+      end
+    end
+    
+    plane2 = Jet.new
+    plane2.weapon = "guns"
+    plane2.altitude = 6000
+    plane2.call_sign = "Maverick"
+    plane2.report
 
 !SLIDE
 # Running Your Code
 
 !SLIDE subsection
-# Interpreter
+## Interpreter
 
 Ruby is an interpreted language. Its code can't run by the computer directly.  It first must go through a Ruby interpreter.
 
@@ -509,131 +555,36 @@ There are various ways to run code through a Ruby interpreter. We were using IRB
 
 Note which folder your terminal is currently in, this is your `working directory`
 
-In your text editor, create a file named `my_program.rb` inside your working directory.
+In your text editor, create a file named `hello.rb` inside your working directory.
 
-    @@@ Ruby
-    class Sample
-      def hello
-        puts "Hello World!"
-      end
-    end
+    puts "Hello, World!"
 
-    s = Sample.new
-    s.hello
-
-!SLIDE commandline
-## Passing code from a file
+## Running code from a file
 ### Run the saved code
 
-```
-  $ ruby my_program.rb
-  Hello World!
-```
-
-
-!SLIDE commandline
-## Passing code from a file
-### We can even load that file's code into IRB!
-
-```bash
-  $ irb
-  ruby > load 'my_program.rb'
-  ruby > second_time=Sample.new
-  ruby > second_time.hello
-```
-
-When might it be useful to do this?
- 
-
-!SLIDE subsection
-# Your Own Command Line Program
-
-!SLIDE bullets
-# Hello World
-
-
-`hello.rb`
-
-    @@@ Ruby
-    puts "Hello, World!"
-
-!SLIDE bullets
-# Arguments (ARGV)
-
-`hello.rb`
-
-    @@@ Ruby
-    puts "Hello, #{ARGV.first}!"
-
-`terminal`
-
-```
-$ ruby hello.rb Alice
-Hello, Alice!
-```
-
-!SLIDE bullets
-# Conditionals
-
-`hello.rb`
-
-    @@@ Ruby
-    if ARGV.empty?
-    puts "Hello, World!"
-    else
-    puts "Hello, #{ARGV.first}!"
-    end
-
-`terminal`
+We can tell the ruby interpreter to run our code:
 
     $ ruby hello.rb
-    Hello, World!
+    Hello World!
+
+## Running code from a file
+### Commandline Arguments (ARGV)
+
+The `ARGV` variable is a special array that's available to the script when it's run from the commandline.
+
+Change your code to:
+
+    puts "Hello, #{ARGV.first}!"
+
+... and run it:
+
     $ ruby hello.rb Alice
     Hello, Alice!
 
-!SLIDE
-# Object Oriented Programming (OOP)
+### exercises
 
-!SLIDE subsection
-## Ruby is very object oriented
-### Nearly everything in Ruby is an object.
-
-
-!SLIDE
-## Class
-Describes the generic characteristics of a single _type_ of object.
-
-What things of this type _are_.
-
-e.g. Dog, Vehicle, Baby
-
-
-!SLIDE
-## Method
-Defines _behavioral_ characteristic.
-
-What the things of the class's type _do_.
-
-e.g. Chase, Drive, Talk
-
-
-!SLIDE
-## Variable
-Defines _attribute_ characteristic.
-
-What things of the class's type _have_.
-
-e.g. Breed, Model Year, Favorite Ice Cream
-
-
-!SLIDE
-## Instance
-A specific incarnation of the class.
-
-e.g. Rin Tin Tin, garbage truck, the neighbor's kid
-
-
-
+* What happen if you now run your script without a argument?
+* What can you do to make you script work both with and without argument?
 
 !SLIDE
 # Let's Create Projects!
