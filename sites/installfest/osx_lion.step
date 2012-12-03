@@ -12,12 +12,7 @@ end
 
 step "Install Homebrew" do
   link "install_homebrew"
-  message "Now that HomeBrew is installed, check to see if git is installed."
-  
-  console "which git"
-  result "/usr/bin/git"
-  
-  message "If you get the result above skip to: <a href='configure_git'>Configure Git</a>" 
+  message "Now that HomeBrew is installed, we can install Git."
 end
 
 step "Install Git" do
