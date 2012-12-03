@@ -11,10 +11,13 @@ step "Install A Compiler (XCode or GCC)" do
 end
 
 step "Install Homebrew" do
+  link "install_homebrew"
+  message "Now that HomeBrew is installed, check to see if git is installed."
+  
   console "which git"
   result "/usr/bin/git"
-  message "If you get the result above skip to: <a href='install_rvm_and_ruby'>Install RVM</a>" 
-  link "install_homebrew"
+  
+  message "If you get the result above skip to: <a href='configure_git'>Configure Git</a>" 
 end
 
 step "Install Git" do
@@ -24,9 +27,10 @@ step "Install Git" do
 
   verify do
     console "git --version"
-    result "git version 1.7.7.5"
+    result "git version 1.8.0"
   end
 
+  message "Now we can configure Git:"
   link "configure_git"
 end
 
