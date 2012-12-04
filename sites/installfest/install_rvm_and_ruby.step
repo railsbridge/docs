@@ -16,7 +16,7 @@ step "Configure your shell" do
     result "rvm is a function"
 
     console "rvm -v"
-    result "rvm 1.14.5 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]"
+    result "rvm 1.17.0 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com), Michal Papis <mpapis@gmail.com> [https://rvm.beginrescueend.com/]"
   end
   
 end
