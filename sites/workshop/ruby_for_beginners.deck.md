@@ -51,11 +51,11 @@ A set of code that can be used to create an application.
 Many others.
 
 # Library
-A collection of resuable code to accomplish a generic activity.
+A collection of reusable code to accomplish a generic activity.
 
 !SLIDE
 # Framework
-Collection of resuable code to facilitate development of a particular product or solution.
+Collection of reusable code to facilitate development of a particular product or solution.
 
 !SLIDE
 ## Ruby vs. Rails
