@@ -50,10 +50,6 @@ step "Install KomodoEdit" do
   link "install_komodo_edit_for_mac"
 end
 
-step "Install the heroku tool" do
-  console "gem install heroku"
-end
-
 verify "successful installation" do
   console "which git"
   result "/usr/bin/git"
@@ -63,9 +59,6 @@ verify "successful installation" do
 
   console "which rails"
   result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/rails"
-
-  console "which heroku"
-  result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/heroku"
 end
 
 step "Generate an ssh public key" do
