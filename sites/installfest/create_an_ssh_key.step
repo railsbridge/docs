@@ -13,10 +13,21 @@ important "**REPLACE** `student@example.com` with your **actual email address** 
 
 console "ssh-keygen -C student@example.com -t rsa"
 
-choice "keyphrase" do
-  option "Hit enter to accept blank passphrase, then hit enter again"
-  option "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
+message "Press enter to accept the default key save location."
+
+message "Next, you'll be asked for a keyphrase."
+
+h1 "Choose keyphrase"
+blockquote do
+  option "No keyphrase" do
+    message "Hit enter to accept blank passphrase, then hit enter again."
+  end
+  option "Keyphrase" do 
+    message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
+  end
 end
+
+message "After key generation is complete, you'll have output that looks like this."
 
 result <<-OUTPUT
 Generating public/private rsa key pair.
@@ -32,7 +43,6 @@ The key fingerprint is:
 
 verify do
   message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
-  todo "what is a home directory? what is tilde?"
   tip "Public vs. Private Keys" do
     message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
     message "`id_rsa.pub` is your **public key** and can be shared freely."

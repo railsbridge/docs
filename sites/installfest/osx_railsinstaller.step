@@ -1,0 +1,51 @@
+message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
+
+step "Run RailsInstaller" do
+
+  message "RailsInstaller includes Rails, Ruby, Git, and SQLite."
+
+  message "Go to <http://railsinstaller.org/> and download the kit."
+
+  important "**Don't watch the video!** After you download the file, come back to this site!"
+
+  message "Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. Enter your full name and email when prompted."
+end
+
+step "Open Terminal" do
+  message "Look for **Terminal.app** inside Applications -> Utilities."
+
+  message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
+  
+  tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
+end
+
+step "Install KomodoEdit" do
+  message "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+
+  important "When in doubt, use KomodoEdit."
+
+  link "install_komodo_edit_for_mac"
+end
+
+verify "successful installation" do
+  console "which git"
+  result "/usr/bin/git"
+
+  console "which ruby"
+  result "/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby"
+
+  console "which rails"
+  result "/usr/local/rvm/gems/ruby-1.9.3-p194/bin/rails"
+
+  console "ruby -v"
+  result "ruby 1.9.3p194"
+
+  console "rails -v"
+  result "Rails 3.2.8"
+end
+
+step "Generate an ssh public key" do
+  link "create_an_ssh_key"
+end
+
+next_step "create_a_heroku_account"

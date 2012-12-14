@@ -27,19 +27,16 @@ end
 
 step "Choose your instructions" do
   
-  option "Mountain Lion" do
-    link "osx_lion"
-  message "The instructions for Mountain Lion and Lion are mostly the same."
+  option "Mountain Lion/Lion/Snow Leopard" do
+    option "RailsInstaller" do
+      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
+      link "osx_railsinstaller"
+    end
+    option "Manually" do
+      message "If something went wrong with RailsInstaller, fall back to these instructions."
+      link "osx_lion"
+    end
   end
-
-  option "Lion" do
-    link "osx_lion"
-  end
-
-  option "Snow Leopard" do
-    link "osx_lion"
-    message "The instructions for Lion and Snow Leopard are mostly the same."
-   end
 
   option "Panther" do
     link "osx_panther"
