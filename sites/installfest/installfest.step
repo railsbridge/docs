@@ -8,7 +8,6 @@ step "Prepare for the Install Fest" do
 
 * **Your laptop.** You need to have a working wifi connection and a browser.
   * If you have a choice between a Mac and a Windows laptop, please bring the Mac.
-    * Mac users: your **OS X DVD**
   * Linux is an acceptable alternative, but the Installfest is only tested on Ubuntu.
 * **Power cord for your laptop**
 * If you already have accounts on Heroku or GitHub, make sure you know your username and password.
