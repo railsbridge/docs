@@ -61,7 +61,7 @@ message <<-MARKDOWN
 
 ![Successful Rails Install](successful-rails-install.jpg)
 
-* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** to kill(stop) the server.
+* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server.
 
   MARKDOWN
   important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt."
