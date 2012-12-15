@@ -57,21 +57,21 @@ explanation {
 
     $ rake routes
 
-         votes GET    /votes(.:format)           {:action=>"index", :controller=>"votes"}
-               POST   /votes(.:format)           {:action=>"create", :controller=>"votes"}
-      new_vote GET    /votes/new(.:format)       {:action=>"new", :controller=>"votes"}
-     edit_vote GET    /votes/:id/edit(.:format)  {:action=>"edit", :controller=>"votes"}
-          vote GET    /votes/:id(.:format)       {:action=>"show", :controller=>"votes"}
-               PUT    /votes/:id(.:format)       {:action=>"update", :controller=>"votes"}
-               DELETE /votes/:id(.:format)       {:action=>"destroy", :controller=>"votes"}
-        topics GET    /topics(.:format)          {:action=>"index", :controller=>"topics"}
-               POST   /topics(.:format)          {:action=>"create", :controller=>"topics"}
-     new_topic GET    /topics/new(.:format)      {:action=>"new", :controller=>"topics"}
-    edit_topic GET    /topics/:id/edit(.:format) {:action=>"edit", :controller=>"topics"}
-         topic GET    /topics/:id(.:format)      {:action=>"show", :controller=>"topics"}
-               PUT    /topics/:id(.:format)      {:action=>"update", :controller=>"topics"}
-               DELETE /topics/:id(.:format)      {:action=>"destroy", :controller=>"topics"}
-          root        /                          {:action=>"index", :controller=>"topics"}
+         votes GET    /votes(.:format)           votes#index
+               POST   /votes(.:format)           votes#create
+      new_vote GET    /votes/new(.:format)       votes#new
+     edit_vote GET    /votes/:id/edit(.:format)  votes#edit
+          vote GET    /votes/:id(.:format)       votes#show
+               PUT    /votes/:id(.:format)       votes#update
+               DELETE /votes/:id(.:format)       votes#destroy
+        topics GET    /topics(.:format)          topics#index
+               POST   /topics(.:format)          topics#create
+     new_topic GET    /topics/new(.:format)      topics#new
+    edit_topic GET    /topics/:id/edit(.:format) topics#edit
+         topic GET    /topics/:id(.:format)      topics#show
+               PUT    /topics/:id(.:format)      topics#update
+               DELETE /topics/:id(.:format)      topics#destroy
+          root        /                          topics#index
 
   This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
 
