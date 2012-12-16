@@ -16,11 +16,12 @@ steps {
 
     message "Find the line:"
 
-    source_code :ruby, "format.html { redirect_to @topic, :notice => 'Topic was successfully created.' }"
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
+
 
     message 'and change `@topic` to `topics_path` like this:'
 
-    source_code :ruby, "format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }"
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
 
     message 'so that the file looks like this:'
 
@@ -30,11 +31,11 @@ def create
 
   respond_to do |format|
     if @topic.save
-      format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }
-      format.json { render :json => @topic, :status => :created, :location => @topic }
+      format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
+      format.json { render json: @topic, status: :created, location: @topic }
     else
-      format.html { render :action => "new" }
-      format.json { render :json => @topic.errors, :status => :unprocessable_entity }
+      format.html { render action: "new" }
+      format.json { render json: @topic.errors, status: :unprocessable_entity }
     end
   end
 end
@@ -62,10 +63,10 @@ end
 explanation {
 
   message <<-MARKDOWN
-  * `format.html { redirect_to topics_path, :notice => 'Topic was successfully created.' }`:
+  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
     * `format.html` means that the server should send html back to the browser
     * `redirect_to topics_path` means show the **topics list page** when we're done creating a topic
-    * `:notice => 'Topic was successfully created.'` puts the message into the flash so it will be displayed on the topics list
+    * `notice: 'Topic was successfully created.'` puts the message into the flash so it will be displayed on the topics list
   MARKDOWN
 }
 
