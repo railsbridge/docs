@@ -61,23 +61,25 @@ message <<-MARKDOWN
 
 ![Successful Rails Install](successful-rails-install.jpg)
 
-* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** to kill(stop) the server.
+* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server.
 
   MARKDOWN
-  important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt."
+  important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
   end
 
 step "Generate a database model" do
   tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
     console "cd test_app"
   end
-  
+
   console <<-BASH
 rails generate scaffold user name:string email:string address:text active:boolean
 rake db:migrate
 rails server
   BASH
 
+  message "**Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command."
+  
   message "Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/users>"
 
   message "Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)"
@@ -146,9 +148,9 @@ Git remote heroku added
   step "Prepare your rails app for deploying to Heroku" do
     message <<-MARKDOWN
 
-Find your test_app folder and open it in a text-editor.
-Inside, find a file named Gemfile.
-Edit your Gemfile and change the line:
+Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\test_app` and on Linux/OS X, it should be under `~/test_app`.)
+
+Inside this file, change the line:
 MARKDOWN
   source_code :ruby, <<-RUBY
 gem 'sqlite3'
@@ -166,6 +168,8 @@ group :production do
   gem 'pg'
 end
   RUBY
+
+  message "Save the file."
 
     console <<-BASH
 bundle install --without production
