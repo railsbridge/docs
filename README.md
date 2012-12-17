@@ -215,7 +215,6 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * "sudo" directive -- for danger color and popup "what is sudo?" help
 
 # TODO (technical)
-* upgrade to Erector 0.9
 * test all pages during "startup"
   * growl if broken
 * 404 should show page with TOC and stuff

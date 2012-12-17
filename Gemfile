@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "erector", "~>0.9.0.pre1"
+gem "erector", "~>0.9.0"
 gem "sinatra"
 gem "nokogiri"
 gem "rdiscount"
