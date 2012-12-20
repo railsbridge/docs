@@ -32,16 +32,16 @@ verify "successful installation" do
   result "/usr/bin/git"
 
   console "which ruby"
-  result "/usr/local/rvm/rubies/ruby-1.9.3-p194/bin/ruby"
+  fuzzy_result "/usr/local/rvm/rubies/ruby-1.9.3{FUZZY}-p194{/FUZZY}/bin/ruby"
 
   console "which rails"
-  result "/usr/local/rvm/gems/ruby-1.9.3-p194/bin/rails"
+  fuzzy_result "/usr/local/rvm/gems/ruby-1.9.3{FUZZY}-p194{/FUZZY}/bin/rails"
 
   console "ruby -v"
-  result "ruby 1.9.3p194"
+  fuzzy_result "ruby 1.9.3{FUZZY}p194{/FUZZY}"
 
   console "rails -v"
-  result "Rails 3.2.8"
+  fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
 end
 
 step "Generate an ssh public key" do

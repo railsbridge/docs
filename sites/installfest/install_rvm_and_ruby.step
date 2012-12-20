@@ -16,7 +16,7 @@ step "Configure your shell" do
     result "rvm is a function"
 
     console "rvm -v"
-    result "rvm 1.17.0 (stable) by Wayne E. Seguin (wayneeseguin@gmail.com), Michal Papis <mpapis@gmail.com> [https://rvm.beginrescueend.com/]"
+    fuzzy_result "rvm 1{FUZZY}.x.x (stable) by Wayne E. Seguin (wayneeseguin@gmail.com), Michal Papis <mpapis@gmail.com> [https://rvm.beginrescueend.com/]{/FUZZY}"
   end
   
 end
@@ -47,7 +47,7 @@ rvm --default use 1.9.3
 
   verify do
     console "ruby -v"
-    result "1.9.3"
+    fuzzy_result "ruby 1.9.3{FUZZY}p125 (2012-02-16 revision 34643) [x86_64-darwin11.4.0]{/FUZZY}"
   end
 end
 

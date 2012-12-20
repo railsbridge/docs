@@ -118,6 +118,23 @@ div.back:before {
   color: white;
 }
 
+.fuzzy-result {
+  margin-bottom: 20px;
+
+  > pre {
+    margin-bottom: 0px;
+  }
+
+  .fuzzy-hint {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .fuzzy-lightened {
+    color: #aaa;
+  }
+}
+
 .result > pre {
   border: 4px solid #dde;
   @include border-radius(4px);
@@ -305,6 +322,7 @@ div.back:before {
 
   TERMINAL_CAPTION = "Type this in the terminal:"
   RESULT_CAPTION = "Expected result:"
+  FUZZY_RESULT_CAPTION = "Approximate expected result:"
 
   def console msg
     div :class => "console" do
@@ -317,6 +335,22 @@ div.back:before {
     div :class => "result" do
       span RESULT_CAPTION
       pre text
+    end
+  end
+
+  def fuzzy_result fuzzed_text
+    div :class => "result fuzzy-result" do
+      span FUZZY_RESULT_CAPTION
+      remaining_text = fuzzed_text
+      pre do
+        while match = remaining_text.match(/(.*?){FUZZY}(.*?){\/FUZZY}(.*)/m)
+          text match[1]
+          span match[2], :class => 'fuzzy-lightened'
+          remaining_text = match[3]
+        end
+        text remaining_text
+      end
+      div "The greyed-out text may differ and is not important.", :class => 'fuzzy-hint'
     end
   end
 

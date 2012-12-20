@@ -24,7 +24,7 @@ step "Install Git" do
 
   verify do
     console "git --version"
-    result "git version 1.7.7.5"
+    fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
   end
 
   link "configure_git"
@@ -38,7 +38,7 @@ step "Install Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
-    result "Rails 3.2.9"
+    fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
   end
 end
 
@@ -55,10 +55,10 @@ verify "successful installation" do
   result "/usr/bin/git"
 
   console "which ruby"
-  result "/Users/alex/.rvm/rubies/ruby-1.9.2-p290/bin/ruby"
+  fuzzy_result "/Users/alex/.rvm/rubies/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/ruby"
 
   console "which rails"
-  result "/Users/alex/.rvm/gems/ruby-1.9.2-p290/bin/rails"
+  fuzzy_result "/Users/alex/.rvm/gems/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/rails"
 end
 
 step "Generate an ssh public key" do

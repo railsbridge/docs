@@ -25,6 +25,9 @@ describe InstallFest do
         it "renders #{doc.filename}" do
           get! "/#{site.name}/#{doc.name}"
           assert { last_response.ok? }
+          if doc.filename.end_with?('.step')
+            assert { last_response.body !~ /FUZZY/ }
+          end
         end
       end
     end

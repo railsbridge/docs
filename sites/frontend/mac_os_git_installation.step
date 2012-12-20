@@ -3,7 +3,7 @@ steps do
     message "If you've been to a RailsBridge before, you might have git installed. Try the following"
     console "git --version"
     message "If you see something like the git version below, then you can return to the mini-installfest"
-    result "git version 1.7.10"
+    fuzzy_result "git version 1{FUZZY}.x.x{/FUZZY}"
     message "If you see something like `git: command not found` then proceed"
   end
 

@@ -3,6 +3,10 @@ require "#{here}/spec_helper"
 
 require "step_page"
 
+def assert_loosely_equal lhs, rhs
+  assert { lhs.gsub(/\n\s*/, '') == rhs.gsub(/\n\s*/, '') }
+end
+
 describe Step do
 
   def to_html nokogiri_node
@@ -114,7 +118,12 @@ RUBY
       html_doc(<<-RUBY)
       console "echo 'hi'"
       RUBY
-      assert { @html == "<div class=\"console\"><span>#{Step::TERMINAL_CAPTION}</span><pre>echo 'hi'</pre></div>" }
+      assert_loosely_equal(@html, <<-HTML)
+<div class="console">
+  <span>#{Step::TERMINAL_CAPTION}</span>
+  <pre>echo 'hi'</pre>
+</div>
+      HTML
     end
   end
 
@@ -123,7 +132,32 @@ RUBY
       html_doc(<<-RUBY)
       result "hi"
       RUBY
-      assert { @html == "<div class=\"result\"><span>#{Step::RESULT_CAPTION}</span><pre>hi</pre></div>" }
+
+      assert_loosely_equal(@html, <<-HTML)
+<div class="result">
+  <span>#{Step::RESULT_CAPTION}</span>
+  <pre>hi</pre>
+</div>
+      HTML
+    end
+  end
+
+  describe 'fuzzy_result' do
+    it "emits a 'result' div with a 'pre' block where certain content is greyed out" do
+      html_doc(<<-RUBY)
+      fuzzy_result "hello {FUZZY}fuzz{/FUZZY} face! nice {FUZZY}banana{/FUZZY}\ni am more text!"
+      RUBY
+
+      assert_loosely_equal(@html, <<-HTML)
+<div class="result fuzzy-result">
+  <span>#{Step::FUZZY_RESULT_CAPTION}</span>
+  <pre>
+    hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
+    i am more text!
+  </pre>
+  <div class="fuzzy-hint">The greyed-out text may differ and is not important.</div>
+</div>
+      HTML
     end
   end
 end

@@ -41,10 +41,10 @@ end
 step "Sanity Check" do
 
   console "ruby -v"
-  result "ruby 1.9.3p125"
+  fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
 
   console "rails -v"
-  result "Rails 3.2.1"
+  fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
 
 end
 

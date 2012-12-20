@@ -9,7 +9,7 @@ verify "git is installed" do
   tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
 
   console "git --version"
-  result "git version 1.7.10"
+  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 end
 
 verify "you can open a local webpage in a browser" do
