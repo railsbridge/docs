@@ -31,11 +31,6 @@ We want the community of software developers to reflect the diversity of our soc
 <!SLIDE bullets>
 # What is Ruby on Rails?
 
-!SLIDE image
-# Web Application Plumbing
-
-![Web App](img/web-application.png)
-
 !SLIDE center
 # Ruby vs. Rails
 
@@ -68,9 +63,6 @@ We want the community of software developers to reflect the diversity of our soc
   * less code means it's easier to maintain & modify
 * Test Driven Development (TDD)
 * Minimal code - maximal effect
-
-<!SLIDE image>
-<img src="img/mvc_simple.png">
 
 <!SLIDE bullets>
 # Agile development
