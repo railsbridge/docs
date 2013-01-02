@@ -20,6 +20,7 @@ message <<-MARKDOWN
 * A gem for Bootstrap!! Let’s use the gem bootstrap-sass-rails: https://github.com/yabawock/bootstrap-sass-rails
 * Bootstrap docs: http://twitter.github.com/bootstrap/base-css.html
 * Here's a link to the navbar section: http://twitter.github.com/bootstrap/components.html#navbar
+* References for HTML and CSS: http://www.w3schools.com/html/default.asp and http://www.w3schools.com/css/default.asp
 MARKDOWN
 end
 
