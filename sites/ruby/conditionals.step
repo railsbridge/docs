@@ -1,0 +1,88 @@
+goals do
+  goal do 
+    rawtext(md2html('Use `gets` to get input from the user of your program.'))
+  end
+  goal 'Use a conditional statement to execute a branch of code only some of the time.'
+end
+
+step do
+  message 'Create a new file called conditionals_test.rb'
+  type_in_file 'conditionals_test.rb', <<-'CONTENTS'
+print "How many apples do you have? > "
+apple_count = gets.to_i
+puts "You have #{apple_count} apples."
+  CONTENTS
+  console 'ruby conditionals_test.rb'
+  message 'When prompted, type in a number of apples and press enter.'
+  message "`print` is like `puts` but doesn't make a new line after printing."
+  message "`gets`, or **get** **s**tring, pauses your program and waits for the user to type something and hit the enter key. It then returns the value back to your program and continues execution. Since the user could have typed anything ('banana', '19.2', '<<!!@@') we use to_i to ensure what comes out is an integer. If the user didn't type a valid integer, `to_i` returns `0`."
+end
+
+step do
+  message 'Continuing on from the end of conditionals_test.rb...'
+  type_in_file 'conditionals_test.rb', <<-'CONTENTS'
+if apple_count > 5
+  puts "Lots of apples!"
+else
+  puts 'Not many apples...'
+end
+  CONTENTS
+  console 'ruby conditionals_test.rb'
+  message 'The `if ... else ... end` construct is a way of changing which lines of your program get executed depending on your data.'
+  message 'Try running the program with different values for apple_count to see each side of the conditional get executed.'
+end
+
+step do
+  message 'What goes after the `if` is any expression that returns a **boolean**, (the values `true` or `false`). Here\'s some more expressions that return `true` or `false`:'
+  irb <<-IRB
+15 < 5
+10 == 12
+'foo' != 'bar'
+  IRB
+  irb <<-IRB
+'sandwich'.end_with?('h')
+'sandwich'.end_with?('z')
+[1,2,3].include?(2)
+[1,2,3].include?(9)
+  IRB
+  message 'Many methods return `true` or `false` as well. By convention, methods in Ruby that return booleans end with a question mark.'
+end
+
+step do
+  message 'You can nest a conditional in a loop, as well.'
+  message 'Create a new file called conditional_loops.rb'
+  type_in_file 'conditional_loops.rb', <<-'CONTENTS'
+fruits = ['apple', 'pear', 'apricot']
+fruits.each do |fruit|
+  if fruit.start_with?('a')
+    puts "#{fruit} begins with the letter a."
+  end
+end
+  CONTENTS
+  console 'ruby conditional_loops.rb'
+  message "Try changing this conditional so it only prints fruits with at least five letters in their name. Remember to change the string you're `puts`ing as well!"
+end
+
+step do
+    message 'Create a new file called while_loop.rb'
+    type_in_file 'while_loop.rb', <<-'CONTENTS'
+total = 0
+user_input = nil
+while user_input != 'stop'
+  print 'Enter a number to add to the total. > '
+  user_input = gets.chomp
+  total = total + user_input.to_i
+end
+puts "Your final total was #{total}!"
+    CONTENTS
+    console 'ruby while_loop.rb'
+    message "A **while** loop continues repeating until a certain statement is false. Here, the program continually asks us for numbers until we say the string 'stop'."
+    message "It's easy for a while loop to get out of control! If your loop body doesn't do anything to make the **while** condition false, your loop will run forever."
+end
+
+explanation do
+  message "Without some kind of conditional, your program would do the same thing every time. Conditionals let you choose to do different things depending on what data you have in hand."
+  message 'Now that you know *conditionals*, *loops*, *arrays*, *hashes* and *strings*, you can make some pretty complicated programs!'
+end
+
+next_step 'functions'
