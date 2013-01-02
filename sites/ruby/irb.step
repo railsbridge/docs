@@ -1,0 +1,46 @@
+goals do
+  goal "Understand the difference between irb and the command line"
+  goal "Understand how and when to use irb"
+  goal "Execute some simple ruby statements"
+end
+
+step do
+  console "irb"
+  message 'irb is the **i**nteractive **r**u**b**y interpreter.'
+  message 'In irb, you can experiment with short pieces of code to figure out what they do.'
+end
+
+step do
+  irb <<-IRB
+5 + 9
+109 / 17
+2 ** 8
+5 > 6
+  IRB
+  message 'What happened after each line? What do you think these statements do?'
+end
+
+step do
+  message 'Lets take a closer look at the output of irb:'
+  irb '1 + 2'
+  result <<-MESSAGE
+1.9.3p125 :015 > 1 + 2
+ => 3 
+1.9.3p125 :016 > 
+  MESSAGE
+  message 'Here, `=> 3` is the **return value** of the **statement** `1 + 2`. Every statement in ruby has a **return value**: irb shows you that value after you type a complete statement and press enter.'
+end
+
+step do
+  irb <<-IRB
+exit
+  IRB
+  message '`exit` is the guaranteed way to get out of irb. Depending on your operating system, Control-C or Control-D on an empty line may also work.'
+  message 'Practice going in and out of irb a couple of times. How can you tell when you\'re in or out of irb?'
+end
+
+explanation do
+  message "irb isn't a place to write code: it's a place to experiment and find out how certain language features work. When you write a full-fledged program, you'll save it into a text file on your computer."
+end
+
+next_step "variables"

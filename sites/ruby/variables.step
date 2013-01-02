@@ -1,0 +1,55 @@
+goals do
+  goal "Store data in variables"
+  goal "Replace data in an existing variable"
+end
+
+step do
+  irb 'my_variable = 5'
+  message 'This creates a new variable called my_variable and stores the value 5 in it.'
+  irb 'another_variable = "hi"'
+  message 'This creates another variable and stores the value "hi" in it.'
+end
+
+step do
+  irb 'my_variable = 10'
+  message 'This reassigns my_variable, which already exists, to 10.'
+end
+
+step do
+  irb <<-IRB
+apples = 5
+bananas = 10 + 5
+fruits = 2 + apples + bananas
+bananas = fruits - apples
+  IRB
+  message 'Variables are assigned using a single equals sign (=).'
+  message 'The right side of the equals sign is evaluated first, then the value is assigned to the variable named on the left side of the equals.'
+end
+
+step do
+	message <<-VARIABLE_NAMES
+Try making variables with the following kinds of names names in irb:
+
+* all letters (like 'folders')
+
+* all numbers (like '2000')
+
+* an underscore (like 'first_name')
+
+* a dash (like 'last-name')
+
+* a number anywhere (like 'y2k')
+
+* a number at the start (like '101dalmations')
+
+* a number at the end (like 'starwars2')
+
+Which worked? Which didn't?
+  VARIABLE_NAMES
+end
+
+explanation do
+  message "Variables allow you to store data so you can refer to it by name later. The data you store in variables will persist as long as your program keeps running."
+end
+
+next_step "strings"
