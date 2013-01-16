@@ -14,6 +14,7 @@
 
 ## Workshop Prep:
 * [Teacher Training](teacher_training)
+* [Updated Teacher Training Slides (as of 1/16/13)](more_teacher_training)
 
 
 See the [toc] link in the top right for a full table of contents.
