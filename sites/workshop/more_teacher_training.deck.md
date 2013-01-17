@@ -19,7 +19,7 @@ Three buckets, lots of ways:
 ### Help people feel:
 * socially comfortable
 * technically capable
-* like you know what's going on
+* like you know what's going on -- you're the leader. 
 
 # DISCUSSION (Social Comfort)
 ## How can you help people feel	 socially comfortable? 
@@ -50,7 +50,8 @@ Three buckets, lots of ways:
 # OUR IDEAS (Technically Capable 1)
 ### Set the tone:
 * Explain up front that even professional developers are constantly learning new technologies.
-* Explain that mistakes are how we learn, and most mistakes seem silly in retrospect. 
+* Assure them that they will write crappy code, and that's ok. Everyone professional has written crappy code at some point. 
+* Explain that mistakes are how we learn, and most mistakes seem silly in retrospect.  
 * Before class, ask your TAs to ask questions if concepts don't seem clear.
 
 ### Explaining technical concepts:
@@ -60,7 +61,7 @@ Three buckets, lots of ways:
 
 # OUR IDEAS (Technically Capable 2)
 ### Encourage collaboration and interaction
-* Explicitly say that student should try to answer each other's questions, that it's a really great way to reinforce learning.
+* Explicitly say that student should try to answer each other's questions, that it's a really great way to reinforce learning and builds community. 
 * If a question is asked, ask if anyone in the class thinks they can explain.
 * Be especially encouraging of the first few questions, to try to get things rolling. 
   * You could say things like "I'm glad you asked!" or "I actually wondered that, too." or "Great question!"
@@ -70,7 +71,7 @@ Three buckets, lots of ways:
 * Students have diverse backgrounds
 * If they aren't getting a concept, avoid anything that might shame them.
 * Don't be surprised when someone hasn't heard of something before.
-* Don't grab anyone's keyboard. Avoid taking over unless you think it's *really* necessary. 
+* Don't grab anyone's keyboard. Avoid taking over unless you think it's *really* necessary. Ask before you do. "Mind if I drive for a sec?"
 
 # OUR IDEAS (Technically Capable 3)
 ### Don't go too deep for your class level, but also, don't gloss over things
@@ -110,8 +111,8 @@ Three buckets, lots of ways:
 
 # OUR IDEAS (KNOW WHAT'S UP 3)
 ### Try to have good pacing
-* Don't go too fast. You will go too fast.
-* You can say the same thing THREE TIMES and it will not be boring yet. (Unless it was boring initially. JK.)
+* Don't go too fast. You will probably go too fast. Check in occasionally to ensure everyone is still with you. 
+* You can say the same thing THREE TIMES and it will not be boring yet. 
 * When you ask a question, wait TEN WHOLE SECONDS before saying anything else. People need time to think. 
 * Don't let the most advanced students dictate the pacing
 
@@ -129,7 +130,7 @@ Talk about what problems you might anticipate, and what to do about the.
 TAs: What are they good for? Absolutely everything!!!
 
 # OUR IDEAS
-* Ask your TA to explain a concept
+* Ask your TA to explain a concept--they may be more technically advanced than the Teacher. 
 * TAs can help people who get lost
 * Encourage your TAs to jump in to help explain something if you're struggling
 * TAs can ask the first question to encourage students to speak up. 
@@ -144,6 +145,7 @@ How can you tell if they understand the words you're saying?
 
 ### Calling on people
 * Don't be a jerk
+* Call on people to make the class more interactive and engaging, rather than a lecture. 
 * ???
 
 # SOURCES
