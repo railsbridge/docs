@@ -149,6 +149,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     begin
       RawPage.new(
       site_name: params[:site],
+      page_name: params[:name],
       doc_title: doc_path.split('/').last,
       doc_path: doc_path,
       src: src
