@@ -107,8 +107,8 @@ Three buckets, lots of ways:
 
 ### Don't be afraid to:
 * Call on people! 
-* Lead people in the right direction if they give you a wrong answer, rather than blatantly correcting them. 
-  * Examples: "Can you explain how you came to that conclusion?" "Does anyone have a different answer?"
+* Correcting people if they're wrong--politely and gently in a way that works for you. 
+  * Examples: "Well, I'm pretty sure this is the right answer instead." "Can you explain how you came to that conclusion?" "Does anyone have a different answer?"
 * Answer questions that haven't been asked yet. 
 
 # OUR IDEAS (KNOW WHAT'S UP 3)
