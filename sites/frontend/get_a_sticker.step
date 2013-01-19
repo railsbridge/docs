@@ -28,7 +28,7 @@ I want a sticker! <em>Please?</em>
   img :src => "get_a_sticker_output.png"
 end
 
-verify "you can clone from GitHub do" do
+verify "you can clone from GitHub" do
   steps do
     step "Fork the Repo" do
       message "Log in to [GitHub.com](https://github.com) using the username and password you created earlier."

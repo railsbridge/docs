@@ -8,34 +8,35 @@ steps do
   important "If you have _any_ problems with these steps, grab a TA and have them help you out."
   tip "If you have a 'railsbridge' folder on your computer or some other place you like to keep project files, `cd` to that directory and then follow the steps below."
   
-  step do
+  step "Make a special new directory" do
     message "To get started on the project, you'll need to open up your command line. If you have a Mac, open up the Terminal app. If you're on a PC, look for a program called Command Prompt. You'll also need to know your Github user name and password, so go ahead and double-check it if you don't remember. Wherever you see `[your-github-user-name]`, you'll replace that with your user name (and delete the braces)."
     console "mkdir [your-github-user-name].github.com"
     message "`mkdir` stands for 'make directory.' You just made a new directory that you'll put your project files in."
   end
 
-  step do
+  step "Initialize a new local git repository" do
     console "cd [your-github-user-name].github.com"
     message "You just changed directories and moved into the folder you just created."
     console "git init"
     message "You just initialized an empty repository, i.e. told git, 'I want to start a new project here.'"
   end
 
-  step do
+  step "Make a commit" do
     console "touch index.html\ngit add index.html"
     message "This creates a blank, new file called 'index.html'. The next line tells git you want to stage the file."
     console "git commit -m 'first commit'"
     message "You just made an initial commit. (Think of it as a snapshot of your project that you can come back to later.)"
   end
   
-  step do
+  step "Add Github as a remote" do
     message "You really do have to type your user name three times in the next command. Get ready for it."
     console "git remote add origin https://[your-github-user-name]@github.com/[your-github-user-name]/[your-github-user-name].github.com.git"
 
     message "You just set up a 'remote' &mdash; a git repository somewhere else (in this case, on github) that also holds your project files."
   end
 
-  step do
+  step "Create a new repo on the Github UI" do
+    tip "You can skip this step if you've created a ***[your-github-user-name].github.com*** page previously."
     message "Navigate to https://github.com/[your-github-user-name]/"
     message "Click 'Create a new repo' in the upper right"
     img :src => "img/github_create_repo.png"
@@ -45,10 +46,11 @@ steps do
     important "DO NOT choose 'Initialize this repository with a README' when creating the repo."
   end
 
-  step do
+  step "Push your code to Github" do
     message "Now, push the new file you just commited to github."
     console 'git push -u origin master'
     message "You'll probably be prompted to type your github password at this point. After you do, you'll have just pushed your project to github's servers!"
+    important "If you have existing content in your github pages repo, this command will fail, and you will have to do a `git push -uf origin master instead`. Verify with a TA first that you're doing the right thing."
   end
 
   step do
