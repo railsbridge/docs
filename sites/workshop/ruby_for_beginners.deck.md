@@ -50,6 +50,8 @@ A set of code that can be used to create an application.
 
 Many others.
 
+Q: How is a computer language similar to a human language, like English or Spanish?  How is it different?
+
 # Library
 A collection of reusable code to accomplish a generic activity.
 
