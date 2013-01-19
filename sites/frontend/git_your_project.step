@@ -33,7 +33,16 @@ steps do
     console "git remote add origin https://[your-github-user-name]@github.com/[your-github-user-name]/[your-github-user-name].github.com.git"
 
     message "You just set up a 'remote' &mdash; a git repository somewhere else (in this case, on github) that also holds your project files."
+  end
 
+  step do
+    message "Navigate to https://github.com/[your-github-user-name]/"
+    message "Click 'Create a new repo' in the upper right"
+    img :src => "img/github_create_repo.png"
+    message "Type '[your-github-user-name].github.com' into the 'Repository name' box"
+    img :src => "img/github_name_your_repo.png"
+
+    important "DO NOT choose 'Initialize this repository with a README' when creating the repo."
   end
 
   step do
