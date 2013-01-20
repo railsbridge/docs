@@ -97,7 +97,7 @@ Three buckets, lots of ways:
   * Planned breaks, lunch time
   * Remind students that there is a closing presentation at the end
   * Tell them where the bathroom is
-  * Tell them where the after party is	 
+  * Tell them where the after-party is	 
 
 # OUR IDEAS (KNOW WHAT'S UP 2)
 ### Establish ground rules
@@ -107,8 +107,8 @@ Three buckets, lots of ways:
 
 ### Don't be afraid to:
 * Call on people! 
-* Correcting people if they're wrong--politely and gently in a way that works for you. 
-  * Examples: "Well, I'm pretty sure this is the right answer instead." "Can you explain how you came to that conclusion?" "Does anyone have a different answer?"
+* Correct people if they're wrong--politely and gently in a way that works for you. 
+  * Examples: "Well, this might work better and this is why." "Can you explain how you came to that conclusion?" "Does anyone have a different answer?"
 * Answer questions that haven't been asked yet. 
 
 # OUR IDEAS (KNOW WHAT'S UP 3)
@@ -132,7 +132,7 @@ Talk about what problems you might anticipate, and what to do about the.
 TAs: What are they good for? Absolutely everything!!!
 
 # OUR IDEAS
-* Ask your TA to explain a concept--they may be more technically advanced than the Teacher. 
+* Ask your TA to explain a concept--they may be more technically advanced than the teacher. 
 * TAs can help people who get lost
 * Encourage your TAs to jump in to help explain something if you're struggling
 * TAs can ask the first question to encourage students to speak up. 
