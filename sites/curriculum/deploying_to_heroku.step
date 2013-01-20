@@ -61,7 +61,7 @@ situation "Every time" do
 git add .
 git commit -m "Some helpful message for your future self"
     SHELL
-    message "Your commit reference should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
+    message "Your commit message should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
   end
 
   step "Push changes to heroku" do
