@@ -11,7 +11,7 @@ Let's make tech more diverse and more welcoming!
 # Introductions
 ### Who are you?
 * Name
-* What do you do for money? Who gives you that money?
+* What do you do for a living? Care to share who you work for?
 * What's your favorite structure in the Bay Area?
 
 # How to make your class awesome
@@ -19,7 +19,7 @@ Three buckets, lots of ways:
 ### Help people feel:
 * socially comfortable
 * technically capable
-* like you know what's going on -- you're the leader. 
+* make it feel like you know what's going on -- you're the leader. 
 
 # DISCUSSION (Social Comfort)
 ## How can you help people feel	 socially comfortable? 
@@ -41,6 +41,7 @@ Three buckets, lots of ways:
 * Don't hit on people. No sexual advances. None. 
 * Don't make sexist jokes. Or racist, classist, or ableist jokes while you're at it. Call people out if they do.
 * Don't make gender-based generalizations ("Women are better at this task X, because ...")
+* Don't make references to womens' bodies or state your opinion of them. Women are more than how physically attractive they are.  
 * Don't treat women as delicate flowers, do treat them like normal people.
 * Don't use slurs (bitch is a slur, btw).
 
@@ -61,7 +62,7 @@ Three buckets, lots of ways:
 
 # OUR IDEAS (Technically Capable 2)
 ### Encourage collaboration and interaction
-* Explicitly say that student should try to answer each other's questions, that it's a really great way to reinforce learning and builds community. 
+* Explicitly say that students should try to answer each other's questions, that it's a really great way to reinforce learning and builds community. 
 * If a question is asked, ask if anyone in the class thinks they can explain.
 * Be especially encouraging of the first few questions, to try to get things rolling. 
   * You could say things like "I'm glad you asked!" or "I actually wondered that, too." or "Great question!"
@@ -96,7 +97,7 @@ Three buckets, lots of ways:
   * Planned breaks, lunch time
   * Remind students that there is a closing presentation at the end
   * Tell them where the bathroom is
-  * Tell them where the afterparty is	 
+  * Tell them where the after-party is	 
 
 # OUR IDEAS (KNOW WHAT'S UP 2)
 ### Establish ground rules
@@ -106,7 +107,8 @@ Three buckets, lots of ways:
 
 ### Don't be afraid to:
 * Call on people! 
-* Correct people (gently and politely) if they're wrong.
+* Correct people if they're wrong--politely and gently in a way that works for you. 
+  * Examples: "Well, this might work better and this is why." "Can you explain how you came to that conclusion?" "Does anyone have a different answer?"
 * Answer questions that haven't been asked yet. 
 
 # OUR IDEAS (KNOW WHAT'S UP 3)
@@ -114,7 +116,7 @@ Three buckets, lots of ways:
 * Don't go too fast. You will probably go too fast. Check in occasionally to ensure everyone is still with you. 
 * You can say the same thing THREE TIMES and it will not be boring yet. 
 * When you ask a question, wait TEN WHOLE SECONDS before saying anything else. People need time to think. 
-* Don't let the most advanced students dictate the pacing
+* Don't let the most advanced students dictate the pacing or answer all the questions. 
 
 # DISCUSSION
 Talk about what problems you might anticipate, and what to do about the. 
@@ -130,10 +132,13 @@ Talk about what problems you might anticipate, and what to do about the.
 TAs: What are they good for? Absolutely everything!!!
 
 # OUR IDEAS
-* Ask your TA to explain a concept--they may be more technically advanced than the Teacher. 
+* Ask your TA to explain a concept--they may be more technically advanced than the teacher. 
 * TAs can help people who get lost
 * Encourage your TAs to jump in to help explain something if you're struggling
 * TAs can ask the first question to encourage students to speak up. 
+* Co-teaching is also an option if you feel like you can tag-team. There doesn't necessarily need to be a hierarchy. 
+* TAs: Notice if the teacher is getting tired toward the end of the day. It can be tiring to stand up there talking all day and it might be nice to ask if you can cover it if you can. 
+* If someone falls behind, is struggling and there needs to be a lot of talking, the TA can take them out of the room to do some 1-on-1, as long as there is still another TA in the room. 
 
 # DISCUSSION
 How can you tell if they understand the words you're saying?
@@ -142,11 +147,12 @@ How can you tell if they understand the words you're saying?
 * Don't ask yes/no questions ... they are too easy.
 * Pay attention to body language
 * Ask "How would you do \{this\}?" or "If I wanted to do \{that}, what would I do?"
+* Generally, people ask questions when they are understanding material. If it is not challenging enough or is over their heads, they don't. Make sure they are asking questions. If not, encourage them to. 
 
 ### Calling on people
 * Don't be a jerk
 * Call on people to make the class more interactive and engaging, rather than a lecture. 
-* ???
+* more ideas???
 
 # SOURCES
 * HOWTO Encourage Women in Linux http://tldp.org/HOWTO/Encourage-Women-Linux-HOWTO/x168.html#AEN243
