@@ -21,12 +21,7 @@ steps do
     message "Two hints: it may be helpful to give these divs a fixed width, and you may need the `float` property."
   end
 
-  step do  
-    message "Now that you made everything look great, don't forget to commit your changes and push them to github one more time." 
-  end
-
   message "<img src='img/page_sample.jpg'>"
-
 end
 
 explanation do
@@ -47,7 +42,8 @@ to get a sense of how limitless the possibilities are with CSS.
 * [Dochub](http://dochub.io/#css/)
 
   MARKDOWN
-
 end
+
+consider_deploying_to_github
 
 next_step "jquery"

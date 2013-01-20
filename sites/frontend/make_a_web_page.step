@@ -67,7 +67,8 @@ change it in just one place, instead of having to update every page.
 
   MARKDOWN
   source_code "HTML", "<link rel=\"stylesheet\" href=\"resources/layout.css\" type=\"text/css\">"
-
 end
+
+consider_deploying_to_github
 
 next_step "add_more_elements"
