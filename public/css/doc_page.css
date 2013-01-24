@@ -101,11 +101,8 @@ h1 {
 }
 
 .toc ul:not(:first-child) {
-    border-left: 2px solid #eee;
     margin-left: 3px;
     padding-left: 6px;
-    list-style-type: circle;
-    list-style-position: inside;
 }
 
 /**/
