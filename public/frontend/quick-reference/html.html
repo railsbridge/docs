@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTML Quick Reference - Railsbridge Frontend</title>
+</head>
+<body>
+  <h1>RailsBridge Frontend HTML Quick Reference</h1>
+
+  <h2>HTML Skeleton</h2>
+  <pre>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      
+    &lt;/body&gt;
+  &lt;/html&gt;
+  </pre>
+
+  <h2>Headers</h2>
+  <pre>
+  &lt;h1&gt;Header&lt;/h1&gt;
+  &lt;h2&gt;Header&lt;/h2&gt;
+  &lt;h2&gt;Header&lt;/h2&gt;
+  &lt;h4&gt;Header&lt;/h4&gt;
+  &lt;h5&gt;Header&lt;/h5&gt;
+  &lt;h6&gt;Header&lt;/h6&gt;
+  </pre>
+
+  <h2>Paragraphs and more</h2>
+  <pre>
+  &lt;p&gt;Paragraph content.&lt;/p&gt;
+  &lt;em&gt;emphasized content, styled italic by default&lt;/em&gt;
+  &lt;strong&gt;strong content, styled bold by default&lt;/strong&gt;
+  </pre>
+
+  <h2>Images</h2>
+  <pre>
+  &lt;img src="name-of-my-image.png"&gt;
+  &lt;img src="http://www.othersite.com/image-name.jpg"&gt;
+  </pre>
+
+  <h2>Links</h2>
+  <pre>
+  &lt;a href="#anchor"&gt;Scroll to element on the current page with id "anchor"&lt;/a&gt;
+  &lt;a href="my-other-page.html"&gt;Go to a page on my site&lt;/a&gt;
+  &lt;a href="my-other-page.html" target="_blank"&gt;Open a new window for a page on my site&lt;/a&gt;
+  &lt;a href="http://www.othersite.com/"&gt;Go to a page on some other site&lt;/a&gt;
+  &lt;a href="http://www.othersite.com/" target="_blank"&gt;Open a new window for a page on some other site&lt;/a&gt;
+  </pre>
+
+  <h2>Lists</h2>
+  <p>Lists can be ordered (styled with numbers by default) or unordered (styled with bullets by default). Both contain list items with the actual content of the list.</p>
+  <pre>
+  &lt;ol&gt;
+    &lt;li&gt;First list item&lt;/li&gt;
+    &lt;li&gt;Second list item&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;One list item&lt;/li&gt;
+    &lt;li&gt;Another list item&lt;/li&gt;
+  &lt;/ul&gt;
+  </pre>
+
+  <p>Lists can be nested.</p>
+  <pre>
+  &lt;ul&gt;
+    &lt;li&gt;One list item
+      &lt;ul&gt;
+        &lt;li&gt;A list item nested under "One list item"&lt;/li&gt;
+        &lt;li&gt;Another nest list item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Another list item&lt;/li&gt;
+  &lt;/ul&gt;
+  </pre>
+
+  <h2>Containers</h2>
+  Divs and spans are generic containers used to organize HTML. Often, they are given ids and classes so that they can be given specific styling.
+  <pre>
+  &lt;div&gt;The content in the div&lt;/div&gt;
+  &lt;span&gt;span content&lt;/span&gt;
+  </pre>
+
+  <h2>Ids and Classes</h2>
+  <p>Ids and classes provide a way to use CSS to target specific element(s). Many tags can have the same class. Only one tag can have a particular id. Any tag can be given an id and classes.</p>
+  <pre>
+  &lt;tagname id="a-name-uniquely-identifying-this-element"&gt;content&lt;/tagname&gt;
+  &lt;tagname class="one-class another-class"&gt;content&lt;/tagname&gt;
+  </pre>
+</body>
+</html>
