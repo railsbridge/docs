@@ -1,12 +1,23 @@
 @charset "UTF-8";
 
-.step h1 > span.prefix {
-  color: blue;
+.step h1 {
+  border: 0;
 }
-.step blockquote {
-  border-left: 1px dotted blue;
-  padding-left: 1.5em;
-  margin-left: .25em;
+
+span.prefix {
+  font-size: 0.7em;
+  padding-left: 8px;
+}
+
+.step h1 {
+  font-size: 1em;
+  padding: 10px 0 0 10px;
+}
+
+.step h1 span.prefix {
+  font-size: 0.9em;
+  padding-left: 0;
+  padding-right: 8px;
 }
 
 img.noborder {
@@ -38,11 +49,13 @@ img.noborder {
 
 .important {
   border: 1px solid red;
+  border: 5px solid maroon;
 }
 
 .tip {
   border: 1px solid blue;
   padding: 1em;
+  border: 10px solid #eee;
 }
 
 .tip > span {
@@ -66,32 +79,28 @@ div.back:before {
   content: "← ";
 }
 
-.doc > div > h1 {
-  padding-left: .25em;
-}
-
 .doc > div {
   padding-bottom: 1em;
 }
 
 .goals > h1 {
-  background-color: #FECACD;
+  border-left: 20px solid #FECACD;
 }
 
 .steps > h1 {
-  background-color: #FBFFCA;
+  border-left: 20px solid #FBFFCA;
 }
 
 .explanation > h1 {
-  background-color: #C8FFC9;
+  border-left: 20px solid #C8FFC9;
 }
 
 .deploying > h1 {
-  background-color: #B0DEE7;
+  border-left: 20px solid #B0DEE7;
 }
 
 .further-reading > h1 {
-  background-color: #87e5f2;
+  border-left: 20px solid #87e5f2;
 }
 
 table.bordered td,
@@ -104,19 +113,19 @@ table.bordered tr {
 }
 
 .requirements > h1 {
-  background-color: #93B5DA;
+  border-left: 20px solid #93B5DA;
 }
 
 .discussion > h1 {
-  background-color: #92F59A;
+  border-left: 20px solid #92F59A;
 }
 
 .hints > h1 {
-  background-color: #86DFD4;
+  border-left: 20px solid #86DFD4;
 }
 
 .tools_and_references > h1 {
-  background-color: #C8A9E0;
+  border-left: 20px solid #C8A9E0;
 }
 
 .console > pre {
@@ -131,7 +140,7 @@ table.bordered tr {
 }
 
 .fuzzy-result {
-  margin-bottom: 20px;
+  margin  : 20px;
 }
 .fuzzy-result > pre {
   margin-bottom: 0px;

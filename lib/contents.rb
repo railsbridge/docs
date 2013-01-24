@@ -159,7 +159,6 @@ class Contents < Erector::Widget
 
   def content
     div id: "table_of_contents", class: "toc" do
-      h1 "Contents"
       toc_list hierarchy
 
       unless orphans.empty?

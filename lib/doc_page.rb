@@ -78,7 +78,7 @@ class DocPage < Erector::Widgets::Page
   class TopLink < Erector::Widget
     needs :name, :href, :onclick => nil
     def content
-      a "[#{@name}]", :class => "top_link", :href => @href, :onclick => @onclick
+      a "#{@name}", :class => "top_link", :href => @href, :onclick => @onclick
     end
   end
 
@@ -96,7 +96,6 @@ class DocPage < Erector::Widgets::Page
     [
       TopLink.new(:name => "sites", :href => "#", :onclick => "$('#site_index').toggle(); return false;"),
       TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
-      TopLink.new(:name => "toc", :href => "#", :onclick => "$('#table_of_contents').toggle(); return false;"),
       TopLink.new(:name => "git", :href => git_url),
     ]
   end

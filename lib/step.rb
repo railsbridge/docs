@@ -90,7 +90,7 @@ class Step < Erector::Widget
     div :class => "step", :title => name do
       h1 do
         widget BigCheckbox
-        prefix "Step #{num}: "
+        prefix "Step #{num}" + (!name.nil? ? ': ' : '')
         text name
       end
       _render_inner_content &Proc.new if block_given?
