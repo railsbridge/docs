@@ -3,95 +3,106 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Quick Reference - Railsbridge Frontend</title>
+  <style>
+    @import url(/font/opensans.css);
+    html, body { margin: 0; padding: 0; }
+    body {
+      padding: 20px 50px;
+      font-family: 'Open Sans';
+    }
+    .tag {
+      color: crimson;
+    }
+  </style>
 </head>
 <body>
   <h1>RailsBridge Frontend HTML Quick Reference</h1>
 
   <h2>HTML Skeleton</h2>
   <pre>
-  &lt;!DOCTYPE html&gt;
-  &lt;html&gt;
-    &lt;head&gt;
-      &lt;meta charset="utf-8"&gt;
-      &lt;title&gt;Title&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+  <span class="tag"><span class="tag">&lt;!DOCTYPE html&gt;</span></span>
+  <span class="tag">&lt;html&gt;</span>
+    <span class="tag">&lt;head&gt;</span>
+      <span class="tag">&lt;meta charset="utf-8"&gt;</span>
+      <span class="tag">&lt;title&gt;</span>Title<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;/head&gt;</span>
+    <span class="tag">&lt;body&gt;</span>
       
-    &lt;/body&gt;
-  &lt;/html&gt;
+    <span class="tag">&lt;/body&gt;</span>
+  <span class="tag">&lt;/html&gt;</span>
   </pre>
 
   <h2>Headers</h2>
   <pre>
-  &lt;h1&gt;Header&lt;/h1&gt;
-  &lt;h2&gt;Header&lt;/h2&gt;
-  &lt;h2&gt;Header&lt;/h2&gt;
-  &lt;h4&gt;Header&lt;/h4&gt;
-  &lt;h5&gt;Header&lt;/h5&gt;
-  &lt;h6&gt;Header&lt;/h6&gt;
+  <span class="tag">&lt;h1&gt;</span>Header<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;h2&gt;</span>Header<span class="tag">&lt;/h2&gt;</span>
+  <span class="tag">&lt;h2&gt;</span>Header<span class="tag">&lt;/h2&gt;</span>
+  <span class="tag">&lt;h4&gt;</span>Header<span class="tag">&lt;/h4&gt;</span>
+  <span class="tag">&lt;h5&gt;</span>Header<span class="tag">&lt;/h5&gt;</span>
+  <span class="tag">&lt;h6&gt;</span>Header<span class="tag">&lt;/h6&gt;</span>
   </pre>
 
   <h2>Paragraphs and more</h2>
   <pre>
-  &lt;p&gt;Paragraph content.&lt;/p&gt;
-  &lt;em&gt;emphasized content, styled italic by default&lt;/em&gt;
-  &lt;strong&gt;strong content, styled bold by default&lt;/strong&gt;
+  <span class="tag">&lt;p&gt;</span>Paragraph content.<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;em&gt;</span>emphasized content, styled italic by default<span class="tag">&lt;/em&gt;</span>
+  <span class="tag">&lt;strong&gt;</span>strong content, styled bold by default<span class="tag">&lt;/strong&gt;</span>
   </pre>
 
   <h2>Images</h2>
   <pre>
-  &lt;img src="name-of-my-image.png"&gt;
-  &lt;img src="http://www.othersite.com/image-name.jpg"&gt;
+  <span class="tag">&lt;img src="name-of-my-image.png"&gt;</span>
+  <span class="tag">&lt;img src="http://www.othersite.com/image-name.jpg"&gt;</span>
   </pre>
 
   <h2>Links</h2>
   <pre>
-  &lt;a href="#anchor"&gt;Scroll to element on the current page with id "anchor"&lt;/a&gt;
-  &lt;a href="my-other-page.html"&gt;Go to a page on my site&lt;/a&gt;
-  &lt;a href="my-other-page.html" target="_blank"&gt;Open a new window for a page on my site&lt;/a&gt;
-  &lt;a href="http://www.othersite.com/"&gt;Go to a page on some other site&lt;/a&gt;
-  &lt;a href="http://www.othersite.com/" target="_blank"&gt;Open a new window for a page on some other site&lt;/a&gt;
+  <span class="tag">&lt;a href="#anchor"&gt;</span>Scroll to element on the current page with id "anchor"<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;a href="my-other-page.html"&gt;</span>Go to a page on my site<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;a href="my-other-page.html" target="_blank"&gt;</span>Open a new window for a page on my site<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;a href="http://www.othersite.com/"&gt;</span>Go to a page on some other site<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;a href="http://www.othersite.com/" target="_blank"&gt;</span>Open a new window for a page on some other site<span class="tag">&lt;/a&gt;</span>
   </pre>
 
   <h2>Lists</h2>
   <p>Lists can be ordered (styled with numbers by default) or unordered (styled with bullets by default). Both contain list items with the actual content of the list.</p>
   <pre>
-  &lt;ol&gt;
-    &lt;li&gt;First list item&lt;/li&gt;
-    &lt;li&gt;Second list item&lt;/li&gt;
-  &lt;/ol&gt;
+  <span class="tag">&lt;ol&gt;</span>
+    <span class="tag">&lt;li&gt;</span>First list item<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Second list item<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;/ol&gt;</span>
 
-  &lt;ul&gt;
-    &lt;li&gt;One list item&lt;/li&gt;
-    &lt;li&gt;Another list item&lt;/li&gt;
-  &lt;/ul&gt;
+  <span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span>One list item<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Another list item<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;/ul&gt;</span>
   </pre>
 
   <p>Lists can be nested.</p>
   <pre>
-  &lt;ul&gt;
-    &lt;li&gt;One list item
-      &lt;ul&gt;
-        &lt;li&gt;A list item nested under "One list item"&lt;/li&gt;
-        &lt;li&gt;Another nest list item&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;Another list item&lt;/li&gt;
-  &lt;/ul&gt;
+  <span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span>One list item
+      <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;</span>A list item nested under "One list item"<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span>Another nest list item<span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Another list item<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;/ul&gt;</span>
   </pre>
 
   <h2>Containers</h2>
-  Divs and spans are generic containers used to organize HTML. Often, they are given ids and classes so that they can be given specific styling.
+  <p>Divs and spans are generic containers used to organize HTML. Often, they are given ids and classes so that they can be given specific styling.</p>
   <pre>
-  &lt;div&gt;The content in the div&lt;/div&gt;
-  &lt;span&gt;span content&lt;/span&gt;
+  <span class="tag">&lt;div&gt;</span>The content in the div<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;span&gt;</span>span content<span class="tag">&lt;/span&gt;</span>
   </pre>
 
   <h2>Ids and Classes</h2>
   <p>Ids and classes provide a way to use CSS to target specific element(s). Many tags can have the same class. Only one tag can have a particular id. Any tag can be given an id and classes.</p>
   <pre>
-  &lt;tagname id="a-name-uniquely-identifying-this-element"&gt;content&lt;/tagname&gt;
-  &lt;tagname class="one-class another-class"&gt;content&lt;/tagname&gt;
+  <span class="tag">&lt;tagname id="a-name-uniquely-identifying-this-element"&gt;</span>content<span class="tag">&lt;/tagname&gt;</span>
+  <span class="tag">&lt;tagname class="one-class another-class"&gt;</span>content<span class="tag">&lt;/tagname&gt;</span>
   </pre>
 </body>
 </html>
