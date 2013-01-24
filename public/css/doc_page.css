@@ -1,0 +1,185 @@
+body {
+  font-family: 'Open Sans',helvetica,arial,sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+.top {
+  margin-bottom: 1em;
+  padding: 2px 6px;
+  background-color: black;
+}
+
+.top h1 {
+  padding: 0.5em 0em 0.5em 1.4em;
+  font-size: 1.4em;
+  font-weight: normal;
+  color: white;
+}
+
+.top a {
+  text-decoration: none;
+  color: white;
+}
+
+.top a:visited {
+  color: white;
+}
+
+.bottom {
+  min-height: 60px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  font-size: 0.8em;
+}
+
+/* toc = Table of Contents */
+
+.toc {
+  padding: 0 0 1em 0;
+  margin: 0 0 1em 1em;
+  width: 26em;
+  /* if the toc isn't "positioned", images will show on top of it */
+  position: relative;
+}
+
+#table_of_contents {
+  float: left;
+  width: 17em;
+}
+#table_of_contents h1 {
+  font-size: 0.9em;
+}
+
+#site_index {
+  float: right;
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 55px;
+  z-index: 2;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+.toc h1 {
+  padding-left: 12px;
+}
+
+.toc ul {
+  margin-left: 20px;
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.toc li a {
+  font-size: 11pt;
+  padding: 1px 2px;
+  /*border: 1px solid #e2f2f2;*/
+  text-decoration: none;
+
+  display: block; /* fill the entire containing li */
+}
+
+.toc li a:hover {
+  border-color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.toc .current {
+  font-weight: bold;
+  padding: 1px 2px
+}
+
+.toc ul:not(:first-child) {
+    margin-left: 3px;
+    padding-left: 6px;
+}
+
+/**/
+
+.main {
+  position: relative;
+  margin-left: 300px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.main h1.doc_title {
+  margin-bottom: 1em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid #ccc;
+}
+
+.doc {
+  max-width: 50em;
+}
+
+.doc pre {
+  background: #f2f2f2;
+  padding: .5em 1em;
+  font-size: 13pt;
+  overflow-x: auto;
+}
+.doc code {
+  font-size: 13pt;
+  background: #f2f2f2;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.doc h1 {
+  border-bottom: 2px solid #EEE;
+  padding-left: 12px;
+}
+
+.doc blockquote {
+  -webkit-margin-before: 0.5em;
+  -webkit-margin-after: 0.5em;
+  -webkit-margin-start: 20px;
+  -webkit-margin-end: 0px;
+}
+
+.top .top_links {
+  float: right;
+  margin-right: 8px;
+}
+.top a.top_link {
+  float: right;
+  margin: 2px;
+  border: 1px solid #999;
+  padding: 5px 10px 5px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  background-color: #555;
+}
+
+img {
+  margin: auto;
+  display: block;  /* otherwise centering doesn't happen */
+}
+
+/* Clearfix for bottom of page */
+.bottom {
+  clear: both;
+  *zoom: 1;
+}
+
+.bottom:before, 
+.bottom:after {
+  display: table;
+  line-height: 0;
+}
+
+.bottom:after {
+  clear: both;
+}
+

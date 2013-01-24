@@ -94,7 +94,7 @@ end</pre>
 </div>
 MARKDOWN
 
-choice  do
+
   option "Are your tools installed?" do
     link "get_a_sticker"
   end
@@ -102,5 +102,3 @@ choice  do
   option "Do you need to set up your tools?" do
     link "tool_installation"
   end
-end
-

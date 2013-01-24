@@ -4,7 +4,7 @@ class BigCheckbox < Erector::Widget
   # needs :size => "48px"  # todo
     
   external :style, scss(<<-CSS)
-  $big_checkbox_size: 48px;
+  $big_checkbox_size: 20px;
   
   input.big_checkbox[type=checkbox] {
     display:none;
@@ -12,16 +12,16 @@ class BigCheckbox < Erector::Widget
        height: $big_checkbox_size;
        width: $big_checkbox_size;
        display:inline-block;
-       padding: 0 0 0 0px;
-       margin: 0 4px -8px 0;
+       padding: 2px;
+       margin: 0 12px -8px 0;
        background-color: white;
        z-index: 2;
-       border: 4px solid #dadada;
-       @include border-radius(10px);
+       border: 2px solid #dadada;
     }
      
     + label:hover {
        background-image: url(/img/check-dim.png);
+       background-size: cover;
        cursor: pointer;
     }
   }
@@ -29,6 +29,7 @@ class BigCheckbox < Erector::Widget
   input.big_checkbox[type=checkbox]:checked {
     + label {
       background-image: url(/img/check.png);
+      background-size: cover;
     }
   }
   CSS
