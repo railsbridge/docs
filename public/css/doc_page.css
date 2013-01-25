@@ -6,10 +6,7 @@ body {
 
 h1 {
   font-size: 1.5em;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
+  margin: 0;
 }
 
 .top {
@@ -130,15 +127,16 @@ h1 {
   font-size: 13pt;
   overflow-x: auto;
 }
+
 .doc code {
   font-size: 13pt;
   background: #f2f2f2;
   padding-left: 4px;
   padding-right: 4px;
 }
+
 .doc h1 {
   border-bottom: 2px solid #EEE;
-  padding-left: 12px;
 }
 
 .doc blockquote {
@@ -182,4 +180,3 @@ img {
 .bottom:after {
   clear: both;
 }
-

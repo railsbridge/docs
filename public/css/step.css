@@ -48,12 +48,10 @@ img.noborder {
 }
 
 .important {
-  border: 1px solid red;
   border: 5px solid maroon;
 }
 
 .tip {
-  border: 1px solid blue;
   padding: 1em;
   border: 10px solid #eee;
 }
@@ -83,26 +81,6 @@ div.back:before {
   padding-bottom: 1em;
 }
 
-.goals > h1 {
-  border-left: 20px solid #FECACD;
-}
-
-.steps > h1 {
-  border-left: 20px solid #FBFFCA;
-}
-
-.explanation > h1 {
-  border-left: 20px solid #C8FFC9;
-}
-
-.deploying > h1 {
-  border-left: 20px solid #B0DEE7;
-}
-
-.further-reading > h1 {
-  border-left: 20px solid #87e5f2;
-}
-
 table.bordered td,
 table.bordered tr {
   border-style: solid;
@@ -112,20 +90,55 @@ table.bordered tr {
   padding-right: 5px;
 }
 
-.requirements > h1 {
-  border-left: 20px solid #93B5DA;
+.requirements > h1:before,
+.discussion > h1:before,
+.hints > h1:before,
+.tools_and_references > h1:before,
+.goals > h1:before,
+.steps > h1:before,
+.explanation > h1:before,
+.deploying > h1:before,
+.further-reading > h1:before {
+  content: "\00a0";
+  display: inline-block;
+  width: 20px;
+  margin-right: 10px;
 }
 
-.discussion > h1 {
-  border-left: 20px solid #92F59A;
+.goals > h1:before {
+  background-color: #FECACD;
 }
 
-.hints > h1 {
-  border-left: 20px solid #86DFD4;
+.steps > h1:before {
+  background-color: #FBFFCA;
 }
 
-.tools_and_references > h1 {
-  border-left: 20px solid #C8A9E0;
+.explanation > h1:before {
+  background-color: #C8FFC9;
+}
+
+.deploying > h1:before {
+  background-color: #B0DEE7;
+}
+
+.further-reading > h1:before {
+  background-color: #87e5f2;
+}
+
+.requirements > h1:before {
+  background-color: #93B5DA;
+}
+
+.discussion > h1:before {
+  background-color: #92F59A;
+}
+
+.hints > h1:before {
+  background-color: #86DFD4;
+}
+
+.tools_and_references > h1:before {
+  background-color: #C8A9E0;
 }
 
 .console > pre {
@@ -140,15 +153,18 @@ table.bordered tr {
 }
 
 .fuzzy-result {
-  margin  : 20px;
+  margin: 20px;
 }
+
 .fuzzy-result > pre {
   margin-bottom: 0px;
 }
+
 .fuzzy-result .fuzzy-hint {
   font-size: 12px;
   text-align: right;
 }
+
 .fuzzy-result .fuzzy-lightened {
   color: #aaa;
 }
