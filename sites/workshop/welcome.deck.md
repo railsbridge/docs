@@ -31,6 +31,9 @@ We want the community of software developers to reflect the diversity of our soc
 <!SLIDE bullets>
 # What is Ruby on Rails?
 
+<!SLIDE bullets>
+# 
+
 !SLIDE center
 # Ruby vs. Rails
 
@@ -80,7 +83,7 @@ We want the community of software developers to reflect the diversity of our soc
 <!SLIDE bullets>
 # Don't be shy!
 * Ask questions!
-* TAs and teachers are here to
+* TAs and teachers are here to help
 
 <!SLIDE bullets>
 # Tools we'll be working with
