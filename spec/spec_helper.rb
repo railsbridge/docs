@@ -6,6 +6,10 @@ require "rspec"
 require "wrong/adapters/rspec"
 require "nokogiri"
 
+def assert_loosely_equal lhs, rhs
+  assert { lhs.gsub(/\n\s*/, '') == rhs.gsub(/\n\s*/, '') }
+end
+
 require "files"
 include Files   # todo: include this in an RSpec config block instead
 

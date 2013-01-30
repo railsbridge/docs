@@ -10,6 +10,7 @@ gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", ">=0.3.0"
 gem "sass"
+gem "redcarpet"
 
 group :development do
   gem "wrong", ">=0.6.2"

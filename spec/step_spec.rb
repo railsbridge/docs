@@ -3,10 +3,6 @@ require "#{here}/spec_helper"
 
 require "step_page"
 
-def assert_loosely_equal lhs, rhs
-  assert { lhs.gsub(/\n\s*/, '') == rhs.gsub(/\n\s*/, '') }
-end
-
 describe Step do
 
   def to_html nokogiri_node
