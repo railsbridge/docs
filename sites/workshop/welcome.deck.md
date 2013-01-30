@@ -31,9 +31,6 @@ We want the community of software developers to reflect the diversity of our soc
 <!SLIDE bullets>
 # What is Ruby on Rails?
 
-<!SLIDE bullets>
-# 
-
 !SLIDE center
 # Ruby vs. Rails
 
