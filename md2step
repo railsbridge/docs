@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 here = File.expand_path File.dirname __FILE__
 $:<<here
-require 'lib/github_flavored_markdown'
-include GithubFlavoredMarkdown
+
 ARGV.each do |arg|
   old_path = arg
   new_path = arg.gsub(/\.md$/, '.step')

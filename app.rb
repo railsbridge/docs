@@ -153,19 +153,19 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   get "/:site/:name.:ext" do
-    if not sites.include?(params[:site])
-      forward  # send it on to the downstream file server
-    else
+    if sites.include?(params[:site])
       send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
+    else
+      forward  # send it on to the downstream file server
     end
   end
 
   # todo: make this work in a general way, without hardcoded 'img'
   get "/:site/img/:name.:ext" do
-    if not sites.include?(params[:site])
-      forward  # send it on to the downstream file server
-    else
+    if sites.include?(params[:site])
       send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
+    else
+      forward  # send it on to the downstream file server
     end
   end
 

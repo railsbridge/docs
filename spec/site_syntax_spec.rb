@@ -1,6 +1,6 @@
-here = File.expand_path File.dirname(__FILE__)
-require "#{here}/spec_helper"
-require "#{here}/../app"
+require "spec_helper"
+require_relative "../app"
+
 require "site"
 
 require "rack/test"

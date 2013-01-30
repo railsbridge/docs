@@ -1,8 +1,7 @@
-here = File.expand_path File.dirname(__FILE__)
-require "#{here}/spec_helper"
+require "spec_helper"
 
-require "#{here}/../app"
-require "#{here}/../lib/site_index"
+require_relative "../app"
+require_relative "../lib/site_index"
 
 describe Contents do
   before :all do

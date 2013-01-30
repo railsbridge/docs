@@ -1,10 +1,8 @@
-here = File.expand_path File.dirname(__FILE__)
-require "#{here}/spec_helper"
+require 'spec_helper'
 
 require "step_page"
 
 describe Step do
-
   def to_html nokogiri_node
     nokogiri_node.serialize(:save_with => 0).chomp
   end
