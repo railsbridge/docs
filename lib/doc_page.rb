@@ -1,5 +1,4 @@
 require 'erector'
-require "github_flavored_markdown"
 require "contents"
 require "site_index"
 
@@ -20,8 +19,6 @@ class InstallfestExternalRenderer < ExternalRenderer
 end
 
 class DocPage < Erector::Widgets::Page
-  include GithubFlavoredMarkdown
-
   needs :site_name, :doc_title, :doc_path, :page_name
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name

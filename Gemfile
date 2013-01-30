@@ -3,7 +3,6 @@ source :rubygems
 gem "erector", "~>0.9.0"
 gem "sinatra"
 gem "nokogiri"
-gem "rdiscount"
 gem "thin"
 gem "eventmachine", "1.0.0.rc.4"
 gem 'rack-codehighlighter'

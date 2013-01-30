@@ -1,10 +1,9 @@
 require 'erector'
 require 'big_checkbox'
 require 'erector_scss'
+require 'markdown_renderer'
 
 class Step < Erector::Widget
-  include GithubFlavoredMarkdown
-
   external :style, <<-CSS
     @import url(/css/step.css);
   CSS
@@ -265,6 +264,10 @@ class Step < Erector::Widget
     lang = args.pop
     src = "\n:::#{lang}\n#{src}" if lang
     pre src, :class => "code"
+  end
+
+  def md2html text
+    MarkdownRenderer.render(text)
   end
 
   private
