@@ -45,6 +45,9 @@ With good browser dev tools, you can pick apart every website you visit. If you 
 CSS styles or JavaScript animations, you can always look under the hood and figure out how
 they're done. It's a great way to keep learning as a front end developer.
 
+## Quick References
+* [HTML](html_quick_reference)
+
 ## Resources for Later
 
 * [Mozilla Developer Network](https://developer.mozilla.org) is probably the largest, most comprehensive source of front end documentation.
