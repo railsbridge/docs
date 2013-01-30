@@ -180,3 +180,41 @@ img {
 .bottom:after {
   clear: both;
 }
+
+
+
+@media print {
+  .toc, .top_links {
+    display: none;
+  }
+
+  .top {
+    padding-left: 0;
+    margin-left: 20px;
+    margin-bottom: 0;
+    background-color: white;
+  }
+
+  .top h1 {
+    margin-left: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  .top h1, .top h1 a, .top h1 a:visited {
+    color: black;
+  }
+
+  .main {
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  .doc pre {
+    font-size: 10px;
+    overflow-x: visible;
+    background-color: white;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
