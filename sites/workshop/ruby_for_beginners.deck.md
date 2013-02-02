@@ -278,10 +278,10 @@ What is happening on the last two lines?  How would you solve it?
 	* 898989898
 	* 2
 * Examples of floats:	
-	* .0.0
+	* 0.0
 	* -105.56
-	* .33
-	* .00004
+	* 0.33
+	* 0.00004
 * You can perform operations on both types of numbers with these characters: +, -, /, *
 	
 ### exercises	
