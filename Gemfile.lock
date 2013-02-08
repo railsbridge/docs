@@ -33,7 +33,7 @@ GEM
     nokogiri (1.5.6-x86-mingw32)
     polyglot (0.3.3)
     predicated (0.2.6)
-    rack (1.5.1)
+    rack (1.5.2)
     rack-codehighlighter (0.5.0)
       nokogiri (>= 1.4.1)
       rack (>= 1.0.0)
