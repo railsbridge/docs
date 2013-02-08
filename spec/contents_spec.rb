@@ -7,7 +7,7 @@ here = File.expand_path File.dirname(__FILE__)
 
 describe Contents do
   before :all do
-    @meals_toc = Contents.new(site_name: 'meals', site_dir: "#{here}/sites/meals", page_name: 'clean_up')
+    @meals_toc = Contents.new(site_name: 'meals', site_dir: "#{here}/sites/meals", page_name: 'prepare_a_meal')
   end
 
   it "scans for subpage links" do
@@ -64,17 +64,17 @@ describe Contents do
     toc_html = Nokogiri.parse(@meals_toc.to_html)
 
     current_page = toc_html.css(".current").first.text
-    current_page.should == 'Clean Up'
+    current_page.should == 'Prepare A Meal'
 
     other_pages = toc_html.css('a').map(&:text)
     other_pages.should =~ [
         "Breakfast",
+        "Clean Up",
         "Eat A Meal",
         "Find Some Vegetables",
         "Meals",
         "Omnivorous",
         "Orphaned Page",
-        "Prepare A Meal",
         "Vegetarian"
     ]
   end
