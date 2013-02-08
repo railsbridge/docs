@@ -19,4 +19,5 @@ group :development do
   gem "rack-test"
   gem "files", ">=0.3.0"
   gem "bourbon"  # do 'cd public/css; bourbon update' to get new bourbon
+  gem 'rb-fsevent', :platform => :ruby
 end

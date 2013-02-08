@@ -49,11 +49,11 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def sites_dir= dir
     @sites_dir = dir.tap { set_downstream_app }
   end
-  
+
   def set_downstream_app
     @app = ::Deck::RackApp.public_file_server
   end
-  
+
   def sites_dir
     @sites_dir || "#{@here}/sites"
   end
@@ -84,7 +84,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def title_for_page page_name
     page_name.split(/[-_]/).map do |w|
       w == "osx" ? "OS X" : w.capitalize
-    end.join(' ')    
+    end.join(' ')
   end
 
   def render_page
@@ -99,7 +99,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
       }
 
       case ext
-        
+
       when "md"
         if doc_path =~ /\.deck\.md$/   # todo: refactor
           # todo: render with page nav elements too
@@ -180,7 +180,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/:file.:ext" do
     # treat root URLs with dots in them like static assets and serve them
-    #   from the downstream file server (coderay.css, jquery-1.6.1.js)
+    #   from the downstream file server (coderay.css, jquery-1.7.2.js)
     forward
   end
 

@@ -9,7 +9,7 @@ end
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.pattern = "spec/**/*_spec.rb"
   t.rspec_opts =
-      "--format d --fail-fast --backtrace"
+      "--format d --backtrace"
   t.rspec_opts += " --color" if !windows?
   # t.ruby_opts="-w"
 end

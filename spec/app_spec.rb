@@ -16,7 +16,10 @@ describe InstallFest do
   def true_app
     true_app = app
     until true_app.is_a? InstallFest
-      next_app = true_app.instance_variable_get(:@app)      
+      next_app =
+        true_app.respond_to?(:app) ?
+          true_app.app :
+          true_app.instance_variable_get(:@app)
       break if next_app.nil?
       true_app = next_app
     end
@@ -27,7 +30,7 @@ describe InstallFest do
     get *args
     assert { last_response.status == 200 }
   end
-  
+
   it "is a sinatra app" do
     assert { true_app.is_a? InstallFest }
     assert { true_app.class.ancestors.include? Sinatra::Application }
@@ -124,25 +127,25 @@ describe InstallFest do
       end
       @breakfast = breakfast
     end
-    
+
     it "renders a deck" do
       get! "/meals/breakfast"
-      rendered_breakfast = Deck::SlideDeck.new(:slides => Deck::Slide.split(@breakfast)).to_pretty      
+      rendered_breakfast = Deck::SlideDeck.new(:slides => Deck::Slide.split(@breakfast)).to_pretty
       assert { last_response.body.include?(rendered_breakfast) }
     end
-    
+
     # todo: include deck.js source right inside the HTML
     it "serves up deck.js and other public assets" do
       get! "/deck.js/core/deck.core.js"
       assert { last_response.body.include?("Deck JS - deck.core")}
 
-      get! "/deck.js/jquery-1.7.min.js"
-      assert { last_response.body.include?("jQuery v1.7 jquery.com")}
+      get! "/deck.js/jquery-1.7.2.min.js"
+      assert { last_response.body.include?("jQuery v1.7.2 jquery.com")}
 
       get! "/coderay.css"
       assert { last_response.body.include?("/* Code ray css */")}
     end
-      
+
   end
 
 end
