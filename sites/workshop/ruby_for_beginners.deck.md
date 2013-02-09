@@ -488,8 +488,8 @@ On the second line, what does `?>` indicate?
 ```
 
 ### exercises 
-* Create an array called "class" that contains the names of some of the people in your Railsbridge class. Make sure you include your own name.
-* Using your class array, create a conditional that prints "My Name is (your name)" for your name only.
+* Create an array called "group" that contains the names of some of the people in your Railsbridge group. Make sure you include your own name.
+* Using your group array, create a conditional that prints "My Name is (your name)" for your name only.
 
 !SLIDE
 # Running Your Code
