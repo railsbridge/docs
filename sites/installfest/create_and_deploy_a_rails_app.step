@@ -74,7 +74,11 @@ step "Generate a database model" do
 
   console <<-BASH
 rails generate scaffold user name:string email:string address:text active:boolean
+  BASH
+  console <<-BASH
 rake db:migrate
+  BASH
+  console <<-BASH
 rails server
   BASH
 
