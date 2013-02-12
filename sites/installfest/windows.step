@@ -1,4 +1,4 @@
-  message "These instructions should work for all versions of Windows from XP on to Windows 7."
+  message "These instructions should work for all versions of Windows from XP on to Windows 8."
 
   message "You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings."
 
@@ -36,6 +36,16 @@ step "Configure your git and ssh environment" do
     message "After this step you will have some **git config settings** and you will also have an **ssh key**."
   end
 
+end
+
+step "Windows 8 Only — Install Node.js" do
+
+  message "Go to <http://nodejs.org> and download the installer"
+
+  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+
+  console "node -v"
+  fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
 end
 
 step "Sanity Check" do
@@ -111,9 +121,9 @@ step "Install a Text Editor" do
   important "**When in doubt, use KomodoEdit.**"
 
   message "Download KomodoEdit here: <http://downloads.activestate.com/Komodo/releases/>"
-  
+
   message "[Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet."
-  
+
 
 end
 
