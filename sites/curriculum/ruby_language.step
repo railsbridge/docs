@@ -83,14 +83,13 @@ fruits.methods.sort
   end
 
   step do
-    message "Arrays have a method called `each` which iterates through the list running code on each item."
+    message "Arrays have a method called **each** which iterates through the list running code on each item."
     console "", <<-RUBY
 fruits.each do |fruit|
   puts fruit
 end
     RUBY
     message "This takes the first item from the `fruits` array (`\"kiwi\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
-
   end
 
   step do
