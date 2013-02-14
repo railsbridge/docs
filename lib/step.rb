@@ -206,9 +206,10 @@ class Step < Erector::Widget
   RESULT_CAPTION = "Expected result:"
   FUZZY_RESULT_CAPTION = "Approximate expected result:"
 
-  def console msg
+  def console(*args)
+    msg = args.pop
     div :class => "console" do
-      span TERMINAL_CAPTION
+      span args.first || TERMINAL_CAPTION
       pre msg
     end
   end
