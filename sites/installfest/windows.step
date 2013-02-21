@@ -44,6 +44,10 @@ step "Windows 8 Only — Install Node.js" do
 
   message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
 
+  message "**Reboot your computer.**"
+
+  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** (see below) and..."
+
   console "node -v"
   fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
 end
