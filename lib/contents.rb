@@ -130,7 +130,7 @@ class Contents < Erector::Widget
 
   def toc_link page
     link_text = page.split(/[-_]/).map{|s|s.capitalize}.join(' ')
-    path = "/#{@site_name}/" + page
+    path = page.start_with?('/') ? page : "/#{@site_name}/" + page
     li do
       if page == page_name
         span link_text, class: 'current'

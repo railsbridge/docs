@@ -4,10 +4,19 @@ require_relative "../app"
 require_relative "../lib/contents"
 
 here = File.expand_path File.dirname(__FILE__)
+real_sites_dir = File.expand_path "#{here}/../sites"
 
 describe Contents do
-  before :all do
+  before do
     @meals_toc = Contents.new(site_name: 'meals', site_dir: "#{here}/sites/meals", page_name: 'prepare_a_meal')
+  end
+
+  it "should render absolute links absolutely" do
+    @docs_toc = Contents.new(site_name: 'docs', site_dir: "#{real_sites_dir}/docs", page_name: 'docs')
+
+    toc_html = Nokogiri.parse(@docs_toc.to_html)
+    links = toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
+    links['/curriculum'].should == '/curriculum'
   end
 
   it "scans for subpage links" do
