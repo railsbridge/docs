@@ -30,7 +30,7 @@ hints do
 message <<-MARKDOWN
 * Readme files are your best friends! Love them!
 * The convention for naming models is to capitalize the first letter, like: User. 
-* When you run `rails generate devise:install`, you get four instructions for things to configure. 2 & 3 are good to do. 
+* When you run `rails generate devise:install`, you get five instructions for things to configure. 3 & 4 are good to do.
 * The routes file goes through many common types of routes in the comments. This is also your friend.
 * Devise has some magic that will help you with your logout link. Run `rake routes` and look for a route that helps you sign out. 
 * You'll probably want to show the current user's email address only if they are presently signed in, right? Devise has a helper for you.
