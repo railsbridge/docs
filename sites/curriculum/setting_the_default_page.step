@@ -16,10 +16,6 @@ steps {
     message "Open `config/routes.rb`. Near the end of the file but before the final end add `root :to => 'topics#index'`. When you are done the last few lines should look like this:"
 
     source_code :ruby, <<-RUBY
-# This is a legacy wild controller route that's not recommended for RESTful applications.
-# Note: This route will make all actions in every controller accessible via GET requests.
-# match ':controller(/:action(/:id(.:format)))'
-
 root :to => 'topics#index'
     RUBY
   end

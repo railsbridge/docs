@@ -1,12 +1,12 @@
 h2 do 
   span "If you haven't yet deployed to heroku, start at "
-  a 'First-time setup', :href => '#first-time'
+  a 'First-time setup', href: '#first-time'
   span ". Otherwise, start at "
-  a 'Every time', :href => '#every-time'
+  a 'Every time', href: '#every-time'
   span "."
 end
 
-a :name => 'first-time'
+a name: 'first-time'
 situation "First-time setup" do
   step "Create a heroku application" do
     console "heroku create"
@@ -50,7 +50,7 @@ git commit -m "Changed Gemfile for heroku"
   end
 end
 
-a :name => 'every-time'
+a name: 'every-time'
 situation "Every time" do
   step "Commit any pending changes to git" do
     message "Heroku will only receive the files we've committed into our local git repository. So we need to make sure all changed files have been committed."
@@ -98,7 +98,7 @@ explanation do
   MARKDOWN
 
   message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
-  img :src => "img/workflow.png", :alt => "workflow", :style => "border: none"
+  img src: "img/workflow.png", alt: "workflow", style: "border: none"
   ol do
     li { message "Add or change some code" }
     li { message "Commit your changes (`git commit`)" }

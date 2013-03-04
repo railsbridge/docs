@@ -1,6 +1,6 @@
 goals {
 
-  img :alt => "Topics Table", :src => "img/topics_table.png"
+  img alt: "Topics Table", src: "img/topics_table.png"
 
   message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
 
@@ -40,7 +40,7 @@ explanation {
 
   h2 "Explaining MVC and Records"
 
-  img :src => "img/mvc.png", :alt => "MVC"
+  img src: "img/mvc.png", alt: "MVC"
 
   message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
 

@@ -1,5 +1,5 @@
 
-img :src => "img/Start_page.png", :alt => "Start Page"
+img src: "img/Start_page.png", alt: "Start Page"
 
 goals do
   goal "Create Your New Application"
@@ -45,7 +45,7 @@ steps do
   files. The ones we want to focus on today are:
   MARKDOWN
 
-  table :border=>"1", :cellspacing=>"0", :cellpadding=>"3", :align=>"center" do
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
     tr {
       th "File/Folder"
       th "Purpose"

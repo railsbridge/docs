@@ -23,7 +23,7 @@ steps {
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
     message "You should see a page listing topics that looks something like this:"
 
-    img :src => "img/Seattle_topic_list_page.png", :alt => "Topic List Page"
+    img src: "img/Seattle_topic_list_page.png", alt: "Topic List Page"
   }
 
   step {
@@ -33,7 +33,7 @@ steps {
   * You should see a confirmation page like this:
     MARKDOWN
 
-    img :alt=> "topic created", :src => "img/Seattle_topic_created.png"
+    img alt: "topic created", src: "img/Seattle_topic_created.png"
   }
 
   step {

@@ -2,7 +2,7 @@
 goals {
   goal "Create a model for votes"
 
-  img :alt => "Topics Table", :src => "img/votes_table.png"
+  img alt: "Topics Table", src: "img/votes_table.png"
 
   message "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
 }

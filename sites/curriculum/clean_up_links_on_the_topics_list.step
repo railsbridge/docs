@@ -21,7 +21,7 @@ steps {
   step "Change 'destroy' to 'delete'" do
 
     message "Change the line with the word 'Destroy' to this:"
-    source_code :erb, "<td><%= link_to 'Delete', topic, :confirm => 'Are you sure?', :method => :delete %></td>"
+    source_code :erb, "<td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>"
   end
 
   step "Confirm your changes" do
