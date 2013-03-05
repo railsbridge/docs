@@ -46,7 +46,7 @@ step "Install git" do
 end
 
 step "Configure Git" do
-  link "configure_git"
+  link_without_toc "configure_git"
 end
 
 step "Install RVM" do

@@ -107,6 +107,10 @@ class Step < Erector::Widget
     end
   end
 
+  def link_without_toc name
+    link name
+  end
+
   def next_step name
     div :class => "step next_step" do
       h1 do

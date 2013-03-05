@@ -51,6 +51,19 @@ img.noborder {
   border: 5px solid maroon;
 }
 
+.pertinent-info {
+  padding: 1em;
+  font-size: 0.8em;
+  font-color: rgb(60, 60, 60);
+  border: 3px solid grey;
+  border-radius: 10px;
+}
+
+.pertinent-info h3 {
+  text-align: center;
+  margin: 0;
+}
+
 .tip {
   padding: 1em;
   border: 10px solid #eee;

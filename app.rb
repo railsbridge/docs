@@ -31,7 +31,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   attr_writer :default_site
 
   def default_site
-    if (host && sites.include?(site = host.split(".").first))
+    if host && sites.include?(site = host.split(".").first)
       site
     else
       @default_site

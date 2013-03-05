@@ -7,16 +7,7 @@ MARKDOWN
 important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
 
 step "Download KomodoEdit" do
-
-  link "intel_or_ppc_mac"
-
-  option "Intel Mac CPU" do
-    message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/7.1.3/Komodo-Edit-7.1.3-11027-macosx-x86.dmg)"
-  end
-
-  option "PowerPC" do
-    message "Download the [KomodoEdit installer for PowerPC](http://downloads.activestate.com/Komodo/releases/5.2.4/Komodo-Edit-5.2.4-4343-macosx-powerpc.dmg)."
-  end
+  message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/8.0.0c1/Komodo-Edit-8.0.0-rc1-11879-macosx.dmg)."
 end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
@@ -35,5 +26,3 @@ end
 step "Unmount the installer disk image" do
   message "by dragging it from your desktop to the trash"
 end
-
-

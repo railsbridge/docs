@@ -49,7 +49,6 @@ If `rails server` starts up with no errors, you're golden! It'll look something 
 message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
 tip "If it doesn't work..." do
-  link "diagnostics_for_windows"
   link "diagnostics_for_rvm"
 end
 
