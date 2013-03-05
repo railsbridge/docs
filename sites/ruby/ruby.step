@@ -27,7 +27,9 @@ You can verify that you have everything working by trying this out in your termi
 $ irb
 >> 1 + 2
 => 3
-$</pre></div>
+$
+</pre>
+</div>
 
 If you can do that, you are probably good to go.
 
