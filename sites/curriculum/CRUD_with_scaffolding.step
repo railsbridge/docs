@@ -16,7 +16,7 @@ goals {
 steps {
 
   step {
-    console "rails server" 
+    console "rails server"
   }
 
   step {
@@ -60,14 +60,14 @@ explanation {
     * This file contains code for our topic model. If you look at it,
       it's nearly blank. Creating, reading, updating, and deleting
       records are built into rails.
-    * If you've written HTML before, many lines in the views should
-      look familiar. Rails views are HTML with some extra code added
-      to display data from the database.
 
   * `app/views/topics`
     * This folder contains all the views for our topics model. This is
       where the code for the forms you used above is stored. Rails
       created all of these pages as part of the scaffold.
+    * If you've written HTML before, many lines in the views should
+      look familiar. Rails views are HTML with some extra code added
+      to display data from the database.
 
   * `app/views/topics/index.html.erb`
     * This is the code for the page that lists all the topics.
