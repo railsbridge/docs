@@ -50,9 +50,9 @@ describe InstallFest do
   end
 
   it "redirects /site/page/ to /site/page" do
-    get "/installfest/foo/"
+    get "/installfest/linux/"
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/foo" }
+    assert { last_request.path == "/installfest/linux" }
   end
 
   it "has a default site" do
@@ -64,13 +64,6 @@ describe InstallFest do
 
     it "accepts default_site via setter" do
       true_app.default_site = "curriculum"
-      assert { true_app.default_site == "curriculum" }
-    end
-
-    it "accepts default_site via Sinatra set" do
-      pending "figure out Sinatra set"
-      InstallFest.set :default_site, "curriculum"
-      @app = InstallFest.new
       assert { true_app.default_site == "curriculum" }
     end
 

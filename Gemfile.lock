@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    active_support (3.0.0)
+      activesupport (= 3.0.0)
+    activesupport (3.0.0)
     bourbon (3.0.1)
       sass (>= 3.2.0)
       thor
@@ -82,6 +85,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  active_support
   bourbon
   coderay
   deckrb (>= 0.3.0)

@@ -1,5 +1,6 @@
 source :rubygems
 
+gem 'active_support'
 gem "erector", "~>0.9.0"
 gem "sinatra"
 gem "nokogiri"
