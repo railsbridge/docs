@@ -16,7 +16,7 @@ steps {
 
     message "Find the line:"
 
-    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
 
 
     message 'and change `@topic` to `topics_path` like this:'
