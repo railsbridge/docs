@@ -67,13 +67,6 @@ describe InstallFest do
       assert { true_app.default_site == "curriculum" }
     end
 
-    it "accepts default_site via Sinatra set" do
-      pending "figure out Sinatra set"
-      InstallFest.set :default_site, "curriculum"
-      @app = InstallFest.new
-      assert { true_app.default_site == "curriculum" }
-    end
-
     it "can configure the sites_dir" do
       foo_dir = dir "foo"
       true_app.sites_dir = foo_dir
