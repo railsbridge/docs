@@ -50,9 +50,9 @@ describe InstallFest do
   end
 
   it "redirects /site/page/ to /site/page" do
-    get "/installfest/foo/"
+    get "/installfest/linux/"
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/foo" }
+    assert { last_request.path == "/installfest/linux" }
   end
 
   it "has a default site" do
