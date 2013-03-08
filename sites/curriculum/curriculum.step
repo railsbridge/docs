@@ -57,7 +57,8 @@ $ irb
 >> require "active_support"
 => true
 >> exit
-$</pre></div>
+$</pre>
+</div>
 
 If you can do that, you are probably good to go.
 
