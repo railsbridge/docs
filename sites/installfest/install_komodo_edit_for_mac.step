@@ -7,7 +7,7 @@ MARKDOWN
 important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
 
 step "Download KomodoEdit" do
-  message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/8.0.0c1/Komodo-Edit-8.0.0-rc1-11879-macosx.dmg)."
+  message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/8.0.0/Komodo-Edit-8.0.0-12188-macosx.dmg)."
 end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
