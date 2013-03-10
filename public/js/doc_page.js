@@ -4,5 +4,6 @@ $(document).ready(function () {
     var originallyVisible = $(toToggle).hasClass('visible');
     $('.toc').removeClass('visible');
     $(toToggle).toggleClass('visible', !originallyVisible);
+    return false;
   });
 });
