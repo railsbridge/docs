@@ -156,7 +156,7 @@ class Contents < Erector::Widget
   end
 
   def content
-    div id: "table_of_contents", class: "toc" do
+    div id: "table_of_contents", class: "toc page-list" do
       toc_list hierarchy
 
       unless orphans.empty?

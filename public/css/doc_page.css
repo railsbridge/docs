@@ -38,30 +38,30 @@ h1 {
   font-size: 0.8em;
 }
 
+.visible {
+  display: block !important;
+}
+
 /* toc = Table of Contents */
 
 .toc {
+  display: none;
   padding: 0 0 1em 0;
   margin: 0 0 1em 1em;
-  width: 26em;
-  /* if the toc isn't "positioned", images will show on top of it */
-  position: relative;
+  min-width: 200px;
+  position: absolute;
+  right: 0;
+  top: 55px;
 }
 
-#table_of_contents {
+.toc.page-list {
+  position: static;
+  display: block;
   float: left;
   width: 17em;
 }
-#table_of_contents h1 {
-  font-size: 0.9em;
-}
 
-#site_index {
-  float: right;
-  display: none;
-  position: absolute;
-  right: 0px;
-  top: 55px;
+.toc.site-list {
   z-index: 2;
   background-color: white;
   border: 1px solid grey;
@@ -71,9 +71,29 @@ h1 {
   padding-left: 12px;
 }
 
+.show-when-small {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .show-when-small {
+    display: block;
+  }
+
+  .toc, .toc.page-list, .toc.site-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 55px;
+    z-index: 2;
+    background-color: white;
+    border: 1px solid grey;
+  }
+}
+
 .toc ul {
   margin-left: 20px;
-  padding-left: 0px;
+  padding-left: 0;
   list-style-type: none;
 }
 
@@ -111,6 +131,12 @@ h1 {
   position: relative;
 }
 
+@media (max-width: 1100px) {
+  .main {
+    margin-left: 40px;
+  }
+}
+
 .main h1.doc_title {
   margin-bottom: 1em;
   padding-bottom: .25em;
@@ -143,13 +169,14 @@ h1 {
   -webkit-margin-before: 0.5em;
   -webkit-margin-after: 0.5em;
   -webkit-margin-start: 20px;
-  -webkit-margin-end: 0px;
+  -webkit-margin-end: 0;
 }
 
 .top .top_links {
   float: right;
   margin-right: 8px;
 }
+
 .top a.top_link {
   float: right;
   margin: 2px;

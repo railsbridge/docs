@@ -43,6 +43,7 @@ class DocPage < Erector::Widgets::Page
   def head_content
     title page_title
     script :src => "/jquery-1.7.2.min.js"
+    script :src => "/js/doc_page.js"
   end
 
   def site_title
@@ -52,7 +53,6 @@ class DocPage < Erector::Widgets::Page
   def page_title
     "#{doc_title} - #{site_title}"
   end
-
 
   # this is how to load the Open Sans font when we know we're online
   # external :style,  <<-CSS
@@ -73,9 +73,11 @@ class DocPage < Erector::Widgets::Page
   CSS
 
   class TopLink < Erector::Widget
-    needs :name, :href, :onclick => nil
+    needs :name, :href, :toggle_selector => nil, :extraclass => nil
     def content
-      a "#{@name}", :class => "top_link", :href => @href, :onclick => @onclick
+      classes = ['top_link']
+      classes << @extraclass if @extraclass
+      a "#{@name}", :class => classes.join(' '), :href => @href, 'data-toggle-selector' => @toggle_selector
     end
   end
 
@@ -91,9 +93,10 @@ class DocPage < Erector::Widgets::Page
 
   def top_links
     [
-      TopLink.new(:name => "sites", :href => "#", :onclick => "$('#site_index').toggle(); return false;"),
-      TopLink.new(:name => "src", :href => "#{file_name.split('.').first}/src"),
-      TopLink.new(:name => "git", :href => git_url),
+      TopLink.new(name: "toc", href: "#", extraclass: 'show-when-small', toggle_selector: '#table_of_contents'),
+      TopLink.new(name: "sites", href: "#", toggle_selector: '#site_index'),
+      TopLink.new(name: "src", href: "#{file_name.split('.').first}/src"),
+      TopLink.new(name: "git", href: git_url),
     ]
   end
 
