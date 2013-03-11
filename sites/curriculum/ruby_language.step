@@ -9,7 +9,7 @@ end
 
 steps do
   step do
-    console "Type this in the terminal to start the Interactive Ruby Shell, an environment where you can try bits of ruby code:", "irb"
+    console "Type this in the terminal to start the Interactive Ruby Shell, a program which lets try out Ruby code:", "irb"
 
     console "Yours might look different, but it should look something like this: ", "1.9.3p362 :001 > "
   end
@@ -65,7 +65,7 @@ RUBY
   end
 
   step do
-    message "Each class has different **methods** that can be used on instances of that class."
+    message "Each class has different **methods** that can be used on **instances** of that class."
     console "", <<-RUBY
 fruits.length
 fruits.first
@@ -76,20 +76,20 @@ fruits.first
 fruits.methods
     RUBY
 
-    message "And chain methods together:"
+    message "And **chain** methods together:"
     console "", <<-RUBY
 fruits.methods.sort
     RUBY
   end
 
   step do
-    message "Arrays have a method called **each** which iterates through the list running code on each item."
+    message "Arrays have a method called `each` which iterates through the list running code on each item."
     console "", <<-RUBY
 fruits.each do |fruit|
   puts fruit
 end
     RUBY
-    message "This takes the first item from the `fruits` array (`\"kiwi\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The lines above should print a list of the fruits."
+    message "This takes the first item from the `fruits` array (`\"kiwi\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
 
   end
 
