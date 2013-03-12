@@ -1,56 +1,55 @@
 goals do
-  goal "be able to start up irb"
-  goal "do simple calculations in ruby"
-  goal "use and understand variables"
-  goal "use and understand collections"
-  goal "use loops"
+  goal "Be able to use the basic building blocks of Ruby code"
+  goal "Use IRB to run Ruby code"
+  goal "Do simple calculations"
+  goal "Use and understand variables"
+  goal "Use and understand arrays"
+  goal "Use loops and conditional statements"
 end
 
 steps do
   step do
-    console "irb"
-    message "Starts up the **I**nteractive **R**u**b**y Shell an environment where you can try bits of ruby code and they'll be run automatically."
+    message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets try out Ruby code:"
+
+    console_without_message "irb"
+
+    message "Yours might look different, but it should look something like this:"
+
+    console_without_message "1.9.3p362 :001 > "
   end
 
   step do
-    console "3 + 3\n7 * 6"
-    message "Ruby can do simple math automatically. `*` is used for multiplication and `/` for division."
+    console_with_message "Next try some simple math that's built into Ruby. Type these lines into IRB:", "3 + 3\n7 * 6"
   end
 
   step do
-    console "my_variable = 5"
+    message "**Variables** are names with values assigned to them."
 
-    message "Variables are words that hold information. Here we're holding a 5 with the word `my_variable`."
+    console_without_message "my_variable = 5"
+
+    message "This assigns the value `5` to the name `my_variable`."
   end
 
   step do
-    console <<-RUBY
+    message "You can also do math with variables:"
+    console_without_message <<-RUBY
 my_variable + 2
 my_variable * 3
     RUBY
-
-    message "Ruby remembers that we are holding a `5` with the words `my_variable` and can use that `5` to do math."
-
   end
 
   step do
-    console "puts my_variable"
+    message "Variables can also hold more than one value. This is called an **array**."
 
-    message "`puts` prints the value of what comes after it. In this case it should print 5 since `my_variable` is holding a `5`."
+    console_without_message 'fruits = ["kiwi", "strawberry", "plum"]'
 
-  end
-
-  step do
-    console 'fruits = ["kiwi", "strawberry", "plum"]'
-
-    message "Variables can also hold more than one value. Here we're using the variable `fruits` to hold a collection of fruit names. This type of collection is called an array."
-
+    message "Here we're using the variable `fruits` to hold a collection of fruit names."
   end
 
   step do
     console <<-RUBY
-fruits + ["orange"]
-fruits - ["kiwi"]
+fruits = fruits + ["orange"]
+fruits = fruits - ["kiwi"]
     RUBY
 
     message "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
@@ -58,24 +57,72 @@ fruits - ["kiwi"]
   end
 
   step do
-    console <<-RUBY
-fruits.each do |f|
-  puts f
-end
-    RUBY
-    message "This code goes through the fruits array item by item and runs the code between do and end for each item. These lines should print a list of the fruits."
+    message "Everything in Ruby has a **class**. Type this into IRB:"
 
+    console_without_message <<-RUBY
+7.class
+"kiwi".class
+fruits.class
+RUBY
+
+    message "These are the three data types introduced so far: **Fixnum** (numbers), **String** (text), and **Array** (lists)."
   end
 
   step do
-    console <<-RUBY
+    message "Each class has different **methods** that can be used on **instances** of that class."
+
+    console_without_message <<-RUBY
+fruits.length
+fruits.first
+    RUBY
+
+    message "You can see all the methods available for an object:"
+    console_without_message <<-RUBY
+fruits.methods
+    RUBY
+
+    message "And **chain** methods together:"
+    console_without_message <<-RUBY
+fruits.methods.sort
+    RUBY
+  end
+
+  step do
+    message "Arrays have a method called **each** which iterates through the list running code on each item."
+    console_without_message <<-RUBY
+fruits.each do |fruit|
+  puts fruit
+end
+    RUBY
+    message "This takes the first item from the `fruits` array (`\"kiwi\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
+  end
+
+  step do
+    message "A **conditional** runs code only when a statement evaluates to true."
+
+    console_without_message <<-RUBY
 if my_variable > 1
   puts "YAY!"
 end
     RUBY
 
-    message "This prints `YAY!` if the value stored in `my_variable` is greater than 1. Since the code only runs when certain conditions are met if is called a __conditional__."
+    message "This prints `YAY!` if the value stored in `my_variable` is greater than 1."
 
+    message "Try changing the `>` in the conditional to a `<`."
+  end
+
+  step do
+    message "You can also make your own methods:"
+    console_without_message <<-RUBY
+def pluralize(word)
+  word + "s"
+end
+pluralize("kiwi")
+    RUBY
+
+    message "Methods take **parameters**, which are the variables they work on. In this case, we made a method called pluralize that takes one parameter, a word."
+
+    message "Methods can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In Ruby, functions return whatever the last line of the function evaluates to."
   end
 end
 
