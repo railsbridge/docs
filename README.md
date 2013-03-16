@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/railsbridge/docs.png)](https://travis-ci.org/railsbridge/docs)
 
-Author: Alex Chaffee <mailto:alex@stinky.com>
+[List of Contributors](https://github.com/railsbridge/docs/contributors) -- join us!
 
 # Usage
 
