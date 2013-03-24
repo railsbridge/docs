@@ -54,58 +54,58 @@ To see what the rails command created for you, type the following:
 {| border="1" cellspacing="0" cellpadding="3" align="center"
 ! File/Folder
 ! Purpose
-|- 
-| Gemfile 	
+|-
+| Gemfile
 | This file lists the gems that bundler will install in your project.
-|- 
-| Gemfile.lock	
+|-
+| Gemfile.lock
 | This file lists the gems that were installed for your project.
 |-
-| README 	 	
+| README
 | This is a brief instruction manual for your application.
-|- 
-| Rakefile 	
+|-
+| Rakefile
 | This file contains batch jobs that can be run from the terminal.
-|- 
-| app/ 	 	
+|-
+| app/
 | Contains the controllers, models, and views for your application.  You will do most of your work here.
-|- 
-| config/ 	
+|-
+| config/
 | Configure your application’s runtime rules, routes, database, and more.
-|- 
-| config.ru 	
+|-
+| config.ru
 | This file makes our app rack-friendly (.ru stands for rackup).
-|- 
-| db/ 	 	
+|-
+| db/
 | Shows your current database schema, as well as the database migrations.
-|- 
-| doc/ 	 	
+|-
+| doc/
 | You would add documentation for your application here
-|- 
-| features/ 	
+|-
+| features/
 | Added by the template. This is from cucumber, which is not part of core Rails
-|- 
-| lib/ 	 	
+|-
+| lib/
 | Extended modules for your application (not covered today)
-|- 
-| log/ 	 	
+|-
+| log/
 | Application log files
-|- 
-| public/ 	
+|-
+| public/
 | The only folder seen to the world as-is.  This is where your images, JavaScript,  stylesheets (CSS), and other static files go
-|- 
-| script/ 	
+|-
+| script/
 | Scripts provided by Rails to do recurring tasks. We'll use some today
-|- 
-| spec/ 	 	
+|-
+| spec/
 | Unit tests, fixtures, and other test apparatus
-|- 
-| tmp/ 	 	
+|-
+| tmp/
 | Temporary files
-|- 
-| vendor/ 	
+|-
+| vendor/
 | A place for third-party code
-|- 
+|-
 |}
 
 === Set up your web application ===
@@ -119,8 +119,8 @@ Run the web app server:
  rails server
 </code>
 
-Windows 7 Users: 
-If you get an <tt>Invalid gemspec in c:/...mingw32.gemspec]: invalid date format in specification: "2011-08-20 00:00:00.000000000z"</tt> error: 
+Windows 7 Users:
+If you get an <tt>Invalid gemspec in c:/...mingw32.gemspec]: invalid date format in specification: "2011-08-20 00:00:00.000000000z"</tt> error:
 # Open the <tt>.gemspec</tt> file for editing. The path/filename is reported in the error message.
 # Remove the time portion <tt>00:00:00.000000z</tt> of the date field in the .gemspec file.
 # Save the changes and relaunch the <tt>rails server</tt>.
@@ -152,7 +152,7 @@ This tells git that we want to start tracking the changes to this directory.
 
 === A little note about gitignore ===
 
-Whenever we commit a project, git tracks every file by default. There are, however, files that we'd rather leave untracked (or, ignored). 
+Whenever we commit a project, git tracks every file by default. There are, however, files that we'd rather leave untracked (or, ignored).
 There is a hidden file in your app called "gitignore" that has a period as its first character in its filename to hide it from your normal directory view (this is why you didn't see it if you looked at your directory list earlier)
 The entries in the "gitignore" file tell git what to avoid when tracking the changes of our project files.
 
@@ -180,7 +180,7 @@ This saves a snapshot of the application to git. Let's check to make sure that e
 </code>
 
 <code>git status</code> tells you whether you've made changes that haven't been saved in git. Currently it should show you something like this:
-<code> 
+<code>
  # On branch master
  nothing to commit (working directory clean)
 </code>
@@ -238,12 +238,12 @@ Feature: Topics
     Then I should see a "Create" button
 </pre></code>
 
-It's got several "scenarios" in the file. You can run all the scenarios in topics.feature like this: 
+It's got several "scenarios" in the file. You can run all the scenarios in topics.feature like this:
 
 <code>rake cucumber FEATURE=features/1_topics.feature</code>
 
-NOTE: 
-* For some OS X users, this may cause a test failure due to a Lib2XML conflict, which can be resolved by commenting out Line 19 in the features/support/env.rb file: # require 'cucumber/rails/capybara_javascript_emulation' 
+NOTE:
+* For some OS X users, this may cause a test failure due to a Lib2XML conflict, which can be resolved by commenting out Line 19 in the features/support/env.rb file: # require 'cucumber/rails/capybara_javascript_emulation'
 * if you get this error: "no such file to load -- cucumber/rails/active_record (LoadError)", please update your Gemfile, by replacing a line that mentions "cucumber-rails" with:
 
   gem 'cucumber-rails', :git => 'git://github.com/cucumber/cucumber-rails.git'
@@ -251,14 +251,14 @@ NOTE:
 Then re-run "bundle install" and "rails generate cucumber:install --rspec --capybara" (select "a" for overwrite all").
 
 =====Once you've run it=====
-Once you are able to run it, the first thing you'll notice is that it fails! That's '''good''', because we haven't written any code yet. 
+Once you are able to run it, the first thing you'll notice is that it fails! That's '''good''', because we haven't written any code yet.
 
 These features are tests as well as documentation. The typical Rails workflow is:
 # run the test
 # watch it fail
 # implement the feature
 # run the test again to see if it passes.
- 
+
 This is the workflow we'll be using today.
 
 <code>1_topics.feature</code> relies on some basic elements of a web app, which is what we'll build first. As we get features to pass, we'll look further at the features definitions to see what needs to be built.
@@ -266,7 +266,7 @@ This is the workflow we'll be using today.
 == First Feature:  Adding topics ==
 
 We can look through the features and screen shots and see how a topic is defined and how people expect to interact with it.  We will use rails "scaffolding" to generate some pages and code.
-    
+
 * topic will have a title and a description
 * we will enable basic "CRUD" actions:
 **'''C'''reate - enter a new topic
@@ -282,7 +282,7 @@ We can look through the features and screen shots and see how a topic is defined
 
 * Holy generated files, Batman!
 
-* Open the migration file (yours will have a different number): 
+* Open the migration file (yours will have a different number):
 
     db/migrate/20091014021209_create_topics.rb
 
@@ -304,7 +304,7 @@ It contains Ruby code to set up the database table.  Migrations can also be used
 </code>
 This command tells cucumber to only run lines 5 through 8 in your story, which is currently passing our tests.
 
-Now let's look at the feature we created by running the server locally.  
+Now let's look at the feature we created by running the server locally.
 * Start your server:
 <code>
     rails server
@@ -317,7 +317,7 @@ Congratulations!  You have built a web application that works with a relational 
 === A Quick Look at Your Database ===
 You can access the database directly on your local machine.  For this class we’re using SQLite, and we've installed SQLite Manager, a GUI tool that lets you inspect the database.  To open it, open Firefox, then select "Tools -> SQLite Manager."
 
-Click the open folder icon [[File:Folder.jpg]] ￼ or choose '''Database -> Connect Database''' to open <code>suggestotron/db/development.sqlite3</code> 
+Click the open folder icon [[File:Folder.jpg]] ￼ or choose '''Database -> Connect Database''' to open <code>suggestotron/db/development.sqlite3</code>
 
 Windows Users: You may have to change the file type selection field to "All Files" to be able to see files with the <code>sqlite3</code> file extension.
 
@@ -332,37 +332,37 @@ You can also access the database through the command line:
 
 {| border="1" cellspacing="0" cellpadding="5" align="center"
 |+Common SQL Commands
-!  
+!
 ! sqlite
 ! MySql
 ! PosgreSQL
 
-|- 
+|-
 | list tables in current db
 | .tables
 | show tables;
 | \d
-|- 
+|-
 | show SQL for table create list columns
 | .schema
 .schema topics
 | show create table topics;
 describe topics;
 | \d topics
-|- 
+|-
 | exit command line tool
 | .quit
 | exit
 | \q
-|- 
+|-
 | show all rows in table
 | colspan="3" | select * from topics;
 
-|- 
+|-
 | show number of rows
 |  colspan="3" | select count(*) from topics;
- 
-|- 
+
+|-
 | show matching record
 |  colspan="3" | select * from topic where title = "My Topic";
 |}
@@ -377,7 +377,7 @@ git push heroku master
 heroku rake db:migrate
 </pre></code>
 
-If you run into error, '''uninitialized constant Rake::DSL''' then add following to your Rakefile: 
+If you run into error, '''uninitialized constant Rake::DSL''' then add following to your Rakefile:
 <code><pre>
 require 'rake/dsl_definition'
 require 'rake'
@@ -447,7 +447,7 @@ Let’s open the console and look at the model that is defined here: <code>app/m
 Notice that the Topic class has title and description attributes which you did not need to explicitly declare in the class.  This is handled by ActiveRecord which implements ORM (Object Relational Mapping) in Rails.
 
 == Routes ==
-Rails routes control how URLs map to code.  We can use <code>rake routes</code> to list the relationships between routes and controllers. 
+Rails routes control how URLs map to code.  We can use <code>rake routes</code> to list the relationships between routes and controllers.
 <code><pre>
 $ rake routes
     topics GET    /topics(.:format)          {:action=>"index", :controller=>"topics"}
@@ -472,14 +472,14 @@ Open up your rails console:
 Now you can have a look at the paths that are available in your app. Let's try looking at one of the topics routes we just generated.
 <code>
  app.topics_path
- => "/topics" 
+ => "/topics"
  app.topics_url
- => "http://www.example.com/topics" 
+ => "http://www.example.com/topics"
 </code>
 
 === Remapping / ===
 
-You can specify what Rails should route "/" to with the '''root''' method in routes.rb. You should put the root route near the end of the file, but before the final "end". 
+You can specify what Rails should route "/" to with the '''root''' method in routes.rb. You should put the root route near the end of the file, but before the final "end".
 
     root :to => 'topics#index'
 
@@ -519,7 +519,7 @@ We looked at the scaffold-generated code a little earlier. To change the behavio
 * Open <code>app/controllers/topics_controller.rb</code> and look at the <code>new</code> and <code>create</code> actions.
 
 * Notice that in <code>create</code> there is a redirect to a single topic,
-    format.html { redirect_to(@topic) }  
+    format.html { redirect_to(@topic) }
 We want to redirect instead to the list of topics:
     format.html { redirect_to(topics_path) }  # <-- note no @
 
@@ -540,7 +540,7 @@ Congratulations! This is definitely a checkpoint. Time to commit to git and push
 
 == Next feature: the Topics page ==
 
-Note that for this next set of feature scenarios we have a "Background" set of steps which will be executed before each scenario in the file. Since they depend on behavior that already works, they're rendered in green (pass). 
+Note that for this next set of feature scenarios we have a "Background" set of steps which will be executed before each scenario in the file. Since they depend on behavior that already works, they're rendered in green (pass).
 
 <code><pre>
   Scenario: Viewing a topic detail page
@@ -553,7 +553,7 @@ Note that for this next set of feature scenarios we have a "Background" set of s
 * Run the scenario and watch it fail:
     rake cucumber FEATURE=features/2_topics_list_and_details.feature
 
-* In the last scenario we made it so the app redirected to "topics_path" after create.  So, we expect that we will need to fix the error in that page.  We can use <code>rake routes</code> to find the controller action, then we can see that the default view is rendered.  The error is in <code>app/views/topics/index.html.erb</code>:  
+* In the last scenario we made it so the app redirected to "topics_path" after create.  So, we expect that we will need to fix the error in that page.  We can use <code>rake routes</code> to find the controller action, then we can see that the default view is rendered.  The error is in <code>app/views/topics/index.html.erb</code>:
      <td><%= link_to topic.title, topic %></td>
 
 * Run the scenario again and see that the "Clicking on the topic title" passes, but we still have one failure which can be addressed in the same file
@@ -578,18 +578,18 @@ Be sure to commit your changes and push your changes to Heroku
 Feature: Votes
   In order to determine which talk to give
   people need to be able to vote for the ones they like
-  
+
   Background: Make sure that we have a topic
     Given I go to the topics page
     And I follow "New Topic"
     And I fill in "Title" with "Rails Fixtures"
     And I fill in "Description" with "Introduce how to add test data with fixtures."
     And I press "Create"
-    
+
   Scenario: viewing votes already cast
     When I go to the topics page
     Then I should see "0 votes"
-    
+
   Scenario: voting on a topic
     When I go to the topics page
     And I follow "+1"
@@ -660,7 +660,7 @@ Now you can use it in your view (<code>/app/views/topics/index.html.erb</code>):
 </code>
 
 === Allow people to vote ===
-It's good to do one bit at a time and let the test failures drive what you do next. 
+It's good to do one bit at a time and let the test failures drive what you do next.
 
 Check <code>rake routes</code> for figuring out the path<sup>''TODO: diagram or screenshot of where this info is on the rake output''</sup>, and edit your view (<code>/app/views/topics/index.html.erb</code>):
 

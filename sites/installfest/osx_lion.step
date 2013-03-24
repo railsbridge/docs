@@ -2,7 +2,7 @@ step "Open Terminal" do
   message "Look for **Terminal.app** inside Applications -> Utilities."
 
   message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
-  
+
   tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
 end
 
@@ -13,7 +13,7 @@ end
 step "Install Homebrew" do
   console "which git"
   result "/usr/bin/git"
-  message "If you get the result above skip to: <a href='install_rvm_and_ruby'>Install RVM</a>" 
+  message "If you get the result above skip to: <a href='install_rvm_and_ruby'>Install RVM</a>"
   link "install_homebrew"
 end
 
@@ -34,7 +34,7 @@ step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and
   link "install_rvm_and_ruby"
 end
 
-step "Install Rails" do  
+step "Install Rails" do
   console "gem install rails"
   verify do
     console "rails -v"

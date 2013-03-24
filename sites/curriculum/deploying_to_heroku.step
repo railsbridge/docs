@@ -1,4 +1,4 @@
-h2 do 
+h2 do
   span "If you haven't yet deployed to heroku, start at "
   a 'First-time setup', href: '#first-time'
   span ". Otherwise, start at "
@@ -21,7 +21,7 @@ situation "First-time setup" do
     source_code :ruby, <<-RUBY
 gem 'sqlite3'
     RUBY
-  
+
     message "**Remove that line** and replace it with:"
 
     source_code :ruby, <<-RUBY
