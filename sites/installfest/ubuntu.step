@@ -69,12 +69,12 @@ step "Install Heroku" do
   tip "This only installs a local command-line `heroku` tool. You will still need to sign up for a Heroku account later."
 end
 
-step "KomodoEdit" do
+step "Sublime Text 2" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install KomodoEdit. It's available for [32-bit machines](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-linux-x86.tar.gz) and [64-bit machines](http://downloads.activestate.com/Komodo/releases/7.0.2/Komodo-Edit-7.0.2-9923-linux-x86_64.tar.gz)
+If you don't have a preferred code editor, you can install Sublime Text 2. It's available for [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
 
-Check <http://downloads.activestate.com/Komodo/releases/> for the latest version.
+Check <http://www.sublimetext.com/2> for the latest version.
 MARKDOWN
 
   tip "How many bits?" do

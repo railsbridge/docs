@@ -88,7 +88,7 @@ We want the community of software developers to reflect the diversity of our soc
 * **rake**: like make for Ruby. An easy way to run tasks.
 * **git**: source code control.
 * **database**: we'll use SQLite, but could be any relational database.
-* **editor**: KomodoEdit (?)
+* **editor**: Sublime Text 2
 * **heroku**: free Rails hosting.
 
 <!SLIDE bullets>
@@ -102,6 +102,6 @@ We want the community of software developers to reflect the diversity of our soc
   * understanding the Ruby programming language
 * Rails
   * learn tools and patterns for building web apps in Ruby on Rails
-  
+
 ---
 Proceed to next slide deck: [Today's Workshop Info and Schedule](current)

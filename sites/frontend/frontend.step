@@ -2,7 +2,7 @@ message <<-MARKDOWN
 
 ### Goal
 
-To get you started with HTML, CSS, and JavaScript, the most essential building blocks 
+To get you started with HTML, CSS, and JavaScript, the most essential building blocks
 of web experiences, we'll have you create a basic web page about yourself and deploy
 it to the web. You'll:
 
@@ -42,7 +42,7 @@ We're going to be working with:
 * Git
 * A [GitHub](http://github.com) account of your own
 * The code editor of your choice.
-  [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
+  [Sublime Text 2](http://www.sublimetext.com/2) is a good option if you don't have one yet.
 
 MARKDOWN
 
@@ -56,7 +56,7 @@ I highly recommend you do the following:
   * Bring up one window with two tabs
     * One for this content
     * One for interacting with your app.
-* Open your text editor and _do not ever close it_. We're not quitters. 
+* Open your text editor and _do not ever close it_. We're not quitters.
 * Hide all extra applications. Turn off twitter, IM, and all other distractions.
 
 By minimizing the number of things you interact with, you reduce the

@@ -15,16 +15,16 @@ step "Open Terminal" do
   message "Look for **Terminal.app** inside Applications -> Utilities."
 
   message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
-  
+
   tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
 end
 
-step "Install KomodoEdit" do
-  message "We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+step "Install Sublime Text 2" do
+  message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
 
-  important "When in doubt, use KomodoEdit."
+  important "When in doubt, use Sublime Text 2."
 
-  link "install_komodo_edit_for_mac"
+  link "install_sublime_text_2_for_mac"
 end
 
 verify "successful installation" do

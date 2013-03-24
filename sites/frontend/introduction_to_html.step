@@ -6,7 +6,7 @@ end
 steps do
 
   step do
-    message "You'll need to fire up your text editor (like Komodo Edit or Text Wrangler) for these steps. We're going to make an html document!"
+    message "You'll need to fire up your text editor (like Sublime Text 2) for these steps. We're going to make an html document!"
     message "Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)"
     message "<img src='img/hello_html.png'>"
     message "When you see a blank page called 'hello.html', you're all set."
@@ -49,7 +49,7 @@ Now that you've used some HTML, let's go through each of those words in reverse 
   We use languages such as English or Mandarin for human communication or languages such as
   Ruby or Java to give instructions to computers.  HTML is a special language for describing documents.
 
-* __M__arkup - Being a *markup* language means that HTML is mixed in with plain content text. 
+* __M__arkup - Being a *markup* language means that HTML is mixed in with plain content text.
   Think of a time when you turned in an essay to your teacher.  Your teacher reads your essay
   and *marks* it *up* with comments or suggestions, adding extra information on top of the plain text
   content.
@@ -63,7 +63,7 @@ Now that you've used some HTML, let's go through each of those words in reverse 
 
 ## That First Example ##
 
-As always, we started with a simple hello world. We were able to get a message to 
+As always, we started with a simple hello world. We were able to get a message to
 render in the browser with _just_ plain text:
 
 ---
