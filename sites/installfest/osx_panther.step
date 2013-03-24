@@ -96,8 +96,8 @@ For Tiger ONLY:
   MARKDOWN
 end
 
-step "Install KomodoEdit" do
-  link "install_komodo_edit_for_mac"
+step "Install Sublime Text 2" do
+  link "install_sublime_text_2_for_mac"
 end
 
 step "Other required libraries" do

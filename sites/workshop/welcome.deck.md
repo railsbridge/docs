@@ -88,7 +88,7 @@ We want the community of software developers to reflect the diversity of our soc
 * **rake**: like make for Ruby. An easy way to run tasks.
 * **git**: source code control.
 * **database**: we'll use SQLite, but could be any relational database.
-* **editor**: KomodoEdit (?)
+* **editor**: Sublime Text 2
 * **heroku**: free Rails hosting.
 
 <!SLIDE bullets>
