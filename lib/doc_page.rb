@@ -128,7 +128,7 @@ class DocPage < Erector::Widgets::Page
       end
     }
 
-    div(:class=>:bottom) {
+    div(class: 'bottom cf') {
       p "Railsbridge Docs"
       p do
         text "Source: "

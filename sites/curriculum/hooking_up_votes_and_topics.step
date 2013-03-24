@@ -1,6 +1,15 @@
 goals {
 
-  img alt: "topics_and_votes_table", src: "img/topics_and_votes_table.png"
+  div(style: 'margin: 0 auto; width: 250px; height: 120px;') do
+    model_diagram header: 'Topics', fields: %w(id title description), style: "float: left;"
+    div(style: 'float: left; position: relative; width: 60px; height: 100px;') do
+      div(class: 'arrow-left', style: 'left: 0;  top: 30px;')
+      div(class: 'horiz-line', style: 'left: 5px;  top: 37px; width: 25px;')
+      div(class: 'vert-line', style: 'left: 30px; top: 38px; height: 25px;')
+      div(class: 'horiz-line', style: 'right: 0; top: 62px; width: 30px;')
+    end
+    model_diagram header: 'Votes', fields: %w(id topic_id), style: "float: left;"
+  end
 
   goal "Because there is an explicit relationship between a topic and its
   votes, we need to specify that. In this step, we'll explicitly

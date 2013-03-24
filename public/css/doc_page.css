@@ -192,23 +192,53 @@ img {
   display: block;  /* otherwise centering doesn't happen */
 }
 
-/* Clearfix for bottom of page */
-.bottom {
-  clear: both;
-  *zoom: 1;
+.model-diagram {
+  margin: 0 auto;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
-.bottom:before, 
-.bottom:after {
+.model-diagram th {
+  background-color: lightblue;
+}
+
+.model-diagram td {
+  padding: 0 5px;
+  border: 1px solid black;
+}
+
+.horiz-line {
+  position: absolute;
+  height: 1px;
+  border-bottom: 1px solid blue;
+}
+
+.vert-line {
+  position: absolute;
+  width: 1px;
+  border-left: 1px solid blue;
+}
+
+.arrow-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+
+  border-right:8px solid blue;
+}
+
+/* Clearfix */
+.cf:before,
+.cf:after {
   display: table;
   line-height: 0;
 }
 
-.bottom:after {
+.cf:after {
   clear: both;
 }
-
-
 
 @media print {
   .toc, .top_links {
