@@ -166,10 +166,7 @@ h1 {
 }
 
 .doc blockquote {
-  -webkit-margin-before: 0.5em;
-  -webkit-margin-after: 0.5em;
-  -webkit-margin-start: 20px;
-  -webkit-margin-end: 0;
+  margin: 0.5em 0 .5em 20px;
 }
 
 .top .top_links {

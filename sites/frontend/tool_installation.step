@@ -6,22 +6,55 @@ steps do
 
   choice "your operating system" do
     option "Windows" do
-      message "On Windows, the easiest way to install git and set everything up is with the Rails Installer"
-      message "Stop after __Step 9: Install a Text Editor__"
-      a "Rails Installer Instructions", :href => "/installfest/windows", :class => 'link'
+      message "On Windows, the easiest way to install git and set everything up is with the Rails Installer. "
+      span "Head over to our "
+      a "Rails Installer instructions", :href => "/installfest/windows", :class => 'link'
+      span " (courtesy the Rails workshop Installfest instructions). Come back at the end of the page. Do not make a Heroku account!"
+      important "For real: come back at the bottom of the page, after step 9!"
+      span "After getting done with RailsInstaller, come back here and " 
+      a 'create a GitHub account', :href => "#github-account"
+      span "."
     end
 
     option "Mac OS X" do
-      step "Install git" do
-        link "mac_os_git_installation"
+      step "Check if Git is already installed" do
+        message "If you've been to a RailsBridge before, you might have git installed. Try the following"
+        console "git --version"
+        message "If you see something like the git version below, then you can return to the mini-installfest"
+        fuzzy_result "git version 1{FUZZY}.x.x{/FUZZY}"
+        message "If you see something like `git: command not found` then proceed"
       end
 
-      step "Install Komodo Edit" do
-        a "Install Komodo Edit for Mac OS X", :href => "/installfest/install_komodo_edit_for_mac"
+      step "Check if XCode is installed" do
+        message "Look in your Applications folder for an application called XCode."
+        message "If you see XCode, choose __Option 1: Installing Homebrew__."
+        message "If you do __not__ see XCode, choose __Option 2: Installing binary Git__."
+
+        choice do
+          option "Installing Homebrew" do
+            a "Instructions for Installing Homebrew", :href => "/installfest/install_homebrew", :class => "link"
+
+            message "After installing hombrew, use it to install git"
+            console "brew install git"
+          end
+
+          option "Installing binary git" do
+            message "In another browser tab open the link below and download the latest (topmost) release of Git for OS X."
+            a "Git OS X Installer Downloads", :href => "http://code.google.com/p/git-osx-installer/downloads/list?can=3"
+          end
+        end
+      end
+
+      step "Install a text editor" do
+        a "Download and install Sublime Text 2", :href => "http://www.sublimetext.com/2"
+        message "Install Sublime Text 2 by double clicking the file you downloaded, then dragging the Sublime Text 2 icon into the Applications folder. Finish up by clicking the eject icon for Sublime Text 2 in your finder window."
+        a "or Install Komodo Edit for Mac OS X", :href => "/installfest/install_komodo_edit_for_mac"
+        message "FYI: Komodo Edit is open source, whereas Sublime Text 2 is a paid program that you can download and try out for free. If you keep using Sublime Text 2 after the workshop, you'll need to buy a license."
       end
     end
   end
 
+  a :name => "github-account"
   step "Create a GitHub account" do
     message "In your web browser open <https://github.com>."
     message "GitHub is is a service for hosting and sharing source code with others. They also host static web pages for free! We'll be using them to put our web page up later today."

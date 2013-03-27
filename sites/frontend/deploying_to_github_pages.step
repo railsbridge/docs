@@ -7,6 +7,7 @@ h2 do
 end
 
 important "If you have _any_ problems with these steps, grab a TA and have them help you out."
+important "If you don't know if you have Git installed or have a GitHub account, it's probably better to develop locally (and not do these steps for now) and install Git later."
 
 a :name => 'first-time'
 situation "First-time setup" do
