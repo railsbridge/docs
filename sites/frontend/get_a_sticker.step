@@ -1,9 +1,5 @@
 # encoding: utf-8
-message "Find a volunteer and have them watch the next steps."
-
-message "If this works - get a sticker from them for your computer!"
-
-
+message "Find a volunteer and have them watch the next steps. Once they all work, get a sticker from them for your computer!"
 
 verify "git is installed" do
   tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
@@ -58,4 +54,3 @@ verify "you can clone from GitHub" do
 end
 
 message "If you've done all that then get a sticker from a volunteer. Happy Hacking!"
-next_step "introduction_to_html"

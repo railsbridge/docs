@@ -8,8 +8,9 @@ it to the web. You'll:
 
 * Write some content and give it some structure with **HTML**,
 * Use **CSS** to adjust the layout and style of that content,
-* Manage your code and push it to a remote server with **git**, and
 * Use **JavaScript** to add interactive components.
+* And optionally, push your website to GitHub with **git**.
+
 
 Here's a sample sketch of what your page could look like:
 
@@ -20,18 +21,18 @@ Here's a sample sketch of what your page could look like:
 Many introductions to programming start on the command line and stay
 there for a long time before you see any results besides strings of text.
 
-We want to give you tools to make a visual, shareable product
-_right away_, and then start programming on top of that, adding
+We want to give you tools to make something you can see
+right away, and then start programming on top of that, adding
 interactivity to enhance your content.
 
 ### Schedule
 
 * 1-ish hour of playing with basic HTML, CSS and Javascript
-* 4-ish hours of building our page and pushing it to github
+* 4-ish hours of building our page 
 
-This is just a rough guideline, not a mandate. Some steps you'll go
-over and some you'll go under. It'll all work out by the end of the
-day. :D
+* Optional: if you've worked with GitHub before and want to put your website online using Git and GitHub, we have instructions for that! (The curriculum has you keeping your site local by default.)
+
+This is just a rough guideline, not a mandate. Some steps you'll go over and some you'll go under. It'll all work out by the end of the day. :D
 
 ### Requirements
 
@@ -39,10 +40,14 @@ We're going to be working with:
 
 * [Chrome](https://www.google.com/chrome)
   (If you're experienced with the developer tools in another browser, that may work too.)
-* Git
-* A [GitHub](http://github.com) account of your own
 * The code editor of your choice.
+  [Sublime Text 2](http://www.sublimetext.com/2) is popular and free to download, but you should buy a license if you keep using it after the workshop.
   [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
+
+Optional tools if you're deploying to GitHub: 
+
+* Git
+* Your [GitHub](http://github.com) account
 
 MARKDOWN
 
@@ -50,7 +55,7 @@ message <<-MARKDOWN
 
 ### Working Effectively and Efficiently
 
-I highly recommend you do the following:
+We highly recommend you do the following:
 
 * Open your browser fresh or hide any windows you already have open.
   * Bring up one window with two tabs
@@ -94,11 +99,5 @@ end</pre>
 </div>
 MARKDOWN
 
-
-  option "Are your tools installed?" do
-    link "get_a_sticker"
-  end
-
-  option "Do you need to set up your tools?" do
-    link "tool_installation"
-  end
+message "Let's get started with HTML!"
+next_step "introduction_to_html"
