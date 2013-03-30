@@ -126,7 +126,7 @@ step "Install a Text Editor" do
 
   message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
 
-  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good open source option, if you don't have one yet."
+  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
 
 
 end
