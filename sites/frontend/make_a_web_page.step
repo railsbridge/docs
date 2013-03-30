@@ -4,16 +4,16 @@ goals do
 end
 
 steps do
-  
+
   step do
-    message "Check out your page on the web (at [your-github-user-name].github.com). You should see content there, now that you've pushed to github."
+    message "Drag the 'index.html' page from your project into a web browser. Your browser should look like this:"
     message "<img src='img/page.png'>"
   end
-  
+
   step do
-    message "Now, drag the 'index.html' page from your project into a web browser, **and** open it up in a text editor. The web browser should look the same as above. The text editor should look like this:"
+    message "Drag the 'index.html' page from your project into a text editor. The text editor should look like this:"
     message "<img src='img/page_html.png'>"
-    message "While it's great that you can push files to github quickly, you'll usually want to have an even more immediate way to see your changes. Opening the same file in a browser and in a text editor lets you see the effects of each code change right after you make it."
+    message "Opening the same file in a browser and in a text editor lets you see the effects of each code change right after you make it."
   end
   
   step do
