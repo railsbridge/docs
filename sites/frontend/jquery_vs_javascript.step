@@ -13,7 +13,7 @@ steps do
   
   step do
     message "Underneath the lines you just commented out, let's take a shot at writing the same functionality in straight JavaScript. There are a number of elegant ways to do this; here's one that's not elegant, but it's short:"
-    source_code "js", "document.getElementById('copyright').onclick = function () { \n\s\s this.style.color = 'red';\n}"
+    source_code "js", "document.getElementById('copyright').onclick = function () { \n\s\s this.style.color = 'purple';\n}"
     message "If you save the page, refresh, and click, you should see the same visual result (purple text), but this isn't a great approach for a couple of reasons. Not only is this more typing, and harder to read, it's also easily breakable. (You can only set an element's onclick attribute to one thing, so it might get overwritten by another script on the page and not work later!) jQuery works in a different way, by listening for events, so different functions can all be listening for the same event, and you can add a new response to an event without worrying about overwriting an existing one."
   end
   
