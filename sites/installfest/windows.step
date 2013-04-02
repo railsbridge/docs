@@ -122,11 +122,11 @@ step "Install a Text Editor" do
 
   message "Notepad is not a good programming editor, but it will work in a pinch."
 
-  important "**When in doubt, use KomodoEdit.**"
+  important "**When in doubt, use Sublime Text 2.**"
 
-  message "Download KomodoEdit here: <http://downloads.activestate.com/Komodo/releases/>"
+  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
 
-  message "[Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet."
+  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
 
 
 end
