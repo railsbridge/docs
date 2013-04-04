@@ -46,4 +46,4 @@ end
 
 consider_deploying_to_github
 
-next_step "jquery"
+next_step "basic_javascript"

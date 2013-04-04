@@ -81,5 +81,5 @@ tip "Some elements of this script, like 'document.onclick' or the '.innerHTML' p
 
 end
 
-next_step "add_starter_files"
+next_step "jquery"
 
