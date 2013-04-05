@@ -119,7 +119,7 @@ Three buckets, lots of ways:
 * Don't let the most advanced students dictate the pacing or answer all the questions. 
 
 # DISCUSSION
-Talk about what problems you might anticipate, and what to do about the. 
+Talk about what problems you might anticipate, and what to do about them. 
 
 # OUR IDEAS
 ### Some issues:
