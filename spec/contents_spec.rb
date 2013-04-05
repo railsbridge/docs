@@ -11,12 +11,16 @@ describe Contents do
     @meals_toc = Contents.new(site_name: 'meals', site_dir: "#{here}/sites/meals", page_name: 'prepare_a_meal')
   end
 
-  it "should render absolute links absolutely" do
-    @docs_toc = Contents.new(site_name: 'docs', site_dir: "#{real_sites_dir}/docs", page_name: 'docs')
+  describe "absolute links" do
+    before do
+      docs_toc = Contents.new(site_name: 'docs', site_dir: "#{real_sites_dir}/docs", page_name: 'docs')
+      @toc_html = Nokogiri.parse(docs_toc.to_html)
+    end
 
-    toc_html = Nokogiri.parse(@docs_toc.to_html)
-    links = toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
-    links['/curriculum'].should == '/curriculum'
+    it "should render absolute links absolutely" do
+      links = @toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
+      links['Curriculum'].should == '/curriculum'
+    end
   end
 
   it "scans for subpage links" do
