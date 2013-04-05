@@ -166,6 +166,7 @@ As a teacher or TA...
 You should be aware of these, even if you don't tell the students all of them right away.
 
 * Diagrams:
+  * REST <http://curriculum.railsbridge.org/workshop/diagrams>
   * MVC <https://github.com/alexch/mission/raw/master/mvc.png>
   * MVC <http://ruby.railstutorial.org/chapters/a-demo-app#sec-mvc_in_action>
   * git <https://github.com/alexch/mission/raw/master/git.png>
