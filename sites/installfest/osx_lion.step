@@ -47,7 +47,7 @@ step "Install Sublime Text 2" do
 
   important "When in doubt, use Sublime Text 2."
 
-  link "install_komodo_edit_for_mac"
+  link "install_sublime_text_2_for_mac"
 end
 
 verify "successful installation" do
