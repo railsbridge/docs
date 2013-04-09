@@ -91,11 +91,15 @@ class DocPage < Erector::Widgets::Page
     "https://github.com/railsbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
   end
 
+  def src_url
+    "#{file_name.split('.').first}/src"
+  end
+
   def top_links
     [
       TopLink.new(name: "toc", href: "#", extraclass: 'show-when-small', toggle_selector: '#table_of_contents'),
       TopLink.new(name: "sites", href: "#", toggle_selector: '#site_index'),
-      TopLink.new(name: "src", href: "#{file_name.split('.').first}/src"),
+      TopLink.new(name: "src", href: src_url),
       TopLink.new(name: "git", href: git_url),
     ]
   end
