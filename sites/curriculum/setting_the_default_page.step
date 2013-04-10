@@ -51,6 +51,7 @@ explanation {
   At the terminal type `rake routes`. You should get something that
   looks like this:
 
+  ````
     $ rake routes
 
          votes GET    /votes(.:format)           votes#index
@@ -68,7 +69,7 @@ explanation {
                PUT    /topics/:id(.:format)      topics#update
                DELETE /topics/:id(.:format)      topics#destroy
           root        /                          topics#index
-
+  ````
   This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
 
 ### Exploring Routes (optional)
