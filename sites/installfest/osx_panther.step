@@ -100,12 +100,6 @@ step "Install Sublime Text 2" do
   link "install_sublime_text_2_for_mac"
 end
 
-step "Other required libraries" do
-  console <<-BASH
-sudo gem install heroku --no-rdoc --no-ri
-  BASH
-end
-
 step "Create an SSH key" do
   link "create_an_ssh_key"
 end

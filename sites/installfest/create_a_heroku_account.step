@@ -14,23 +14,9 @@ step "Activate your account" do
 
 end
 
-step "Install the heroku gem" do
+step "Install the Heroku toolbelt" do
 
-  option "if you are using rvm (on OS X or Linux)" do
-    console "rvm @global exec gem install heroku"
-  end
-
-  option "otherwise (on Windows)" do
-    console "gem install heroku"
-  end
-
-  h1 "Ignore This Warning"
-  important "When you see the following message, don't fret. Everything is fine."
-  pre <<MESSAGE
-!    The `heroku` gem has been deprecated and replaced with the Heroku Toolbelt.
-!    Download and install from: https://toolbelt.heroku.com
-!    For API access, see: https://github.com/heroku/heroku.rb
-MESSAGE
+  message "Visit https://toolbelt.heroku.com/, click the download link, and install."
 
   verify do
     console "heroku version"

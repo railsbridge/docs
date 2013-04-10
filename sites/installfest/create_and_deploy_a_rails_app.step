@@ -127,7 +127,7 @@ step "Deploy your app to Heroku" do
 
   step "Create a Heroku application from this local Rails application." do
 
-  message "The very first time you use `heroku` you must enter your Heroku email address and password. Your password may not be shown as you type it, but don't worry, it's being entered! If you are still in your original console session (where you installed the heroku gem), you won't be prompted for your credentials again."
+  message "The very first time you use `heroku` you must enter your Heroku email address and password. Your password may not be shown as you type it, but don't worry, it's being entered! If you have already provided your credentials before, you won't be prompted for them again."
 
   console "heroku create"
   result <<-OUTPUT

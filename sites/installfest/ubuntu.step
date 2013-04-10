@@ -64,11 +64,6 @@ step "Install Rails" do
   console "gem install rails"
 end
 
-step "Install Heroku" do
-  console "gem install heroku"
-  tip "This only installs a local command-line `heroku` tool. You will still need to sign up for a Heroku account later."
-end
-
 step "Sublime Text 2" do
   message <<-MARKDOWN
 
