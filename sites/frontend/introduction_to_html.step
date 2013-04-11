@@ -3,39 +3,7 @@ goals do
   goal "See how that file is interpreted by a web browser"
 end
 
-steps do
-
-  step do
-    message "You'll need to fire up your text editor (like Sublime Text, Komodo Edit, or Text Wrangler) for these steps. We're going to make an html document!"
-    message "Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)"
-    message "<img src='img/hello_html.png'>"
-    message "When you see a blank page called 'hello.html', you're all set."
-  end
-
-  step do
-    message "As always, we'll get started with a simple Hello World."
-    message "Add some text to the document so you have something to look at. Type this:"
-    source_code "Hello World!"
-    message "Save the file some place you'll be able to find easily, like your Desktop."
-  end
-
-  step do
-    message "Now, open Chrome, find the file on your Desktop (or wherever you put it) and drag it into a new Chrome window."
-    message "<img src='img/hello_world.png'>"
-    message "Even though you haven't coded any HTML tags, browsers are <i>great</i> at showing text on screen, so your browser will just show you your text."
-  end
-
-  step do
-    message "Kind of boring, right? To make it look a little less plain, let's drop in an HTML tag. Update the contents of your hello.html file to look like this:"
-    source_code "HTML", "Hello <em>World</em>!"
-    message "The `em` HTML tag tells your browser to add <em>em</em>phasis to that string of text. Refresh your browser and you'll see the effect:"
-    message "<img src='img/hello_world_jazzy.png'>"
-  end
-
-end
-
-
-explanation do
+overview do
 
   message <<-MARKDOWN
 
@@ -43,7 +11,7 @@ explanation do
 
 HTML stands for __H__yper-__t__ext __M__arkup __L__anguage.
 
-Now that you've used some HTML, let's go through each of those words in reverse order and explain them...
+Let's go through each of those words in reverse order and explain them...
 
 * __L__anguage - People use different languages for different types of communication.
   We use languages such as English or Mandarin for human communication or languages such as
@@ -59,22 +27,51 @@ Now that you've used some HTML, let's go through each of those words in reverse 
   Thus, hypertext was born.  It is text because the file is stored as plain text, yet hyper because the text
   has a special meaning beyond the plain text when interpreted by a special program.  For HTML, that special
   program is your web browser.
+  MARKDOWN
 
 
-## That First Example ##
 
-As always, we started with a simple hello world. We were able to get a message to
-render in the browser with _just_ plain text:
+end
 
----
+steps do
 
-Hello World!
+  step do
+    message <<MARKDOWN
+You'll need to fire up your text editor (like Sublime Text, Komodo Edit, or Text Wrangler) for these steps. We're going to make an html document!
 
----
+Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)
 
-But that did't show us how *hyper*text works.
+<img src='img/hello_html.png'>
 
-## HTML is Tags ##
+Notice the extension .html.  It indicates to the browser that it should render this content as HTML.
+
+Type this within the HTML document you just created:
+MARKDOWN
+
+    source_code "Hello World!"
+    message "Save the file some place you'll be able to find easily, like your Desktop."
+  end
+
+  step do
+    message <<MARKDOWN
+Open Chrome and go to File, Open File, then select the file from your Desktop or wherever you put it.
+
+<img src='img/hello_world.png'>
+
+Even though your file does not include any HTML tags yet, browsers are <i>great</i> at showing text on screen, so your browser will just show you your text.
+MARKDOWN
+  end
+
+  step do
+    message "Kind of boring, right? To make it look a little less plain, let's drop in an HTML tag. Update the contents of your hello.html file to look like this:"
+    source_code "HTML", "Hello <em>World</em>!"
+    message "The `em` HTML tag tells your browser to add <em>em</em>phasis to that string of text. Refresh your browser and you'll see the effect:"
+    message "<img src='img/hello_world_jazzy.png'>"
+  end
+
+message <<-MARKDOWN
+
+## HTML is Tags
 
 In order to add special meaning to text, we need give the browser clues about how the
 text should look but we have to do so in a way that makes it easy for both browsers
@@ -85,24 +82,9 @@ also encased in angle brackets but begin with a forward slash. So the closing ta
 matches our example would be `</html>`. A tag and its content create an HTML _element_.
 
 You just coded your own matched pair of an opening and closing html tag:
-
 MARKDOWN
 
 source_code "HTML", "Hello <em>World</em>!"
-
-message <<-MARKDOWN
-Remember that `em` was short for <em>em</em>phasis.  It's a tag that means we want the text to stand out in front of the user. The browser's standard way of displaying emphasis is to italicize the text, like so:
-
----
-
-Hello <em>World</em>!
-
----
-
-Of course, with CSS, we can tell the browser to change the way it displays emphasis. We'll come back to this later.
-
-  MARKDOWN
-
 end
 
 next_step "HTML_tags"

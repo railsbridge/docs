@@ -111,6 +111,7 @@ table.bordered tr {
 .steps > h1:before,
 .explanation > h1:before,
 .deploying > h1:before,
+.overview > h1:before,
 .further-reading > h1:before {
   content: "\00a0";
   display: inline-block;
@@ -128,6 +129,10 @@ table.bordered tr {
 
 .explanation > h1:before {
   background-color: #C8FFC9;
+}
+
+.overview > h1:before {
+  background-color: rgb(176, 220, 250);
 }
 
 .deploying > h1:before {
