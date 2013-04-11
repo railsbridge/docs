@@ -23,11 +23,11 @@ can **select** various elements on the page and change their **visual properties
 
 ## CSS Rules Are Made of a Selector and Attributes
 
-*This section inclues vocabulary you'll probably just want to memorize after class.*
+*This section includes vocabulary you'll probably just want to memorize after class.*
 
 The **selector** tells the browser what elements to add that style to. On this page we'll only use existing tags, like `<h1>` and `<p>`, as our selectors.
 
-The **attributes** tell the browser how to style the elements you selected. The first part, `padding:` is a **propery**, and the part after the colon `20px` is the **value**. The line is finished with a semicolon. 
+The **attributes** tell the browser how to style the elements you selected. The first part, `padding:` is a **property**, and the part after the colon `20px` is the **value**. The line is finished with a semicolon.
 
 All together, the selector and properties together are called a **rule**.
 
