@@ -2,8 +2,8 @@ message <<-MARKDOWN
 
 ### Goal
 
-To get you started with HTML, CSS, and JavaScript, the most essential building blocks
-of web experiences, we'll have you create a basic web page about yourself and deploy
+Our aim is to get you aquainted with HTML, CSS, and JavaScript, the most essential building blocks
+of web experiences. You'll create a basic static web page about yourself and possibly deploy
 it to the web. You'll:
 
 * Write some content and give it some structure with **HTML**,
@@ -16,18 +16,9 @@ Here's a sample sketch of what your page could look like:
 
 ![screenshot](img/page_sample.jpg)
 
-### Meta-Goal
-
-Many introductions to programming start on the command line and stay
-there for a long time before you see any results besides strings of text.
-
-We want to give you tools to make something you can see
-right away, and then start programming on top of that, adding
-interactivity to enhance your content.
-
 ### Schedule
 
-* 1-ish hour of playing with basic HTML, CSS and Javascript
+* 1-2 hours of playing with basic HTML, CSS and Javascript
 * 4-ish hours of building our page 
 
 * Optional: if you've worked with GitHub before and want to put your website online using Git and GitHub, we have instructions for that! (The curriculum has you keeping your site local by default.)
@@ -69,35 +60,5 @@ amount of time spent switching between them and the context lost as
 you work through the lessons. Having 50 tabs open in your web
 browser gets confusing and wastes time.
 
-### Format
-
-Each lesson will look like this:
-
-<div style="background: white; border: 1px solid black; padding-left: 4em;">
-  <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
-  <div class="goals">
-    <h1>Goal:</h1>
-    <p>Description of the current step.
-    <p>Red because big goals are scary.
-  </div>
-  <div class="steps">
-    <h1>Steps:</h1>
-    <pre class="term">steps to take.</pre>
-    <div class="console">
-      <pre>
-def code_to_write
-  1 + 1
-end</pre>
-    </div>
-    <p>Yellow because we've gotten it done, but we have no clue what's going on.
-  </div>
-  <div class="explanation">
-    <h1>Explanation</h1>
-    <p>Details of what the steps actually did... spell out the cause and effect.
-    <p>Green because we can tie everything together now.
-  </div>
-</div>
 MARKDOWN
-
-message "Let's get started with HTML!"
 next_step "introduction_to_html"

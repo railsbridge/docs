@@ -3,28 +3,8 @@ goals do
   goal "Write some basic CSS styles"
 end
 
-steps do
-
-  step do
-    message "With just HTML, you could put a lot of content on the web, but HTML by itself usually looks plain. CSS styles allow us to control the display of HTML. Add a style tag below the `<title>` tag in the head. A standard style tag might look like this:"
-    source_code "HTML", "<style type=\"text/css\" media=\"screen\">\n\n</style>"
-    message "Now refresh your browser. Everything should look the same."
-  end
-
-  step do
-    message "Write some styles that will apply to your `h1` and `p` tags."
-    source_code "HTML", "<style type=\"text/css\" media=\"screen\">\nh1 { \n\s\sfont-size: 20px;\n\s\sborder-bottom: 1px solid #cccccc;\n}\n\np { \n\s\spadding: 10px; \n\s\sbackground-color: papayaWhip;\n}\n</style>"
-    message "When you save and refresh your browser, you should see the styles you added:"
-    message "<img src='img/hello_style.png'>"
-  end
-
-end
-
-
-explanation do
-
+overview do
   message <<-MARKDOWN
-
 ## What is CSS?
 
 CSS stands for __C__ascading __S__tyle__s__heets. It's a language for creating **rules** that
@@ -35,30 +15,64 @@ can **select** various elements on the page and change their **visual properties
   will apply them all, resolving any conflicting rules by allowing stronger rules overwrite
   (or _cascade_ over) weaker rules.
 
-* __S__tyle__s__sheets - CSS files are called 'stylesheets' because they allow you to put your
+* __S__tyle__s__heets - CSS files are called 'stylesheets' because they allow you to put your
   styling rules into a separate document (a 'sheet') of file type .css, and then choose to
-  include one or more in a given HTML page. This is a powerful feature for sites with many pages,
-  since it means you can write your rules once and then include them everywhere on your site with
+  include one or more in a given HTML page. This is a _very_ important feature for sites with many pages,
+  because it allows you to write your rules once and then include them everywhere on your site with
   a single link on each page.
 
 ## CSS Rules Are Made of a Selector and Attributes
 
-* The **Selector** tells the browser what elements to add that style to.
-* The **Attributes** (or **Properties**) tell the browser how to style the elements you selected.
+*This section inclues vocabulary you'll probably just want to memorize after class.*
+
+The **selector** tells the browser what elements to add that style to. On this page we'll only use existing tags, like `<h1>` and `<p>`, as our selectors.
+
+The **attributes** tell the browser how to style the elements you selected. The first part, `padding:` is a **propery**, and the part after the colon `20px` is the **value**. The line is finished with a semicolon. 
+
+All together, the selector and properties together are called a **rule**.
 
 <img src='img/css.png'>
 
-Don't try to memorize all the CSS properties! You can always look them up on sites like:
+(You will forget the semicolon at some point, and your CSS will break, but it's an easy fix.)
 
-* [Mozilla Developer Network](https://developer.mozilla.org/en/CSS)
-* [Dochub](http://dochub.io/#css/)
+## Why are HTML and CSS separate?
 
-## You Can Get Crazy with CSS
+HTML tells the browser what your content _means_, whereas CSS tells the browser how it should _look_. 
 
-Most of the fancy effects you'll see on the web are done with CSS. For example, here's two
-pictures of the same HTML page, but on the right side, I've turned off all the CSS that was
-applied to it. Almost all of the color and formatting disappear. The code snippets and buttons
-that were obvious with CSS styles now just look like text.
+HTML is semantic: it's concerned with the meaning of the content, whereas CSS is presentational&mdash;CSS is all about style.
+
+MARKDOWN
+end
+
+steps do
+
+  step do
+    message "Initially, we're going to add our CSS inside the `<head>` tag, below the line with the page title."
+    message "A standard style tag might look like this:"
+    source_code "HTML", "<head>\n<title>My Sample HTML page</title>\n<style type=\"text/css\" media=\"screen\">\n\n</style>\n</head>"
+    message "Now save the file and refresh your browser. Everything should look the same."
+  end
+
+  step do
+    message "Add some styles that will apply to your `h1` and `p` tags."
+    source_code "HTML", "<style type=\"text/css\" media=\"screen\">\nh1 { \n\s\sfont-size: 20px;\n\s\sborder-bottom: 1px solid #cccccc;\n}\n\np { \n\s\spadding: 10px; \n\s\sbackground-color: papayaWhip;\n}\n</style>"
+    message "When you save and refresh your browser, you should see the styles you added:"
+    message "<img src='img/hello_style.png'>"
+    message "The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed."
+  end
+
+end
+
+
+explanation do
+
+  message <<-MARKDOWN
+
+## CSS is super powerful
+
+Here are two screen shots of the same HTML page, but on the right side, we've turned off all the CSS. Almost all of the color and formatting disappear, and the code snippets and buttons that were obvious with CSS styles now just look like text.
+
+### Bundler: With and Without CSS (the horror!)
 
 <img src='img/css_bundler.png'>
 
@@ -67,7 +81,6 @@ the same HTML, but shows it with stylesheets from a bunch of different designers
 it. Here are two different designers' interpretations of the same HTML:
 
 <img src='img/css_zen.png'>
-
   MARKDOWN
 
 end

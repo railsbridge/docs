@@ -58,7 +58,7 @@ Open Chrome and go to File, Open File, then select the file from your Desktop or
 
 <img src='img/hello_world.png'>
 
-Even though your file does not include any HTML tags yet, browsers are <i>great</i> at showing text on screen, so your browser will just show you your text.
+Even though your file does not include any HTML tags yet, browsers are great at showing text on screen, so your browser will just show you your text.
 MARKDOWN
   end
 
@@ -73,18 +73,20 @@ message <<-MARKDOWN
 
 ## HTML is Tags
 
-In order to add special meaning to text, we need give the browser clues about how the
-text should look but we have to do so in a way that makes it easy for both browsers
-and people to tell the difference between content and hypertext.  HTML does this
-with "tags".  An HTML tag is encased within `<`, `>`, called "angle brackets".  An
-example tag is `<html>`.  Every tag has an accompanying closing tag.  Closing tags are
-also encased in angle brackets but begin with a forward slash. So the closing tag that
-matches our example would be `</html>`. A tag and its content create an HTML _element_.
+The browser needs more information than just the file extension to display your website's content. The way we provide that information is by *marking up* your text with content clues in the form of HTML tags. Which you just did, by adding the `<em>` tag to your page!
 
-You just coded your own matched pair of an opening and closing html tag:
+An HTML tag is encased within angle brackets, which look like this: `<`, `>`. Most every tag has a matching closing tag with a forward slash. The tags describe the content they surround, in our example, emphasizing the word "world".
+
+__Opening tag__: `<em>`
+
+__Content__: `world`
+
+__Closing tag__: `</em>`
+
+And all these things combined&mdash;opening tag, content, and closing tag&mdash;are called an HTML __element__: `<em>World</em>`
+
 MARKDOWN
 
-source_code "HTML", "Hello <em>World</em>!"
 end
 
 next_step "HTML_tags"

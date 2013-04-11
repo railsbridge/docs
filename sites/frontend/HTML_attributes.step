@@ -3,57 +3,15 @@ goals do
   goal "Use class and id attributes as hooks for CSS styles"
 end
 
-steps do
+overview do
 
-  step do
-    message "To get a bit fancier with our CSS, we might want to add some classes and ids to our HTML. Start by adding one or two more paragraphs of text to the bottom of your HTML document. The last lines might look like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p>My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
-
-  end
-
-  step do
-    message "Add the class 'special' to your first paragraph. It'll look something like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
-    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes. Many HTML attributes, like classes and ids, don't directly convey visual information. Your paragraph will look the same until we use the class to add CSS styling."
-  end
-
-  step do
-    message "To add a style rule that will apply to a class, use the syntax `.class-name` for your selector. Try giving the 'special' class a green border. Add this rule inside of your `style` tag:"
-    source_code "CSS", ".special { \n\s border: 1px solid green;\n}"
-    message "Refresh the page in the browser. You'll see something like this:"
-    message "<img src='img/css_class.png'>"
-  end
-  
-  step do
-    message "Let's wrap your name in a `span` tag and give that an ID of 'user-name'. It'll look something like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is\n\s\s <span id=\"user-name\">Rachel</span>.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
-    message "Save and refresh the page in the browser. You shouldn't see any difference."
-  end
-
-  step do
-    message "To add a style rule that will apply to an id, use the syntax `#id-name` for your selector. Try making the 'user-name' id look bold. Add this rule inside of your `style` tag:"
-    source_code "CSS", "#user-name { \n\s font-weight: bold; \n}"
-    message "(Note: The span is just an element that lets you apply a class, id, or other attribute to a string of text. Browsers won't give it any styling by default.) But once you add your style rule and refresh the page in the browser, you'll see something like this:"
-    message "<img src='img/css_id.png'>"
-  end
-
-end
-
-
-explanation do
-  
   message <<-MARKDOWN
 
-## Why Attributes?
+## Why do we need attributes?
 
-HTML tags don't just wrap content. They can also convey information about that element, with attributes. For example, on the last page you coded a `style` tag with a `media` attribute that you set equal to `screen`, which told the browser, 'Use these styles when you're displaying content on screen, but not when you're printing it on the laser printer:'
+HTML tags first give your browser information about the content they wrap. They can also be extended to include other information about the content, like what type of form input the tag is, or like the `media` attribute, which we saw on the last page can be used to indicate whether the content will be displayed on a screen or printed out. 
 
-  MARKDOWN
-  source_code "HTML", "<style type=\"text/css\" media=\"screen\">"
-  message <<-MARKDOWN
-
-Sometimes, attributes will have an obvious visual effect. For example, if you're coding
-form inputs, you'll use attributes to tell the browser what type of input they are,
+When creating a form, you'll use attributes to tell the browser what type of input they are,
 and the results will be easy to tell apart. This input: 
 
   MARKDOWN
@@ -65,22 +23,86 @@ looks like a radio button: <input type='radio' name='rando-radio'>, but
   MARKDOWN
   source_code "HTML", "<input type='password' name='fake-password' value='ick'>"
   message <<-MARKDOWN
-looks like a password text input: <input type='password' name='rando-radio' value='ick'> even though they use the same tag.
 
-## Classes vs. IDs
+looks like a password text input: <input type='password' name='rando-radio' value='ick'> even though they use the same **tag**.
 
-* A **class** attribute should be used to group elements that _could_ exist
-  more than once on a given page. For example, you might give certain
-  paragraphs a class of "special" and use that class to highlight them.
-  Even if you only have one paragraph that's special now, you might
-  want to add more later.
-  
-* An **id** is a unique label. Use it to identify things you'd only have one
-  of. For example, if you ran a news website, you would only have one element
-  on a page that would serve as a masthead, and you could give it an id
-  like `id="handsome-header"`
+## How do CSS and HTML connect?
+
+Tags and attributes, mostly!
+
+So far we've only applied styles to HTML tags like `<p>` and `<h1>`. But what if we want to apply a style to only a few of the instances of a given tag? We don't want _every_ paragraph to look special, so we can't add our style directly to the `<p>` tag.
+
+This is where `class=` and `id=` attributes come in. Adding a class or ID to an HTML attribute allows you to add CSS styles to just that attribute. 
+
 
   MARKDOWN
+
+end
+
+steps do
+
+  step do
+    message "Let's add some classes and ids to our HTML. Start by adding one or two more paragraphs of text to the bottom of your HTML document. The last lines might look like this:"
+    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p>My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
+
+  end
+
+  step do
+    message "Add the class 'special' to your first paragraph. It'll look something like this:"
+    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
+    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes." 
+    message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
+  end
+
+  step do
+    message "To add a style rule that will apply to a class, use the syntax `.class-name` for your selector. It will be almost the same as the styles that you added to `<h1>` and `<p>`, but with a period at the beginning of your class name." 
+    message "Try giving the 'special' class a green border. Add this rule inside of your `style` tag:"
+    source_code "CSS", ".special { \n\s border: 1px solid green;\n}"
+    message "Refresh the page in the browser. You'll see something like this:"
+    message "<img src='img/css_class.png'>"
+  end
+  
+  step do
+    message "Let's wrap your name in a `span` tag and give that an ID of 'user-name'. It'll look something like this:"
+    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is\n\s\s <span id=\"user-name\">Rachel</span>.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
+    message "Save and refresh the page in the browser. Again, you shouldn't see any difference."
+  end
+
+  step do
+    message "Now, add the corresponding style rule for your ID, using the syntax `#id-name` for your selector. Try making the 'user-name' id look bold. Add this rule inside of your `style` tag:"
+    source_code "CSS", "#user-name { \n\s font-weight: bold; \n}"
+    message "(Note: The span is just an element that lets you apply a class, id, or other attribute to a string of text without adding any line breaks. Browsers won't give it any styling by default.)"
+    message "Once you add your style rule and refresh the page in the browser, you'll see something rather ugly like this:"
+    message "<img src='img/css_id.png'>"
+  end
+
+end
+
+
+explanation do
+  message <<-MARKDOWN
+
+## When should I use a class, and when should I use an ID?
+
+### Classes
+A **class** attribute should be used to group elements that _could_ exist
+more than once on a given page. For example, you might give certain
+paragraphs a class of `"special"` and use that class to highlight them.
+Even if you only have one paragraph that's special now, you might
+want to add more later.
+
+A class attribute will look like `class="special"` in the HTML and `.special` in the CSS. Don't mix up where the dot goes!
+
+### IDs
+An **id** is a unique label. Use it to identify things you'd only have one
+of. For example, if you ran a news website, you would only have one element
+on a page that would serve as a masthead, and you could give it an id
+like `id="handsome-header"`
+
+An id attribute will look like `id="handsome-header` in the HTML, and `#handsome-header` in the CSS.
+
+Within these guidelines, when you use classes and IDs is a matter of style / taste.
+MARKDOWN
 
 end
 
