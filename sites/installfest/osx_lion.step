@@ -10,17 +10,20 @@ step "Install A Compiler (XCode or GCC)" do
   link "install_xcode"
 end
 
-step "Install Homebrew" do
-  console "which git"
-  result "/usr/bin/git"
-  message "If you get the result above skip to: <a href='install_rvm_and_ruby'>Install RVM</a>"
-  link "install_homebrew"
-end
-
 step "Install Git" do
   message "Next we'll install Git, the most popular version control system in the Ruby world:"
 
-  console "brew install git"
+  console "git --version"
+  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+
+  message <<-MARKDOWN
+
+If you see that output, you have Git. <a href='#install-rvm'>Move on to the next step.</a>
+
+Otherwise, [Install Homebrew](install_homebrew). Come back here when you're done.
+  MARKDOWN
+
+  console_with_message "After installing Homebrew, type this in the terminal:", "brew install git"
 
   verify do
     console "git --version"
@@ -30,6 +33,7 @@ step "Install Git" do
   link "configure_git"
 end
 
+a name: "install-rvm"
 step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and_ruby'} do
   link "install_rvm_and_ruby"
 end
@@ -51,8 +55,8 @@ step "Install Sublime Text 2" do
 end
 
 verify "successful installation" do
-  console "which git"
-  result "/usr/bin/git"
+  console "git --version"
+  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
   console "which ruby"
   fuzzy_result "/Users/alex/.rvm/rubies/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/ruby"
