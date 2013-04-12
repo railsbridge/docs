@@ -1,8 +1,8 @@
 message "The Rails server logging and test results are much easier to read with colored output, but the 'Command Prompt with Ruby and Rails' defaults to white on black.  Add colors by following these steps."
 
 step "Download ANSICON" do
-  message "In the browser, visit <https://github.com/adoxa/ansicon/downloads>"
-  message "Click the `ansi153.zip` link to download the file (or whatever the most recent version is)"
+  message "In the browser, visit <http://adoxa.3eeweb.com/ansicon/>"
+  message "Click the `ANSICON v1.61` link to download the file (or whatever the most recent version is)"
   message "Double-click the downloaded file to unzip it"
 end
 
