@@ -5,7 +5,7 @@ end
 
 steps do
   step do
-    console "bundle\nrails server"
+    console "rails server"
   end
   step do
     text "Point your web browser to "
