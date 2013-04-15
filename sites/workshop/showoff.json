@@ -1,9 +1,0 @@
-{
-  "name": "RailsBridge Ruby Workshop",
-  "description": "Slides and links to a full-day Ruby immersion workshop",
-  "sections": [
-	{"section":"000_setup.md"},
-	{"section":"welcome"},
-  {"section":"current"}
-  ]
-}
