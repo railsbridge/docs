@@ -12,8 +12,7 @@ class SiteIndex < Erector::Widget
 
   def sites
     return @sites if @sites
-    all_sites = Dir.glob("#{@@sites_dir}/**").map { |filename| File.basename(filename) }.sort
-    @sites = all_sites - ['es']
+    @sites = Dir.glob("#{@@sites_dir}/**").map { |filename| File.basename(filename) }.sort
   end
 
   def site_link site
