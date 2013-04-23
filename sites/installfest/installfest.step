@@ -1,6 +1,6 @@
-message "This [InstallFest](http://installfest.railsbridge.org) is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
+message "This is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
 
-step "Prepare for the Install Fest" do
+step "Prepare for the Installfest" do
   message <<-MARKDOWN
 
 

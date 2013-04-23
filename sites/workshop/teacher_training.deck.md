@@ -245,8 +245,8 @@ You should be aware of these, even if you don't tell the students all of them ri
 * Cons?
 
 <!SLIDE bullets>
-# Install Fest
-* If you go to the install fest, introduce yourself as a TA
+# Installfest
+* If you go to the installfest, introduce yourself as a TA
 * "I'll be here to help you tomorrow"
 
 <!SLIDE bullets incremental>
