@@ -9,16 +9,16 @@ overview do
 
 ## Why do we need attributes?
 
-HTML tags first give your browser information about the content they wrap. They can also be extended to include other information about the content, like what type of form input the tag is, or like the `media` attribute, which we saw on the last page can be used to indicate whether the content will be displayed on a screen or printed out. 
+HTML tags first give your browser information about the content they wrap. They can also be extended to include other information about the content, like what type of form input the tag is, or like the `media` attribute, which we saw on the last page can be used to indicate whether the content will be displayed on a screen or printed out.
 
 When creating a form, you'll use attributes to tell the browser what type of input they are,
-and the results will be easy to tell apart. This input: 
+and the results will be easy to tell apart. This input:
 
   MARKDOWN
   source_code "HTML", "<input type='radio' name='rando-radio'>"
   message <<-MARKDOWN
 
-looks like a radio button: <input type='radio' name='rando-radio'>, but 
+looks like a radio button: <input type='radio' name='rando-radio'>, but
 
   MARKDOWN
   source_code "HTML", "<input type='password' name='fake-password' value='ick'>"
@@ -32,7 +32,7 @@ Tags and attributes, mostly!
 
 So far we've only applied styles to HTML tags like `<p>` and `<h1>`. But what if we want to apply a style to only a few of the instances of a given tag? We don't want _every_ paragraph to look special, so we can't add our style directly to the `<p>` tag.
 
-This is where `class=` and `id=` attributes come in. Adding a class or ID to an HTML attribute allows you to add CSS styles to just that attribute. 
+This is where `class=` and `id=` attributes come in. Adding a class or ID to an HTML attribute allows you to add CSS styles to just that attribute.
 
 
   MARKDOWN
@@ -43,28 +43,28 @@ steps do
 
   step do
     message "Let's add some classes and ids to our HTML. Start by adding one or two more paragraphs of text to the bottom of your HTML document. The last lines might look like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p>My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
+    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p>My name is Rachel.</p>\n\s\s<p>I like:</p>\s\s\n\s\s<ul>\n\s\s\s\s\<li>Polka Dots</li>\n\s\s\s\s\<li>Soccer</li>\n\s\s\s\s<li>Programming</li>\n\s\s</ul>\n\s<p>I hear RailsBridge needs volunteers, should I volunter!?!</p>"
 
   end
 
   step do
     message "Add the class 'special' to your first paragraph. It'll look something like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is Rachel.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
-    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes." 
+    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is Rachel.</p>\n\s\s<p>I like:</p>\s\s\n\s\s<ul>\n\s\s\s\s\<li>Polka Dots</li>\n\s\s\s\s\<li>Soccer</li>\n\s\s\s\s<li>Programming</li>\n\s\s</ul>\n\s<p>I hear RailsBridge needs volunteers, should I volunter!?!</p>"
+    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes."
     message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
   end
 
   step do
-    message "To add a style rule that will apply to a class, use the syntax `.class-name` for your selector. It will be almost the same as the styles that you added to `<h1>` and `<p>`, but with a period at the beginning of your class name." 
+    message "To add a style rule that will apply to a class, use the syntax `.class-name` for your selector. It will be almost the same as the styles that you added to `<h1>` and `<p>`, but with a period at the beginning of your class name."
     message "Try giving the 'special' class a green border. Add this rule inside of your `style` tag:"
     source_code "CSS", ".special { \n\s border: 1px solid green;\n}"
     message "Refresh the page in the browser. You'll see something like this:"
     message "<img src='img/css_class.png'>"
   end
-  
+
   step do
     message "Let's wrap your name in a `span` tag and give that an ID of 'user-name'. It'll look something like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is\n\s\s <span id=\"user-name\">Rachel</span>.</p>\n\n\s\s<p>In my free time, I enjoy math, Railsbridge, soccer,\n\s\s and shopping for fancy hats.</p>\n</body>\n</html>"
+    source_code "HTML", "<h1>Hello <em>World</em>!</h1>\n<p class=\"special\">My name is \n\s\s<span id=\"user-name\">Rachel</span>.\n</p>\n<p>I like:</p>\s\s\n<ul>\n\s\s<li>Polka Dots</li>\n\s\s\<li>Soccer</li>\n\s\s<li>Programming</li>\n</ul>\n<p>I hear RailsBridge needs volunteers, should I volunter!?!</p>"
     message "Save and refresh the page in the browser. Again, you shouldn't see any difference."
   end
 
