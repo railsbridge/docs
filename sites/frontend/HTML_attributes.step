@@ -15,13 +15,13 @@ When creating a form, you'll use attributes to tell the browser what type of inp
 and the results will be easy to tell apart. This input:
 
   MARKDOWN
-  source_code "HTML", "<input type='radio' name='rando-radio'>"
+  source_code :html, "<input type='radio' name='rando-radio'>"
   message <<-MARKDOWN
 
 looks like a radio button: <input type='radio' name='rando-radio'>, but
 
   MARKDOWN
-  source_code "HTML", "<input type='password' name='fake-password' value='ick'>"
+  source_code :html, "<input type='password' name='fake-password' value='ick'>"
   message <<-MARKDOWN
 
 looks like a password text input: <input type='password' name='rando-radio' value='ick'> even though they use the same **tag**.
@@ -43,13 +43,32 @@ steps do
 
   step do
     message "Let's add some classes and ids to our HTML. Start by adding one or two more paragraphs of text to the bottom of your HTML document. The last lines might look like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p>My name is Rachel.</p>\n\s\s<p>I like:</p>\s\s\n\s\s<ul>\n\s\s\s\s\<li>Polka Dots</li>\n\s\s\s\s\<li>Soccer</li>\n\s\s\s\s<li>Programming</li>\n\s\s</ul>\n\s<p>I hear RailsBridge needs volunteers, should I volunter!?!</p>"
-
+    source_code :html, <<HTML
+<h1>Hello <em>World</em>!</h1>
+<p>My name is Rachel.</p>
+<p>I like:</p>
+<ul>
+  <li>Polka Dots</li>
+  <li>Soccer</li>
+  <li>Programming</li>
+</ul>
+<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+HTML
   end
 
   step do
     message "Add the class 'special' to your first paragraph. It'll look something like this:"
-    source_code "HTML", "\s\s<h1>Hello <em>World</em>!</h1>\n\s\s<p class=\"special\">My name is Rachel.</p>\n\s\s<p>I like:</p>\s\s\n\s\s<ul>\n\s\s\s\s\<li>Polka Dots</li>\n\s\s\s\s\<li>Soccer</li>\n\s\s\s\s<li>Programming</li>\n\s\s</ul>\n\s<p>I hear RailsBridge needs volunteers, should I volunter!?!</p>"
+    source_code :html, <<HTML
+<h1>Hello <em>World</em>!</h1>
+<p class="special">My name is Rachel.</p>
+<p>I like:</p>
+<ul>
+  <li>Polka Dots</li>
+  <li>Soccer</li>
+  <li>Programming</li>
+</ul>
+<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+HTML
     message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes."
     message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
   end
@@ -57,23 +76,46 @@ steps do
   step do
     message "To add a style rule that will apply to a class, use the syntax `.class-name` for your selector. It will be almost the same as the styles that you added to `<h1>` and `<p>`, but with a period at the beginning of your class name."
     message "Try giving the 'special' class a green border. Add this rule inside of your `style` tag:"
-    source_code "CSS", ".special { \n\s border: 1px solid green;\n}"
+    source_code :css, <<CSS
+.special {
+  border: 1px solid green;
+}
+CSS
     message "Refresh the page in the browser. You'll see something like this:"
-    message "<img src='img/css_class.png'>"
+    img src: 'img/css_class.png'
   end
 
   step do
     message "Let's wrap your name in a `span` tag and give that an ID of 'user-name'. It'll look something like this:"
-    source_code "HTML", "<h1>Hello <em>World</em>!</h1>\n<p class=\"special\">My name is \n\s\s<span id=\"user-name\">Rachel</span>.\n</p>\n<p>I like:</p>\s\s\n<ul>\n\s\s<li>Polka Dots</li>\n\s\s\<li>Soccer</li>\n\s\s<li>Programming</li>\n</ul>\n<p>I hear RailsBridge needs volunteers, should I volunter!?!</p>"
+    source_code :html, <<HTML
+<h1>Hello <em>World</em>!</h1>
+<p class="special">My name is
+  <span id="user-name">Rachel</span>
+</p>
+<p>I like:</p>
+<ul>
+  <li>Polka Dots</li>
+  <li>Soccer</li>
+  <li>Programming</li>
+</ul>
+<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+HTML
     message "Save and refresh the page in the browser. Again, you shouldn't see any difference."
   end
 
   step do
     message "Now, add the corresponding style rule for your ID, using the syntax `#id-name` for your selector. Try making the 'user-name' id look bold. Add this rule inside of your `style` tag:"
-    source_code "CSS", "#user-name { \n\s font-weight: bold; \n}"
-    message "(Note: The span is just an element that lets you apply a class, id, or other attribute to a string of text without adding any line breaks. Browsers won't give it any styling by default.)"
-    message "Once you add your style rule and refresh the page in the browser, you'll see something rather ugly like this:"
-    message "<img src='img/css_id.png'>"
+    source_code :css, <<CSS
+#user-name {
+  font-weight: bold;
+}
+CSS
+    message <<-MARKDOWN
+(Note: The span is just an element that lets you apply a class, id, or other attribute to a string of text without adding any line breaks. Browsers won't give it any styling by default.)
+
+Once you add your style rule and refresh the page in the browser, you'll see something rather ugly like this:
+    MARKDOWN
+    img src: 'img/css_id.png'
   end
 
 end
