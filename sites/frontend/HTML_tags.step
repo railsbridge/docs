@@ -97,48 +97,48 @@ MARKDOWN
 
 table :border=>"1", :cellspacing=>"0", :cellpadding=>"3", :align=>"center" do
   tr {
-    th " Tag"
-    th " Purpose"
+    th "Tag"
+    th "Purpose"
   }
   tr {
-    td " a"
-    td " A link (the 'a' stands for Anchor)"
+    td "a"
+    td "A link (the 'a' stands for Anchor)"
   }
   tr {
-    td " h1-h6"
-    td " Various headers, h1 is the most important, h6 the least."
+    td "h1-h6"
+    td "Various headers, h1 is the most important, h6 the least."
   }
   tr {
-    td " ul"
-    td " Start a bulleted list (an 'unordered list')"
+    td "ul"
+    td "Start a bulleted list (an 'unordered list')"
   }
   tr {
-    td " ol"
-    td " Start a numbered list (an 'ordered list')"
+    td "ol"
+    td "Start a numbered list (an 'ordered list')"
   }
   tr {
-    td " li"
-    td " A single thing within a list (a 'list item')"
+    td "li"
+    td "A single thing within a list (a 'list item')"
   }
   tr {
-    td " table, tr, td"
-    td " You can make tables (like this one) with table rows and data cells"
+    td "table, tr, td"
+    td "You can make tables (like this one) with table rows and data cells"
   }
   tr {
-    td " form"
-    td " A form that can collect data from user input"
+    td "form"
+    td "A form that can collect data from user input"
   }
   tr {
-    td " input"
-    td " A text input, a button, or a checkbox in a form"
+    td "input"
+    td "A text input, a button, or a checkbox in a form"
   }
   tr {
-    td " div"
-    td " A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (More on this later.)"
+    td "div"
+    td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (More on this later.)"
   }
   tr {
-    td " span"
-    td " Another section marker that doesn't do anything to its contents, but is inline - it does not make a new line after."
+    td "span"
+    td "Another section marker that doesn't do anything to its contents, but is inline - it does not make a new line after."
   }
 end
 
