@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 
 gem 'active_support'
 gem "erector", "~>0.9.0"
