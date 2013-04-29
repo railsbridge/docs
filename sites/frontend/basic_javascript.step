@@ -7,13 +7,25 @@ steps do
 
   step do
     message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive. Add a script tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
-    source_code "HTML", "<script type=\"text/javascript\">\n\n</script>"
+    source_code :html, <<HTML
+<script type="text/javascript">
+</script>
+HTML
     message "Save and refresh the page in the browser. It should look unchanged."
   end
 
   step do
     message "Type in this short script. Javascript is case-specific and picky about syntax, so if your script doesn't run, check carefully for typos."
-    source_code "HTML", "<script type=\"text/javascript\">\n\s\sfunction replaceName() {\n\s\s\s\svar myNewName = window.prompt('Pick a new name!');\n\s\s\s document.getElementById('user-name').innerHTML = myNewName;\n\s\s}\n\n\s\sdocument.onclick = replaceName;\n</script>"
+    source_code :html, <<HTML
+<script type="text/javascript">
+  function replaceName() {
+    var myNewName = window.prompt('Pick a new name!');
+    document.getElementById('user-name').innerHTML = myNewName;
+  }
+
+  document.onclick = replaceName;
+</script>
+HTML
     message "Refresh the page, and click on one of your paragraphs. You should see a browser prompt like this:"
     message "<img src='img/prompt.png'>"
     message "Once you answer the prompt, you should see the bold text that was your name change to whatever you entered."
