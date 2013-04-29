@@ -184,6 +184,7 @@ nothing to commit (working directory clean)"
 end
 
 verify "heroku deploy" do
+  important "Each application has its own `Gemfile`. Be sure you're opening the one inside your sticker app's folder."
 
   message "Use your editor to open the Gemfile and find the line containing:"
 
