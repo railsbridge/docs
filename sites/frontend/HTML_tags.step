@@ -5,72 +5,89 @@ end
 
 overview do
 
+  message <<-MARKDOWN
+
 ## Use Tags to Separate Blocks of Content
 
-message <<-MARKDOWN
 
-  Tags convey meaning. And in order to display your content well, everything should be inside of a tag, not just words you want emphasized. So let's use the paragraph tag `<p>` and the header 1 tag `<h1>`.
+Tags convey meaning. And in order to display your content well, everything should be inside of a tag, not just words you want emphasized. So let's use the paragraph tag `<p>` and the header 1 tag `<h1>`.
 
-  You'll notice that even if you put in extra lines and spaces, HTML will treat any number of
-  new line or space characters like there's just one space there. When you're getting started
-  with HTML, this can seem like a pain, because you have to type
-MARKDOWN
+You'll notice that even if you put in extra lines and spaces, HTML will treat any number of
+new line or space characters like there's just one space there. When you're getting started
+with HTML, this can seem like a pain, because you have to type
+  MARKDOWN
 
-source_code "HTML", "<p>first sentence</p>\n<p>second sentence</p>"
+  source_code :html, <<HTML
+<p>first sentence</p>
+<p>second sentence</p>
+HTML
+  message <<-MARKDOWN
 
-message <<-MARKDOWN
+when all you want is a blank line between two sentences. But as you get more advanced, this
+aspect of HTML will feel more useful, because it means you can format your code however is
+most readable for **you**, without worrying about what the browser will think of your blank
+lines and spaces.
 
-  when all you want is a blank line between two sentences. But as you get more advanced, this
-  aspect of HTML will feel more useful, because it means you can format your code however is
-  most readable for **you**, without worrying about what the browser will think of your blank
-  lines and spaces.
-MARKDOWN
-
-
-message <<-MARKDOWN
 ## Nested Tags
 
+It's common for an HTML tag to be nested inside another tag. In the example above, you saw:
+  MARKDOWN
 
-  It's common for an HTML tag to be nested inside another tag. In the example above, you saw:
-MARKDOWN
+  source_code :html, "<h1><em></em></h1>"
 
-source_code "HTML", "<h1><em></em></h1>"
+  important do
+    message "Just make sure that the tags are correctly _nested_. For example, you can't do:"
 
-important do
-  message "Just make sure that the tags are correctly _nested_. For example, you can't do:"
+    source_code :html, "<h1><em>Hello World!</h1> I like you!</em>"
 
-  source_code "HTML", "<h1><em>Hello World!</h1> I like you!</em>"
-
-  message "The inner tag, `em`, needs to close before the outer tag closes."
-end
-
-
-
-
+    message "The inner tag, `em`, needs to close before the outer tag closes."
+  end
 end
 
 steps do
 
   step do
     message "Add some more lines of content to your HTML file. Introduce yourself."
-    source_code "HTML", "Hello <em>World</em>!\n\nMy name is Rachel."
+
+    source_code :html, <<-HTML
+Hello <em>World</em>!
+
+My name is Rachel.
+    HTML
+
     message "Now save the file and refresh your browser."
-    message "<img src='img/hello_world_2line.png'>"
+    img src: 'img/hello_world_2line.png'
   end
 
   step do
     message "Even though we put in some blank lines, the browser ignored them. So we'll have to use tags to break up our content."
     message "Update your HTML with an `h1` tag and a `p` tag:"
-    source_code "HTML", "<h1>Hello <em>World</em>!</h1>\n\n<p>My name is Rachel.</p>"
+
+    source_code :html, <<-HTML
+<h1>Hello <em>World</em>!</h1>
+<p>My name is Rachel.</p>
+    HTML
+
     message "Now save the file and refresh your browser."
-    message "<img src='img/hello_world_2line2.png'>"
+    img src: 'img/hello_world_2line2.png'
   end
 
   step do
     message "Now let's add a list of things we like."
-    source_code "HTML", "<h1>Hello <em>World</em>!</h1>\n<p>My name is Rachel.</p>\n<p>I like:</p>\n<ul>\n\s\s<li>Polka Dots</li>\n\s\s<li>Soccer</li>\n\s\s<li>Programming</li>\n</ul>"
+
+    source_code :html, <<-HTML
+<h1>Hello <em>World</em>!</h1>
+<p>My name is Rachel.</p>
+<p>I like:</p>
+<ul>
+  <li>Polka Dots</li>
+  <li>Soccer</li>
+  <li>Programming</li>
+</ul>
+    HTML
+
     message "Now save the file and refresh your browser."
-    message "<img src='img/html_tags_list.png'>"
+    img src: 'img/html_tags_list.png'
   end
 
 end
@@ -78,8 +95,7 @@ end
 
 explanation do
 
-message <<-MARKDOWN
-
+  message <<-MARKDOWN
 
 ## Tags for Every Occasion
 
@@ -93,56 +109,56 @@ are a ton of other tags you might use:
 
 ## More Tags
 
-MARKDOWN
+  MARKDOWN
 
-table :border=>"1", :cellspacing=>"0", :cellpadding=>"3", :align=>"center" do
-  tr {
-    th "Tag"
-    th "Purpose"
-  }
-  tr {
-    td "a"
-    td "A link (the 'a' stands for Anchor)"
-  }
-  tr {
-    td "h1-h6"
-    td "Various headers, h1 is the most important, h6 the least."
-  }
-  tr {
-    td "ul"
-    td "Start a bulleted list (an 'unordered list')"
-  }
-  tr {
-    td "ol"
-    td "Start a numbered list (an 'ordered list')"
-  }
-  tr {
-    td "li"
-    td "A single thing within a list (a 'list item')"
-  }
-  tr {
-    td "table, tr, td"
-    td "You can make tables (like this one) with table rows and data cells"
-  }
-  tr {
-    td "form"
-    td "A form that can collect data from user input"
-  }
-  tr {
-    td "input"
-    td "A text input, a button, or a checkbox in a form"
-  }
-  tr {
-    td "div"
-    td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (More on this later.)"
-  }
-  tr {
-    td "span"
-    td "Another section marker that doesn't do anything to its contents, but is inline - it does not make a new line after."
-  }
-end
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+    tr {
+      th "Tag"
+      th "Purpose"
+    }
+    tr {
+      td "a"
+      td "A link (the 'a' stands for Anchor)"
+    }
+    tr {
+      td "h1-h6"
+      td "Various headers, h1 is the most important, h6 the least."
+    }
+    tr {
+      td "ul"
+      td "Start a bulleted list (an 'unordered list')"
+    }
+    tr {
+      td "ol"
+      td "Start a numbered list (an 'ordered list')"
+    }
+    tr {
+      td "li"
+      td "A single thing within a list (a 'list item')"
+    }
+    tr {
+      td "table, tr, td"
+      td "You can make tables (like this one) with table rows and data cells"
+    }
+    tr {
+      td "form"
+      td "A form that can collect data from user input"
+    }
+    tr {
+      td "input"
+      td "A text input, a button, or a checkbox in a form"
+    }
+    tr {
+      td "div"
+      td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (More on this later.)"
+    }
+    tr {
+      td "span"
+      td "Another section marker that doesn't do anything to its contents, but is inline - it does not make a new line after."
+    }
+  end
 
-message <<-MARKDOWN
+  message <<-MARKDOWN
 
 Don't try to memorize all the tags! You can always look them up on sites like:
 
@@ -156,10 +172,8 @@ Can you link your favorite things to their respective Wikipedia pages? Here's an
 
 CLASS DISCUSSION: What are all the individual parts of the code to add a link?
 
-MARKDOWN
+  MARKDOWN
 
 end
 
 next_step "HTML_structure"
-
-

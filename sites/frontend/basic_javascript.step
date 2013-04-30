@@ -7,15 +7,18 @@ steps do
 
   step do
     message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive. Add a script tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
+
     source_code :html, <<HTML
 <script type="text/javascript">
 </script>
 HTML
+
     message "Save and refresh the page in the browser. It should look unchanged."
   end
 
   step do
     message "Type in this short script. Javascript is case-specific and picky about syntax, so if your script doesn't run, check carefully for typos."
+
     source_code :html, <<HTML
 <script type="text/javascript">
   function replaceName() {
@@ -26,10 +29,17 @@ HTML
   document.onclick = replaceName;
 </script>
 HTML
-    message "Refresh the page, and click on one of your paragraphs. You should see a browser prompt like this:"
-    message "<img src='img/prompt.png'>"
-    message "Once you answer the prompt, you should see the bold text that was your name change to whatever you entered."
-    message "<img src='img/hello_omg.png'>"
+
+    message <<-MARKDOWN
+Refresh the page, and click on one of your paragraphs. You should see a browser prompt like this:
+
+<img src='img/prompt.png'>
+
+Once you answer the prompt, you should see the bold text that was your name change to whatever you entered.
+
+<img src='img/hello_omg.png'>
+    MARKDOWN
+
     important "It takes years to become a Javascript expert. Don't worry if you found the last step confusing or had trouble getting your script to run. The most important thing to note is that you can put Javascript **directly** into your document if you want to, by wrapping it in a `script` tag, and use this script to add interactivity to the page."
   end
 end
@@ -60,7 +70,7 @@ The first line declares a 'function', a bit a of reusable code you can refer
 to later by calling its name:
 
   MARKDOWN
-  source_code "javascript", "function replaceName() {"
+  source_code :js, "function replaceName() {"
   message <<-MARKDOWN
 
 The next two lines are the steps the function will do. The first one creates
@@ -69,7 +79,7 @@ will try to get this value using its `prompt` method, a built-in function it
 knows how to do that involves popping up a text box for you to fill in.
 
   MARKDOWN
-  source_code "javascript", "var myNewName = window.prompt('Pick a new name!');"
+  source_code :js, "var myNewName = window.prompt('Pick a new name!');"
   message <<-MARKDOWN
 
 In the next line, it goes into your HTML document, and, using a built-in
@@ -78,7 +88,7 @@ your 'user-name' span. It then sets the span's HTML contents to the value of
 the variable 'myNewName'
 
   MARKDOWN
-  source_code "javascript", "document.getElementById('user-name').innerHTML = myNewName;"
+  source_code :js, "document.getElementById('user-name').innerHTML = myNewName;"
   message <<-MARKDOWN
 
 The `}` closes the function you started defining in the first line.
@@ -86,12 +96,12 @@ The `}` closes the function you started defining in the first line.
 The final line tells the browser, 'When I click the document, run that function I defined called replaceName'
 
 MARKDOWN
-source_code "javascript", "document.onclick = replaceName;"
+source_code :js, "document.onclick = replaceName;"
 
 
 tip "Some elements of this script, like 'document.onclick' or the '.innerHTML' property, are a little out of date. They're great ways to start playing with Javascript, but when you write your own pro Javascript, you may want to use more contemporary techniques or a library like jQuery that will do these things for you in a less clunky way."
 
 end
 
-next_step "jquery"
+next_step 'jquery'
 

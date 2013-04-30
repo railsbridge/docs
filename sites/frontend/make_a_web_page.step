@@ -6,29 +6,40 @@ end
 steps do
 
   step do
-    message "Drag the 'index.html' page from your project into a web browser. Your browser should look like this:"
-    message "<img src='img/page.png'>"
+    message <<-MARKDOWN
+Drag the 'index.html' page from your project into a web browser. Your browser should look like this:
+
+<img src='img/page.png'>
+
+    MARKDOWN
   end
 
   step do
-    message "Drag the 'index.html' page from your project into a text editor. The text editor should look like this:"
-    message "<img src='img/page_html.png'>"
-    message "Opening the same file in a browser and in a text editor lets you see the effects of each code change right after you make it."
+    message <<-MARKDOWN
+Drag the 'index.html' page from your project into a text editor. The text editor should look like this:
+
+<img src='img/page_html.png'>
+
+Opening the same file in a browser and in a text editor lets you see the effects of each code change right after you make it.
+    MARKDOWN
   end
-  
+
   step do
-    message "You'll remember when we were working on our hello.html file, we put JavaScript and CSS directly into the HTML document. But you can also include js and css in external files, with a link."
-    message "This file, 'index.html', includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!')."
-    message "HTML comment tags begin with `<!--` and end with `-->`. Here's an example:"
-    source_code "HTML", "<!-- this is a comment. the browser ignores it -->"
+    message <<-MARKDOWN
+You'll remember when we were working on our hello.html file, we put JavaScript and CSS directly into the HTML document. But you can also include js and css in external files, with a link.
+
+This file, 'index.html', includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!').
+
+HTML comment tags begin with `<!--` and end with `-->`. Here's an example:
+    MARKDOWN
+    source_code :html, "<!-- this is a comment. the browser ignores it -->"
     message "Look through index.html and find the links to the CSS and JavaScript files. Delete the comment tags from around them, so the browser will read them."
   end
-  
 
 end
 
 explanation do
-  
+
   message <<-MARKDOWN
 
 ## Inline vs. Linked 
@@ -46,13 +57,19 @@ change it in just one place, instead of having to update every page.
 * A JavaScript tag looks like this when it's wrapping code written right into the HTML page:
 
   MARKDOWN
-  source_code "HTML", "<script type=\"text/javascript\">\n\s\s// Your code goes here! \n</script>"
+  source_code :html, <<-HTML
+<script type="text/javascript">
+  // Your code goes here! 
+</script>
+  HTML
   message <<-MARKDOWN
 
 * A JavaScript tag looks like this when it's a link:
 
   MARKDOWN
-  source_code "HTML", "<script src=\"resources/javascript.js\" type=\"text/javascript\"></script>"
+  source_code :html, <<-HTML
+<script src="resources/javascript.js" type="text/javascript"></script>
+  HTML
   message <<-MARKDOWN
 
 ### CSS
@@ -60,13 +77,19 @@ change it in just one place, instead of having to update every page.
 * A CSS stylesheet looks like this when it's written right into the HTML page:
 
   MARKDOWN
-  source_code "HTML", "<style type=\"text/css\" media=\"all\">\n\s\s/* Your styles go here! */ \n</style>"
+  source_code :html, <<-HTML
+<style type="text/css" media="all">
+  /* Your styles go here! */ 
+</style>
+  HTML
   message <<-MARKDOWN
 
 * A CSS tag looks like this when it's a link:
 
   MARKDOWN
-  source_code "HTML", "<link rel=\"stylesheet\" href=\"resources/layout.css\" type=\"text/css\">"
+  source_code :html, <<-HTML
+<link rel="stylesheet" href="resources/layout.css" type="text/css">
+  HTML
 end
 
 consider_deploying_to_github

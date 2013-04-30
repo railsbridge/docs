@@ -75,9 +75,13 @@ p {
 }
 </style>
 HTML
-    message "When you save and refresh your browser, you should see the styles you added:"
-    message "<img src='img/hello_style.png'>"
-    message "The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed."
+    message <<-MARKDOWN
+When you save and refresh your browser, you should see the styles you added:
+
+<img src='img/hello_style.png'>
+
+The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed.
+    MARKDOWN
   end
 
 end
