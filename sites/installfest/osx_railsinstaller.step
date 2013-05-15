@@ -2,13 +2,13 @@ message "These instructions should work on Snow Leopard, Lion, and Mountain Lion
 
 step "Run RailsInstaller" do
 
-  message "RailsInstaller includes Rails, Ruby, Git, and SQLite."
+  message <<-MARKDOWN
+RailsInstaller includes Rails, Ruby, Git, and SQLite.
 
-  message "Go to <http://railsinstaller.org/> and download the kit."
+Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for your OS.
 
-  important "**Don't watch the video!** After you download the file, come back to this site!"
-
-  message "Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. Enter your full name and email when prompted."
+Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. Enter your full name and email when prompted.
+  MARKDOWN
 end
 
 step "Open Terminal" do

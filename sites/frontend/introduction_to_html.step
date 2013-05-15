@@ -64,7 +64,7 @@ MARKDOWN
 
   step do
     message "Kind of boring, right? To make it look a little less plain, let's drop in an HTML tag. Update the contents of your hello.html file to look like this:"
-    source_code "HTML", "Hello <em>World</em>!"
+    source_code :html, "Hello <em>World</em>!"
     message "The `em` HTML tag tells your browser to add <em>em</em>phasis to that string of text. Refresh your browser and you'll see the effect:"
     message "<img src='img/hello_world_jazzy.png'>"
   end

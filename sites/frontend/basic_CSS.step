@@ -49,16 +49,39 @@ steps do
   step do
     message "Initially, we're going to add our CSS inside the `<head>` tag, below the line with the page title."
     message "A standard style tag might look like this:"
-    source_code "HTML", "<head>\n<title>My Sample HTML page</title>\n<style type=\"text/css\" media=\"screen\">\n\n</style>\n</head>"
+    source_code :html, <<HTML
+<head>
+<title>My Sample HTML page</title>
+<style type="text/css" media="screen">
+
+</style>
+</head>
+HTML
     message "Now save the file and refresh your browser. Everything should look the same."
   end
 
   step do
     message "Add some styles that will apply to your `h1` and `p` tags."
-    source_code "HTML", "<style type=\"text/css\" media=\"screen\">\nh1 { \n\s\sfont-size: 20px;\n\s\sborder-bottom: 1px solid #cccccc;\n}\n\np { \n\s\spadding: 10px; \n\s\sbackground-color: papayaWhip;\n}\n</style>"
-    message "When you save and refresh your browser, you should see the styles you added:"
-    message "<img src='img/hello_style.png'>"
-    message "The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed."
+    source_code :html, <<HTML
+<style type="text/css" media="screen">
+h1 {
+  font-size: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+p {
+  padding: 10px;
+  background-color: papayaWhip;
+}
+</style>
+HTML
+    message <<-MARKDOWN
+When you save and refresh your browser, you should see the styles you added:
+
+<img src='img/hello_style.png'>
+
+The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed.
+    MARKDOWN
   end
 
 end

@@ -11,7 +11,6 @@ it to the web. You'll:
 * Use **JavaScript** to add interactive components.
 * And optionally, push your website to GitHub with **git**.
 
-
 Here's a sample sketch of what your page could look like:
 
 ![screenshot](img/page_sample.jpg)
@@ -40,10 +39,6 @@ Optional tools if you're deploying to GitHub:
 * Git
 * Your [GitHub](http://github.com) account
 
-MARKDOWN
-
-message <<-MARKDOWN
-
 ### Working Effectively and Efficiently
 
 We highly recommend you do the following:
@@ -61,4 +56,5 @@ you work through the lessons. Having 50 tabs open in your web
 browser gets confusing and wastes time.
 
 MARKDOWN
-next_step "introduction_to_html"
+
+next_step 'introduction_to_html'

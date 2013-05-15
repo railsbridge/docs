@@ -20,9 +20,15 @@ The `<html>` encloses all the rest of your page, and states unequivocally, "Here
 
 ## Pages, Like People, Have a Head and a Body
 
-MARKDOWN
-source_code "HTML", "<!DOCTYPE html>\n<html>\n\s\s<head>Invisible, Important Stuff</head>\n\s\s<body>Actual Visible Content</body>\n</html>"
-message <<-MARKDOWN
+  MARKDOWN
+  source_code :html, <<HTML
+<!DOCTYPE html>
+<html>
+  <head>Invisible, Important Stuff</head>
+  <body>Actual Visible Content</body>
+</html>
+HTML
+  message <<-MARKDOWN
 
 ### The Head
 
@@ -42,27 +48,33 @@ program more about the file, like who wrote it or what keywords are relevant.
 The Body contains the actual content of your file, the things you'll want your users
 to be able to see, read, or interact with!
 
-
-
-
-MARKDOWN
+  MARKDOWN
 
 end
 
 steps do
 
   step do
-    message "Let's add the doctype, HTML, head, and body tags to your file. It should look like this:"
-    message "<img src='img/hello_structure.png'>"
-    message "Save the file and refresh your browser. Everything should look mostly the same."
+    message <<-MARKDOWN
+Let's add the doctype, HTML, head, and body tags to your file. It should look like this:
+
+<img src='img/hello_structure.png'>
+
+Save the file and refresh your browser. Everything should look mostly the same.
+
+    MARKDOWN
   end
 
   step do
     message "Let's add a title to our page within the `<head>` section. Add this line:"
-    source_code "HTML", "<title>My Sample HTML page</title>"
-    message "When you refresh your browser, you should see the title on the tab in Chrome."
-    message "<img src='img/hello_title.png'>"
-    message "(If it doesn't show up, double check that you put the line between the opening and closing head tags, and that you saved your file before refreshing.)"
+    source_code :html, "<title>My Sample HTML page</title>"
+    message <<-MARKDOWN
+When you refresh your browser, you should see the title on the tab in Chrome.
+
+<img src='img/hello_title.png'>
+
+(If it doesn't show up, double check that you put the line between the opening and closing head tags, and that you saved your file before refreshing.)
+    MARKDOWN
   end
 
 end

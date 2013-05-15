@@ -24,5 +24,5 @@ end
 
 desc "run the site locally (visit http://localhost:9292)"
 task :run do
-  rerun "rackup -s thin"
+  rerun "rackup -s thin -p #{ENV['PORT'] || 9292}"
 end
