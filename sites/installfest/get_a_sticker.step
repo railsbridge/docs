@@ -186,7 +186,7 @@ end
 verify "heroku deploy" do
   important "Each application has its own `Gemfile`. Be sure you're opening the one inside your sticker app's folder."
 
-  message "Use your editor to open the Gemfile and find the line containing:"
+  message "Use your editor to open the Gemfile  (`C:\\sites\\sticker\\Gemfile` or `~/sticker/Gemfile`) and find the line containing:"
 
   source_code :ruby, <<-RUBY
 gem 'sqlite3'

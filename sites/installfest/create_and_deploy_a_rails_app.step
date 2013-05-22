@@ -22,6 +22,8 @@ step "Create a new Rails app" do
   console "cd test_app"
   console "rails server"
 
+  tip "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes to the popup."
+
   tip "Shortcut: Just type 'rails s'" do
     message <<-MARKDOWN
 Throughout your Rails programming career you're going to type `rails server` a
@@ -56,11 +58,9 @@ message <<-MARKDOWN
 
 * In your browser, go to <http://localhost:3000>
 
-* In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes.
-
 ![Successful Rails Install](successful-rails-install.jpg)
 
-* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server.
+* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
 
   MARKDOWN
   important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
@@ -173,6 +173,10 @@ end
   RUBY
 
   message "Save the file."
+
+  tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
+    message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails." 
+  end
 
     console <<-BASH
 bundle install --without production
