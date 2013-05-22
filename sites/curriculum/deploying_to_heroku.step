@@ -73,7 +73,7 @@ git commit -m "Some helpful message for your future self"
 
   step "Run database migrations on Heroku" do
     console "heroku run rake db:migrate"
-    message "This tells Heroku to run your migrations on its database, like running rake db:migrate locally. Since Heroku's database is separate from the one on your computer, it needs to be updated every time you make database changes"
+    message "This tells Heroku to run your migrations on its database, like running rake db:migrate locally. Heroku's database is separate from the one on your computer, which means it needs to be updated every time you make changes to the structure of your database.  It also means that you'll not see any of the data you entered into the sqlite3 database on your computer."
   end
 
   step "Visit your application" do
