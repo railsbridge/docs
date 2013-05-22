@@ -5,17 +5,17 @@
 step "Run RailsInstaller" do
 
   message <<-MARKDOWN
-RailsInstaller includes Rails, Ruby, Git, and SQLite.
+  RailsInstaller includes Rails, Ruby, Git, and SQLite.
 
-Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
 
-Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
 
-Be sure to check the box for *Add executables for Ruby, Git and DevKit to the PATH*
+  Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
 
-![WinXPRailsInstaller.jpg](WinXPRailsInstaller.jpg)
+  ![WinRailsInstaller.jpg](WinRailsInstaller.jpg)
 
-Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
+  Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
 
   MARKDOWN
 end
