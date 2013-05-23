@@ -43,7 +43,9 @@ class DocPage < Erector::Widgets::Page
   def head_content
     title page_title
     script :src => "/jquery-1.7.2.min.js"
+    script :src => "/js/facebox.js"
     script :src => "/js/doc_page.js"
+    script :src => "/js/sites.js"
   end
 
   def site_title
@@ -62,6 +64,10 @@ class DocPage < Erector::Widgets::Page
   # but this is to load the Open Sans font when we might be offline
   external :style,  <<-CSS
   @import url(/font/opensans.css);
+  CSS
+
+  external :style,  <<-CSS
+  @import url(/css/facebox.css);
   CSS
 
   external :style,  <<-CSS
@@ -116,6 +122,17 @@ class DocPage < Erector::Widgets::Page
 
     widget Contents, site_name: site_name, page_name: page_name
     widget SiteIndex, site_name: site_name
+
+    div(:class => "cheat-codes") {
+      span "Helpful Cards"
+      ul {
+        li {
+          a("Ruby Card", :rel => "facebox", :href => "http://railsbridge.dev/curriculum/ruby_language")
+
+          a("(popout)", :target => "_blank", :class => "popout-icon", :href => "http://railsbridge.dev/curriculum/ruby_language")
+        }
+      }
+    }
 
     div(:class=>:main) {
       h1 doc_title, :class=>"doc_title"

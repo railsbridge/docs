@@ -126,8 +126,26 @@ h1 {
 .main {
   position: relative;
   margin-left: 300px;
-  margin-right: 20px;
+  margin-right: 300px;
   position: relative;
+}
+
+.cheat-codes {
+  padding: 0 0 1em 0;
+  margin: 0 0 1em 1em;
+  min-width: 200px;
+  float: right;
+}
+.cheat-codes span {
+  font-weight: bold;
+  padding: 1px 2px;
+}
+
+.cheat-codes ul {
+  list-style: none;
+  padding: 1px 2px;
+}
+.cheat-codes li {
 }
 
 @media (max-width: 1100px) {
