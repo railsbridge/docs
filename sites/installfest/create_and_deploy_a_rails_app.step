@@ -50,9 +50,7 @@ If `rails server` starts up with no errors, you're golden! It'll look something 
 
 message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
-tip "If it doesn't work..." do
-  link "diagnostics_for_rvm"
-end
+tip "If it doesn't work, ask a TA for help."
 
 message <<-MARKDOWN
 
@@ -221,7 +219,7 @@ To git@heroku.com:floating-winter-18.git
 
     important "Be sure to find and learn your Heroku application name in the output."
 
-    message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, click: [What to do if git seems stuck](what_to_do_if_git_seems_stuck)"
+    message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, talk to a TA."
 
     console "heroku run rake db:migrate"
 
