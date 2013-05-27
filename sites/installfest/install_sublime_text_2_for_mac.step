@@ -15,7 +15,7 @@ step 'Select "Open with DiskImageMounter" in the file save dialog' do
 
   message "It will open an installer with a Sublime Text 2 icon and a picture of your Applications folder. Something like this:"
 
-  message "![install_sublime_text.png](install_sublime_text.png)"
+  img src: 'img/install_sublime_text.png'
 
 end
 

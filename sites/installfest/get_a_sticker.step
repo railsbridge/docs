@@ -121,7 +121,7 @@ In your web browser, go to <http://localhost:3000/drinks>
 3. Enter 135 for the temperature.
 4. Click on "Create Drink".
 
-You should see: ![Drink was successfully created](get_a_sticker_you_should_see.png)
+You should see: ![Drink was successfully created](img/get_a_sticker_you_should_see.png)
 
 In your terminal, Hold Control and hit C to stop the rails server.
   BROWSER_VERIFY

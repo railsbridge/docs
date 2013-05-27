@@ -11,12 +11,12 @@ step "Download KomodoEdit" do
 end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
-  message "This should be the default."
+  message <<-MARKDOWN
+This should be the default.
 
-  message "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:"
-
-  message "![Komodo-Edit-5.png](Komodo-Edit-5.png)"
-
+It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:
+  MARKDOWN
+  img src: 'img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
 end
 
 step "Drag KomodoEdit into your Applications folder." do

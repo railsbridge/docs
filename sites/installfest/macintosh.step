@@ -1,8 +1,3 @@
-div do
-message <<-MARKDOWN
-  MARKDOWN
-end
-
 step "Learn your Mac OS X Version" do
   message <<-MARKDOWN
 
@@ -20,7 +15,7 @@ step "Learn your Mac OS X Version" do
 
 Below is an example.
 
-![OS X Snow Leopard](MacOSXSnowLeopard.png)
+![OS X Snow Leopard](img/MacOSXSnowLeopard.png)
 
   MARKDOWN
 end
@@ -48,4 +43,3 @@ step "Choose your instructions" do
     message "Follow the Panther instructions but be prepared for some things to be difficult."
   end
 end
-

@@ -56,7 +56,7 @@ message <<-MARKDOWN
 
 * In your browser, go to <http://localhost:3000>
 
-![Successful Rails Install](successful-rails-install.jpg)
+![Successful Rails Install](img/successful-rails-install.jpg)
 
 * Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
 
