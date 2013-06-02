@@ -45,11 +45,13 @@ verify "rails" do
 
 	section "Change to your home directory" do
 	  option "Windows" do
-		console "cd c:\\Sites"
+    	console "cd c:\\Sites"
 	  end
 	  option "Mac or Linux" do
-		console "cd ~"
+    	console "cd ~"
 	  end
+
+    console "cd railsbridge"
 	end
 
   console "rails new sticker"
