@@ -13,7 +13,7 @@ steps {
     <tr>
       <td><%= topic.title %></td>
       <td><%= topic.description %></td>
-      <td><%= pluralize(topic.votes.length, "vote") %></td>
+      <td><%= pluralize(topic.votes.count, "vote") %></td>
       <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
       <td><%= link_to 'Show', topic %></td>
       <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
@@ -47,12 +47,12 @@ explanation {
 
   message "First we added these two lines to `app/views/topics/index.html.erb`"
   source_code :erb, <<-HTML
-  <td><%= pluralize(topic.votes.length, "vote") %></td>
+  <td><%= pluralize(topic.votes.count, "vote") %></td>
   <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
   HTML
 
   message <<-MARKDOWN
-  * `pluralize(topic.votes.length, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
+  * `pluralize(topic.votes.count, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
   * `button_to '+1'` creates an html button with the value '+1'.
   * `votes_path(topic_id: topic.id)` creates the right url for the action we want to invoke. In this case, we want to create a vote for the current topic.
     * `votes_path(topic_id: 42)` would output `/votes?topic_id=42`
