@@ -15,7 +15,7 @@ step do
 end
 
 step do
-  irb 'mkdir railsbridge_ruby'
+  console 'mkdir railsbridge_ruby'
   message '`mkdir` means **m**ake **d**irectory. You use mkdir when you want to create a new directory.'
   message 'The command line is just one way of manipulating the files on your computer. Try to find the new directory you created in Finder or Windows Explorer.'
   message 'If you get an error saying the directory already exists, maybe someone did these steps on your computer before. Don\'t fret.'
