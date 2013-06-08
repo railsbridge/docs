@@ -4,6 +4,11 @@ goals do
 end
 
 step do
+  message 'Start irb again'
+  console 'irb'
+end
+
+step do
   irb 'my_variable = 5'
   message 'This creates a new variable called my_variable and stores the value 5 in it.'
   irb 'another_variable = "hi"'
