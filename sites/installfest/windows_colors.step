@@ -20,7 +20,7 @@ option "if your OS is 32 bit" do
 end
 
 option "if your OS is 64 bit" do
- message "open the subdirectory 'x64' of the downloaded files, select and copy all the files, and paste them into C:\\Windows\\system32; provide admin permissions when prompted"
+ message "open the subdirectory 'x64' of the downloaded files, select and copy all the files, and paste them directly into C:\\Windows\\system32 (do not copy the x64 folder itself!); provide admin permissions when prompted"
 end
 
 step "Set up colors" do
