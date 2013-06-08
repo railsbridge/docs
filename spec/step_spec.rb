@@ -12,7 +12,7 @@ describe Step do
       step = Step.new(src: src,
         doc_path: "/tmp/hello.step"
       )
-      @html = step.to_html 
+      @html = step.to_html
       Nokogiri.parse("<html>#{@html}</html>")
     end
   end
@@ -43,12 +43,12 @@ describe Step do
       assert { to_html(step.previous) == "<a name=\"step#{i+1}\"></a>" }
     end
   end
-  
+
   it "puts anchors in based on optional step name" do
     html_doc(<<-RUBY)
     step "Test", {:anchor_name => 'happy_step'}
     RUBY
-    
+
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
     assert { names == ["step1", "happy_step"] }
@@ -106,16 +106,16 @@ RUBY
       assert { @html == "<pre class=\"code\">\n:::ruby\nx = 2</pre>" }
     end
   end
-  
+
   describe 'console' do
     it "emits a 'console' div with a 'pre' block" do
       html_doc(<<-RUBY)
-      console "echo 'hi'"
+      console "echo hi"
       RUBY
       assert_loosely_equal(@html, <<-HTML)
 <div class="console">
   <span>#{Step::TERMINAL_CAPTION}</span>
-  <pre>echo 'hi'</pre>
+  <pre>echo hi</pre>
 </div>
       HTML
     end
