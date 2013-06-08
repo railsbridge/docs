@@ -56,7 +56,7 @@ colors.each do |color|
   puts "#{total} colors of paint on the wall!"
 end
     IRB
-    message "*The ** operator means 'to the power of', as in '256 to the third power'*"
+    message "The ** operator means 'to the power of', as in '256 to the third power'"
     message "There's more than one way to make a block in ruby. The `do ... end` syntax is typically used when a block needs to span multiple lines, while the `{ ... }` syntax is for a single line block."
 end
 
