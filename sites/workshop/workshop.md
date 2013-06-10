@@ -1,9 +1,8 @@
 # Slide Decks:
 
 ## Workshop Intros/Outros:
-* [Welcome](welcome)
-* [Current](current)
-* [Closing](closing)
+* [Welcome](https://docs.google.com/presentation/d/1VT8J6CTuN8ot_-0ZElLv49_-cxuNmXTp83DBonD1x5w/edit#slide=id.p)
+* [Closing](https://docs.google.com/presentation/d/19ik5tm_enCNRIM4zaY9rIoeRhDoMMfFUDgNXnd2lW6A/edit#slide=id.p)
 
 ## Breakout Sessions:
 * [Foundational Skills](foundational_skills)
