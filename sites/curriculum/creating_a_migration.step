@@ -38,6 +38,13 @@ steps {
 
 explanation {
 
+  h2 "Rake"
+  message <<-MARKDOWN
+`rake` _(Ruby Make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application. Here, `rake db:migrate` is a task provided by the Rails framework.
+
+You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task.
+  MARKDOWN
+
   h2 "Explaining MVC and Records"
 
   img src: "img/mvc.png", alt: "MVC"
