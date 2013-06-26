@@ -44,15 +44,10 @@ step "Build the sticker app" do
 verify "rails" do
 
 	section "Change to your home directory" do
-	  option "Windows" do
-    	console "cd c:\\Sites"
-	  end
-	  option "Mac or Linux" do
-    	console "cd ~"
-	  end
-
-    console "cd railsbridge"
+    switch_to_home_directory
 	end
+
+  console "cd railsbridge"
 
   console "rails new sticker"
   result "# ...most output omitted for brevity...

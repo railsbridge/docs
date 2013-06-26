@@ -63,6 +63,19 @@ class Step < Erector::Widget
     end
   end
 
+  def switch_to_home_directory
+    message "`cd` stands for change directory."
+
+    option "Windows" do
+      console "cd c:\\Sites"
+      message "`cd c:\\Sites` sets our Sites directory to our current directory."
+    end
+    option "Mac or Linux" do
+      console "cd ~"
+      message "`cd ~` sets our home directory to our current directory."
+    end
+  end
+
   def consider_deploying
     div :class => "deploying" do
       h1 "Deploying"

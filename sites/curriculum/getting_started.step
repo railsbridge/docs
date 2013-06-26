@@ -11,16 +11,7 @@ steps do
   tip "If you have _any_ problems, contact a TA immediately."
 
   step do
-    message "'cd' stands for change directory."
-
-    option "Windows" do
-      console "cd c:\\Sites"
-      message "'cd c:\\Sites' sets our Sites directory to our current directory."
-    end
-    option "Mac or Linux" do
-      console "cd ~"
-      message "'cd ~' sets our home directory to our current directory."
-    end
+    switch_to_home_directory
   end
 
   step do
