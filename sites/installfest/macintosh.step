@@ -28,18 +28,14 @@ step "Choose your instructions" do
       link "osx_railsinstaller"
     end
     option "Manually" do
-      message "If something went wrong with RailsInstaller, fall back to these instructions."
+      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
       link "osx_lion"
     end
   end
 
-  option "Panther" do
+  option "Leopard/Tiger/Panther" do
+    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
+    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
     link "osx_panther"
-  end
-
-  option "Tiger, or Leopard" do
-    important "Panther and Tiger are **very** old and you should seriously consider upgrading, or buying a new computer!"
-    link "osx_panther"
-    message "Follow the Panther instructions but be prepared for some things to be difficult."
   end
 end
