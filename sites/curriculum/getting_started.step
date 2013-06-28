@@ -76,4 +76,4 @@ steps do
   message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
 end
 
-next_step "create_a_new_git_repo"
+next_step "running_your_application_locally"
