@@ -1,40 +1,32 @@
-goals {
-
   model_diagram header: 'Topics', fields: %w(id title description)
+  message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database."
 
-  message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
-
+goals do
   goal "Create a database table for topics with a title and a description"
-
-  message "In this step we'll learn a bit about MVC (Model-View-Controller) architecture. By the end of this step you should understand the following concepts:"
-
-  ul {
-    li "A record"
+  goal "Understand the MVC architecture:"
+  ul do
     li "Model"
     li "View"
     li "Controller"
-  }
-}
+  end
+end
 
-steps {
-
-
-  step {
+steps do
+  step do
     console "rails generate scaffold topic title:string description:text"
     message <<-MARKDOWN
 * `generate scaffold` tells rails to create everything necessary to get up and running with topics.
 * `topic` tells rails the name of the new model.
 * `title:string` says that topics have a title, which is a string.
-* `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too.)
+* `description:text` says that topics have a description which is a type of "text". Text allows you to enter more data than string.
     MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step."
-  }
+  end
 
-  step {
+  step do
     console "rake db:migrate"
-    message "This tells rails to update the database to include a table for our new model."
-  }
-}
+    message "This tells rails to update the structure of the database to include a table for our new model."
+  end
+end
 
 explanation {
 
@@ -49,19 +41,19 @@ You can run `rake -T` to see a list of all the `rake` commands your app currentl
 
   img src: "img/mvc.png", alt: "MVC"
 
-  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
+  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides you in structuring your web applications."
 
   h3 "Model"
   message <<-MARKDOWN
 * saves data to the database
 * accesses data from the database
-* bridge between the database and objects
+* bridges between the database and the rest of your application
   MARKDOWN
 
   h3 "View"
   message <<-MARKDOWN
 * display the data for human (or machine) consumption
-* webpages are views
+* views are your webpages
   MARKDOWN
 
   h3 "Controller"
@@ -72,7 +64,7 @@ You can run `rake -T` to see a list of all the `rake` commands your app currentl
   MARKDOWN
 
   message <<-MARKDOWN
-In MVC, models, views, and controllers have very specific jobs.  Separating responsibilities like this make it easy to maintain and extend rails applications.  When responsibilities become muddied it gets much harder to debug issues and add new functionality.
+In MVC each component has very specific jobs.  Separating responsibilities like this makes it easy to maintain and extend rails applications.  When responsibilities become muddled it gets much harder to debug issues and add new functionality.
   MARKDOWN
 }
 

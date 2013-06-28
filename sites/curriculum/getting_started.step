@@ -2,8 +2,8 @@
 img src: "img/Start_page.png", alt: "Start Page"
 
 goals do
-  goal "Create Your New Application"
-message "Let's get started! By the end of this step, we'll have a brand-spankin'-new (empty) rails app."
+  goal "Create your new application"
+message "Let's get started! By the end of this step, we'll have a brand new (empty) rails app."
 end
 
 steps do
@@ -15,24 +15,29 @@ steps do
   end
 
   step do
-    console "cd railsbridge"
+    message "Create a directory for your project"
+    console "mkdir railsbridge"
+  end
+
+  step do
+    console_with_message "Move into the directory you just created:", "cd railsbridge"
   end
 
   step do
     console "rails new suggestotron"
-    message "'rails new' creates a new rails project with the name you give."
+    message "`rails new` creates a new rails project with the name you give."
     message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
   end
 
   step do
-    console "cd suggestotron"
-    message "'cd' stands for change directory."
-    message "'cd suggestotron' makes suggestotron our current directory."
+    console_with_message "Move into your project directory", "cd suggestotron"
+    message "`cd` stands for change directory."
+    message "`cd suggestotron` makes suggestotron our current directory."
   end
 
   step do
     console "ls"
-    message "'ls' stands for 'list (stuff)'."
+    message "'ls' stands for 'list'."
     message "It shows you the contents of the current folder."
   end
 
@@ -71,4 +76,4 @@ steps do
   message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
 end
 
-next_step "create_a_new_git_repo"
+next_step "running_your_application_locally"

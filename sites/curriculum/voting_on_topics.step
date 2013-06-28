@@ -1,24 +1,20 @@
+model_diagram header: 'Votes', fields: %w(id topic_id)
+
+message "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
 
 goals {
   goal "Create a model for votes"
-
-  model_diagram header: 'Votes', fields: %w(id topic_id)
-
-  message "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
 }
 
 steps {
-  console <<-SHELL
-rails generate resource vote topic_id:integer
-rake db:migrate
-  SHELL
+  console 'rails generate resource vote topic_id:integer', 'rake db:migrate'
 }
 
 explanation {
   message <<-MARKDOWN
-  * Just like before, we're creating a new model named "vote"
+  * Just like before, we're creating a new model named "vote".
   * The only thing really different is the integer we added called `topic_id`.
-    * `topic_id` is the data we need to draw the line between votes and topics.
+    * `topic_id` is the attribute we need to connect votes and topics.
   * We didn't generate a full scaffold this time because we aren't
     going to do the full CRUD for votes; they're just going to be
     considered part of topics as-is.
