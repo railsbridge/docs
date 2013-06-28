@@ -120,8 +120,10 @@ class Step < Erector::Widget
 
   def next_step name
     div :class => "step next_step" do
-      h1 do
-        prefix "Next Step:"
+      if ENV['SHOW_NEXT_STEP']
+        h1 do
+          prefix "Next Step:"
+        end
       end
       link name
     end
