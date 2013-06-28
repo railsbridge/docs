@@ -1,14 +1,14 @@
-goals {
-
-  message "
-  When a user creates a new topic they are currently shown a page with
-  just that topic. For our voting app it makes more sense that they
+message "When a user creates a new topic they are currently shown a page with
+  just that topic."
+message "For our voting app it makes more sense that they
   would be taken back to the topic list."
 
-  goal "In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic."
-}
+goals do
+  goal "Set up redirection to the index action."
+  goal "Add flash messages to the application."
+end
 
-steps {
+steps do
 
   step "Change the topics controller" do
 
@@ -16,12 +16,12 @@ steps {
 
     message "Find the line:"
 
-    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
+    source_code :ruby, "format.html do redirect_to @topic, notice: 'Topic was successfully created.' end"
 
 
     message 'and change `@topic` to `topics_path` like this:'
 
-    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
+    source_code :ruby, "format.html do redirect_to topics_path, notice: 'Topic was successfully created.' end"
 
     message 'so that the file looks like this:'
 
@@ -31,11 +31,11 @@ def create
 
   respond_to do |format|
     if @topic.save
-      format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
-      format.json { render json: @topic, status: :created, location: @topic }
+      format.html do redirect_to topics_path, notice: 'Topic was successfully created.' end
+      format.json do render json: @topic, status: :created, location: @topic end
     else
-      format.html { render action: "new" }
-      format.json { render json: @topic.errors, status: :unprocessable_entity }
+      format.html do render action: "new" end
+      format.json do render json: @topic.errors, status: :unprocessable_entity end
     end
   end
 end
@@ -57,17 +57,17 @@ end
   step "Confirm your changes" do
     message "Look at <http://localhost:3000>."
   end
-}
+end
 
 
-explanation {
+explanation do
 
   message <<-MARKDOWN
-  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
+  * `format.html do redirect_to topics_path, notice: 'Topic was successfully created.' end`:
     * `format.html` means that the server should send html back to the browser
     * `redirect_to topics_path` means show the **topics list page** when we're done creating a topic
     * `notice: 'Topic was successfully created.'` puts the message into the flash so it will be displayed on the topics list
   MARKDOWN
-}
+end
 
 next_step "make_the_topic_title_a_link"
