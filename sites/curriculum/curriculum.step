@@ -38,11 +38,11 @@ day... unless I really screwed something up. :D
 
 We're going to be working with:
 
-* ruby 1.9.3 installed via rvm (mac or linux) or RailsInstaller (windows)
-* rails 3.2.x
+* ruby 2.0.0 installed via rvm
+* rails 4.0.x
 * bundler
 * sqlite
-* the text editor of your choice
+* sublime text
 
 Everything should be set up the night before during our
 install-fest. Please ensure you have everything working _before_ you
