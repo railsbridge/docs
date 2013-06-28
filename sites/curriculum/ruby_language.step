@@ -9,13 +9,13 @@ end
 
 steps do
   step do
-    message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets try out Ruby code:"
+    message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets you experiment with Ruby code:"
 
     console_without_message "irb"
 
     message "Yours might look different, but it should look something like this:"
 
-    console_without_message "1.9.3p362 :001 > "
+    console_without_message "irb(main):001:0>"
   end
 
   step do
@@ -59,7 +59,7 @@ steps do
 
   step do
     message "Each class has different **methods** that can be used on **instances** of that class."
-    irb_command 'fruits.length' 'fruits.first'
+    irb_command 'fruits.length', 'fruits.first'
 
     message "You can see all the methods available for an object:"
     irb_command 'fruits.methods'
@@ -102,9 +102,9 @@ end
 pluralize("kiwi")
     RUBY
 
-    message "Methods take **parameters**, which are the variables they work on. In this case, we made a method called pluralize that takes one parameter, a word."
+    message "Methods take **arguments**, which are the variables they work on. In this case, we made a method called `pluralize` that takes one argument, a word."
 
-    message "Methods can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In Ruby, functions return whatever the last line of the function evaluates to."
+    message "Methods can also return data. In this case, `pluralize` returns the word with an 's' added to the end of it. In Ruby, methods return whatever the last line of the method evaluates to."
   end
 end
 
