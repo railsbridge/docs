@@ -224,15 +224,23 @@ class Step < Erector::Widget
     console_with_message(TERMINAL_CAPTION, commands)
   end
 
-  def console_with_message(message, commands)
+  def console_with_message(message, *commands)
     div :class => "console" do
       span message
+      commands = add_prompt_to_messages("$", commands)
       pre commands
     end
   end
 
   def console_without_message(commands)
     console_with_message("", commands)
+  end
+
+  def irb_command(*messages)
+    div :class => 'irb-console' do
+      messages = add_prompt_to_messages("irb>", messages)
+      pre messages
+    end
   end
 
   def irb msg
@@ -316,6 +324,10 @@ class Step < Erector::Widget
   end
 
   private
+
+  def add_prompt_to_messages(prompt, messages)
+    messages.map{ |message| "#{prompt} #{message} \n" }.join
+  end
 
   def _render_inner_content
     blockquote do

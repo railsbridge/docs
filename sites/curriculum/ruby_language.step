@@ -19,88 +19,70 @@ steps do
   end
 
   step do
-    console_with_message "Next try some simple math that's built into Ruby. Type these lines into IRB:", "3 + 3\n7 * 6"
+    message "Next try some simple math that's built into Ruby. Type these lines into IRB:"
+    irb_command "3 + 3", "7 * 6"
   end
 
   step do
     message "**Variables** are names with values assigned to them."
 
-    console_without_message "my_variable = 5"
+    irb_command "my_variable = 5"
 
     message "This assigns the value `5` to the name `my_variable`."
   end
 
   step do
     message "You can also do math with variables:"
-    console_without_message <<-RUBY
-my_variable + 2
-my_variable * 3
-    RUBY
+    irb_command "my_variable + 2", "my_variable * 3"
   end
 
   step do
     message "Variables can also hold more than one value. This is called an **array**."
 
-    console_without_message 'fruits = ["kiwi", "strawberry", "plum"]'
+    irb_command 'fruits = ["kiwi", "strawberry", "plum"]'
 
     message "Here we're using the variable `fruits` to hold a collection of fruit names."
   end
 
   step do
-    console <<-RUBY
-fruits = fruits + ["orange"]
-fruits = fruits - ["kiwi"]
-    RUBY
-
+    irb_command 'fruits = fruits + ["orange"]', 'fruits = fruits - ["kiwi"]'
     message "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
-
   end
 
   step do
     message "Everything in Ruby has a **class**. Type this into IRB:"
 
-    console_without_message <<-RUBY
-7.class
-"kiwi".class
-fruits.class
-RUBY
+    irb_command "7.class", '"kiwi".class', 'fruits.class'
 
     message "These are the three data types introduced so far: **Fixnum** (numbers), **String** (text), and **Array** (lists)."
   end
 
   step do
     message "Each class has different **methods** that can be used on **instances** of that class."
-
-    console_without_message <<-RUBY
-fruits.length
-fruits.first
-    RUBY
+    irb_command 'fruits.length' 'fruits.first'
 
     message "You can see all the methods available for an object:"
-    console_without_message <<-RUBY
-fruits.methods
-    RUBY
+    irb_command 'fruits.methods'
 
     message "And **chain** methods together:"
-    console_without_message <<-RUBY
-fruits.methods.sort
-    RUBY
+    irb_command 'fruits.methods.sort'
   end
 
   step do
     message "Arrays have a method called **each** which iterates through the list running code on each item."
-    console_without_message <<-RUBY
+    irb_command <<-RUBY
 fruits.each do |fruit|
   puts fruit
 end
     RUBY
+
     message "This takes the first item from the `fruits` array (`\"kiwi\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
   end
 
   step do
     message "A **conditional** runs code only when a statement evaluates to true."
 
-    console_without_message <<-RUBY
+    irb_command <<-RUBY
 if my_variable > 1
   puts "YAY!"
 end
@@ -113,7 +95,7 @@ end
 
   step do
     message "You can also make your own methods:"
-    console_without_message <<-RUBY
+    irb_command <<-RUBY
 def pluralize(word)
   word + "s"
 end
