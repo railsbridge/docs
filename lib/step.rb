@@ -326,7 +326,13 @@ class Step < Erector::Widget
   private
 
   def add_prompt_to_messages(prompt, messages)
-    messages.map{ |message| "#{prompt} #{message} \n" }.join
+    messages.map do |message|
+      if message.start_with?("=>")
+        "#{message} \n"
+      else
+        "#{prompt} #{message} \n"
+      end
+    end.join
   end
 
   def _render_inner_content

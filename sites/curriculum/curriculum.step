@@ -1,7 +1,7 @@
 message <<-MARKDOWN
 ### Goal
 
-To teach you Ruby on Rails we are going to use a "Real World"
+To teach you Ruby on Rails you will use a "Real World"
 example. You've decided to create a voting system for you and your
 friends to play with. You've decided at a minimum, you'd like to
 allow users to:
@@ -23,7 +23,7 @@ application online you should understand:
 * How to try your Ruby code (irb)
 * How to go from requirements to a new working Rails application
 * How to get your application online
-* The basic tools a RoR developer uses (source control, editor, console, local server)
+* The basic tools a RoR developer uses (editor, console, local server)
 
 ### Schedule
 
@@ -32,13 +32,13 @@ application online you should understand:
 
 This is just a rough guideline, not a mandate. Some steps you'll go
 over and some you'll go under. It'll all work out by the end of the
-day... unless I really screwed something up. :D
+day.
 
 ### Requirements
 
 We're going to be working with:
 
-* ruby 2.0.0 installed via rvm
+* ruby 2.0.x
 * rails 4.0.x
 * bundler
 * sqlite
@@ -49,33 +49,29 @@ install-fest. Please ensure you have everything working _before_ you
 show up for railsbridge on Saturday.
 
 You can verify that you have everything working by trying this out in your terminal:
+MARKDOWN
 
-<div class="console"><pre>
-$ irb
->> 1 + 2
-=> 3
->> require "active_support"
-=> true
->> exit
-$
-</pre>
-</div>
+console_without_message("irb")
+message("Now you are in irb")
+irb_command "1+2", "=> 3", 'require "active_support"','=> true', 'exit'
+message <<-MARKDOWN
 
 If you can do that, you are probably good to go.
 
 ### Working Effectively and Efficiently
 
-I highly recommend you do the following:
+It is highly recommend you do the following:
 
-* Bring up your terminal and open 2 tabs:
-  * One is for regular terminal stuffs
-  * One will be for irb (aka rails console). We'll explain later
+* Bring up your terminal and open 3 tabs:
+  * One is for regular terminal commands
+  * One will be for irb or rails console. We'll explain later
+  * One for the rails server
 * Open your browser fresh or hide any windows you already have open.
   * Bring up one window with two tabs
     * One for this content
-    * One for interacting with your app.
-* Open your text editor and _do not ever close it_. We're not quitters.
-* Hide all extra applications. Turn off twitter, IM, and all other distractions.
+    * One for interacting with your app
+* Open your text editor and do not close it
+* Hide all extra applications. Turn off twitter, IM, and all other distractions
 
 By minimizing the number of things you interact with, you reduce the
 amount of time spent switching between them and the context lost as
