@@ -1,16 +1,13 @@
-goals {
+message "Currently when you go to <http://localhost:3000> you see the \"Welcome
+aboard\" message."
+message "It would be easier to use our app if <http://localhost:3000> went directly to the topics list."
+message "In this step we'll make that happen and learn a bit about routes in Rails."
 
-  goal "Now that the structure is complete, let's make the flow work smoothly."
+goals do
+  goal "Set up a home page"
+end
 
-  message "Currently when you go to <http://localhost:3000> you see the \"Welcome
-  aboard\" message."
-
-  message "It would be easier to use our app if <http://localhost:3000> went directly to the topics list."
-
-  message "In this step we'll make that happen and learn a bit about routes in Rails."
-}
-
-steps {
+steps do
 
   step "Add a root route" do
     message "Open `config/routes.rb`. Near the end of the file but before the final end add `root :to => 'topics#index'`. When you are done the last few lines should look like this:"
@@ -20,30 +17,21 @@ root :to => 'topics#index'
     RUBY
   end
 
-  step "Remove the static welcome file" do
-
-    message "  You also need to remove the welcome aboard page for the new route to work."
-
-    console "git rm public/index.html"
-
-  end
-
   step "Confirm your changes" do
     message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
   end
-}
+end
 
-explanation {
+explanation do
 
  message <<-MARKDOWN
-  * `root :to => 'topics#index'` is a rails route that says the default
-    address for your site is `topics#index`. `topics#index` is the topics
-    list page (the topics controller with the index action).
+  * `root :to => 'topics#index'` is a Rails route that says the default
+    address for your site should be handled by the `index` action on the `TopicsController`.
   * Rails routes control how URLs (web addresses) get matched with
     code on the server. Similar to how addresses match with houses and
     apartments.
   * The file `config/routes.rb` is like an address directory listing the
-    possible addresses and which code goes with each one
+    possible addresses and which code goes with each one.
   * `routes.rb` uses some shortcuts so it doesn't always show all the
     possible URLs. To explore the URLs in more detail we can use the
     terminal.
@@ -77,19 +65,18 @@ explanation {
   Now you can have a look at the paths that are available in your app.
   Let's try looking at one of the topics routes we just generated.
   Open up your rails console and play:
+  MARKDOWN
 
-    $ rails console
-    >> app.topics_path
-    => "/topics"
-    >> app.topics_url
-    => "http://www.example.com/topics"
+  console_without_message "rails console"
+  irb_command 'app.topics_path', '=> "/topics"', 'app.topics_url', '=> "http://www.example.com/topics"'
 
+  message <<-MARKDOWN
   `app` is a special object that represents your entire application.
   You can ask it about its routes (as we just did), play with its
   database connections, or make pseudo-web requests against it with
   `get` or `post` (and lots more).
 
   MARKDOWN
-}
+end
 
 next_step "redirect_to_the_topics_list_after_creating_a_new_topic"

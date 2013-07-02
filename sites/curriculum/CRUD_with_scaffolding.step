@@ -1,32 +1,35 @@
----
-goals {
+message <<-MARKDOWN
+At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
 
-  message <<-MARKDOWN
-  At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
+* **C**reate new records in the database
+* **R**ead or show the records in the database
+* **U**pdate existing records
+* **D**estroy or delete records
 
-  * **C**reate new records in the database
-  * **R**ead or show the records in the database
-  * **U**pdate existing records
-  * **D**estroy or delete records
+Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
+MARKDOWN
 
-  Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
-  MARKDOWN
-}
+goals do
 
-steps {
+  goal 'Understand CRUD'
+  goal 'Understand scaffolding'
 
-  step {
+end
+
+steps do
+
+  step do
     console "rails server"
-  }
+  end
 
-  step {
+  step do
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
     message "You should see a page listing topics that looks something like this:"
 
     img src: "img/Seattle_topic_list_page.png", alt: "Topic List Page"
-  }
+  end
 
-  step {
+  step do
     message <<-MARKDOWN
   * Click on "New Topic"
   * Fill in the form and click "Create Topic"
@@ -34,9 +37,9 @@ steps {
     MARKDOWN
 
     img alt: "topic created", src: "img/Seattle_topic_created.png"
-  }
+  end
 
-  step {
+  step do
     message <<-MARKDOWN
   * Click on "back"
   * You should see the topic list again, this time with your new topic listed:
@@ -46,20 +49,20 @@ steps {
   * Try the 'show', 'edit', and 'destroy' links to see what they do
   * You've created a basic database driven web site, congrats!
     MARKDOWN
-  }
-}
+  end
+end
 
-explanation {
+explanation do
 
   message <<-MARKDOWN
-  How did all those pages get created and hooked together? The rails scaffold did it for you.
+  How did all those pages get created and hooked up together? The Rails scaffold did it for you.
 
-  Let's take a closer look at some of the files rails created:
+  Let's take a closer look at some of the files Rails created:
 
   * `app/models/topic.rb`
     * This file contains code for our topic model. If you look at it,
       it's nearly blank. Creating, reading, updating, and deleting
-      records are built into rails.
+      records are built into Rails.
 
   * `app/views/topics`
     * This folder contains all the views for our topics model. This is
@@ -102,8 +105,6 @@ explanation {
       <code>def</code>) for each of the views listed above (except
       _form.html.erb)
     MARKDOWN
-}
-
-consider_deploying
+end
 
 next_step "voting_on_topics"

@@ -1,49 +1,51 @@
-goals {
+message "*TODO*: Insert rails console for showing relationships"
 
-  div(style: 'margin: 0 auto; width: 250px; height: 120px;') do
-    model_diagram header: 'Topics', fields: %w(id title description), style: "float: left;"
-    div(style: 'float: left; position: relative; width: 60px; height: 100px;') do
-      div(class: 'arrow-left', style: 'left: 0;  top: 30px;')
-      div(class: 'horiz-line', style: 'left: 5px;  top: 37px; width: 25px;')
-      div(class: 'vert-line', style: 'left: 30px; top: 38px; height: 25px;')
-      div(class: 'horiz-line', style: 'right: 0; top: 62px; width: 30px;')
-    end
-    model_diagram header: 'Votes', fields: %w(id topic_id), style: "float: left;"
+div(style: 'margin: 0 auto; width: 250px; height: 120px;') do
+  model_diagram header: 'Topics', fields: %w(id title description), style: "float: left;"
+  div(style: 'float: left; position: relative; width: 60px; height: 100px;') do
+    div(class: 'arrow-left', style: 'left: 0;  top: 30px;')
+    div(class: 'horiz-line', style: 'left: 5px;  top: 37px; width: 25px;')
+    div(class: 'vert-line', style: 'left: 30px; top: 38px; height: 25px;')
+    div(class: 'horiz-line', style: 'right: 0; top: 62px; width: 30px;')
   end
+  model_diagram header: 'Votes', fields: %w(id topic_id), style: "float: left;"
+end
 
-  goal "Because there is an explicit relationship between a topic and its
-  votes, we need to specify that. In this step, we'll explicitly
-  declare the relationship between votes and topics."
-}
+message "Because there is an explicit relationship between a topic and its
+votes, we need to specify that. In this step, we'll explicitly
+declare the relationship between votes and topics."
 
-steps {
+goals do
 
-  step {
+  goal "Connect topics to votes"
+  goal "Understand has_many and belongs_to relationships"
+end
+
+steps do
+
+  step do
     message "Edit `app/models/topic.rb` so that it looks like this:"
 
     source_code :ruby, <<-RUBY
 class Topic < ActiveRecord::Base
-  attr_accessible :description, :title
   has_many :votes, dependent: :destroy
 end
     RUBY
-  }
+  end
 
-  step {
+  step do
     message "Edit `app/models/vote.rb` so that it looks like this:"
     source_code :ruby, <<-RUBY
 class Vote < ActiveRecord::Base
-  attr_accessible :topic_id
   belongs_to :topic
 end
     RUBY
-  }
-}
+  end
+end
 
-explanation {
+explanation do
 
   message <<-MARKDOWN
-
 `has_many` and `belongs_to`:
 
 * In rails, relationships between models are called associations.
@@ -52,16 +54,14 @@ explanation {
   topic model.
   * When you ask a topic for its votes, you get an array of votes
     for that topic.
+  * `dependent: :destroy` means when a topic gets destroyed, all the
+    votes that correspond to it will be destroyed, too.  Without
+    `dependent :destroy`, those votes would live in the database forever.
 * A vote is for a particular topic, so we put `belongs_to :topic`
   in the vote model.
   * When you ask a vote for its topic, you get the topic for that
     vote.
-
-It can still be important to clean up after yourself! `dependent: :destroy`
-  on `has_many :votes` means when a **Topic** gets destroyed, all
-  the **votes** that correspond to it will be destroyed, too. Without
-  `dependent :destroy`, those votes would live on the database forever.
-  MARKDOWN
-}
+MARKDOWN
+end
 
 next_step "allow_people_to_vote"
