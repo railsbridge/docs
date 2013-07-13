@@ -160,7 +160,7 @@ are a ton of other tags you might use:
 
   message <<-MARKDOWN
 
-  And HTML5 introduced lots of new HTML tags to make the HTML more *symantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
+  And HTML5 introduced lots of new HTML tags to make the HTML more *semantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
 
   MARKDOWN
 
