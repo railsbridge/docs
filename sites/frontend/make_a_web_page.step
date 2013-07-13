@@ -7,7 +7,7 @@ steps do
 
   step do
     message <<-MARKDOWN
-Drag the 'index.html' page from your project into a web browser. Your browser should look like this:
+Drag the 'index.html' page from your project onto the icon of your web browser. Your browser should look like this:
 
 <img src='img/page.png'>
 
@@ -16,7 +16,7 @@ Drag the 'index.html' page from your project into a web browser. Your browser sh
 
   step do
     message <<-MARKDOWN
-Drag the 'index.html' page from your project into a text editor. The text editor should look like this:
+Drag the 'index.html' page from your project onto the icon of your text editor. The text editor should look like this:
 
 <img src='img/page_html.png'>
 
