@@ -160,10 +160,49 @@ are a ton of other tags you might use:
 
   message <<-MARKDOWN
 
+  And HTML5 introduced lots of new HTML tags to make the HTML more *semantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
+
+  MARKDOWN
+
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+    tr {
+      th "Tag"
+      th "Purpose"
+    }
+    tr {
+      td "section"
+      td "A section of a document"
+    }
+    tr {
+      td "nav"
+      td "A navigation section"
+    }
+    tr {
+      td "header"
+      td "The header for a page. (This is different from the head element, which contains metadata about the page!)"
+    }
+    tr {
+      td "footer"
+      td "The footer for a page"
+    }
+    tr {
+      td "main"
+      td "The important content on a page"
+    }
+    tr{
+      td "aside"
+      td "Content not essential to the main content"
+    }
+  end
+
+  message <<-MARKDOWN
+
 Don't try to memorize all the tags! You can always look them up on sites like:
 
 * [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
 * [DocHub](http://dochub.io/#html/)
+
+
 
 ## Try This
 What happens if you change the `<ul>` to `<ol>`? (Don't forget to change the closing tag, too.)
