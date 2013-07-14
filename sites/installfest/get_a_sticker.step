@@ -32,7 +32,7 @@ verify "tool installation" do
   fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
 
   console "rails -v"
-  fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
+  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
 message "If this works - proceed to build the sticker app."
