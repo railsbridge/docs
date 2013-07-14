@@ -17,6 +17,19 @@ goals {
 }
 
 steps {
+  step 'Edit the Gemfile' do
+   message "In order to save votes through the Topic model we must allow Rails to whitelist specific attributes for each model."
+   message "In Rails 4, this functionality is provided in a separate gem. We need to install that gem in order to save the votes."
+   message "Open the `Gemfile` in your text editor. Under the declaration for the `rails` gem add the following line of code:"
+
+    source_code :ruby, <<-RUBY
+gem 'strong_parameters'
+    RUBY
+  end
+
+  step "Apply the Gemfile changes" do
+    console "bundle install"
+  end
 
   step {
     message "Edit `app/models/topic.rb` so that it looks like this:"

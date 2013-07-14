@@ -13,20 +13,12 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open `config/routes.rb`. Near the end of the file but before the final end add `root :to => 'topics#index'`. When you are done the last few lines should look like this:"
+    message "Open `config/routes.rb`. Search the file for 'root' (near the top) uncomment that line and change it to read  `root 'topics#index'`. When you are done the line should look like this:"
+  end
 
     source_code :ruby, <<-RUBY
-root :to => 'topics#index'
+root 'topics#index'
     RUBY
-  end
-
-  step "Remove the static welcome file" do
-
-    message "  You also need to remove the welcome aboard page for the new route to work."
-
-    console "git rm public/index.html"
-
-  end
 
   step "Confirm your changes" do
     message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
@@ -36,7 +28,7 @@ root :to => 'topics#index'
 explanation {
 
  message <<-MARKDOWN
-  * `root :to => 'topics#index'` is a rails route that says the default
+  * `root 'topics#index'` is a rails route that says the default
     address for your site is `topics#index`. `topics#index` is the topics
     list page (the topics controller with the index action).
   * Rails routes control how URLs (web addresses) get matched with
