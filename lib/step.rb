@@ -80,7 +80,7 @@ class Step < Erector::Widget
     div :class => "deploying" do
       h1 "Deploying"
       blockquote do
-        message "Before the next step, you could try deploying your app to Heroku!"
+        message "Before the next step, you could try deploying your app to Heroku! Note, that until you reach the stage 'Setting The Default Page', Heroku may tell you 'The page you were looking for doesn't exist'."
         link 'deploying_to_heroku'
       end
     end
