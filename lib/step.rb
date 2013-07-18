@@ -40,6 +40,15 @@ class Step < Erector::Widget
     @doc_path.split('/').last.split('.').first
   end
 
+  def insert file
+    # todo: unify into common 'find & process a document file' unit
+    dir = File.dirname(@doc_path)
+    path = File.join(dir, "#{file}.step")  # todo: other file types
+    src = File.read(path)
+    step = Step.new(src: src, doc_path: path)
+    widget step
+  end
+
   ## steps
 
   @@header_sections = {
