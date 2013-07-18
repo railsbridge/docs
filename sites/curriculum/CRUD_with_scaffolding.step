@@ -104,6 +104,4 @@ explanation {
     MARKDOWN
 }
 
-consider_deploying
-
-next_step "voting_on_topics"
+next_step "setting_the_default_page"
