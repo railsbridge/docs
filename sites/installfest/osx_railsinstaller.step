@@ -41,7 +41,7 @@ verify "successful installation" do
   fuzzy_result "ruby 1.9.3{FUZZY}p194{/FUZZY}"
 
   console "rails -v"
-  fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
+  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
 step "Generate an ssh public key" do
