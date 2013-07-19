@@ -2,13 +2,11 @@
 
 # What is this?
 
-You're probably at a teacher training for RailsBridge.
-
-This slide deck is a tool to facilitate conversations about teaching best practices and challenges, specifically for RailsBridge workshops. 
+This slide deck is a tool to facilitate conversations about teaching best practices and challenges, specifically for RailsBridge workshops.
 
 It helps to have a whiteboard or those giant sticky notes for the discussions if possible.
 
-### Discussion is key! 
+### Discussion is key!
 ### Don't let the presenter(s) do all the talking!
 
 # Why RailsBridge?
@@ -19,57 +17,46 @@ We're making tech more diverse and more welcoming!
 * We provide hella networking opportunities for students and volunteers
 * We help our volunteers become more empathetic and better communicators
 
-# Introductions
-### Who are you?
-* What's your name?
-* Have you been to a RailsBridge before? How many?
-* What do you do for a living? Care to share who you work for?
-* What's your favorite structure in the Bay Area?
-* Alternate silly questions: 
- * What's your spirit animal?
- * If you could only eat one food for the rest of your life, what would it be?
-
 # What's a RailsBridge?
-Raise your hand if you've been to a workshop before!
- 
+
 ### RailsBridge Fun Facts
 * Founded in 2009 as a variety of initiatives, including Rails Mentors, Rails Bug Smashes, and the Open Workshop Project.
 * The workshops project was led by Sarah Allen and Sarah Mei.
-* Its goal: make the Rails community more diverse and more welcoming to newcomers. 
+* Its goal: make the Rails community more diverse and more welcoming to newcomers.
 * Workshops are happening all over the world!
 
 # How does a workshop work?
 There are a few different RailsBridge curricula:
-	
+
 * Intro to Rails (a.k.a. "Suggestotron")
 * Intermediate Rails
 * Intro to Ruby
 * Front End (HTML, CSS, and a tiny bit of JavaScript).
 
-First, we get all the necessary technologies onto the students' computers. 
+First, we get all the necessary technologies onto the students' computers.
 
 The next day we break into small groups and work through the curriculum.
 
 # Typical RailsBridge Schedule
-* Friday, 6-10pm-ish: installing things over pizza & beer (no formal presentations)
+* Friday, 18:00-21:00-ish: installing things over pizza & beer (no formal presentations)
 
-	_NB: the Front End workshop doens't have an installfest._
+	_NB: the Front End workshop doesn't have an installfest._
 
 * Saturday's schedule, often:
- * 9-9:30am: Check-in, coffee, bagels
- * 9:30-10am: Opening presentation
- * 10am-12:30pm: Class!
- * 12:30-1:30pm: Lunch
- * 1:30pm-4:30pm: Class! (with a break sometime mid-afternoon)
- * 4:30-5:00pm: Closing presentation & retros
- * 5:00pm-late: Afterparty
+ * 09:00-09:30: Check-in, coffee, bagels
+ * 09:30-10:00: Opening presentation
+ * 10:00-12:30: Workshop
+ * 12:30-13:30: Lunch
+ * 13:30-17:30: Workshop (with a break sometime mid-afternoon)
+ * 17:30-18:00: Closing presentation & retros
+ * 18:00-later: Afterparty
 
 # Is RailsBridge Open Source?
 
-### WHY YES, THANK YOU FOR ASKING! 
+### WHY YES, THANK YOU FOR ASKING!
 ### RAILSBRIDGE IS VERY OPEN SOURCE!
 
-All the materials you're using were created by volunteers, and are on GitHub for forking and editing and using! 
+All the materials you're using were created by volunteers, and are on GitHub for forking and editing and using!
 
 If you see something that could be better, make a pull request. Pull requests are the lifeblood of RailsBridge.
 
@@ -80,17 +67,17 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 ### We want our students to feel:
 * socially comfortable
 * technically capable
-* like you know what's going on (even if you don't feel like you do). 
+* like you know what's going on (even if you don't feel like you do).
 
 # Discussion: Social Comfort
 
-#### Imagine: 
+#### Imagine:
 * You're in a group of strangers
 * You're trying to do something that sounds really difficult
 * You've tried some coding tutorials online but got lost / bored / confused
 
-#### How can we help make this easier? 
-#### How can you help people feel socially comfortable? 
+#### How can we help make this easier?
+#### How can you help people feel socially comfortable?
 
 
 # Social Comfort (Ideas)
@@ -100,16 +87,13 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 * Don't rush, even if you have a big class.
 * If someone joins the class late, ask them to introduce themselves
 
-#### Icebreakers
-* Name games! Admit upfront that most people are bad at learning new names.
-* Get people talking. The more comfortable they are at talking, the more likely they'll speak up when they don't understand something, or to answer someone else's question
 
 # Social Comfort (More Ideas)
 #### Try to suppress your (understandable) culturally-influenced sexism
 * Don't hit on people. No sexual advances. None. Even at the after party.
 * Don't make sexist jokes. Or racist, classist, or ableist jokes. Call people out if they do.
 * Don't make gender-based generalizations ("Women are better at X, because ...")
-* Don't make references to people's bodies or state your opinion of them. 
+* Don't make references to people's bodies or state your opinion of them.
 * Don't use slurs.
 * Don't treat women as delicate flowers; do treat them like normal people.
 
@@ -133,7 +117,7 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 #### Encourage collaboration and interaction
 * Explicitly encourage students to try to answer each other's questions.
 * If a question is asked, ask if anyone in the class thinks they can explain.
-* Be especially encouraging of the first few questions, to try to get things rolling. 
+* Be especially encouraging of the first few questions, to try to get things rolling.
 * Good responses to questions: "I'm glad you asked!" or "I actually wondered that, too." or "Great question!"
 
 #### Be Super Positive, Always
@@ -146,8 +130,8 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 #### Walk the Middle Path
 * Don't go too deep for your class level, but also, don't gloss over things.
 * When trying to be accurate, it's easy to go down a rabbit hole of specificity. Avoid.
-* Work with the TAs to make sure no one goes down that rabbit hole. Accountability! 
-* Explain the big picture of a command *before* they type it in. 
+* Work with each other to make sure no one goes down that rabbit hole. Accountability!
+* Explain the big picture of a command *before* they type it in.
   * i.e., before typing the command to deploy to Heroku, explain the difference between localhost and Heroku.
 
 # Discussion (Do you know what's up?)
@@ -165,50 +149,34 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 
 #### Establish a few ground rules
 * Questions are always welcome, even if the student thinks it might be dumb
-* Explain that if someone has trouble not getting the expected output, the TAs will help troubleshoot
-* If anyone wants to switch classes, tell them they should feel TOTALLY COMFORTABLE switching at any point.
+* Explain that if someone has trouble getting the expected output, the teachers will help troubleshoot
+
 
 # Know What's Up (More Ideas)
 #### Don't be afraid to:
 * Call on people! By name!
-* Correct people if they're wrong. Be polite and encouraging. For instance: 
-  * "Well, this might work better and this is why." 
-  * "Can you explain how you came to that conclusion?" 
+* Correct people if they're wrong. Be polite and encouraging. For instance:
+  * "Well, this might work better and this is why."
+  * "Can you explain how you came to that conclusion?"
   * "Does anyone have a different answer?"
-* Ask yourself questions and answer them. 
+* Ask yourself questions and answer them.
 
 # Know What's Up (Even More Ideas)
 #### Pace yourself!
-* Don't go too fast. You will probably go too fast. Check in occasionally to ensure everyone is still with you. 
-* You can say the same thing THREE TIMES and it will not be boring yet. 
-* When you ask a question, wait TEN WHOLE SECONDS before saying anything else. People need time to think. 
-* Don't let the most advanced students dictate the pacing or answer all the questions. 
+* Don't go too fast. You will probably go too fast. Check in occasionally to ensure everyone is still with you.
+* You can say the same thing three times and it will not be boring yet.
+* When you ask a question, wait ten seconds before saying anything else. People need time to think.
+* Don't let the most advanced students dictate the pacing or answer all the questions.
 
 # Discussion: Challenges
-Talk about what problems you might anticipate, and what to do about them. 
+Talk about what problems you might anticipate, and what to do about them.
 
 #### Some issues:
 * Student is in the wrong class level
 * Student is disruptive
 * Student is disengaged
-* TA is not helping
+* Teacher is not helping
 
-# What's a TA?
-
-* At RailsBridge, a TA is a volunteer who isn't leading the class.
-* If you're volunteering at your first RailsBridge workshop, you should probably be a TA.
-* Sometimes they are the technical experts (rather than the teacher), sometimes not.
-* TAs often explain specific concepts for the class or teach a couple of sections to give the teacher a break from talking.
-
-# Discussion: TAs
-#### TAs: How can you best utilize the AWESOME POWER that is a TA?
-
-# TAs (Some Ideas)
-* TAs can ask questions to encourage students to speak up. 
-* Ask your TA to explain a concept; they may be more technically advanced than you! 
-* TAs can help people who get lost
-* Co-teaching is also an option if you feel like you can tag-team. There doesn't have to be a hierarchy.  
-* If someone falls behind, the TA can take them out of the room to do some 1-on-1, if there's another TA in the room. 
 
 # Discussion: Comprehension
 #### How can you tell if they understand the words you're saying?
@@ -217,28 +185,27 @@ Talk about what problems you might anticipate, and what to do about them.
 
 # Student Comprehension (Some Ideas)
 * Pay attention to body language.
-* People ask questions most often when they are actively processesing material. If they aren't, it might be that the materials is too easy or hard. Try to figure out which it is! 
+* People ask questions most often when they are actively processesing material. If they aren't, it might be that the materials is too easy or hard. Try to figure out which it is!
 
 #### Calling on people
 * Calling on people makes the class more interactive and engaging, and less lecture-y.
 * Don't always ask questions to the whole class: call on individuals by name.
-* Consider breaking the class into two teams and addressing questions to teams. 
+* Consider breaking the class into two teams and addressing questions to teams.
 * Ask people what they expect a command to produce BEFORE you hit enter.
 * Ask "How would you do \#\{this\}?" or "If I wanted to do \#\{that\}, what would I do?"
 
-# Installfest!
+# Installfest
 #### Keep in mind:
-* There will be people with _all_ kinds of computers. 
 * Even though Windows is not an ideal Rails development environment, we're here to encourage people and meet them wherever they are right now.
 * Do NOT say bad things about Windows, even if it's frustrating.
-* If you're not sure about something, grab another volunteer. 
+* If you're not sure about something, grab another volunteer.
 
 # Very Important, Very Practical Things
-#### Where to find the curriculum: http://docs.railsbridge.org
+#### Where to find the curriculum: http://docs.railsbridgecapetown.org
 
-You need to read the curriculum through, beginning to end, before teaching it. 
+You need to read the curriculum through, beginning to end, before teaching it.
 
-First workshop? Be a TA!
+
 
 #### Where to submit pull requests: https://github.com/railsbridge/docs
 
