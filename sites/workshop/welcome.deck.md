@@ -1,37 +1,54 @@
-!SLIDE centereverything bullets
-![Railsbridge](img/railsbridge_logo.png)
-# Ruby on Rails Workshop
+<!SLIDE centereverything bullets>
+#
+&nbsp;
+![Railsbridge](img/rails-bridge-cape-town-logo.png)
 
 <!SLIDE bullets>
+# Schedule for the day
 
+ * **09:30**-10:00: Opening presentation
+ * **10:00**-12:30: Workshop
+ * **12:30**-13:30: Lunch
+ * **13:30**-15:00: Workshop
+ * **15:00**-15:30: Break
+ * **15:30**-17:30: Workshop
+ * **17:30**-18:00: Closing presentation
+ * **18:00**-later: Afterparty
+
+<!SLIDE bullets>
 # Open source workshop
 
-* It's a community project!
-  * Many individuals
-  * RailsBridge
-  * DevChix
+* It's a community project
+* All materials are open
+  * RailsBridge documentation and slides
+  * See <http://github.com/railsbridge> and <http://github.com/RailsBridge-CapeTown>
 
-* All materials are open!
-  * RailsBridge wiki
-  * Slides: github, deck
-  * See <http://github.com/railsbridge>
-
-* Spin-off Workshops
-  * RailsGirls, PyStar, Python Ladies, Scala
-  * Learn the Front End, Confident Coding JS, and...?
 
 <!SLIDE bullets>
 # Why are we here?
-We want the community of software developers to reflect the diversity of our society
+  * Improve diversity in Cape Town tech circles.
+  * Show how programming skills can be useful, empowering, and fun.
+    * Particularly when applied to the web.
+  * Bring more people into the local Ruby community.
+  * Encourage more user groups to think about diversity and outreach.
+  * Provide people new to programming access to experienced programmers.
+
 
 <!SLIDE bullets>
-# Why are we here?
-* Ruby on Rails!
+# Goal
+### &nbsp;
+### By the end of the day, you will have built and deployed a web application - live on the internet!
 
 <!SLIDE bullets>
-# What is Ruby on Rails?
+# What will you learn today?
 
-!SLIDE center
+### Ruby
+Understanding the Ruby programming language
+
+### Rails
+Learn tools and patterns for building web apps in Ruby on Rails
+
+<!SLIDE center>
 # Ruby vs. Rails
 
 |Ruby is a Language | Rails is a Framework |
@@ -39,69 +56,18 @@ We want the community of software developers to reflect the diversity of our soc
 | <img src="img/ruby-logo.jpg" alt="Ruby" width="250"> | <img src="img/rails_logo.jpg" alt="Rails" width="250"> |
 
 <!SLIDE bullets>
-# Ruby: programming language
-
-* Object oriented
-* General purpose
-
-<!SLIDE bullets>
-# Rails: web application framework
-
-* Database agnostic
-* Built using the Ruby Language
-* History
-  * 37signals
-  * 2004 - first released as open source
-  * 2007 - shipped with Mac OS 10.5 "Leopard"
-
-<!SLIDE bullets>
 # The Rails Philosophy
 
 * Opinionated
 * Convention over configuration
-* DRY (Don't Repeat Yourself)
-  * less code means it's easier to maintain & modify
-* Test Driven Development (TDD)
 * Minimal code - maximal effect
 
 <!SLIDE bullets>
-# Agile development
-
-![Agile Manifesto](img/agile.jpg)
-
-* Pair programming
-* Test-driven or Behavior-driven development
-
-<!SLIDE bullets>
-# Goal:
-### &nbsp;
-### By the end of the day, you will have built and deployed a web application - live on the internet!
-
-<!SLIDE bullets>
-# Don't be shy!
-* Ask questions!
-* TAs and teachers are here to help
-
-<!SLIDE bullets>
-# Tools we'll be working with
-* **rails**
-* **rake**: like make for Ruby. An easy way to run tasks.
-* **git**: source code control.
-* **database**: we'll use SQLite, but could be any relational database.
-* **editor**: Sublime Text 2
-* **heroku**: free Rails hosting.
-
-<!SLIDE bullets>
 # Materials
-* Slides: <http://curriculum.railsbridge.org/workshop>
-* Suggestotron Curriculum: <http://curriculum.railsbridge.org/>
+* Slides: <http://docs.railsbridgecapetown.org/workshop>
+* Suggestotron Curriculum: <http://docs.railsbridgecapetown.org/curriculum>
 
 <!SLIDE bullets>
-# What will you learn today?
-* Ruby
-  * understanding the Ruby programming language
-* Rails
-  * learn tools and patterns for building web apps in Ruby on Rails
-
----
-Proceed to next slide deck: [Today's Workshop Info and Schedule](current)
+# Don't be shy
+* Ask questions
+* Teachers are here to help
