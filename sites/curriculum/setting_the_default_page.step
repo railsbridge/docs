@@ -84,4 +84,6 @@ explanation {
   MARKDOWN
 }
 
-next_step "redirect_to_the_topics_list_after_creating_a_new_topic"
+consider_deploying
+
+next_step "voting_on_topics"
