@@ -1,16 +1,20 @@
 <!SLIDE bullets incremental>
-# You have completed RailsBridge #38!
+# You have completed RailsBridge
 * Congratulations!
 
 
 <!SLIDE bullets>
-# Please thank our awesome sponsor!
-![EngineYard](img/ey_logo_rgb.png)
+# Please thank our awesome sponsors!
+![Unboxed](img/unboxed-logo.png)
+![Hetzner](img/hetzner-logo.png)
+![Siyelo](img/siyelo-logo.png)
+![ABookApart](img/aba-logo.png)
+![Amazon](img/aws-logo.png)
+![PragProg](img/pragprog-logo.png)
 
 <!SLIDE bullets>
 # Celebrate!
-* After-party 
-* Conference Party
+* After-party
 
 <!SLIDE bullets>
 # What did we learn?
@@ -32,4 +36,4 @@
 
 <!SLIDE bullets>
 # RIGHT NOW
-* TAKE THIS SURVEY RIGHT NOW: http://bit.ly/workshop_survey 
+* TAKE THIS SURVEY RIGHT NOW: http://bit.ly/workshop_survey
