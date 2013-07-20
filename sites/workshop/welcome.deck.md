@@ -1,7 +1,6 @@
 <!SLIDE centereverything bullets>
-#
 &nbsp;
-![Railsbridge](img/rails-bridge-cape-town-logo.png)
+![Railsbridge](img/rails-bridge-cape-town-logo-large.png)
 
 <!SLIDE bullets>
 # Schedule for the day
@@ -12,32 +11,34 @@
  * **13:30**-15:00: Workshop
  * **15:00**-15:30: Break
  * **15:30**-17:30: Workshop
- * **17:30**-18:00: Closing presentation
+ * **17:30**-18:00: Closing presentation, Survey, eBook giveaway
  * **18:00**-later: Afterparty
 
 <!SLIDE bullets>
 # Open source workshop
 
-* It's a community project
-* All materials are open
-  * RailsBridge documentation and slides
-  * See <http://github.com/railsbridge> and <http://github.com/RailsBridge-CapeTown>
+### Community project
+### Documentation and slides can be edited by anyone
 
 
 <!SLIDE bullets>
 # Why are we here?
-  * Improve diversity in Cape Town tech circles.
-  * Show how programming skills can be useful, empowering, and fun.
-    * Particularly when applied to the web.
-  * Bring more people into the local Ruby community.
-  * Encourage more user groups to think about diversity and outreach.
-  * Provide people new to programming access to experienced programmers.
+
+### Diversity in Cape Town tech
+### Programming skills: useful, empowering, fun
+#### &nbsp; (Especially on the web)
+### Bring more people to the Ruby community
+### Encourage thinking about diversity and outreach
+### Provide people new to programming access to experienced programmers
 
 
 <!SLIDE bullets>
-# Goal
+# Goal of the day
 ### &nbsp;
-### By the end of the day, you will have built and deployed a web application - live on the internet!
+### Build and publish a web application
+#### &nbsp; (In our case, a voting system)
+### On the internetz!
+
 
 <!SLIDE bullets>
 # What will you learn today?
@@ -58,16 +59,16 @@ Learn tools and patterns for building web apps in Ruby on Rails
 <!SLIDE bullets>
 # The Rails Philosophy
 
-* Opinionated
-* Convention over configuration
-* Minimal code - maximal effect
+### Opinionated
+### Convention over configuration
+### Minimal code - maximal effect
 
 <!SLIDE bullets>
 # Materials
-* Slides: <http://docs.railsbridgecapetown.org/workshop>
-* Suggestotron Curriculum: <http://docs.railsbridgecapetown.org/curriculum>
+### Slides: <http://docs.railsbridgecapetown.org/workshop>
+### Suggestotron Curriculum: <http://docs.railsbridgecapetown.org/curriculum>
 
 <!SLIDE bullets>
 # Don't be shy
-* Ask questions
-* Teachers are here to help
+### Ask questions
+### Teachers are here to help
