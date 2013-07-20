@@ -2,7 +2,6 @@
 
 ## Workshop Intros/Outros:
 * [Welcome](welcome)
-* [Current](current)
 * [Closing](closing)
 
 ## Breakout Sessions:
@@ -12,7 +11,6 @@
 * [REST](diagrams)
 
 ## Workshop Prep:
-* [Teacher Training](teacher_training)
-* [Updated Teacher Training Slides (as of 1/16/13)](more_teacher_training)
+* [Teacher Training Slides](more_teacher_training)
 
 See the Table of Contents full list of materials.
