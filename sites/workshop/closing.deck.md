@@ -1,26 +1,27 @@
 <!SLIDE bullets incremental>
 # You have completed RailsBridge
-* Congratulations!
-
+### Congratulations!
 
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
 ![Unboxed](img/unboxed-logo.png)
 ![Hetzner](img/hetzner-logo.png)
+![Amazon](img/aws-logo.png)
 ![Siyelo](img/siyelo-logo.png)
 ![ABookApart](img/aba-logo.png)
-![Amazon](img/aws-logo.png)
 ![PragProg](img/pragprog-logo.png)
 
 <!SLIDE bullets>
 # Celebrate!
-* After-party
+### After-party
+### Peddlars on the Bend
+[Directions: http://goo.gl/maps/P79pr](http://goo.gl/maps/P79pr)
 
 <!SLIDE bullets>
 # What did we learn?
-* Ruby as a language
-* Rails as a framework
-* MVC design pattern
+### Ruby as a language
+### Rails as a framework
+### MVC design pattern
 
 <!SLIDE bullets>
 # Resources:
@@ -35,5 +36,6 @@
 * Want to organize a workshop? join railsbridge-workshops@googlegroups.com
 
 <!SLIDE bullets>
-# RIGHT NOW
-* TAKE THIS SURVEY RIGHT NOW: http://bit.ly/workshop_survey
+# Right now
+### Take this survey: http://bit.ly/workshop_survey
+### Five e-books up for grabs!
