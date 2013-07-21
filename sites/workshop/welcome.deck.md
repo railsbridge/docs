@@ -69,6 +69,7 @@ Learn tools and patterns for building web apps in Ruby on Rails
 ### Suggestotron Curriculum: <http://docs.railsbridgecapetown.org/curriculum>
 
 <!SLIDE bullets>
-# Don't be shy
-### Ask questions
+# Last but not least
+### Don't be shy: ask questions
 ### Teachers are here to help
+### Code of Conduct: <http://railsbridgecapetown.org/code-of-conduct.html>
