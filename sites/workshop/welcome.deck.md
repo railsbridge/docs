@@ -72,4 +72,5 @@ Learn tools and patterns for building web apps in Ruby on Rails
 # Last but not least
 ### Don't be shy: ask questions
 ### Teachers are here to help
+### Tweet using #RBCPT
 ### Code of Conduct: <http://railsbridgecapetown.org/code-of-conduct.html>
