@@ -539,9 +539,9 @@ In your text editor, create a file named `my_program.rb` inside your working dir
 
 ```bash
   $ irb
-  ruby > load 'my_program.rb'
-  ruby > second_time=Sample.new
-  ruby > second_time.hello
+  > load 'my_program.rb'
+  > second_time=Sample.new
+  > second_time.hello
 ```
 
 When might it be useful to do this?

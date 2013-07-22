@@ -32,7 +32,7 @@ verify "tool installation" do
   fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
 
   console "rails -v"
-  fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
+  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
 message "If this works - proceed to build the sticker app."
@@ -44,13 +44,10 @@ step "Build the sticker app" do
 verify "rails" do
 
 	section "Change to your home directory" do
-	  option "Windows" do
-		console "cd c:\\Sites"
-	  end
-	  option "Mac or Linux" do
-		console "cd ~"
-	  end
+    switch_to_home_directory
 	end
+
+  console "cd railsbridge"
 
   console "rails new sticker"
   result "# ...most output omitted for brevity...
@@ -121,7 +118,7 @@ In your web browser, go to <http://localhost:3000/drinks>
 3. Enter 135 for the temperature.
 4. Click on "Create Drink".
 
-You should see: ![Drink was successfully created](get_a_sticker_you_should_see.png)
+You should see: ![Drink was successfully created](img/get_a_sticker_you_should_see.png)
 
 In your terminal, Hold Control and hit C to stop the rails server.
   BROWSER_VERIFY
@@ -186,7 +183,7 @@ end
 verify "heroku deploy" do
   important "Each application has its own `Gemfile`. Be sure you're opening the one inside your sticker app's folder."
 
-  message "Use your editor to open the Gemfile and find the line containing:"
+  message "Use your editor to open the Gemfile  (`C:\\sites\\sticker\\Gemfile` or `~/sticker/Gemfile`) and find the line containing:"
 
   source_code :ruby, <<-RUBY
 gem 'sqlite3'

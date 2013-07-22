@@ -36,14 +36,14 @@
 <td>shows the list of all topics
 
 <tr>
-<td>
+<td>Read
 <td>GET
 <td>/topics/2
 <td>show
 <td>shows only topic number 2
 
 <tr>
-<td>
+<td>Read
 <td>GET
 <td>/topics/2/edit
 <td>edit

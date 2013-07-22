@@ -22,6 +22,7 @@ step "Install the Heroku toolbelt" do
     console "heroku version"
     result "2.26.7 or higher"
   end
+  message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
 end
 
 step "Create an SSH key" do

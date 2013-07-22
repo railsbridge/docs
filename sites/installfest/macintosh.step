@@ -1,13 +1,8 @@
-div do
-message <<-MARKDOWN
-  MARKDOWN
-end
-
 step "Learn your Mac OS X Version" do
   message <<-MARKDOWN
 
 * Click on the Apple icon in the top left of your screen.
-* Select "About this Mac"
+* Select "About This Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
   * If it starts with 10.8, you have **Mountain Lion**.
   * If it starts with 10.7, you have **Lion**.
@@ -16,11 +11,11 @@ step "Learn your Mac OS X Version" do
   * If it starts with 10.4, you have **Tiger**.
   * If it starts with 10.3, you have **Panther**.
 
-* Write down the one you have and close the "About this Mac" window.
+* Write down the one you have and close the "About This Mac" window.
 
 Below is an example.
 
-![OS X Snow Leopard](MacOSXSnowLeopard.png)
+![OS X Snow Leopard](img/MacOSXSnowLeopard.png)
 
   MARKDOWN
 end
@@ -33,19 +28,14 @@ step "Choose your instructions" do
       link "osx_railsinstaller"
     end
     option "Manually" do
-      message "If something went wrong with RailsInstaller, fall back to these instructions."
+      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
       link "osx_lion"
     end
   end
 
-  option "Panther" do
+  option "Leopard/Tiger/Panther" do
+    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
+    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
     link "osx_panther"
-  end
-
-  option "Tiger, or Leopard" do
-    important "Panther and Tiger are **very** old and you should seriously consider upgrading, or buying a new computer!"
-    link "osx_panther"
-    message "Follow the Panther instructions but be prepared for some things to be difficult."
   end
 end
-

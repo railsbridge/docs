@@ -1,4 +1,4 @@
-# Slide Decks:
+# Materials for Workshop Days
 
 ## Workshop Intros/Outros:
 * [Welcome](welcome)
@@ -8,9 +8,13 @@
 * [Foundational Skills](foundational_skills)
 * [Ruby for Beginners](ruby_for_beginners)
 * [Ruby for Programmers](ruby_for_programmers)
-* [REST](diagrams)
+* [Diagrams (Git, MVC, REST)  ](diagrams)
 
-## Workshop Prep:
+# Materials for Workshop Preparation
+
+## Workshop Intros/Outros
+* [Welcome](welcome)
+* [Closing](closing)
+
+## Teacher Training
 * [Teacher Training Slides](more_teacher_training)
-
-See the Table of Contents full list of materials.

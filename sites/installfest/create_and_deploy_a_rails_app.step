@@ -1,10 +1,15 @@
 step "Change to your home directory" do
-  option "Windows" do
-    console "cd c:\\Sites"
-  end
-  option "Mac or Linux" do
-    console "cd ~"
-  end
+  switch_to_home_directory
+end
+
+step "Create a railbridge directory" do
+  console "mkdir railsbridge"
+  message "`mkdir` stands for make directory (folder)."
+  message "We've made a folder called `railsbridge`."
+end
+
+step "Change to your new railsbridge directory" do
+  console "cd railsbridge"
 end
 
 step "Create a new Rails app" do
@@ -21,6 +26,8 @@ step "Create a new Rails app" do
 
   console "cd test_app"
   console "rails server"
+
+  tip "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes to the popup."
 
   tip "Shortcut: Just type 'rails s'" do
     message <<-MARKDOWN
@@ -48,19 +55,15 @@ If `rails server` starts up with no errors, you're golden! It'll look something 
 
 message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
-tip "If it doesn't work..." do
-  link "diagnostics_for_rvm"
-end
+tip "If it doesn't work, ask a TA for help."
 
 message <<-MARKDOWN
 
 * In your browser, go to <http://localhost:3000>
 
-* In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes.
+![Successful Rails Install](img/successful-rails-install.jpg)
 
-![Successful Rails Install](successful-rails-install.jpg)
-
-* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server.
+* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
 
   MARKDOWN
   important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
@@ -174,6 +177,10 @@ end
 
   message "Save the file."
 
+  tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
+    message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails." 
+  end
+
     console <<-BASH
 bundle install --without production
     BASH
@@ -217,7 +224,7 @@ To git@heroku.com:floating-winter-18.git
 
     important "Be sure to find and learn your Heroku application name in the output."
 
-    message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, click: [What to do if git seems stuck](what_to_do_if_git_seems_stuck)"
+    message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, talk to a TA."
 
     console "heroku run rake db:migrate"
 

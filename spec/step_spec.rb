@@ -110,12 +110,12 @@ RUBY
   describe 'console' do
     it "emits a 'console' div with a 'pre' block" do
       html_doc(<<-RUBY)
-      console "echo 'hi'"
+      console "echo hi"
       RUBY
       assert_loosely_equal(@html, <<-HTML)
 <div class="console">
   <span>#{Step::TERMINAL_CAPTION}</span>
-  <pre>$ echo 'hi'</pre>
+  <pre>echo hi</pre>
 </div>
       HTML
     end

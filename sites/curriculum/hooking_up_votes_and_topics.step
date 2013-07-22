@@ -23,8 +23,7 @@ steps {
 
     source_code :ruby, <<-RUBY
 class Topic < ActiveRecord::Base
-  attr_accessible :description, :title
-  has_many :votes
+  has_many :votes, dependent: :destroy
 end
     RUBY
   }
@@ -33,7 +32,6 @@ end
     message "Edit `app/models/vote.rb` so that it looks like this:"
     source_code :ruby, <<-RUBY
 class Vote < ActiveRecord::Base
-  attr_accessible :topic_id
   belongs_to :topic
 end
     RUBY
@@ -44,18 +42,23 @@ explanation {
 
   message <<-MARKDOWN
 
-  `has_many` and `belongs_to`:
+`has_many` and `belongs_to`:
 
-  * In rails, relationships between models are called associations.
-  * Associations (usually) come in pairs.
-  * A topic will have many votes so we put `has_many :votes` in the
-    topic model.
-    * When you ask a topic for its votes, you get an array of votes
-      for that topic.
-  * A vote is for a particular topic, so we put `belongs_to :topic`
-    in the vote model.
-    * When you ask a vote for its topic, you get the topic for that
-      vote.
+* In rails, relationships between models are called associations.
+* Associations (usually) come in pairs.
+* A topic will have many votes so we put `has_many :votes` in the
+  topic model.
+  * When you ask a topic for its votes, you get an array of votes
+    for that topic.
+* A vote is for a particular topic, so we put `belongs_to :topic`
+  in the vote model.
+  * When you ask a vote for its topic, you get the topic for that
+    vote.
+
+It can still be important to clean up after yourself! `dependent: :destroy`
+  on `has_many :votes` means when a **Topic** gets destroyed, all
+  the **votes** that correspond to it will be destroyed, too. Without
+  `dependent :destroy`, those votes would live on the database forever.
   MARKDOWN
 }
 
