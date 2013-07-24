@@ -21,7 +21,7 @@ steps {
   end
 
     source_code :ruby, <<-RUBY
-root 'topics#index'
+root to: 'topics#index'
     RUBY
 
   step "Confirm your changes" do
