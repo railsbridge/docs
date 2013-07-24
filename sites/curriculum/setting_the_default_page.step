@@ -13,7 +13,11 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open `config/routes.rb`. Search the file for 'root' (near the top) uncomment that line and change it to read  `root 'topics#index'`. When you are done the line should look like this:"
+    message "Open `config/routes.rb`. Search the file for 'root'."
+
+    message "The `#` at the start of the line means it is commented out: the code on this line will be ignored."
+
+    message "Change the line to read  `root 'topics#index'`. When you are done the line should look like this:"
   end
 
     source_code :ruby, <<-RUBY
