@@ -24,6 +24,7 @@ steps {
     source_code :ruby, <<-RUBY
 class Topic < ActiveRecord::Base
   has_many :votes, dependent: :destroy
+  attr_accessible :description, :title
 end
     RUBY
   }
