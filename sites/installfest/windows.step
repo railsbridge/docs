@@ -38,7 +38,7 @@ step "Configure your git and ssh environment" do
 
 end
 
-step "Windows 8 Only — Install Node.js" do
+step "Windows 8 Only - Install Node.js" do
 
   message "Go to <http://nodejs.org> and download the installer"
 
