@@ -143,8 +143,8 @@ http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
 Git remote heroku added
   OUTPUT
 
-    message "Heroku apps are automatically given lyrical names that look like '[adjective]-[noun]-[number]'.  Each name is different."
-  
+    message "Heroku apps are automatically given lyrical names that look like '[adjective]-[noun]-[number]'.  Each name is unique."
+
   console "git remote show"
   result "heroku"
 
