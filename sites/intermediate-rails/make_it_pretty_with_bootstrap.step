@@ -1,6 +1,6 @@
 requirements do
 message <<-MARKDOWN
-* The site should use Bootstrap for a superfun modern look. 
+* The site should use Bootstrap for a superfun modern look.
 * When logged in, the user's email address should appear in the upper-right corner of a navigation bar.
 MARKDOWN
   img class: 'noborder', src: 'img/header.png'
@@ -8,16 +8,16 @@ end
 
 discussion do
 message <<-MARKDOWN
-* Chrome developer tools / Firefox Firebug plugin — how to use ’em!
-* What’s Bootstrap and (optional) why is everyone totally in love with it (or at least using it all over the place)?
+* Chrome developer tools / Firefox Firebug plugin - how to use 'em!
+* What's Bootstrap and (optional) why is everyone totally in love with it (or at least using it all over the place)?
 * Maybe review the home/index.html.erb view file as it relates to the layouts/application.html.erb view file again, and where you might want to make some edits to take advantage of bootstrap.
-* Someone should explain how erb works — you'll be using it to show the user email address in right side
+* Someone should explain how erb works - you'll be using it to show the user email address in right side
 MARKDOWN
 end
 
 tools_and_references do
 message <<-MARKDOWN
-* A gem for Bootstrap!! Let’s use the gem bootstrap-sass-rails: https://github.com/yabawock/bootstrap-sass-rails
+* A gem for Bootstrap!! Let's use the gem bootstrap-sass-rails: https://github.com/yabawock/bootstrap-sass-rails
 * Bootstrap docs: http://twitter.github.com/bootstrap/base-css.html
 * Here's a link to the navbar section: http://twitter.github.com/bootstrap/components.html#navbar
 * Reference for HTML and CSS: http://www.htmldog.com/
@@ -27,7 +27,7 @@ end
 hints do
 message <<-MARKDOWN
 * Don't forget to read the readme!
-* There are a couple of Bootstrappy ways to move text around — look for "Component alignment" in the docs. 
+* There are a couple of Bootstrappy ways to move text around - look for "Component alignment" in the docs.
 * Devise has a helper method for accessing the current user - go back to the devise readme to find it.
 MARKDOWN
 end
