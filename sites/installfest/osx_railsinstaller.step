@@ -7,12 +7,16 @@ RailsInstaller includes Rails, Ruby, Git, and SQLite.
 
 Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for your OS.
 
-Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults. Enter your full name and email when prompted.
+Alternatively, ask a teacher or organiser for a flash drive with the file on.
+
+Click on the RailsInstaller file to run the install wizard.  Click Next at each step to accept the defaults. Enter your full name and email when prompted.
   MARKDOWN
 end
 
 step "Open Terminal" do
   message "Look for **Terminal.app** inside Applications -> Utilities."
+
+  message "Alternatively, use Spotlight search (Command + Space Bar."
 
   message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
 
@@ -20,7 +24,9 @@ step "Open Terminal" do
 end
 
 step "Install Sublime Text 2" do
-  message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+  message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate."
+
+  message "**Microsoft Word and other word processing programs won't work.**"
 
   important "When in doubt, use Sublime Text 2."
 
