@@ -9,7 +9,9 @@ step "Run RailsInstaller" do
 
   Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
 
-  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  Alternatively, ask a volunteer for a flash drive with the file on.
+
+  Click on the RailsInstaller file to run the install wizard.  Click Next at each step to accept the defaults.
 
   Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
 
