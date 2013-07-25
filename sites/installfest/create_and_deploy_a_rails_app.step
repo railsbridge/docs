@@ -55,7 +55,7 @@ If `rails server` starts up with no errors, you're golden! It'll look something 
 
 message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
-tip "If it doesn't work, ask a TA for help."
+tip "If it doesn't work, ask a volunteer for help."
 
 message <<-MARKDOWN
 
