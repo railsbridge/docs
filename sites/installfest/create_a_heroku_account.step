@@ -3,7 +3,7 @@ step "Visit the Heroku web site" do
 end
 
 step "Create an account" do
-  message "Click the big **Sign Up** button (it's about halfway down the page)"
+  message "Click the big **Sign Up** button."
   message "Enter your email address."
   important "Use the same email address for heroku, git, github, and ssh."
 end
