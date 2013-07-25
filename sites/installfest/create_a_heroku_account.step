@@ -18,6 +18,8 @@ step "Install the Heroku toolbelt" do
 
   message "Visit https://toolbelt.heroku.com/, click the download link, and install."
 
+  message "Alternatively, ask a teacher or organiser for a flash drive with the file on."
+
   verify do
     console "heroku version"
     result "2.26.7 or higher"
