@@ -1,3 +1,5 @@
+important "If you wrote down **Core Duo** as your processor type in the previous step, **DO NOT** continue with these steps.  Please flag down a volunteer for additional help."
+
 message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
 
 step "Run RailsInstaller" do
