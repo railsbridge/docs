@@ -80,6 +80,10 @@ explanation {
   database connections, or make pseudo-web requests against it with
   `get` or `post` (and lots more).
 
+  Don't forget to exit the console before proceeding:
+
+    >> exit
+
   MARKDOWN
 }
 
