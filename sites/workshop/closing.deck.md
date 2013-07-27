@@ -21,16 +21,20 @@
 ![PragProg](img/pragprog-logo.png)
 
 <!SLIDE bullets>
-# Celebrate!
-### After-party
-### Peddlars on the Bend
-[Directions: http://goo.gl/maps/P79pr](http://goo.gl/maps/P79pr)
-
-<!SLIDE bullets>
 # What did we learn?
 ### Ruby as a language
 ### Rails as a framework
 ### MVC design pattern
+
+## Resources
+
+http://docs.railsbridgecapetown.org/workshop/resources
+
+<!SLIDE bullets>
+# Celebrate!
+### After-party
+### Peddlars on the Bend
+[Directions: http://goo.gl/maps/P79pr](http://goo.gl/maps/P79pr)
 
 <!SLIDE bullets>
 # Right now
