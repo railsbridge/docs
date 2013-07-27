@@ -1,14 +1,23 @@
+<!SLIDE centereverything bullets>
+![Railsbridge](img/rails-bridge-cape-town-logo-large.png)
+
 <!SLIDE bullets incremental>
 # You have completed RailsBridge
 ### Congratulations!
 
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
+
 ![Unboxed](img/unboxed-logo.png)
 ![Hetzner](img/hetzner-logo.png)
-![Amazon](img/aws-logo.png)
 ![Siyelo](img/siyelo-logo.png)
+![Amazon](img/aws-logo.png)
+
+### ebook goodies
+
+![Jesse Storimer](img/jesse-logo.png)
 ![ABookApart](img/aba-logo.png)
+![Five Simple Steps](img/fss-logo.jpg)
 ![PragProg](img/pragprog-logo.png)
 
 <!SLIDE bullets>
