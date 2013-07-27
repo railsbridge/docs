@@ -1,5 +1,4 @@
 <!SLIDE centereverything bullets>
-&nbsp;
 ![Railsbridge](img/rails-bridge-cape-town-logo-large.png)
 
 <!SLIDE bullets>
@@ -11,7 +10,7 @@
  * **13:30**-15:00: Workshop
  * **15:00**-15:30: Break
  * **15:30**-17:30: Workshop
- * **17:30**-18:00: Closing presentation, Survey, eBook giveaway
+ * **17:30**-18:00: Closing presentation, **Survey**, eBook giveaway
  * **18:00**-later: Afterparty
 
 <!SLIDE bullets>
@@ -40,20 +39,12 @@
 ### On the internetz!
 
 
-<!SLIDE bullets>
+<!SLIDE center>
 # What will you learn today?
 
-### Ruby
-Understanding the Ruby programming language
-
-### Rails
-Learn tools and patterns for building web apps in Ruby on Rails
-
-<!SLIDE center>
-# Ruby vs. Rails
-
-|Ruby is a Language | Rails is a Framework |
-|----|-----|
+|Ruby|Rails|
+|---|---|
+|A programming Language|A Framework: patterns for building web apps|
 | <img src="img/ruby-logo.jpg" alt="Ruby" width="250"> | <img src="img/rails_logo.jpg" alt="Rails" width="250"> |
 
 <!SLIDE bullets>
@@ -64,13 +55,8 @@ Learn tools and patterns for building web apps in Ruby on Rails
 ### Minimal code - maximal effect
 
 <!SLIDE bullets>
-# Materials
-### Slides: <http://docs.railsbridgecapetown.org/workshop>
-### Suggestotron Curriculum: <http://docs.railsbridgecapetown.org/curriculum>
-
-<!SLIDE bullets>
 # Last but not least
 ### Don't be shy: ask questions
 ### Teachers are here to help
-### Tweet using #RBCPT
+### Tweet using #RBCPT or #railsbridge
 ### Code of Conduct: <http://railsbridgecapetown.org/code-of-conduct.html>
