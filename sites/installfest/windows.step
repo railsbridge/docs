@@ -9,7 +9,9 @@ step "Run RailsInstaller" do
 
   Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
 
-  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  Alternatively, ask a volunteer for a flash drive with the file on.
+
+  Click on the RailsInstaller file to run the install wizard.  Click Next at each step to accept the defaults.
 
   Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
 
@@ -25,10 +27,10 @@ step "Configure your git and ssh environment" do
   important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
 
   message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
-  message "Type *your actual full name* into the console and press **[enter]**"
+  message "Type your full name into the console and press **[enter]**"
 
   message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
-  message "Type *your actual email address* into the console and press **[enter]**"
+  message "Type your email address into the console and press **[enter]**"
 
   important "Use the **same email address** for heroku, git, github, and ssh."
 
@@ -38,7 +40,7 @@ step "Configure your git and ssh environment" do
 
 end
 
-step "Windows 8 Only — Install Node.js" do
+step "Windows 8 Only - Install Node.js" do
 
   message "Go to <http://nodejs.org> and download the installer"
 

@@ -227,7 +227,7 @@ class Step < Erector::Widget
   def console_with_message(message, commands)
     div :class => "console" do
       span message
-      pre commands
+      pre "$ " + commands
     end
   end
 

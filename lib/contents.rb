@@ -1,4 +1,3 @@
-
 class Contents < Erector::Widget
   attr_accessor :site_dir
   attr_accessor :page_name
@@ -27,14 +26,14 @@ class Contents < Erector::Widget
     content = open("#{site_dir}/#{filename}").read()
 
     # (markdown) links of the form: [link text](link_page)
-    content.scan /\[.*?\]\((.*?)\)/ do |link, _|
+    content.force_encoding('utf-8').scan /\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
       next if (link =~ /(jpg|png)$/)
       links.push(link) if !links.include? link
     end
 
     # (stepfiles) links of the form: link "next page"
-    content.scan /link\s*["'](.*?)["']/ do |link, _|
+    content.force_encoding('utf-8').scan /link\s*["'](.*?)["']/ do |link, _|
       links.push(link) if !links.include? link
     end
 
@@ -45,7 +44,7 @@ class Contents < Erector::Widget
     content = open("#{site_dir}/#{filename}").read()
 
     # (stepfiles) links of the form: stepfile "next page"
-    content.scan /next_step\s*["'](.*?)["']/ do |link, _|
+    content.force_encoding('utf-8').scan /next_step\s*["'](.*?)["']/ do |link, _|
       return link
     end
 

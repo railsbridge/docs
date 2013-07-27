@@ -115,7 +115,7 @@ RUBY
       assert_loosely_equal(@html, <<-HTML)
 <div class="console">
   <span>#{Step::TERMINAL_CAPTION}</span>
-  <pre>echo hi</pre>
+  <pre>$ echo hi</pre>
 </div>
       HTML
     end

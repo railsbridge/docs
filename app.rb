@@ -103,7 +103,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
       when "md"
         if doc_path =~ /\.deck\.md$/   # todo: refactor
           # todo: render with page nav elements too
-          slides = Deck::Slide.split(src)
+          slides = Deck::Slide.split(src.force_encoding('utf-8'))
           Deck::SlideDeck.new(:slides => slides).to_pretty
         else
           MarkdownPage.new(options).to_html

@@ -43,6 +43,9 @@ The key fingerprint is:
 
 verify do
   message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
+
+  message "`~` is the home directory for the current user. That's you!"
+
   tip "Public vs. Private Keys" do
     message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
     message "`id_rsa.pub` is your **public key** and can be shared freely."

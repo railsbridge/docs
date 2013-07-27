@@ -3,7 +3,7 @@ step "Visit the Heroku web site" do
 end
 
 step "Create an account" do
-  message "Click the big **Sign Up** button (it's about halfway down the page)"
+  message "Click the big **Sign Up** button."
   message "Enter your email address."
   important "Use the same email address for heroku, git, github, and ssh."
 end
@@ -17,6 +17,8 @@ end
 step "Install the Heroku toolbelt" do
 
   message "Visit https://toolbelt.heroku.com/, click the download link, and install."
+
+  message "Alternatively, ask a volunteer for a flash drive with the file on."
 
   verify do
     console "heroku version"

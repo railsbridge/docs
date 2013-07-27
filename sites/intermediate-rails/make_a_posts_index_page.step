@@ -1,15 +1,15 @@
 requirements do
 message <<-MARKDOWN
-* The user should be able to see each post’s name, author, and date published on the overview page (aka the index page).
+* The user should be able to see each post's name, author, and date published on the overview page (aka the index page).
 * The name of the post should link to the post show page.
-* The index page should include a “New Post” link or button.
+* The index page should include a "New Post" link or button.
 MARKDOWN
   img class: 'noborder', src: 'img/post_index.png'
 end
 
 discussion do
 message <<-MARKDOWN
-* Maybe now would be a good time to discuss Active Record! Can anyone explain it? 
+* Maybe now would be a good time to discuss Active Record! Can anyone explain it?
 MARKDOWN
 end
 

@@ -13,12 +13,18 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open `config/routes.rb`. Search the file for 'root' (near the top) uncomment that line and change it to read  `root 'topics#index'`. When you are done the line should look like this:"
-  end
+    message "Open `config/routes.rb`. Search the file for 'root'."
+
+    message "The `#` at the start of the line means it is commented out: the code on this line will be ignored."
+
+    message "Change the line to read  `root 'topics#index'`. When you are done the line should look like this:"
 
     source_code :ruby, <<-RUBY
-root 'topics#index'
+root to: 'topics#index'
     RUBY
+
+    message "Delete the placeholder file `public/index.html`"
+  end
 
   step "Confirm your changes" do
     message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
@@ -46,13 +52,6 @@ explanation {
   ````
     $ rake routes
 
-         votes GET    /votes(.:format)           votes#index
-               POST   /votes(.:format)           votes#create
-      new_vote GET    /votes/new(.:format)       votes#new
-     edit_vote GET    /votes/:id/edit(.:format)  votes#edit
-          vote GET    /votes/:id(.:format)       votes#show
-               PUT    /votes/:id(.:format)       votes#update
-               DELETE /votes/:id(.:format)       votes#destroy
         topics GET    /topics(.:format)          topics#index
                POST   /topics(.:format)          topics#create
      new_topic GET    /topics/new(.:format)      topics#new
@@ -80,6 +79,10 @@ explanation {
   You can ask it about its routes (as we just did), play with its
   database connections, or make pseudo-web requests against it with
   `get` or `post` (and lots more).
+
+  Don't forget to exit the console before proceeding:
+
+    >> exit
 
   MARKDOWN
 }
