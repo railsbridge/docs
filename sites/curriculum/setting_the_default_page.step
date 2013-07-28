@@ -50,16 +50,24 @@ explanation {
   ````
     $ rake routes
 
+        Prefix Verb   URI Pattern                Controller#Action
         topics GET    /topics(.:format)          topics#index
                POST   /topics(.:format)          topics#create
      new_topic GET    /topics/new(.:format)      topics#new
     edit_topic GET    /topics/:id/edit(.:format) topics#edit
          topic GET    /topics/:id(.:format)      topics#show
+               PATCH  /topics/:id(.:format)      topics#update
                PUT    /topics/:id(.:format)      topics#update
                DELETE /topics/:id(.:format)      topics#destroy
-          root        /                          topics#index
+          root GET    /                          topics#index
   ````
   This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
+
+  In Rails 4, you can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
+
+  <img src='img/rails4_rails_info_routing.png'>
+
+  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
 
 ### Exploring Routes (optional)
 
