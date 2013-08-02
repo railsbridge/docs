@@ -17,7 +17,7 @@ Then open <http://localhost:9292> in a web browser.
 
 If you make any changes, and especially before a pull request, run
 
-    bundle exec rspec
+    bundle exec rake spec
 
 which will run some unit tests and also do syntax validation on all pages, to make sure you didn't break anything.
 
