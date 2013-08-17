@@ -85,7 +85,7 @@ rails server
   BASH
 
   message "**Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command."
-  
+
   message "Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/users>"
 
   message "Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)"
@@ -98,7 +98,7 @@ step "Use git" do
   tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
     console "cd test_app"
   end
-  
+
   console <<-BASH
 git init
   BASH
@@ -144,7 +144,7 @@ Git remote heroku added
   OUTPUT
 
     message "Heroku apps are automatically given lyrical names that look like '[adjective]-[noun]-[number]'.  Each name is different."
-  
+
   console "git remote show"
   result "heroku"
 
@@ -180,7 +180,7 @@ end
   message "Save the file."
 
   tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
-    message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails." 
+    message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails."
   end
 
     console <<-BASH
@@ -253,8 +253,10 @@ Migrating to CreateUsers (20111204065949)
     tip "To quickly open your heroku application in a browser" do
       console "heroku open"
     end
-	
+
     message "The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+
+    tip "If using <strong>Rails 4.0.x</strong>, the default welcome page will not show on Heroku. You will get a message saying that 'The page you were looking for doesn't exist.' Do not worry about this for now."
 
     message "In the browser, add <code>/users</code> to the end of the URL and hit *enter*. Verify you see the user list page."
 
