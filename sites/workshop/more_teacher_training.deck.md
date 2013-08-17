@@ -53,7 +53,7 @@ The next day we break into small groups and work through the curriculum.
 # Typical RailsBridge Schedule
 * Friday, 6-10pm-ish: installing things over pizza & beer (no formal presentations)
 
-	_NB: the Front End workshop doens't have an installfest._
+	_NB: the Front End workshop doesn't have an installfest._
 
 * Saturday's schedule, often:
  * 9-9:30am: Check-in, coffee, bagels
