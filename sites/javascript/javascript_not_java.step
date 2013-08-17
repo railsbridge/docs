@@ -1,0 +1,19 @@
+message <<-MARKDOWN
+
+### JavaScript is not Java
+
+JavaScript is more a  marketing term given to ECMAscript, which was developed by Netscape in 1995, because Java, a programming language, was popular back then.
+But the two are different.
+
+The purpose of Java is more of a server language. JavaScript was originally meant to run on the client side, but when it didn't catch on, its creators rewrote it to use naming conventions similar to Java.
+
+JavaScript was meant to manipulate the web document after it was loaded.
+
+### HTML and JavaScript
+
+HTML lets you create the elements in your document (web page). JavaScript lets you interact with them. The curriculum that follows assumes an understanding of HTML. If you need more background info, please see the [Railsbridge Frontend Curriculum](http://curriculum.railsbridge.org/frontend).
+
+
+MARKDOWN
+
+next_step 'clone_a_repo'
