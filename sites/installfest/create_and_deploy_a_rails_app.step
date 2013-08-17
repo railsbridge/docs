@@ -256,7 +256,7 @@ Migrating to CreateUsers (20111204065949)
 
     message "The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
 
-    tip "If using <strong>Rails 4.0.x</strong>, further configuration is needed to get the welcome page to show on Heroku. You will get a message saying that 'The page you were looking for doesn't exist.' Do not worry about this for now."
+    tip "If using <strong>Rails 4.0.x</strong>, the default welcome page will not show on Heroku. You will get a message saying that 'The page you were looking for doesn't exist.' Do not worry about this for now."
 
     message "In the browser, add <code>/users</code> to the end of the URL and hit *enter*. Verify you see the user list page."
 
