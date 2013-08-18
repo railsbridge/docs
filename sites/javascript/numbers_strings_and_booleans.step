@@ -47,10 +47,11 @@ end
 
 message <<-MARKDOWN
 ## Booleans (True/False)
-Booleans are a type of object used to indicate true or false values in Javascript.
+Booleans are a type of object used to indicate true or false values in Javascript. They are most often used to help check whether a condition is true or not, or whether something exists.
 MARKDOWN
 steps do
-  step {message "fill this shit in later."}  
+  step {message "Try creating a Boolean by typing `'x = false'`."}
+  step {message "`Type x==false?console.log(`'yes`'):console.log("no");`."}
 end
 
 end
