@@ -51,7 +51,6 @@ Booleans are a type of object used to indicate true or false values in Javascrip
 MARKDOWN
 steps do
   step {message "Try creating a Boolean by typing `'x = false'`."}
-  step {message "`Type x==false?console.log(`'yes`'):console.log("no");`."}
+  step {message "`Type x==false?console.log(`'yes`'):console.log(`'no`');`."}
 end
-
 end
