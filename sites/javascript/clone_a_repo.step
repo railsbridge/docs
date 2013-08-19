@@ -1,6 +1,6 @@
 message <<-MARKDOWN
 
-#Clone a Repo Contining HTML & CSS
+# Clone a Repo Contining HTML & CSS
 
 To review these concepts we will be using Javascript to manipulate a deck of cards that will later be used to make a game.
 The HTML and CSS files have been provided for you and can be copied to your local computer by cloning a repository from the Railsbridge GitHub account.
@@ -8,16 +8,16 @@ If you have a [graphical user interface client for git](http://git-scm.com/downl
 otherwise you can use the console. If the wifi is out, or you have other problems, the instructor can probaby supply the files 
 on a USB stick for you to copy.  Remember to ask a TA if you get stuck or need help.
 
-##Install Git
+## Install Git
 If you have git installed already, great! If not, you can follow the instructions for installing git from the 
 [Railsbridge Installfest](http://installfest.railsbridge.org/installfest) for Rails, then return to this page.
 
 
-##Configure Git
+## Configure Git
 Follow the [instructions for configuring git](http://installfest.railsbridge.org/installfest/configure_git) from the 
 Railsbridge Rails workshop and then return to this page.
 
-##Clone the Repo / Copy the Files
+## Clone the Repo / Copy the Files
 
 Create a directory that you want to save your Railsbridge files in (if you haven't done so before). If you're using the console type:
 $`mkdir railsbridge`
@@ -37,7 +37,7 @@ Look at a file listing in your directory to verify the files are there.
 
 Now you should be ready to start writing javascript to manipulate the elements on the HTML page (the next step).
 
-##more info on git (extra stuff you can read later if you want)
+## more info on git (extra stuff you can read later if you want)
 [Git](http://git-scm.com) is not just used for transferring files, it's one of a variety of 
 [version control systems](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software) that let 
 you backup your files and share them with others in group development.  Railsbridge has its files on [GitHub](http://github.com),
@@ -48,4 +48,4 @@ For more information from Railsbridge on using git see:  [Railsbridge Guide on H
 
 MARKDOWN
 
-next_step 'manipulate_card.step'
+next_step 'manipulate_card'
