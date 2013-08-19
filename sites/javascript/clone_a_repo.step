@@ -5,7 +5,7 @@ message <<-MARKDOWN
 To review these concepts we will be using Javascript to manipulate a deck of cards that will later be used to make a game.
 The HTML and CSS files have been provided for you and can be copied to your local computer by cloning a repository from the Railsbridge GitHub account.
 If you have a [graphical user interface client for git](http://git-scm.com/downloads/guis) that you like and know how to use you can use that; 
-otherwise you can use the console. If the wifi is out, or you have other problems, the instructor can probaby supply the files 
+otherwise you can use the console. If the wifi is out, or you have other problems, the instructor can probably supply the files 
 on a USB stick for you to copy.  Remember to ask a TA if you get stuck or need help.
 
 ## Install Git
