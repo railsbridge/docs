@@ -19,7 +19,7 @@ If you expect to make any changes, run
 
     bundle exec rake spec
 
-which will install any additional needed gems, and then run the test suite to confirm that you are ready to (preliminarily) validate any changes you make.
+which will run the test suite to confirm that you are ready to (preliminarily) validate any changes you make.
 
 NOTE:  Before submitting a pull request, you should make sure that you are on a feature branch, in sync with (rebased to) the current upstream master, and that you can cleanly run
 
