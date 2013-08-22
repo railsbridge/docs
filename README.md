@@ -13,21 +13,25 @@ If the above fails (say, because `rerun` doesn't work on your system), try
 
     rackup
     
-Then open <http://localhost:9292> in a web browser.
+Then open <http://localhost:9292> in a web browser, and verify that you can navigate the installfest slides.
 
-If you make any changes, and especially before a pull request, run
+If you expect to make any changes, run
 
     bundle exec rake spec
 
-which will run some unit tests and also do syntax validation on all pages, to make sure you didn't break anything.
+which will run the test suite to confirm that you are ready to (preliminarily) validate any changes you make.
 
-When you submit a Pull Request, Travis CI will also run all the tests.
+NOTE:  Before submitting a pull request, you should make sure that you are on a feature branch, in sync with (rebased to) the current upstream master, and that you can cleanly run
+
+    bundle exec rake spec
+
+which will run our standard unit tests and also do syntax validation on all pages, to make sure you didn't break anything.  When you submit a Pull Request, Travis CI will also run all the tests.
 
 # Overview
 
-This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The Railsbridge documentation project is home to a few subprojects, including the Railsbridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring the the workshop!), as well as the Railsbridge workshop "Suggestotron" curriculum.
+This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The RailsBridge documentation project is home to a few subprojects, including the RailsBridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the RailsBridge workshop "Suggestotron" curriculum.
 
-Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the curriculum can be found under ROOT/sites/curriculum.
+Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the standard curriculum can be found under ROOT/sites/curriculum.
 
 These files can be in any of these formats:
 
@@ -46,9 +50,9 @@ StepFile is a new, Ruby-based DSL for describing complex, nested instructions in
 
 [Deck.rb](https://github.com/alexch/deck.rb) converts Markdown files into an interactive in-browser HTML+JavaScript slide deck.
 
-#Organizer Instructions
+#Organizer Instructions (probably outdated -- double check)
 
-Slide contents that change with each workshop are contained in three files under the workshop project. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned' slides are in closing.deck.md.
+Slide contents that change with each workshop are contained in three files under the workshop project. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned, and what comes next' slides are in closing.deck.md.
 
 To change those contents, clone this repo, make changes, and then to include your changes in the publicly available repo, send a pull request.
 
@@ -222,6 +226,7 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * move fonts local
 
 # TODO (content)
+* pull "organizer" content (from this readme.md) and point to the real stuff they should use
 * install ALL the operating systems!
 * troubleshooting page
 * look into installation scripts
