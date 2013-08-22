@@ -46,14 +46,14 @@ There are a few different RailsBridge curricula:
 * Intro to Ruby
 * Front End (HTML, CSS, and a tiny bit of JavaScript).
 
-First, we get all the necessary technologies onto the students' computers (the InstallFest). 
+First, we get all the necessary technologies onto the students' computers (the installfest). 
 
 The next day we break into small groups and work through the curriculum.
 
 # Typical RailsBridge Schedule
-* Friday, 6-10pm-ish: InstallFest -- installing things over pizza & beer (no formal presentations)
+* Friday, 6-10pm-ish: installfest -- installing things over pizza & beer (no formal presentations)
 
-	_n.b.: the Front End workshop doesn't have an InstallFest._
+	_n.b.: the Front End workshop doesn't have an installfest._
 
 * Saturday's schedule, often:
  * 9-9:30am: Check-in, coffee, bagels
@@ -226,7 +226,7 @@ Talk about what problems you might anticipate, and what to do about them.
 * Ask people what they expect a command to produce BEFORE you hit enter.
 * Ask "How would you do \#\{this\}?" or "If I wanted to do \#\{that\}, what would I do?"
 
-# InstallFest!
+# Installfest!
 #### Keep in mind:
 * There will be people with _all_ kinds of computers.
 * Even though Windows is not an ideal Rails development environment, we're here to encourage people and meet them wherever they are right now.
