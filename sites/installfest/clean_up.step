@@ -15,7 +15,7 @@ step "Delete the test_app from your computer" do
     message "Open your home directory and drag the test_app folder to the trash."
   end
   option "Linux" do
-    console "rm -rf ~/test_app"
+    console "rm -rf ~/railsbridge/test_app"
   end
 end 
 step "Delete the sticker app from your computer" do

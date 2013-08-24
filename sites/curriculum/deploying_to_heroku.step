@@ -27,12 +27,13 @@ gem 'sqlite3'
     message "**Remove that line** and replace it with:"
 
     source_code :ruby, <<-RUBY
-group :development do
+group :development, :test do
   gem 'sqlite3'
 end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
     RUBY
   end

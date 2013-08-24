@@ -1,3 +1,5 @@
+important "If you wrote down **Core Duo** as your processor type in the previous step, **DO NOT** continue with these steps.  Please flag down a volunteer for additional help."
+
 message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
 
 step "Run RailsInstaller" do
@@ -41,7 +43,7 @@ verify "successful installation" do
   fuzzy_result "ruby 1.9.3{FUZZY}p194{/FUZZY}"
 
   console "rails -v"
-  fuzzy_result "Rails 3.2{FUZZY}.x{/FUZZY}"
+  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
 step "Generate an ssh public key" do

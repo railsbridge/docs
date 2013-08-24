@@ -8,6 +8,11 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
+important do
+  h2 "Timebox It!"
+  p "The purpose of this section is to allow users to log in to your app and demonstrate how to add external libraries like Devise using the Gemfile. If you find yourself needing to write more than a couple of lines of code to make that happen, you may have gone too far. Talk to a TA!"
+end
+
 discussion do
 message <<-MARKDOWN
 * What is devise?

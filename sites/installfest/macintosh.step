@@ -11,11 +11,17 @@ step "Learn your Mac OS X Version" do
   * If it starts with 10.4, you have **Tiger**.
   * If it starts with 10.3, you have **Panther**.
 
-* Write down the one you have and close the "About This Mac" window.
+* Write down the Mac OS X version you have.
+* In addition, to the right of the "Processor", there will be the a processor type.
+  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
+  * If it ends with **Intel Core 2 Duo**, you are good to go.
+  * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
+
+* Once complete, you may close the "About This Mac" window.
 
 Below is an example.
 
-![OS X Snow Leopard](img/MacOSXSnowLeopard.png)
+![OS X Snow Leopard](img/AboutThisMac.png)
 
   MARKDOWN
 end
