@@ -214,8 +214,27 @@ git commit -m "Add pg gem for Heroku."
 GIT_COMMIT
   result "[master 4a275be] Add pg gem for Heroku.
  2 files changed, 6 insertions(+)"
+ 
+ message "Use your editor to open the routes.rb  (`C:\\sites\\sticker\\config\\routes.rb` or `~/sticker/config/routes.rb`) and find the line containing:"
 
-  message "The name of your heroku app will be different. That is fine."
+  source_code :ruby, <<-RUBY
+# root 'welcome#index'
+  RUBY
+  
+ message "Remove this line and replace it with"
+ 
+ source_code :ruby, <<-RUBY
+root 'drinks#index'
+  RUBY
+  
+ message "Commit this change"
+ 
+ console <<-GIT_COMMIT
+git add .
+git commit -m "Changed root route"
+  GIT_COMMIT
+
+ message "The name of your heroku app will be different. That is fine."
 
   console "heroku create"
   result <<-HEROKU_CREATE
