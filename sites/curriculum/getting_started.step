@@ -11,7 +11,7 @@ steps do
   tip "If you have _any_ problems, contact a TA immediately."
 
   step do
-    switch_to_home_directory
+    insert 'switch_to_home_directory'
   end
 
   step do

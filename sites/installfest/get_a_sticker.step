@@ -43,9 +43,7 @@ step "Build the sticker app" do
 
 verify "rails" do
 
-	section "Change to your home directory" do
-    switch_to_home_directory
-	end
+  insert 'switch_to_home_directory'
 
   console "cd railsbridge"
 
