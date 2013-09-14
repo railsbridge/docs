@@ -72,26 +72,6 @@ class Step < Erector::Widget
     end
   end
 
-  def consider_deploying
-    div :class => "deploying" do
-      h1 "Deploying"
-      blockquote do
-        message "Before the next step, you could try deploying your app to Heroku!"
-        link 'deploying_to_heroku'
-      end
-    end
-  end
-
-  def consider_deploying_to_github
-    div :class => "deploying" do
-      h1 "Deploying"
-      blockquote do
-        message "Before the next step, you could try deploying your page to Github!"
-        link 'deploying_to_github_pages'
-      end
-    end
-  end
-
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
