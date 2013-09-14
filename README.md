@@ -138,6 +138,14 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * called out in a blue box
   * the name is *not* markdown, but is a bold title for the tip box
   * content should be inside a nested block
+  
+`insert "filename"`
+
+  * inserts the contents of one file inside another
+  * a way to do "partials"
+  * current limitations:
+    * only works with `.step` files
+    * inserted file must be in same directory as inserting file
 
 ## messages
 
