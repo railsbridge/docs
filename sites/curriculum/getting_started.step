@@ -1,4 +1,3 @@
-
 img src: "img/Start_page.png", alt: "Start Page"
 
 goals do
@@ -12,6 +11,11 @@ steps do
 
   step do
     insert 'switch_to_home_directory'
+  end
+  
+  step do
+    console "mkdir railsbridge"
+    message "This command creates a new directory for us to store our project in."
   end
 
   step do
