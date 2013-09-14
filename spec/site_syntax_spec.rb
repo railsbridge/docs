@@ -5,9 +5,7 @@ require "site"
 
 require "rack/test"
 
-# todo: use a dummy set of sites instead of the real "installfest" and "curriculum"
-
-describe InstallFest do
+describe "Syntax check all sites" do
   include Rack::Test::Methods
 
   def app
@@ -19,8 +17,8 @@ describe InstallFest do
     assert { last_response.status == 200 }
   end
 
-  describe "checking pages..." do
-    Site.all.each do |site|
+  Site.all.each do |site|
+    describe "checking #{site.name} pages..." do
       site.docs.each do |doc|
         it "renders #{doc.filename}" do
           get! "/#{site.name}/#{doc.name}"
