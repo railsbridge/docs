@@ -40,6 +40,15 @@ class Step < Erector::Widget
     @doc_path.split('/').last.split('.').first
   end
 
+  def insert file
+    # todo: unify into common 'find & process a document file' unit
+    dir = File.dirname(@doc_path)
+    path = File.join(dir, "#{file}.step")  # todo: other file types
+    src = File.read(path)
+    step = Step.new(src: src, doc_path: path)
+    widget step
+  end
+
   ## steps
 
   @@header_sections = {
@@ -59,39 +68,6 @@ class Step < Erector::Widget
         blockquote do
           block.call if block
         end
-      end
-    end
-  end
-
-  def switch_to_home_directory
-    message "`cd` stands for change directory."
-
-    option "Windows" do
-      console "cd c:\\Sites"
-      message "`cd c:\\Sites` sets our Sites directory to our current directory."
-    end
-    option "Mac or Linux" do
-      console "cd ~"
-      message "`cd ~` sets our home directory to our current directory."
-    end
-  end
-
-  def consider_deploying
-    div :class => "deploying" do
-      h1 "Deploying"
-      blockquote do
-        message "Before the next step, you could try deploying your app to Heroku!"
-        link 'deploying_to_heroku'
-      end
-    end
-  end
-
-  def consider_deploying_to_github
-    div :class => "deploying" do
-      h1 "Deploying"
-      blockquote do
-        message "Before the next step, you could try deploying your page to Github!"
-        link 'deploying_to_github_pages'
       end
     end
   end

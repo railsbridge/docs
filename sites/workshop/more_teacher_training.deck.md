@@ -13,9 +13,9 @@ It helps to have a whiteboard or those giant sticky notes for the discussions if
 We're making tech more diverse and more welcoming!
 
 ### How?
-* We throw super-welcoming, fun, free workshops
-* We provide hella networking opportunities for students and volunteers
-* We help our volunteers become more empathetic and better communicators
+* We throw super-welcoming, fun, free workshops.
+* We provide hella networking opportunities for students and volunteers.
+* We help our volunteers become more empathetic and better communicators.
 
 # What's a RailsBridge?
 
@@ -33,13 +33,13 @@ There are a few different RailsBridge curricula:
 * Intro to Ruby
 * Front End (HTML, CSS, and a tiny bit of JavaScript).
 
-First, we get all the necessary technologies onto the students' computers.
+First, we get all the necessary technologies onto the students' computers (the installfest).
 
 The next day we break into small groups and work through the curriculum.
 
 # Typical RailsBridge Schedule
-* Friday, 18:00-21:00-ish: installing things over pizza & beer (no formal presentations)
 
+* Friday, 18:00-21:00-ish: installing things over pizza & beer (no formal presentations)
 	_NB: the Front End workshop doesn't have an installfest._
 
 * Saturday's schedule, often:
@@ -74,7 +74,7 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 #### Imagine:
 * You're in a group of strangers
 * You're trying to do something that sounds really difficult
-* You've tried some coding tutorials online but got lost / bored / confused
+* You've tried some coding tutorials online but got lost / bored / confused.
 
 #### How can we help make this easier?
 #### How can you help people feel socially comfortable?
@@ -83,14 +83,13 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 # Social Comfort (Ideas)
 
 #### Introductions
-* Include name, profession, why are you here, and something silly
+* Include name, profession, why are you here, and something silly.
 * Don't rush, even if you have a big class.
-* If someone joins the class late, ask them to introduce themselves
-
+* If someone joins the class late, ask them to introduce themselves.
 
 # Social Comfort (More Ideas)
 #### Try to suppress your (understandable) culturally-influenced sexism
-* Don't hit on people. No sexual advances. None. Even at the after party.
+* Don't hit on people. No sexual advances. None. Even at the after-party.
 * Don't make sexist jokes. Or racist, classist, or ableist jokes. Call people out if they do.
 * Don't make gender-based generalizations ("Women are better at X, because ...")
 * Don't make references to people's bodies or state your opinion of them.
@@ -105,13 +104,13 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 # Technical Capability (Ideas)
 #### Explain that:
 * Even professional developers are constantly learning new technologies, so being confused is normal.
-* Initial code is often terrible: don't feel feel bad, just refactor!
+* Initial code is often terrible: don't feel bad, just refactor!
 * Mistakes == Learning!
 
 #### Dealing with technical concepts:
 * Define technical terms! Several times!
 * Assume anyone you're teaching has zero knowledge but infinite intelligence.
-* Remember people's professional and code backgrounds (QA, DBA, C++, Java, JS) and relate where possible.
+* Remember people's professional and code backgrounds (QA, DBA, C++, Java, JS) and relate where possible.  If they are a cook, try a cooking analogy.
 
 # Technical Capability (More Ideas)
 #### Encourage collaboration and interaction
@@ -144,7 +143,7 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 * Cover logistics at the beginning of class
   * Planned breaks, lunch time
   * Remind students that there is a closing presentation at the end
-  * Make sure they know the bathroom is
+  * Make sure they know where the bathroom is
   * Encourage them to attend the after-party
 
 #### Establish a few ground rules
@@ -177,7 +176,6 @@ Talk about what problems you might anticipate, and what to do about them.
 * Student is disengaged
 * Teacher is not helping
 
-
 # Discussion: Comprehension
 #### How can you tell if they understand the words you're saying?
 #### What are good questions to ask to check comprehension?
@@ -185,7 +183,7 @@ Talk about what problems you might anticipate, and what to do about them.
 
 # Student Comprehension (Some Ideas)
 * Pay attention to body language.
-* People ask questions most often when they are actively processesing material. If they aren't, it might be that the materials is too easy or hard. Try to figure out which it is!
+* People ask questions most often when they are actively processesing material. If they aren't, it might be that the material is too easy or hard. Try to figure out which it is!
 
 #### Calling on people
 * Calling on people makes the class more interactive and engaging, and less lecture-y.
@@ -196,6 +194,7 @@ Talk about what problems you might anticipate, and what to do about them.
 
 # Installfest
 #### Keep in mind:
+* There will be people with _all_ kinds of computers.
 * Even though Windows is not an ideal Rails development environment, we're here to encourage people and meet them wherever they are right now.
 * Do NOT say bad things about Windows, even if it's frustrating.
 * If you're not sure about something, grab another volunteer.
@@ -206,7 +205,8 @@ Talk about what problems you might anticipate, and what to do about them.
 You need to read the curriculum through, beginning to end, before teaching it.
 
 
-
 #### Where to submit pull requests: https://github.com/railsbridge/docs
+
+#### How to submit pull requests: http://railsbridge.github.io/bridge_troll/
 
 We need your help! Thank you!!!

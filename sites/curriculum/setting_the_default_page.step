@@ -13,18 +13,15 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open `config/routes.rb`. Search the file for 'root'."
+    message "Open `config/routes.rb`. Search the file for 'root' (near the top) uncomment that line and change it to read  `root 'topics#index'`. When you are done the line should look like this:"
 
-    message "The `#` at the start of the line means it is commented out: the code on this line will be ignored."
+    message "(Rails 3.x users should add `root to: 'topics#index'` and will need to remove their `public/index.html` file)."
 
-    message "Change the line to read  `root 'topics#index'`. When you are done the line should look like this:"
+  end
 
     source_code :ruby, <<-RUBY
 root to: 'topics#index'
     RUBY
-
-    message "Delete the placeholder file `public/index.html`"
-  end
 
   step "Confirm your changes" do
     message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
@@ -52,16 +49,24 @@ explanation {
   ````
     $ rake routes
 
+        Prefix Verb   URI Pattern                Controller#Action
         topics GET    /topics(.:format)          topics#index
                POST   /topics(.:format)          topics#create
      new_topic GET    /topics/new(.:format)      topics#new
     edit_topic GET    /topics/:id/edit(.:format) topics#edit
          topic GET    /topics/:id(.:format)      topics#show
+               PATCH  /topics/:id(.:format)      topics#update
                PUT    /topics/:id(.:format)      topics#update
                DELETE /topics/:id(.:format)      topics#destroy
-          root        /                          topics#index
+          root GET    /                          topics#index
   ````
   This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
+
+  In Rails 4, you can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
+
+  <img src='img/rails4_rails_info_routing.png'>
+
+  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
 
 ### Exploring Routes (optional)
 
@@ -87,6 +92,6 @@ explanation {
   MARKDOWN
 }
 
-consider_deploying
+insert 'consider_deploying'
 
 next_step "voting_on_topics"

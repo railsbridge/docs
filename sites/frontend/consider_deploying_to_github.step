@@ -1,0 +1,7 @@
+div :class => "deploying" do
+  h1 "Deploying"
+  blockquote do
+    message "Before the next step, you could try deploying your page to Github!"
+    link 'deploying_to_github_pages'
+  end
+end

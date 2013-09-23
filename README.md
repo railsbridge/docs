@@ -12,22 +12,26 @@
 If the above fails (say, because `rerun` doesn't work on your system), try
 
     rackup
-    
-Then open <http://localhost:9292> in a web browser.
 
-If you make any changes, and especially before a pull request, run
+Then open <http://localhost:9292> in a web browser, and verify that you can navigate the installfest slides.
 
-    rake spec
+If you expect to make any changes, run
 
-which will run some unit tests and also do syntax validation on all pages, to make sure you didn't break anything.
+    bundle exec rake spec
 
-When you submit a Pull Request, Travis CI will also run all the tests.
+which will run the test suite to confirm that you are ready to (preliminarily) validate any changes you make.
+
+NOTE:  Before submitting a pull request, you should make sure that you are on a feature branch, in sync with (rebased to) the current upstream master, and that you can cleanly run
+
+    bundle exec rake spec
+
+which will run our standard unit tests and also do syntax validation on all pages, to make sure you didn't break anything.  When you submit a Pull Request, Travis CI will also run all the tests.
 
 # Overview
 
-This is a Sinatra app, deployed at <http://docs.railsbridgecapetown.org>. The Railsbridge documentation project is home to a few subprojects, including the Railsbridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring the the workshop!), as well as the Railsbridge workshop "Suggestotron" curriculum.
+This is a Sinatra app, deployed at <http://docs.railsbridgecapetown.org>. The RailsBridge documentation project is home to a few subprojects, including the RailsBridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the RailsBridge workshop "Suggestotron" curriculum.
 
-Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the curriculum can be found under ROOT/sites/curriculum.
+Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the standard curriculum can be found under ROOT/sites/curriculum.
 
 These files can be in any of these formats:
 
@@ -46,9 +50,9 @@ StepFile is a new, Ruby-based DSL for describing complex, nested instructions in
 
 [Deck.rb](https://github.com/alexch/deck.rb) converts Markdown files into an interactive in-browser HTML+JavaScript slide deck.
 
-#Organizer Instructions
+#Organizer Instructions (probably outdated -- double check)
 
-Slide contents that change with each workshop are contained in three files under the workshop project. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned' slides are in closing.deck.md.
+Slide contents that change with each workshop are contained in three files under the workshop project. The 'hello and welcome, this is when the breaks are' presentation slides are in current.deck.md. The 'this is what we will learn today' slides are in welcome.deck.md. And the 'this is what we have learned, and what comes next' slides are in closing.deck.md.
 
 To change those contents, clone this repo, make changes, and then to include your changes in the publicly available repo, send a pull request.
 
@@ -59,7 +63,7 @@ On a command line cd into a directory for the installfest app to live on your ma
 Then clone the repository from github:
 `git clone git://github.com/railsbridge/docs.git`
 
-And open it in the editor of your choice. 
+And open it in the editor of your choice.
 
 ## changes
 
@@ -69,7 +73,7 @@ Check that the current.deck.md and closing.deck.md files fit the workshop.
 
 ## pull request
 
-When you're happy with how you've changed the repository, commit it. In the command line, add your changes with `git add .` and commit them locally with `git commit -m "super descriptive message "`. Push it to your own fork of the repository with`git push`. The next step, submitting a pull request is used to incorporate your changes into RailsBridge's version of the repository. Navigate to your forked version of the repository on github (and check the commits tab to see your changes!). There's a pull request button near the top of the page, and after clicking you can add a title and explanations of your changes. After submitting, it may take a while for people to review and accept your changes. Poke people. Make sure they check it out. Check out Github's <a href="http://help.github.com/send-pull-requests/">help page</a> on the pull requests. 
+When you're happy with how you've changed the repository, commit it. In the command line, add your changes with `git add .` and commit them locally with `git commit -m "super descriptive message "`. Push it to your own fork of the repository with`git push`. The next step, submitting a pull request is used to incorporate your changes into RailsBridge's version of the repository. Navigate to your forked version of the repository on github (and check the commits tab to see your changes!). There's a pull request button near the top of the page, and after clicking you can add a title and explanations of your changes. After submitting, it may take a while for people to review and accept your changes. Poke people. Make sure they check it out. Check out Github's <a href="http://help.github.com/send-pull-requests/">help page</a> on the pull requests.
 
 # StepFile Reference
 
@@ -135,13 +139,21 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * the name is *not* markdown, but is a bold title for the tip box
   * content should be inside a nested block
 
+`insert "filename"`
+
+  * inserts the contents of one file inside another
+  * a way to do "partials"
+  * current limitations:
+    * only works with `.step` files
+    * inserted file must be in same directory as inserting file
+
 ## messages
 
 `message "text"`
 
   * makes a paragraph of text anywhere in the document
   * the text parameter is passed through a Markdown converter
-  
+
 `important "text"`
 
   * like a message, but called out in a red box
@@ -151,7 +163,7 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * meant as a note to future authors
   * set aside from surrounding text (in brackets and italics)
   * [should these be made invisible for students?]
-  
+
 ## special
 
 Special elements do *not* format their text as Markdown.
@@ -222,11 +234,12 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 * move fonts local
 
 # TODO (content)
+* pull "organizer" content (from this readme.md) and point to the real stuff they should use
 * install ALL the operating systems!
 * troubleshooting page
 * look into installation scripts
   https://github.com/joshfng/railsready
-  
+
 
 
 # Credits

@@ -1,9 +1,14 @@
 requirements do
-message <<-MARKDOWN
+  message <<-MARKDOWN
 * The site should use Bootstrap for a superfun modern look.
 * When logged in, the user's email address should appear in the upper-right corner of a navigation bar.
 MARKDOWN
   img class: 'noborder', src: 'img/header.png'
+end
+
+important do
+  h2 "Timebox It!"
+  p "The purpose of this section is to make your app a bit prettier and demonstrate how to add CSS frameworks like Bootstrap using the Gemfile. Don't get snagged on the details of getting your CSS exactly right, unless that's valuable to you."
 end
 
 discussion do

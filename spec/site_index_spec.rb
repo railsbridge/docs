@@ -8,8 +8,9 @@ describe Contents do
     @site_index = SiteIndex.new(site_name: 'frontend')
   end
 
-  it "lists all sites in the /sites/ directory, sorted, except 'es'" do
-    @site_index.sites.should =~ ["curriculum", "docs", "frontend", "installfest", "intermediate-rails", "ruby", "workshop"]
+  it "lists all sites in the /sites/ directory" do
+    all_sites = Dir['sites/**'].map { |site_path| site_path.sub('sites/', '') }
+    @site_index.sites.should =~  all_sites
   end
 
   it "emboldens the current site, links other sites" do

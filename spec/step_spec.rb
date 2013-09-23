@@ -154,5 +154,32 @@ RUBY
       HTML
     end
   end
+
+  describe 'insert' do
+    it 'renders a stepfile inside another stepfile' do
+      path = dir 'testing-insert' do
+        file "outer.step", <<-RUBY
+div 'hello'
+insert 'inner'
+insert 'inner'
+div 'goodbye'
+        RUBY
+        file "inner.step", <<-RUBY
+div 'yum'
+        RUBY
+      end
+
+      outer_path = File.join(path, 'outer.step')
+      src = File.read(outer_path)
+
+        step = Step.new(src: src,
+          doc_path: outer_path
+        )
+        @html = step.to_html
+
+      assert_loosely_equal @html, "<div>hello</div><div>yum</div><div>yum</div><div>goodbye</div>"
+
+    end
+  end
 end
 

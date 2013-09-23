@@ -1,3 +1,5 @@
+important "If you wrote down **Core Duo** as your processor type in the previous step, **DO NOT** continue with these steps.  Please flag down a volunteer for additional help."
+
 message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
 
 step "Run RailsInstaller" do
@@ -31,6 +33,14 @@ step "Install Sublime Text 2" do
   important "When in doubt, use Sublime Text 2."
 
   link "install_sublime_text_2_for_mac"
+end
+
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+
+  console "gem install rails"
+
+  message "...and you're done. New Rails! Woo."
 end
 
 verify "successful installation" do

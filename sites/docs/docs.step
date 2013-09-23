@@ -19,6 +19,8 @@ HTML + CSS for beginners. Make a website, no server required!
 
 A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
 
+Railsbridge workshops can also use Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum (currently in a separate site). It's also open source and may soon join the main Railsbridge Docs repo. It's geared towards people who may never have written code before.
+
 # [Workshop](/workshop)
 
 The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.

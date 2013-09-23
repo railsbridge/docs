@@ -43,9 +43,7 @@ step "Build the sticker app" do
 
 verify "rails" do
 
-	section "Change to your home directory" do
-    switch_to_home_directory
-	end
+  insert 'switch_to_home_directory'
 
   console "cd railsbridge"
 
@@ -192,12 +190,13 @@ gem 'sqlite3'
   message "Remove this line and replace it with:"
 
   source_code :ruby, <<-RUBY
-group :development do
+group :development, :test do
   gem 'sqlite3'
 end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
   RUBY
 
