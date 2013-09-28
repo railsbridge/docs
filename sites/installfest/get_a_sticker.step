@@ -141,7 +141,7 @@ verify "git" do
   message "Make sure you're still in the sticker directory."
 
   console "git init"
-  result "Initialized empty Git repository in /home/steven/Code/ruby/sticker/.git/"
+  result "Initialized empty Git repository in /home/steven/railsbridge/sticker/.git/"
 
   console "git add ."
   console "git status"
@@ -181,7 +181,7 @@ end
 verify "heroku deploy" do
   important "Each application has its own `Gemfile`. Be sure you're opening the one inside your sticker app's folder."
 
-  message "Use your editor to open the Gemfile  (`C:\\sites\\sticker\\Gemfile` or `~/sticker/Gemfile`) and find the line containing:"
+  message "Use your editor to open the Gemfile  (`C:\\sites\\railsbridge\\sticker\\Gemfile` or `~/railsbridge/sticker/Gemfile`) and find the line containing:"
 
   source_code :ruby, <<-RUBY
 gem 'sqlite3'
@@ -213,26 +213,22 @@ GIT_COMMIT
   result "[master 4a275be] Add pg gem for Heroku.
  2 files changed, 6 insertions(+)"
  
- message "Use your editor to open the routes.rb  (`C:\\sites\\sticker\\config\\routes.rb` or `~/sticker/config/routes.rb`) and find the line containing:"
+  message "Use your editor to open the file routes.rb  (`C:\\sites\\railsbridge\\sticker\\config\\routes.rb` or `~/railsbridge/sticker/config/routes.rb`) and find the line containing:"
 
   source_code :ruby, <<-RUBY
 # root 'welcome#index'
   RUBY
   
- message "Remove this line and replace it with"
+  message "Remove this line and replace it with:"
  
- source_code :ruby, <<-RUBY
+  source_code :ruby, <<-RUBY
 root 'drinks#index'
   RUBY
   
- message "Commit this change"
- 
- console <<-GIT_COMMIT
+  console_with_message "Commit this change:", <<-GIT_COMMIT
 git add .
 git commit -m "Changed root route"
   GIT_COMMIT
-
- message "The name of your heroku app will be different. That is fine."
 
   console "heroku create"
   result <<-HEROKU_CREATE
@@ -240,6 +236,8 @@ Creating evening-wind-5284... done, stack is cedar
 http://evening-wind-5284.heroku.com/ | git@heroku.com:evening-wind-5284.git
 Git remote heroku added
   HEROKU_CREATE
+
+  message "The name of your Heroku app will be different. That is fine."
 
   console "git push heroku master"
   result <<-HEROKU_PUSH

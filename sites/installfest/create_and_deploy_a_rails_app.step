@@ -103,7 +103,7 @@ step "Use git" do
 git init
   BASH
 
-  result "Initialized empty Git repository in c:/Sites/test_app/.git/"
+  result "Initialized empty Git repository in c:/Sites/railsbridge/test_app/.git/"
 
   console "git add -A"
   tip "git add" do
@@ -154,7 +154,7 @@ Git remote heroku added
   step "Prepare your rails app for deploying to Heroku" do
     message <<-MARKDOWN
 
-Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\test_app` and on Linux/OS X, it should be under `~/test_app`.)
+Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\railsbridge\\test_app` and on Linux/OS X, it should be under `~/railsbridge/test_app`.)
 
 Inside this file, change the line:
 MARKDOWN
@@ -188,6 +188,20 @@ bundle install --without production
     BASH
 
     message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
+  end
+
+  step "Set the root route" do
+    message "Use your editor to open the file routes.rb  (`C:\\sites\\railsbridge\\test_app\\config\\routes.rb` or `~/railsbridge/test_app/config/routes.rb`) and find the line containing:"
+
+    source_code :ruby, <<-RUBY
+# root 'welcome#index'
+    RUBY
+
+    message "Remove this line and replace it with:"
+
+    source_code :ruby, <<-RUBY
+root 'users#index'
+    RUBY
   end
 
   step "Add the changes to git" do
