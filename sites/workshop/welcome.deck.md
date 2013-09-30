@@ -9,9 +9,9 @@
  * **12:30**-13:30: Lunch
  * **13:30**-15:00: Workshop
  * **15:00**-15:30: Break
- * **15:30**-17:30: Workshop
- * **17:30**-18:00: Closing presentation, **Survey**, eBook giveaway
- * **18:00**-later: Afterparty
+ * **15:30**-17:00: Workshop
+ * **17:00**-17:30: Closing presentation, **Survey**, eBook giveaway
+ * **17:30**-18:00: Retrospective
 
 <!SLIDE bullets>
 # Open source workshop
