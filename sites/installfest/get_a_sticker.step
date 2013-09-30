@@ -143,7 +143,7 @@ verify "git" do
   console "git init"
   result "Initialized empty Git repository in /home/steven/Code/ruby/sticker/.git/"
 
-  console "git add ."
+  console "git add -A"
   console "git status"
   result <<-RESULT
 # On branch master
@@ -207,7 +207,7 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
 "
 
   console <<-GIT_COMMIT
-git add .
+git add -A
 git commit -m "Add pg gem for Heroku."
 GIT_COMMIT
   result "[master 4a275be] Add pg gem for Heroku.
