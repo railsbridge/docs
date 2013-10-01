@@ -9,6 +9,7 @@ end
 
 explanation do
   message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -a` (list all files)."
+  message "To use the git repository effectively, we must regularly add new changes to it, as this doesn't happen automatically. To do this, we `add` our changes to a staging area in git. Then we `commit` all changes. Once we've committed changes, git creates a new roll back point. We can now undo to this point at any time. The more often we commit, the more fine-grained the undo will be."
 end
 
 next_step "add_the_project_to_the_git_repo"
