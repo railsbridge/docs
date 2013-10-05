@@ -1,3 +1,8 @@
+/* Colors
+* Aircraft Carrier #8f99a0
+* RailsBridge Purple #6c266f
+* RailsBridge Blue #2493b8
+*/
 body {
   font-family: 'Open Sans',helvetica,arial,sans-serif;
   padding: 0;
@@ -45,13 +50,27 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-.top .navbar-nav li a, .top .navbar-nav li a:hover {
+.top .navbar-nav li a, .top .navbar-nav li a:hover,
+.top ul.dropdown-menu li {
 	color: white;
 	font-size: 18px;
 }
-.top .navbar-nav li a:hover {
-	text-decoration: underline;
+.top .navbar-nav li a:hover,
+.top .navbar-nav li a:focus {
+	background-color: #2493b8;
 }
+
+ul.dropdown-menu {
+	background-color: #6c266f;
+	background-image: url("/img/navbar_texture.gif");
+	border-top: 1px solid #6c266f;
+}
+
+.top ul.dropdown-menu li.current {
+	padding: 3px 20px;
+	font-weight: bold;
+}
+
 
 .bottom {
   clear: both;
