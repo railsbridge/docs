@@ -9,9 +9,16 @@ h1 {
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Aleo", serif;
+}
+
 .top {
   background-color: #6c266f;
 	background-image: url("/img/navbar_texture.gif");
+	border-top: none;
+	border-left: none;
+	border-right: none;
 	border-bottom-width: 12px;
 	border-bottom-color: #2493b8;
 	border-bottom-style: solid;
