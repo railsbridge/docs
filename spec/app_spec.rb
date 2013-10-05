@@ -40,7 +40,7 @@ describe InstallFest do
     get "/"
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/" }
+    assert { last_request.path == "/docs/" }
   end
 
   it "redirects /site to /site/" do
