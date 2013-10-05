@@ -50,11 +50,25 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+.top button.navbar-toggle {
+	border-color: white;
+}
+
+.top .navbar-toggle .icon-bar {
+	background-color: white;
+}
+
+.top button.navbar-toggle:hover {
+	color: white;
+	background-color: #2493b8;
+}
+
 .top .navbar-nav li a, .top .navbar-nav li a:hover,
 .top ul.dropdown-menu li {
 	color: white;
 	font-size: 18px;
 }
+
 .top .navbar-nav li a:hover,
 .top .navbar-nav li a:focus {
 	background-color: #2493b8;
@@ -69,6 +83,24 @@ ul.dropdown-menu {
 .top ul.dropdown-menu li.current {
 	padding: 3px 20px;
 	font-weight: bold;
+}
+
+.top .nav .open>a:hover,
+.top .nav .open>a:focus,
+.top .nav .open>a {
+	color: white;
+	background-color: #2493b8;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+	color: white;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, {
+	color: white;
+	background-color: #2493b8;
 }
 
 
@@ -111,26 +143,6 @@ ul.dropdown-menu {
 
 .toc h1 {
   padding-left: 12px;
-}
-
-.show-when-small {
-  display: none;
-}
-
-@media (max-width: 1100px) {
-  .show-when-small {
-    display: inline;
-  }
-
-  .toc, .toc.page-list, .toc.site-list {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 55px;
-    z-index: 2;
-    background-color: white;
-    border: 1px solid grey;
-  }
 }
 
 .toc ul {

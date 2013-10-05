@@ -115,14 +115,22 @@ class DocPage < Erector::Widgets::Page
   end
 
   def body_content
-    div(:class => "top navbar navbar-static-top", :role => "navigation") {
+    nav(:class => "top navbar navbar-default navbar-static-top", :role => "navigation") {
+
       div(:class => "navbar-header title") {
+        button(:class => "navbar-toggle", :type => "button", "data-toggle" => "collapse",
+               "data-target" => ".railsbridge-nav-collapse") {
+          span("Toggle Navigation", :class => "sr-only")
+          span(:class => "icon-bar")
+          span(:class => "icon-bar")
+          span(:class => "icon-bar")
+        }
         a(:href => "/#{site_name}") {
           span("RailsBridge ", :class => "brand") 
           text site_name.capitalize
         }
       }
-      div(:class => "collapse navbar-collapse") {
+      div(:class => "collapse navbar-collapse railsbridge-nav-collapse") {
         ul(:class => "navbar-nav nav navbar-right") {
 
           li(:class => "dropdown") {
