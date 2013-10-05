@@ -115,7 +115,7 @@ class DocPage < Erector::Widgets::Page
   end
 
   def body_content
-    div(:class => "top navbar navbar-default", :role => "navigation") {
+    div(:class => "top navbar navbar-static-top", :role => "navigation") {
       div(:class => "navbar-header title") {
         a(:href => "/#{site_name}") {
           span("RailsBridge ", :class => "brand") 
