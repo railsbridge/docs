@@ -96,8 +96,8 @@ ul.dropdown-menu {
 	color: white;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, {
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
 	color: white;
 	background-color: #2493b8;
 }
