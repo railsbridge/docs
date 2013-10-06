@@ -113,10 +113,34 @@ h1, h2, h3, h4, h5, h6 {
 	color: #2493b8;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
-.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-	color: white;
-	background-color: #2493b8;
+
+/* CSS for the menu on small screens. */
+@media (max-width: 767px) {
+	.top .nav .open>a:hover,
+	.top .nav .open>a:focus,
+	.top .nav .open>a {
+		color: white;
+		background-color: #2493b8;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		color: white;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li.current {
+		padding: 5px 15px 5px 25px;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li.current,
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		color: white;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+		color: white;
+		background-color: #2493b8;
+	}
 }
 
 
