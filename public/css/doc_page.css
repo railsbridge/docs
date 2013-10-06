@@ -58,6 +58,9 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: white;
 }
 
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus,
 .top button.navbar-toggle:hover {
 	color: white;
 	background-color: #2493b8;
@@ -69,15 +72,29 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 18px;
 }
 
+.top .navbar-nav li a:active,
 .top .navbar-nav li a:hover,
 .top .navbar-nav li a:focus {
 	background-color: #2493b8;
+	color: white;
 }
 
-ul.dropdown-menu {
-	background-color: #6c266f;
-	background-image: url("/img/navbar_texture.gif");
-	border-top: 1px solid #6c266f;
+.top ul.dropdown-menu:before {
+	content: "";
+	border-color: transparent transparent white transparent;
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -19px;
+	left: 148px;
+	border-width: 10px;
+	border-style: solid;
+}
+
+.top ul.dropdown-menu {
+	background-color: white;
+	color: #333;
+	border-radius: 4px;
 }
 
 .top ul.dropdown-menu li.current {
@@ -85,15 +102,15 @@ ul.dropdown-menu {
 	font-weight: bold;
 }
 
-.top .nav .open>a:hover,
-.top .nav .open>a:focus,
-.top .nav .open>a {
-	color: white;
-	background-color: #2493b8;
+.top ul.dropdown-menu li.current,
+.top ul.dropdown-menu li a {
+	color: #333;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-	color: white;
+.top ul.dropdown-menu li a:focus,
+.top ul.dropdown-menu li a:hover {
+	background-color: transparent;
+	color: #2493b8;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
