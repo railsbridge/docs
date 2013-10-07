@@ -164,7 +164,7 @@ insert 'inner'
 insert 'inner'
 div 'goodbye'
         RUBY
-        file "inner.step", <<-RUBY
+        file "_inner.step", <<-RUBY
 div 'yum'
         RUBY
       end
