@@ -56,7 +56,7 @@ describe InstallFest do
   end
 
   it "has a default site" do
-    assert { true_app.default_site == "installfest" }
+    assert { true_app.default_site == "docs" }
   end
 
   describe "settings" do
