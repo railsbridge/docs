@@ -1,3 +1,8 @@
+/* Colors
+* Aircraft Carrier #8f99a0
+* RailsBridge Purple #6c266f
+* RailsBridge Blue #2493b8
+*/
 body {
   font-family: 'Open Sans',helvetica,arial,sans-serif;
   padding: 0;
@@ -9,17 +14,31 @@ h1 {
   margin: 0;
 }
 
-.top {
-  margin-bottom: 1em;
-  padding: 2px 6px;
-  background-color: black;
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Aleo", serif;
 }
 
-.top h1 {
-  padding: 0.5em 0 0.5em 1.4em;
-  font-size: 1.4em;
-  font-weight: normal;
+.top {
+  background-color: #6c266f;
+	background-image: url("/img/navbar_texture.gif");
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom-width: 12px;
+	border-bottom-color: #2493b8;
+	border-bottom-style: solid;
+}
+
+.top .title {
+	font-family: "Aleo", serif;
+	font-size: 28px;
   color: white;
+	font-weight: 100;
+	margin-left: 35px;
+}
+
+.top .title .brand {
+	font-weight: 500;
 }
 
 .top a {
@@ -30,6 +49,100 @@ h1 {
 .top a:visited {
   color: white;
 }
+
+.top button.navbar-toggle {
+	border-color: white;
+}
+
+.top .navbar-toggle .icon-bar {
+	background-color: white;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus,
+.top button.navbar-toggle:hover {
+	color: white;
+	background-color: #2493b8;
+}
+
+.top .navbar-nav li a, .top .navbar-nav li a:hover,
+.top ul.dropdown-menu li {
+	color: white;
+	font-size: 18px;
+}
+
+.top .navbar-nav li a:active,
+.top .navbar-nav li a:hover,
+.top .navbar-nav li a:focus {
+	background-color: #2493b8;
+	color: white;
+}
+
+.top ul.dropdown-menu:before {
+	content: "";
+	border-color: transparent transparent white transparent;
+	position: absolute;
+	height: 0;
+	width: 0;
+	top: -19px;
+	left: 148px;
+	border-width: 10px;
+	border-style: solid;
+}
+
+.top ul.dropdown-menu {
+	background-color: white;
+	color: #333;
+	border-radius: 4px;
+}
+
+.top ul.dropdown-menu li.current {
+	padding: 3px 20px;
+	font-weight: bold;
+}
+
+.top ul.dropdown-menu li.current,
+.top ul.dropdown-menu li a {
+	color: #333;
+}
+
+.top ul.dropdown-menu li a:focus,
+.top ul.dropdown-menu li a:hover {
+	background-color: transparent;
+	color: #2493b8;
+}
+
+
+/* CSS for the menu on small screens. */
+@media (max-width: 767px) {
+	.top .nav .open>a:hover,
+	.top .nav .open>a:focus,
+	.top .nav .open>a {
+		color: white;
+		background-color: #2493b8;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		color: white;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li.current {
+		padding: 5px 15px 5px 25px;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li.current,
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+		color: white;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+		color: white;
+		background-color: #2493b8;
+	}
+}
+
 
 .bottom {
   clear: both;
@@ -70,26 +183,6 @@ h1 {
 
 .toc h1 {
   padding-left: 12px;
-}
-
-.show-when-small {
-  display: none;
-}
-
-@media (max-width: 1100px) {
-  .show-when-small {
-    display: block;
-  }
-
-  .toc, .toc.page-list, .toc.site-list {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 55px;
-    z-index: 2;
-    background-color: white;
-    border: 1px solid grey;
-  }
 }
 
 .toc ul {
@@ -168,21 +261,6 @@ h1 {
   margin: 0.5em 0 .5em 20px;
 }
 
-.top .top_links {
-  float: right;
-  margin-right: 8px;
-}
-
-.top a.top_link {
-  float: right;
-  margin: 2px;
-  border: 1px solid #999;
-  padding: 5px 10px 5px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
-  background-color: #555;
-}
-
 img {
   margin: auto;
   display: block;  /* otherwise centering doesn't happen */
@@ -248,14 +326,11 @@ img {
     background-color: white;
   }
 
-  .top h1 {
+  .top .title {
     margin-left: 0;
     padding: 0;
-    font-weight: bold;
-  }
-
-  .top h1, .top h1 a, .top h1 a:visited {
-    color: black;
+		width: auto;
+		display: inline;
   }
 
   .main {
