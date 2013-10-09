@@ -52,6 +52,14 @@ step "Windows 8 Only — Install Node.js" do
   fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
 end
 
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+
+  console "gem install rails"
+
+  message "...and you're done. New Rails! Woo."
+end
+
 step "Sanity Check" do
 
   console "ruby -v"
