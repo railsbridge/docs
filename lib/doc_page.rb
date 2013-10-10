@@ -42,7 +42,7 @@ class DocPage < Erector::Widgets::Page
 
   def head_content
     title page_title
-    script :src => "/jquery-1.7.2.min.js"
+    script :src => "/jquery.min.js"
     script :src => "/js/doc_page.js"
   end
 
