@@ -47,7 +47,7 @@ You can run `rake -T` to see a list of all the `rake` commands your app currentl
 
   h2 "Explaining MVC and Records"
 
-  img src: "img/mvc.png", alt: "MVC"
+  img src: "img/mvc.svg", alt: "MVC"
 
   message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
 
