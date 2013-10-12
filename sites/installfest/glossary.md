@@ -56,13 +56,7 @@ the installation of gems and a server for distributing them
 
 **Instance**
 
-\
-
-\
-
 **Common Rails Command Lines**
-
-\
 
 **rails new*****NameApp*****:** Creates a new Rails application with the
 entire Rails directory structure to run your application
@@ -113,13 +107,8 @@ will figure out what generate did and undo it
 
 **tmp**
 
-\
-
-\
 
 **Basic Command Lines**
-
-\
 
 **ls:** List all directories you can cd into from where you are
 
@@ -158,6 +147,3 @@ another copy of this repo
 **CSS:**Cascading style sheets
 
 **application.css:**Look and feel
-
-\
-
