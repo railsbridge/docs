@@ -68,8 +68,6 @@ of directories and files in your application
 migration for that model, controller to manipulate it, views to view and
 manipulate the data and a test suite for each of the above.
 
-**rake:** Rake is ‘Ruby Make’, used to build up a list of tasks.
-
 **rails console*****OR*****rails c:** Lets you interact with your Rails
 application from the command line, useful for testing out quick ideas
 with code and changing data server-side without touching the website
@@ -104,15 +102,6 @@ will figure out what generate did and undo it
 **tmp**
 
 
-**Basic Command Lines**
-
-**cd:** Changes to home directory (cd \~)
-
-**cd ..:** Go up one directory
-
-**cd ../../:** Go up 2 levels / multiple levels
-
-**cd directory/:** Go into the specified directory
 
 **\#:**Comments, won’t run as a command
 
@@ -122,10 +111,6 @@ will figure out what generate did and undo it
 
 **import random:** Go fetch the code for me, I want to do something with
 it
-
-**pwd:** Present working directory
-
-**cp:** Copy
 
 **q:** Quit
 

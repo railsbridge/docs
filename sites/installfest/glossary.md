@@ -8,6 +8,10 @@
 
 **Heroku:** A site that allows you to host your Ruby on Rails projects. Heroku also supports other languages and frameworks.
 
+**Home directory:** On a OS X or Linux computer, this is where the files and settings belonging to your user are stored.
+
+**rake:** A Ruby application that can be used to perform a number of custom tasks. It is often used to carry out maintenance or ad-hoc jobs.
+
 **Repo:** See **Repository**
 
 **Repository:** A grouping of files within version control software. When using **Git**, you will need to have access to a particular repository before you can start making changes to the source code.

@@ -1,15 +1,17 @@
-**~:** On OS X or Linux, this is a shortcut to the **home directory** for your user.
+**~** On OS X or Linux, this is a shortcut to the **home directory** for your user.
 
-**cd:** Change into your **home directory**
+**cd** Change into your **home directory**
 
-**cd ~:** Change into your **home directory**
+**cd ..** Change into the parent directory of your current directory
 
-**cd foo:** Change into the directory named foo
+**cd ../../** Go up 2 levels / multiple levels
 
-**cp:** Copy a file (e.g. `cp original.rb copy.rb` creates a copy of the original.rb file)
+**cd ~** Change into your **home directory**
 
-**Home directory:** On a OS X or Linux computer, this is where the files and settings belonging to your user are stored.
+**cd foo** Change into the directory named foo
 
-**ls:** List the contents of your current directory.
+**cp** Copy a file (e.g. `cp original.rb copy.rb` creates a copy of the original.rb file)
 
-**pwd:** Show the full path of your current directory (e.g. /home/heidi/tehcodez/Railsbridge)
+**ls** List the contents of your current directory.
+
+**pwd** Show the full path of your current directory (e.g. /home/heidi/tehcodez/Railsbridge)
