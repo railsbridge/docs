@@ -106,8 +106,6 @@ will figure out what generate did and undo it
 
 **Basic Command Lines**
 
-**ls:** List all directories you can cd into from where you are
-
 **cd:** Changes to home directory (cd \~)
 
 **cd ..:** Go up one directory
@@ -132,8 +130,6 @@ it
 **q:** Quit
 
 **Tild \~:**Shortcut for your home directory
-
-**Heroku**
 
 **git remote add:** Telling git on your hard drive, I’m going to add
 another copy of this repo
