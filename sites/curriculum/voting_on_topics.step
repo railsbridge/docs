@@ -22,7 +22,19 @@ explanation {
   * We didn't generate a full scaffold this time because we aren't
     going to do the full CRUD for votes; they're just going to be
     considered part of topics as-is.
+
+After running the `rails generate resource` command we are sure you noticed
+that it does something really similar to the `rails generate scaffold` command.
+The difference is:
+
+  * The command `rails generate scaffold <scaffold-name>` generates prepopulated
+    controllers, views, models and migrations. Also, it hooks up everything together so you
+    can easily do CRUD (Create, Read, Update, Delete) operations without writing any code.
+  * The command `rails generate resource <resource-name>` generates empty
+    controllers, models and migrations (no views!) so you, the programmer, can later write your own
+    code in those files and customize the behaviour of the application for your needs.
+
+Now that you know what is the difference between scaffold and resource, lets continue with the next step.
   MARKDOWN
 }
-
 next_step "hooking_up_votes_and_topics"
