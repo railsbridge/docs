@@ -75,7 +75,6 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
         base = "#{site_dir}/#{params[:name]}"
         %w{step md deck.md mw}.each do |ext|
         path = "#{base}.#{ext}"
-        puts path
         return path if File.exist?(path)
       end
       raise Errno::ENOENT, base
@@ -176,6 +175,9 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   get "/:site/:name" do
+    if params[:site] == "es"
+      params[:site] = "es/#{params[:name]}"
+    end
     render_page
   end
 
@@ -194,6 +196,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/:site/" do
     site_name = params[:site]
+    puts site_name
     if sites.include? site_name
       # render the site's index page
       if site_name == "es"
