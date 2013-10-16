@@ -1,0 +1,28 @@
+message <<-MARKDOWN
+
+We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate.
+
+MARKDOWN
+
+important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
+
+step "Download Sublime Text 2" do
+  message "Download the [Sublime Text 2 installer](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg)."
+end
+
+step 'Select "Open with DiskImageMounter" in the file save dialog' do
+  message "This should be the default."
+
+  message "It will open an installer with a Sublime Text 2 icon and a picture of your Applications folder. Something like this:"
+
+  img src: 'img/install_sublime_text.png'
+
+end
+
+step "Drag Sublime Text 2 into your Applications folder." do
+  message "It will open an installer with a Sublime Text 2 icon and a picture of your Applications folder. Drag Sublime Text 2 into your Applications folder."
+end
+
+step "Unmount the installer disk image" do
+  message "by dragging it from your desktop to the trash"
+end
