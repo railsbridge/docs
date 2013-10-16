@@ -196,7 +196,6 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/:site/" do
     site_name = params[:site]
-    puts site_name
     if sites.include? site_name
       # render the site's index page
       if site_name == "es"
