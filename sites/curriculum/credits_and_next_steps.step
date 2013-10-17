@@ -3,32 +3,33 @@ Guess what?  _**You're done!!!**_ Congratulations, you just \"finished\" your fi
 
 (They're never _really_ ever finished... have fun tweaking it!)
 
-# Break it! Fix it!
-
-How about you let your teacher break the app you just wrote? We guess you are asking yourself \"why would I do that?!\".
-Well, you see, **debugging** is a big part of every developer's day.
-
-*Debugging* is the process where you find the problem that causes your application/software to misbehave or don\'t work at all.
-This is a special skill that you will develop throughout your programming career and is hardly ever learnt from a book. It
-takes time, patience and hard work to improve your debugging skill.
-
-Although you need experience to be a good *debugger* we think that we should give you a sneak peek of how the debugging process is usually done.
-
-Call your teacher and lets take a look at three fragile points of every Rails application:
-MARKDOWN
-ol do
-  li "Attributes in attr_acessible collection"
-  li "Routes"
-  li "Bug that doesn\'t cause the app to crash but causes an unwanted behaviour"
-end
-
-message <<MARKDOWN
 # Extra Credit
 
 If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
 
 * Add a downvote button that does the opposite of what the upvote button does
 * Sort topics by their number of votes
+* Try some debugging
+
+## Break it! Fix it!
+
+How about you let your teacher break the app you just wrote? We guess you are asking yourself \"why would I do that?\".
+Well, **debugging** is a big part of every developer's day.
+
+**Debugging** is the process where you find the problem that causes your application to misbehave or to stop working altogether.
+This is a special skill that you will develop throughout your programming career and is hardly ever learnt from a book. It
+takes time, patience, and hard work to improve your debugging skill.
+
+The exercises below will give you a sneak peek of how the debugging process is usually done. Call a teacher and let\'s take a look at three fragile points of every Rails application:
+MARKDOWN
+ol do
+  li "Attributes in the attr_accessible collection"
+  li "Routes"
+  li "Bugs that cause unwanted behaviour, but don\'t cause the app to crash "
+end
+
+message <<MARKDOWN
+
 
 MARKDOWN
 
