@@ -9,6 +9,27 @@ If you got all the way through Suggestotron with some time to spare, here's some
 
 * Add a downvote button that does the opposite of what the upvote button does
 * Sort topics by their number of votes
+* Try some debugging
+
+## Break it! Fix it!
+
+How about you let your teacher break the app you just wrote? We guess you are asking yourself \"why would I do that?\".
+Well, **debugging** is a big part of every developer's day.
+
+**Debugging** is the process where you find the problem that causes your application to misbehave or to stop working altogether.
+This is a special skill that you will develop throughout your programming career and is hardly ever learnt from a book. It
+takes time, patience, and hard work to improve your debugging skill.
+
+The exercises below will give you a sneak peek of how the debugging process is usually done. Call a teacher and let\'s take a look at three fragile points of every Rails application:
+MARKDOWN
+ol do
+  li "Attributes in the attr_accessible collection"
+  li "Routes"
+  li "Bugs that cause unwanted behaviour, but don\'t cause the app to crash "
+end
+
+message <<MARKDOWN
+
 
 MARKDOWN
 
