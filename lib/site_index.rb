@@ -27,12 +27,9 @@ class SiteIndex < Erector::Widget
   end
 
   def content
-    div id: "site_index", class: "toc site-list" do
-      h1 "Site List"
-      ul do
-        sites.each do |site|
-          site_link site
-        end
+    ul :class => "dropdown-menu" do
+      sites.each do |site|
+        site_link site
       end
     end
   end
