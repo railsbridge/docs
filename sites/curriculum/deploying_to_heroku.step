@@ -99,7 +99,7 @@ explanation do
     Heroku will install them when they get your code.
   MARKDOWN
 
-  message "The first time you deploy to Heroku, you need to set up your application with the gems Heroku needs to run it. Because your changes are committed to git, you only need to do this once. Every other time you deploy or push to Heroku you will only need to commit your code changes to git (and run any migrations for your database if you have any)."
+  message "The first time you deploy to Heroku, you need to set up your application with the gems Heroku needs to run it. Your changes are committed to git, so you will only need to do this once. Every other time you deploy to Heroku you will only need to commit your code changes to git (and run any migrations for your database if you have any)."
 
   message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
   img src: "img/workflow.png", alt: "workflow", style: "border: none"
