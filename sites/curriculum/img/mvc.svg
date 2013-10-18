@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.0"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="709px" height="396px" viewBox="0 0 709 396" style="overflow:visible;enable-background:new 0 0 709 396;"
+	 xml:space="preserve">
+<defs>
+</defs>
+<rect x="0.5" y="320.6" style="fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" width="113.2" height="74.8"/>
+<rect x="215.4" y="149.3" style="fill:#A53F23;" width="113.2" height="74.8"/>
+<rect x="425.6" y="150.3" style="fill:#A53F23;" width="113.2" height="74.8"/>
+<polygon style="fill:#A53F23;" points="269.2,387.2 223.1,341.1 269.2,294.9 315.3,341.1 "/>
+<text transform="matrix(1 0 0 1 242.8926 346.0308)" style="fill:#FFFFFF; font-family:'GothamMedium'; font-size:14.3896;">Router</text>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="206.8" y1="341.7" x2="216.8" y2="341.7"/>
+		<g>
+			<polygon points="215.4,346.6 224,341.7 215.4,336.7 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="112.7" y1="341.7" x2="129.8" y2="341.7"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="268.9" y1="253.9" x2="268.9" y2="231.3"/>
+		<g>
+			<polygon points="273.9,232.8 268.9,224.2 263.9,232.8 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="268.9" y1="296.1" x2="268.9" y2="272.4"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="408.8" y1="207.1" x2="418.2" y2="207.1"/>
+		<g>
+			<polygon points="416.7,212.1 425.4,207.1 416.7,202.1 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="329.4" y1="207.1" x2="343.3" y2="207.1"/>
+<path style="fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" d="M635.9,155.9V225c0,3,16.3,5.4,36.3,5.4
+	c20.1,0,36.3-2.4,36.3-5.4v-69.1"/>
+<ellipse style="fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" cx="672.2" cy="155.9" rx="36.3" ry="5.4"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="617.8" y1="207.5" x2="628.4" y2="207.5"/>
+		<g>
+			<polygon points="626.9,212.5 635.5,207.5 626.9,202.5 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="539.6" y1="207.5" x2="556.9" y2="207.5"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="552.8" y1="171.5" x2="546.8" y2="171.5"/>
+		<g>
+			<polygon points="548.3,166.5 539.6,171.5 548.3,176.5 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="635.5" y1="171.5" x2="621.7" y2="171.5"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="344.3" y1="170.8" x2="336.6" y2="170.8"/>
+		<g>
+			<polygon points="338,165.9 329.4,170.9 338,175.8 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="425.3" y1="170.8" x2="407.5" y2="170.7"/>
+<rect x="215.3" style="fill:#A53F23;" width="113.1" height="74.8"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="297.6" y1="101.9" x2="297.6" y2="83.1"/>
+		<g>
+			<polygon points="302.6,84.6 297.6,75.9 292.6,84.6 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="297.6" y1="147.9" x2="297.6" y2="127.4"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="242.9" y1="127.4" x2="242.9" y2="140.7"/>
+		<g>
+			<polygon points="237.9,139.2 242.9,147.9 247.9,139.2 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="242.9" y1="75.9" x2="242.9" y2="100.4"/>
+<g>
+	<g>
+		<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="162.1" y1="274.7" x2="118.7" y2="316.3"/>
+		<g>
+			<polygon points="116.3,311.7 113.6,321.3 123.2,318.9 			"/>
+		</g>
+	</g>
+</g>
+<line style="fill:none;stroke:#000000;stroke-miterlimit:10;" x1="215.1" y1="224" x2="186.7" y2="251.3"/>
+<text transform="matrix(1 0 0 1 5.9619 315.4731)" style="font-family:'GothamMedium'; font-size:14.3896;">Browser</text>
+<text transform="matrix(1 0 0 1 248.0039 181.7886)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'GothamMedium'; font-size:14.3896;">Topics</tspan><tspan x="-12.6" y="17.3" style="fill:#FFFFFF; font-family:'GothamMedium'; font-size:14.3896;">Controller</tspan></text>
+<text transform="matrix(1 0 0 1 438.3672 192.9741)" style="fill:#FFFFFF; font-family:'GothamMedium'; font-size:14.3896;">Topic Model</text>
+<text transform="matrix(1 0 0 1 135.6445 346.9663)" style="font-family:'GothamMedium'; font-size:14.3896;">“/topics”</text>
+<text transform="matrix(1 0 0 1 251.0625 267.9429)" style="font-family:'GothamMedium'; font-size:14.3896;">index</text>
+<text transform="matrix(1 0 0 1 344.4082 211.6196)" style="font-family:'GothamMedium'; font-size:14.3896;">Topic.all</text>
+<text transform="matrix(1 0 0 1 638.7061 193.5288)" style="font-family:'GothamMedium'; font-size:14.3896;">Database</text>
+<text transform="matrix(1 0 0 1 560.0137 211.6108)" style="font-family:'GothamMedium'; font-size:14.3896;">request</text>
+<text transform="matrix(1 0 0 1 554.5947 174.7993)" style="font-family:'GothamMedium'; font-size:14.3896;">response</text>
+<text transform="matrix(1 0 0 1 344.7285 174.9165)" style="font-family:'GothamMedium'; font-size:14.3896;">Topic.all</text>
+<text transform="matrix(1 0 0 1 227.8008 39.7847)" style="fill:#FFFFFF; font-family:'GothamMedium'; font-size:14.3896;">Topics View</text>
+<text transform="matrix(1 0 0 1 280.3628 119.4453)" style="font-family:'GothamMedium'; font-size:14.3896;">@topics</text>
+<text transform="matrix(1 0 0 1 198.8745 119.7446)" style="font-family:'GothamMedium'; font-size:14.3896;">&lt;HTML&gt;</text>
+<text transform="matrix(1 0 0 1 144.6045 267.9067)" style="font-family:'GothamMedium'; font-size:14.3896;">&lt;HTML&gt;</text>
+<g style="opacity:0.3;">
+	<g>
+		<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="427.6" y1="207.7" x2="430.6" y2="207.7"/>
+		
+			<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:6.0735,6.0735;" x1="436.7" y1="207.7" x2="530.8" y2="207.7"/>
+		<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="533.8" y1="207.7" x2="536.8" y2="207.7"/>
+	</g>
+</g>
+<g style="opacity:0.3;">
+	<g>
+		<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="427.2" y1="170.7" x2="430.2" y2="170.7"/>
+		
+			<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:6.0735,6.0735;" x1="436.3" y1="170.7" x2="530.5" y2="170.7"/>
+		<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="533.5" y1="170.7" x2="536.5" y2="170.7"/>
+	</g>
+</g>
+<path style="opacity:0.3;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:6,6;" d="M297.6,151.2
+	c0,17.3,5.9,19.5,28.8,19.5"/>
+<path style="opacity:0.3;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:6,6;" d="M242.8,150.4c0,9.5,4,41-26.5,72
+	"/>
+<path style="opacity:0.3;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:6,6;" d="M228.2,340.8
+	c13,0,41-16.7,41.3-43"/>
+<path style="opacity:0.3;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-dasharray:6,6;" d="M269.2,222.4
+	c0-14.7,17.7-16,57-15.7"/>
+</svg>

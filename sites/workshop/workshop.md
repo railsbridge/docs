@@ -1,6 +1,7 @@
 # Materials for Workshop Days
 
 ## Workshop Intros/Outros:
+* [Overview](overview)
 * [Welcome](welcome)
 * [Closing](closing)
 
@@ -11,10 +12,6 @@
 * [Diagrams (Git, MVC, REST)  ](diagrams)
 
 # Materials for Workshop Preparation
-
-## Workshop Intros/Outros
-* [Welcome](welcome)
-* [Closing](closing)
 
 ## Teacher Training
 * [Teacher Training Slides](more_teacher_training)
