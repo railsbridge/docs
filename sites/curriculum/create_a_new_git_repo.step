@@ -1,6 +1,8 @@
 goals do
   goal "Create a local git repository"
   message "In order to publish our application, we need to add our application and any changes we make over time to a \"revision control system\". In our case we're going to use *git* because it is (relatively) easy and it is what our app server, *Heroku*, uses."
+
+  message "Please ensure that if your terminal is open, you are in a directory where you'd like a project created. Feel free to ask a teacher if you are not sure."
 end
 
 step do
