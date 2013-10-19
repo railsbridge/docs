@@ -1,8 +1,8 @@
 ## Explaining MVC and Records
 
-![MVC Overview]("/curriculum/img/mvc.png")
+![MVC Overview](/curriculum/img/mvc.png)
 
-  Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications.
+Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications.
 
 <h3 id="model">Model</h3>
   

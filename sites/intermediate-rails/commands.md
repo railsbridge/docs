@@ -26,7 +26,7 @@ Auto-generate routes (this can also be done manually)
 
     rails generate scaffold
 
-Create a new [Rails model](glossary#model)
+Create a new [Rails model]
 
     rails generate model MODELNAME
 
@@ -72,7 +72,7 @@ Prints the difference between FILENAME and what is in your local git repository.
 
 Commit the files you've added to the local repository.
 
-    git commit -m "Describe what has changed, and why, in the files being committed." .
+    git commit -m "Describe what has changed, and why" .
 
 Push *committed* changes to the remote server.
 
