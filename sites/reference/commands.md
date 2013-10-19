@@ -1,12 +1,8 @@
 ## Ruby
 
-Open an interactive Ruby terminal
+Open an interactive Ruby terminal (type 'exit' to quit)
 
     irb
-
-Close an interactive Ruby terminal
-
-    exit
 
 Run a ruby program named FILENAME.rb
 
@@ -26,20 +22,35 @@ Create a new rails project called `NAME`
 
     rails new NAME
     
+Auto-generate routes (this can also be done manually)
+
+    rails generate scaffold
+
 Create a new [Rails model](glossary#model)
+
     rails generate model MODELNAME
 
 Update the database to match what you have described in your code
 
     rake db:migrate
 
-Start your local rails server
+Run the application locally (Ctrl-C to quit)
 
     rails server
 
-Start an interactive Ruby session that knows about your Rails models
+Start an interactive Ruby session that knows about your Rails models (type 'exit' to quit)
 
     rails console
+
+Print the routes for your application
+
+    rake routes
+
+## Browser
+
+Go to the root page of your rails application
+
+    http://localhost:3000
 
 ## Git
 
@@ -55,14 +66,15 @@ Tells you what you've added, deleted, and changed between your current directory
 
     git status
 
+NOTE: green text means that the file has been added. Red means that it has not.
+
 Prints the difference between FILENAME and what is in your local git repository.
 
     git diff FILENAME
 
-
 Commit the files you've added to the local repository.
 
-    git commit
+    git commit -m "Describe what has changed, and why, in the files being committed."
 
 Push *committed* changes to the remote server.
 
