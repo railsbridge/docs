@@ -74,7 +74,7 @@ Prints the difference between FILENAME and what is in your local git repository.
 
 Commit the files you've added to the local repository.
 
-    git commit -m "Describe what has changed, and why, in the files being committed."
+    git commit -m "Describe what has changed, and why, in the files being committed." .
 
 Push *committed* changes to the remote server.
 
