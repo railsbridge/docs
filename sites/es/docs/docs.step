@@ -5,11 +5,11 @@ Instrucciones para instalar Ruby y Rails en tu computadora. Se requiere hacer es
 
 # [Curriculum](/curriculum)
 
-El "clásico" railsbridge curriculum (Suggestotron). Te lleva paso a paso para hacer una applicacion Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
+El "clásico" railsbridge curriculum (Suggestotron). Te lleva paso a paso para hacer una aplicación Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
 
-# [Intermediate Rails](/intermediate-rails)
+# [Rails Intermedio](/intermediate-rails)
 
-Curriculum para estudiantes quienes han tomado Suggestotron mas de una vez. 'Modo fácil' está ahora OFF - este curriculum no te dirá que teclear!
+Curriculum para estudiantes quienes han hecho Suggestotron mas de una vez. 'Modo fácil' está ahora OFF - este curriculum no te dirá que teclear!
 
 # [Frontend](/frontend)
 
