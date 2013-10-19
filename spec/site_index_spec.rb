@@ -9,7 +9,7 @@ describe Contents do
   end
 
   it "lists all sites in the /sites/ directory, sorted, except 'es'" do
-    @site_index.sites.should =~ ["curriculum", "docs", "es", "frontend", "installfest", "intermediate-rails", "ruby", "workshop"]
+    @site_index.sites.should =~ ["curriculum", "docs", "es", "frontend", "installfest", "intermediate-rails", "javascript", "ruby", "workshop"]
   end
 
   it "emboldens the current site, links other sites" do
