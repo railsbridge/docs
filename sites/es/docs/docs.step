@@ -1,25 +1,25 @@
 message <<MARKDOWN
-# [Installfest](/installfest)
+# [Installfest](/es/installfest)
 
 Instrucciones para instalar Ruby y Rails en tu computadora. Se requiere hacer esto antes de ir al taller de Rails!
 
-# [Curriculum](/curriculum)
+# [Curriculum](/es/curriculum)
 
 El "clásico" railsbridge curriculum (Suggestotron). Te lleva paso a paso para hacer una aplicación Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
 
-# [Rails Intermedio](/intermediate-rails)
+# [Rails Intermedio](/es/intermediate-rails)
 
 Curriculum para estudiantes quienes han hecho Suggestotron mas de una vez. 'Modo fácil' está ahora OFF - este curriculum no te dirá que teclear!
 
-# [Frontend](/frontend)
+# [Frontend](/es/frontend)
 
 HTML + CSS para principiantes. Haz un website, no se requiere servidor!
 
-# [Ruby](/ruby)
+# [Ruby](/es/ruby)
 
 Un curriculum especifico de ruby, extraído de las diapositivas de "Ruby para principiantes". Aún nuevo, con espacio para tus contribuciones. 
 
-# [Workshop](/workshop)
+# [Workshop](/es/workshop)
 
 El Railsbridge junkyard! Dispositivas para la apertura/cierre de presentaciones, entrenamiento para maestros.
 
