@@ -22,6 +22,14 @@ class Contents < Erector::Widget
     Dir.glob("#{site_dir}/*.{#{ext}}").sort
   end
 
+  def parseable_site_files
+    site_files("mw,md,step")
+  end
+
+  def site_page_files
+    parseable_site_files.reject { |file| File.basename(file).start_with?('_') }
+  end
+
   def subpages_for filename
     links = []
     content = open("#{site_dir}/#{filename}").read()
@@ -104,7 +112,7 @@ class Contents < Erector::Widget
   end
 
   def all_pages
-    site_files("mw,md,step").map { |file| File.basename(file).sub(/(\..*)$/, '') }.sort
+    site_page_files.map { |file| File.basename(file).sub(/(\..*)$/, '') }.sort
   end
 
   def orphans
@@ -112,7 +120,7 @@ class Contents < Erector::Widget
   end
 
   def _page_links type="subpages"
-    site_files("mw,md,step").inject({}) do |result, filename|
+    site_page_files.inject({}) do |result, filename|
       page = File.basename(filename)
       page_no_ext = page.sub(/(\..*)$/, '')
       result[page_no_ext] = send("#{type}_for", page)
