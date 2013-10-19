@@ -66,8 +66,6 @@ Tells you what you've added, deleted, and changed between your current directory
 
     git status
 
-NOTE: green text means that the file has been added. Red means that it has not.
-
 Prints the difference between FILENAME and what is in your local git repository.
 
     git diff FILENAME
