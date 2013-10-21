@@ -181,6 +181,11 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     render_page
   end
 
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
   get "/:site/:name/:section" do
     if params[:site] == "es"
       params[:site] = "es/#{params[:name]}"
