@@ -1,0 +1,95 @@
+goals {
+
+  message "We are almost there! You know that every successful web site on the Internet has to look good, right?"
+  message "Why wouldn't we add a little make up to our application?"
+
+  message "We can use Twitter Bootstrap to achieve that. Bootstrap is a gem that contains code which will make your application look good without any hassle."
+  message "This is easily done with adding the Bootstrap gem to your Gemfile."
+
+  goal "Add Bootstrap gem to Gemfile"
+  goal "modify the file app/assets/javascripts/application.js to add Bootstrap's Javascript files"
+  goal "add the file app/assets/stylesheets/bootstrap_and_overrides.css.scss to add Bootstrap's CSS files"
+  goal "modify the file app/views/layouts/application.html.erb to change the application layout"
+  goal "include Twitter Bootstrap CSS styling in Rails flash messages"
+}
+
+steps {
+
+  step "Add Bootstrap gem to Gemfile" do
+    message "Bootstrap comes packed in a few variations (gems), but they all basically do the same thing - make your app look pretty."
+    message "Without further ado, open your Gemfile and add the bootstrap-sass gem like so:"
+    source_code "gem 'bootstrap-sass'"
+    message "After you add that line to your Gemfile, install the bundle."
+    console "bundle install"
+  end
+
+  step "add Bootstrap's Javascript files to app/assets/javascripts/application.js" do
+    message "Open the file app/assets/javascripts/application.js in your text editor."
+    message "Add the following line to it:"
+    source_code "//= require bootstrap"
+    message "This is how it should look after you are done with it:"
+    source_code "//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require_tree ."
+    message "Do not worry if your file looks a bit different, it is just important that the file contains all of these lines."
+    message "What we did here is we added the bootstrap javascript files to be loaded by the app so we can have a smooth working interface."
+  end
+
+  step "add the file app/assets/stylesheets/bootstrap_and_overrides.css.scss to add Bootstrap's CSS files" do
+    console "touch app/assets/stylesheets/bootstrap_and_overrides.css.scss"
+    message "This command will create the file at that path."
+    message "Open this file via your text editor and add the following lines inside:"
+    source_code "@import \"bootstrap\";
+body { padding-top: 60px; }
+@import \"bootstrap-responsive\";"
+    message "What we did here? We added the CSS (Cascading Stylesheets) to the app so it can load them. The CSS is used to make the app look good."
+  end
+
+  step "modify the file app/views/layouts/application.html.erb to change the application layout" do
+    message "Our applications layout is located at app/views/layouts/application.html.erb. This layout is used application wide, which means that every page of the app will have the same look and feel. Now, we'll need to change the layout so our application uses the Bootstrap styles."
+    message "Open your app/views/layouts/application.html.erb file in your text editor and delete all the contents of the file."
+    message "Copy all of this code and paste it into the file:"
+    source_code :erb, <<-HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Bootstrap" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Suggestotron" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+    <nav class="navbar-inner">
+      <h4>Suggestotron</h4>
+    </header>
+    <main role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <% flash.each do |name, msg| %>
+                <% if msg.is_a?(String) %>
+                  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+                    <a class="close" data-dismiss="alert">&#215;</a>
+                    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                  </div>
+                <% end %>
+              <% end %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+HTML
+  message "Save the file. Now, you can view your app in the browser, test it out and you'll easily notice the changes in the look.'
+  end
+}
