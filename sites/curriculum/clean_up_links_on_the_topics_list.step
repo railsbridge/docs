@@ -40,5 +40,4 @@ explanation {
 }
 
 insert 'consider_deploying'
-
-next_step 'add_bootstrap'
+next_step "credits_and_next_steps"

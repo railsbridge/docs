@@ -10,6 +10,7 @@ If you got all the way through Suggestotron with some time to spare, here's some
 * Add a downvote button that does the opposite of what the upvote button does
 * Sort topics by their number of votes
 * Try some debugging
+* Add Bootstrap to your application
 
 ## Break it! Fix it!
 
@@ -30,6 +31,11 @@ end
 
 message <<MARKDOWN
 
+## Bootstrap
+You know that every successful web site on the Internet has to look good, right?
+Why wouldn't we add a little make up to our application?"
+
+If you are interested, choose the 'Add Bootstrap' section from the menu on your left hand side!
 
 MARKDOWN
 

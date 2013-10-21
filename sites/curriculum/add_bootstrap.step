@@ -1,9 +1,6 @@
 goals {
 
-  message "We are almost there! You know that every successful web site on the Internet has to look good, right?"
-  message "Why wouldn't we add a little make up to our application?"
-
-  message "We can use Twitter Bootstrap to achieve that. Bootstrap is a gem that contains code which will make your application look good without any hassle."
+  message "We can use Twitter Bootstrap to add some beauty to our app. Bootstrap is a gem that contains code which will make your application look good without any hassle."
   message "This is easily done with adding the Bootstrap gem to your Gemfile."
 
   goal "Add Bootstrap gem to Gemfile"
@@ -82,8 +79,6 @@ body { padding-top: 60px; }
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
         </div>
       </div>
     </main>
@@ -91,5 +86,6 @@ body { padding-top: 60px; }
 </html>
 HTML
   message "Save the file. Now, you can view your app in the browser, test it out and you'll easily notice the changes in the look."
+  message "Also, if you are interested in learning more about HTML, CSS and JavaScript you can check out the <a href='http://docs.railsbridgecapetown.org/frontend/'>FrontEnd Course</a>."
   end
 }
