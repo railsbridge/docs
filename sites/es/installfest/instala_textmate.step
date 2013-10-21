@@ -13,9 +13,8 @@ end
 step 'Seleccionar  "Abrir con Archive Utility" en el dialogo de guardar' do
   message "Este deberia ser el de default."
 
-  message "Este extraera del archivo zip la aplicacion Textmate adentro de tu carpeta de descargas. Deberia de verse algo asi:" 
+  message "Este extraera del archivo zip la aplicacion Textmate adentro de tu carpeta de descargas."
 
-  message "![textmate.png](/img/textmate.png)"
 
 end
 
