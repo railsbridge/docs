@@ -92,6 +92,6 @@ change it in just one place, instead of having to update every page.
   HTML
 end
 
-consider_deploying_to_github
+insert 'consider_deploying_to_github'
 
 next_step "add_more_elements"

@@ -6,7 +6,8 @@ end
 steps do
 
   step do
-    message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive. Add a script tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
+    message "Now that we have completed the challenges for your index.html and related CSS files, we will be looking back at your hello.html file."
+    message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive.  Pull up your hello.html file again. Add a script tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
 
     source_code :html, <<HTML
 <script type="text/javascript">

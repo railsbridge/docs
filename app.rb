@@ -23,7 +23,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_site = "installfest"
+    @default_site = "docs"
     set_downstream_app # todo: test
   end
 
@@ -177,6 +177,19 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   get "/:site/:name" do
     if params[:site] == "es"
       params[:site] = "es/#{params[:name]}"
+    end
+    render_page
+  end
+
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
+  get "/:site/:name/:section" do
+    if params[:site] == "es"
+      params[:site] = "es/#{params[:name]}"
+      params[:name] = params[:section]
     end
     render_page
   end
