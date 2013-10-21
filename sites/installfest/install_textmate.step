@@ -7,15 +7,13 @@ MARKDOWN
 important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
 
 step "Download Textmate 1.5.11" do
-  message "Download the [Textmate] installer](http://archive.textmate.org/TextMate_1.5.11_r1635.zip)."
+  message "Download the [Textmate installer](http://archive.textmate.org/TextMate_1.5.11_r1635.zip)."
 end
 
 step 'Select "Open with Archive Utility" in the file save dialog' do
   message "This should be the default."
 
-  message "It will extract from the zip archive the Textmate application inside of your Downloads folder. It should look like this:"
-
-  message "![textmate.png](textmate.png)"
+  message "It will extract from the zip archive the Textmate application inside of your Downloads folder."
 
 end
 

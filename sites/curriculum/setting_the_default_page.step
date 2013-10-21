@@ -89,6 +89,6 @@ explanation {
   MARKDOWN
 }
 
-consider_deploying
+insert 'consider_deploying'
 
 next_step "voting_on_topics"

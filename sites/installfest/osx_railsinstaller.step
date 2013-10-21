@@ -29,6 +29,14 @@ step "Install Sublime Text 2" do
   link "install_sublime_text_2_for_mac"
 end
 
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+
+  console "gem install rails"
+
+  message "...and you're done. New Rails! Woo."
+end
+
 verify "successful installation" do
   console "which git"
   result "/usr/bin/git"

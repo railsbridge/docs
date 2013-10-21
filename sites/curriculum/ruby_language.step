@@ -9,7 +9,7 @@ end
 
 steps do
   step do
-    message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets try out Ruby code:"
+    message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets you try out Ruby code:"
 
     console_without_message "irb"
 
