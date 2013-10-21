@@ -9,6 +9,7 @@ If you got all the way through Suggestotron with some time to spare, here's some
 
 * Add a downvote button that does the opposite of what the upvote button does
 * Sort topics by their number of votes
+* Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
 
 MARKDOWN
 
@@ -30,6 +31,6 @@ ul do
   li "After that, start a project, tutorial, and come back again!"
   li do 
     span "All our favorite resources can be found on the RailsBridge site: " 
-    a "http://workshops.railsbridge.org/whats-next/", href: "http://workshops.railsbridge.org/whats-next/"
+    a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
   end
 end

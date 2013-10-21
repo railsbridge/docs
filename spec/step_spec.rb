@@ -2,7 +2,13 @@ require 'spec_helper'
 
 require "step_page"
 
+def strip_heredoc(str) # like http://apidock.com/rails/String/strip_heredoc
+  indent = str.scan(/^[ \t]*(?=\S)/).min.size || 0
+  str.gsub(/^[ \t]{#{indent}}/, '')
+end
+
 describe Step do
+
   def to_html nokogiri_node
     nokogiri_node.serialize(:save_with => 0).chomp
   end
@@ -15,6 +21,10 @@ describe Step do
       @html = step.to_html
       Nokogiri.parse("<html>#{@html}</html>")
     end
+  end
+
+  def step_obj_for(path)
+    Step.new(src: File.read(path), doc_path: path)
   end
 
   it "renders a step file" do
@@ -158,28 +168,45 @@ RUBY
   describe 'insert' do
     it 'renders a stepfile inside another stepfile' do
       path = dir 'testing-insert' do
-        file "outer.step", <<-RUBY
-div 'hello'
-insert 'inner'
-insert 'inner'
-div 'goodbye'
+        file "outer.step", strip_heredoc(<<-RUBY)
+          div 'hello'
+          insert 'inner'
+          insert 'inner'
+          div 'goodbye'
         RUBY
-        file "_inner.step", <<-RUBY
-div 'yum'
+        file "_inner.step", strip_heredoc(<<-RUBY)
+          div 'yum'
         RUBY
       end
 
       outer_path = File.join(path, 'outer.step')
-      src = File.read(outer_path)
+      html = step_obj_for(outer_path).to_html
 
-        step = Step.new(src: src,
-          doc_path: outer_path
-        )
-        @html = step.to_html
+      assert_loosely_equal html, strip_heredoc(<<-HTML)
+        <div>hello</div>
+        <div>yum</div>
+        <div>yum</div>
+        <div>goodbye</div>
+      HTML
+    end
 
-      assert_loosely_equal @html, "<div>hello</div><div>yum</div><div>yum</div><div>goodbye</div>"
+    it "crafts 'back' links that go back to the containing page rather than the partial itself" do
+      path = dir 'testing-insert-links' do
+        file "outer.step", strip_heredoc(<<-RUBY)
+          div 'this is the outer page'
+          insert 'inner'
+        RUBY
+        file "_inner.step", strip_heredoc(<<-RUBY)
+          div 'this is the inner page'
+          link 'somewhere_else'
+        RUBY
+      end
 
+      outer_path = File.join(path, 'outer.step')
+
+      page = Nokogiri.parse("<html>#{step_obj_for(outer_path).to_html}</html>")
+
+      assert { page.css('a').first[:href] == "somewhere_else?back=outer%23step" }
     end
   end
 end
-

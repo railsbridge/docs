@@ -10,6 +10,7 @@ class Step < Erector::Widget
 
   needs :src
   needs :doc_path
+  needs :container_page_name => false
 
   def initialize options
     super
@@ -37,7 +38,7 @@ class Step < Erector::Widget
 
   # todo: move into proper Doc class
   def page_name
-    @doc_path.split('/').last.split('.').first
+    @container_page_name || @doc_path.split('/').last.split('.').first
   end
 
   def insert file
@@ -45,7 +46,7 @@ class Step < Erector::Widget
     dir = File.dirname(@doc_path)
     path = File.join(dir, "_#{file}.step")  # todo: other file types
     src = File.read(path)
-    step = Step.new(src: src, doc_path: path)
+    step = Step.new(src: src, doc_path: path, container_page_name: page_name)
     widget step
   end
 
