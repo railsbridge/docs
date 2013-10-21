@@ -23,7 +23,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_site = "installfest"
+    @default_site = "docs"
     set_downstream_app # todo: test
   end
 

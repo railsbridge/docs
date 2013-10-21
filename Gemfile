@@ -5,7 +5,7 @@ gem "erector", "~>0.9.0"
 gem "sinatra"
 gem "nokogiri"
 gem "thin"
-gem "eventmachine", "1.0.0.rc.4"
+gem "eventmachine", "~>1.0.3"
 gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", ">=0.3.0"

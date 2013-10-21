@@ -40,7 +40,7 @@ describe InstallFest do
     get "/"
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/" }
+    assert { last_request.path == "/docs/" }
   end
 
   it "redirects /site to /site/" do
@@ -56,7 +56,7 @@ describe InstallFest do
   end
 
   it "has a default site" do
-    assert { true_app.default_site == "installfest" }
+    assert { true_app.default_site == "docs" }
   end
 
   describe "settings" do
