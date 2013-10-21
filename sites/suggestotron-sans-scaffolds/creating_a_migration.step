@@ -1,0 +1,73 @@
+section "Overview" do
+
+  model_diagram header: 'Topics', fields: %w(id title description)
+
+  message <<-MARKDOWN
+Suggestotron has a list of topics that people can vote on. We'll store our topics in the database.
+
+Rails communicates with the database using Active Record, which allows us to write Ruby code instead of SQL.
+ We change our database using a migration file.
+
+### What's a migration?
+
+Migration files allow you to recreate the state of the database from scratch at any point. When you run `rake db:migrate`, Rails
+goes through each of the files in the `db/migrate` directory to create all the tables in the database.
+
+Here is a fun tip: DON'T UPDATE MIGRATION FILES. It's terrible, albeit initially tempting, practice to realize you need another field and edit
+the original migration file. Instead, create a new migration (perhaps called `AddVotesToTopics`). This will keep your database
+in a reasonable state and not ruin everything if you're ever collaborating with other developers on a project.
+MARKDOWN
+end
+
+steps do
+
+
+  step { console "rails generate migration AddTopics" }
+
+  step do
+    message <<-MARKDOWN
+In your text editor, find the file that you just generated. It will be in the folder `db/migrate`
+and will end with `_add_topics.rb` (the first part is a timestamp). Double click on the file to
+open it in Sublime.
+  MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Now we'll tell ActiveRecord what we actually want the table to look like. Rails has given us
+`up` and `down` methods already, but we can actually combine all of our commands into a single method, `change`.
+
+Add the following text to your migration, replacing lines 2 through 6:
+    MARKDOWN
+    source_code <<-RUBY
+def change
+  create_table :topics do |t|
+    t.string :title
+    t.text :description
+    t.timestamps
+  end
+end
+    RUBY
+    message <<-MARKDOWN
+ActiveRecord will add the id to the table automatically, so we only have to specify the title and description.
+    MARKDOWN
+
+  end
+
+  step do
+    console "rake db:migrate"
+    message <<-MARKDOWN
+This tells Rails to update the database to include a table for our new model. Rails is also smart enough to create the database if it can't find it.
+      MARKDOWN
+  end
+end
+
+section "rake" do
+  message <<-MARKDOWN
+`rake` _(Ruby Make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application. Here, `rake db:migrate` is a task provided by the Rails framework.
+
+You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task.
+  MARKDOWN
+end
+
+next_step "add_a_topics_model"

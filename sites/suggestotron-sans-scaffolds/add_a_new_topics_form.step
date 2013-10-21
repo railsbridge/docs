@@ -1,0 +1,9 @@
+message <<-MARKDOWN
+
+This page will walk through adding a form to create topics. FORM HELPERS!
+
+This is probably a good time to talk about HTTP verbs and RESTful routing.
+
+MARKDOWN
+
+next_step "add_an_edit_topics_form"

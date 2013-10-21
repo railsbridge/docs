@@ -1,0 +1,59 @@
+section "Overview" do
+  message <<-MARKDOWN
+Now that we have a place to save our topics in the database, we need to create a Ruby class to represent
+our topics &mdash; a model.
+  MARKDOWN
+end
+
+steps do
+  step do
+    message <<-MARKDOWN
+Add a new file inside the directory `app/models`. In Sublime, you can right click (ctrl + click on Mac)
+and select "New File". Save it as `topic.rb`.
+    MARKDOWN
+  end
+
+  step do
+    message "Add the following code to that file:"
+    source_code <<-RUBY
+class Topic < ActiveRecord::Base
+end
+    RUBY
+    message <<-MARKDOWN
+This creates a class called Topic that inherits from ActiveRecord::Base. (Don't forget to save!)
+    MARKDOWN
+  end
+
+  step do
+    message "Now we're going to make sure we hooked up our model correctly, using the Rails console!"
+    console "rails console"
+    message "You're now in an interactive terminal, just like IRB, but with all of your Rails app loaded up!"
+  end
+
+  step do
+    rails_console "Topic"
+    message "This will tell you what Rails knows about the model Topic, something like: "
+    source_code "=> Topic(id: integer, title: string, description: text)"
+  end
+
+  step do
+    rails_console 'cats = Topic.new(title: "Cats are so great", description: "Yay cats!")'
+    message "This creates a new topic in the database, but it's not saved yet. See how it doesn't have an id?"
+    source_code '=> #<Topic id: nil, title: "Cats are so great", description: "Yay cats!">'
+    rails_console 'cats.save'
+    rails_console 'cats'
+    message "Now we have a saved topic &mdash; you can see it now has an id:"
+    source_code '=> #<Topic id: 1, title: "Cats are so great", description: "Yay cats!">'
+  end
+
+  step do
+    message "Make two or three more topics so that you have something to look at once you make a web interface!"
+  end
+
+  step do
+    rails_console "Topic.all"
+    message "Look at all your topics! Neat!"
+  end
+end
+
+next_step "add_a_topics_routes_and_controller"

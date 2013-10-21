@@ -195,6 +195,7 @@ class Step < Erector::Widget
   IRB_CAPTION = "Type this in irb:"
   RESULT_CAPTION = "Expected result:"
   FUZZY_RESULT_CAPTION = "Approximate expected result:"
+  RAILS_CONSOLE_CAPTION = "Type this in the Rails console:"
 
   def console(commands)
     console_with_message(TERMINAL_CAPTION, commands)
@@ -209,6 +210,10 @@ class Step < Erector::Widget
 
   def console_without_message(commands)
     console_with_message("", commands)
+  end
+
+  def rails_console(commands)
+    console_with_message(RAILS_CONSOLE_CAPTION, commands)
   end
 
   def irb msg

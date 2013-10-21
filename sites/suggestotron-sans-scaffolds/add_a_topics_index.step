@@ -1,0 +1,78 @@
+section "Overview" do
+  message <<-MARKDOWN
+Now let's add a view!
+
+Things to cover:
+
+* Getting resources from the DB via the controller
+* Sharing those with the view
+* ERB
+  MARKDOWN
+end
+
+steps do
+  step do
+      message <<-MARKDOWN
+First, let's add the correct view. Under views, add a folder called `topics`. Within that folder, make a file
+called `index.html.erb`
+      MARKDOWN
+      source_code "<h1>This is a topics index!!!</h1>"
+      message <<-MARKDOWN
+View file structure description & how they're named the same as the controller actions
+      MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Go to the browser and look at your beautiful page
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Now we'll actually show the topics on the page. First, we need to get all the topics out of the database.
+
+Update your controller!
+    MARKDOWN
+    source_code <<-RUBY
+def index
+  @topics = Topic.all
+end
+    RUBY
+    message <<-MARKDOWN
+Now we're getting the stuff from the controller
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Lets show it on the page. Add this to your view, `app/views/topics/index.html.erb`.
+    MARKDOWN
+    source_code <<-RUBY
+<%= @topics %>
+    RUBY
+    message <<-MARKDOWN
+Wow, that's ugly! I guess we're not done. ERB!!
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Let's show all the topics! Remove that ugly line, and replace it with this:
+    MARKDOWN
+    source_code <<-RUBY
+<% @topics.each do |topic| %>
+  <h2><%= topic.title %></h2>
+  <p><%= topic.description %></p>
+<% end %>
+    RUBY
+    message <<-MARKDOWN
+    MARKDOWN
+  end
+end
+
+section "Recap" do
+  message "This is a recap"
+end
+
+next_step "add_a_new_topics_form"

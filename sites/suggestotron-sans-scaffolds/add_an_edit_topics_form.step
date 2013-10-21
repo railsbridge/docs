@@ -1,0 +1,9 @@
+message <<-MARKDOWN
+
+This page will have the student pull their topics form into a partial and render it on the edit page.
+
+This will also involve adding edit and update actions to the topics controller.
+
+MARKDOWN
+
+next_step "add_topic_voting"

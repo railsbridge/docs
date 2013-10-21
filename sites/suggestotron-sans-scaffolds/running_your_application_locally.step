@@ -1,0 +1,42 @@
+section "Overview" do
+  message <<-MARKDOWN
+
+### What's a web server?
+
+A web server listens for incoming requests from the browser and then asks to your application what it
+would like to send back. This will usually be HTML in our case.
+
+### Why run our app locally?
+
+Running your app locally provides a very simple means to see your changes before you commit and push them to Heroku.
+
+MARKDOWN
+end
+
+steps do
+  step do
+    console "rails server"
+  end
+  step do
+    text "Point your web browser to "
+    url "http://localhost:3000" 
+    p "See your web app actually running!"
+  end
+
+  step do
+    message "When at the terminal with your running rails server, type Control+C to stop rails server. You can do this now."
+    result <<-STOPPING_RAILS_SERVER
+^C[2012-03-31 08:33:11] INFO  going to shutdown ...
+[2012-03-31 08:33:11] INFO  WEBrick::HTTPServer#start done.
+Exiting
+    STOPPING_RAILS_SERVER
+  end
+
+  important <<-MARKDOWN
+On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press
+Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server`
+instead of `rails server` which should allow Control-C to stop the server.
+MARKDOWN
+end
+
+next_step "creating_a_migration"

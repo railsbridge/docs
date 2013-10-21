@@ -1,0 +1,71 @@
+message <<-MARKDOWN
+### Goal
+
+The goal of this curriculum is to teach you how the various pieces of a Ruby on Rails
+applications work together. You're going to create a voting system for you and your
+friends to play with. You've decided at a minimum, you'd like to
+allow users to:
+
+* view the topics sorted by number of votes
+* vote on topics
+* create, edit, and destroy topics
+
+You've sketched up an initial screenshot of what you want it to look like:
+
+![screenshot](img/finished_app.png)
+
+You may have built the same app before using Rails helpers like `rails generate scaffold`. None of that here! We're going to connect the models, views, and controllers together ourselves, and hopefully you'll have a better idea of how things fit together by the end of today.
+
+### Requirements
+
+We're going to be working with:
+
+* ruby 1.9.3 installed via rvm (mac or linux) or RailsInstaller (mac or windows)
+* rails 3.2.x or rails 4.0.x
+* bundler
+* sqlite
+* the text editor of your choice
+
+Everything should be set up the night before during our
+installfest. Please ensure you have everything working _before_ you
+show up for the workshop on Saturday.
+
+You can verify that you have everything working by trying this out in your terminal:
+
+<div class="console"><pre>
+$ irb
+>> 1 + 2
+=> 3
+>> require "active_support"
+=> true
+>> exit
+$
+</pre>
+</div>
+
+If you can do that, you are probably good to go.
+
+### Working Effectively and Efficiently
+
+We highly recommend you do the following:
+
+* Bring up your terminal and open 2 tabs:
+  * One is for regular terminal stuffs
+  * One will be for irb (aka rails console). We'll explain later
+* Open your browser fresh or hide any windows you already have open.
+  * Bring up one window with two tabs
+    * One for this content
+    * One for interacting with your app.
+* Open your text editor and _do not ever close it_. We're not quitters.
+* Hide all extra applications. Turn off twitter, IM, and all other distractions.
+
+By minimizing the number of things you interact with, you reduce the
+amount of time spent switching between them and the context lost as
+you work through the lessons. Having 50 tabs open in your web
+browser gets confusing and wastes time.
+MARKDOWN
+
+tip "The section above, about working effectively and efficiently, is a really, really good idea. if you didn't read it, you should totally stop and read it now."
+
+next_step "getting_started"
+

@@ -1,0 +1,107 @@
+section "Overview" do
+  message <<-MARKDOWN
+### What is Rails, again?
+Rails is a framework for creating web applications using the Ruby programming language.
+
+### What's a framework?
+Most web apps have the same set of problems, like how to store data and how to get HTML to the browser.
+A framework is a set of files that can be used to build any kind of web app, so that as a
+developer you can focus on the unique functionality of your app, which is known as the business logic.
+
+### What this step is about:
+We're going to get into a directory (which is another word for folder) and make a new Rails app,
+with just three words.
+  MARKDOWN
+end
+
+steps do
+
+  tip "If you have _any_ problems, contact a TA immediately."
+
+  step do
+    insert 'switch_to_home_directory'
+  end
+  
+  step do
+    message "If this is your first workshop, create a directory for your work."
+    console "mkdir railsbridge"
+  end
+
+  step do
+    console "cd railsbridge"
+  end
+
+  step do
+    console "rails new suggestotron-sans-scaffolds"
+    message "'rails new' creates a new rails project with the name you give."
+    message "In this case we told it to create a new project called `suggestotron-sans-scaffolds`. We'll go into detail on what it created shortly."
+  end
+
+  step do
+    console "cd suggestotron-sans-scaffolds"
+    message <<-MARKDOWN
+Review: `cd` stands for change directory.
+
+
+`cd suggestotron-sans-scaffolds` makes suggestotron-sans-scaffolds our current directory.
+    MARKDOWN
+  end
+
+  step do
+    console "ls"
+    message "'ls' stands for 'list (stuff)'."
+    message "It shows you the contents of the current folder."
+  end
+
+  step do
+    message <<-MARKDOWN
+Open your application in your text editor. In Sublime, you can do this by going to File, Open, and
+navigating to your project folder. Click on the project folder so it's highlighted (don't go into the folder), then click on the Open button.
+
+
+Make sure you can see the file structure in the left
+nav, like so in Sublime:
+MARKDOWN
+
+    img src: "img/rails-new-open-in-sublime.png", alt: "A new Rails app open in Sublime Text 2"
+
+
+  end
+
+  message <<-MARKDOWN
+### What did that do?
+You can see that <code>rails new</code> created a lot directories and
+files. We're going to focus on a few of them today:
+MARKDOWN
+
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+    tr {
+      th "File/Folder"
+      th "Purpose"
+    }
+    tr {
+      td "app/"
+      td "Contains the controllers, models, and views for your application.  You will do most of your work here."
+    }
+    tr {
+      td "config/"
+      td "Configure your application's runtime rules, routes, database, and more."
+    }
+    tr {
+      td "db/"
+      td "Shows your current database schema, as well as the database migrations."
+    }
+    tr {
+      td "public/"
+      td "The only folder seen to the world as-is. If you put files in here, they will be served directly without any processing by Rails."
+    }
+    tr {
+      td "app/assets/"
+      td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
+    }
+  end
+
+  message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
+end
+
+next_step "start_using_git"

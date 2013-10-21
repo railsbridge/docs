@@ -1,0 +1,62 @@
+section "Overview" do
+  message <<-MARKDOWN
+### What is Git?
+Git is a version control system (VCS) that allows us to track changes to our application over time.
+By checking your application into git now, you're creating a record of your starting point.
+Whenever you make a change during today's workshop, we'll add it to git before moving on.
+
+### Why use it?
+Most practically, it's what Heroku expects (Heroku is the service we'll be using to put our app online.)
+But more than that, using Git means that if anything ever breaks, or you make a change you don't like, you can use git as an all-powerful "undo" technique.
+But that only works when you remember to commit early and often!
+
+### How does Git work?
+When you make a Git repository and then commit your work to it, it takes a snapshot of your work and saves it.
+Then, if you want to go back to that snapshot, you can! Git also does A LOT MORE, but we'll have to cover that another day.
+
+### Does this have anything to do with GitHub?
+GitHub is a service that allows people to collaborate, and it's very popular with open source projects.
+But Git itself is simply the version control system that GitHub uses, so you can use Git totally separate from GitHub.
+
+  MARKDOWN
+end
+
+steps do
+
+  step do
+    console "git init"
+    message "Now you have a Git repository (or repo for short)."
+  end
+
+  step do
+    console "git status"
+
+    message "`git status` tells you everything git sees as modified, new, or missing."
+    message "The first time you run this, you should see a ton of stuff."
+  end
+
+  step do
+    console "git add ."
+    message "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
+    tip do
+      message <<-MARKDOWN
+With Git, there are usually many ways to do very similar things.
+
+* `git add foo.txt` adds a file named `foo.txt`
+* `git add .` adds all new files and changed files, but *keeps* files that you've deleted
+* `git add -A` adds everything, including deletions
+
+"Adding deletions" may sound weird, but if you think of a version control system as keeping track of *changes*, it might make more sense. Most people use `git add .` but `git add -A` can be safer. No matter what, `git status` is your friend.
+      MARKDOWN
+    end
+  end
+
+  step do
+    console "git commit -m \"Added all the things\""
+    message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
+    message "This is done in two steps so you can group multiple changes together."
+    message "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+  end
+end
+
+next_step "running_your_application_locally"
