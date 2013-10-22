@@ -27,7 +27,7 @@ steps {
 
     source_code :ruby, <<-RUBY
 def create
-  @topic = Topic.new(params[:topic])
+  @topic = Topic.new(topic_params)
 
   respond_to do |format|
     if @topic.save
