@@ -1,60 +1,79 @@
 ## Getting Started
 
-1. Create your project
+**1\.** Create your project
 
-2. View your project in the browser. You should see a default page.
+**2\.** View your project in the browser. You should see a default page.
 
 ## Create your Controller
 
-Each Class/Controller has a set of methods that can be associated with it: index, create, new, edit, show, update, destroy.
-We will start with index, which is used to display your entry point <<TODO: What is the purpose of the index method?
+Controllers are classes that inherit from ApplicationController.
 
-3. Create your first controller called 'Homes'. Use the existing instance of a controller to fill in the content!
+Controllers in Rails have one or many **actions**.
+Each action is defined as a method inside the controller.
+Some standard actions are **index, create, new, edit, show, update,** and **destroy**. But you're not limited to using those names.
 
-Create a controller file in the app/controller folder. "The file should always be named with lower case letters and underscores."
+We will start with index, which can be used to display the main page in your application.
 
-    app/controller/homes_controller.rb
+**3\.** Create your first controller called **HomeController**.
 
-4. Create the index method in the controller. In the homes_controller.rb file add:
+Create a controller file in the app/controller folder. *The file should always be named with lower case letters and underscores.*
 
-    def index
-    end
+```
+app/controllers/home_controller.rb
+```
+
+**4\.** Create your controller, with an empty index method. In the home_controller.rb file add:
+
+```
+class HomeController < ApplicationController
+  def index
+  end
+end
+```
 
 ## Create your View
 
-5. Create your first view, to be associated with the 'Homes' class and the 'index' method. Use the existing instance of a view to fill in the content!
+**5\.** Create your first view, to be associated with the `Home` controller and the `index` action.
 
-Create a class folder in app/view. "The folder name should always be lower case and the name of your class."
- 
-    app/view/homes
+Create a new folder in app/views. *The folder name should always be lower case and the name of your controller.*
 
-Create a file for your first method in the app/view/class folder. "The filename should always be lower case and the name of the method."
- 
-    app/view/homes/index.html.rb
+```
+app/views/home
+```
 
-Each view created is associated with a class and method pair. If the method does not exist then theoretically nothing should render. BUT, rails helps you out and if no method is defined it pretends that the method exists, and is empty, and render as such.
+Create a file for your first action in the app/views/home folder. *The filename should always be lower case and the name of the action.*
+
+```
+app/views/home/index.html.rb
+```
+
+Each view created is associated with one controller action. You don't even really need to define a method in the associated controller: as long as the associated controller and route exist, Rails will pretend that the method exists, and is empty, and render as such.
 
 ## Create your Route
 
-A "route" is a path that points to a method for a specific class. This class and method pair also indicates which view should be used, via the file and file naming conventions mentioned above.
+A **route** is a path that points to an action for a specific controller. This controller and action pair (often stylized as **controller#action**) also indicates which view should be used, via the file naming conventions mentioned above.
 
-6. Edit routes.rb so that the base url points to your application entry point
+**6\.** Edit routes.rb so that the base url points to your application entry point
 
-	root home#index
+```
+root 'home#index'
+```
 
-"NOTE: This says that your base url (i.e. root) should use the "home" class and the "index" method of that class. The view used will be the html file in the "home" folder with name "index (e.g. home/index.html.rb)."
+NOTE: This says that your base url (i.e. root) should use the `index` action of the `home` controller. The view used will be the file in the app/views/home folder with name `index` (e.g. app/views/home/index.html.erb).
 
-Each subsequent route should be defined in a similar but slightly differnet way:
+Each subsequent route should be defined in a similar way:
 
-    get 'new' => 'home#new'
+```
+get 'about' => 'home#about'
+```
 
-"NOTE: This say that the base url with /new on the end will direct to the `new` method for the `homes` class."
+NOTE: This says that the base url with /about on the end will direct to the `about` action in the `home` controller.
 
 ## Test your new Controller
 
-7. Go back to your project in the browser and confirm that you now see your index.html.rb file instead of the default when you go to the root path.
+**7\.** Go back to your project in the browser and confirm that on the root path you now see the content from your index.html.erb file instead of the default Rails welcome page.
 
-8. Add a 'new' method to the homes controller and test that you can see it at the /new path in the web browser.
+**8\.** Add an `about` action to the Home controller and test that you can see it at the /about path in the web browser.
 
 
     
