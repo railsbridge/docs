@@ -1,0 +1,66 @@
+message <<-MARKDOWN
+### Meta
+
+Para enseñarte Ruby vamos a explicar los bloques básicos usados en el lenguaje y así permitirte reforzar lo que has aprendido a través de los retos.
+
+Cuando hayas completado este curriculum deberías entender:
+
+* La línea de comando y porque la usamos
+* Como ejecutar tu código de Ruby interactivamente (irb) o desde un archivo
+* Tipos simples como numeros, cadenas y booleanos
+* Estructuras de datos como arreglos y hashes
+* Conceptos de objetos como las Clases
+
+### Requerimientos
+
+Vamos a estar trabajando con:
+
+* ruby 1.9.3 instalado via rvm (mac o linux) o RailsInstaller (windows)
+* un programa de linea de comando como Terminal (mac) o CMD.EXE (windows)
+* el editor de texto de tu elección
+
+Todo deberá estar instalado la noche anterior durante nuestro installfest. Por favor asegúrate de tener todo funcionando _antes_ de presentarte al taller.
+
+Puedes verificar que tienes todo funcionando probando esto en tu terminal:
+
+<div class="console"><pre>
+$ irb
+>> 1 + 2
+=> 3
+$
+</pre>
+</div>
+
+Si puedes hacer eso, probablemente estas listo para ir al taller.
+
+### Formato
+
+Cada lección se mostrará como esta:
+
+<div style="background: white; border: 1px solid black; padding-left: 4em;">
+  <h1 class="doc_title" style="margin-top: 0em;">Título del paso</h1>
+  <div class="goals">
+    <h1>Meta:</h1>
+    <p>Descripción del paso actual.
+    <p>Rojo porque las metas grandes son de miedo.
+  </div>
+  <div class="steps">
+    <h1>Pasos:</h1>
+    <pre class="term">pasos a tomar.</pre>
+    <div class="console">
+      <pre>
+def code_to_write
+  1 + 1
+end</pre>
+    </div>
+    <p>Amarillo porque hemos conseguido que se haga, pero no tenemos ni idea de lo que está pasando
+  </div>
+  <div class="explanation">
+    <h1>Explicación</h1>
+    <p>Detalles de lo que en realidad los pasos hicieron... explicar detalladamente la causa y el efecto.
+    <p>Verde porque ahora juntos podemos ligar todo.
+  </div>
+</div>
+MARKDOWN
+
+next_step "que_es_ruby"
