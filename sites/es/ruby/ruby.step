@@ -7,7 +7,7 @@ Cuando hayas completado este curriculum deberías entender:
 
 * La línea de comando y porque la usamos
 * Como ejecutar tu código de Ruby interactivamente (irb) o desde un archivo
-* Tipos simples como numeros, cadenas y booleanos
+* Tipos simples como números, cadenas y booleanos
 * Estructuras de datos como arreglos y hashes
 * Conceptos de objetos como las Clases
 
@@ -16,7 +16,7 @@ Cuando hayas completado este curriculum deberías entender:
 Vamos a estar trabajando con:
 
 * ruby 1.9.3 instalado via rvm (mac o linux) o RailsInstaller (windows)
-* un programa de linea de comando como Terminal (mac) o CMD.EXE (windows)
+* un programa de línea de comando como Terminal (mac) o CMD.EXE (windows)
 * el editor de texto de tu elección
 
 Todo deberá estar instalado la noche anterior durante nuestro installfest. Por favor asegúrate de tener todo funcionando _antes_ de presentarte al taller.
@@ -35,7 +35,7 @@ Si puedes hacer eso, probablemente estas listo para ir al taller.
 
 ### Formato
 
-Cada lección se mostrará como esta:
+Cada lección se mostrará como ésta:
 
 <div style="background: white; border: 1px solid black; padding-left: 4em;">
   <h1 class="doc_title" style="margin-top: 0em;">Título del paso</h1>
