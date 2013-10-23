@@ -16,4 +16,4 @@ leer_mas do
   message 'https://en.wikipedia.org/wiki/Ruby_(programming_language)'
 end
 
-next_step "command_line"
+siquiente_paso "linea_de_comandos"
