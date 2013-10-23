@@ -121,7 +121,7 @@ class Step < Erector::Widget
     end
   end
 
-  def siquiente_paso name
+  def siguiente_paso name
     div :class => "step next_step" do
       h1 do
         prefix "Siguiente Paso:"
