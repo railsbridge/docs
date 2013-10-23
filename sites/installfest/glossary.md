@@ -12,9 +12,9 @@
 
 **rake:** A Ruby application that can be used to perform a number of custom tasks. It is often used to carry out maintenance or ad-hoc jobs.
 
-**Repo:** See **Repository**
-
 **Repository:** A grouping of files within version control software. When using **Git**, you will need to have access to a particular repository before you can start making changes to the source code.
+
+**Repo:** See **Repository**
 
 **Ruby:** A programming language.
 

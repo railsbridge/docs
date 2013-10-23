@@ -1,6 +1,6 @@
-**~** On OS X or Linux, this is a shortcut to the **home directory** for your user.
+**~** On OS X or Linux, this is a shortcut to the **home directory** for your user
 
-**cd** Change into your **home directory**
+**cd (or cd ~)** Change into your **home directory**
 
 **cd ..** Change into the parent directory of your current directory
 
@@ -15,3 +15,5 @@
 **ls** List the contents of your current directory.
 
 **pwd** Show the full path of your current directory (e.g. /home/heidi/tehcodez/Railsbridge)
+
+**Tilde** See **~**
