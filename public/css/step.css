@@ -110,6 +110,7 @@ table.bordered tr {
 .goals > h1:before,
 .steps > h1:before,
 .explanation > h1:before,
+.explicacion > h1:before,
 .deploying > h1:before,
 .overview > h1:before,
 .further-reading > h1:before {
@@ -127,7 +128,7 @@ table.bordered tr {
   background-color: #FBFFCA;
 }
 
-.explanation > h1:before {
+.explanation, .explicacion > h1:before {
   background-color: #C8FFC9;
 }
 
