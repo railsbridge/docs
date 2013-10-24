@@ -40,23 +40,25 @@ step "Read This Overview" do
 
 You will be installing the following tools:
 
-*   Ruby  
-    Ruby is a programming language
-*   Rails  
-    Rails is a framework for making web applications with Ruby. It does a lot of the setting up work for you and creates a model-view-controller structure for your web application. We'll go into more detail about that later. [MVC Diagram](http://docs.railsbridgecapetown.org/curriculum/img/mvc.svg)
-*   Git  
-    Git is a revision or source control system. It creates a repository, which is a complete history of your programming changes, so you can undo changes and roll back to previous versions of your work if something has gone wrong. [Git Diagram](http://docs.railsbridgecapetown.org/curriculum/img/git-and-heroku.svg)
-*   Heroku  
-    Heroku is an application server, which hosts your application during development. This allows you to get your application online and interact with it from any browser, instead of just on your local machine. [Heroku Diagram](http://docs.railsbridgecapetown.org/curriculum/img/git-and-heroku.svg)
-*   Sublime Text 2 (or some editor)  
-    Sublime Text 2 is an editor. To write programs in Ruby, you need a text editor to create, edit and save Ruby files.
-*   Various useful "ruby gems", including...
-    *   bundler  
-    *   sqlite  
-    Ruby gems are useful bits of Ruby code that someone has created for reuse, so you don't have to write it yourself.
+*   **Ruby**
+    A programming language
+*   **Rails**
+    A framework for making web applications with Ruby. It does a lot of the setting up work for you and creates a model-view-controller structure for your web application. We'll go into more detail about that later. [MVC Diagram](
+    /curriculum/img/mvc.svg)
+*   **Git**
+    A revision or source control system. It creates a repository, which is a complete history of your programming changes, so you can undo changes and roll back to previous versions of your work if something has gone wrong. [Git Diagram](
+    /curriculum/img/git-and-heroku.svg)
+*   **Heroku**
+    An application server, which hosts your application during development. This allows you to get your application online and interact with it from any browser, instead of just on your local machine. [Heroku Diagram](/curriculum/img/git-and-heroku.svg)
+*   **Sublime Text 2** (or equivalent)
+    An editor. To write programs in Ruby, you need a text editor to create, edit and save Ruby files.
+*   Various useful **ruby gems**, including...
+    *   bundler
+    *   sqlite
+
+    Useful bits of Ruby code that someone has created for reuse, so you don't have to write it yourself.
 
 You will also create an account on Heroku, an application hosting platform.
-
 If you already have an account on Heroku, make sure you know your username and password.
 
 If you've already installed the above tools and are confident they are setup correctly, skip ahead to the [Get a Sticker](get_a_sticker) step.
