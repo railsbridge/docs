@@ -58,5 +58,5 @@
 # Last but not least
 ### Don't be shy: ask questions
 ### Teachers are here to help
-### Tweet using #RBCPT or #railsbridge
+### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: <http://railsbridgecapetown.org/code-of-conduct.html>
