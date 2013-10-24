@@ -1,30 +1,26 @@
-**Classes and Instances:**  Types and objects. If we have a class (type) called _Car_, then _Peugeot 406_ and _Fiat Ritmo_ will be instances (objects) of this class. There may also be other instances unique to _Peugeot 406_, differentiated by, for example, their `Model number`.
+**Classes and Instances:**  Types and objects. If we have a class (type) called _Car_, then _Peugeot 406_ and _Fiat Ritmo_ will be instances (objects) of this class. There may also be other instances unique to _Peugeot 406_, differentiated by, for example, their _Model number_.
 
-**Command Line Interface:**  Allows you to interact with your computer (add, delete, modify files and much more) solely by typing instructions (commands).
-
-**Console:**  See **Command Line Interface**.
+**Command Line Interface (or Console / Terminal):**  Allows you to interact with your computer (add, delete, modify files and much more) solely by typing instructions (commands).
 
 **Function:**  Code that can be re-used; if a formula has to change, you only need to change it in one place.
 
 **Git:**  A type of **Version Control Software (VCS)**.
 
-**Github:**  A site that hosts git repositories. Github also adds a number of tools that aid interaction between developers collaborating on software projects. 
+**Github:**  A site that hosts git repositories. Github also adds a number of tools that aid interaction between developers collaborating on software. 
 
 **Grouping:**  Indents and whitespaces are used for grouping code together and simplify readability. Ruby also uses do … end to group.
 
-**Heroku:**  A site that allows you to host your Ruby on Rails projects. Heroku also supports other languages and frameworks.
+**Heroku:**  A site that allows you to host your Ruby on Rails applications. Heroku also supports other languages and frameworks.
 
 **Home directory:**  On a OS X or Linux computer, this is where the files and settings belonging to your user are stored.
 
 **Loop:**   While _something is true, do this_. When _something becomes not true_ then break the loop / stop.
 
-**Markdown** A lightweight markup language that allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
+**Markdown:** A lightweight markup language that allows you to write using an easy-to-read, easy-to-write plain text format, and then convert it to structurally valid XHTML (or HTML).
 
 **Rake:**  A Ruby application that can be used to perform a number of custom tasks. It is often used to carry out maintenance or ad-hoc jobs.
 
-**Repository:**  A grouping of files within **Version Control Software**. When using **Git**, you will need to have access to a particular repository before you can start making changes to the source code.
-
-**Repo:**  See **Repository**.
+**Repository (or Repo):**  A grouping of files within **Version Control Software**. When using **Git**, you will need to have access to a particular repository before you can start making changes to the source code.
 
 **Ruby:**  A programming language.
 
@@ -42,9 +38,7 @@
 
 **String:**  Text only, typed between inverted commas.
 
-**Terminal:**  See **Command Line Interface**.
-
-**Text editor:**  A program that allows you to create and modify the text files that will be used by **Ruby on Rails** to do your bidding. Some text editors are optimised for software development and provide tools that increase productivity.
+**Text editor:**  A program that allows you to create and modify the text files that will be used by **Ruby on Rails** to run your command. Some text editors are optimised for software development and provide tools that increase productivity.
 
 **Variable:**  A storage location and an associated symbolic name (an identifier) which contains some known or unknown quantity or information (a value). The variable name is the usual way to reference the stored value; this separation of name and content allows the name to be used independently of the exact information it represents.
 
