@@ -1,6 +1,6 @@
 **~**  Called a tilde. On OS X or Linux, this is a shortcut to the **home directory** for your user.
 
-**/** When you use an 'escape sequence' in front of a character, the normal interpretation of a character is not applied.
+**/**  When you use an 'escape sequence' in front of a character, the normal interpretation of a character is not applied.
 
 **=**  Assignment to make whatever follows to be treated as true (Name="Veronica").
 
@@ -9,23 +9,25 @@
 
 **cd (or cd ~)**  Change into your **home directory**.
 
-**cd ..**  Change into the parent directory of your current directory.
+**cd** _directory_ **(or cd ..)**  Change into the parent directory of your current directory.
 
 **cd ../../**  Go up 2 levels / multiple levels.
 
 **cd ~**  Change into your **home directory**.
 
-**cd _foo_**  Change into the directory named foo.
+**cd** _foo_  Change into the directory named foo.
 
-**cp** Copy a file (e.g. `cp original.rb copy.rb` creates a copy of the original.rb file).
+**cp** _original.rb copy.rb_  Makes a copy of the _original.rb_ file.
 
 **ls**  List the contents of your current directory.
 
-**pwd** Show the full path of your current directory (e.g. /home/heidi/tehcodez/Railsbridge).
+**ls** _directory_  Shows all contents (files and folders) of the directory.
+
+**pwd**  Shows the full path of the directory you are currently in (e.g. _/home/heidi/tehcodez/Railsbridge_).
 
 **-h (or --help)**  Can be run with all commands to list more information.
 
-**puts _something_** Prints its argument to the console. Can be used in Rails apps to print something in the console where the server is running.
+**puts** _something_  Prints its argument to the console. Can be used in Rails apps to print something in the console where the server is running.
 
 
 **git branch**  Shows you the branch that you're currently in.
@@ -34,14 +36,14 @@
 
 **git add -A**  Will add all your changes to your next commit.
 
-**git add _file1.md file2.md file3.md_**  Will add only the files you specify to your next commit.
+**git add** _file1.md file2.md file3.md_  Will add only the files you specify to your next commit.
 
-**git commit -m _"some useful message for your future self"_**  Commits all your changes with your descriptive message to git.
+**git commit -m** _"some useful message for your future self"_  Commits all your changes with your descriptive message to git.
 
-**git push origin <i>remote\_branch\_name</i>**  This pushes the code in your current branch to remote_branch_name branch on the remote repo named 'origin'.
+**git push origin** <i>remote\_branch\_name</i>  This pushes the code in your current branch to remote_branch_name branch on the remote repo named 'origin'.
 
 
-**rails new _NameApp_**  Creates a new Rails application with the entire Rails directory structure to run your application.
+**rails new** _NameApp_  Creates a new Rails application with the entire Rails directory structure to run your application.
 
 **rails server (or rails s)**  Launches a small web server named WEBrick that you will use any time you want to access your application through a web browser.
 

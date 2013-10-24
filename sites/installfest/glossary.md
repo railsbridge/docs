@@ -1,4 +1,4 @@
-**Classes and Instances:**  Types and objects. If we have a class (type) called `Car`, then `Peugeot 406` and `Fiat Ritmo` will be instances (objects) of this class. There may also be other instances unique to `Peugeot 406`, differentiated by, for example, their `Model number`.
+**Classes and Instances:**  Types and objects. If we have a class (type) called _Car_, then _Peugeot 406_ and _Fiat Ritmo_ will be instances (objects) of this class. There may also be other instances unique to _Peugeot 406_, differentiated by, for example, their `Model number`.
 
 **Command Line Interface:**  Allows you to interact with your computer (add, delete, modify files and much more) solely by typing instructions (commands).
 
@@ -16,7 +16,7 @@
 
 **Home directory:**  On a OS X or Linux computer, this is where the files and settings belonging to your user are stored.
 
-**Loop:**   While `something is true, do this`. When `something becomes not true` then break the loop / stop.
+**Loop:**   While _something is true, do this_. When _something becomes not true_ then break the loop / stop.
 
 **Markdown** A lightweight markup language that allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
 
@@ -47,8 +47,5 @@
 **Text editor:**  A program that allows you to create and modify the text files that will be used by **Ruby on Rails** to do your bidding. Some text editors are optimised for software development and provide tools that increase productivity.
 
 **Variable:**  A storage location and an associated symbolic name (an identifier) which contains some known or unknown quantity or information (a value). The variable name is the usual way to reference the stored value; this separation of name and content allows the name to be used independently of the exact information it represents.
-
-    Camel casing format: guessesTaken
-    Snake casing format: guesses_taken
 
 **Version Control Software:**  Software that tracks changes to your source code and also allows you to undo or combine changes.
