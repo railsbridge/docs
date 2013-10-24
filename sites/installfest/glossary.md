@@ -1,20 +1,28 @@
-**Command Line Interface:** Allows you to interact with your computer (add, delete, modify files and much more) solely by typing instructions (commands)
+**Command Line Interface:** Allows you to interact with your computer (add, delete, modify files and much more) solely by typing instructions (commands).
 
-**Console:** See **Command Line Interface**
+**Console:** See **Command Line Interface**.
+
+**Function:** Code that can be re-used; if a formula has to change, you only need to change it in one place.
 
 **Git:** A type of **Version Control Software (VCS)**.
 
 **Github:** A site that hosts git **repositories**. Github also adds a number of tools that aid interaction between developers collaborating on software projects. 
 
+**Grouping:** Ruby uses do … end to group, PHP uses {to group}, Python uses white spaces to indicate which blocks of code belongs together.
+
 **Heroku:** A site that allows you to host your Ruby on Rails projects. Heroku also supports other languages and frameworks.
 
 **Home directory:** On a OS X or Linux computer, this is where the files and settings belonging to your user are stored.
 
-**rake:** A Ruby application that can be used to perform a number of custom tasks. It is often used to carry out maintenance or ad-hoc jobs.
+**Indents and whitespace:** Used for grouping code together and simplify readability. Only use spaces, don’t tab.
+
+**Loop:**  While `something is true, do this`. When `something becomes not true` then break the loop / stop.
+
+**Rake:** A Ruby application that can be used to perform a number of custom tasks. It is often used to carry out maintenance or ad-hoc jobs.
 
 **Repository:** A grouping of files within version control software. When using **Git**, you will need to have access to a particular repository before you can start making changes to the source code.
 
-**Repo:** See **Repository**
+**Repo:** See **Repository**.
 
 **Ruby:** A programming language.
 
@@ -28,8 +36,15 @@
 
 **SSH:** Secure Shell. A way to securely connect to a remote computer.
 
-**Terminal:** See **Command Line Interface**
+**String:** Text only typed between inverted commas.
+
+**Terminal:** See **Command Line Interface**.
 
 **Text editor:** A program that allows you to create and modify the text files that will be used by **Ruby on Rails** to do your bidding. Some text editors are optimised for software development and provide tools that increase productivity.
+
+**Variable:**  A name for something in your program (x=5, 1+x=6) where x is the variable. No quotes are used so to be identified as a variable. It allows you to add items and take items out, while you can keep referring to one function to re-use (Tip: use explanatory, descriptive names).
+
+    Camel casing format: guessesTaken
+    Snake casing format: guesses_taken
 
 **Version Control Software:** Software that tracks changes to your source code and also allows you to undo or combine changes.
