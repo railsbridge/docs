@@ -107,14 +107,6 @@ step "Configure the Windows Terminal" do
   end
 end
 
-step "Install Windows Colors" do
-
-  message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
-
-  link "windows_colors"
-
-end
-
 step "Configure Git" do
   link "configure_git"
 end
