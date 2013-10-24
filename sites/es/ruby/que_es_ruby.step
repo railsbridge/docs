@@ -5,15 +5,15 @@ end
 
 explicacion do
   message 'Cada applicación en tu computadora fue escrita por alguien. Desde el Sistema Operativo hasta tu Navegador. Cada programa fue escrito en algún tipo de Lenguaje de Programación.'
-  message 'Los lenguajes de programación vienen en todas formas y tamaños. Algunos son optimizados por la rapidez en la cual la computadora los ejecutará, y algunos son optimizados por la rapidz en la cual un humano puede programar en ellos.'
+  message 'Los lenguajes de programación vienen en todas formas y tamaños. Algunos son optimizados por la rapidez en la cual la computadora los ejecutará, y algunos son optimizados por la rapidez en la cual un humano puede programar en ellos.'
   message 'Ruby fue inventado a mediados de los 90\'s por un tipo llamado Matz.'
   message 'Ruby toma muchas ideas del lenguaje Perl y Smalltalk'
   message 'Ruby es un lenguaje **interpretado**. Diferente a los lenguajes **compilados**, donde la computadora tiene que leer completamente tu código, en Ruby la computadora lee tu código línea por línea.'
-  message 'La popularidad de Ruby se elevó con la invención del framework **Ruby on Rails**, pero Ruby es útil para muchas mas cosas que solo websites.'
+  message 'La popularidad de Ruby se elevó con la invención del framework **Ruby on Rails**, pero Ruby es útil para muchas más cosas que sólo websites.'
 end
 
 leer_mas do
-  message 'https://en.wikipedia.org/wiki/Ruby_(programming_language)'
+  message 'https://es.wikipedia.org/wiki/Ruby'
 end
 
 siguiente_paso "linea_de_comandos"
