@@ -128,8 +128,12 @@ table.bordered tr {
   background-color: #FBFFCA;
 }
 
-.explanation, .explicacion > h1:before {
+.explanation > h1:before {
   background-color: #C8FFC9;
+}
+
+.explicacion > h1:before {
+    background-color: #C8FFC9;
 }
 
 .overview > h1:before {
