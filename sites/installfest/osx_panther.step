@@ -100,8 +100,4 @@ step "Install Textmate" do
   link "install_textmate"
 end
 
-step "Create an SSH key" do
-  link "create_an_ssh_key"
-end
-
-next_step "create_a_heroku_account"
+next_step "create_an_ssh_key"

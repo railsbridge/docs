@@ -65,12 +65,4 @@ verify "successful installation" do
   fuzzy_result "/Users/alex/.rvm/gems/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/rails"
 end
 
-step "Generate an ssh public key" do
-  link "create_an_ssh_key"
-end
-
-step "Congratulations!" do
-  message "You have everything you need to write a Ruby on Rails application."
-end
-
-next_step "create_a_heroku_account"
+next_step "create_an_ssh_key"

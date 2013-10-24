@@ -7,29 +7,29 @@ option "Did you use RailsInstaller on Windows?" do
 end
 
 option "otherwise" do
-important "Use the same email address for heroku, git, github, and ssh."
+  important "Use the same email address for heroku, git, github, and ssh."
 
-important "**REPLACE** `student@example.com` with your **actual email address** below."
+  important "**REPLACE** `student@example.com` with your **actual email address** below."
 
-console "ssh-keygen -C student@example.com -t rsa"
+  console "ssh-keygen -C student@example.com -t rsa"
 
-message "Press enter to accept the default key save location."
+  message "Press enter to accept the default key save location."
 
-message "Next, you'll be asked for a keyphrase."
+  message "Next, you'll be asked for a keyphrase."
 
-h1 "Choose keyphrase"
-blockquote do
-  option "No keyphrase" do
-    message "Hit enter to accept blank passphrase, then hit enter again."
+  h1 "Choose keyphrase"
+  blockquote do
+    option "No keyphrase" do
+      message "Hit enter to accept blank passphrase, then hit enter again."
+    end
+    option "Keyphrase" do
+      message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
+    end
   end
-  option "Keyphrase" do 
-    message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
-  end
-end
 
-message "After key generation is complete, you'll have output that looks like this."
+  message "After key generation is complete, you'll have output that looks like this."
 
-result <<-OUTPUT
+  result <<-OUTPUT
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/student/.ssh/id_rsa): 
 Created directory '/Users/student/.ssh'.
@@ -41,15 +41,16 @@ The key fingerprint is:
 88:54:ab:77:fe:5c:c3:7s:14:37:28:8c:1d:ef:2a:8d student@example.com
   OUTPUT
 
-verify do
-  message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
-  tip "Public vs. Private Keys" do
-    message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
-    message "`id_rsa.pub` is your **public key** and can be shared freely."
-    message "`id_rsa` is your **private key** and must be kept secret."
-    message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+  verify do
+    message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
+    tip "Public vs. Private Keys" do
+      message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
+      message "`id_rsa.pub` is your **public key** and can be shared freely."
+      message "`id_rsa` is your **private key** and must be kept secret."
+      message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+    end
   end
 end
 
-end
+next_step 'create_a_heroku_account'
 
