@@ -17,6 +17,9 @@
 ![League of Beers](img/league-of-beers.png)
 ![pluralsight](img/pluralsight-fullcolor-175x39-v3.png)
 ![Pragmatic Bookshelf](img/pragprog-logo.png)
+![Graffica](img/graffica_logo_small.png)
+![O'Reilly](img/OReillyLogo300x70.png)
+![GitHub](img/GitHub_Logo.png)
 
 <!SLIDE bullets>
 # What did we learn?
