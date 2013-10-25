@@ -31,7 +31,6 @@ end
 
 message <<MARKDOWN
 
-
 MARKDOWN
 
 h1 "Authors"

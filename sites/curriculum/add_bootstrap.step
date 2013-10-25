@@ -74,8 +74,6 @@ body { padding-top: 60px; }
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
         </div>
       </div>
     </main>
@@ -83,5 +81,6 @@ body { padding-top: 60px; }
 </html>
 HTML
   message "Save the file. Now, you can view your app in the browser, test it out and you'll easily notice the changes in the look."
+  message "Also, if you are interested in learning more about HTML, CSS and JavaScript you can check out the <a href='http://docs.railsbridgecapetown.org/frontend/'>FrontEnd Course</a>."
   end
 }
