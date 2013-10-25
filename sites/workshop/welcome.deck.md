@@ -56,6 +56,7 @@
 
 <!SLIDE bullets>
 # Last but not least
+### Check the Glossary
 ### Don't be shy: ask questions
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
