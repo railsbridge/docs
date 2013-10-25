@@ -73,6 +73,11 @@ steps do
   end
 
   message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
+
+  message <<-MARKDOWN
+  <h2>Great! You've created a brand new (empty) Rails app!</h2>
+  Why not take a break and stretch your legs?
+  MARKDOWN
 end
 
 next_step "create_a_new_git_repo"

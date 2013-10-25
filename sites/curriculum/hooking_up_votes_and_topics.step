@@ -61,6 +61,11 @@ It can still be important to clean up after yourself! `dependent: :destroy`
   the **votes** that correspond to it will be destroyed, too. Without
   `dependent :destroy`, those votes would live on the database forever.
   MARKDOWN
+
+  message <<-MARKDOWN
+  <h2>Awesome! You've added Votes and Topics.</h2>
+  Is the sun shining? Go to the window and smell the fresh air.
+  MARKDOWN
 }
 
 next_step "allow_people_to_vote"

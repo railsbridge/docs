@@ -74,6 +74,11 @@ You can run `rake -T` to see a list of all the `rake` commands your app currentl
   message <<-MARKDOWN
 In MVC, models, views, and controllers have very specific jobs.  Separating responsibilities like this make it easy to maintain and extend rails applications.  When responsibilities become muddied it gets much harder to debug issues and add new functionality.
   MARKDOWN
+
+  message <<-MARKDOWN
+  <h2>Nice! You've created a database table and a migration for it.</h2>
+  Time for tea or a coffee?
+  MARKDOWN
 }
 
 next_step "CRUD_with_scaffolding"

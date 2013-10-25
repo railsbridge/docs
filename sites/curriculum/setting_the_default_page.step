@@ -90,6 +90,11 @@ explanation {
     >> exit
 
   MARKDOWN
+
+  message <<-MARKDOWN
+  <h2>Excellent! You've learnt about routes and you're about to send your app out to the Internetz!</h2>
+  Stand up. High five the person next to you. Sit down. Proceed.
+  MARKDOWN
 }
 
 insert 'consider_deploying'
