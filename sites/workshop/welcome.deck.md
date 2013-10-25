@@ -59,4 +59,6 @@
 ### Don't be shy: ask questions
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
+### Stickers! 
+#### &nbsp; RailsBridge, GitHub, Mad Mimi
 ### Code of Conduct: <http://railsbridgecapetown.org/code-of-conduct.html>
