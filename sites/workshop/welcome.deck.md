@@ -10,7 +10,7 @@
  * **13:30**-15:00: Workshop
  * **15:00**-15:30: Break
  * **15:30**-17:00: Workshop
- * **17:00**-17:30: Closing presentation, **Survey**, eBook giveaway
+ * **17:00**-17:30: Closing presentation, **Survey**
  * **17:30**-18:00: Retrospective
 
 <!SLIDE bullets>
