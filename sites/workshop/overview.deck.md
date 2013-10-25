@@ -6,6 +6,7 @@
 
 |Download|Install|Sign Up|Check|
 |---|---|---|---|
+|Lots of things|All those things|For Heroku|That they work|
 | <img src="img/download.png" alt="Download" > | <img src="img/install.png" alt="Install" > | <img src="img/user.png" alt="Sign Up" > | <img src="img/check.png" alt="Check" > |
 
 <!SLIDE center>
@@ -13,7 +14,8 @@
 
 |Ruby|Rails|Git|Heroku|
 |---|---|---|---|
-| <img src="img/ruby-logo.jpg" alt="Ruby" > | <img src="img/rails_logo.jpg" alt="Rails" > | <img src="img/git-icon.png" alt="Git" > | <img src="img/heroku-logo.png" alt="Heroku" > |
+|A programming Language|A Framework: patterns for building web apps|A source control system|An hosting platform|
+| <img src="img/ruby-logo.jpg" alt="Ruby" width="250"> | <img src="img/rails_logo.jpg" alt="Rails" width="250"> | <img src="img/git-icon.png" alt="Git" width="250"> | <img src="img/heroku-logo.png" alt="Heroku"  width="250" > |
 
 <!SLIDE center>
 # Tonight
