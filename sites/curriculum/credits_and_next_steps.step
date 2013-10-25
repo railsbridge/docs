@@ -1,5 +1,5 @@
 message <<MARKDOWN
-Guess what?  _**You're done!!!**_ Congratulations, you just \"finished\" your first rails app!
+Guess what?  _**You're done!!!**_ Congratulations, you just finished your first rails app!
 
 (They're never _really_ ever finished... have fun tweaking it!)
 
@@ -9,9 +9,10 @@ If you got all the way through Suggestotron with some time to spare, here's some
 
 * Add a downvote button that does the opposite of what the upvote button does
 * Sort topics by their number of votes
+* Add some styling to [make your app look great](add_bootstrap)
 * Try some debugging
 
-## Break it! Fix it!
+### It's Broken! Fix it!
 
 How about you let your teacher break the app you just wrote? We guess you are asking yourself \"why would I do that?\".
 Well, **debugging** is a big part of every developer's day.
@@ -29,7 +30,6 @@ ol do
 end
 
 message <<MARKDOWN
-
 
 MARKDOWN
 

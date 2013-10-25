@@ -1,0 +1,86 @@
+goals {
+
+  message "You know that every successful web site on the Internet has to look good, right? Let's add a little polish to our application."
+
+  message "We can use [Twitter Bootstrap](http://getbootstrap.com/) to do that. Bootstrap is a front-end framework that gives you a fast and easy way to make your application look good."
+}
+
+steps {
+
+  step "Add Bootstrap gem to Gemfile" do
+    message "Bootstrap comes packed in a few variations (gems), but they all basically do the same thing - make your app look pretty."
+    message "Open your Gemfile and add the bootstrap-sass gem like so:"
+    source_code "gem 'bootstrap-sass'"
+    message "After you add that line to your Gemfile, install the bundle."
+    console "bundle install"
+  end
+
+  step "Add Bootstrap's Javascript files" do
+    message "Open the file suggestotron/assets/javascripts/application.js in your text editor."
+    message "Add the following line to it:"
+    source_code "//= require bootstrap"
+    message "This is how it should look after you are done with it:"
+    source_code "//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+//= require_tree ."
+    message "Do not worry if your file looks a bit different, it is just important that the file contains all of these lines."
+    message "This adds the Bootstrap Javascript files to be loaded by the app so we can have a smooth working interface. Javascript controls the behaviour of a page."
+  end
+
+  step "Add Bootstrap's CSS files" do
+    console "touch suggestotron/assets/stylesheets/bootstrap_and_overrides.css.scss"
+    message "This command will create the file at that path."
+    message "Open this file via your text editor and add the following lines inside:"
+    source_code "@import \"bootstrap\";
+body { padding-top: 60px; }
+@import \"bootstrap-responsive\";"
+    message "This added the CSS (Cascading Stylesheets) to the app. CSS is used to control the look of a page."
+  end
+
+  step "Change the application layout" do
+    message "Our application layout is located at suggestotron/views/layouts/application.html.erb. This is used application wide, which means that every page of the app will have the same look and feel. Now, we'll need to change it so that our application uses the Bootstrap styles."
+    message "Open your suggestotron/views/layouts/application.html.erb file in your text editor and delete all the contents of the file."
+    message "Copy all of this code and paste it into the file:"
+    source_code :erb, <<-HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Bootstrap" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Suggestotron" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+    <nav class="navbar-inner">
+      <h4>Suggestotron</h4>
+    </header>
+    <main role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <% flash.each do |name, msg| %>
+                <% if msg.is_a?(String) %>
+                  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+                    <a class="close" data-dismiss="alert">&#215;</a>
+                    <%= content_tag :div, msg, :id => "flash_\#{name}" %>
+                  </div>
+                <% end %>
+              <% end %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+HTML
+  message "Save the file. Now, you can view your app in the browser, test it out and you'll easily notice the changes in the look."
+  message "Also, if you are interested in learning more about HTML, CSS and JavaScript you can check out the <a href='http://docs.railsbridgecapetown.org/frontend/'>FrontEnd Course</a>."
+  end
+}
