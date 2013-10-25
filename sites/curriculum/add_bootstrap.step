@@ -7,9 +7,9 @@ goals {
   message "This is easily done with adding the Bootstrap gem to your Gemfile."
 
   goal "Add Bootstrap gem to Gemfile"
-  goal "modify the file app/assets/javascripts/application.js to add Bootstrap's Javascript files"
-  goal "add the file app/assets/stylesheets/bootstrap_and_overrides.css.scss to add Bootstrap's CSS files"
-  goal "modify the file app/views/layouts/application.html.erb to change the application layout"
+  goal "modify the file suggestotron/assets/javascripts/application.js to add Bootstrap's Javascript files"
+  goal "add the file suggestotron/assets/stylesheets/bootstrap_and_overrides.css.scss to add Bootstrap's CSS files"
+  goal "modify the file suggestotron/views/layouts/application.html.erb to change the application layout"
   goal "include Twitter Bootstrap CSS styling in Rails flash messages"
 }
 
@@ -23,8 +23,8 @@ steps {
     console "bundle install"
   end
 
-  step "add Bootstrap's Javascript files to app/assets/javascripts/application.js" do
-    message "Open the file app/assets/javascripts/application.js in your text editor."
+  step "add Bootstrap's Javascript files to suggestotron/assets/javascripts/application.js" do
+    message "Open the file suggestotron/assets/javascripts/application.js in your text editor."
     message "Add the following line to it:"
     source_code "//= require bootstrap"
     message "This is how it should look after you are done with it:"
@@ -36,8 +36,8 @@ steps {
     message "What we did here is we added the bootstrap javascript files to be loaded by the app so we can have a smooth working interface."
   end
 
-  step "add the file app/assets/stylesheets/bootstrap_and_overrides.css.scss to add Bootstrap's CSS files" do
-    console "touch app/assets/stylesheets/bootstrap_and_overrides.css.scss"
+  step "add the file suggestotron/assets/stylesheets/bootstrap_and_overrides.css.scss to add Bootstrap's CSS files" do
+    console "touch suggestotron/assets/stylesheets/bootstrap_and_overrides.css.scss"
     message "This command will create the file at that path."
     message "Open this file via your text editor and add the following lines inside:"
     source_code "@import \"bootstrap\";
@@ -46,9 +46,9 @@ body { padding-top: 60px; }
     message "What we did here? We added the CSS (Cascading Stylesheets) to the app so it can load them. The CSS is used to make the app look good."
   end
 
-  step "modify the file app/views/layouts/application.html.erb to change the application layout" do
-    message "Our applications layout is located at app/views/layouts/application.html.erb. This layout is used application wide, which means that every page of the app will have the same look and feel. Now, we'll need to change the layout so our application uses the Bootstrap styles."
-    message "Open your app/views/layouts/application.html.erb file in your text editor and delete all the contents of the file."
+  step "modify the file suggestotron/views/layouts/application.html.erb to change the application layout" do
+    message "Our applications layout is located at suggestotron/views/layouts/application.html.erb. This layout is used application wide, which means that every page of the app will have the same look and feel. Now, we'll need to change the layout so our application uses the Bootstrap styles."
+    message "Open your suggestotron/views/layouts/application.html.erb file in your text editor and delete all the contents of the file."
     message "Copy all of this code and paste it into the file:"
     source_code :erb, <<-HTML
 <!DOCTYPE html>
