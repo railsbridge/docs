@@ -42,10 +42,10 @@
 <!SLIDE center>
 # What will you learn today?
 
-|Ruby|Rails|
-|---|---|
-|A programming Language|A Framework: patterns for building web apps|
-| <img src="img/ruby-logo.jpg" alt="Ruby" width="250"> | <img src="img/rails_logo.jpg" alt="Rails" width="250"> |
+|Ruby|Rails|Git|Heroku|
+|---|---|---|---|
+|A programming Language|A Framework: patterns for building web apps|A source control system|An hosting platform|
+| <img src="img/ruby-logo.jpg" alt="Ruby" width="250"> | <img src="img/rails_logo.jpg" alt="Rails" width="250"> | <img src="img/git-icon.png" alt="Git" width="250"> | <img src="img/heroku-logo.png" alt="Heroku"  width="250" > |
 
 <!SLIDE bullets>
 # The Rails Philosophy
