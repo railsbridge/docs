@@ -16,7 +16,7 @@ steps {
   end
 
   step "Add Bootstrap's Javascript files" do
-    message "Open the file suggestotron/assets/javascripts/application.js in your text editor."
+    message "Open the file app/assets/javascripts/application.js in your text editor."
     message "Add the following line to it:"
     source_code "//= require bootstrap"
     message "This is how it should look after you are done with it:"
