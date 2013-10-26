@@ -34,5 +34,4 @@ http://docs.railsbridgecapetown.org/workshop/resources
 <!SLIDE bullets>
 # And now...
 ### Retrospective with Sam
-### Dinner at Vintage India
-#### &nbsp; Corner of Mill and Hiddingh
+### Late lunch
