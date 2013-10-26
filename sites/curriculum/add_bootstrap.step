@@ -9,10 +9,19 @@ steps {
 
   step "Add Bootstrap gem to Gemfile" do
     message "Bootstrap comes packed in a few variations (gems), but they all basically do the same thing - make your app look pretty."
-    message "Open your Gemfile and add the bootstrap-sass gem like so:"
+    message "Open your Gemfile and add the bootstrap-sass gem just below the `gem 'rails'` line, like so:"
     source_code "gem 'bootstrap-sass'"
     message "After you add that line to your Gemfile, install the bundle."
     console "bundle install"
+    message "The Rails server that you've been running in your terminal for a while doesn't know about the new gem you just installed. You need to restart the server."
+    message "Find the terminal running Rails (it will have a lot of messages like `Started GET \"/assets/application.js\"`) and type Control+C."
+    result <<-STOPPING_RAILS_SERVER
+^C[2012-03-31 08:33:11] INFO  going to shutdown ...
+[2012-03-31 08:33:11] INFO  WEBrick::HTTPServer#start done.
+Exiting
+    STOPPING_RAILS_SERVER
+    message "Then start it again."
+    console "rails server"
   end
 
   step "Add Bootstrap's Javascript files" do
@@ -29,7 +38,7 @@ steps {
   end
 
   step "Add Bootstrap's CSS files" do
-    console "touch suggestotron/assets/stylesheets/bootstrap_and_overrides.css.scss"
+    console "touch app/assets/stylesheets/bootstrap_and_overrides.css.scss"
     message "This command will create the file at that path."
     message "Open this file via your text editor and add the following lines inside:"
     source_code "@import \"bootstrap\";
@@ -39,8 +48,8 @@ body { padding-top: 60px; }
   end
 
   step "Change the application layout" do
-    message "Our application layout is located at suggestotron/views/layouts/application.html.erb. This is used application wide, which means that every page of the app will have the same look and feel. Now, we'll need to change it so that our application uses the Bootstrap styles."
-    message "Open your suggestotron/views/layouts/application.html.erb file in your text editor and delete all the contents of the file."
+    message "Our application layout is located at app/views/layouts/application.html.erb. This is used application wide, which means that every page of the app will have the same look and feel. Now, we'll need to change it so that our application uses the Bootstrap styles."
+    message "Open your app/views/layouts/application.html.erb file in your text editor and delete all the contents of the file."
     message "Copy all of this code and paste it into the file:"
     source_code :erb, <<-HTML
 <!DOCTYPE html>
