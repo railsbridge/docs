@@ -35,9 +35,11 @@ steps do
   end
 
   step do
+    message "If you are using a Mac"
     console "ls"
-    message "'ls' stands for 'list (stuff)'."
-    message "It shows you the contents of the current folder."
+    message "If you are using a PC running Windows"
+    console "dir"
+    message "'ls' stands for 'list (stuff)'. It shows you the contents of the current folder."
   end
 
   message <<-MARKDOWN
