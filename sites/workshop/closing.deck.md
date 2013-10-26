@@ -32,9 +32,7 @@
 http://docs.railsbridgecapetown.org/workshop/resources
 
 <!SLIDE bullets>
-# Celebrate!
-### After-party
-
-<!SLIDE bullets>
-# Right now
-### Take this survey: https://www.surveymonkey.com/s/rbcpt201310exit
+# And now...
+### Retrospective with Sam
+### Dinner at Vintage India
+#### &nbsp; Corner of Mill and Hiddingh
