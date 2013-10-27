@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans',helvetica,arial,sans-serif;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -42,48 +42,48 @@ h1 {
 
 .doc {
   max-width: 50em;
-}
 
-.doc pre {
-  background: #f2f2f2;
-  padding: .5em 1em;
-  font-size: 13pt;
-  overflow-x: auto;
-}
+  pre {
+    background: #f2f2f2;
+    padding: .5em 1em;
+    font-size: 13pt;
+    overflow-x: auto;
+  }
 
-.doc code {
-  font-size: 13pt;
-  background: #f2f2f2;
-  padding-left: 4px;
-  padding-right: 4px;
-}
+  code {
+    font-size: 13pt;
+    background: #f2f2f2;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 
-.doc h1 {
-  border-bottom: 2px solid #EEE;
-}
+  h1 {
+    border-bottom: 2px solid #EEE;
+  }
 
-.doc blockquote {
-  margin: 0.5em 0 .5em 20px;
+  blockquote {
+    margin: 0.5em 0 .5em 20px;
+  }
 }
 
 img {
   margin: auto;
-  display: block;  /* otherwise centering doesn't happen */
+  display: block; /* otherwise centering doesn't happen */
 }
 
 .model-diagram {
   margin: 0 auto;
   border: 1px solid black;
   border-collapse: collapse;
-}
 
-.model-diagram th {
-  background-color: lightblue;
-}
+  th {
+    background-color: lightblue;
+  }
 
-.model-diagram td {
-  padding: 0 5px;
-  border: 1px solid black;
+  td {
+    padding: 0 5px;
+    border: 1px solid black;
+  }
 }
 
 .horiz-line {
@@ -105,7 +105,7 @@ img {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
 
-  border-right:8px solid blue;
+  border-right: 8px solid blue;
 }
 
 /* Clearfix */

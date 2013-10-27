@@ -2,22 +2,7 @@ require 'erector'
 require "contents"
 require "site_index"
 require 'erector_scss'
-
-class InstallfestExternalRenderer < ExternalRenderer
-  # render <style> tags plainly, without "text/css" (which browsers will assume by default)
-  #   or the xml:space attribute (not allowed or required in html5)
-  def inline_styles
-    rendered_externals(:style).each do |external|
-      style(external.options) { rawtext external.text }
-    end
-
-    if Object.const_defined?(:Sass)
-      rendered_externals(:scss).each do |external|
-        style(external.options) { rawtext Sass.compile(external.text) }
-      end
-    end
-  end
-end
+require_relative 'docs_external_renderer'
 
 class DocPage < Erector::Widgets::Page
   needs :site_name, :doc_title, :doc_path, :page_name
@@ -32,10 +17,10 @@ class DocPage < Erector::Widgets::Page
     File.expand_path "#{here}/../public/css"
   end
 
-  # wire up the InstallfestExternalRenderer
+  # wire up the DocsExternalRenderer
   def included_head_content
     included_widgets = [self.class] + output.widgets.to_a + extra_widgets
-    InstallfestExternalRenderer.new(:classes => included_widgets).to_html
+    DocsExternalRenderer.new(:classes => included_widgets).to_html
   end
 
   def doctype
@@ -63,6 +48,7 @@ class DocPage < Erector::Widgets::Page
 
   external :style, scss(File.read("#{css_path}/header.scss"))
   external :style, scss(File.read("#{css_path}/toc.scss"))
+  external :style, scss(File.read("#{css_path}/doc_page.scss"))
 
   # this is how to load the Open Sans font when we know we're online
   # external :style,  <<-CSS
@@ -74,7 +60,6 @@ class DocPage < Erector::Widgets::Page
   @import url(/fonts/opensans.css);
   @import url(/fonts/aleo.css);
   @import url(/css/coderay.css);
-  @import url(/css/doc_page.css);
   CSS
 
   class TopLink < Erector::Widget
