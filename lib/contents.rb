@@ -50,9 +50,7 @@ class Contents < Erector::Widget
   end
 
   def next_step_for filename
-    puts "#{site_dir}/#{filename}"
     content = open("#{site_dir}/#{filename}").read()
-    puts content
 
     # (stepfiles) links of the form: stepfile "next page"
     content.scan /next_step|siguiente_paso\s*["'](.*?)["']/ do |link, _|
