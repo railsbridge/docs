@@ -97,6 +97,17 @@ class Step < Erector::Widget
     end
   end
 
+  def spanish_link name
+    p :class => "link" do
+      text "Ir a "
+      # todo: extract StepFile with unified name/title/path routines
+      require 'uri'
+      hash = URI.escape '#'
+      href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
+      a as_title(name), :href => href, :class => 'link'
+    end
+  end
+
   def link_without_toc name
     link name
   end
@@ -107,6 +118,15 @@ class Step < Erector::Widget
         prefix "Next Step:"
       end
       link name
+    end
+  end
+
+  def siguiente_paso name
+    div :class => "step next_step" do
+      h1 do
+        prefix "Siguiente Paso:"
+      end
+      spanish_link name
     end
   end
 

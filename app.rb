@@ -181,6 +181,19 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     render_page
   end
 
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
+  get "/:site/:name/:section" do
+    if params[:site] == "es"
+      params[:site] = "es/#{params[:name]}"
+      params[:name] = params[:section]
+    end
+    render_page
+  end
+
   get "/:file.:ext" do
     # treat root URLs with dots in them like static assets and serve them
     #   from the downstream file server (coderay.css, jquery-1.7.2.js)
