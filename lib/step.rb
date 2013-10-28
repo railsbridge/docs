@@ -88,7 +88,7 @@ class Step < Erector::Widget
     end
   end
 
-  def paso name = nil, options = {}
+  def spanish_step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     a(:name => options[:anchor_name]) if options[:anchor_name]
@@ -137,7 +137,7 @@ class Step < Erector::Widget
     end
   end
 
-  def siguiente_paso name
+  def next_spanish_step name
     div :class => "step next_step" do
       h1 do
         prefix "Siguiente Paso:"
@@ -194,7 +194,7 @@ class Step < Erector::Widget
     end
   end
 
-  def metas
+  def spanish_goals
     div :class => "goals" do
       h1 "Metas"
       ul do
@@ -287,7 +287,7 @@ class Step < Erector::Widget
     end
   end
 
-  def leer_mas
+  def spanish_further_reading
     div :class => "further-reading" do
       h1 "Leer más"
       blockquote do
