@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'erector'
 require 'big_checkbox'
 require 'erector_scss'
@@ -54,6 +55,7 @@ class Step < Erector::Widget
   @@header_sections = {
     steps:"Steps",
     explanation:"Explanation",
+    explicacion:"Explicación",
     overview:"Overview",
     discussion:"Discussion Items",
     hints:"Hints",
@@ -178,7 +180,17 @@ class Step < Erector::Widget
     end
   end
 
+  def metas
+    div :class => "goals" do
+      h1 "Metas"
+      ul do
+        yield
+      end
+    end
+  end
+
   alias_method :goal, :li
+  alias_method :meta, :li
 
   ## message
 
@@ -248,6 +260,15 @@ class Step < Erector::Widget
   def further_reading
     div :class => "further-reading" do
       h1 "Further Reading"
+      blockquote do
+        yield
+      end
+    end
+  end
+
+  def leer_mas
+    div :class => "further-reading" do
+      h1 "Leer más"
       blockquote do
         yield
       end
