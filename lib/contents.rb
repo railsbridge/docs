@@ -38,22 +38,24 @@ class Contents < Erector::Widget
     content.scan /\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
       next if (link =~ /(jpg|png)$/)
-      links.push(link) if !links.include? link
+      links.push(link) unless links.include? link
     end
 
     # (stepfiles) links of the form: link "next page"
     content.scan /link\s*["'](.*?)["']/ do |link, _|
-      links.push(link) if !links.include? link
+      links.push(link) unless links.include? link
     end
 
     links
   end
 
   def next_step_for filename
+    puts "#{site_dir}/#{filename}"
     content = open("#{site_dir}/#{filename}").read()
+    puts content
 
     # (stepfiles) links of the form: stepfile "next page"
-    content.scan /next_step\s*["'](.*?)["']/ do |link, _|
+    content.scan /next_step|siguiente_paso\s*["'](.*?)["']/ do |link, _|
       return link
     end
 
