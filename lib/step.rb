@@ -86,6 +86,20 @@ class Step < Erector::Widget
     end
   end
 
+  def paso name = nil, options = {}
+    num = next_step_number
+    a(:name => "step#{current_anchor_num}")
+    a(:name => options[:anchor_name]) if options[:anchor_name]
+    div :class => "step", :title => name do
+      h1 do
+        widget BigCheckbox
+        prefix "Paso #{num}" + (!name.nil? ? ': ' : '')
+        text name
+      end
+      _render_inner_content &Proc.new if block_given?
+    end
+  end
+
   def link name
     p :class => "link" do
       text "Go on to "
@@ -229,6 +243,13 @@ class Step < Erector::Widget
 
   def console_without_message(commands)
     console_with_message("", commands)
+  end
+
+  def spanish_console(commands)
+    div :class => "console" do
+      span "Escribe en la terminal:"
+      pre commands
+    end
   end
 
   def irb msg
