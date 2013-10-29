@@ -42,7 +42,7 @@ class Contents < Erector::Widget
     end
 
     # (stepfiles) links of the form: link "next page"
-    content.scan /link|spanish_link\s*["'](.*?)["']/ do |link, _|
+    content.scan /link\s*["'](.*?)["']/ do |link, _|
       links.push(link) unless links.include? link
     end
 
