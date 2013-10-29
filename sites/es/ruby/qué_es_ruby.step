@@ -1,4 +1,4 @@
-metas do
+spanish_goals do
   meta "Discutir que es un lenguaje de programación"
   meta "Discutir algunas de las características del lenguaje Ruby"
 end
@@ -12,8 +12,8 @@ explicacion do
   message 'La popularidad de Ruby se elevó con la invención del framework **Ruby on Rails**, pero Ruby es útil para muchas más cosas que sólo websites.'
 end
 
-leer_mas do
+spanish_further_reading do
   message 'https://es.wikipedia.org/wiki/Ruby'
 end
 
-siguiente_paso "linea_de_comandos"
+next_spanish_step "linea_de_comandos"
