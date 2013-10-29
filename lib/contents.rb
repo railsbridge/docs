@@ -42,7 +42,7 @@ class Contents < Erector::Widget
     end
 
     # (stepfiles) links of the form: link "next page"
-    content.scan /link\s*["'](.*?)["']/ do |link, _|
+    content.scan /(link|spanish_link)\s*["'](.*?)["']/ do |method, link|
       links.push(link) unless links.include? link
     end
 
@@ -53,11 +53,16 @@ class Contents < Erector::Widget
     content = open("#{site_dir}/#{filename}").read()
 
     # (stepfiles) links of the form: stepfile "next page"
+<<<<<<< Updated upstream
     content.scan /next_step\s*["'](.*?)["']/ do |link, _|
       return link
     end
     content.scan /next_spanish_step\s*["'](.*?)["']/ do |link, _|
       return link
+=======
+    content.scan /(next_step|next_spanish_step)\s*["'](.*?)["']/ do |method, link|
+      return link 
+>>>>>>> Stashed changes
     end
 
     return nil
