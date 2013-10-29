@@ -1,8 +1,8 @@
 spanish_goals do
-  meta "Aprender sobre la línea de comandos"
-  meta "Hacer un nuevo directorio"
-  meta "Buscar algunos directorios en tu computadora"
-  meta do
+  goal "Aprender sobre la línea de comandos"
+  goal "Hacer un nuevo directorio"
+  goal "Buscar algunos directorios en tu computadora"
+  goal do
     rawtext md2html("Aprender los comandos `pwd`, `mkdir`, `ls`, `cd` and `man`")
   end
 end
