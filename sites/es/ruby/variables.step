@@ -12,7 +12,7 @@ spanish_step do
   spanish_irb 'mi_variable = 5'
   message 'Ésto crea una variable nueva llamada mi_variable y guarda el valor 5 en ella.'
   spanish_irb 'otra_variable = "hola"'
-  message 'Ésto crea otra variable y cuarda el valor "hola" en el'
+  message 'Ésto crea otra variable y guarda el valor "hola" en él'
 end
 
 spanish_step do
