@@ -1,0 +1,60 @@
+spanish_goals do
+  goal "Guardar datos en variables"
+  goal "Reemplazar datos en una variable existente"
+end
+
+spanish_step do
+  message 'Inicia irb de nuevo'
+  spanish_console 'irb'
+end
+
+spanish_step do
+  spanish_irb 'mi_variable = 5'
+  message 'Ésto crea una variable nueva llamada mi_variable y guarda el valor 5 en ella.'
+  spanish_irb 'otra_variable = "hola"'
+  message 'Ésto crea otra variable y cuarda el valor "hola" en el'
+end
+
+spanish_step do
+  spanish_irb 'mi_variable = 10'
+  message 'Ésto reasigna mi_variable, la cual ya existe, a 10.'
+end
+
+spanish_step do
+  spanish_irb <<-IRB
+    manzanas = 5
+    platanos = 10 + 5
+    frutas = 2 + manzanas + platanos
+    platanos = frutas - manzanas
+  IRB
+  message 'Las variables se asignan usando un signo igual sencillo (=).'
+  message 'El lado derecho del signo igual es evaluado primero, después el valor es asignado a la variable nombrada en el lado izquierdo del signo igual.'
+end
+
+spanish_step do
+        message <<-VARIABLE_NAMES
+Trata haciendo variables con los siguientes tipos de nombres en irb:
+
+* todas las letras (como 'carpetas')
+
+* todos los números (como '2000')
+
+* un guión bajo (como 'primer_nombre')
+
+* un guión medio (como 'apellido-paterno')
+
+* un número donde sea (como 'y2k')
+
+* un número al principio (como '101dalmatas')
+
+* un número al final (como 'starwars2')
+
+¿Cuáles funcionaron? ¿Cuáles no?
+  VARIABLE_NAMES
+end
+
+explicacion do
+  message "Las variables te permiten guardar datos así que después te puedes referir a ellos por el nombre. Los datos que guardas en variables permanecerán mientras tu programa se esté ejecutando."
+end
+
+next_spanish_step "strings"
