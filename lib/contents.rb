@@ -42,7 +42,7 @@ class Contents < Erector::Widget
     end
 
     # (stepfiles) links of the form: link "next page"
-    content.scan /link|spanish_link\s*["'](.*?)["']/ do |link, _|
+    content.scan /link\s*["'](.*?)["']/ do |link, _|
       links.push(link) unless links.include? link
     end
 
@@ -53,7 +53,10 @@ class Contents < Erector::Widget
     content = open("#{site_dir}/#{filename}").read()
 
     # (stepfiles) links of the form: stepfile "next page"
-    content.scan /next_step|next_spanish_step\s*["'](.*?)["']/ do |link, _|
+    content.scan /next_step\s*["'](.*?)["']/ do |link, _|
+      return link
+    end
+    content.scan /next_spanish_step\s*["'](.*?)["']/ do |link, _|
       return link
     end
 
@@ -153,6 +156,7 @@ class Contents < Erector::Widget
     ul do
       toc_items.each do |toc_item|
         if toc_item.instance_of? Array
+          puts toc_item
           toc_link toc_item.first do
             toc_list toc_item[1..toc_item.length]
           end
