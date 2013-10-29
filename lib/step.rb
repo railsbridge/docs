@@ -270,6 +270,13 @@ class Step < Erector::Widget
     end
   end
 
+  def spanish_irb msg
+    div :class => "console" do
+      span "Escribe en irb:"
+      pre msg
+    end
+  end
+
   def type_in_file filename, msg
     div do
       span "Type this in the file #{filename}:"
