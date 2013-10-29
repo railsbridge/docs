@@ -23,6 +23,18 @@ describe Contents do
     end
   end
 
+  describe 'capitalization' do
+    before do
+      docs_toc = Contents.new(site_name: 'installfest', site_dir: "#{real_sites_dir}/installfest", page_name: 'installfest')
+      @toc_html = Nokogiri.parse(docs_toc.to_html)
+    end
+
+    it 'capitalizes OS X' do
+      links = @toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
+      links['OS X Lion'].should == '/installfest/osx_lion'
+    end
+  end
+
   it "scans for subpage links" do
     @meals_toc.subpages.should == {
       "breakfast"=>[],

@@ -1,3 +1,4 @@
+require_relative '../lib/titleizer'
 
 class Contents < Erector::Widget
   attr_accessor :site_dir
@@ -137,7 +138,7 @@ class Contents < Erector::Widget
   end
 
   def toc_link page
-    link_text = page.sub(%r{^/}, '').split(/[-_]/).map{|s|s.capitalize}.join(' ')
+    link_text = Titleizer.title_for_page(page.sub(%r{^/}, ''))
     path = page.start_with?('/') ? page : "/#{@site_name}/" + page
     li do
       if page == page_name

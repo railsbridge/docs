@@ -16,6 +16,7 @@ require "media_wiki_page"
 require "raw_page"
 require "deck"
 require "deck/rack_app"
+require "titleizer"
 
 class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead?
   include Erector::Mixin
@@ -92,7 +93,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
       options = {
           site_name: params[:site],
           page_name: params[:name],
-          doc_title: title_for_page(params[:name]),
+          doc_title: Titleizer.title_for_page(params[:name]),
           doc_path: doc_path,
           back: params[:back],
           src: src,
