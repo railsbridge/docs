@@ -204,7 +204,6 @@ class Step < Erector::Widget
   end
 
   alias_method :goal, :li
-  alias_method :meta, :li
 
   ## message
 
@@ -267,6 +266,13 @@ class Step < Erector::Widget
   def irb msg
     div :class => "console" do
       span IRB_CAPTION
+      pre msg
+    end
+  end
+
+  def spanish_irb msg
+    div :class => "console" do
+      span "Escribe en irb:"
       pre msg
     end
   end
