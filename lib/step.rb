@@ -204,7 +204,6 @@ class Step < Erector::Widget
   end
 
   alias_method :goal, :li
-  alias_method :meta, :li
 
   ## message
 

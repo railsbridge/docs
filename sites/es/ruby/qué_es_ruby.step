@@ -1,6 +1,6 @@
 spanish_goals do
-  meta "Discutir que es un lenguaje de programación"
-  meta "Discutir algunas de las características del lenguaje Ruby"
+  goal "Discutir que es un lenguaje de programación"
+  goal "Discutir algunas de las características del lenguaje Ruby"
 end
 
 explicacion do
