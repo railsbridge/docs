@@ -153,7 +153,6 @@ class Contents < Erector::Widget
     ul do
       toc_items.each do |toc_item|
         if toc_item.instance_of? Array
-          puts toc_item
           toc_link toc_item.first do
             toc_list toc_item[1..toc_item.length]
           end
