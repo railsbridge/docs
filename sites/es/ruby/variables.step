@@ -22,10 +22,10 @@ end
 
 spanish_step do
   spanish_irb <<-IRB
-    manzanas = 5
-    platanos = 10 + 5
-    frutas = 2 + manzanas + platanos
-    platanos = frutas - manzanas
+manzanas = 5
+platanos = 10 + 5
+frutas = 2 + manzanas + platanos
+platanos = frutas - manzanas
   IRB
   message 'Las variables se asignan usando un signo igual sencillo (=).'
   message 'El lado derecho del signo igual es evaluado primero, después el valor es asignado a la variable nombrada en el lado izquierdo del signo igual.'
