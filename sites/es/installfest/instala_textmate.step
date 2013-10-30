@@ -1,6 +1,6 @@
 message <<-MARKDOWN
 
-Sublime Text 2 no es compatible con versiones de OS X menores que 10.6, por lo que usaremos Textmate (que aun es muy utilizado por programadores de Rails), eres libre de usar un editor diferente si lo prefieres. Este debe ser un editor de texto plano.
+Sublime Text 2 no es compatible con versiones de OS X menores que 10.6 por lo que usaremos Textmate (que aún es muy utilizado por programadores de Rails), eres libre de usar un editor diferente si lo prefieres. Éste debe ser un editor de texto plano.
 
 MARKDOWN
 
@@ -10,12 +10,11 @@ step "Descarga Textmate 1.5.11" do
   message "Descarga el instalador de [Textmate] (http://archive.textmate.org/TextMate_1.5.11_r1635.zip)."
 end
 
-step 'Seleccionar  "Abrir con Archive Utility" en el díalogo de guardar' do
-  message "Este debería ser el de default."
-
+step 'Seleccionar "Abrir con Archive Utility" en el dialogo de guardar' do
+  message "Éste debería ser el de default."
   message "Extraerá del archivo zip la aplicación Textmate adentro de tu carpeta de descargas."
 end
 
-step "Tira la aplicacion de Textmate en tu carpeta de aplicaciones." do
-  message "Tira la aplicacion de Textmate en tu carpeta de aplicaciones."
+step "Arrastra la aplicación de Textmate en tu carpeta de aplicaciones." do
+  message "Arrastra la aplicación de Textmate en tu carpeta de aplicaciones."
 end
