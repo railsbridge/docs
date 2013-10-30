@@ -1,15 +1,15 @@
 message <<-MARKDOWN
-RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](http://rvm.beginrescueend.com/rvm/install/) are available here, but this should work for you:
+RVM por sus siglas en inglés de Ruby Version Manager (Controlador de Versiones de Ruby) y es la forma mas fácil de instalar y gestionar Ruby. Las [instrucciones oficiales de instalción de RVM](http://rvm.beginrescueend.com/rvm/install/) estan disponibles aquí, pero esto debería de funcionar para ti:
 MARKDOWN
 
-step "Install RVM" do
+step "Instalar RVM" do
   console "curl -L get.rvm.io | bash -s stable"
-  message "This will do some stuff and print a long message which you can ignore."  
+  message "Esto hará algunas cosas e imprimirá un mensaje largo el cual puedes ignorar"
 end
 
-step "Configure your shell" do
+step "Configura tu shell" do
 
-  message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
+  message "Cada vez que abres una nueva ventana de terminal, rvm se activará. Cierra tu ventana de terminal y abre una nueva."
 
   verify do
     console "type rvm | head -1"
@@ -21,14 +21,15 @@ step "Configure your shell" do
   
 end
 
-step "Install Ruby 1.9.3 using RVM" do
+step "Instala Ruby 1.9.3 usando RVM" do
   console "rvm install 1.9.3"
   
-  important "If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip."
+  important "Si obitene una página entera de instruccione, empezando con 'Ruby (and needed base gems) for your selection...', deberías presionar Q para saltar."
 
   message "This downloads and compiles Ruby, which takes a while."
+  message "Esto descarga y compila Ruby, lo cual toma un tiempo."
   
-  important "If `rvm install 1.9.3` says `autoreconf was not found in the PATH`" do
+  important "Si 'rvm install 1.9.3' dice 'autoreconf was not found in the PATH'" do
     option "Mac OS" do
       console "brew install automake"
     end
@@ -37,7 +38,7 @@ step "Install Ruby 1.9.3 using RVM" do
       console "sudo apt-get install automake"
     end
 
-    message "Once that completes, retry `rvm install 1.9.3`"
+    message "Una vez que se complete, intenta 'rvm install 1.9.3'"
   end  
 
   console <<-BASH
