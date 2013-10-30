@@ -2,7 +2,8 @@ require 'erector'
 require "contents"
 require "site_index"
 require 'erector_scss'
-require_relative 'docs_external_renderer'
+require 'titleizer'
+require 'docs_external_renderer'
 
 class DocPage < Erector::Widgets::Page
   needs :site_name, :doc_title, :doc_path, :page_name
@@ -127,7 +128,7 @@ class DocPage < Erector::Widgets::Page
         div.back {
           text "Back to "
           a(class: "back", href: @back) do
-            text @back.split('#').first #todo: titleize etc, use real doc object
+            text Titleizer.title_for_page(@back.split('#').first)
           end
         }
       end

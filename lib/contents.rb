@@ -1,4 +1,4 @@
-require_relative '../lib/titleizer'
+require 'titleizer'
 
 class Contents < Erector::Widget
   attr_accessor :site_dir

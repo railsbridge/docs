@@ -158,12 +158,6 @@ Here Docs are especially useful with `message`s since you can just dump in markd
 
   * like a message, but called out in a red box
 
-`todo "text"`
-
-  * meant as a note to future authors
-  * set aside from surrounding text (in brackets and italics)
-  * [should these be made invisible for students?]
-  
 ## special
 
 Special elements do *not* format their text as Markdown.

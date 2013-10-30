@@ -2,6 +2,7 @@ require 'erector'
 require 'big_checkbox'
 require 'erector_scss'
 require 'markdown_renderer'
+require 'titleizer'
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -20,10 +21,6 @@ class Step < Erector::Widget
   def next_step_number
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
-  end
-
-  def as_title name
-    name.to_s.split('_').map{|s| s.capitalize}.join(' ')
   end
 
   def prefix s
@@ -90,11 +87,10 @@ class Step < Erector::Widget
   def link name
     p :class => "link" do
       text "Go on to "
-      # todo: extract StepFile with unified name/title/path routines
       require 'uri'
       hash = URI.escape '#'
       href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
-      a as_title(name), :href => href, :class => 'link'
+      a Titleizer.title_for_page(name), :href => href, :class => 'link'
     end
   end
 
@@ -124,7 +120,7 @@ class Step < Erector::Widget
 
   def option name
     num = next_step_number
-    a(:name => "step#{current_anchor_num}")  # todo: test
+    a(:name => "step#{current_anchor_num}")
     h1 do
       span "Option #{num}: "
       text name
@@ -178,16 +174,6 @@ class Step < Erector::Widget
 
   def tip text = nil, &block
     message text, class: "tip", icon: "info", &block
-  end
-
-  def todo todo_text
-    message nil, class: "todo" do
-      span do
-        text "[TODO: "
-        text todo_text
-        text "]"
-      end
-    end
   end
 
   ## special
