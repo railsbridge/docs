@@ -12,9 +12,9 @@ Son parte de OS X, pero no estan instalados por default.
 
 * Inserta tu DVD de OS X
 
-* Busca Xcode.mkpg - quizas esta en "Instalaciones opcionales"
+* Busca Xcode.mkpg - quizás está en "Instalaciones opcionales"
 
-* Haz doble click para correr el instalador. Tomara un tiempo - las herramientas de XCode estan grandes.
+* Haz doble click para correr el instalador. Tomará un tiempo - las herramientas de XCode están grandes.
 
   MARKDOWN
 end
@@ -24,19 +24,19 @@ step "Git " do
   option "Leopard o Panther" do
     url "http://code.google.com/p/git-osx-installer/"
 
-    message %q{Da click en "Descarga los paquetes aqui" el cual te llevara a la lista de descargas. Escoje intel si tienes una Mac Intel y Universal Binary si tienes una PowerPC Mac.}
+    message %q{Da click en "Download the packages here" el cual te llevará a la lista de descargas. Escoje intel si tienes una Mac Intel y Universal Binary si tienes una PowerPC Mac.}
 
     message <<-MESSAGE, class: "pertinent-info"
 
-### Tienes una Mac Intel o PowerPC?
+### ¿Tienes una Mac Intel o PowerPC?
 
-Mac PowerPC (PPC) son la linea vieja de Apple con chips de Motorola. Las Macs compradas desde el 2006 casi todas son de Intel. Para asegurarnos a cual pertenece nuestra Mac:
+Mac PowerPC (PPC) son la línea vieja de Apple con chips de Motorola. Las Macs compradas desde el 2006 casi todas son de Intel. Para asegurarnos a cual pertenece nuestra Mac:
 
-* Da click en el menu de Apple en la esquina superior izquierda de tu pantalla.
+* Da click en el menú de Apple en la esquina superior izquierda de tu pantalla.
 * Selecciona "Acerca de esta Mac".
-* Deberia de tener una linea que comenzara con "Procesador". Si en algun lugar de esa linea dice "Intel", entonces tiene una Mac Intel. De otra forma, tiene una PowerPC. 
+* Debería de tener una línea que comenzara con "Procesador". Si en algún lugar de esa línea dice "Intel", entonces tienes una Mac Intel. De otra forma, tienes una PowerPC. 
 
-Para mas informacion, visita [Apple Transition Timeline](http://en.wikipedia.org/wiki/Apple%E2%80%93Intel_transition#Timeline) o [exhaustive list of Macintosh models](http://en.wikipedia.org/wiki/Timeline_of_Macintosh_models#2000s) en Wikipedia.
+Para más información, visita [Apple Transition Timeline](http://en.wikipedia.org/wiki/Apple%E2%80%93Intel_transition#Timeline) o [exhaustive list of Macintosh models](http://en.wikipedia.org/wiki/Timeline_of_Macintosh_models#2000s) en Wikipedia.
     MESSAGE
   end
 
@@ -51,12 +51,12 @@ step "Ruby, RubyGems, y Rails " do
 
   option "Tiger (10.4) y Panther (10.3)" do
     message "visita <http://rubyosx.rubyforge.org/>"
-    message "Selecciona la descarga correcta en lado derecho de la pagina" 
+    message "Selecciona la descarga correcta en el lado derecho de la página" 
   end
 
   option "Leopard (10.5)" do
     message "usa la version built-in de Ruby"
-    important "Cuando instales una gema usando el built-in de Ruby deberias preceder 'gem install' con 'sudo'"
+    important "Cuando instales una gema usando el built-in de Ruby deberías preceder 'gem install' con 'sudo'"
   end
   console <<-BASH
 sudo gem install rubygems-update
