@@ -27,7 +27,7 @@ end
 
 step "Create an SSH key" do
   option "On OS X or Linux" do 
-    link "create_an_ssh_key"
+    spanish_link "crea_una_key_ssh"
   end
   option "On Windows" do
     message "RailsInstaller created a key for you. Go on to the next step!"
@@ -40,4 +40,4 @@ step "Add your SSH key to your Heroku account" do
   message "hit enter to accept the default key file to use"
 end
 
-next_step "create_and_deploy_a_rails_app"
+next_spanish_step "crea_y_deploya_una_rails_app"
