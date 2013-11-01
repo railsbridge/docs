@@ -3,7 +3,7 @@ RVM por sus siglas en inglés de Ruby Version Manager (Controlador de Versiones 
 MARKDOWN
 
 step "Instalar RVM" do
-  console "curl -L get.rvm.io | bash -s stable"
+  spanish_console "curl -L get.rvm.io | bash -s stable"
   message "Esto hará algunas cosas e imprimirá un mensaje largo el cual puedes ignorar"
 end
 
@@ -12,42 +12,41 @@ step "Configura tu shell" do
   message "Cada vez que abres una nueva ventana de terminal, rvm se activará. Cierra tu ventana de terminal y abre una nueva."
 
   verify do
-    console "type rvm | head -1"
+    spanish_console "type rvm | head -1"
     result "rvm is a function"
 
-    console "rvm -v"
+    spanish_console "rvm -v"
     fuzzy_result "rvm 1{FUZZY}.x.x (stable) by Wayne E. Seguin (wayneeseguin@gmail.com), Michal Papis <mpapis@gmail.com> [https://rvm.beginrescueend.com/]{/FUZZY}"
   end
   
 end
 
 step "Instala Ruby 1.9.3 usando RVM" do
-  console "rvm install 1.9.3"
+  spanish_console "rvm install 1.9.3"
   
-  important "Si obitene una página entera de instruccione, empezando con 'Ruby (and needed base gems) for your selection...', deberías presionar Q para saltar."
+  important "Si obitenes una página entera de instrucciones, empezando con 'Ruby (and needed base gems) for your selection...', deberías presionar Q para saltar."
 
-  message "This downloads and compiles Ruby, which takes a while."
   message "Esto descarga y compila Ruby, lo cual toma un tiempo."
   
   important "Si 'rvm install 1.9.3' dice 'autoreconf was not found in the PATH'" do
     option "Mac OS" do
-      console "brew install automake"
+      spanish_console "brew install automake"
     end
 
     option "Ubuntu Linux" do
-      console "sudo apt-get install automake"
+      spanish_console "sudo apt-get install automake"
     end
 
     message "Una vez que se complete, intenta 'rvm install 1.9.3'"
   end  
 
-  console <<-BASH
+  spanish_console <<-BASH
 rvm use 1.9.3
 rvm --default use 1.9.3
   BASH
 
   verify do
-    console "ruby -v"
+    spanish_console "ruby -v"
     fuzzy_result "ruby 1.9.3{FUZZY}p125 (2012-02-16 revision 34643) [x86_64-darwin11.4.0]{/FUZZY}"
   end
 end
