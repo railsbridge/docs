@@ -8,7 +8,7 @@ spanish_goals do
 end
 
 spanish_step do
-  message 'Abre una aplicación de línea de comandos en tu computadora. En Macs, éste programa es llamado Terminal. En Windows, es posible que quieras usar el acceso directo a la "Línea de Comandos con Ruby y Rails" que viene con el RailsInstaller.'
+  message 'Abre una aplicación de línea de comandos en tu computadora. En Macs, éste programa es llamado Terminal. En Windows, es posible que quieras usar el acceso directo a "Command Prompt With Ruby and Rails" que viene con el RailsInstaller.'
   spanish_console "pwd"
   message '`pwd` significa "print working directory" (imprime directorio de trabajo). Ésto te muestra el **directorio** en el que estás trabajando actualmente. Los directorios son también comúnmente llamados **carpetas**.'
   message '`pwd` puede ayudar orientándote en la línea de comandos por si te pierdes en alguna parte de tu computadora.'
