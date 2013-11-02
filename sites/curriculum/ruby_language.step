@@ -94,7 +94,7 @@ fruits.each do |fruit|
   puts fruit
 end
     RUBY
-    message "This takes the first item from the `fruits` array (`\"kiwi\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
+    message "This takes the first item from the `fruits` array (`\"strawberry\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
   end
 
   step do
