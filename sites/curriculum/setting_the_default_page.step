@@ -13,16 +13,16 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open the `config/routes.rb` files in an editor. Search the file for 'root', it should be near the top if you are using Rails 4. Uncomment the line that contains the example command by removing the # sign in front of it and change it to read `root 'topics#index'`. When you are done the line should look like this:"
-
-    message "(Rails 3.x users should add `root to: 'topics#index'` and will need to remove their `public/index.html` file)."
-
-  end
+    message "Open the file `config/routes.rb` in an editor. Search the file for 'root', it should be near the top if you are using Rails 4. Uncomment the line that contains the example command by removing the # sign in front of it and change it to read `root 'topics#index'`. When you are done the line should look like this:"
 
     source_code :ruby, <<-RUBY
 root 'topics#index'
     RUBY
 
+    em do
+      message "(Rails 3.x users should add `root to: 'topics#index'` and will need to remove their `public/index.html` file)."
+    end
+  end
 
   step "Confirm your changes" do
     message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
