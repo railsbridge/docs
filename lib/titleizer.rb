@@ -1,15 +1,25 @@
 module Titleizer
   def self.title_for_page page_name
-    abbrevs = {
+    to_be_upcased = [
+      'rvm',
+      'ssh',
+      'dvd',
+      'crud'
+    ]
+
+    special_cases = {
       'osx' => 'OS X',
-      'rvm' => 'RVM',
-      'ssh' => 'SSH',
-      'dvd' => 'DVD',
-      'irb' => 'irb'
+      'irb' => 'irb',
     }
 
     page_name.split(/[-_]/).map do |w|
-      abbrevs.keys.include?(w) ? abbrevs[w] : w.capitalize
+      if to_be_upcased.include?(w.downcase)
+        w.upcase
+      elsif special_cases.include?(w)
+        special_cases[w]
+      else
+        w.capitalize
+      end
     end.join(' ')
   end
 end
