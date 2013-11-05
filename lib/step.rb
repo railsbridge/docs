@@ -284,6 +284,13 @@ class Step < Erector::Widget
     end
   end
 
+  def spanish_type_in_file filename, msg
+    div do
+      span "Escribe en el archivo #{filename}:"
+      source_code :ruby, msg
+    end
+  end
+
   def further_reading
     div :class => "further-reading" do
       h1 "Further Reading"
