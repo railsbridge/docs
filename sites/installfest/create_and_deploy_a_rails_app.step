@@ -90,7 +90,7 @@ rails server
 
   message "Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)"
 
-  message "In your Terminal window where you ran `rails server`, type Control-C (or Control-Break,Y) to kill(stop) the server."
+  message "In your Terminal window where you ran `rails server`, type **Control-C** (or Control-Break,Y) to kill(stop) the server."
 
 end
 
