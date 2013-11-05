@@ -309,6 +309,13 @@ class Step < Erector::Widget
     end
   end
 
+  def spanish_result text
+    div :class => "result" do
+      span "Resultado esperado:"
+      pre text
+    end
+  end
+
   def fuzzy_result fuzzed_text
     div :class => "result fuzzy-result" do
       span FUZZY_RESULT_CAPTION
