@@ -65,7 +65,7 @@ explicacion do
   table class: 'bordered' do
     tr do
       td 'length'
-      td 'qué tan grande es éste arreglo (cuántos elementos)'
+      td '¿qué tan grande es éste arreglo? (cuántos elementos)'
     end
     tr do
       td 'first'
