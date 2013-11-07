@@ -19,7 +19,7 @@ cosas.length
 arreglo_vacio = []
 arreglo_vacio.length
   IRB
-  message 'El tipo de arreglo más simple es el arreglo vacio.'
+  message 'El tipo de arreglo más simple es el arreglo vacío.'
 end
 
 spanish_step do
