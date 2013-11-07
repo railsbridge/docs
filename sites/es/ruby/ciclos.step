@@ -1,5 +1,5 @@
 spanish_goals do
-  goal "Usar ciclos para hacer operaciones para cada elemento de un arreglo."
+  goal "Usar ciclos para hacer operaciones por cada elemento de un arreglo."
   goal do
     rawtext(md2html("Usar `puts` para imprimir cadenas en la pantalla."))
   end
@@ -27,7 +27,7 @@ frutas = ['durazno', 'ciruela', 'pera']
 frutas.each { |fruta| puts fruta }
   IRB
   message 'La línea vertical `|` es llamada \'caracter pipe\', y es típicamente una versión cambiada de la `\` (diagonal invertida) en tu teclado. '
-  message 'Los ciclos son una manera de hacer algo múltiples veces. En éste ciclo, imprimimos cada fruta en la pantalla.'
+  message 'Los ciclos son una manera de hacer algo varias veces. En éste ciclo, imprimimos cada fruta en la pantalla.'
 end
 
 spanish_step do
@@ -36,13 +36,13 @@ numeros = [109, 10, 1001]
 numeros.each { |n| puts n * 2 }
   IRB
   message 'Las llaves aquí definen un **bloque**, y lo que sea que está entre los pipes es una **variable de bloque**.'
-  message '`each` toma el primer elemento en el arreglo y lo envia al bloque, el cual temporalmente lo guarda en la **variable de bloque** y luego ejecuta el código después de los pipes. Luego regresa y hace esto de nuevo para cada uno de los elementos.'
+  message '`each` toma el primer elemento en el arreglo y lo envia al bloque, el cual temporalmente se guarda en la **variable de bloque**, luego ejecuta el código que se encuentra después de los pipes. Regresa y hace esto de nuevo por cada uno de los elementos.'
   spanish_irb <<-'IRB'
 patos = ['hugo', 'paco', 'luis']
-patos.each { |pato| puts "#{pato} cuac!" }
-patos.each { |zombie| puts "#{zombie} cuac!" }
+patos.each { |pato| puts "¡#{pato} cuac!" }
+patos.each { |zombie| puts "¡#{zombie} cuac!" }
   IRB
-  message 'No importa cómo llames a tu variable de bloque: las dos sentencias anteriores son exactamente equivalentes para Ruby. Sin embargo deberías nombrar las variables con un nombre útil, así el código tendrá sentido para ti mas tarde! '
+  message 'No importa cómo llames a tu variable de bloque: las dos sentencias anteriores son exactamente equivalentes para Ruby. Sin embargo deberías nombrar las variables con un nombre útil, ¡así el código tendrá sentido para ti mas tarde! '
 end
 
 spanish_step do
@@ -53,11 +53,11 @@ colores.each do |color|
   puts "#{total} colores de la pintura en la pared... "
   puts "Elige un #{color}, pásalo..."
   total = total - 1
-  puts "#{total} colores de la pintura en la pared!"
+  puts "¡#{total} colores de la pintura en la pared!"
 end
     IRB
     message "El operador ** significa 'a la potencia de', como en '256 a la tercera potencia'"
-    message "Hay mas de una manera de crear un bloque en ruby. La sintaxis `do ... end` es comúnmente usada cuando un bloque necesita extenderse en multiples líneas, mientras que la sintaxis `{ ... }` es para un bloque de una sola línea."
+    message "Hay mas de una manera de crear un bloque en ruby. La sintaxis `do ... end` es comúnmente usada cuando un bloque necesita extenderse en varias líneas, mientras que la sintaxis `{ ... }` es para un bloque de una sola línea."
 end
 
 explicacion do
