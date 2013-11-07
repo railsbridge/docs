@@ -32,10 +32,10 @@ describe Step do
     steps = html_doc.css(".step")
     html = to_html(steps.first)
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
-    expected = (<<-HTML).gsub("\n", '')
-<div class="step" title="hello">
-<h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
-</div>
+    expected = strip_heredoc(<<-HTML).gsub("\n", '')
+      <div class="step" title="hello">
+      <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
+      </div>
     HTML
     assert { html == expected }
   end
@@ -56,7 +56,7 @@ describe Step do
 
   it "puts anchors in based on optional step name" do
     html_doc(<<-RUBY)
-    step "Test", {:anchor_name => 'happy_step'}
+      step "Test", {:anchor_name => 'happy_step'}
     RUBY
 
     anchors = html_doc.css("a")
@@ -66,18 +66,18 @@ describe Step do
 
   it "nests anchor numbers" do
     html_doc(<<-RUBY)
-    step "breakfast" do
-      step "cereal"
-      step "eggs"
-    end
-    step "lunch" do
-      step "salad"
-      step "sandwich"
-    end
+      step "breakfast" do
+        step "cereal"
+        step "eggs"
+      end
+      step "lunch" do
+        step "salad"
+        step "sandwich"
+      end
     RUBY
 
     titles = html_doc.css('.step').map{|div| div["title"]}
-    assert { titles = ["breakfast", "cereal", "eggs", "lunch", "salad", "sandwich"] }
+    assert { titles == ["breakfast", "cereal", "eggs", "lunch", "salad", "sandwich"] }
 
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
@@ -87,14 +87,14 @@ describe Step do
   describe 'link' do
     it "passes in a back parameter, so the following page can come back here" do
       html_doc(<<-RUBY)
-step "breakfast" do
-  link "choose_breakfast"
-end
-step "lunch" do
-  step "salad"
-  step "sandwich"
-end
-RUBY
+        step "breakfast" do
+          link "choose_breakfast"
+        end
+        step "lunch" do
+          step "salad"
+          step "sandwich"
+        end
+      RUBY
       a = html_doc.css(".step[title=breakfast] a.link").first
       hash = URI.escape '#'
       assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
@@ -104,14 +104,14 @@ RUBY
   describe 'source_code' do
     it "emits a block of code as a pre with class 'code'" do
       html_doc(<<-RUBY)
-      source_code "x = 2"
+        source_code "x = 2"
       RUBY
       assert { @html == "<pre class=\"code\">x = 2</pre>" }
     end
 
     it "emits a block of code with a language directive" do
-      html_doc( <<-RUBY)
-      source_code :ruby, "x = 2"
+      html_doc(<<-RUBY)
+        source_code :ruby, "x = 2"
       RUBY
       assert { @html == "<pre class=\"code\">\n:::ruby\nx = 2</pre>" }
     end
@@ -120,13 +120,13 @@ RUBY
   describe 'console' do
     it "emits a 'console' div with a 'pre' block" do
       html_doc(<<-RUBY)
-      console "echo hi"
+        console "echo hi"
       RUBY
-      assert_loosely_equal(@html, <<-HTML)
-<div class="console">
-  <span>#{Step::TERMINAL_CAPTION}</span>
-  <pre>echo hi</pre>
-</div>
+      assert_loosely_equal(@html, strip_heredoc(<<-HTML))
+        <div class="console">
+          <span>#{Step::TERMINAL_CAPTION}</span>
+          <pre>echo hi</pre>
+        </div>
       HTML
     end
   end
@@ -137,11 +137,11 @@ RUBY
       result "hi"
       RUBY
 
-      assert_loosely_equal(@html, <<-HTML)
-<div class="result">
-  <span>#{Step::RESULT_CAPTION}</span>
-  <pre>hi</pre>
-</div>
+      assert_loosely_equal(@html, strip_heredoc(<<-HTML))
+        <div class="result">
+          <span>#{Step::RESULT_CAPTION}</span>
+          <pre>hi</pre>
+        </div>
       HTML
     end
   end
@@ -152,15 +152,15 @@ RUBY
       fuzzy_result "hello {FUZZY}fuzz{/FUZZY} face! nice {FUZZY}banana{/FUZZY}\ni am more text!"
       RUBY
 
-      assert_loosely_equal(@html, <<-HTML)
-<div class="result fuzzy-result">
-  <span>#{Step::FUZZY_RESULT_CAPTION}</span>
-  <pre>
-    hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
-    i am more text!
-  </pre>
-  <div class="fuzzy-hint">The greyed-out text may differ and is not important.</div>
-</div>
+      assert_loosely_equal(@html, strip_heredoc(<<-HTML))
+        <div class="result fuzzy-result">
+          <span>#{Step::FUZZY_RESULT_CAPTION}</span>
+          <pre>
+            hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
+            i am more text!
+          </pre>
+          <div class="fuzzy-hint">The greyed-out text may differ and is not important.</div>
+        </div>
       HTML
     end
   end
