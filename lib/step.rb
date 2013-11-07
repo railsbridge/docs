@@ -196,7 +196,7 @@ class Step < Erector::Widget
 
   def spanish_goals
     div :class => "goals" do
-      h1 "Metas"
+      h1 "Objetivos"
       ul do
         yield
       end
