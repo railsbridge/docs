@@ -40,6 +40,20 @@ steps do
     message "It shows you the contents of the current folder."
   end
 
+  step do
+    message <<-MARKDOWN
+Open the suggestotron folder as a project in your text editor.
+
+In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+
+<img src='img/sublime_add_folder_to_project.png' />
+
+Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should look something like this:
+
+<img src='img/sublime_project_as_folder.png' />
+    MARKDOWN
+  end
+
   message <<-MARKDOWN
   You can see that <code>rails new</code> created a lot directories and
   files. The ones we want to focus on today are:
