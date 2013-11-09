@@ -1,0 +1,18 @@
+message <<MARKDOWN
+
+## FIN
+
+¡Buen Trabajo! Ésta es la última página. (¡Por ahora!) Esperamos que te hayas divertido aprendiendo hoy. Para continuar con tu camino de aprendizaje, echa un vistazo a alguno de los siguientes recursos.
+
+## Recursos que puedes revisar
+
+* [Mozilla Developer Network](https://developer.mozilla.org) es probablemente la más amplia fuente de documentación en front-end.
+* [DocHub](http://dochub.io/) es otro extenso recurso.
+* [A List Apart](http://www.alistapart.com/) es una revista en línea con gran cantidad de contenido en cuanto a mejores prácticas de front-end.
+* [Smashing Magazine](http://www.smashingmagazine.com/) es orientada a diseñadores web, pero frecuentemente tiene breves y útiles artículos how-to sobre CSS y Javascript.
+* [HTML5 Rocks](http://www.html5rocks.com/) es un importante sitio para estar al día con los últimos avances en las técnicas y las tecnologías front-end.
+* Algunas personas de Railsbridge se encargan del mantenimiento de un [tablero en Pinterest de recursos Front-End](http://pinterest.com/eanakashima/learn-the-front-end/)
+* Para más tips sobre como trabajar con las herramientas para desarrolladores de Chrome, echa un vistazo a esto [video intro from Paul Irish](http://paulirish.com/2011/a-re-introduction-to-the-chrome-developer-tools/)
+* [Design Resources](https://kippt.com/jessicaspacekat/design-resources) - Una lista en kippt creada por [@jessicaspacekat](https://twitter.com/jessicaspacekat) de recursos de diseño para Rails Girls.
+
+MARKDOWN
