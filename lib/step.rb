@@ -157,6 +157,15 @@ class Step < Erector::Widget
 
   alias_method :goal, :li
 
+  def site_desc site_name, description
+    h1 do
+      a href: "/#{site_name}" do
+        text site_name.gsub(/[-_]/, ' ').split.map(&:capitalize).join(' ')
+      end
+    end
+    div raw(md2html description)
+  end
+
   ## message
 
   def message text = nil, options = {}

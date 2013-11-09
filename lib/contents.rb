@@ -47,6 +47,11 @@ class Contents < Erector::Widget
       links.push(link) if !links.include? link
     end
 
+    # (stepfiles) links of the form: site_desc "some site"
+    content.scan /site_desc\s*["'](.*?)["']/ do |link, _|
+      links.push('/' + link) if !links.include? link
+    end
+
     links
   end
 
