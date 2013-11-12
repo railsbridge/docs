@@ -11,7 +11,7 @@ goals {
     model_diagram header: 'Votes', fields: %w(id topic_id), style: "float: left;"
   end
 
-  goal "Because there is an explicit relationship between a topic and its
+  message "Because there is an explicit relationship between a topic and its
   votes, we need to specify that. In this step, we'll explicitly
   declare the relationship between votes and topics."
 }

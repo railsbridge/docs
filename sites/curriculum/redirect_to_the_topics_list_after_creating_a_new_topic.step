@@ -1,12 +1,13 @@
 goals {
 
-  message "
-  When a user creates a new topic, or edits an existing topic, they are 
+  message <<-MARKDOWN
+  When a user creates a new topic, or edits an existing topic, they are
   currently shown a page with just that topic. For our voting app it makes
   more sense that they would be taken back to the topic list."
 
-  goal "In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic (create) or 
-  edit an existing topic (update)."
+  In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic (create) or
+  edit an existing topic (update).
+  MARKDOWN
 }
 
 steps {

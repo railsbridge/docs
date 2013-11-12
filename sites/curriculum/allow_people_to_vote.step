@@ -1,5 +1,5 @@
 goals {
-  goal "Now we're going to add a button people can click to cast a vote."
+  message "Now we're going to add a button people can click to cast a vote."
 }
 
 steps {

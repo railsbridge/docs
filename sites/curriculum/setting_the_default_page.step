@@ -1,13 +1,14 @@
 goals {
 
-  goal "Now that the structure is complete, let's make the flow work smoothly."
+  message <<-MARKDOWN
+  Now that the structure is complete, let's make the flow work smoothly.
 
-  message "Currently when you go to <http://localhost:3000> you see the \"Welcome
-  aboard\" message."
+  Currently when you go to <http://localhost:3000> you see the "Welcome aboard" message.
 
-  message "It would be easier to use our app if <http://localhost:3000> went directly to the topics list."
+  It would be easier to use our app if <http://localhost:3000> went directly to the topics list.
 
-  message "In this step we'll make that happen and learn a bit about routes in Rails."
+  In this step we'll make that happen and learn a bit about routes in Rails.
+  MARKDOWN
 }
 
 steps {
