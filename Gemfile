@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'activesupport'
+gem 'activesupport', '~> 3.2.0'
 gem "erector", "~>0.9.0"
 gem "sinatra"
 gem "nokogiri"
