@@ -2,11 +2,6 @@ require 'spec_helper'
 
 require "step_page"
 
-def strip_heredoc(str) # like http://apidock.com/rails/String/strip_heredoc
-  indent = str.scan(/^[ \t]*(?=\S)/).min.size || 0
-  str.gsub(/^[ \t]{#{indent}}/, '')
-end
-
 describe Step do
 
   def to_html nokogiri_node
@@ -32,7 +27,7 @@ describe Step do
     steps = html_doc.css(".step")
     html = to_html(steps.first)
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
-    expected = strip_heredoc(<<-HTML).gsub("\n", '')
+    expected = <<-HTML.strip_heredoc.gsub("\n", '')
       <div class="step" title="hello">
       <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
       </div>
@@ -122,7 +117,7 @@ describe Step do
       html_doc(<<-RUBY)
         console "echo hi"
       RUBY
-      assert_loosely_equal(@html, strip_heredoc(<<-HTML))
+      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
         <div class="console">
           <span>#{Step::TERMINAL_CAPTION}</span>
           <pre>echo hi</pre>
@@ -137,7 +132,7 @@ describe Step do
       result "hi"
       RUBY
 
-      assert_loosely_equal(@html, strip_heredoc(<<-HTML))
+      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
         <div class="result">
           <span>#{Step::RESULT_CAPTION}</span>
           <pre>hi</pre>
@@ -152,7 +147,7 @@ describe Step do
       fuzzy_result "hello {FUZZY}fuzz{/FUZZY} face! nice {FUZZY}banana{/FUZZY}\ni am more text!"
       RUBY
 
-      assert_loosely_equal(@html, strip_heredoc(<<-HTML))
+      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
         <div class="result fuzzy-result">
           <span>#{Step::FUZZY_RESULT_CAPTION}</span>
           <pre>
@@ -168,13 +163,13 @@ describe Step do
   describe 'insert' do
     it 'renders a stepfile inside another stepfile' do
       path = dir 'testing-insert' do
-        file "outer.step", strip_heredoc(<<-RUBY)
+        file "outer.step", <<-RUBY.strip_heredoc
           div 'hello'
           insert 'inner'
           insert 'inner'
           div 'goodbye'
         RUBY
-        file "_inner.step", strip_heredoc(<<-RUBY)
+        file "_inner.step", <<-RUBY.strip_heredoc
           div 'yum'
         RUBY
       end
@@ -182,7 +177,7 @@ describe Step do
       outer_path = File.join(path, 'outer.step')
       html = step_obj_for(outer_path).to_html
 
-      assert_loosely_equal html, strip_heredoc(<<-HTML)
+      assert_loosely_equal html, <<-HTML.strip_heredoc
         <div>hello</div>
         <div>yum</div>
         <div>yum</div>
@@ -192,11 +187,11 @@ describe Step do
 
     it "crafts 'back' links that go back to the containing page rather than the partial itself" do
       path = dir 'testing-insert-links' do
-        file "outer.step", strip_heredoc(<<-RUBY)
+        file "outer.step", <<-RUBY.strip_heredoc
           div 'this is the outer page'
           insert 'inner'
         RUBY
-        file "_inner.step", strip_heredoc(<<-RUBY)
+        file "_inner.step", <<-RUBY.strip_heredoc
           div 'this is the inner page'
           link 'somewhere_else'
         RUBY
