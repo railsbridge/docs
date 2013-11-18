@@ -20,7 +20,7 @@ option "si tu SO es de 32 bits" do
 end
 
 option "si tu SO es de 64 bits" do
- message "Abre el subdirectorio 'x64' de los archivos descargados, selecciona y copia todos los archivos, y pégalos dentro de C:\\Windows\\system32 (no copies el folder x64!); proporciona los permisos de admin cuando te los pregunte."
+ message "Abre el subdirectorio 'x64' de los archivos descargados, selecciona y copia todos los archivos, y pégalos dentro de C:\\Windows\\system32 (¡no copies la carpeta x64!); proporciona los permisos de admin cuando te los pregunte."
 end
 
 spanish_step "Configura los colores" do
