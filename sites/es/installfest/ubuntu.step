@@ -1,10 +1,10 @@
 message <<-MARKDOWN
-You will need sudo access in order to complete these directions (The first user account has this by default).
+Vas a necesitar accesso sudo para poder completar estas instrucciones (La primera cuenta de usuario que se crea tiene estos permisos por defecto).
 MARKDOWN
 
-step "Install packaged software and libraries" do
+step "Instalar el software y librerias empaquetados" do
   message <<-MARKDOWN
-Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and firefox icons in the top panel.
+Abre una terminal (Aplicaciones > Accessorios > Terminal). Tal vez quieras hacer click derecho en el ícono de la terminal y seleccionar "Añadir al panel" para que el ícono aparezca a un lado de la ayuda y los íconos de Firefox en el panel superior.
   MARKDOWN
 
   apts = %w{
@@ -35,45 +35,45 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
     zlib1g-dev
   }
 
-  console "sudo apt-get install #{apts.join(' ')}"
+  spanish_console "sudo apt-get install #{apts.join(' ')}"
 
 end
 
-step "Install git" do
-  console "sudo apt-get install git"
+spanish_step "Instalar git" do
+  spanish_console "sudo apt-get install git"
 
-  message "If this results in an error, you should be ok, as the prior step should have installed `git-core`"
+  message "Si esto resulta en un error, no hay problema, ya que el paso anterior pudo haber instalado previamente `git-core`"
 end
 
-step "Configure Git" do
+spanish_step "Configura Git" do
   link_without_toc "configura_git"
 end
 
-step "Install RVM" do
+spanish_step "Instala RVM" do
   important do
-    message "If you're using Ubuntu 12.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take affect."
+    message "Si estás utilizando Ubuntu 12.04 o la última versión de Mint, asegúrate de que la opción `Ejecutar el comando como un intérprete de conexión` está marcado en la pestaña Título y comando en Editando el Perfil (localizado en el menú de la Terminal). Después de cambiar estas configuraciones, vas a tener que salir de la sesión de tu consola e iniciar una nueva para que los cambios tomen efecto. "
     img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
   end
-  link "instala_rvm_y_ruby"
-  message "Restart your terminal before continuing."
+  spanish_link "instala_rvm_y_ruby"
+  message "Reinicia tu terminal antes de continuar."
 end
 
-step "Install Rails" do
-  message "Using a terminal again, execute the following command to install rails."
+spanish_step "Instalar Rails" do
+  message "De nuevo utilizando una terminal, ejecuta el siguiente comando para instalar rails."
 
-  console "gem install rails"
+  spanish_console "gem install rails"
 end
 
-step "Sublime Text 2" do
+spanish_step "Sublime Text 2" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install Sublime Text 2. It's available for [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
+Si no tienes un editor de código de preferencia, puedes instalar Sublime Text 2. Está disponible para [máquinas de 32-bits](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [máquinas de 64-bits](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
 
-Check <http://www.sublimetext.com/2> for the latest version.
+Checa <http://www.sublimetext.com/2> para ver las versiones más actuales.
 MARKDOWN
 
-  tip "How many bits?" do
-    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
+  tip "¿Cuántos bits?" do
+    message %q{Si no estás segura, posiblemente tu máquina es de 32-bits. Corre `uname -i` y observa, "x86" en el nombre del archivo significa 32-bits, y "x86_64 significa 64-bits.}
   end
 end
 
