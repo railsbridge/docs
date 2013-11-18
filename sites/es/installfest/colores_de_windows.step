@@ -1,30 +1,30 @@
-message "The Rails server logging and test results are much easier to read with colored output, but the 'Command Prompt with Ruby and Rails' defaults to white on black.  Add colors by following these steps."
+message "El log del servidor de Rails y los resultados de los tests son mucho más fácil de leer si el texto que se imprime tiene color, pero el 'Command Prompt with Ruby and Rails' por defecto es blanco y negro. Agrégale colores con los siguientes pasos:"
 
-step "Download ANSICON" do
-  message "In the browser, visit <http://ansicon.adoxa.vze.com/>"
-  message "Click the `ANSICON v1.61` link to download the file (or whatever the most recent version is)"
-  message "Double-click the downloaded file to unzip it"
+spanish_step "Descarga ANSICON" do
+  message "En el navegador, visita <http://ansicon.adoxa.vze.com/>"
+  message "Haz click en el link `ANSICON v1.61`  para descargar el archivo (o cualquiera que sea la versión más actual)"
+  message "Haz doble click en el archivo que se descargó para descomprimirlo"
 end
 
-step "Determine if you have a 32 or 64 bit Operating System" do
+spanish_step "Determina si tu Sistema Operativo es de 32 o 64 bits" do
   message <<-MARKDOWN
- * In Windows 7 or Vista, from the Start menu, type *system* in the Start Search box, and then click *system* or *System Information* in the Programs list.  *System Type* under *System* will say whether it's a 32 or 64 bit Operating System
- * In Windows XP, right click on the "My Computer" icon, choose Properties, then General
-  * if System says Windows XP Professional x64 Edition Version <year> then yours is 64 bit
-  * if it says Windows XP Professional Version <year> then it's 32 bit
+ * En Windows 7 o Vista, desde el menú de Inicio, escribe *system* en el campo de Iniciar Búsqueda, y después haz click en *Sistema* o *Información del Sistema* en la lista de Programas. En la sección de *Sistema* el *Tipo de Sistema* te dirá si tu Sistema Operativo es de 32 o 64 bits.
+ * En Windows XP, haz click derecho en el ícono de "Mi PC", escoge Propiedades, y después General
+ * si el Sistema dice Windows XP Professional x64 Edition Version < año > entonces el tuyo es de 64 bits.
+ * si dice Windows XP Professional Version < año > entonces es de 32 bits.
   MARKDOWN
 end
 
-option "if your OS is 32 bit" do
- message "open the subdirectory 'x86' of the downloaded files, select and copy all the files, and paste them into C:\\Windows\\system32; provide admin permissions when prompted"
+option "si tu SO es de 32 bits" do
+ message "Abre el subdirectorio 'x86' de los archivos descargados, selecciona y copia todos los archivos, y pégalos dentro de C:\\Windows\\system32; proporciona los permisos de admin cuando te los pregunte."
 end
 
-option "if your OS is 64 bit" do
- message "open the subdirectory 'x64' of the downloaded files, select and copy all the files, and paste them directly into C:\\Windows\\system32 (do not copy the x64 folder itself!); provide admin permissions when prompted"
+option "si tu SO es de 64 bits" do
+ message "Abre el subdirectorio 'x64' de los archivos descargados, selecciona y copia todos los archivos, y pégalos dentro de C:\\Windows\\system32 (no copies el folder x64!); proporciona los permisos de admin cuando te los pregunte."
 end
 
-step "Set up colors" do
-  message "open Command Prompt with Ruby and Rails"
-  console "ansicon"
-  message "now, when you use git and rspec, the output will not be all white-on-black"
+spanish_step "Configura los colores" do
+  message "Abre el Command Prompt with Ruby and Rails"
+  spanish_console "ansicon"
+  message "Ahora, cuando uses git y rspec, el texto que se imprima en la terminal no será todo en blanco y negro."
 end
