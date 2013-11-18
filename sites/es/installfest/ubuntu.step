@@ -2,7 +2,7 @@ message <<-MARKDOWN
 Vas a necesitar accesso sudo para poder completar estas instrucciones (La primera cuenta de usuario que se crea tiene estos permisos por defecto).
 MARKDOWN
 
-step "Instalar el software y librerías empaquetados" do
+step "Instalar el software y librerias empaquetados" do
   message <<-MARKDOWN
 Abre una terminal (Aplicaciones > Accessorios > Terminal). Tal vez quieras hacer click derecho en el ícono de la terminal y seleccionar "Añadir al panel" para que el ícono aparezca a un lado de la ayuda y los íconos de Firefox en el panel superior.
   MARKDOWN
