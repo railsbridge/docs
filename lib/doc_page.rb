@@ -101,14 +101,14 @@ class DocPage < Erector::Widgets::Page
       div(class: "navbar-header cf title") {
         a(href: "/#{site_name}") {
           span("RailsBridge ", class: "brand")
-          text site_name.capitalize
+          text site_title
         }
       }
       ul(class: "navbar-nav nav") {
 
         li(class: "dropdown") {
           a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_name
+          widget SiteIndex, site_name: site_title
         }
 
         top_links.each do |top_link|
@@ -135,7 +135,14 @@ class DocPage < Erector::Widgets::Page
     }
 
     div(class: 'bottom') {
-      p "RailsBridge Docs"
+      p "RailsBridge Docs is maintained by RailsBridge volunteers."
+      p do
+        text "If you find something that could be improved, please make a "
+        a "pull request ", href: "https://github.com/railsbridge/docs"
+        text "or "
+        a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
+        text "via GitHub Issues (no technical knowledge required)."
+      end
       p do
         text "Source: "
         url "https://github.com/railsbridge/docs"
