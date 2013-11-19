@@ -22,7 +22,7 @@ class SiteIndex < Erector::Widget
 
     path = "/#{site}/"
     li do
-      a(site, :href => path)
+      a(Titleizer.title_for_page(site), :href => path)
     end
   end
 
