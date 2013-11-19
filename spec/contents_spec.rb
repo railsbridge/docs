@@ -19,7 +19,7 @@ describe Contents do
 
     it "should render absolute links absolutely" do
       links = @toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
-      links['Curriculum'].should == '/curriculum'
+      links['Intro To Rails'].should == '/intro-to-rails'
     end
   end
 
