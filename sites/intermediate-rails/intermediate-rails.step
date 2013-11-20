@@ -3,7 +3,7 @@ message <<-MARKDOWN
 
 ## Assumptions made by this curriculum
 * You’ve gone through the standard RailsBridge installfest and have successfully completed the [Get a Sticker](http://installfest.railsbridge.org/installfest/get_a_sticker) step.
-* You’ve gone through the RailsBridge [Suggestotron curriculum](http://installfest.railsbridge.org/curriculum/) at least once before, or maybe a couple of times, or maybe you feel decently comfortable with Rails for some other reason.
+* You’ve gone through the RailsBridge [Suggestotron curriculum](http://docs.railsbridge.org/intro-to-rails/) at least once before, or maybe a couple of times, or maybe you feel decently comfortable with Rails for some other reason.
 * You want to learn more Rails!!!
 
 ## Goals

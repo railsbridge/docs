@@ -7,7 +7,7 @@ Instructions for installing Ruby and Rails on your computer. You are required to
 MARKDOWN
 
 site_desc 'intro-to-rails', <<-MARKDOWN
-The "classic" railsbridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
+The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
 MARKDOWN
 
 site_desc 'intermediate-rails', <<-MARKDOWN

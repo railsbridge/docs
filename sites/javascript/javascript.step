@@ -2,7 +2,7 @@ message <<-MARKDOWN
 
 ### Goal
 
-This curriculum is meant to introduce the javascript programming language. It builds on the [Front End RailsBridge Curriculum](http://curriculum.railsbridge.org/frontend). Anyone familiar with HTML, will be able to work through this curriculum.
+This curriculum is meant to introduce the javascript programming language. It builds on the [Front End RailsBridge Curriculum](http://docs.railsbridge.org/frontend). Anyone familiar with HTML, will be able to work through this curriculum.
 
 In the workshop, we will:
 
