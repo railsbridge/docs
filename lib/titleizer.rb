@@ -5,7 +5,8 @@ module Titleizer
       'ssh',
       'dvd',
       'crud',
-      'mvc'
+      'mvc',
+      'html',
     ]
 
     special_cases = {
