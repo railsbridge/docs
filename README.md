@@ -10,7 +10,7 @@ Each subproject (a "site") comprises files stored under the "sites" directory; f
 
 These files can be in any of these formats:
 
-* `.step` for [StepFile](//github.com/railsbridge/docs/blob/master/step_file_reference.md)
+* `.step` for [StepFile](step_file_reference.md)
 * `.md` for [Markdown](http://daringfireball.net/projects/markdown/syntax)
 * `.mw` for MediaWiki (temporary)
 * `.deck.md` for [deck.rb](https://github.com/alexch/deck.rb)
@@ -30,12 +30,12 @@ Then open <http://localhost:9292> in a web browser, and verify that you can navi
 
 ## Contributing
 
-Check out [CONTRIBUTING.md](//github.com/railsbridge/docs/blob/master/CONTRIBUTING.md) to see how to join our [list of contributors](https://github.com/railsbridge/docs/contributors)!
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) to see how to join our [list of contributors](https://github.com/railsbridge/docs/contributors)!
 
 ## Resources
 
-- Workship Organizers see [WORKSHOP.md](//github.com/railsbridge/docs/blob/master/WORKSHOP.md)
-- [StepFile Reference](//github.com/railsbridge/docs/blob/master/step_file_reference.md)
+- Workship Organizers see [WORKSHOP.md](WORKSHOP.md)
+- [StepFile Reference](step_file_reference.md)
 
 # Credits
 
