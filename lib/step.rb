@@ -196,7 +196,7 @@ class Step < Erector::Widget
 
   def spanish_goals
     div :class => "goals" do
-      h1 "Metas"
+      h1 "Objetivos"
       ul do
         yield
       end
@@ -284,6 +284,13 @@ class Step < Erector::Widget
     end
   end
 
+  def spanish_type_in_file filename, msg
+    div do
+      span "Escribe en el archivo #{filename}:"
+      source_code :ruby, msg
+    end
+  end
+
   def further_reading
     div :class => "further-reading" do
       h1 "Further Reading"
@@ -305,6 +312,13 @@ class Step < Erector::Widget
   def result text
     div :class => "result" do
       span RESULT_CAPTION
+      pre text
+    end
+  end
+
+  def spanish_result text
+    div :class => "result" do
+      span "Resultado esperado:"
       pre text
     end
   end

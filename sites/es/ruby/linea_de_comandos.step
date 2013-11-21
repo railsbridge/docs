@@ -1,0 +1,76 @@
+spanish_goals do
+  goal "Aprender sobre la línea de comandos"
+  goal "Hacer un nuevo directorio"
+  goal "Buscar algunos directorios en tu computadora"
+  goal do
+    rawtext md2html("Aprender los comandos `pwd`, `mkdir`, `ls`, `cd` and `man`")
+  end
+end
+
+spanish_step do
+  message 'Abre una aplicación de línea de comandos en tu computadora. En Macs, éste programa es llamado Terminal. En Windows, es posible que quieras usar el acceso directo a "Command Prompt With Ruby and Rails" que viene con el RailsInstaller.'
+  spanish_console "pwd"
+  message '`pwd` significa "print working directory" (imprime directorio de trabajo). Ésto te muestra el **directorio** en el que estás trabajando actualmente. Los directorios son también comúnmente llamados **carpetas**.'
+  message '`pwd` puede ayudar orientándote en la línea de comandos por si te pierdes en alguna parte de tu computadora.'
+end
+
+spanish_step do
+  spanish_console 'mkdir railsbridge_ruby'
+  message '`mkdir` significa **m**ake **d**irectory (crea un directorio/carpeta). Usa mkdir cuando quieras crear un nuevo directorio.'
+  message 'La línea de comandos es sólo una manera de manipular los archivos en tu computadora. Trata de encontrar el nuevo directorio que creaste en el Finder o Windows Explorer.'
+  message 'Si te sale un error diciendo que el directorio ya existe, posiblemente alguien hizo éstos pasos en tu computadora antes. No te preocupes.'
+end
+
+spanish_step do
+  spanish_console 'cd railsbridge_ruby'
+  message '`cd` significa **c**hange **d**irectory (cambiar de directorio). Usa cd cuando quieras moverte desde el directorio actual a algún otro directorio.'
+end
+
+spanish_step do
+  message "Si estás en una computadora Mac o Linux:"
+  spanish_console 'cd ~'
+  message "`~` indica tu **directorio raíz**, un directorio propio de la cuenta actualmente conectada en la computadora. Tu directorio raíz puede ser algo como `/home/sparklepants` (Linux) o `/Users/saucyfrank` (Mac)"
+  message "Practica moviéndote dentro y fuera de varios directorios. Recuerda que siempre puedes regresar a tu directorio raíz con `cd ~`."
+end
+
+spanish_step do
+  spanish_console 'ls'
+  message '`ls` significa **list** (lista), y muestra el contenido del directorio actual.'
+  message 'Como regresaste a tu directorio raíz, deberías ver el nuevo directorio creado railsbridge_ruby en la salida de `ls`.'
+end
+
+spanish_step do
+  spanish_console 'man ls'
+  message '`man` significa **manual** y te muestra la documentación de un comando. Esto puede incluir varias opciones usadas para ejecutar el comando en diferentes maneras.'
+  message "Si ves dos puntos en la parte inferior de tu terminal cuando estás viendo una página manual, significa que estás en un **paginador**. Los paginadores son programas especiales para mostrar texto que abarca multiples páginas. Puedes presionar las flechas hacia arriba y hacia abajo para desplazarte por el texto, o escribe `q` para salir."
+end
+
+explicacion do
+  message "La línea de comandos es una herramienta esencial para los programadores de computadoras. Si bien desalienta al principio, ésta ofrece gran flexibilidad en movimiento y manipulación de archivos en tu computadora."
+  message "Hay muchos, muchos, muchos más comandos disponibles en la línea de comandos que los que has visto aquí, pero éstos son suficientes para continuar."
+  message 'Resumen de los comandos:'
+  table class: 'bordered' do
+    tr do
+      td 'pwd'
+      td 'print working directory'
+      td 'imprime la ruta completa de tu directorio actual'
+    end
+    tr do
+      td 'ls'
+      td 'list directory'
+      td 'muestra el contendido del directorio actual'
+    end
+    tr do
+      td 'cd [directory]'
+      td 'change directory'
+      td 'hace éste directorio el directorio actual'
+    end
+    tr do
+      td 'man [cmd]'
+      td 'manual'
+      td "muestra el manual para éste comando. presiona 'q' para salir."
+    end
+  end
+end
+
+next_spanish_step "irb"
