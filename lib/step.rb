@@ -88,15 +88,25 @@ class Step < Erector::Widget
   def link name
     p :class => "link" do
       text "Go on to "
-      require 'uri'
-      hash = URI.escape '#'
-      href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
-      a Titleizer.title_for_page(name), :href => href, :class => 'link'
+      simple_link(name, class: :link)
     end
   end
 
   def link_without_toc name
     link name
+  end
+
+  def simple_link name, options={}
+    require 'uri'
+    hash = URI.escape '#'
+    href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
+    if block_given?
+      a({:href => href}.merge(options)) do
+        yield
+      end
+    else
+      a Titleizer.title_for_page(name), {:href => href}.merge(options)
+    end
   end
 
   def next_step name
