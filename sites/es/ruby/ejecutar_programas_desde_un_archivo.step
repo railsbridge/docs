@@ -1,0 +1,24 @@
+spanish_goals do
+  goal "Escribir un programa de ruby en un archivo"
+  goal "Ejecutar un programa de ruby guardado en un archivo"
+end
+
+spanish_step do
+  message "En tu editor de texto, crea un archivo llamado mi_programa.rb"
+  spanish_type_in_file 'mi_programa.rb', <<-CONTENTS
+puts '¡Éste código está en un archivo!'
+alguna_variable = 19
+puts "¡Creé una variable con el valor #{19}!"
+  CONTENTS
+end
+
+spanish_step do
+  spanish_console 'ruby mi_programa.rb'
+  message "Debes haber visto la salida de tu programa: 'Éste código está en un archivo...' etc. Si no, puede que no estés en el directorio donde creaste el archivo. Ve si lo muestra con `ls`."
+end
+
+explicacion do
+  message "Los programas de ruby no están escritos en irb, están escritos en archivos. A medida que tu programa se hace más y más grande, ¡éste puede abarcar varios archivos!"
+end
+
+next_spanish_step "condicionales"
