@@ -31,7 +31,7 @@ describe Contents do
 
     it 'capitalizes OS X' do
       links = @toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
-      links['OS X Lion'].should == '/installfest/osx_lion'
+      links['OS X RVM'].should == '/installfest/osx_rvm'
     end
   end
 

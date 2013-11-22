@@ -29,14 +29,17 @@ end
 
 step "Choose your instructions" do
   
-  option "Mavericks/Mountain Lion/Lion/Snow Leopard" do
+  option "Mavericks" do
+    link "osx_rvm"
+  end
+  option "Mountain Lion/Lion/Snow Leopard" do
     option "RailsInstaller" do
       message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
       link "osx_railsinstaller"
     end
     option "Manually" do
       message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
-      link "osx_lion"
+      link "osx_rvm"
     end
   end
 

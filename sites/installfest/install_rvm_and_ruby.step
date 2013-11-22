@@ -21,33 +21,52 @@ step "Configure your shell" do
   
 end
 
-step "Install Ruby 1.9.3 using RVM" do
-  console "rvm install 1.9.3"
-  
-  important "If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip."
+step "Install Ruby using RVM" do
+  option "Mavericks: Install Ruby 2.0.0" do
+    console "rvm install 2.0.0 --autolibs=disable"
 
-  message "This downloads and compiles Ruby, which takes a while."
-  
-  important "If `rvm install 1.9.3` says `autoreconf was not found in the PATH`" do
-    option "Mac OS" do
-      console "brew install automake"
+    message "This downloads and compiles Ruby, which takes a while."
+    console <<-BASH.strip_heredoc
+      rvm use 2.0.0
+      rvm --default use 2.0.0
+    BASH
+
+    verify do
+      console "ruby -v"
+      fuzzy_result "ruby 2.0.0{FUZZY}p247 (2013-06-27 revision 41674) [x86_64-darwin13.0.0]{/FUZZY}"
     end
+  end
+  option "Earlier than Mavericks: Install Ruby 1.9.3" do
+    console "rvm install 1.9.3"
 
-    option "Ubuntu Linux" do
-      console "sudo apt-get install automake"
+    important "If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip."
+
+    message "This downloads and compiles Ruby, which takes a while."
+
+    console <<-BASH.strip_heredoc
+      rvm use 1.9.3
+      rvm --default use 1.9.3
+    BASH
+
+    verify do
+      console "ruby -v"
+      fuzzy_result "ruby 1.9.3{FUZZY}p125 (2012-02-16 revision 34643) [x86_64-darwin11.4.0]{/FUZZY}"
     end
+  end
 
-    message "Once that completes, retry `rvm install 1.9.3`"
-  end  
+  div do
+    h1 "Troubleshooting"
+    important "If `rvm install 1.9.3` says `autoreconf was not found in the PATH`" do
+      option "Mac OS" do
+        console "brew install automake"
+      end
 
-  console <<-BASH
-rvm use 1.9.3
-rvm --default use 1.9.3
-  BASH
+      option "Ubuntu Linux" do
+        console "sudo apt-get install automake"
+      end
 
-  verify do
-    console "ruby -v"
-    fuzzy_result "ruby 1.9.3{FUZZY}p125 (2012-02-16 revision 34643) [x86_64-darwin11.4.0]{/FUZZY}"
+      message "Once that completes, retry `rvm install 1.9.3`"
+    end
   end
 end
 
