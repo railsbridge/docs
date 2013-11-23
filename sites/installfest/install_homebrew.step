@@ -1,11 +1,13 @@
 
 console %q{ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"}
 
+message "You may have to press 'ENTER' when prompted and type in your password."
+
 important "If that doesn't work, visit <https://github.com/mxcl/homebrew/wiki/installation> and follow the instructions there."
 
 verify do
   console "brew -v"
-  fuzzy_result "Homebrew 0.9{FUZZY}.4{/FUZZY}"
+  fuzzy_result "Homebrew 0.9{FUZZY}.5{/FUZZY}"
 end
 
 tip <<TIP

@@ -23,7 +23,15 @@ end
 
 step "Install Ruby using RVM" do
   option "Mavericks: Install Ruby 2.0.0" do
-    console "rvm install 2.0.0 --autolibs=disable"
+    console_with_message "First, check if Homebrew is installed:", "brew -v"
+    fuzzy_result "Homebrew {FUZZY}0.9.5{/FUZZY}"
+
+    message "If you see `brew: command not found`, [install homebrew](install_homebrew)."
+
+    console <<-BASH.strip_heredoc
+      rvm autolibs homebrew
+      rvm install 2.0.0
+    BASH
 
     message "This downloads and compiles Ruby, which takes a while."
     console <<-BASH.strip_heredoc
