@@ -1,15 +1,15 @@
 ---
 goals {
 
-  message <<-MARKDOWN
-  At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
+  message <<-MARKDOWN.strip_heredoc
+    At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
 
-  * **C**reate new records in the database
-  * **R**ead or show the records in the database
-  * **U**pdate existing records
-  * **D**estroy or delete records
+    * **C**reate new records in the database
+    * **R**ead or show the records in the database
+    * **U**pdate existing records
+    * **D**estroy or delete records
 
-  Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
+    Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
   MARKDOWN
 }
 
