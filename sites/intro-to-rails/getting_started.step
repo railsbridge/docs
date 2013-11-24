@@ -89,4 +89,4 @@ Select your `suggestotron` folder from the file picker that opens. If everything
   message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
 end
 
-next_step "create_a_new_git_repo"
+next_step "add_the_project_to_a_git_repo"
