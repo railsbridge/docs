@@ -22,7 +22,7 @@ step "Configure your shell" do
 end
 
 step "Install Ruby using RVM" do
-  option "Mavericks: Install Ruby 2.0.0" do
+  option "OSX Mavericks: Install Ruby 2.0.0" do
     console_with_message "First, check if Homebrew is installed:", "brew -v"
     fuzzy_result "Homebrew {FUZZY}0.9.5{/FUZZY}"
 
@@ -44,7 +44,7 @@ step "Install Ruby using RVM" do
       fuzzy_result "ruby 2.0.0{FUZZY}p247 (2013-06-27 revision 41674) [x86_64-darwin13.0.0]{/FUZZY}"
     end
   end
-  option "Earlier than Mavericks: Install Ruby 1.9.3" do
+  option "Non-OSX or OSX Earlier than Mavericks: Install Ruby 1.9.3" do
     console "rvm install 1.9.3"
 
     important "If you get an entire page of instructions, beginning with 'Ruby (and needed base gems) for your selection...', you should press Q to skip."
