@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem 'activesupport', '~> 3.2.0'
 gem "erector", "~>0.9.0"
-gem "sinatra"
+gem "sinatra", "~> 1.3.0"
 gem "nokogiri"
 gem "thin"
 gem "eventmachine", "~>1.0.3"
