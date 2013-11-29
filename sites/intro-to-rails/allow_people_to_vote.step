@@ -8,18 +8,18 @@ steps {
 
     message "Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:"
 
-    source_code :erb, <<-HTML
-  <% @topics.each do |topic| %>
-    <tr>
-      <td><%= topic.title %></td>
-      <td><%= topic.description %></td>
-      <td><%= pluralize(topic.votes.count, "vote") %></td>
-      <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
-      <td><%= link_to 'Show', topic %></td>
-      <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-      <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+    source_code :erb, <<-HTML.strip_heredoc
+      <% @topics.each do |topic| %>
+        <tr>
+          <td><%= topic.title %></td>
+          <td><%= topic.description %></td>
+          <td><%= pluralize(topic.votes.count, "vote") %></td>
+          <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
+          <td><%= link_to 'Show', topic %></td>
+          <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+          <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     HTML
   end
 
@@ -46,7 +46,7 @@ end
 explanation {
 
   message "First we added these two lines to `app/views/topics/index.html.erb`"
-  source_code :erb, <<-HTML
+  source_code :erb, <<-HTML.strip_heredoc
   <td><%= pluralize(topic.votes.count, "vote") %></td>
   <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
   HTML

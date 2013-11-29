@@ -37,6 +37,7 @@ class DocPage < Erector::Widgets::Page
     script :src => "/jquery.min.js"
     script :src => "/js/bootstrap.min.js"
     script :src => "/js/doc_page.js"
+    link   :href => "/font-awesome/css/font-awesome.min.css", :rel => "stylesheet"
   end
 
   def site_title

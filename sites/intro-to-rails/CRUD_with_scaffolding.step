@@ -37,14 +37,14 @@ steps {
   }
 
   step {
-    message <<-MARKDOWN
-  * Click on "back"
-  * You should see the topic list again, this time with your new topic listed:
+    message <<-MARKDOWN.strip_heredoc
+      * Click on "back"
+      * You should see the topic list again, this time with your new topic listed:
 
-  ![list with topic](img/Seattle_list_with_topic.png)
+      ![list with topic](img/Seattle_list_with_topic.png)
 
-  * Try the 'show', 'edit', and 'destroy' links to see what they do
-  * You've created a basic database driven web site, congrats!
+      * Try the 'show', 'edit', and 'destroy' links to see what they do
+      * You've created a basic database driven web site, congrats!
     MARKDOWN
   }
 }

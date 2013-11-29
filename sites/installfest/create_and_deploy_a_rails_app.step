@@ -106,7 +106,7 @@ git init
   result "Initialized empty Git repository in c:/Sites/railsbridge/test_app/.git/"
 
   console "git add -A"
-  tip "git add" do
+  tip do
     message <<-MARKDOWN
 With Git, there are usually many ways to do very similar things.
 

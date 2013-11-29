@@ -132,7 +132,7 @@ class Step < Erector::Widget
   def option name
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
-    h1 do
+    h1 :class => "option" do
       span "Option #{num}: "
       text name
     end
@@ -182,18 +182,28 @@ class Step < Erector::Widget
   def message text = nil, options = {}
     classes = (["message"] + [options[:class]]).compact
     div :class => classes do
-      img.icon src: "/img/#{options[:icon]}.png" if options[:icon]
-      rawtext(md2html text) unless text.nil?
-      yield if block_given?
+      i :class => "fa fa-#{options[:icon]} fa-3x" if options[:icon]
+      if options[:inner_class]
+        div class: options[:inner_class] do
+          unless text.nil?
+            text = "**#{text}**" if block_given?
+            rawtext(md2html text)
+          end
+          yield if block_given?
+        end
+      else
+        rawtext(md2html text) unless text.nil?
+        yield if block_given?
+      end
     end
   end
 
   def important text = nil, &block
-    message text, class: "important", icon: "warning", &block
+    message text, class: "important vertical-centerer", inner_class: "vertically-centered", icon: "exclamation-circle", &block
   end
 
   def tip text = nil, &block
-    message text, class: "tip", icon: "info", &block
+    message text, class: "tip vertical-centerer", inner_class: "vertically-centered", icon: "info-circle", &block
   end
 
   ## special

@@ -25,7 +25,7 @@ h1 {
   position: relative;
   margin-left: 300px;
   margin-right: 20px;
-  position: relative;
+  padding-left: 15px;
 }
 
 @media (max-width: 1100px) {
@@ -35,7 +35,12 @@ h1 {
 }
 
 .main h1.doc_title {
-  margin-bottom: 1em;
+  font-family: "Aleo Bold", serif;
+  color: #6c266f;
+  font-weight: 100;
+  font-size: 2em;
+  padding-top: 5px;
+  margin-bottom: .5em;
   padding-bottom: .25em;
   border-bottom: 1px solid #ccc;
 }

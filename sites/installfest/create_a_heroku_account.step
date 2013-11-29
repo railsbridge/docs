@@ -1,3 +1,5 @@
+message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing."
+
 step "Visit the Heroku web site" do
   url "http://heroku.com"
 end

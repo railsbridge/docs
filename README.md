@@ -36,7 +36,3 @@ Check out [CONTRIBUTING.md](CONTRIBUTING.md) to see how to join our [list of con
 
 - Workship Organizers see [WORKSHOP.md](WORKSHOP.md)
 - [StepFile Reference](step_file_reference.md)
-
-# Credits
-
-some icons from https://github.com/kennethreitz/open-icons
