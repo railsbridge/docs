@@ -33,17 +33,6 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * makes a new step named "Next Step:"
   * links to a step whose file name is `filename`
 
-`choice`
-
-  * creates a step which is named "Choose between..."
-  * choice doesn't make any sense without a nested block
-  * nested block usually contains `option` steps
-
-`choice "name"`
-
-  * same as above, but named "Choose name"
-  * if you want ellipses, add them yourself
-
 `option "name"`
 
   * creates a step which is named "Option 1: foo" instead "Step 1: foo"

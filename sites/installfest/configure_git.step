@@ -28,3 +28,5 @@ git config --global color.branch auto
   end
 end
 
+next_step "create_an_ssh_key"
+

@@ -4,6 +4,7 @@ message "You'll need one of these to create your Heroku and Github accounts."
 
 option "Did you use RailsInstaller on Windows?" do
   message "Congratulations, you already have an ssh key!"
+  link_without_toc 'create_a_heroku_account'
 end
 
 option "otherwise" do
@@ -17,12 +18,12 @@ option "otherwise" do
 
   message "Next, you'll be asked for a keyphrase."
 
-  h1 "Choose keyphrase"
+  h1 "Choose whether to use a keyphrase"
   blockquote do
-    option "No keyphrase" do
+    option_half "No keyphrase" do
       message "Hit enter to accept blank passphrase, then hit enter again."
     end
-    option "Keyphrase" do
+    option_half "Keyphrase" do
       message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
     end
   end

@@ -13,15 +13,17 @@ class Step < Erector::Widget
   needs :src
   needs :doc_path
   needs :container_page_name => false
+  needs :step_stack => false
 
   def initialize options
     super
-    @step_stack = []
+    @step_stack = options[:step_stack] || []
   end
 
   def next_step_number
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
+    @step_stack.join('.')
   end
 
   def prefix s
@@ -44,7 +46,7 @@ class Step < Erector::Widget
     dir = File.dirname(@doc_path)
     path = File.join(dir, "_#{file}.step")  # todo: other file types
     src = File.read(path)
-    step = Step.new(src: src, doc_path: path, container_page_name: page_name)
+    step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
     widget step
   end
 
@@ -123,12 +125,6 @@ class Step < Erector::Widget
     _render_inner_content &Proc.new if block_given?
   end
 
-  def choice name = "between..."
-    step "Choose #{name}" do
-      _render_inner_content &Proc.new if block_given?
-    end
-  end
-
   def option name
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
@@ -137,6 +133,13 @@ class Step < Erector::Widget
       text name
     end
     _render_inner_content &Proc.new if block_given?
+  end
+
+  def option_half title
+    div class: 'half-width' do
+      strong title
+      yield
+    end
   end
 
   def section text

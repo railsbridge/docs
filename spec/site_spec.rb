@@ -13,6 +13,6 @@ describe Site do
   it "has doc files" do
     installfest = Site.named("installfest")
     doc_filenames = installfest.docs.map(&:filename)
-    doc_filenames.should include("install_homebrew.step")
+    doc_filenames.should include("configure_git.step")
   end
 end

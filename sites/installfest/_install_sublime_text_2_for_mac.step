@@ -1,10 +1,10 @@
-message <<-MARKDOWN
+message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate."
 
-We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate.
+important <<-MARKDOWN
+  Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work.
 
-MARKDOWN
-
-important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
+  When in doubt, use Sublime Text 2.
+  MARKDOWN
 
 step "Download Sublime Text 2" do
   message "Download the [Sublime Text 2 installer](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg)."

@@ -57,36 +57,37 @@ Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem 
   end
 
   console "cd sticker\nrails generate scaffold drink name:string temperature:integer"
-  result "
-      invoke  active_record
-      create    db/migrate/20120331005122_create_drinks.rb
-      create    app/models/drink.rb
-      invoke    test_unit
-      create      test/unit/drink_test.rb
-      create      test/fixtures/drinks.yml
-       route  resources :drinks
-      invoke  scaffold_controller
-      create    app/controllers/drinks_controller.rb
-      invoke    erb
-      create      app/views/drinks
-      create      app/views/drinks/index.html.erb
-      create      app/views/drinks/edit.html.erb
-      create      app/views/drinks/show.html.erb
-      create      app/views/drinks/new.html.erb
-      create      app/views/drinks/_form.html.erb
-      invoke    test_unit
-      create      test/functional/drinks_controller_test.rb
-      invoke    helper
-      create      app/helpers/drinks_helper.rb
-      invoke      test_unit
-      create        test/unit/helpers/drinks_helper_test.rb
-      invoke  assets
-      invoke    coffee
-      create      app/assets/javascripts/drinks.js.coffee
-      invoke    scss
-      create      app/assets/stylesheets/drinks.css.scss
-      invoke  scss
-      create    app/assets/stylesheets/scaffolds.css.scss"
+  result <<-BASH.strip_heredoc
+    invoke  active_record
+    create    db/migrate/20120331005122_create_drinks.rb
+    create    app/models/drink.rb
+    invoke    test_unit
+    create      test/unit/drink_test.rb
+    create      test/fixtures/drinks.yml
+     route  resources :drinks
+    invoke  scaffold_controller
+    create    app/controllers/drinks_controller.rb
+    invoke    erb
+    create      app/views/drinks
+    create      app/views/drinks/index.html.erb
+    create      app/views/drinks/edit.html.erb
+    create      app/views/drinks/show.html.erb
+    create      app/views/drinks/new.html.erb
+    create      app/views/drinks/_form.html.erb
+    invoke    test_unit
+    create      test/functional/drinks_controller_test.rb
+    invoke    helper
+    create      app/helpers/drinks_helper.rb
+    invoke      test_unit
+    create        test/unit/helpers/drinks_helper_test.rb
+    invoke  assets
+    invoke    coffee
+    create      app/assets/javascripts/drinks.js.coffee
+    invoke    scss
+    create      app/assets/stylesheets/drinks.css.scss
+    invoke  scss
+    create    app/assets/stylesheets/scaffolds.css.scss
+  BASH
 
   console "rake db:migrate"
   result <<-RESULT

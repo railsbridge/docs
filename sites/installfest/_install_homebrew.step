@@ -9,9 +9,3 @@ verify do
   console "brew -v"
   fuzzy_result "Homebrew 0.9{FUZZY}.5{/FUZZY}"
 end
-
-tip <<TIP
-  Homebrew uses `sudo` to prepare your `/usr/local` directory. 'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
-
-  ![sudo make me a sandwich](http://imgs.xkcd.com/comics/sandwich.png)
-TIP

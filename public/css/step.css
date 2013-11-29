@@ -273,3 +273,19 @@ table.bordered tr {
   margin-bottom: 0;
 }
 
+.half-width {
+  display: inline-block;
+  width: calc(50% - 7px);
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  vertical-align: top;
+  margin-right: 10px;
+  min-height: 145px;
+}
+
+.half-width:last-child {
+  margin-right: 0;
+}

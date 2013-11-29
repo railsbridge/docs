@@ -1,5 +1,5 @@
 message <<-MARKDOWN
-These instructions should work for all versions of Windows from XP on to Windows 8.
+These instructions should work for all versions of Windows from XP to Windows 8.
 
 You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
 MARKDOWN
@@ -120,11 +120,6 @@ step "Install Windows Colors" do
   message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
 
   link "windows_colors"
-
-end
-
-step "Configure Git" do
-  link "configure_git"
 end
 
 step "Install a Text Editor" do
@@ -139,4 +134,4 @@ step "Install a Text Editor" do
   message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
 end
 
-next_step "create_a_heroku_account"
+next_step "configure_git"
