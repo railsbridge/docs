@@ -7,4 +7,15 @@ $(document).ready(function () {
     $(toToggle).toggleClass('visible', !originallyVisible);
     return false;
   });
+
+  $('.toggler').on('click', function (e) {
+    e.preventDefault();
+    $(this).closest('.collapsable').toggleClass('closed');
+  });
+
+  $('.expand-all').on('click', function (e) {
+    e.preventDefault();
+    $('.closed').removeClass('closed');
+    $('.expand-all').remove();
+  });
 });

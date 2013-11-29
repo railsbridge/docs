@@ -96,6 +96,14 @@ class DocPage < Erector::Widgets::Page
     ]
   end
 
+  def body_attributes
+    if site_name == 'docs'
+      {class: 'no-toc'}
+    else
+      {}
+    end
+  end
+
   def body_content
     nav(class: "top cf", role: "navigation") {
 
