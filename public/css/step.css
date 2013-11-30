@@ -275,7 +275,7 @@ table.bordered tr {
 
 .half-width {
   display: inline-block;
-  width: calc(50% - 7px);
+  width: calc(50% - 10px);
   border: 1px solid grey;
   border-radius: 5px;
   padding: 10px;
