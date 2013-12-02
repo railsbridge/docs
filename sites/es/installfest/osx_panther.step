@@ -24,7 +24,7 @@ spanish_step "Git " do
   option "Leopard o Panther" do
     url "http://code.google.com/p/git-osx-installer/"
 
-    message %q{Da click en "Download the packages here" el cual te llevará a la lista de descargas. Escoje intel si tienes una Mac Intel y Universal Binary si tienes una PowerPC Mac.}
+    message %q{Da click en "Download the packages here" el cual te llevará a la lista de descargas. Escoge intel si tienes una Mac Intel y Universal Binary si tienes una PowerPC Mac.}
 
     message <<-MESSAGE, class: "pertinent-info"
 
@@ -34,14 +34,14 @@ Mac PowerPC (PPC) son la línea vieja de Apple con chips de Motorola. Las Macs c
 
 * Da click en el menú de Apple en la esquina superior izquierda de tu pantalla.
 * Selecciona "Acerca de esta Mac".
-* Debería de tener una línea que comenzara con "Procesador". Si en algún lugar de esa línea dice "Intel", entonces tienes una Mac Intel. De otra forma, tienes una PowerPC. 
+* Debería de tener una línea que comienza con "Procesador". Si en algún lugar de esa línea dice "Intel", entonces tienes una Mac Intel. De otra forma, tienes una PowerPC. 
 
 Para más información, visita [Apple Transition Timeline](http://en.wikipedia.org/wiki/Apple%E2%80%93Intel_transition#Timeline) o [exhaustive list of Macintosh models](http://en.wikipedia.org/wiki/Timeline_of_Macintosh_models#2000s) en Wikipedia.
     MESSAGE
   end
 
   option "Tiger" do
-    message "pregunta a un facilitador que te ayude a instalar git en Tiger"
+    message "Pide a un facilitador que te ayude a instalar git en Tiger"
     message "(probablemente quieres usar MacPorts)"
   end
 
@@ -67,7 +67,7 @@ sudo gem install rails
 
   message <<-MARKDOWN
 
-Si esta teniendo este error:
+Si estas teniendo este error:
     ERROR:  Error installing rubygems-update: hoe requires RubyGems version >= 1.3.1
 
 Intenta los pasos en este orden:
