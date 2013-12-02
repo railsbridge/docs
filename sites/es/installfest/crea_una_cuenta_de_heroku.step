@@ -27,7 +27,7 @@ end
 
 step "Create an SSH key" do
   option "On OS X or Linux" do 
-    spanish_link "crea_una_key_ssh"
+    spanish_link "crea_una_llave_ssh"
   end
   option "On Windows" do
     message "RailsInstaller created a key for you. Go on to the next step!"
