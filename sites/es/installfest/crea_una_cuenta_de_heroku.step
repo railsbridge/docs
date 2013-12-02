@@ -40,4 +40,4 @@ step "Add your SSH key to your Heroku account" do
   message "hit enter to accept the default key file to use"
 end
 
-next_spanish_step "crea_y_despliega_una_rails_app"
+next_spanish_step "crea_y_lanza_una_rails_app"
