@@ -1,10 +1,10 @@
 message <<-MARKDOWN
-RVM por sus siglas en inglés de Ruby Version Manager (Controlador de Versiones de Ruby) y es la forma mas fácil de instalar y gestionar Ruby. Las [instrucciones oficiales de instalción de RVM](http://rvm.beginrescueend.com/rvm/install/) estan disponibles aquí, pero esto debería de funcionar para ti:
+RVM por sus siglas en inglés de Ruby Version Manager (Controlador de Versiones de Ruby) y la forma mas fácil de instalar y gestionar Ruby. Las [instrucciones oficiales de instalción de RVM](http://rvm.beginrescueend.com/rvm/install/) están disponibles aquí, pero esto debería de funcionar para ti:
 MARKDOWN
 
-step "Instalar RVM" do
+spanish_step "Instalar RVM" do
   spanish_console "curl -L get.rvm.io | bash -s stable"
-  message "Esto hará algunas cosas e imprimirá un mensaje largo el cual puedes ignorar"
+  message "Esto hará algunas cosas e imprimirá un mensaje largo el cual puedes ignorar."
 end
 
 step "Configura tu shell" do
@@ -24,7 +24,7 @@ end
 step "Instala Ruby 1.9.3 usando RVM" do
   spanish_console "rvm install 1.9.3"
   
-  important "Si obitenes una página entera de instrucciones, empezando con 'Ruby (and needed base gems) for your selection...', deberías presionar Q para saltar."
+  important "Si obtienes una página entera de instrucciones, empezando con 'Ruby (and needed base gems) for your selection...', deberías presionar Q para saltar."
 
   message "Esto descarga y compila Ruby, lo cual toma un tiempo."
   
@@ -37,7 +37,7 @@ step "Instala Ruby 1.9.3 usando RVM" do
       spanish_console "sudo apt-get install automake"
     end
 
-    message "Una vez que se complete, intenta 'rvm install 1.9.3'"
+    message "Una vez que se complete, reintenta 'rvm install 1.9.3'"
   end  
 
   spanish_console <<-BASH
