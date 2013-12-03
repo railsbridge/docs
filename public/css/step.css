@@ -289,3 +289,7 @@ table.bordered tr {
 .half-width:last-child {
   margin-right: 0;
 }
+
+.site-desc p {
+  margin: 5px 0 0 0;
+}
