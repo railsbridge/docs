@@ -4,7 +4,7 @@ spanish_goals do
 end
 
 explicacion do
-  message 'Cada applicación en tu computadora fue escrita por alguien. Desde el Sistema Operativo hasta tu Navegador. Cada programa fue escrito en algún tipo de Lenguaje de Programación.'
+  message 'Cada aplicación en tu computadora fue escrita por alguien. Desde el Sistema Operativo hasta tu Navegador. Cada programa fue escrito en algún tipo de Lenguaje de Programación.'
   message 'Los lenguajes de programación vienen en todas formas y tamaños. Algunos son optimizados por la rapidez en la cual la computadora los ejecutará, y algunos son optimizados por la rapidez en la cual un humano puede programar en ellos.'
   message 'Ruby fue inventado a mediados de los 90\'s por un tipo llamado Matz.'
   message 'Ruby toma muchas ideas del lenguaje Perl y Smalltalk'

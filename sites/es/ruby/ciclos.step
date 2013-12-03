@@ -1,0 +1,67 @@
+spanish_goals do
+  goal "Usar ciclos para hacer operaciones por cada elemento de un arreglo."
+  goal do
+    rawtext(md2html("Usar `puts` para imprimir cadenas en la pantalla."))
+  end
+  goal 'Aprender dos sintaxis diferentes para crear bloques en Ruby.'
+end
+
+spanish_step do
+  spanish_irb <<-IRB
+puts 'Hola Mundo'
+  IRB
+  message '`puts` (**put** **s**tring) es una manera de imprimir información para el usuario de tu programa.'
+  message 'Toma algo de tiempo para contemplar la salida de `puts` en irb:'
+  spanish_result <<-RESULT
+1.9.3p125 :006 > puts 'Hola Mundo'
+Hola Mundo
+ => nil
+1.9.3p125 :007 >
+  RESULT
+  message 'El método `puts` siempre tiene el **valor de retorno** `nil`, que es lo que ves después de `=>` en la salida. Imprimir \'Hola Mundo\' en la pantalla es solo un efecto secundario.'
+end
+
+spanish_step do
+  spanish_irb <<-IRB
+frutas = ['durazno', 'ciruela', 'pera']
+frutas.each { |fruta| puts fruta }
+  IRB
+  message 'La línea vertical `|` es llamada \'caracter pipe\', y es típicamente una versión cambiada de la `\` (diagonal invertida) en tu teclado. '
+  message 'Los ciclos son una manera de hacer algo varias veces. En éste ciclo, imprimimos cada fruta en la pantalla.'
+end
+
+spanish_step do
+  spanish_irb <<-IRB
+numeros = [109, 10, 1001]
+numeros.each { |n| puts n * 2 }
+  IRB
+  message 'Las llaves aquí definen un **bloque**, y lo que sea que está entre los pipes es una **variable de bloque**.'
+  message '`each` toma el primer elemento en el arreglo y lo envia al bloque, el cual temporalmente se guarda en la **variable de bloque**, luego ejecuta el código que se encuentra después de los pipes. Regresa y hace esto de nuevo por cada uno de los elementos.'
+  spanish_irb <<-'IRB'
+patos = ['hugo', 'paco', 'luis']
+patos.each { |pato| puts "¡#{pato} cuac!" }
+patos.each { |zombie| puts "¡#{zombie} cuac!" }
+  IRB
+  message 'No importa cómo llames a tu variable de bloque: las dos sentencias anteriores son exactamente equivalentes para Ruby. Sin embargo deberías nombrar las variables con un nombre útil, ¡así el código tendrá sentido para ti mas tarde! '
+end
+
+spanish_step do
+    spanish_irb <<-'IRB'
+total = 256 ** 3
+colores = ['rojo', 'azul', 'verde']
+colores.each do |color|
+  puts "#{total} colores de la pintura en la pared... "
+  puts "Elige un #{color}, pásalo..."
+  total = total - 1
+  puts "¡#{total} colores de la pintura en la pared!"
+end
+    IRB
+    message "El operador ** significa 'a la potencia de', como en '256 a la tercera potencia'"
+    message "Hay mas de una manera de crear un bloque en ruby. La sintaxis `do ... end` es comúnmente usada cuando un bloque necesita extenderse en varias líneas, mientras que la sintaxis `{ ... }` es para un bloque de una sola línea."
+end
+
+explicacion do
+  message "A medida que construyes programas complejos, querrás crear algo para muchas piezas de datos sin tener que escribirlo todo. Los ciclos ayudan a resolver este tipo de problemas."
+end
+
+next_spanish_step 'ejecutar_programas_desde_un_archivo'
