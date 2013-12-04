@@ -1,7 +1,7 @@
 ---
 goals {
 
-  message <<-MARKDOWN.strip_heredoc
+  message <<-MARKDOWN
     At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
 
     * **C**reate new records in the database
@@ -37,7 +37,7 @@ steps {
   }
 
   step {
-    message <<-MARKDOWN.strip_heredoc
+    message <<-MARKDOWN
       * Click on "back"
       * You should see the topic list again, this time with your new topic listed:
 

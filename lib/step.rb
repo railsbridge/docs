@@ -185,6 +185,7 @@ class Step < Erector::Widget
   ## message
 
   def message text = nil, options = {}
+    text = text.strip_heredoc if text
     classes = (["message"] + [options[:class]]).compact
     div :class => classes do
       i :class => "fa fa-#{options[:icon]} fa-3x" if options[:icon]
@@ -225,7 +226,7 @@ class Step < Erector::Widget
   def console_with_message(message, commands)
     div :class => "console" do
       span message
-      pre commands
+      pre commands.strip_heredoc
     end
   end
 
@@ -259,11 +260,12 @@ class Step < Erector::Widget
   def result text
     div :class => "result" do
       span RESULT_CAPTION
-      pre text
+      pre text.strip_heredoc
     end
   end
 
   def fuzzy_result fuzzed_text
+    fuzzed_text = fuzzed_text.strip_heredoc
     div :class => "result fuzzy-result" do
       span FUZZY_RESULT_CAPTION
       remaining_text = fuzzed_text
@@ -284,7 +286,7 @@ class Step < Erector::Widget
   end
 
   def source_code *args
-    src = args.pop
+    src = args.pop.strip_heredoc
     lang = args.pop
     src = "\n:::#{lang}\n#{src}" if lang
     pre src, :class => "code"

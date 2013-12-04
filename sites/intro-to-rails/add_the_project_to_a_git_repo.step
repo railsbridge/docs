@@ -26,7 +26,7 @@ steps do
     console "git add ."
     message "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
     tip "git add" do
-      message <<-MARKDOWN.strip_heredoc
+      message <<-MARKDOWN
         With Git, there are usually many ways to do very similar things.
 
         * `git add foo.txt` adds a file named `foo.txt`

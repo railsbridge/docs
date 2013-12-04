@@ -8,7 +8,7 @@ steps {
 
     message "Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:"
 
-    source_code :erb, <<-HTML.strip_heredoc
+    source_code :erb, <<-HTML
       <% @topics.each do |topic| %>
         <tr>
           <td><%= topic.title %></td>
@@ -46,7 +46,7 @@ end
 explanation {
 
   message "First we added these two lines to `app/views/topics/index.html.erb`"
-  source_code :erb, <<-HTML.strip_heredoc
+  source_code :erb, <<-HTML
   <td><%= pluralize(topic.votes.count, "vote") %></td>
   <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
   HTML
