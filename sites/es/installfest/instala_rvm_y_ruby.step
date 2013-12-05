@@ -1,5 +1,5 @@
 message <<-MARKDOWN
-RVM por sus siglas en inglés de Ruby Version Manager (Controlador de Versiones de Ruby) y la forma mas fácil de instalar y gestionar Ruby. Las [instrucciones oficiales de instalción de RVM](http://rvm.beginrescueend.com/rvm/install/) están disponibles aquí, pero esto debería de funcionar para ti:
+RVM por sus siglas en inglés de Ruby Version Manager (Controlador de Versiones de Ruby) y la forma mas fácil de instalar y gestionar Ruby. Las [instrucciones oficiales de instalación de RVM](http://rvm.beginrescueend.com/rvm/install/) están disponibles aquí, pero esto debería de funcionar para ti:
 MARKDOWN
 
 spanish_step "Instalar RVM" do
@@ -28,7 +28,7 @@ step "Instala Ruby 1.9.3 usando RVM" do
 
   message "Esto descarga y compila Ruby, lo cual toma un tiempo."
   
-  important "Si 'rvm install 1.9.3' dice 'autoreconf was not found in the PATH'" do
+  important "Si `rvm install 1.9.3` dice `autoreconf was not found in the PATH`" do
     option "Mac OS" do
       spanish_console "brew install automake"
     end
