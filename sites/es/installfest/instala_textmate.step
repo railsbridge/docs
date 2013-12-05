@@ -10,7 +10,7 @@ step "Descarga Textmate 1.5.11" do
   message "Descarga el instalador de [Textmate] (http://archive.textmate.org/TextMate_1.5.11_r1635.zip)."
 end
 
-step 'Seleccionar "Abrir con Archive Utility" en el dialogo de guardar' do
+step 'Selecciona "Abrir con Archive Utility" en el dialogo de guardar' do
   message "Éste debería ser el de default."
   message "Extraerá del archivo zip la aplicación Textmate adentro de tu carpeta de descargas."
 end
