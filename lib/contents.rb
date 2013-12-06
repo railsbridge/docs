@@ -31,9 +31,13 @@ class Contents < Erector::Widget
     parseable_site_files.reject { |file| File.basename(file).start_with?('_') }
   end
 
+  def content_for filename
+    open("#{site_dir}/#{filename}").read()
+  end
+
   def subpages_for filename
     links = []
-    content = open("#{site_dir}/#{filename}").read()
+    content = content_for(filename)
 
     # (markdown) links of the form: [link text](link_page)
     content.scan /\[.*?\]\((.*?)\)/ do |link, _|
@@ -57,7 +61,7 @@ class Contents < Erector::Widget
   end
 
   def next_step_for filename
-    content = open("#{site_dir}/#{filename}").read()
+    content = content_for(filename)
 
     # (stepfiles) links of the form: stepfile "next page"
     content.scan /next_step\s*["'](.*?)["']/ do |link, _|
@@ -211,12 +215,11 @@ class Contents < Erector::Widget
   end
 
   def has_collapsables toc_items
-    toc_items.each do |toc_item|
+    toc_items.any? do |toc_item|
       if toc_item.instance_of? Array
         return true
       end
     end
-    return false
   end
 
   def content
