@@ -38,6 +38,7 @@ class Contents < Erector::Widget
     # (markdown) links of the form: [link text](link_page)
     content.scan /\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
+      next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
       next if (link =~ /(jpg|png)$/)
       links.push(link) if !links.include? link
     end
