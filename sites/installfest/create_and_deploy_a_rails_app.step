@@ -349,7 +349,7 @@ step "Deploy your App on Ninefold" do
 
   step "Choose GitHub" do
     message <<-MARKDOWN
-      ![Select GitHub](/img/select_repo1.png)
+      ![Select GitHub](/img/nf/select_repo1.png)
     MARKDOWN
 
     step "Click on Sign in with GitHub." do
@@ -358,7 +358,7 @@ step "Deploy your App on Ninefold" do
 
         We will ask you to grant us some permissions. (Ninefold will never make changes to your codebase or read your followers or your gists. These were just set by GitHub by default. We just require this so we can redeploy your app for you automagically.)
 
-        ![Grant Permission to Ninefold](/img/deploy_app_permission.png)
+        ![Grant Permission to Ninefold](/img/nf/deploy_app_permission.png)
       MARKDOWN
     end
 
@@ -366,7 +366,7 @@ step "Deploy your App on Ninefold" do
       message <<-MARKDOWN
         Time to select a repository and branch in the Connect Repository step. Remember to choose the Rails app you want to deploy. You will want to click on the Repo you want (e.g. test_app) and then the branch (e.g. master). Right now you will only have one. Eventually you'll have many to choose from!
 
-        ![Choose the repo](/img/rb_repository.png)
+        ![Choose the repo](/img/nf/rb_repository.png)
 
         Click **Next**.
       MARKDOWN
@@ -377,7 +377,7 @@ step "Deploy your App on Ninefold" do
     message <<-MARKDOWN
       In this window, choose the combined server. Pick your primary region based on your location.
 
-      ![Choose infrastructure](/img/infrastructure.png)
+      ![Choose infrastructure](/img/nf/infrastructure.png)
 
       Click **Next**.
     MARKDOWN
@@ -387,7 +387,7 @@ step "Deploy your App on Ninefold" do
     message <<-MARKDOWN
       This is the last step! Name your app (it will also become part of your deployed app name). Click Deploy App.
 
-      ![Choose infrastructure](/img/name_app.png)
+      ![Choose infrastructure](/img/nf/name_app.png)
 
       Click **Deploy App**.
     MARKDOWN
@@ -398,6 +398,10 @@ step "Deploy your App on Ninefold" do
       Grab a drink, sit back, and relax. Ninefold will deploy your app!
 
       Once your app’s been deployed, you’ll want to click on View Details. You’ll see your app information. Click on the name that has yourappname1234.ninefold-apps.com.
+
+      ![View Details](/img/nf/view_details.png)
+      
+      ![View App](/img/nf/view_app.png)
     MARKDOWN
 
     tip "Every time you push your changes to your github, Ninefold will automatically redeploy your app for you (just takes a few minutes)!"

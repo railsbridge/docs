@@ -47,7 +47,7 @@ You will be installing the following tools:
   * bundler
   * sqlite
 
-You will also create an account on Heroku, an application hosting platform.
+You will also create an account on Heroku or Ninefold; both are application hosting platforms.
 
 If you already have an account on Heroku, make sure you know your username and password.
 

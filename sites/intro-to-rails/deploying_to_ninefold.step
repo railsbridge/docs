@@ -1,0 +1,144 @@
+h2 "Once you've created your app, you want it online for the world to see! Ninefold is here to help you out."
+
+situation "First Deployment" do
+  message "Ninefold will walk you through the deployment process. It's super simple!"
+
+  step "Set up your App for deployment" do
+    message <<-MARKDOWN
+      Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\railsbridge\\test_app` and on Linux/OS X, it should be under `~/railsbridge/test_app`.)
+
+      Inside this file, change the line:
+    MARKDOWN
+
+    source_code :ruby, <<-RUBY
+      gem 'sqlite3'
+    RUBY
+
+    message "To this:"
+
+    source_code :ruby, <<-RUBY
+      group :development, :test do
+        gem 'sqlite3'
+      end
+
+      group :production do
+        gem 'pg'
+      end
+    RUBY
+
+    message "Save the file."
+
+    console <<-BASH
+      bundle install --without production
+    BASH
+
+    tip "By running bundle install, the Gemfile and Gemfile.lock files will match up. By running –without production, it skips the group :production."
+
+    message  "Perfect. Now add the changes to git."
+
+    console <<-BASH
+      git add .
+      git commit -m "Updates for deployment"
+    BASH
+
+    message "Next, push to your GitHub repo."
+
+    console <<-BASH
+      git push origin master
+    BASH
+
+  end
+
+  step "Login to your Ninefold account" do
+    message "If you haven't created an account, just sign up! <http://ninefold.com>"
+  end
+
+  step "Click on the giant **Deploy Now** button" do
+  end
+
+  step "Choose GitHub" do
+    message <<-MARKDOWN
+      ![Select GitHub](/img/nf/select_repo1.png)
+    MARKDOWN
+
+    step "Click on Sign in with GitHub." do
+      message <<-MARKDOWN
+        Of course read the blurb about how Ninefold accesses your GitHub.
+
+        We will ask you to grant us some permissions. (Ninefold will never make changes to your codebase or read your followers or your gists. These were just set by GitHub by default. We just require this so we can redeploy your app for you automagically.)
+
+        ![Grant Permission to Ninefold](/img/nf/deploy_app_permission.png)
+      MARKDOWN
+    end
+
+    step "Connect your repository" do
+      message <<-MARKDOWN
+        Time to select a repository and branch in the Connect Repository step. Remember to choose the Rails app you want to deploy. You will want to click on the Repo you want (e.g. test_app) and then the branch (e.g. master). Right now you will only have one. Eventually you'll have many to choose from!
+
+        ![Choose the repo](/img/nf/rb_repository.png)
+
+        Click **Next**.
+      MARKDOWN
+    end
+  end
+
+  step "Choose your Infrastructure" do
+    message <<-MARKDOWN
+      In this window, choose the combined server. Pick your primary region based on your location.
+
+      ![Choose infrastructure](/img/nf/infrastructure.png)
+
+      Click **Next**.
+    MARKDOWN
+  end
+
+  step "Name your App" do
+    message <<-MARKDOWN
+      This is the last step! Name your app (it will also become part of your deployed app name). Click Deploy App.
+
+      ![Choose infrastructure](/img/nf/name_app.png)
+
+      Click **Deploy App**.
+    MARKDOWN
+  end
+
+  step "Boom, done!" do
+    message <<-MARKDOWN
+      Grab a drink, sit back, and relax. Ninefold will deploy your app!
+
+      Once your app’s been deployed, you’ll want to click on View Details. You’ll see your app information. Click on the name that has yourappname1234.ninefold-apps.com to view your app.
+
+      ![View Details](/img/nf/view_details.png)
+      ![View App](/img/nf/view_app.png)
+    MARKDOWN
+  end
+end
+
+situation "Every commit you make" do
+  message "For every change you make, you will want to commit them.  And as long as if your code is in a working state, every time you commit to GitHub, Ninefold will redeploy for you."
+
+  step "Commit your changes" do
+    message "Check the status of the files you've changed and would like to commit."
+
+    console <<-BASH
+      git status
+    BASH
+
+    message "Now you want to make sure your work is saved and logged. So add and commit to git."
+
+    console <<-BASH
+      git add .
+      git commit -m "Brief message of what you've changed"
+    BASH
+  end
+
+  step "Commit to GitHub" do
+    console <<-BASH
+      git push origin master
+    BASH
+  end
+
+  step "Sit back and relax!" do
+    message "Ninefold is redeploying your app for you!"
+  end
+end
