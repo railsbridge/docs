@@ -9,7 +9,7 @@ end
 
 spanish_step "Elimina la prueba_app de tu computadora" do
   option "Windows" do
-    message "Desde el Explorador, haz click derecho en el folder prueba_app (dentro de C:\\Sitios) y escoge Eliminar."
+    message "Desde el navegador, haz click derecho en la carpeta prueba_app (dentro de C:\\Sitios) y escoge Eliminar."
   end
   option "Mac" do
     message "Abre tu directorio de inicio y arrastra la carpeta prueba_app a la Basura."
