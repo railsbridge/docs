@@ -15,6 +15,6 @@ step 'Selecciona "Abrir con Archive Utility" en el dialogo de guardar' do
   message "Extraerá del archivo zip la aplicación Textmate adentro de tu carpeta de descargas."
 end
 
-step "Arrastra la aplicación de Textmate en tu carpeta de aplicaciones." do
-  message "Arrastra la aplicación de Textmate en tu carpeta de aplicaciones."
+step "Arrastra la aplicación de Textmate a tu carpeta de aplicaciones." do
+  message "Arrastra la aplicación de Textmate a tu carpeta de aplicaciones."
 end
