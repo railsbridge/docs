@@ -6,32 +6,50 @@ end
 steps do
   
   step do
-    message "First, you've got to turn on your dev tools. They're hidden by default."
-    message "<img src='img/devtools.png'>"
-    message "In Chrome, you can do this by clicking _View > Developer > Developer Tools_."
+    message <<-MARKDOWN
+      First, you've got to turn on your dev tools. They're hidden by default.
+
+      <img src='img/devtools.png'>
+
+      In Chrome, you can do this by clicking _View > Developer > Developer Tools_.
+    MARKDOWN
   end
   
   step do
-    message "Click on the 'Elements' button to check out your HTML."
-    message "<img src='img/devtools_elements.png'>"
-    message "Clicking on an HTML tag in the elements panel will highlight that element in the browser window. It's a great tool for debugging styling problems. On the right side of the panel, you'll even get a list of styles that are being applied to that element."
+    message <<-MARKDOWN
+      Click on the 'Elements' button to check out your HTML.
+
+      <img src='img/devtools_elements.png'>
+
+      Clicking on an HTML tag in the elements panel will highlight that element in the browser window. It's a great tool for debugging styling problems. On the right side of the panel, you'll even get a list of styles that are being applied to that element.
+    MARKDOWN
     tip "Chrome's Elements panel will update to match the state of your DOM as you modify it with JavaScript. Some elements panels don't do this &mdash; they just show what the HTML looked like on page load."
   end
 
   step do
-    message "In the 'Network' panel, you can see what other files and resources your HTML page is loading."
-    message "<img src='img/devtools_network.png'>"
-    message "If you click on a file name, you can take a look at the contents of that file. This panel is a great place for debugging script linking or loading issues. (You can see HTTP headers and request params here too, with a little digging.)"
+    message <<-MARKDOWN
+      In the 'Network' panel, you can see what other files and resources your HTML page is loading.
+
+      <img src='img/devtools_network.png'>
+
+      If you click on a file name, you can take a look at the contents of that file. This panel is a great place for debugging script linking or loading issues. (You can see HTTP headers and request params here too, with a little digging.)
+    MARKDOWN
   end
 
   step do
-    message "The 'Console' is the JavaScript developer's secret weapon. It lets you run JavaScript by typing it in directly &mdash; and it runs your scripts _in the context of your page_, so you can interact directly with objects and functions you've defined. It's helpful for debugging and experimenting."
-    message "<img src='img/devtools_console.png'>"
+    message <<-MARKDOWN
+      The 'Console' is the JavaScript developer's secret weapon. It lets you run JavaScript by typing it in directly &mdash; and it runs your scripts _in the context of your page_, so you can interact directly with objects and functions you've defined. It's helpful for debugging and experimenting.
+
+      <img src='img/devtools_console.png'>
+    MARKDOWN
   end
   
   step do
-    message "The 'Sources' panel is another JavaScript pro tool. If you're used to working with an IDE that has a debugger, you'll be able to use many of the same techniques (like breakpoints, stack traces, and watch expressions) right here in the browser."
-    message "<img src='img/devtools_script.png'>"
+    message <<-MARKDOWN
+      The 'Sources' panel is another JavaScript pro tool. If you're used to working with an IDE that has a debugger, you'll be able to use many of the same techniques (like breakpoints, stack traces, and watch expressions) right here in the browser.
+
+      <img src='img/devtools_script.png'>
+    MARKDOWN
   end
 end
   
