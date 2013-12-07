@@ -30,7 +30,7 @@ steps do
   end
   
   step do
-    message "The 'Script' panel is another JavaScript pro tool. If you're used to working with an IDE that has a debugger, you'll be able to use many of the same techniques (like breakpoints, stack traces, and watch expressions) right here in the browser."
+    message "The 'Sources' panel is another JavaScript pro tool. If you're used to working with an IDE that has a debugger, you'll be able to use many of the same techniques (like breakpoints, stack traces, and watch expressions) right here in the browser."
     message "<img src='img/devtools_script.png'>"
   end
 end
