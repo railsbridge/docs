@@ -1,25 +1,25 @@
-step "Insert your OS X DVD or Thumb Drive"
+spanish_step "Inserta tu DVD de OS X o tu memoria USB"
 
-step "Locate Xcode.mpkg" do
- message "on the OS X DVD, it is inside the \"Optional Installs\" folder."
+spanish_step "Localiza Xcode.mpkg" do
+ message "en el DVD de OS X, esta la carpeta de \"Instalaciones opcionales\"."
 end
 
-step 'Double-click Xcode.mkpg' do
- message 'This will bring up a window titled *"Install XCode."*'
+spanish_step 'Haz doble click en Xcode.mkpg' do
+ message 'Esto mostrará una ventana llamada *"Instala XCode."*'
 end
 
-step "Keep on clicking..." do
- li 'Click "Continue" at the Introduction screen.'
- li 'Click "Continue" at the License screen.'
- li 'Click "Agree" in the popup to agree to the license.'
- li 'Click "Continue" at the Destination Select screen.'
- li "Click \"Continue\" at the Installation Type screen. (Don't change the checkboxes.)"
+spanish_step "Mantén el clicking..." do
+ li 'Da click en "Continuar" en la pantalla de Introducción.'
+ li 'Da click en "Continuar" en la pantalla de Licencia.'
+ li 'Da click en "De acuerdo" en el popup para aceptar la licencia.'
+ li 'Da click en "Continuar" en la pantala de Selección de destion.'
+ li "Da click \"Continuar\" en la pantalla de Tipo de instalación. (No cambies las casillas de verificación.)"
 end
 
-step 'Click "Install".' do
- message "Enter your user password in the popup to REALLY start installing. It takes a while."
+spanish_step 'Da click en "Instalar".' do
+ message "Ingresa tu contraseña de usuario en el popup para REALMENTE comenzar la instalación. Esto toma un rato."
 end
 
-step 'Click "Close"' do
- message 'once you get "The installation was successful" on the Summary screen.'
+spanish_step 'Da click en "Cerrar"' do
+ message 'una vez que consigas "La instalación fue satisfactoria" en la pantalla de resumen.'
 end
