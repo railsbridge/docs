@@ -1,0 +1,16 @@
+message "Hosting Services provide a way for you to deploy your app online so the world can see it.  There are many options but for now we will focus on two."
+
+h2 "What would you like?"
+
+div(class: "os-button") do
+  simple_link "create_a_heroku_account" do
+    img src: "/img/heroku.png"
+    h3 "Heroku"
+  end
+end
+div(class: "os-button") do
+  simple_link "create_a_ninefold_account" do
+    img src: "/img/ninefold.png"
+    h3 "Ninefold"
+  end
+end

@@ -4,7 +4,7 @@ message "You'll need one of these to create your Heroku and Github accounts."
 
 option "Did you use RailsInstaller on Windows?" do
   message "Congratulations, you already have an ssh key!"
-  link_without_toc 'create_a_heroku_account'
+  link_without_toc 'choose_a_hosting_service'
 end
 
 option "otherwise" do
@@ -53,5 +53,5 @@ The key fingerprint is:
   end
 end
 
-next_step 'create_a_heroku_account'
+next_step 'choose_a_hosting_service'
 

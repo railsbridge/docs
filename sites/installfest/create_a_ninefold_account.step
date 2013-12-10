@@ -1,0 +1,17 @@
+message "Ninefold is an option for super easy deployment and awesome performance"
+
+step "Visit the Ninefold web site" do
+  url "http://ninefold.com"
+end
+
+step "Sign up for an account" do
+  message "Click on the blue **FREE SIGNUP** button"
+  message "Enter your email address, desired username, and password"
+
+  option "Verify your email address" do
+    message "Check your email for a note from Ninefold"
+    message "Click the link to verify your email address"
+  end
+end
+
+next_step "create_and_deploy_a_rails_app"
