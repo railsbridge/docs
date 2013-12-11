@@ -24,10 +24,10 @@ spanish_step "Configura tu git y ambiente ssh" do
 
   important "Al final del instalador habrá una casilla de verificación que dice 'Configura tu git y ambiente ssh'. **Deja esta casilla de verificación marcada** Esto abrirá una terminal en la que tu tendrás que **Teclear Enter**."
 
-  message "Cuando diga *Por favor ingresa tu nombre, por ejemplo el mio es: Wayne E. Seguin*"
+  message "Cuando diga *Por favor ingresa tu nombre, por ejemplo el mío es: Wayne E. Seguin*"
   message "Teclea *tu nombre completo* en la consola y presiona **Enter**"
 
-  message "Cuando diga *Por favor ingresa tu correo electrónico, por ejemplo el mio es: wayneeseguin@gmail.com*"
+  message "Cuando diga *Por favor ingresa tu correo electrónico, por ejemplo el mío es: wayneeseguin@gmail.com*"
   message "Ingresa *tu correo electrónico actual* en la consola y presiona **Enter**"
 
   important "Usa el **mismo correo electrónico** para heroku, git, github, y ssh."
@@ -69,7 +69,7 @@ spanish_step "Abre una terminal" do
 
   message "RailsInstaller hace una Terminal esecial para que la uses cuando trajes en Ruby, Rails o Git."
 
-  message "Para abrir la Terminal especial, escoje **Todos los Programas** en el menú de inicio, despues escoge **RailsInstaller** y luego **Command Prompt with Ruby and Rails**. Todo tu trabajo en Rails de este RailsInstaller deberás de hacerlo en la ventana de DOS."
+  message "Para abrir la Terminal especial, escoje **Todos los Programas** en el menú de inicio, después escoje **RailsInstaller** y luego **Command Prompt with Ruby and Rails**. Todo tu trabajo en Rails de este RailsInstaller deberás de hacerlo en la ventana de DOS."
 
   img src: 'img/railsbridge_findingCommandPrompt.png'
 
@@ -84,17 +84,17 @@ spanish_step "Abre una terminal" do
 end
 
 spanish_step "Configura la Terminal de Windows" do
-  message "Toma tu tiempo para configurar el *Command Prompt with Ruby and Rails*, ésto es para que tenga un buen alto, ancho y fuente amigable. Consejo -- Haz click para abrir el siguiente link, y cuando termines esos pasos, presiona en tu navegador el botón the **atrás** para continuar con este procedimiento."
+  message "Toma tu tiempo para configurar el *Command Prompt with Ruby and Rails*, ésto es para que tenga un buen alto, ancho y fuente amigable. Consejo -- Haz click para abrir el siguiente link, y cuando termines esos pasos, presiona en tu navegador el botón **atrás** para continuar con este procedimiento."
 
-  spanish_link "configure_the_windows_terminal"
+  spanish_link "configura_la_terminal_de_windows"
 
   tip "Limpia la terminal" do
     message "Si alguna vez quieres limpiar todo el texto de salida de tu terminal"
     spanish_console "cls"
   end
 
-  tip "comando history" do
-   message "La ventana de la terminal guarda un \"comando history.\"  Para ver y correr de nuevo comandos anteriores, usa las teclas de &lt;flecha arriba&gt; y &lt;flecha abajo&gt;.  También puedes editar comandos anteriores y correrlos -- esto es conveniente para comandos largos, o para corregir errores, o para ciclos (series de comandos) que repites."
+  tip "historial de comandos" do
+   message "La ventana de la terminal guarda un \"historial de comandos.\"  Para ver y correr de nuevo comandos anteriores, usa las teclas de &lt;flecha arriba&gt; y &lt;flecha abajo&gt;.  También puedes editar comandos anteriores y correrlos -- esto es conveniente para comandos largos, o para corregir errores, o para ciclos (series de comandos) que repites."
  end
 
   tip "copia y pega" do
