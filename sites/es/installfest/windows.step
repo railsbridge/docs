@@ -67,7 +67,7 @@ spanish_step "Abre una terminal" do
 
   tip "La terminal también es llamada Símbolo del Sistema, Línea de Comandos, DOS Prompt o Ventana de DOS."
 
-  message "RailsInstaller hace una Terminal esecial para que la uses cuando trajes en Ruby, Rails o Git."
+  message "RailsInstaller hace una Terminal especial para que la uses cuando trabajes en Ruby, Rails o Git."
 
   message "Para abrir la Terminal especial, escoje **Todos los Programas** en el menú de inicio, después escoje **RailsInstaller** y luego **Command Prompt with Ruby and Rails**. Todo tu trabajo en Rails de este RailsInstaller deberás de hacerlo en la ventana de DOS."
 
