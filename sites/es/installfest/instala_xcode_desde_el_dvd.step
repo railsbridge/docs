@@ -12,7 +12,7 @@ spanish_step "Mantén el clicking..." do
  li 'Da click en "Continuar" en la pantalla de Introducción.'
  li 'Da click en "Continuar" en la pantalla de Licencia.'
  li 'Da click en "De acuerdo" en el popup para aceptar la licencia.'
- li 'Da click en "Continuar" en la pantala de Selección de destion.'
+ li 'Da click en "Continuar" en la pantala de Selección de destino.'
  li "Da click \"Continuar\" en la pantalla de Tipo de instalación. (No cambies las casillas de verificación.)"
 end
 
