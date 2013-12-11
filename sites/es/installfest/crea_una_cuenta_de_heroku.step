@@ -14,7 +14,7 @@ spanish_step "Activa tu cuenta" do
 
 end
 
-spanish_step "Instala el cinturón de herramientas de Heroku" do
+spanish_step "Instala el toolbelt de Heroku" do
 
   message "Visita https://toolbelt.heroku.com/, haz click en el link de descarga, e instala."
 
