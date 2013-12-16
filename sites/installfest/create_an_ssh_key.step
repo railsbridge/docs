@@ -7,7 +7,20 @@ option "Did you use RailsInstaller on Windows?" do
   link_without_toc 'create_a_heroku_account'
 end
 
-option "otherwise" do
+option "Do you have a preexisting SSH key for some other reason?" do
+  message "Maybe you went to a previous RailsBridge workshop, or generated an SSH key to push some code to GitHub? You can check with the following command:"
+  console "ls ~/.ssh/id_rsa"
+  message "If you see the message **No such file or directory**, you don't have an SSH key yet."
+  option_half "'No such file or directory'" do
+    message "Go on to <a href='#generate-key'>Generate an SSH key"
+  end
+  option_half "'/Users/[something]/.ssh/id_rsa'" do
+    link_without_toc 'create_a_heroku_account'
+  end
+end
+
+a name: "generate-key"
+option "Generate an SSH key" do
   important "Use the same email address for heroku, git, github, and ssh."
 
   important "**REPLACE** `student@example.com` with your **actual email address** below."
