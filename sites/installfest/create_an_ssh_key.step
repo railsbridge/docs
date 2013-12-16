@@ -51,6 +51,15 @@ The key fingerprint is:
       message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
     end
   end
+
+  message "Add your generated public key to the authentication agent using the following command:"
+
+  console "ssh-add ~/.ssh/id_rsa"
+
+  result <<-OUTPUT
+  Enter passphrase for /Users/student/.ssh/id_rsa:
+  Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
+    OUTPUT
 end
 
 next_step 'create_a_heroku_account'
