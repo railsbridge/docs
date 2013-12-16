@@ -4,6 +4,49 @@ goals {
 
 steps {
 
+  step "Add a new controller action for voting" do
+    message "Edit `app/controllers/topics_controller.rb` to add a method like this:"
+
+    source_code :ruby, <<-RUBY
+      def upvote
+        @topic = Topic.find(params[:id])
+        @topic.votes.create
+        redirect_to(topics_path)
+      end
+    RUBY
+
+    message <<-MARKDOWN
+      * `@topic = Topic.find(params[:id])` finds the topic in the database with that id and stores it in the variable `@topic`.
+      * `@topic.votes.create` creates a new vote for the current topic and saves it in the database.
+      * `redirect_to(topics_path)` tells the browser to go back to topics_path (the topics list).
+    MARKDOWN
+  end
+
+  step "Add a new route for voting" do
+    message "Open `app/config/routes.rb` and find the section that looks like this:"
+    source_code :ruby, <<-RUBY
+      resources :topics
+    RUBY
+
+    message "Replace that line so it looks like this:"
+    source_code :ruby, <<-RUBY
+      resources :topics do
+        member do
+          post 'upvote'
+        end
+      end
+    RUBY
+
+    message <<-MARKDOWN
+      Verify that route route was added successfully by checking the output of `rake routes` or [http://localhost:3000/rails/info](http://localhost:3000/rails/info). You should see a line that looks like this:
+
+      ```
+            Prefix Verb   URI Pattern                  Controller#Action
+      upvote_topic POST   /topics/:id/upvote(.:format) topics#upvote
+      ```
+    MARKDOWN
+  end
+
   step "Add the button to the view" do
 
     message "Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:"
@@ -14,59 +57,27 @@ steps {
           <td><%= topic.title %></td>
           <td><%= topic.description %></td>
           <td><%= pluralize(topic.votes.count, "vote") %></td>
-          <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
+          <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
           <td><%= link_to 'Show', topic %></td>
           <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
           <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     HTML
-  end
 
-  step "Add the create method to the controller" do
-    message "Add the following method to `Vote` in `app/controllers/votes_controller.rb`:"
-    source_code :ruby, <<-RUBY
-class VotesController < ApplicationController
-  def create
-    topic = Topic.find(params[:topic_id])
-    vote = topic.votes.build
-    vote.save!
-    redirect_to(topics_path)
-  end
-end
-    RUBY
+    message <<-MARKDOWN
+      * `pluralize(topic.votes.count, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
+      * `button_to '+1'` creates an html button with the text '+1'.
+      * `topic_upvote_path(topic)` creates the appropriate URL for the action we want to invoke. In this case, we want to upvote the current topic.
+        * `topic_upvote_path(topic)` would return `/topics/42/upvote` (if topic.id was 42)
+      * `method: :post` ensures we do the create action of CRUD, not the read action.
+    MARKDOWN
   end
 
   step "Confirm your changes in the browser" do
     message "Go back to <http://localhost:3000/topics> and play."
     message "Revel in the fact that you didn't have to restart the server to see these changes. Hawt, no?"
   end
-}
-
-explanation {
-
-  message "First we added these two lines to `app/views/topics/index.html.erb`"
-  source_code :erb, <<-HTML
-  <td><%= pluralize(topic.votes.count, "vote") %></td>
-  <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
-  HTML
-
-  message <<-MARKDOWN
-  * `pluralize(topic.votes.count, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
-  * `button_to '+1'` creates an html button with the value '+1'.
-  * `votes_path(topic_id: topic.id)` creates the right url for the action we want to invoke. In this case, we want to create a vote for the current topic.
-    * `votes_path(topic_id: 42)` would output `/votes?topic_id=42`
-  * `method: :post` ensures we do the create action of CRUD, not the read action.
-
-  The changes we made to votes controller are a bit more complicated so let's work through them line by line.
-
-  * `topic = Topic.find(params[:topic_id])`
-    * Finds the topic in the database with that id and stores it in the variable 'topic'.
-    * `params[:topic_id]` corresponds to the topic_id part of the votes_path above (eg `?topic_id=42`).
-  * `vote = topic.votes.build` creates a new vote for the current topic.
-  * `vote.save!` saves the vote to the database.
-  * `redirect_to(topics_path)` tells the browser to go back to topics_path (the topics list).
-  MARKDOWN
 }
 
 insert 'consider_deploying'

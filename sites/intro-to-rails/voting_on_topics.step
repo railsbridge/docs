@@ -9,7 +9,7 @@ goals {
 
 steps {
   console <<-SHELL
-rails generate resource vote topic_id:integer
+rails generate model vote topic_id:integer
 rake db:migrate
   SHELL
 }
