@@ -37,6 +37,7 @@ class Contents < Erector::Widget
 
   def subpages_for filename
     links = []
+    return links if filename.match(/deck\.md/)
     content = content_for(filename)
 
     # (markdown) links of the form: [link text](link_page)
