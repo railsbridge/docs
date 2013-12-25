@@ -6,12 +6,9 @@ require 'titleizer'
 require 'docs_external_renderer'
 
 class DocPage < Erector::Widgets::Page
-  needs :site_name, :doc_title, :doc_path, :page_name
+  needs :site_name, :doc_title, :doc_path, :page_name, :src
   needs :back => nil
-  attr_reader :site_name, :doc_title, :page_name
-
-  needs :src
-  attr_reader :src
+  attr_reader :site_name, :doc_title, :page_name, :src
 
   def self.css_path
     here = File.expand_path File.dirname(__FILE__)

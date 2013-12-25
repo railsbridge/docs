@@ -63,6 +63,12 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     Dir["#{sites_dir}/*"].map{|path| path.split('/').last}
   end
 
+  def redirect_sites
+    {
+      'curriculum' => 'intro-to-rails'
+    }
+  end
+
   def src
     File.read(doc_path)
   end
@@ -176,6 +182,8 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   get "/:site/:name" do
+    site_name = params[:site]
+    return redirect "#{redirect_sites[site_name]}/#{params[:name]}" if redirect_sites[site_name]
     render_page
   end
 
@@ -194,7 +202,9 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/:site/" do
     site_name = params[:site]
-    if sites.include? site_name
+    if redirect_sites[site_name]
+      redirect "#{redirect_sites[site_name]}/"
+    elsif sites.include? site_name
       # render the site's index page
       params[:name] = site_name
       render_page
