@@ -32,7 +32,7 @@ steps do
 
         option_half "Installing Homebrew" do
           div do
-            a "Instructions for Installing Homebrew", :href => "/installfest/install_homebrew", :class => "link"
+            a "Instructions for Installing Homebrew", :href => "http://brew.sh", :class => "link"
           end
 
           message "After installing homebrew, use it to install git"
