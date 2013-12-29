@@ -286,8 +286,14 @@ table.bordered tr {
   min-height: 145px;
 }
 
-.half-width:last-child {
+.half-width:last-child{
   margin-right: 0;
+}
+
+.no-style-type {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .site-desc p {

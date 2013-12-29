@@ -18,7 +18,7 @@ goals {
 
 steps {
 
-  step {
+  step "Teach the Topic model about Votes" do
     message "Edit `app/models/topic.rb` so that it looks like this:"
 
     source_code :ruby, <<-RUBY
@@ -26,16 +26,72 @@ class Topic < ActiveRecord::Base
   has_many :votes, dependent: :destroy
 end
     RUBY
-  }
+  end
 
-  step {
+  step "Teach the Vote model about Topics" do
     message "Edit `app/models/vote.rb` so that it looks like this:"
     source_code :ruby, <<-RUBY
 class Vote < ActiveRecord::Base
   belongs_to :topic
 end
     RUBY
-  }
+  end
+
+  step "Play around with Topics and Votes in the Rails console" do
+    message "First, make sure you've made at least one topic on the site."
+
+    console_with_message "Next, open a Rails console in a terminal window:", "rails c"
+
+    result <<-CONSOLE
+      $ rails c
+      Loading development environment (Rails 4.0.0)
+      1.9.3-p194 :001 >
+    CONSOLE
+
+    message "At the console, try the following things"
+
+    console_with_message "See how many topics exist:", "Topic.count"
+
+    console_with_message "Save the first topic into a variable:", "my_topic = Topic.first"
+
+    tip "`my_topic` here could have been any variable name, but we'll stick with `my_topic` for consistency."
+
+    console_with_message "Change the title of that topic to something else:", "my_topic.update_attributes(title: 'Edited in the console')"
+
+    console_with_message "Add a vote to that topic:", "my_topic.votes.create"
+
+    console_with_message "See how many votes that topic has:", "my_topic.votes.count"
+
+    console_with_message "Remove a vote from that topic:", "my_topic.votes.first.destroy"
+
+    message "Note that the things you can do to **Model classes** (like **Topic** and **Vote**), differ from the things you can do to **Model instances** (like my\\_topic, here). **my\\_topic.votes** is an **association**, and here behaves mostly like a model class."
+
+    half_width "Model class / association methods" do
+      ul class: 'no-style-type' do
+        li "Topic.first"
+        li "Topic.last"
+        li "Topic.all"
+        li "Topic.count"
+        li "Topic.find_by_id(5)"
+        li "Topic.destroy_all"
+        li "my_topic.votes.count"
+        li "my_topic.votes.create"
+        li "my_topic.votes.destroy_all"
+      end
+    end
+
+    half_width "Model instance methods" do
+      ul class: 'no-style-type' do
+        li "my_topic.title"
+        li "my_topic.title = 'New title'"
+        li "my_topic.update_attributes(title: 'New title')"
+        li "my_topic.save"
+        li "my_topic.save!"
+        li "my_topic.destroy"
+        li "my_topic.votes.first.destroy"
+      end
+    end
+  end
 }
 
 explanation {

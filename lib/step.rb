@@ -141,6 +141,7 @@ class Step < Erector::Widget
       yield
     end
   end
+  alias_method :half_width, :option_half
 
   def section text
     div do
