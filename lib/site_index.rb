@@ -17,7 +17,7 @@ class SiteIndex < Erector::Widget
 
   def site_link site
     if site == site_name
-      return li site_name, class: 'current'
+      return li Titleizer.title_for_page(site_name), class: 'current'
     end
 
     path = "/#{site}/"

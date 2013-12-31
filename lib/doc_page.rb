@@ -38,11 +38,11 @@ class DocPage < Erector::Widgets::Page
   end
 
   def site_title
-    "#{site_name.split(/[-_]/).map(&:capitalize).join(" ")}"
+    "#{Titleizer.title_for_page(site_name)}"
   end
 
   def page_title
-    "#{doc_title} - #{site_title}"
+    "#{doc_title} - #{Titleizer.title_for_page(site_title)}"
   end
 
   external :style, scss(File.read("#{css_path}/header.scss"))
@@ -107,7 +107,7 @@ class DocPage < Erector::Widgets::Page
       div(class: "navbar-header cf title") {
         a(href: "/#{site_name}") {
           span("RailsBridge ", class: "brand")
-          text site_title
+          text Titleizer.title_for_page(site_title)
         }
       }
       ul(class: "navbar-nav nav") {
