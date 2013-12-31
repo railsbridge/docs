@@ -176,7 +176,7 @@ class Step < Erector::Widget
     div class: 'site-desc' do
       h1 do
         a href: "/#{site_name}" do
-          text site_name.gsub(/[-_]/, ' ').split.map(&:capitalize).join(' ')
+          text Titleizer.title_for_page(site_name)
         end
       end
       div raw(md2html description)
