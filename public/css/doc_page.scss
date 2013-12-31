@@ -9,7 +9,11 @@ h1 {
   margin: 0;
 }
 
-.bottom {
+main, footer {
+  display: block;
+}
+
+body > footer {
   clear: both;
   min-height: 60px;
   text-align: center;
@@ -21,7 +25,7 @@ h1 {
   display: block !important;
 }
 
-.main {
+main {
   position: relative;
   margin-left: 300px;
   margin-right: 20px;
@@ -29,12 +33,12 @@ h1 {
 }
 
 @media (max-width: 1100px) {
-  .main {
+  main {
     margin-left: 40px;
   }
 }
 
-.main h1.doc_title {
+main h1.doc_title {
   font-family: "Aleo Bold", serif;
   color: #6c266f;
   font-weight: 100;
@@ -126,7 +130,7 @@ img {
 }
 
 @media print {
-  .main {
+  main {
     margin-left: 20px;
     font-size: 13px;
   }

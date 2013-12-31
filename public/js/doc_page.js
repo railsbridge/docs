@@ -1,3 +1,7 @@
+// HTML5 Shims...
+document.createElement('main');
+document.createElement('footer');
+
 $(document).ready(function () {
   $('[data-toggle-selector]').on('click', function (event) {
 		event.preventDefault();

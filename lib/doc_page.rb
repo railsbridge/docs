@@ -10,6 +10,8 @@ class DocPage < Erector::Widgets::Page
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name, :src
 
+  tag 'main'
+
   def self.css_path
     here = File.expand_path File.dirname(__FILE__)
     File.expand_path "#{here}/../public/css"
@@ -125,7 +127,7 @@ class DocPage < Erector::Widgets::Page
 
     widget Contents, site_name: site_name, page_name: page_name
 
-    div(class: :main) {
+    main {
       h1 doc_title, class: "doc_title"
       div(class: :doc) {
         doc_content
@@ -140,7 +142,7 @@ class DocPage < Erector::Widgets::Page
       end
     }
 
-    div(class: 'bottom') {
+    footer {
       p "RailsBridge Docs is maintained by RailsBridge volunteers."
       p do
         text "If you find something that could be improved, please make a "
