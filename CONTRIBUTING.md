@@ -1,6 +1,6 @@
 # Thanks!
 
-RailsBridge wouldn't be what it is without your help. Thanks for contributing.
+PHPBridge wouldn't be what it is without your help. Thanks for contributing.
 
 We ask that contributions be made as pull requests via GitHub. If those words
 are totally foreign to you
@@ -86,7 +86,7 @@ Next, browse the [GitHub Help site](https://help.github.com).
 
 You'll want to read about
 [forking](https://help.github.com/articles/fork-a-repo) and then make your own
-fork of [railsbridge/docs](https://github.com/railsbridge/docs). Once you've
+fork of [phpbridge/docs](https://github.com/phpbridge/docs). Once you've
 done so, you can clone it and get started by reading up on [what to do when
 submitting a pull request](#when-submitting-a-pull-request), read up on
 [pull requests](https://help.github.com/articles/using-pull-requests)
@@ -108,6 +108,8 @@ Also, [Pro Git](http://git-scm.com/book) is a great (and free!) book about Git.
 We apologize for how long this document is! Hopefully it addressed
 most of your concerns about git, contributing, and github. Feel free
 to ask more questions on the
-[railsbridge-workshops](http://groups.google.com/group/railsbridge-workshops)
+[phpbridge-workshops](http://groups.google.com/group/phpbridge-workshops)
 mailing list. And we're open to any suggestions about improvements,
 including to this document.
+
+@todo create google group?

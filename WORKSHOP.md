@@ -11,7 +11,7 @@ To change those contents, clone this repo, make changes, and then to include you
 On a command line cd into a directory for the installfest app to live on your machine. For example, to put it in your home directory: `cd ~`
 
 Then clone the repository from github:
-`git clone git://github.com/railsbridge/docs.git`
+`git clone git://github.com/phpbridge/docs.git`
 
 And open it in the editor of your choice.
 
