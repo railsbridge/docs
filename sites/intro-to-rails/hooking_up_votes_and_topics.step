@@ -66,31 +66,37 @@ end
 
     message "Note that the things you can do to **Model classes** (like **Topic** and **Vote**), differ from the things you can do to **Model instances** (like my\\_topic, here). **my\\_topic.votes** is an **association**, and here behaves mostly like a model class."
 
-    half_width "Model class / association methods" do
-      ul class: 'no-style-type' do
-        li "Topic.first"
-        li "Topic.last"
-        li "Topic.all"
-        li "Topic.count"
-        li "Topic.find_by_id(5)"
-        li "Topic.destroy_all"
-        li "my_topic.votes.count"
-        li "my_topic.votes.create"
-        li "my_topic.votes.destroy_all"
+    div do
+      half_width "Model class / association methods" do
+        ul class: 'no-style-type' do
+          li "Topic.first"
+          li "Topic.last"
+          li "Topic.all"
+          li "Topic.count"
+          li "Topic.find_by_id(5)"
+          li "Topic.destroy_all"
+          li "my_topic.votes.count"
+          li "my_topic.votes.create"
+          li "my_topic.votes.destroy_all"
+        end
+      end
+
+      half_width "Model instance methods" do
+        ul class: 'no-style-type' do
+          li "my_topic.title"
+          li "my_topic.title = 'New title'"
+          li "my_topic.update_attributes(title: 'New title')"
+          li "my_topic.save"
+          li "my_topic.save!"
+          li "my_topic.destroy"
+          li "my_topic.votes.first.destroy"
+        end
       end
     end
 
-    half_width "Model instance methods" do
-      ul class: 'no-style-type' do
-        li "my_topic.title"
-        li "my_topic.title = 'New title'"
-        li "my_topic.update_attributes(title: 'New title')"
-        li "my_topic.save"
-        li "my_topic.save!"
-        li "my_topic.destroy"
-        li "my_topic.votes.first.destroy"
-      end
-    end
+    message <<-TEXT
+      An exhaustive list of things you can do to models and associations can be found in the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface RailsGuide</a>.
+    TEXT
   end
 }
 
