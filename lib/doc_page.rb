@@ -116,7 +116,7 @@ class DocPage < Erector::Widgets::Page
 
         li(class: "dropdown") {
           a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_title
+          widget SiteIndex, site_name: site_name
         }
 
         top_links.each do |top_link|
