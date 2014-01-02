@@ -53,7 +53,7 @@ class Step < Erector::Widget
   ## steps
 
   @@header_sections = {
-    steps:"Steps",
+    steps: I18n.t('steps'),
     explanation:"Explanation",
     explicacion:"Explicación",
     overview:"Overview",

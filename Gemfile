@@ -11,6 +11,7 @@ gem 'coderay'
 gem "deckrb", ">=0.3.0"
 gem "sass"
 gem "redcarpet"
+gem 'i18n'
 
 group :development do
   gem "wrong", ">=0.6.2"

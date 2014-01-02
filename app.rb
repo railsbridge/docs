@@ -129,6 +129,11 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     expires 3600, :public
   end
 
+  before '/:locale/*' do
+    I18n.locale       = params[:locale]
+    request.path_info = "/#{params[:locale]}/#{params[:splat][0]}"
+  end
+
   get '/favicon.ico' do
     halt 404
   end
