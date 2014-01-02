@@ -40,7 +40,7 @@ class DocPage < Erector::Widgets::Page
   end
 
   def site_title
-    "#{site_name.split(/[-_]/).map(&:capitalize).join(" ")}"
+    "#{Titleizer.title_for_page(site_name)}"
   end
 
   def page_title
