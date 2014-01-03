@@ -3,32 +3,16 @@ require "contents"
 require "site_index"
 require 'erector_scss'
 require 'titleizer'
-require 'docs_external_renderer'
+require 'html5_page'
 
-class DocPage < Erector::Widgets::Page
+class DocPage < Html5Page
   needs :site_name, :doc_title, :doc_path, :page_name, :src
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name, :src
 
-  tag 'main'
-
   def self.css_path
     here = File.expand_path File.dirname(__FILE__)
     File.expand_path "#{here}/../public/css"
-  end
-
-  # wire up the DocsExternalRenderer
-  def included_head_content
-    included_widgets = [self.class] + output.widgets.to_a + extra_widgets
-    DocsExternalRenderer.new(:classes => included_widgets).to_html
-  end
-
-  def doctype
-    '<!doctype html>'
-  end
-
-  def html_attributes
-    {:lang => 'en'}
   end
 
   def head_content
@@ -40,7 +24,7 @@ class DocPage < Erector::Widgets::Page
   end
 
   def site_title
-    "#{Titleizer.title_for_page(site_name)}"
+    Titleizer.title_for_page(site_name)
   end
 
   def page_title
@@ -73,12 +57,10 @@ class DocPage < Erector::Widgets::Page
     end
   end
 
-  # todo: test
   def file_name
     @doc_path.split('/').last
   end
 
-  # todo: test
   def git_url
     "https://github.com/phpbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
   end
