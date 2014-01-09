@@ -53,7 +53,7 @@ class Step < Erector::Widget
   ## steps
 
   @@header_sections = {
-    steps: I18n.t('steps'),
+    steps: :steps,
     explanation:"Explanation",
     explicacion:"Explicación",
     overview:"Overview",
@@ -66,7 +66,7 @@ class Step < Erector::Widget
   @@header_sections.each do |type, header|
     define_method type do |&block|
       div :class => type do
-        h1 header
+        h1(I18n.t(header))
         blockquote do
           block.call if block
         end
