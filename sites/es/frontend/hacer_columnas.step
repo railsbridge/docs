@@ -1,23 +1,22 @@
-Goals do
+goals do
   message "Estos desafíos te tendrán sumergida en el lado CSS de las cosas. Abre el archivo layout.css y echa un vistazo."
-
-  goal "Da un borde a tu contenedor principal"
-  goal "Haz dos columnas y alinealas una al lado de otra"
+  goal "Poner un borde a tu contenedor principal"
+  goal "Hacer dos columnas y alinearlas una a lado de otra"
 end
 
 steps do
-  
+
   step do
     message "RETO: Encuentra el div con el id 'main' en tu HTML. Ve si puedes darle un borde de un pixel en el lado izquierdo modificando la hoja de estilo existente, ‘layout.css’."
     message "Si te preocupa cual propiedad CSS usar, ve si la puedes buscar en [dochub](http://dochub.io/#css/)."
   end
-  
+
   step do
-    message "RETO: Si diste estilo al div #main  en el paso anterior usando una regla de estilo como `#main { property: value; }`, ve si puedes encontrar una segunda regla que también pueda aplicar el mismo estilo, pero utilizando un selector diferente."
-    message "Pista: Puedes selecccionar un elemento que este _dentro_ de otro elemento, listando un selector después de otro. El selector `.content div {}` se aplicaría a todos los divs  dentro de un elemento con la clase `content`"
+    message "RETO: Si diste estilo al div #main en el paso anterior usando una regla de estilo como `#main { property: value; }`, ve si puedes encontrar una segunda regla que también pueda aplicar el mismo estilo, pero utilizando un selector diferente."
+    message "Pista: Puedes seleccionar un elemento que esté _dentro_ de otro elemento, listando un selector después de otro. El selector `.content div {}` se aplicaría a todos los divs dentro de un elemento con la clase `content`"
   end
-  
-  step do 
+
+  step do
     message "META: Ve si puedes convertir la página en un layout de dos columnas. Convierte el div 'nav' en la columna izquierda, y el div 'main' en la segunda columna."
     message "Dos pistas: puede ser de ayuda darle a estos divs un ancho fijo, y puede que necesites la propiedad `float`."
   end
@@ -26,12 +25,15 @@ steps do
 end
 
 explanation do
-  
+
   message <<-MARKDOWN
 
 ## Más CSS!
 
-Toma mucho tiempo dominar CSS, pero hay un monton de recursos muy buenos por ahí para ayudarte. Un recurso muy genial es [CSS Zen Garden](http://www.csszengarden.com/), un sitio con docenas de ejemplos de la  _misma_ pagina HTML de estilo con diferentes hojas de estilo enviadas por usuarios. Es un buen lugar para tener una idea de cuan ilimitadas son las posibilidades con CSS.
+Toma mucho tiempo dominar CSS, pero hay muchos y muy buenos recursos para ayudarte.
+Un recurso genial es [CSS Zen Garden](http://www.csszengarden.com/), un sitio con docenas de ejemplos
+de la _misma_ página HTML estilizada con diferentes hojas de estilo enviadas por usuarios.
+Mediante los ejemplos de este sitio puedes darte una idea de cuán ilimitadas son las posibilidades con CSS.
 
 ### Sitios de referencia de CSS
 
@@ -42,6 +44,6 @@ Toma mucho tiempo dominar CSS, pero hay un monton de recursos muy buenos por ah�
   MARKDOWN
 end
 
-consider_deploying_to_github
+insert 'considera_lanzar_a_github'
 
 next_step "basic_javascript"
