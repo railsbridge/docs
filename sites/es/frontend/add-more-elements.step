@@ -1,0 +1,66 @@
+goals do
+  message "WOOHOO, haz llegado hasta la página 10! Ahora que estamos aquí, cambiaremos de hacer pasos simples a hacer  **retos**. Áún habrá algo que hacer en cada paso, pero tomará algo averiguar como hacerlo correctamente. (Si te atoras, aun puedes preguntar a un TA o instructor algunas pistas. : ) Tu:"
+  goal "Agregarás más contenido"
+  goal "Agregarás una etiqueta de imagen"
+  goal "Usarás dos tipos diferentes de etiquetas anchor"
+end
+
+steps do
+  
+  step do
+    message <<-MARKDOWN
+RETO: La página index.html que descargaste es una página de perfil simple.Haz una lectura rápida a través del HTML y ve si puedes adivinar por el contexto cuáles etiquetas no familiares podrían hacerlo.
+
+Toma 5  10 minutos para reemplazar el texto existente con alguna información acerca de ti. No tienes que escribir una novela, pero rellenar algunas etiquetas es una buena forma de orientarse en el archivo. A continuación, guarda la página y recarga el navegador.
+    MARKDOWN
+  end
+  
+  step do
+    message <<-MARKDOWN
+RETO: Agrega una etiqueta de imagen a la página, justo encima de la palabra 'Contents'. Hay una imagen de muestra en la carpeta resources  que puedes usar, llamada 'picture.jpg', pero si quieres personalizar tu página, copia una imagen de ti dentro de la carpeta resources y agrégala a la página.
+
+Dos pistas: las imagenes usualmente son incluidas con la etiqueta `img` , y el atributo  `src`  provee la ubicación actual del archivo. Cuando termines, tendrás algo como esto:
+
+<img src='img/page_img.png'>
+
+No olvides que, debido a que la etiqueta no se ajusta al contenido del texto, la etiqueta `img` es de cierre automático. Nunca debes de codficar `</img>`.
+    MARKDOWN
+  end
+  
+  step do
+    message <<-MARKDOWN
+RETO: Agregar dos tipos de enlaces anchor.
+
+Los enlaces en html son creados por la etiqueta `a`. Agrega una etiqueta en algún lugar del documento que cree un link a otra página en la web.
+
+  Si no estás segura de que atributos puede tener una etiqueta `a`, ve si puedes encontrarlo en [MDN](https://developer.mozilla.org/en/HTML/Element/a).
+
+Además puedes crear enlaces que estén en la misma página y sólo apuntar a otro bloque de contenido. En lugar de enlazar a una url, estos apuntarán al id del elemento al que quieras saltar, con un atributo como `href='#id-name'`
+
+Ve si puedes convertir la lista de elementos bajo la palabra 'Contents' en enlaces que lleven al contenido relevante de la página . Ellos se verán así:
+
+<img src='img/page_anchors.png'>
+    MARKDOWN
+  end
+  
+
+end
+
+explanation do
+  
+  message <<-MARKDOWN
+
+## Woohoo HTML
+
+Ahora que sabes lo básico de trabajar con HTML, la parte mas díficil es recordar que etiquetas están disponibles. Aquí hay algunos buenos sitios que puedes utilizar como referencia:
+
+* [Sitepoint](http://reference.sitepoint.com/css)
+* [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
+* [DocHub](http://dochub.io/#html/)
+
+  MARKDOWN
+end
+
+consider_deploying_to_github
+
+next_step 'make_columns'
