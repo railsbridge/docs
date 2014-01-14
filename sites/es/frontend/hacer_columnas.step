@@ -1,5 +1,5 @@
 goals do
-  message "Estos desafíos te tendrán sumergida en el lado CSS de las cosas. Abre el archivo layout.css y echa un vistazo."
+  message "Estos desafíos te tendrán sumergida en el lado CSS de las cosas. Abre el archivo layout.css y dale un vistazo."
   goal "Poner un borde a tu contenedor principal"
   goal "Hacer dos columnas y alinearlas una a lado de otra"
 end
@@ -7,7 +7,7 @@ end
 steps do
 
   step do
-    message "RETO: Encuentra el div con el id 'main' en tu HTML. Ve si puedes darle un borde de un pixel en el lado izquierdo modificando la hoja de estilo existente, ‘layout.css’."
+    message "RETO: Encuentra el div con el id 'main' en tu HTML. Ve si le puedes dar un borde de un pixel en el lado izquierdo modificando la hoja de estilo existente, ‘layout.css’."
     message "Si te preocupa cual propiedad CSS usar, ve si la puedes buscar en [dochub](http://dochub.io/#css/)."
   end
 
@@ -17,7 +17,7 @@ steps do
   end
 
   step do
-    message "META: Ve si puedes convertir la página en un layout de dos columnas. Convierte el div 'nav' en la columna izquierda, y el div 'main' en la segunda columna."
+    message "RETO: Ve si puedes convertir la página en un layout de dos columnas. Convierte el div 'nav' en la columna izquierda, y el div 'main' en la segunda columna."
     message "Dos pistas: puede ser de ayuda darle a estos divs un ancho fijo, y puede que necesites la propiedad `float`."
   end
 
@@ -28,7 +28,7 @@ explanation do
 
   message <<-MARKDOWN
 
-## Más CSS!
+## ¡Más CSS!
 
 Toma mucho tiempo dominar CSS, pero hay muchos y muy buenos recursos para ayudarte.
 Un recurso genial es [CSS Zen Garden](http://www.csszengarden.com/), un sitio con docenas de ejemplos
