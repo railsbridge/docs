@@ -1,0 +1,111 @@
++objetivos para hacer
+ +  objetivo "Aprender sintaxis básica CSS"
+ +  objetivo "Escribe algunos estilos básicos de CSS"
+ +fin
+ +
+ +resumen para hacer
+ +  mensaje <<-MARKDOWN
+ +## ¿Qué es CSS?
+ +
+ +CSS significa __H__ojas de_ E__stilo en__C__ascada. Es un lenguaje para crear **reglas** que
+ +pueden **seleccionar** distintos elementos en la página y cambiar sus **propiedades visuales**.
+ +
+ +* __ C__ascada - La "cascada" es uno de los elementos más difíciles de CSS para dominar, pero
+ +  básicamente significa que puedes definir un grupo de reglas de estilo de diferentes fortalezas y el CSS
+ +  se aplicará a todos ellos, resolviendo cualquier conflicto de normas al permitir reglas estrictas al sobrescribir
+ +  (or _cascade_ over ) reglas más débiles.
+ +
+ +* __ H__ojas__de__Estilo - los archivos CSS son llamados "hojas de estilo", ya que permiten que pongas tu
+ +  estilo de reglas en un documento separado (a 'sheet') del tipo de archivo .css, y luego optar por
+ +  incluir uno o más en una página HTML dada. Esta es una característica _muy_ importante para sitios con muchas páginas,
+ +  ya que te permite escribir tus reglas una vez y luego incluirlos en todas partes de tu sitio con un solo enlace en cada página.
+ +
+ +## Las reglas CSS estan hechas de un Selector y Atributos
+ +
+ +*Esta sección incluye vocabulario que probablemente quieras memorizar después de la clase.*
+ +
+ +El **selector** indica al navegador qué elementos a añadir al estilo de. En esta página sólo usaremos las etiquetas existentes, como 
+ +`<h1>` y `<p>`, como nuestros selectores.
+ +
+ +Los **atributos** le dicen al navegador como etilizar los elementos seleccionados. La primera parte, `padding:` es una **propiedad**, y la parte después de los dos puntos `20 px` es el **valor**. La línea termina con un punto y coma.
+ +
+ +En conjunto, el selector y propiedades juntas son llamadas **Reglas**.
+ +
+ +<img src='img/css.png'>
+ +
+ +(Vas a olvidar el punto y coma en algún momento, y tu CSS se quebrará, pero es una solución fácil.)
+ +
+ +## ¿Por qué HTML y CSS estan por separado?
+ +
+ +HTML le dice al navegador qué _significa_ tu contenido, le dice al navegador como debería _verse_.
+ +
+ +HTML es semántico: se ocupa del contenido, mientras que CSS presentational&mdash;CSS se trata de estilo.
+ +
+ +MARKDOWN
+ +fin
+ +
+ +pasos para hacer
+ +
+ +  paso para hacer
+ +    mensaje "Inicialmente, vamos a añadir nuestro CSS dentro de la etiqueta del `<head>', por debajo de la línea del título de la página."
+ +    mensaje "Una etiqueta estándar de estilo se puede ver así:"
+ +    source_code :html, <<HTML
+ +<head>
+ +<title>Mi página HTML de muestra</title>
+ +<style type="text/css" media="screen">
+ +
+ +< / style>
+ +</ head>
+ +HTML
+ +    mensaje "Ahora guarda el archivo y actualiza tu navegador. Todo debe ser igual."
+ +  fin
+ +
+ +  paso para hacer
+ +    mensaje "Agrega algunos estilos que se aplicarán a tus etiquetas `h1` y `p`."
+ +    source_code :html, <<HTML
+ +<style type="text/css" media="screen">
+ +h1 {
+ +  font-size: 20px ;
+ +  border-bottom : 1px solid #cccccc ;
+ +}
+ +
+ +p {
+ +  padding : 10px ;
+ +  background-color : PapayaWhip ;
+ +}
+ +< / style>
+ +HTML
+ +    mensaje <<-MARKDOWN
+ +Cuando guardes y actualices tu navegador, deberas ver todos los estilos que agregaste:
+ +
+ +<img src='img/hello_style.png'>
+ +
+ +El atributo `type` y `media` dentro de la etiqueta `<style>` le dan al navegador más contexto para como lidear con la información incluida. En este caso, estamos diciendo es que el tipo es HTML/CSS, y eso que está siendo mostrado en la pantalla (en lugar de 
+ +`media = "\print\"`, que suele ser especialmente estilizado, por lo que parece razonable cuando es impreso.
+ +    MARKDOWN
+ +  fin
+ +
+ +fina
+ +
+ +
+ +explicación para hacer
+ +
+ +  mensaje <<-MARKDOWN
+ +
+ +## CSS es super poderoso
+ +
+ +Aquí hay dos capturas de pantalla de la misma página HTML, pero en el lado derecho , se ha desactivado todo el CSS. Casi todo el color y el formato desaparecen, y los fragmentos de código y botones que eran evidentes con el estilo CSS ahora se ven como texto.
+ +
+ +### Bundler: con y sin CSS (el horror!)
+ +
+ +<img src='img/css_bundler.png'>
+ +
+ +Para algunos grandes ejemplos del poder de CSS, consulte el [CSS Zen Garden] (http://www.csszengarden.com/). Se necesita
+ +el mismo HTML, pero lo muestra con hojas de estilo de un montón de diferentes diseñadores aplicado a ella. Aquí están 2  diferentes interpretaciones de diseñadores del mism HTML":
+ +
+ +<img src='img/css_zen.png'>
+ +  MARKDOWN
+ +
+ +fin
+ +
+ +paso_siguiente "atributos_HTML"
