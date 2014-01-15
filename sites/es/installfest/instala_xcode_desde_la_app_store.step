@@ -1,4 +1,4 @@
-message "La Apple App Store es una aplicación que instala otras aplicaciones."
+message "La App Store es una aplicación que instala otras aplicaciones."
 
 
 spanish_step "Abre la aplicación App Store" do 
@@ -12,7 +12,7 @@ end
 
 spanish_step "Abre XCode"
 
-spanish_step "Instala las Herramientas de Línea de Comando" do
+spanish_step "Instala las Herramientas de Línea de Comandos" do
   message "Abre el menú de Preferencias y selecciona la pestaña de Descargas"
   message "Luego da click en el botón de 'Instalar' que está después de 'Herramientas de Línea de Comando'."
   img src: 'img/xcode-prefs.jpg', alt: 'XCode Preferences'
