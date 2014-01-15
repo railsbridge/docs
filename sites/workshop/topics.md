@@ -44,5 +44,5 @@ Contact Sarah Allen (sarah _at_ ultrasaurus _dot_ com) and send your github name
 
 ### Rails
 
-* <a href="/curriculum">Intro (Suggestotron) Curriculum</a>
+* <a href="/intro-to-rails">Intro (Suggestotron) Curriculum</a>
 * <a href="/intermediate-rails">Intermediate (Message Board) Curriculum</a>

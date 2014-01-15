@@ -63,8 +63,8 @@ describe InstallFest do
     # note: I'd rather pass settings into the constructor, but Sinatra uses that interface (for a downstream app)
 
     it "accepts default_site via setter" do
-      true_app.default_site = "curriculum"
-      assert { true_app.default_site == "curriculum" }
+      true_app.default_site = "intro-to-rails"
+      assert { true_app.default_site == "intro-to-rails" }
     end
 
     it "can configure the sites_dir" do
@@ -75,10 +75,10 @@ describe InstallFest do
   end
 
   it "looks for a site named the same as the host" do
-    get "/", {}, {"HTTP_HOST" => "curriculum.example.com"}
+    get "/", {}, {"HTTP_HOST" => "docs.example.com"}
     assert { last_response.redirect? }
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/curriculum/" }
+    assert { last_request.path == "/docs/" }
   end
 
   describe "page headers" do
