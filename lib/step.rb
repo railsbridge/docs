@@ -2,6 +2,8 @@ require 'erector'
 require 'big_checkbox'
 require 'erector_scss'
 require 'markdown_renderer'
+require 'titleizer'
+require 'active_support/core_ext/string/strip'
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -10,19 +12,18 @@ class Step < Erector::Widget
 
   needs :src
   needs :doc_path
+  needs :container_page_name => false
+  needs :step_stack => false
 
   def initialize options
     super
-    @step_stack = []
+    @step_stack = options[:step_stack] || []
   end
 
   def next_step_number
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
-  end
-
-  def as_title name
-    name.to_s.split('_').map{|s| s.capitalize}.join(' ')
+    @step_stack.join('.')
   end
 
   def prefix s
@@ -37,7 +38,16 @@ class Step < Erector::Widget
 
   # todo: move into proper Doc class
   def page_name
-    @doc_path.split('/').last.split('.').first
+    @container_page_name || @doc_path.split('/').last.split('.').first
+  end
+
+  def insert file
+    # todo: unify into common 'find & process a document file' unit
+    dir = File.dirname(@doc_path)
+    path = File.join(dir, "_#{file}.step")  # todo: other file types
+    src = File.read(path)
+    step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+    widget step
   end
 
   ## steps
@@ -63,39 +73,6 @@ class Step < Erector::Widget
     end
   end
 
-  def switch_to_home_directory
-    message "`cd` stands for change directory."
-
-    option "Windows" do
-      console "cd c:\\Sites"
-      message "`cd c:\\Sites` sets our Sites directory to our current directory."
-    end
-    option "Mac or Linux" do
-      console "cd ~"
-      message "`cd ~` sets our home directory to our current directory."
-    end
-  end
-
-  def consider_deploying
-    div :class => "deploying" do
-      h1 "Deploying"
-      blockquote do
-        message "Before the next step, you could try deploying your app to Heroku!"
-        link 'deploying_to_heroku'
-      end
-    end
-  end
-
-  def consider_deploying_to_github
-    div :class => "deploying" do
-      h1 "Deploying"
-      blockquote do
-        message "Before the next step, you could try deploying your page to Github!"
-        link 'deploying_to_github_pages'
-      end
-    end
-  end
-
   def step name = nil, options = {}
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
@@ -113,16 +90,25 @@ class Step < Erector::Widget
   def link name
     p :class => "link" do
       text "Go on to "
-      # todo: extract StepFile with unified name/title/path routines
-      require 'uri'
-      hash = URI.escape '#'
-      href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
-      a as_title(name), :href => href, :class => 'link'
+      simple_link(name, class: :link)
     end
   end
 
   def link_without_toc name
     link name
+  end
+
+  def simple_link name, options={}
+    require 'uri'
+    hash = URI.escape '#'
+    href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
+    if block_given?
+      a({:href => href}.merge(options)) do
+        yield
+      end
+    else
+      a Titleizer.title_for_page(name), {:href => href}.merge(options)
+    end
   end
 
   def next_step name
@@ -139,21 +125,23 @@ class Step < Erector::Widget
     _render_inner_content &Proc.new if block_given?
   end
 
-  def choice name = "between..."
-    step "Choose #{name}" do
-      _render_inner_content &Proc.new if block_given?
-    end
-  end
-
   def option name
     num = next_step_number
-    a(:name => "step#{current_anchor_num}")  # todo: test
-    h1 do
+    a(:name => "step#{current_anchor_num}")
+    h1 :class => "option" do
       span "Option #{num}: "
       text name
     end
     _render_inner_content &Proc.new if block_given?
   end
+
+  def option_half title
+    div class: 'half-width' do
+      strong title
+      yield
+    end
+  end
+  alias_method :half_width, :option_half
 
   def section text
     div do
@@ -184,33 +172,45 @@ class Step < Erector::Widget
 
   alias_method :goal, :li
 
+  def site_desc site_name, description
+    div class: 'site-desc' do
+      h1 do
+        a href: "/#{site_name}" do
+          text Titleizer.title_for_page(site_name)
+        end
+      end
+      div raw(md2html description)
+    end
+  end
+
   ## message
 
   def message text = nil, options = {}
+    text = text.strip_heredoc if text
     classes = (["message"] + [options[:class]]).compact
     div :class => classes do
-      img.icon src: "/img/#{options[:icon]}.png" if options[:icon]
-      rawtext(md2html text) unless text.nil?
-      yield if block_given?
+      i :class => "fa fa-#{options[:icon]} fa-3x" if options[:icon]
+      if options[:inner_class]
+        div class: options[:inner_class] do
+          unless text.nil?
+            text = "**#{text}**" if block_given?
+            rawtext(md2html text)
+          end
+          yield if block_given?
+        end
+      else
+        rawtext(md2html text) unless text.nil?
+        yield if block_given?
+      end
     end
   end
 
   def important text = nil, &block
-    message text, class: "important", icon: "warning", &block
+    message text, class: "important vertical-centerer", inner_class: "vertically-centered", icon: "exclamation-circle", &block
   end
 
   def tip text = nil, &block
-    message text, class: "tip", icon: "info", &block
-  end
-
-  def todo todo_text
-    message nil, class: "todo" do
-      span do
-        text "[TODO: "
-        text todo_text
-        text "]"
-      end
-    end
+    message text, class: "tip vertical-centerer", inner_class: "vertically-centered", icon: "info-circle", &block
   end
 
   ## special
@@ -227,7 +227,7 @@ class Step < Erector::Widget
   def console_with_message(message, commands)
     div :class => "console" do
       span message
-      pre commands
+      pre commands.strip_heredoc
     end
   end
 
@@ -261,11 +261,12 @@ class Step < Erector::Widget
   def result text
     div :class => "result" do
       span RESULT_CAPTION
-      pre text
+      pre text.strip_heredoc
     end
   end
 
   def fuzzy_result fuzzed_text
+    fuzzed_text = fuzzed_text.strip_heredoc
     div :class => "result fuzzy-result" do
       span FUZZY_RESULT_CAPTION
       remaining_text = fuzzed_text
@@ -286,7 +287,7 @@ class Step < Erector::Widget
   end
 
   def source_code *args
-    src = args.pop
+    src = args.pop.strip_heredoc
     lang = args.pop
     src = "\n:::#{lang}\n#{src}" if lang
     pre src, :class => "code"

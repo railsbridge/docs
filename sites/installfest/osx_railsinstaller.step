@@ -1,6 +1,6 @@
 important "If you wrote down **Core Duo** as your processor type in the previous step, **DO NOT** continue with these steps.  Please flag down a volunteer for additional help."
 
-message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
+message "These instructions should work on Snow Leopard, Lion, Mountain Lion, and Mavericks."
 
 step "Run RailsInstaller" do
 
@@ -22,11 +22,23 @@ step "Open Terminal" do
 end
 
 step "Install Sublime Text 2" do
-  message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+  insert "install_sublime_text_2_for_mac"
+end
 
-  important "When in doubt, use Sublime Text 2."
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
 
-  link "install_sublime_text_2_for_mac"
+  console "gem install rails"
+
+  message "...and you're done. New Rails! Woo."
+end
+
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+
+  console "gem install rails"
+
+  message "...and you're done. New Rails! Woo."
 end
 
 verify "successful installation" do
@@ -46,8 +58,4 @@ verify "successful installation" do
   fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
-step "Generate an ssh public key" do
-  link "create_an_ssh_key"
-end
-
-next_step "create_a_heroku_account"
+next_step "configure_git"

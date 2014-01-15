@@ -1,5 +1,5 @@
 step "Change to your home directory" do
-  switch_to_home_directory
+  insert 'switch_to_home_directory'
 end
 
 step "Create a railbridge directory" do
@@ -21,7 +21,7 @@ step "Create a new Rails app" do
   tip do
     message "On Linux, you may have to enable this line to your Gemfile:"
     pre "gem 'therubyracer', :platforms => :ruby"
-	message "Just delete the '#' in front of the statement"
+    message "Just delete the '#' in front of the statement"
   end
 
   console "cd test_app"
@@ -31,43 +31,42 @@ step "Create a new Rails app" do
 
   tip "Shortcut: Just type 'rails s'" do
     message <<-MARKDOWN
-Throughout your Rails programming career you're going to type `rails server` a
-lot.  In fact, you'll type this so much that DHH and the Rails Core team
-decided to save you 5 keystrokes per server restart.  Simply typing `rails s`
-is the same as `rails server`.
-  MARKDOWN
+      Throughout your Rails programming career you're going to type `rails server` a
+      lot.  In fact, you'll type this so much that DHH and the Rails Core team
+      decided to save you 5 keystrokes per server restart.  Simply typing `rails s`
+      is the same as `rails server`.
+    MARKDOWN
   end
 
   message <<-MARKDOWN
-The first command should produce no output.
-If `rails server` starts up with no errors, you're golden! It'll look something like this:
+    The first command should produce no output.
+    If `rails server` starts up with no errors, you're golden! It'll look something like this:
   MARKDOWN
 
   fuzzy_result <<-TEXT
-=> Booting WEBrick
-=> Rails 3.2{FUZZY}.x{/FUZZY} application starting in development on http://0.0.0.0:3000
-=> Call with -d to detach
-=> Ctrl-C to shutdown server
-[2010-09-30 21:04:12] INFO  WEBrick 1.3.1
-[2010-09-30 21:04:12] INFO  ruby 1.9{FUZZY}.3 (2012-11-10) [x86_64-darwin10.4.2]{/FUZZY}
-[2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid={FUZZY}24805{/FUZZY} port=3000
+    => Booting WEBrick
+    => Rails 3.2{FUZZY}.x{/FUZZY} application starting in development on http://0.0.0.0:3000
+    => Call with -d to detach
+    => Ctrl-C to shutdown server
+    [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
+    [2010-09-30 21:04:12] INFO  ruby 1.9{FUZZY}.3 (2012-11-10) [x86_64-darwin10.4.2]{/FUZZY}
+    [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid={FUZZY}24805{/FUZZY} port=3000
   TEXT
 
-message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
+  message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
-tip "If it doesn't work, ask a TA for help."
+  tip "If it doesn't work, ask a TA for help."
 
-message <<-MARKDOWN
+  message <<-MARKDOWN
+    * In your browser, go to <http://localhost:3000>
 
-* In your browser, go to <http://localhost:3000>
+    ![Successful Rails Install](img/successful-rails-install.jpg)
 
-![Successful Rails Install](img/successful-rails-install.jpg)
-
-* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
-
+    * Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
   MARKDOWN
+
   important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
-  end
+end
 
 step "Generate a database model" do
   tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
@@ -75,47 +74,47 @@ step "Generate a database model" do
   end
 
   console <<-BASH
-rails generate scaffold user name:string email:string address:text active:boolean
+    rails generate scaffold user name:string email:string address:text active:boolean
   BASH
   console <<-BASH
-rake db:migrate
+    rake db:migrate
   BASH
   console <<-BASH
-rails server
+    rails server
   BASH
 
-  message "**Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command."
-  
-  message "Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/users>"
+  message <<-MARKDOWN
+    **Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command.
 
-  message "Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)"
+    Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/users>
 
-  message "In your Terminal window where you ran `rails server`, type Control-C (or Control-Break,Y) to kill(stop) the server."
+    Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)
 
+    In your Terminal window where you ran `rails server`, type **Control-C** (or Control-Break,Y) to kill(stop) the server.
+  MARKDOWN
 end
 
 step "Use git" do
   tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
     console "cd test_app"
   end
-  
+
   console <<-BASH
-git init
+    git init
   BASH
 
-  result "Initialized empty Git repository in c:/Sites/test_app/.git/"
+  result "Initialized empty Git repository in c:/Sites/railsbridge/test_app/.git/"
 
   console "git add -A"
-  tip "git add" do
+  tip do
     message <<-MARKDOWN
-With Git, there are usually many ways to do very similar things.
+      With Git, there are usually many ways to do very similar things.
 
-  * `git add foo.txt` adds a file named `foo.txt`
-  * `git add .` ("git add dot") adds all new files and changed files, but *keeps* files that you've deleted
-  * `git add -A` adds everything, including deletions
+        * `git add foo.txt` adds a file named `foo.txt`
+        * `git add .` ("git add dot") adds all new files and changed files, but *keeps* files that you've deleted
+        * `git add -A` adds everything, including deletions
 
-"Adding deletions" may sound weird, but if you think of a version control system as keeping track of *changes*, it might make more sense.
-
+      "Adding deletions" may sound weird, but if you think of a version control system as keeping track of *changes*, it might make more sense.
     MARKDOWN
   end
 
@@ -130,58 +129,55 @@ step "Deploy your app to Heroku" do
 
   step "Create a Heroku application from this local Rails application." do
 
-  message "The very first time you use `heroku` you must enter your Heroku email address and password. Your password may not be shown as you type it, but don't worry, it's being entered! If you have already provided your credentials before, you won't be prompted for them again."
+    message "The very first time you use `heroku` you must enter your Heroku email address and password. Your password may not be shown as you type it, but don't worry, it's being entered! If you have already provided your credentials before, you won't be prompted for them again."
 
-  console "heroku create"
-  result <<-OUTPUT
-Enter your Heroku credentials.
-Email: myemail@example.com
-Password:
-Uploading ssh public key /Users/smei/.ssh/id_rsa.pub
-Creating floating-winter-18... done, stack is cedar
-http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
-Git remote heroku added
-  OUTPUT
+    console "heroku create"
+    result <<-OUTPUT
+      Enter your Heroku credentials.
+      Email: myemail@example.com
+      Password:
+      Uploading ssh public key /Users/smei/.ssh/id_rsa.pub
+      Creating floating-winter-18... done, stack is cedar
+      http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
+      Git remote heroku added
+    OUTPUT
 
     message "Heroku apps are automatically given lyrical names that look like '[adjective]-[noun]-[number]'.  Each name is different."
-  
-  console "git remote show"
-  result "heroku"
 
-  message "If you get messages here complaining about public keys it's probably due to some confusion with SSH key usage by another app on your computer.  Call a volunteer over to help you figure it out.  Luckily this only needs to be done the first time you create a Heroku app."
+    console "git remote show"
+    result "heroku"
+
+    message "If you get messages here complaining about public keys it's probably due to some confusion with SSH key usage by another app on your computer.  Call a volunteer over to help you figure it out.  Luckily this only needs to be done the first time you create a Heroku app."
   end
 
   step "Prepare your rails app for deploying to Heroku" do
     message <<-MARKDOWN
+      Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\railsbridge\\test_app` and on Linux/OS X, it should be under `~/railsbridge/test_app`.)
 
-Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\test_app` and on Linux/OS X, it should be under `~/test_app`.)
+      Inside this file, change the line:
+    MARKDOWN
+    source_code :ruby, <<-RUBY
+      gem 'sqlite3'
+    RUBY
 
-Inside this file, change the line:
-MARKDOWN
-  source_code :ruby, <<-RUBY
-gem 'sqlite3'
-  RUBY
+    message "To this:"
 
-  message <<-MARKDOWN
-To this:
-  MARKDOWN
+    source_code :ruby, <<-RUBY
+      group :development, :test do
+        gem 'sqlite3'
+      end
 
-  source_code :ruby, <<-RUBY
-group :development, :test do
-  gem 'sqlite3'
-end
+      group :production do
+        gem 'pg'
+        gem 'rails_12factor'
+      end
+    RUBY
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-  RUBY
+    message "Save the file."
 
-  message "Save the file."
-
-  tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
-    message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails." 
-  end
+    tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
+      message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails."
+    end
 
     console <<-BASH
 bundle install --without production
@@ -190,11 +186,25 @@ bundle install --without production
     message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
   end
 
+  step "Set the root route" do
+    message "Use your editor to open the file routes.rb  (`C:\\sites\\railsbridge\\test_app\\config\\routes.rb` or `~/railsbridge/test_app/config/routes.rb`) and find the line containing:"
+
+    source_code :ruby, <<-RUBY
+      # root 'welcome#index'
+    RUBY
+
+    message "Remove this line and replace it with:"
+
+    source_code :ruby, <<-RUBY
+      root 'users#index'
+    RUBY
+  end
+
   step "Add the changes to git" do
 
     console <<-BASH
-git add .
-git commit -m "Updates for heroku deployment"
+      git add .
+      git commit -m "Updates for heroku deployment"
     BASH
   end
 
@@ -205,23 +215,23 @@ git commit -m "Updates for heroku deployment"
     message "It may ask: \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" Type <code>yes</code> and hit *enter*."
 
     result <<-OUTPUT
-The authenticity of host 'heroku.com (75.101.145.87)' can't be established.
-RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'heroku.com,75.101.145.87' (RSA) to the list of known hosts.
-Counting objects: 60, done.
-Compressing objects: 100% (54/54), done.
-Writing objects: 100% (60/60), 79.03 KiB, done.
-Total 60 (delta 10), reused 0 (delta 0)
+      The authenticity of host 'heroku.com (75.101.145.87)' can't be established.
+      RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
+      Are you sure you want to continue connecting (yes/no)? yes
+      Warning: Permanently added 'heroku.com,75.101.145.87' (RSA) to the list of known hosts.
+      Counting objects: 60, done.
+      Compressing objects: 100% (54/54), done.
+      Writing objects: 100% (60/60), 79.03 KiB, done.
+      Total 60 (delta 10), reused 0 (delta 0)
 
------> Heroku receiving push
------> Rails app detected
-       Compiled slug size is 080K
------> Launching...... done
-       App deployed to Heroku
+      -----> Heroku receiving push
+      -----> Rails app detected
+             Compiled slug size is 080K
+      -----> Launching...... done
+             App deployed to Heroku
 
-To git@heroku.com:floating-winter-18.git
- * [new branch]      master -> master
+      To git@heroku.com:floating-winter-18.git
+       * [new branch]      master -> master
     OUTPUT
 
     important "Be sure to find and learn your Heroku application name in the output."
@@ -231,12 +241,12 @@ To git@heroku.com:floating-winter-18.git
     console "heroku run rake db:migrate"
 
     result <<-OUTPUT
-Running rake db:migrate attached to terminal... up, run.1
-Migrating to CreateUsers (20111204065949)
-==  CreateUsers: migrating ====================================================
--- create_table(:users)
-   -> 0.0122s
-==  CreateUsers: migrated (0.0123s) ===========================================
+      Running rake db:migrate attached to terminal... up, run.1
+      Migrating to CreateUsers (20111204065949)
+      ==  CreateUsers: migrating ====================================================
+      -- create_table(:users)
+         -> 0.0122s
+      ==  CreateUsers: migrated (0.0123s) ===========================================
     OUTPUT
 
     message "The long number after CreateUsers is a timestamp. Yours will be different!"
@@ -253,8 +263,10 @@ Migrating to CreateUsers (20111204065949)
     tip "To quickly open your heroku application in a browser" do
       console "heroku open"
     end
-	
+
     message "The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+
+    tip "If using <strong>Rails 4.0.x</strong>, the default welcome page will not show on Heroku. You will get a message saying that 'The page you were looking for doesn't exist.' Do not worry about this for now."
 
     message "In the browser, add <code>/users</code> to the end of the URL and hit *enter*. Verify you see the user list page."
 

@@ -1,0 +1,53 @@
+message <<MARKDOWN
+Este sitio es mantenido por voluntarios de RailsBridge. Si encuentras algo que pudiera ser mejorado, por favor haz un [pull request](https://github.com/railsbridge/docs) o [envíanos una nota](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no se requiere conocimiento técnico).
+
+# [Installfest](/es/installfest)
+
+Instrucciones para instalar Ruby y Rails en tu computadora. ¡Se requiere hacer esto antes de ir al taller de Rails!
+
+# [Currículum](/es/currículum)
+
+El "clásico" railsbridge currículum (Suggestotron). Te lleva paso a paso para hacer una aplicación Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
+
+# [Rails Intermedio](/es/intermediate-rails)
+
+Currículum para estudiantes quienes han hecho Suggestotron más de una vez. 'Modo fácil' ya no está disponible - ¡este currículum no te dirá que teclear!
+
+# [Frontend](/es/frontend)
+
+HTML + CSS para principiantes. ¡Haz un website, no se requiere servidor!
+
+# [Ruby](/es/ruby)
+
+Un currículum específico de ruby, extraído de las diapositivas de "Ruby para principiantes". Aún nuevo, con espacio para tus contribuciones.
+
+Los talleres de Railsbridge también pueden usar el currículum de Alex [Aprende a escribir código en Ruby](http://codelikethis.com/lessons/learn_to_code) (actualmente en un sitio separado). También es código abierto y puede que pronto se úna al repo principal de Railsbridge Docs. Está orientado hacia la gente que posiblemente nunca antes ha escrito código.
+
+# [Workshop](/es/workshop)
+
+El Railsbridge junkyard! Dispositivas para la apertura/cierre de presentaciones, entrenamiento para facilitadores.
+
+# RailsBridge FAQ relacionadas al currículum
+
+### ¿Puedo usar el currículum de RailsBridge en mi evento?
+
+¡Cualquiera puede usar este sitio! Está bajo una licencia Creative Commons ([CC-BY, específicamente](http://creativecommons.org/licenses/by/3.0/)), lo que significa que eres bienvenido para compartir, remezclar, o usar nuestro contenido con fines comerciales. Sólo pedimos la atribución.
+
+Ligeramente diferente: si estás organizando un evento y te preguntas si pudiera ser considerado un taller de RailsBridge, sólo tenemos dos peticiones:
+
+* El evento debe ser gratuito.
+* ¡El evento debe hacer ver a la tecnología mas acogedora!
+
+Si no estás haciendo esas dos cosas, aún puedes usar el sitio totalmente, sólo pedimos que no llames a tu evento como un taller de RailsBridge.
+(Talleres de Caridad han usado "Rails Workshop con el currículum de RailsBridge" en el pasado, lo cual es estupéndo.)
+
+### Quiero ayudar, pero no se como.
+
+Primero, [haz una cuenta en GitHub](https://github.com/). Después, [crea un issue](https://github.com/railsbridge/docs/issues) con la idea que tienes. Te ayudaremos a hacerlo realidad (asumiendo que es de acuerdo con nuestros nobles objetivos :D).
+
+¿No sabes en qué podrías trabajar? Navega en la [lista de issues](https://github.com/railsbridge/docs/issues) y en la [To Do list](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List). Esas tienen muchas ideas.
+
+
+### Tengo una pregunta diferente sobre RailsBridge.
+¡El [website de RailsBridge](http://www.railsbridge.org) probablemente tiene una respuesta!
+MARKDOWN

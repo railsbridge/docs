@@ -1,3 +1,5 @@
 You could use meat if you wanted to.
 
+insert 'find_utensils'
+
 next_step "eat_a_meal"
