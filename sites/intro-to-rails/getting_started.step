@@ -25,9 +25,7 @@ steps do
   step do
     message "Check to see if you have any existing suggestotron apps from a previous workshop."
     console "ls"
-    console "#Lists the files in your railsbridge directory"
-
-    message "If you have any old suggestotron apps listed when you list the files in your railsbridge directory, remove them to prevent hiccups."
+    message "That command will list the files in your railsbridge directory. If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
     console "rm -rf suggestotron"
   end
 
