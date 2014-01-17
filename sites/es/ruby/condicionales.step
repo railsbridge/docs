@@ -1,0 +1,88 @@
+goals do
+  goal do 
+    rawtext(md2html('Utiliza el comando `gets` para que se pueda obtener la entrada desde el usuario a tu programa'))
+  end
+  goal 'En algunas ocasiones puedes utilizar una sentencia condicional para ejecutar una parte de código de una branch.'
+end
+
+spanish_step do
+  message 'Crea un nuevo archivo con el nombre de: conditionals_test.rb'
+ spanish_type_in_file 'conditionals_test.rb', <<-'CONTENTS'
+print "Cuántas manzanas tienes? > "
+total_manzanas = gets.to_i
+puts "Tu tienes #{total_manzanas} manzanas."
+  CONTENTS
+  spanish_console 'ruby conditionals_test.rb'
+  message 'Cuando se te indique, introduce un número de manzanas y pulse ENTER.'
+  message "`print` es como `puts` pero no crea una nueva línea después de la impresión."
+  message "`gets`, **devuelve** un **s**tring, pausa tu programa y espera a que el usuario escriba algo y posteriormente presione la tecla Enter. Luego devuelve el valor hacia tu programa y continúa con la ejecución. Desde que el usuario podría tener escrito cualquier cosa ('plátano', '19.2', '<<!!@@') nosotros utilizamos to_i para garantizar que lo que aparece es de tipo entero. Si el usuario no escribe un tipo de entero válido, `to_i` retorna `0`."
+end
+
+spanish_step do
+  message 'Continuando desde el final de conditionals_test.rb...'
+  spanish_type_in_file 'conditionals_test.rb', <<-'CONTENTS'
+if total_manzanas > 5
+  puts "¡Hay un montón de manzanas!"
+else
+  puts 'No hay muchas manzanas...'
+end
+   CONTENTS
+  spanish_console 'ruby conditionals_test.rb'
+  message 'La sentencia `if ... else ... end` es una manera de cambiar lineas de tu programa que conciguen ejecutarse dependiendo de sus datos'
+  message 'Trata de correr el programa con diferentes valores para total_manzanas para ver la parte obtenida del condicional ejecutado.'
+end
+
+spanish_step do
+  message 'Lo que va despues del `if` es cualquier expreción que retorna un **boolean**, (el valor `true` o `false`). Existen más expreciones que retornan `true` o `false`:'
+  spanish_irb <<-IRB
+15 < 5
+10 == 12
+'foo' != 'bar'
+  IRB
+  spanish_irb <<-IRB
+'sandwich'.end_with?('h')
+'sandwich'.end_with?('z')
+[1,2,3].include?(2)
+[1,2,3].include?(9)
+  IRB
+  message 'Muchos métodos también retornan `true` o `false`. Por convención, los métodos en ruby que retornan booleanos terminan con un signo de interrogación.'
+end
+
+spanish_step do
+  message 'También puedes anidar un condicional en un ciclo.'
+  message 'Crea un nuevo archivo llamado conditional_loops.rb'
+  spanish_type_in_file 'conditional_loops.rb', <<-'CONTENTS'
+frutas = ['manzana', 'pera', 'Melocotón']
+frutas.each do |fruta|
+  if fruta.start_with?('a')
+    puts "#{fruta} empezamos con la letra m."
+  end
+end
+  CONTENTS
+  spanish_console 'ruby conditional_loops.rb'
+   message "Trata de cambiar esta sentencia condicional por lo que solo imprima las frutas con al menos cinco letras en su nombre. ¡También recuerda cambiar la cadena que estas poniendo con el comando `puts`!.  "
+end
+
+spanish_step do
+    message 'Crea un nuevo archivo con el nombre de while_loop.rb'
+    spanish_type_in_file 'while_loop.rb', <<-'CONTENTS'
+total = 0
+introducir_usuario = nil
+while introducir_usuario != 'alto'
+  print 'Escribe un número para agregar el total. > '
+  user_input = gets.chomp
+  total = total + introducir_usuario.to_i
+end
+puts "El final total fue #{total}!"
+   CONTENTS
+    spanish_console 'ruby while_loop.rb'
+    message "Un cíclo **while** continúa repitiendose hasta que  la condición sea falsa. En este caso, el programa continuamente nos pide números hasta que escribamos la cadena 'alto'"
+    message "¡Es fácil para un ciclo while salirse de control! Si el cuerpo de tu ciclo no hace alguna cosa que haga que la condicion **while** sea falsa, tu ciclo correra para siempre."
+end
+
+explanation do
+  message "Sin algún tipo de condicional, tu programa haría la misma cosa cada vez. Los Condicionales te permiten elegir hacer diferentes cosas dependiendo de que datos tengas a la mano."
+  message 'Ahora que conoces los *condicionales* , *ciclos* , *arreglos*, *hashes* y *cadenas*, ¡Ya puedes hacer algunos programas muy complicados!'
+end
+
+next_spanish_step 'functions'
