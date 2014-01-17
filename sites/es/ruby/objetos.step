@@ -1,0 +1,41 @@
+goals do
+  goal "Define un nuevo objeto"
+  goal "Crea una instancia de tu objeto"
+  goal "Manda llamar métodos en tu objeto"
+end
+
+step do
+  message 'Crea un nuevo archivo llamado circle.rb'
+  type_in_file 'circle.rb', <<-'CONTENTS'
+class Circle
+  def initialize(radius)
+    @radius = radius
+  end
+
+  def area
+    Math::PI * (@radius ** 2)
+  end
+
+  def perimeter
+    2 * Math::PI * @radius
+  end
+end
+
+print "Cual es el radio de tu circulo? > "
+radius = gets.to_i
+
+a_circle = Circle.new(radius)
+puts "Tu circulo tiene un área de #{a_circle.area}"
+puts "Tu circulo tiene un perímetro de #{a_circle.perimeter}"
+  CONTENTS
+  console 'ruby circle.rb'
+  message 'Cuando se le indique, inserte un radio para su círculo.'
+end
+
+explanation do
+  message "Las Funciones por sí mismas no siempre son suficientes para mantener organizado tu programa. La **Programación orientada a objetos** fue desarrollada para conservar  los datos relacionados (atributos) y que las funciones trabajen junto a esos datos (métodos)."
+  message "En Ruby, un nuevo objeto es definido con la palabra clave **class **, seguido por el nombre de su objeto (generalmente CamelCased). Luego, con un **end** terminas de definir el objeto."
+  message "La mayoría de los objetos definen un método especial, ** initialize **, que guarda los datos iniciales, su objeto es creado (aquí, un radio) y realiza cualquier otra configuración necesaria."
+  message "Creas una ** instancia ** de tu objeto con el método**new**. Los argumentos que han pasado para **new** son enviados para tu método **initialize**."
+  message "Los datos son almacenados en el objeto utilizando las **variables de instancia** que comienzan con el simbolo de `@`. Las variables de instancia se comportan como las variables normales, pero sólo son visibles desde el interior de una instancia específica del objeto. Si quieres que los datos sean accesible desde el exterior, tienes que hacer más métodos."
+End
