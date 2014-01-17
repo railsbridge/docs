@@ -26,84 +26,63 @@ if total_manzanas > 5
 else
   puts 'No hay muchas manzanas...'
 end
-  CONTENTS
+   CONTENTS
   spanish_console 'ruby conditionals_test.rb'
-  message 'El `if ... else ... end` construct is a way of changing which lines of your program get executed depending on your data.'
-  message 'Try running the program with different values for apple_count to see each side of the conditional get executed.'
+  message 'La sentencia `if ... else ... end` es una manera de cambiar lineas de tu programa que conciguen ejecutarse dependiendo de sus datos'
+  message 'Trata de correr el programa con diferentes valores para total_manzanas para ver la parte obtenida del condicional ejecutado.'
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-step do
-  message 'What goes after the `if` is any expression that returns a **boolean**, (the values `true` or `false`). Here\'s some more expressions that return `true` or `false`:'
-  irb <<-IRB
+spanish_step do
+  message 'Lo que va despues del `if` es cualquier expreción que retorna un **boolean**, (el valor `true` o `false`). Existen más expreciones que retornan `true` o `false`:'
+  spanish_irb <<-IRB
 15 < 5
 10 == 12
 'foo' != 'bar'
   IRB
-  irb <<-IRB
+  spanish_irb <<-IRB
 'sandwich'.end_with?('h')
 'sandwich'.end_with?('z')
 [1,2,3].include?(2)
 [1,2,3].include?(9)
   IRB
-  message 'Many methods return `true` or `false` as well. By convention, methods in Ruby that return booleans end with a question mark.'
+  message 'Muchos métodos también retornan `true` o `false`. Por convención, los métodos en ruby que retornan booleanos terminan con un signo de interrogación.'
 end
 
-step do
-  message 'You can nest a conditional in a loop, as well.'
-  message 'Create a new file called conditional_loops.rb'
-  type_in_file 'conditional_loops.rb', <<-'CONTENTS'
-fruits = ['apple', 'pear', 'apricot']
-fruits.each do |fruit|
-  if fruit.start_with?('a')
-    puts "#{fruit} begins with the letter a."
+spanish_step do
+  message 'También puedes anidar un condicional en un ciclo.'
+  message 'Crea un nuevo archivo llamado conditional_loops.rb'
+  spanish_type_in_file 'conditional_loops.rb', <<-'CONTENTS'
+frutas = ['manzana', 'pera', 'Melocotón']
+frutas.each do |fruta|
+  if fruta.start_with?('a')
+    puts "#{fruta} empezamos con la letra m."
   end
 end
   CONTENTS
-  console 'ruby conditional_loops.rb'
-  message "Try changing this conditional so it only prints fruits with at least five letters in their name. Remember to change the string you're `puts`ing as well!"
+  spanish_console 'ruby conditional_loops.rb'
+   message "Trata de cambiar esta sentencia condicional por lo que solo imprima las frutas con al menos cinco letras en su nombre. ¡También recuerda cambiar la cadena que estas poniendo con el comando `puts`!.  "
 end
 
-step do
-    message 'Create a new file called while_loop.rb'
-    type_in_file 'while_loop.rb', <<-'CONTENTS'
+spanish_step do
+    message 'Crea un nuevo archivo con el nombre de while_loop.rb'
+    spanish_type_in_file 'while_loop.rb', <<-'CONTENTS'
 total = 0
-user_input = nil
-while user_input != 'stop'
-  print 'Enter a number to add to the total. > '
+introducir_usuario = nil
+while introducir_usuario != 'alto'
+  print 'Escribe un número para agregar el total. > '
   user_input = gets.chomp
-  total = total + user_input.to_i
+  total = total + introducir_usuario.to_i
 end
-puts "Your final total was #{total}!"
-    CONTENTS
-    console 'ruby while_loop.rb'
-    message "A **while** loop continues repeating until a certain statement is false. Here, the program continually asks us for numbers until we say the string 'stop'."
-    message "It's easy for a while loop to get out of control! If your loop body doesn't do anything to make the **while** condition false, your loop will run forever."
+puts "El final total fue #{total}!"
+   CONTENTS
+    spanish_console 'ruby while_loop.rb'
+    message "Un cíclo **while** continúa repitiendose hasta que  la condición sea falsa. En este caso, el programa continuamente nos pide números hasta que escribamos la cadena 'alto'"
+    message "¡Es fácil para un ciclo while salirse de control! Si el cuerpo de tu ciclo no hace alguna cosa que haga que la condicion **while** sea falsa, tu ciclo correra para siempre."
 end
 
 explanation do
-  message "Without some kind of conditional, your program would do the same thing every time. Conditionals let you choose to do different things depending on what data you have in hand."
-  message 'Now that you know *conditionals*, *loops*, *arrays*, *hashes* and *strings*, you can make some pretty complicated programs!'
+  message "Sin algún tipo de condicional, tu programa haría la misma cosa cada vez. Los Condicionales te permiten elegir hacer diferentes cosas dependiendo de que datos tengas a la mano."
+  message 'Ahora que conoces los *condicionales* , *ciclos* , *arreglos*, *hashes* y *cadenas*, ¡Ya puedes hacer algunos programas muy complicados!'
 end
 
-next_step 'functions'
+next_spanish_step 'functions'
