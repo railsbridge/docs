@@ -9,7 +9,7 @@ Instrucciones para instalar Ruby y Rails en tu computadora. ¡Se requiere hacer 
 
 El "clásico" railsbridge currículum (Suggestotron). Te lleva paso a paso para hacer una aplicación Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
 
-# [Rails Intermedio](/es/intermediate-rails)
+# [Rails Intermedio](/es/rails-intermedio)
 
 Currículum para estudiantes quienes han hecho Suggestotron más de una vez. 'Modo fácil' ya no está disponible - ¡este currículum no te dirá que teclear!
 
@@ -23,7 +23,7 @@ Un currículum específico de ruby, extraído de las diapositivas de "Ruby para 
 
 Los talleres de Railsbridge también pueden usar el currículum de Alex [Aprende a escribir código en Ruby](http://codelikethis.com/lessons/learn_to_code) (actualmente en un sitio separado). También es código abierto y puede que pronto se úna al repo principal de Railsbridge Docs. Está orientado hacia la gente que posiblemente nunca antes ha escrito código.
 
-# [Workshop](/es/workshop)
+# [Taller](/es/taller)
 
 El Railsbridge junkyard! Dispositivas para la apertura/cierre de presentaciones, entrenamiento para facilitadores.
 
