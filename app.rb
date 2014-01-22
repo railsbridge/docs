@@ -31,8 +31,18 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   attr_writer :default_site
 
   def default_site
-    if host && sites.include?(site = host.split(".").first)
-      site
+    if host
+      host_parts = host.split(".")
+      subdomain = host_parts.first
+      if ["es"].include?(subdomain)
+        params[:locale] = subdomain
+        # if request.env['PATH_INFO'] = host_parts[1..-1]
+        "es/" + @default_site
+      elsif sites.include?(subdomain)
+        subdomain
+      else
+        @default_site
+      end
     else
       @default_site
     end
