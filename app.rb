@@ -51,6 +51,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   def set_downstream_app
+    # todo: make this an upstream app instead?
     @app = ::Deck::RackApp.public_file_server
   end
 
@@ -121,6 +122,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
     rescue Errno::ENOENT => e
       p e
+      puts "\t#{caller[0..2].join("\n\t")}"
       halt 404
     end
   end
@@ -187,11 +189,16 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   get "/:site/:name/:section" do
-    if params[:site] == "es"
-      params[:site] = "es/#{params[:name]}"
-      params[:name] = params[:section]
+    
+    if params[:site] == 'deck.js'  # hack: todo: put the deck.js file server *ahead* in the rack chain
+      forward
+    else
+      if params[:site] == "es"
+        params[:site] = "es/#{params[:name]}"
+        params[:name] = params[:section]
+      end
+      render_page
     end
-    render_page
   end
 
   get "/:file.:ext" do

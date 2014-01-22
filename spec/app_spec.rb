@@ -17,9 +17,13 @@ describe InstallFest do
     true_app = app
     until true_app.is_a? InstallFest
       next_app =
-        true_app.respond_to?(:app) ?
-          true_app.app :
+        if true_app.respond_to?(:app)
+          true_app.app
+        elsif true_app.is_a?(Sinatra::Wrapper)
+          true_app.instance_variable_get(:@instance)
+        else
           true_app.instance_variable_get(:@app)
+        end
       break if next_app.nil?
       true_app = next_app
     end
