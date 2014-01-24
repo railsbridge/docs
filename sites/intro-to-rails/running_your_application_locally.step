@@ -5,6 +5,7 @@ end
 
 steps do
   step do
+    console "bundle"
     console "rails server"
   end
   step do
