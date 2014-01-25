@@ -77,3 +77,5 @@
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: <http://rbcpt.org/code>
+
+# rbcpt.org/start
