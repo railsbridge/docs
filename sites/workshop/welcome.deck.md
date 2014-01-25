@@ -55,6 +55,14 @@
 |Code|Save|Publish|
 | <img src="img/fit-together-ruby-rails.png" alt="Ruby, Rails" width="250"> | <img src="img/fit-together-git.png" alt="Git" width="250"> | <img src="img/fit-together-heroku.png" alt="Heroku" width="250"> |
 
+<!SLIDE center>
+# How does your set up work?
+
+|Text Editor|Terminal|Browser|
+|---|---|---|
+|Write Code|Issue Commands|See the Results|
+| <img src="img/set-up-text-editor.png" alt="Sublime Text" width="250"> | <img src="img/set-up-terminal.png" alt="Terminal" width="250"> | <img src="img/set-up-browser.png" alt="Browser" width="250"> |
+
 <!SLIDE bullets>
 # The Rails Philosophy
 
