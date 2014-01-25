@@ -47,6 +47,14 @@
 |A programming Language|A Framework: patterns for building web apps|A source control system|An hosting platform|
 | <img src="img/ruby-logo.jpg" alt="Ruby" width="250"> | <img src="img/rails_logo.jpg" alt="Rails" width="250"> | <img src="img/git-icon.png" alt="Git" width="250"> | <img src="img/heroku-logo.png" alt="Heroku"  width="250" > |
 
+<!SLIDE center>
+# How do these fit together?
+
+|Ruby, Rails|Git|Heroku|
+|---|---|---|
+|Code|Save|Publish|
+| <img src="img/fit-together-ruby-rails.png" alt="Ruby, Rails" width="250"> | <img src="img/fit-together-git.png" alt="Git" width="250"> | <img src="img/fit-together-heroku.png" alt="Heroku" width="250"> |
+
 <!SLIDE bullets>
 # The Rails Philosophy
 
@@ -60,6 +68,4 @@
 ### Don't be shy: ask questions
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
-### Stickers! 
-#### &nbsp; RailsBridge, GitHub, Mad Mimi
-### Code of Conduct: <http://railsbridgecapetown.org/code-of-conduct.html>
+### Code of Conduct: <http://rbcpt.org/code>
