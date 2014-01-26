@@ -8,18 +8,12 @@
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
 
-![Siyelo](img/siyelo-logo.png)
-![Unboxed](img/unboxed-logo.png)
-![Hetzner](img/hetzner-logo.png)
+![RubyFuza](img/rubyfuza_2014.gif)
 
 ### goodies
 
-![League of Beers](img/league-of-beers.png)
-![pluralsight](img/pluralsight-fullcolor-175x39-v3.png)
+![Smashing Magazine](img/smashing-magazine.png)
 ![Pragmatic Bookshelf](img/pragprog-logo.png)
-![Graffica](img/graffica_logo_small.png)
-![O'Reilly](img/OReillyLogo300x70.png)
-![GitHub](img/GitHub_Logo.png)
 
 <!SLIDE bullets>
 # What did we learn?
@@ -29,9 +23,9 @@
 
 ## Resources
 
-http://docs.railsbridgecapetown.org/workshop/resources
+http://rbcpt.org/resources
 
 <!SLIDE bullets>
 # And now...
-### Retrospective with Sam
-### Late lunch
+### Retrospective with Cara
+### Food!
