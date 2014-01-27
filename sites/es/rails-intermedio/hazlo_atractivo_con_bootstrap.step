@@ -1,0 +1,58 @@
+requirements do
+message <<-MARKDOWN
+* El sitio deberá usar Bootstrap para un estilo moderno.
+* Cuando inicies sesión, el correo del usuario deberá aparecer en la parte superior derecha en la esquina de la barra de navegación.
+MARKDOWN
+  img class: 'noborder', src: 'img/header.png'
+end
+
+important do
+  h2 "Timebox It!"
+  p "El propósito de esta sección es hacer tu aplicación visualmente atractiva y demostrar como agregar un framework CSS como Bootstrap usando Gemfile. No te enganches en tener los detalles perfectos en tu CSS, a menos que sea prioritario para ti."
+end
+
+discussion do 
+message <<-MARKDOWN
+* Herramientas de desarrollo de Chrome / plugin Firebug de Firefox - ¡como utilizarlas!
+* ¿Qué es Bootstrap y (opcional) por que todos lo aman (o almenos lo utilizan en todos lados)?
+* Talvés si revisas la vista del archivo home/index.html.erb que se refiere a la vista layouts/application.html.erb de nuevo, y donde es posible que quieras hacer algunos cambios para aprovechar a bootstrap.
+* Alguién debe explicar como funciona erb - lo estarás usando para mostrar el correo del usuario en la parte derecha.
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* ¡¡Una gema para Bootstrap!! Vamos a usar la gema bootstrap-sass-rails: https://github.com/yabawock/bootstrap-sass-rails
+* La documentación de Bootstrap: http://getbootstrap.com/css/
+* Aquí hay un link para la sección de la barra de navegación: http://getbootstrap.com/components/#nav
+* Referencias para HTML y CSS: http://www.htmldog.com/
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* ¡No olvides de leer el readme!
+* Existen un par de formas para mover el texto - busca "Component alignment" en la documentación.
+* Devise tiene un método de ayuda para accesar al usuario actual - regresa al readme de devise y búscalo.
+MARKDOWN
+end
+
+h1 "Una Gran Pista"
+message "Si no puedes conseguir el código HTML para la barra de navegación con Bootstrap, o quieras moverte rápido a la siguente página, aquí hay un código que puedes usar en tu diseño (¡después de instalar Bootstrap!) que funcionará. El código deberá ir inmediatamente después de tu etiqueta &lt;body&gt;."
+pre <<-MARKDOWN
+<div class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Tabla de Mensajes</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Inicio</a></li>
+    </ul>
+    <p class="navbar-text pull-right">logged_in_user@email.com | <a href="log_out_link_here">Log Out</a></p>
+  </div>
+</div>
+MARKDOWN
+
+message "***¡Todavía tienes que agregar código para mostrar el inicio de sesión del usuario y agregar un botón de cerrar sesión!***"
+
+next_step "agrega_crea_paginas_para_entradas_individuales"
