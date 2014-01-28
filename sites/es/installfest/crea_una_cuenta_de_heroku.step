@@ -1,43 +1,43 @@
-step "Visit the Heroku web site" do
+spanish_step "Visita la página web de Heroku" do
   url "http://heroku.com"
 end
 
-step "Create an account" do
-  message "Click the big **Sign Up** button (it's about halfway down the page)"
-  message "Enter your email address."
-  important "Use the same email address for heroku, git, github, and ssh."
+spanish_step "Crea una cuenta" do
+  message "Haz click en el botón grande de **Sign Up** (está más o menos a la mitad de la página)"
+  message "Ingresa tu correo electrónico."
+  important "Utiliza el mismo correo electrónico para heroku, git, github y ssh."
 end
 
-step "Activate your account" do
+spanish_step "Activa tu cuenta" do
 
-  message "Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save."
+  message "Heroku te enviará un correo electrónico de activación. Ábrelo y haz click en el link de activación. Te llevará al sitio de Heroku. Ingresa y confirma tu contraseña. Presiona Save."
 
 end
 
-step "Install the Heroku toolbelt" do
+spanish_step "Instala el toolbelt de Heroku" do
 
-  message "Visit https://toolbelt.heroku.com/, click the download link, and install."
+  message "Visita https://toolbelt.heroku.com/, haz click en el link de descarga, e instala."
 
   verify do
-    console "heroku version"
-    result "2.26.7 or higher"
+    spanish_console "heroku version"
+    spanish_result "2.26.7 or higher"
   end
-  message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
+  message "Usuarios de Windows, si `heroku version` no funciona, abre una nueva ventana de una terminal después de que el instalador de heroku haya terminado."
 end
 
-step "Create an SSH key" do
-  option "On OS X or Linux" do 
-    link "create_an_ssh_key"
+spanish_step "Crea una llave SSH" do
+  option "En OS X o Linux" do
+    spanish_link "crea_una_llave_ssh"
   end
   option "On Windows" do
     message "RailsInstaller created a key for you. Go on to the next step!"
   end
 end
 
-step "Add your SSH key to your Heroku account" do
-  console "heroku keys:add"
+spanish_step "Agrega tu llave SSH a tu cuenta de Heroku" do
+  spanish_console "heroku keys:add"
   
-  message "hit enter to accept the default key file to use"
+  message "Presiona Enter para aceptar el archivo de la llave predeterminada que se utilizará"
 end
 
-next_step "create_and_deploy_a_rails_app"
+next_spanish_step "crea_y_lanza_una_rails_app"

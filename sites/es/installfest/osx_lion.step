@@ -7,7 +7,7 @@ step "Open Terminal" do
 end
 
 step "Install A Compiler (XCode or GCC)" do
-  link "install_xcode"
+  spanish_link "instala_xcode"
 end
 
 step "Install Git" do
@@ -20,7 +20,7 @@ step "Install Git" do
 
 If you see that output, you have Git. <a href='#install-rvm'>Move on to the next step.</a>
 
-Otherwise, [Install Homebrew](install_homebrew). Come back here when you're done.
+Otherwise, [Install Homebrew](instala_homebrew). Come back here when you're done.
   MARKDOWN
 
   console_with_message "After installing Homebrew, type this in the terminal:", "brew install git"
@@ -30,12 +30,12 @@ Otherwise, [Install Homebrew](install_homebrew). Come back here when you're done
     fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
   end
 
-  link "configure_git"
+  spanish_link "configura_git"
 end
 
 a name: "install-rvm"
 step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and_ruby'} do
-  link "install_rvm_and_ruby"
+  spanish_link "instala_rvm_y_ruby"
 end
 
 step "Install Rails" do
@@ -51,7 +51,7 @@ step "Install Sublime Text 2" do
 
   important "When in doubt, use Sublime Text 2."
 
-  link "install_sublime_text_2_for_mac"
+  spanish_link "instala_sublime_text_2_para_mac"
 end
 
 verify "successful installation" do
@@ -66,11 +66,11 @@ verify "successful installation" do
 end
 
 step "Generate an ssh public key" do
-  link "create_an_ssh_key"
+  spanish_link "crea_una_key_ssh"
 end
 
 step "Congratulations!" do
   message "You have everything you need to write a Ruby on Rails application."
 end
 
-next_step "create_a_heroku_account"
+next_spanish_step "crea_una_cuenta_de_heroku"
