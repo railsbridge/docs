@@ -1,0 +1,48 @@
+requirements do
+message <<-MARKDOWN
+* El usuario deberá ser capaz de crear entradas con un título, autor, fecha de publicación, y contendio. El autor deberá ser el usuario actual.
+* La entrada completa deberá aparecer en la misma página (aka es una página de muestra).
+* Si el usuario no ingresa todos los campos requeridos, deberá ver algún mensaje de error, pero sin perder su trabajo.
+MARKDOWN
+  table do
+    tr do
+      th do
+        h2 'Crear Vista', class: 'centered'
+      end
+      th do
+        h2 'Mostrar Vista', class: 'centered'
+      end
+    end
+    tr do
+      td do
+        img class: 'noborder', src: 'img/create_post.png'
+      end
+      td do
+        img class: 'noborder', src: 'img/show_post.png'
+      end
+    end
+  end
+end
+
+discussion do
+message <<-MARKDOWN
+* ¿Cómo crearías un recurso? ¿Qué parámetros necesitarás pasar?
+* Luego: ¿Qué es lo que rails hace cuando utilizas el generador de recursos? Encuentra todos los archivos nuevos. Talvés quieras enlistarlos en una pizarra.
+* ¿Cómo asociarías un usuario con una entrada?
+  * ¿Qué es lo que tienes que poner en la migración para crear una entrada?
+  * ¿Cómo es la comunicación asociada con el modelo de Usuario y Entrada?
+  * ¿Cómo asociarías el usuario actual con una entrada cuando tu la haz creado?
+  * ¿Cuál es la diferencia entre los métodos `new` y `create` en el controlador de entrada y cómo estos se relacionan al crear una nueva entrada?
+  MARKDOWN
+  end
+
+  tools_and_references do
+  message <<-MARKDOWN
+  * Guías Rails - Asociaciones Active Record: <http://guides.rubyonrails.org/association_basics.html#the-belongs_to-association>.
+  * Guías Rails - Formularios de Ayuda, sección 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>
+  * Guías Rails - Routes - CRUD, Verbs, and Actions: <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>.
+  * Guías Rails - Active Record Validaciones y Llamadas: <http://guides.rubyonrails.org/active_record_validations_callbacks.html>
+MARKDOWN
+end
+
+next_step "haz_entradas_pagina"
