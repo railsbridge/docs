@@ -1,0 +1,24 @@
+requirements do
+message <<-MARKDOWN
+* El usuario deberá ser capaz de ver en la entrada el nombre, autor, y la fecha de publicación en la página general (aka página de inicio).
+* El nombre de la entrada deberá enlazar a la página que la contiene.
+* La página principal deberá incluir un link o botón para "Entrada Nueva"
+MARKDOWN
+  img class: 'noborder', src: 'img/post_index.png'
+end
+
+discussion do
+message <<-MARKDOWN
+* ¡Talvés ahora sea un buen momento para hablar sobre Active Record! ¿Puede alguién explicarlo?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* Guías Rails - Enlistando todas las entradas: http://guides.rubyonrails.org/getting_started.html#listing-all-posts
+  * Siéntete libre de omitir las información sobre JSON en la página, si estas muy inclinado.
+* Bootstrap - ¡Dale un diseño a esa tabla!: http://twitter.github.com/bootstrap/base-css.html#tables 
+MARKDOWN
+end
+
+next_step "agrega_comentarios"
