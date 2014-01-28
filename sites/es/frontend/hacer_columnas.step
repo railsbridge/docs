@@ -8,7 +8,7 @@ steps do
 
   step do
     message "RETO: Encuentra el div con el id 'main' en tu HTML. Ve si puedes darle un borde de un pixel en el lado izquierdo modificando la hoja de estilo existente, ‘layout.css’."
-    message "Si te preocupa cual propiedad CSS usar, ve si la puedes buscar en [dochub](http://dochub.io/#css/)."
+    message "Si te preocupa cuál propiedad CSS usar, ve si la puedes buscar en [dochub](http://dochub.io/#css/)."
   end
 
   step do
