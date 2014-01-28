@@ -32,8 +32,18 @@ class InstallFest < Sinatra::Application
   attr_writer :default_site
 
   def default_site
-    if host && sites.include?(site = host.split(".").first)
-      site
+    if host
+      host_parts = host.split(".")
+      subdomain = host_parts.first
+      if ["es"].include?(subdomain)
+        params[:locale] = subdomain
+        # if request.env['PATH_INFO'] = host_parts[1..-1]
+        "es/" + @default_site
+      elsif sites.include?(subdomain)
+        subdomain
+      else
+        @default_site
+      end
     else
       @default_site
     end
@@ -184,6 +194,24 @@ class InstallFest < Sinatra::Application
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/#{params[:name]}"
     else
+      render_page
+    end
+  end
+
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
+  get "/:site/:name/:section" do
+    
+    if params[:site] == 'deck.js'  # hack: todo: put the deck.js file server *ahead* in the rack chain
+      forward
+    else
+      if params[:site] == "es"
+        params[:site] = "es/#{params[:name]}"
+        params[:name] = params[:section]
+      end
       render_page
     end
   end

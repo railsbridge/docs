@@ -74,11 +74,20 @@ describe InstallFest do
     end
   end
 
-  it "looks for a site named the same as the host" do
-    get "/", {}, {"HTTP_HOST" => "docs.example.com"}
-    assert { last_response.redirect? }
-    follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/docs/" }
+  describe "custom subdomains - " do
+    it "looks for a site named the same as the host" do
+      get "/", {}, {"HTTP_HOST" => "curriculum.example.com"}
+      assert { last_response.redirect? }
+      follow_redirect! while last_response.redirect?
+      assert { last_request.path == "/curriculum/" }
+    end
+
+    it "treats 'es' subdomain as a locale, not a site" do
+      get "/", {}, {"HTTP_HOST" => "es.example.com"}
+      assert { last_response.redirect? }
+      follow_redirect! while last_response.redirect?
+      assert { last_request.path == "/es/docs" }
+    end
   end
 
   describe "page headers" do
