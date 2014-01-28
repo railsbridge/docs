@@ -1,3 +1,5 @@
+message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing."
+
 step "Visit the Heroku web site" do
   url "http://heroku.com"
 end
@@ -25,15 +27,6 @@ step "Install the Heroku toolbelt" do
     result "2.26.7 or higher"
   end
   message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
-end
-
-step "Create an SSH key" do
-  option "On OS X or Linux" do 
-    link "create_an_ssh_key"
-  end
-  option "On Windows" do
-    message "RailsInstaller created a key for you. Go on to the next step!"
-  end
 end
 
 step "Add your SSH key to your Heroku account" do

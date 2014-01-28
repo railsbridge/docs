@@ -1,6 +1,6 @@
 important "If you wrote down **Core Duo** as your processor type in the previous step, **DO NOT** continue with these steps.  Please flag down a volunteer for additional help."
 
-message "These instructions should work on Snow Leopard, Lion, and Mountain Lion."
+message "These instructions should work on Snow Leopard, Lion, Mountain Lion, and Mavericks."
 
 step "Run RailsInstaller" do
 
@@ -60,8 +60,4 @@ verify "successful installation" do
   fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
 
-step "Generate an ssh public key" do
-  link "create_an_ssh_key"
-end
-
-next_step "create_a_heroku_account"
+next_step "configure_git"

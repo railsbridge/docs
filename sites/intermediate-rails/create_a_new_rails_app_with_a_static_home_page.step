@@ -22,7 +22,7 @@ end
 tools_and_references do
 message <<-MARKDOWN
 * RailsGuides - Setting the Application Home Page: <http://guides.rubyonrails.org/getting_started.html#setting-the-application-home-page>.
-* Rails Guides - controllers overview: <http://guides.rubyonrails.org/action_controller_overview.html>.
+* RailsGuides - controllers overview: <http://guides.rubyonrails.org/action_controller_overview.html>.
 MARKDOWN
 end
 

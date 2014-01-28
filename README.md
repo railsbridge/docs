@@ -245,4 +245,3 @@ StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want
 # Credits
 
 some icons from https://github.com/kennethreitz/open-icons
-

@@ -16,14 +16,15 @@ require "media_wiki_page"
 require "raw_page"
 require "deck"
 require "deck/rack_app"
+require "titleizer"
 
-class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead?
+class InstallFest < Sinatra::Application
   include Erector::Mixin
 
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_site = "installfest"
+    @default_site = "docs"
     set_downstream_app # todo: test
   end
 
@@ -59,7 +60,13 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   def sites
-    Dir["#{sites_dir}/*"].map{|path| path.split('/').last}
+    Dir["#{sites_dir}/*"].map { |path| path.split('/').last }
+  end
+
+  def redirect_sites
+    {
+      'curriculum' => 'intro-to-rails'
+    }
   end
 
   def src
@@ -67,7 +74,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   end
 
   def ext
-    doc_path.split('.').last
+    ext = $1 if doc_path.match(/\.(.*)/)
   end
 
   def doc_path
@@ -90,33 +97,31 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   def render_page
     begin
       options = {
-          site_name: params[:site],
-          page_name: params[:name],
-          doc_title: title_for_page(params[:name]),
-          doc_path: doc_path,
-          back: params[:back],
-          src: src,
+        site_name: params[:site],
+        page_name: params[:name],
+        doc_title: Titleizer.title_for_page(params[:name]),
+        doc_path: doc_path,
+        back: params[:back],
+        src: src,
       }
 
       case ext
 
-      when "md"
-        if doc_path =~ /\.deck\.md$/   # todo: refactor
-          # todo: render with page nav elements too
+        when "deck.md"
           slides = Deck::Slide.split(src.force_encoding('utf-8'))
           Deck::SlideDeck.new(:slides => slides).to_pretty
-        else
+
+        when "md"
           MarkdownPage.new(options).to_html
-        end
 
-      when "mw"
-        MediaWikiPage.new(options).to_html
+        when "mw"
+          MediaWikiPage.new(options).to_html
 
-      when "step"
-        StepPage.new(options).to_html
+        when "step"
+          StepPage.new(options).to_html
 
-      else
-        raise "unknown file type #{doc_path}"
+        else
+          raise "unknown file type #{doc_path}"
       end
 
     rescue Errno::ENOENT => e
@@ -140,11 +145,11 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
   get "/:site/:name/src" do
     begin
       RawPage.new(
-      site_name: params[:site],
-      page_name: params[:name],
-      doc_title: doc_path.split('/').last,
-      doc_path: doc_path,
-      src: src
+        site_name: params[:site],
+        page_name: params[:name],
+        doc_title: doc_path.split('/').last,
+        doc_path: doc_path,
+        src: src
       ).to_html
     rescue Errno::ENOENT => e
       p e
@@ -156,7 +161,7 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     if sites.include?(params[:site])
       send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
     else
-      forward  # send it on to the downstream file server
+      forward # send it on to the downstream file server
     end
   end
 
@@ -165,17 +170,22 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
     if sites.include?(params[:site])
       send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
     else
-      forward  # send it on to the downstream file server
+      forward # send it on to the downstream file server
     end
   end
 
   get "/:site/:name/" do
     # remove any extraneous slash from otherwise well-formed page URLs
-    redirect "#{params[:site]}/#{params[:name]}"
+    redirect request.fullpath.chomp('/')
   end
 
   get "/:site/:name" do
-    render_page
+    site_name = params[:site]
+    if redirect_sites[site_name]
+      redirect "#{redirect_sites[site_name]}/#{params[:name]}"
+    else
+      render_page
+    end
   end
 
   get "/:file.:ext" do
@@ -186,19 +196,20 @@ class InstallFest < Sinatra::Application  # should this be Sinatra::Base instead
 
   get "/:site" do
     # add a slash to any URLs that contain only a site
-    #   (otherwise paths in that site's pages would resolve
-    #    relative to the root)
-    redirect "#{params[:site]}/"
+    # (otherwise paths in that site's pages would resolve relative to the root)
+    redirect "#{request.fullpath}/"
   end
 
   get "/:site/" do
     site_name = params[:site]
-    if sites.include? site_name
+    if redirect_sites[site_name]
+      redirect "#{redirect_sites[site_name]}/"
+    elsif sites.include? site_name
       # render the site's index page
       params[:name] = site_name
       render_page
     else
-      forward  # send it on to the downstream file server
+      forward # send it on to the downstream file server
     end
   end
 end

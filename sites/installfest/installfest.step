@@ -59,7 +59,7 @@ You will be installing the following tools:
 You will also create an account on Heroku, an application hosting platform.
 If you already have an account on Heroku, make sure you know your username and password.
 
-If you've already installed the above tools and are confident they are setup correctly, skip ahead to the [Get a Sticker](get_a_sticker) step.
+If you've already installed the above tools and are confident they are setup correctly, skip ahead to the <a href="get_a_sticker">Get a Sticker</a> step.
 
   MARKDOWN
 end

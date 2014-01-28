@@ -1,0 +1,57 @@
+
+goals do
+  goal "Create a local git repository"
+  goal "Add all our files to the git repository"
+
+  message "In order to publish our application, we need to add our application and any changes we make over time to a \"revision control system\". In our case we're going to use *git* because it is (relatively) easy and it is what our app server, *Heroku*, uses."
+end
+
+steps do
+
+  step do
+    console "git init"
+
+    message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -a` (list all files)."
+  end
+
+  step do
+    console "git status"
+
+    message "`git status` tells you everything git sees as modified, new, or missing."
+  message "The first time you run this, you should see a ton of stuff."
+  message "The second time you run this, you shouldn't see much of anything."
+  end
+
+  step do
+    console "git add -A"
+    message "`git add -A` tells git that you want to add the current directory and everything under it to the repository."
+    tip "git add" do
+      message <<-MARKDOWN
+  With Git, there are usually many ways to do very similar things. `git add` adds changes in your working directory to the local repository.
+
+    * `git add foo.txt` adds a file named `foo.txt`
+    * `git add .` adds all new files and changed files, but does not remove deleted files
+    * `git add -A` adds everything, including deletions
+
+        "Adding deletions" may sound weird, but if you think of a version control system as keeping
+        track of *changes*, it might make more sense. Most people use `git add .` but `git add -A`
+        can be safer. No matter what, `git status` is your friend.
+      MARKDOWN
+    end
+  end
+
+  step do
+    console "git commit -m \"Added all the things\""
+    message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
+    message "This is done in two steps so you can group multiple changes together."
+    message "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+  end
+end
+
+explanation do
+  message <<-MARKDOWN
+By checking your application into git now, you're creating a record of your starting point. Whenever you make a change during today's workshop, we'll add it to git before moving on. This way, if anything ever breaks, or you make a change you don't like, you can use git as an all-powerful "undo" technique. But that only works when you remember to commit early and often!
+  MARKDOWN
+end
+
+next_step "running_your_application_locally"
