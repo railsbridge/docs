@@ -1,0 +1,42 @@
+requirements do
+message <<-MARKDOWN
+* El usuario deberá ver el enlace o botón de 'Nuevo Comentario' en la página de la entrada la cual los llevará al formulario. El formulario deberá contener el título de la entrada a la que se le pondrán los comentarios.
+* El usuario deberá ser capaz de agregar un comentario en una entrada usando el formulario 'Nuevo Comentario'.
+* El usuario deberá ver todos los comentarios en la página de la entrada.
+* Si el usuario no llena todo lo que se requiere, deberá ver el error, pero sin perder su trabajo.
+MARKDOWN
+  table do
+    tr do
+      th do
+        h2 'Crear Vista,' class: 'centered'
+      end
+      th do
+        h2 'Mostrar Vista,' class: 'centered'
+      end
+    end
+    tr do
+      td do
+        img class: 'noborder', src: 'img/create_reply.png'
+      end
+      td do
+        img class: 'noborder', src: 'img/show_replies.png'
+      end
+    end
+  end
+end
+
+discussion do
+message <<-MARKDOWN
+* ¿Qué es un recurso anidado? ¿Cuándo es apropiado usarlo y como ayuda?
+* ¿Cómo interactúa replies_controller y posts_controller?
+* ¿Qué pasará con el archivo de rutas para que la anidación funcione?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* Guías Rails - Enrutamiento de Rails desde afuer en: http://guides.rubyonrails.org/routing.html
+MARKDOWN
+end
+
+next_step "comentando_entrada_en_la_misma_linea"
