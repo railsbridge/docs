@@ -39,4 +39,4 @@ message <<-MARKDOWN
 MARKDOWN
 end
 
-next_step "comentando_entrada_en_la_misma_linea"
+next_step "comentando_entrada_en_misma_linea"
