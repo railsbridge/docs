@@ -76,10 +76,10 @@ describe InstallFest do
 
   describe "custom subdomains - " do
     it "looks for a site named the same as the host" do
-      get "/", {}, {"HTTP_HOST" => "curriculum.example.com"}
+      get "/", {}, {"HTTP_HOST" => "docs.example.com"}
       assert { last_response.redirect? }
       follow_redirect! while last_response.redirect?
-      assert { last_request.path == "/curriculum/" }
+      assert { last_request.path == "/docs/" }
     end
 
     it "treats 'es' subdomain as a locale, not a site" do
