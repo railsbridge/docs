@@ -17,6 +17,7 @@ require "raw_page"
 require "deck"
 require "deck/rack_app"
 require "titleizer"
+require 'pry'
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
@@ -84,7 +85,7 @@ class InstallFest < Sinatra::Application
   end
 
   def ext
-    ext = $1 if doc_path.match(/\.(.*)/)
+    $1 if doc_path.match(/\.(.*)/)
   end
 
   def doc_path
@@ -190,6 +191,7 @@ class InstallFest < Sinatra::Application
   end
 
   get "/:site/:name" do
+    params[:site] = "es/#{params[:name]}" if params[:site] == 'es'
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/#{params[:name]}"
@@ -234,6 +236,10 @@ class InstallFest < Sinatra::Application
       redirect "#{redirect_sites[site_name]}/"
     elsif sites.include? site_name
       # render the site's index page
+      if site_name == 'es'
+        params[:site] = "es/#{default_site}"
+        site_name = default_site
+      end
       params[:name] = site_name
       render_page
     else
