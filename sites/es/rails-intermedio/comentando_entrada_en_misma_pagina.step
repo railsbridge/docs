@@ -1,0 +1,22 @@
+requirements do
+message <<-MARKDOWN
+* El usuario deberá ver el formulario de 'Nuevo Comentario' en la parte inferior de la entrada en la página.
+* El usuario será capaz de hacer comentarios usando el formulario adjunto de 'Nuevo Comentario'.
+* Manejando el erro (trata de comentar sin contenido) deberá funcionar de la misma manera en la que comentabamos de forma separada.
+MARKDOWN
+img class: 'noborder', src: 'img/inline_reply.png'
+end
+
+discussion do
+message <<-MARKDOWN
+* ¿Qué necesita pasar en el controlador de la entrada para permitir el comentario en la misma página? ¿Qué necesita pasar en la vista?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* Guías Rails - Form Helpers, sección 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>
+MARKDOWN
+end
+
+next_step 'agrega_otras_caracteristicas'
