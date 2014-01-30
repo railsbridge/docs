@@ -1,0 +1,33 @@
+goals do
+  goal "Agregar algunos archivos de inicio"
+end
+
+steps do
+  step do
+    message "Descarga el archivo .zip de [este link](https://github.com/eanakashima/front-end-lesson/archive/master.zip)"
+    message "Cuando el archivo termine de descargarse, encuentralo en tu computadora y descomprimelo."
+  end
+
+  step do
+    message "El archivo zip debe contener un archivo llamado index.html y un directorio de recursos."
+    message "<img src='img/zip.png'>"
+    message "Arrastra el archivo llamado index.html y la carpeta resources dentro de tu carpeta del proyecto. Reemplaza el archivo index.html que probablemente tengas allí."
+  end
+end
+
+explanation do
+  message <<-MARKDOWN
+
+## ¿Qué son estos archivos?
+
+Sólo para ahorrarte algo de tiempo, hemos suministrado un documento HTML muy basico, una hoja de estilo CSS, un archivo Javascipt,y una imagen de placeholder.Pero si hubieras querido, habrias podido escribir estos archivos tu misma con un editor de texto.
+
+Si en el futuro vas a comenzar un nuevo proyecto, entonces prueba codificarlo todo a mano unas cuantas veces para dominarlo, y después trata de empezar con algún otro código HTML estándar de otras personas que lo hayan compartido:
+
+* [HTML5 Boilerplate](http://html5boilerplate.com/), una plantilla en blanco con muchos consejos sobre las mejores prácticas de alto rendimiento.
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/), una base de HTML / CSS con una gran biblioteca de estilos para probar.
+
+  MARKDOWN
+end
+
+next_step "make_a_web_page"
