@@ -33,7 +33,7 @@ RETO: Agregar dos tipos de enlaces anchor.
 
 Los enlaces en html son creados por la etiqueta `a`. Agrega una etiqueta en algún lugar del documento que cree un link a otra página en la web.
 
-  Si no estás segura de que atributos puede tener una etiqueta `a`, ve si puedes encontrarlo en [MDN](https://developer.mozilla.org/en/HTML/Element/a).
+  Si no sabes qué atributos puede tener una etiqueta `a`, ve si puedes encontrarlo en [MDN](https://developer.mozilla.org/en/HTML/Element/a).
 
 Además puedes crear enlaces que estén en la misma página y sólo apuntar a otro bloque de contenido. En lugar de enlazar a una url, estos apuntarán al id del elemento al que quieras saltar, con un atributo como `href='#id-name'`
 
