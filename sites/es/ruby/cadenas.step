@@ -1,0 +1,89 @@
+
+goals do
+  goal "Entender cuando utilizar las cadenas."
+  goal "Aprender cómo se combinan cadenas."
+  goal "Aprender acerca de la interpolación de cadenas."
+end
+
+
+step do
+  irb <<IRB
+  'una cadena en comillas simples'
+  "una cadena en comillas dobles"
+IRB
+  message 'Una cadena es una serie de caracteres. Las cadenas pueden ser creadas utilizando comillas simples o dobles.'
+  message 'Estas cadenas no fueron guardadas en una variable. ¿Qué les sucede a los datos que no han sido guardados en una variable?'
+  message '¿Qué pasa si inicias una cadena con un tipo de comilla y la finalizas con otro tipo? ¿Cómo lo arreglas?'
+end
+  
+
+step do
+  irb <<IRB
+'Hola, ' + 'Jane'
+'manzanas' * 3
+IRB
+  message 'Las cadenas pueden ser concatenadas a otras cadenas o multiplicadas por números. ¿Qué es lo que hace esto?'
+end
+
+step do
+  irb <<'IRB'
+nombre = 'Jane'
+"Hola #{nombre}"
+IRB
+  message '(los caracteres `{}` son generalmente llamados **llaves**)'
+  message 'Esto es a lo que se llama interpolación de cadenas. La interpolación de cadenas te permite insertar una instrucción de ruby en otra cadena. Esto solamente trabaja con comillas dobles: ¿Qué pasa cuando tratas de hacer lo mismo con comillas simples?'
+
+
+    irb <<'IRB'
+"Dos más dos es: #{2 + 2}"
+IRB
+  message 'El código en las llaves puede ser cualquier instrucción válida en ruby. Prueba escribiendo varias cosas en las llaves para que puedas ver que funciona y que no.'
+end
+
+step do
+  irb <<-IRB
+'Yo tengo muchos caracteres'.length
+  IRB
+  message 'Lo escrito después del punto es llamado un **método**. Los métodos son cosas que puedes hacer con un **objeto** dado: hablaremos mas de ellos en Objetos después, aquí solo debes reconocer que el Objeto es una Cadena.'
+  message "A continuación más métodos que puedes probar:"
+  irb <<-IRB
+'adelante'.reverse
+'jane smith'.upcase
+'una simple y vieja sentencia'.delete('aeiou')
+'algunas cadenas'.methods
+  IRB
+  message "Esto es un método simplemente llamado `métodos` -- te dice todos los métodos que puedes utilizar en un objeto dado."
+end
+
+explicación do
+  message "Las cadenas son la manera clave para presentar la información en tus programas. Como un ser humano será el que probablemente vea la salida de tu programa eventualmente, y los seres humanos utilizan mas palabras que números al hablar, frecuentemente querrás utilizar las cadenas."
+  message 'Sumario de algunos de los métodos que utilizan las cadenas:'
+  table class: 'bordered' do
+    tr do
+      td 'length'
+      td 'que tan larga es la cadena (número de caracteres)'
+    end
+    tr do
+      td 'reverse'
+      td 'regresa la misma cadena, pero al revés'
+    end
+    tr do
+      td 'upcase'
+      td 'regresa la misma cadena, EN MAYUSCULAS'
+    end
+    tr do
+      td 'delete([otra cadena])'
+      td 'borra todos los caracteres que se encuentran de la primer cadena en la segunda cadena'
+    end
+    tr do
+      td 'methods'
+      td 'da los nombres de todos los métodos que pueden utilizarse con las cadenas'
+    end
+  end
+end
+
+further_reading do
+  a "Documentación de Ruby para el uso de Cadenas (Strings)", href: 'http://www.ruby-doc.org/core-1.9.3/String.html'
+end
+
+next_step 'arrays'
