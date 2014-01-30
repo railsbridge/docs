@@ -187,10 +187,10 @@ You should be aware of these, even if you don't tell the students all of them ri
 <!SLIDE bullets incremental>
 # How should the teacher respond to the first few questions?
 * Positively!
-  * I’m glad you said that
+  * I'm glad you said that
   * What an interesting question
   * Great question
-  * I’ve wondered that myself
+  * I've wondered that myself
 
 <!SLIDE bullets incremental>
 # Questions are good
@@ -198,18 +198,18 @@ You should be aware of these, even if you don't tell the students all of them ri
 * Ask for questions (even dumb ones)
   * Later in the workshop, anticipate questions if possible
 * When a question is posed, let another student answer it first
-  * Lay this expectation out explicitly at the beginning that they should try to answer each other’s questions
+  * Lay this expectation out explicitly at the beginning that they should try to answer each other's questions
 
 <!SLIDE bullets incremental>
 # Why might students *not* ask questions?
-  * Vocabulary (they don’t know what methods are, etc.)
+  * Vocabulary (they don't know what methods are, etc.)
   * Insecurity
   * ...?
 
 <!SLIDE smbullets incremental>
 # Pacing
 * Slow down!
-* If you’re excited/nervous, you will be talking too fast
+* If you're excited/nervous, you will be talking too fast
 * Talk sssssslllllloooooowwwwwwllllllyyyyyyyy.
 * Wait much longer than you feel is comfortable for questions/comments
   * Leave a space for them to ask questions
@@ -232,7 +232,7 @@ You should be aware of these, even if you don't tell the students all of them ri
 <!SLIDE smbullets incremental>
 # How to effectively use TA's?
 
-* Have them debug/look at students’ computer screens
+* Have them debug/look at students' computer screens
 * Pair them with the n00best/most shy students
 * Encourage TAs to answer questions
   * TA's explanation might resonate with a student where yours didn't
@@ -252,15 +252,15 @@ You should be aware of these, even if you don't tell the students all of them ri
 <!SLIDE bullets incremental>
 # More general teaching tips
 * Don't think about what you're going to do in the class, think about what they're going to do.
-* Tell them what you’re going to tell them, tell them, and tell them what you told them
+* Tell them what you're going to tell them, tell them, and tell them what you told them
 * ...?
 
 <!SLIDE smbullets incremental>
 # How do you check their understanding?
 
 * Some things that don't work:
-  * "Stop me if you don’t understand." (Because they’ll be too shy)
-  * "Do you get it?" (Because it’s too easy to say yes when the answer is no)
+  * "Stop me if you don't understand." (Because they'll be too shy)
+  * "Do you get it?" (Because it's too easy to say yes when the answer is no)
 
 * What works?
 
@@ -270,7 +270,7 @@ You should be aware of these, even if you don't tell the students all of them ri
 * Ask them a question about the material. but how to do this without putting them on the spot?
 * Ask questions about something that has already been built on top of. Spiral.
 * Keep an eye on body language/facial expressions
-  * "I see some confusion. Let’s get a question."
+  * "I see some confusion. Let's get a question."
 * Pairing off and discussing/explaining
 * Ask a less binary question to check understanding
   * How would you do ___
@@ -282,7 +282,7 @@ You should be aware of these, even if you don't tell the students all of them ri
 * Explain while loops, have them build one
 * Pair them off and debug
 * OK to ask the same question twice with slightly different variables
-* Don’t let the most advanced student dictate the pace
+* Don't let the most advanced student dictate the pace
 
 <!SLIDE subsection>
 # Teaching Programming
@@ -298,8 +298,8 @@ You should be aware of these, even if you don't tell the students all of them ri
 <!SLIDE smbullets incremental>
 # More advice on teaching programming
 
-* Ruby sometimes makes things magical by doing things for you. But this magic obscures the underlying patterns for beginners. Don’t get into optional parameters. If something can be left out in a function call, DON’T leave it out.
-* Before you have them do anything, first explain the big picture of what they’re about to do.
+* Ruby sometimes makes things magical by doing things for you. But this magic obscures the underlying patterns for beginners. Don't get into optional parameters. If something can be left out in a function call, DON'T leave it out.
+* Before you have them do anything, first explain the big picture of what they're about to do.
   * E.g.: before typing in the command to deploy to heroku, explain the difference between localhost and heroku.
 * Diagrams are helpful! Draw how all the pieces connect together.
 

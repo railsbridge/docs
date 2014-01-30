@@ -158,11 +158,9 @@ end
 
 message "If this works -- find a volunteer and show them"
 
-end
 
 step "Congratulations!" do
   message "You get a sticker! (Or a high-five if there aren't any stickers)."
 end
 
 next_step "clean_up"
-
