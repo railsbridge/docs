@@ -16,7 +16,6 @@ require "media_wiki_page"
 require "raw_page"
 require "deck"
 require "deck/rack_app"
-require "titleizer"
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
@@ -32,8 +31,18 @@ class InstallFest < Sinatra::Application
   attr_writer :default_site
 
   def default_site
-    if host && sites.include?(site = host.split(".").first)
-      site
+    if host
+      host_parts = host.split(".")
+      subdomain = host_parts.first
+      if ["es"].include?(subdomain)
+        params[:locale] = subdomain
+        # if request.env['PATH_INFO'] = host_parts[1..-1]
+        "es/" + @default_site
+      elsif sites.include?(subdomain)
+        subdomain
+      else
+        @default_site
+      end
     else
       @default_site
     end
@@ -52,6 +61,7 @@ class InstallFest < Sinatra::Application
   end
 
   def set_downstream_app
+    # todo: make this an upstream app instead?
     @app = ::Deck::RackApp.public_file_server
   end
 
@@ -60,13 +70,7 @@ class InstallFest < Sinatra::Application
   end
 
   def sites
-    Dir["#{sites_dir}/*"].map { |path| path.split('/').last }
-  end
-
-  def redirect_sites
-    {
-      'curriculum' => 'intro-to-rails'
-    }
+    Dir["#{sites_dir}/*"].map{|path| path.split('/').last}
   end
 
   def src
@@ -126,6 +130,7 @@ class InstallFest < Sinatra::Application
 
     rescue Errno::ENOENT => e
       p e
+      puts "\t#{caller[0..2].join("\n\t")}"
       halt 404
     end
   end
@@ -180,10 +185,26 @@ class InstallFest < Sinatra::Application
   end
 
   get "/:site/:name" do
-    site_name = params[:site]
-    if redirect_sites[site_name]
-      redirect "#{redirect_sites[site_name]}/#{params[:name]}"
+    if params[:site] == "es"
+      params[:site] = "es/#{params[:name]}"
+    end
+    render_page
+  end
+
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
+  get "/:site/:name/:section" do
+    
+    if params[:site] == 'deck.js'  # hack: todo: put the deck.js file server *ahead* in the rack chain
+      forward
     else
+      if params[:site] == "es"
+        params[:site] = "es/#{params[:name]}"
+        params[:name] = params[:section]
+      end
       render_page
     end
   end
