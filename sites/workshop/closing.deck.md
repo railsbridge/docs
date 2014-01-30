@@ -13,7 +13,9 @@
 ### goodies
 
 ![Smashing Magazine](img/smashing-magazine.png)
+![A Book Apart](img/aba-logo.png)
 ![Pragmatic Bookshelf](img/pragprog-logo.png)
+![Platform45](img/platform45-logo.png)
 
 <!SLIDE bullets>
 # What did we learn?
