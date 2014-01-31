@@ -18,7 +18,6 @@ group :development do
   gem "rerun"
   gem "rake"
   gem "rack-test"
-  gem "files", ">=0.3.0"
-  gem "bourbon"  # do 'cd public/css; bourbon update' to get new bourbon
+  gem "files", "~> 0.3.0"
   gem 'rb-fsevent', :platform => :ruby
 end
