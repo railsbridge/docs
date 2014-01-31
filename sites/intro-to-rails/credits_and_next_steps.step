@@ -51,8 +51,8 @@ h1 "What next?"
 ul do
   li "Probably time for the closing presentation."
   li "After that, start a project, tutorial, and come back again!"
-  li do 
-    span "All our favorite resources can be found on the RailsBridge site: " 
-    a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
+  li do
+    span "All our favorite resources can be found on the RailsBridge site: "
+    a "http://docs.railsbridgecapetown.org/workshop/resources", href: "http://docs.railsbridgecapetown.org/workshop/resources"
   end
 end

@@ -49,7 +49,7 @@
 
 **rails generate scaffold**  Creates a full set of model, database migration for that model, controller to manipulate it, views to view and manipulate the data and a test suite for each of the above.
 
-**rake**  Rake is ‘Ruby Make’, used to build up a list of tasks.
+**rake**  Rake is ‘Ruby Make', used to build up a list of tasks.
 
 **rails console (or rails c)** Lets you interact with your Rails application from the command line, useful for testing out quick ideas with code and changing data server-side without touching the website.
 

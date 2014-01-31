@@ -27,7 +27,7 @@ explanatory, descriptive names)
 Is name="Rory"? True
 
 **Indents and whitespace:** used for grouping code together and simplify
-readability; only use spaces, don’t tab
+readability; only use spaces, don't tab
 
 **Grouping:** Ruby uses do … end to group, PHP uses {to group}, Python
 uses white spaces to indicate which blocks of code belongs together
@@ -103,7 +103,7 @@ will figure out what generate did and undo it
 
 
 
-**\#:**Comments, won’t run as a command
+**\#:**Comments, won't run as a command
 
 **ctrl+c:** Shut down server
 
@@ -116,7 +116,7 @@ it
 
 **Tild \~:**Shortcut for your home directory
 
-**git remote add:** Telling git on your hard drive, I’m going to add
+**git remote add:** Telling git on your hard drive, I'm going to add
 another copy of this repo
 
 **CSS:**Cascading style sheets

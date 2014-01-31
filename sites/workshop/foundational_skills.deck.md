@@ -9,7 +9,7 @@ This presentation covers the basic skills required to be a programmer...
 # Files and Directories
 
 * The House/Rooms/Drawers Metaphor
-  * directories store files and keep everything in your ‘house’ organized
+  * directories store files and keep everything in your ‘house' organized
 
 <!SLIDE bullets>
 # The Command Line
@@ -49,7 +49,7 @@ This presentation covers the basic skills required to be a programmer...
   * after change, go to command line and `cat` the file to see
 * Explain file extensions and file types.
   * File types tell the editor how to color the special words in each language.
-* Explain difference between the buffer (in the editor’s memory) and the file (stored on disk).
+* Explain difference between the buffer (in the editor's memory) and the file (stored on disk).
   * Emphasize the importance of saving the buffer to a file before trying to run it with ruby.
   * "Save" makes things unsafe
 
