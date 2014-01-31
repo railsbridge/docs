@@ -12,14 +12,14 @@ message <<-MARKDOWN
 * Aprender a usar los mensajes de error como guías y no como algo que da miedo.
 
 ## ¿Qué va a pasar?
-* Vamos a construir un tablero de mensajes, donde haya entradas en la página principal y puedas dar click para ver la entrada original y los comentarios que hay enseguida.
+* Vamos a construir un tablero de mensajes, donde haya post en la página principal y puedas dar click para ver la entrada original y los comentarios que hay enseguida.
 
 * Hemos dividido esto en retos:
 	* Reto 1: crear una nueva aplicación de Rails con una página de inicio estática
 	* Reto 2: instalar devise
 	* Reto 3: hacerla lucir bien con bootstrap
-	* Reto 4: agregar páginas para crear y ver las entradas individuales
-	* Reto 5: hacer un índice de entradas
+	* Reto 4: agregar páginas para crear y ver los post individuales
+	* Reto 5: hacer un índice de posts
 	* Reto 6: agregar la funcionalidad para comentarios
 	* Reto 7: capacidad para responder en la misma línea
 	* Reto ∞: otras funcionalidades que elijas
