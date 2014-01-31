@@ -1,5 +1,5 @@
 message <<-MARKDOWN
-¿Que otras características quieres?
+¿Qué otras características quieres?
 
 Sugerencias:
 
@@ -8,9 +8,9 @@ Sugerencias:
 * Imágenes de pérfil con [Gravatar](https://gravatar.com/).
 * Agrega opciones de login con [Omniauth](https://github.com/intridea/omniauth), incluyendo Twitter, Facebook, Github, Google, y más.
   * Revisa Devise [documentación para integrarlo con Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview).
-* Manipula el diseño de la página no debería verse mal. Si no se ve mal, probablemente se vea bien.
+* Manipula el diseño de la página para que no se vea mal, si es que se ve mal, pero probablemente luzca muy bien.
 * Puedes estilizarla con Markdown o algo similar.
-* Sube a Heroku y manda el mensaje a todos tus compañeros.
+* Sube a Heroku y manda el mensaje a todos tus amigos.
 
 ## ...¡y eso es todo! ¡Buena suerte! ¡Haz mas cosas! ¡Y regresa de nuevo!
 MARKDOWN
