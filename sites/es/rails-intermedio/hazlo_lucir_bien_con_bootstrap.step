@@ -55,4 +55,4 @@ MARKDOWN
 
 message "***¡Todavía tienes que agregar código para mostrar el usuario que inició sesión y agregar un botón para cerrarla!***"
 
-next_step "agrega_paginas_para_crear_e_inspeccionar_entradas_individuales"
+next_step "agrega_paginas_para_crear_e_inspeccionar_post_individuales"
