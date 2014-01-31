@@ -3,21 +3,21 @@ message <<-MARKDOWN
 * El usuario deberá ser capaz de crear una cuenta e iniciar sesión.
 * El usuario deberá ver un mensaje para iniciar sesión si no lo ha hecho aún.
 * Una vez logeado, el usuario deberá ver un página estática con algún saludo.
-* La página deberá desplega el correo del usuario logeado y un link para cerrar sesión.
+* La página deberá desplegar el correo del usuario logeado y un link para cerrar sesión.
 * Tú, como desarrollador, deberás explicar al instructor o algún compañero como Rails muestra la vista.
 MARKDOWN
 end
 
 important do
-  h2 "¡Timebox It!"
-  p "El propósito de esta sección es permitir al usuario iniciar sesión en la aplicación y demostrar como agregar librerías externas como Devise usando el Gemfile. Si crees que necesitas escribir más de un par de líneas de código para que funcione, talvés estes llendo muy lejos. ¡Habla con un instructor!"
+  h2 "¡Establece un límite de tiempo!"
+  p "El propósito de esta sección es permitir al usuario iniciar sesión en la aplicación y demostrar como agregar librerías externas como Devise usando el Gemfile. Si crees que necesitas escribir más de un par de líneas de código para que funcione, tal vez estés yendo muy lejos. ¡Habla con un instructor!"
 end
 
 discussion do
 message <<-MARKDOWN
 * ¿Qué es devise?  
 * ¿Qué archivos agrega devise a tu aplicación?
-* Alguién que sepa: explica como leer el comando de salida `rake routes`. ¿Qué es lo que da? ¿Cómo es que ayuda?
+* Alguién que sepa: explica como leer el comando de salida `rake routes`. ¿Qué es lo que arroja? ¿Cómo es que ayuda?
 * ¿Cómo agregarías el link de cerrar sesión? ¿Cuál es la sintaxis de la acción ELIMINAR?
 * Estarás editando el diseño de tu aplicación para agregar un mensaje de error. Si no lo tienes aún, comenta la relación entre el diseño de la aplicación y todas las demás vistas que irás creando.
 MARKDOWN
@@ -27,12 +27,12 @@ tools_and_references do
 message <<-MARKDOWN
 * ¡Los archivos README son tus mejores amigos! ¡Ámalos!
 * La convención para nombrar modelos es escribir en mayúscula la primera letra, como: User.
-* Cuando corras `rails generate devise:install`, te muestra 5 instrucciones para configuración. La 3 y 4 son requeridas.
-* Los archivos de rutas pasan a través de muchos tipos comúnes de rutas en los comentarios. Estos de igual manera son tus amigos.
-* Devise tiene la magia de ayudarte con tu link de cerrar sesión. Corre `rake routes` y fíjate en alguna ruta que te ayude a cerrar sesión.
+* Cuando corras `rails generate devise:install`, te muestra 5 instrucciones para configuración. La 3 y 4 son suficientes.
+* Los archivos de rutas muestran varios tipos comúnes de rutas en los comentarios. Este archivo también es tu amigo.
+* Devise tiene la magia de ayudarte con tu link de cerrar sesión. Corre `rake routes` e identifica alguna ruta que te ayude a cerrar sesión.
 * Probablemente querrás mostrar el correo del usuario actual únicamente si esta logeado, ¿verdad? Devise tiene una ayuda para eso.
-* Opcional: en cualquier momento que generes un modelo con Rails, puedes usar la Consola de Rails para ver los métodos del controlador y el comportamiento de la interacción.
+* Opcional: en cualquier momento que generes un modelo con Rails, puedes usar la Consola de Rails para ver los métodos y comportamiento del modelo de manera interactiva.
 MARKDOWN
 end
 
-next_step "hazlo_atractivo_con_bootstrap"
+next_step "hazlo_lucir_bien_con_bootstrap"
