@@ -51,3 +51,17 @@
 ### Code of Conduct: <http://rbcpt.org/code>
 
 # rbcpt.org/install
+
+<!SLIDE bullets>
+# Schedule for tomorrow
+
+ * **09:00**-09:30: Breakfast
+ * **09:30**-11:00: Opening presentation, **Workshop**
+ * **11:00**-11:30: Break
+ * **11:30**-13:00: **Workshop**
+ * **13:00**-14:00: Lunch
+ * **14:00**-15:00: **Workshop**
+ * **15:00**-15:30: Break
+ * **15:30**-17:00: **Workshop**
+ * **17:00**-17:30: Closing presentation, Survey, eBook giveaway
+ * **17:30**-18:00: Retrospective
