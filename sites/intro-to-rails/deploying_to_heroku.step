@@ -1,5 +1,5 @@
 h2 do
-  span "If you haven't yet deployed to heroku, start at "
+  span "If you haven't yet deployed this application to heroku, start at "
   a 'First-time setup', href: '#first-time'
   span ". Otherwise, start at "
   a 'Every time', href: '#every-time'
@@ -7,7 +7,7 @@ h2 do
 end
 
 a name: 'first-time'
-situation "First-time setup" do
+situation "First-time setup for each application" do
   step "Create a heroku application" do
     console "heroku create"
     message "`heroku create` registers a new application on heroku's system. You should see some output including your new app's URL."
