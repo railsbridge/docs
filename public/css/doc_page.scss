@@ -118,6 +118,26 @@ img {
   border-right: 8px solid blue;
 }
 
+.bottom {
+  background-color: #6c266f;
+  background-image: url("/img/navbar_texture.gif");
+  border-top-width: 12px;
+  border-top-color: #2493b8;
+  border-top-style: solid;
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  color: white;
+  padding: 0 35px 1em 35px;
+}
+
+.bottom a {
+  color: white;
+}
+
+.bottom p {
+  margin-bottom: 0;
+}
+
+
 /* Clearfix */
 .cf:before,
 .cf:after {

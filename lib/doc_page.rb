@@ -125,7 +125,6 @@ class DocPage < Html5Page
     }
 
     div(class: 'bottom') {
-      p "Railsbridge Cape Town Docs"
       p do
         text "If you find something that could be improved, please make a "
         a "pull request ", href: "https://github.com/railsbridge/docs"
