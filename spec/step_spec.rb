@@ -24,7 +24,7 @@ describe Step do
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
     expected = (<<-HTML).gsub("\n", '')
 <div class="step" title="hello">
-<h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
+<h1>#{checkbox_html}<span class="prefix">#{I18n.t 'step'} 1: </span>hello</h1>
 </div>
     HTML
     assert { html == expected }
@@ -149,7 +149,7 @@ RUBY
     hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
     i am more text!
   </pre>
-  <div class="fuzzy-hint">The greyed-out text may differ and is not important.</div>
+  <div class="fuzzy-hint">#{I18n.t 'greyed_out_text'}</div>
 </div>
       HTML
     end

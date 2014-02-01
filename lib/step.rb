@@ -3,6 +3,7 @@ require 'erector'
 require 'big_checkbox'
 require 'erector_scss'
 require 'markdown_renderer'
+require 'i18n'
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -53,14 +54,13 @@ class Step < Erector::Widget
   ## steps
 
   @@header_sections = {
-    steps: :steps,
-    explanation:"Explanation",
-    explicacion:"Explicación",
-    overview:"Overview",
-    discussion:"Discussion Items",
-    hints:"Hints",
-    tools_and_references:"Tools and References",
-    requirements:"Requirements to advance",
+    steps: 'header_sections.steps',
+    explanation: 'header_sections.explanation',
+    overview: 'header_sections.overview',
+    discussion: 'header_sections.discussion',
+    hints: 'header_sections.hints',
+    tools_and_references: 'header_sections.tools_and_references',
+    requirements: 'header_sections.requirements',
   }
 
   @@header_sections.each do |type, header|
@@ -81,21 +81,7 @@ class Step < Erector::Widget
     div :class => "step", :title => name do
       h1 do
         widget BigCheckbox
-        prefix "Step #{num}" + (!name.nil? ? ': ' : '')
-        text name
-      end
-      _render_inner_content &Proc.new if block_given?
-    end
-  end
-
-  def spanish_step name = nil, options = {}
-    num = next_step_number
-    a(:name => "step#{current_anchor_num}")
-    a(:name => options[:anchor_name]) if options[:anchor_name]
-    div :class => "step", :title => name do
-      h1 do
-        widget BigCheckbox
-        prefix "Paso #{num}" + (!name.nil? ? ': ' : '')
+        prefix "#{I18n.t 'step'} #{num}" + (!name.nil? ? ': ' : '')
         text name
       end
       _render_inner_content &Proc.new if block_given?
@@ -104,18 +90,7 @@ class Step < Erector::Widget
 
   def link name
     p :class => "link" do
-      text "Go on to "
-      # todo: extract StepFile with unified name/title/path routines
-      require 'uri'
-      hash = URI.escape '#'
-      href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
-      a as_title(name), :href => href, :class => 'link'
-    end
-  end
-
-  def spanish_link name
-    p :class => "link" do
-      text "Ir a "
+      text "#{I18n.t 'link_text'}"
       # todo: extract StepFile with unified name/title/path routines
       require 'uri'
       hash = URI.escape '#'
@@ -131,18 +106,9 @@ class Step < Erector::Widget
   def next_step name
     div :class => "step next_step" do
       h1 do
-        prefix "Next Step:"
+        prefix "#{I18n.t 'next_step'}"
       end
       link name
-    end
-  end
-
-  def next_spanish_step name
-    div :class => "step next_step" do
-      h1 do
-        prefix "Siguiente Paso:"
-      end
-      spanish_link name
     end
   end
 
@@ -152,7 +118,7 @@ class Step < Erector::Widget
   end
 
   def choice name = "between..."
-    step "Choose #{name}" do
+    step "#{I18n.t 'choose'} #{name}" do
       _render_inner_content &Proc.new if block_given?
     end
   end
@@ -161,7 +127,7 @@ class Step < Erector::Widget
     num = next_step_number
     a(:name => "step#{current_anchor_num}")  # todo: test
     h1 do
-      span "Option #{num}: "
+      span "#{I18n.t 'option'} #{num}: "
       text name
     end
     _render_inner_content &Proc.new if block_given?
@@ -178,7 +144,7 @@ class Step < Erector::Widget
 
   def verify text = nil
     div :class=> "verify" do
-      h1 "Verify #{text}"
+      h1 "#{I18n.t 'verify'} #{text}"
       blockquote do
         yield
       end
@@ -187,16 +153,7 @@ class Step < Erector::Widget
 
   def goals
     div :class => "goals" do
-      h1 "Goals"
-      ul do
-        yield
-      end
-    end
-  end
-
-  def spanish_goals
-    div :class => "goals" do
-      h1 "Objetivos"
+      h1 "#{I18n.t 'goals'}"
       ul do
         yield
       end
@@ -236,10 +193,10 @@ class Step < Erector::Widget
 
   ## special
 
-  TERMINAL_CAPTION = "Type this in the terminal:"
-  IRB_CAPTION = "Type this in irb:"
-  RESULT_CAPTION = "Expected result:"
-  FUZZY_RESULT_CAPTION = "Approximate expected result:"
+  TERMINAL_CAPTION = "#{I18n.t 'terminal_caption'}"
+  IRB_CAPTION = "#{I18n.t 'irb_caption'}"
+  RESULT_CAPTION = "#{I18n.t 'result_caption'}"
+  FUZZY_RESULT_CAPTION = "#{I18n.t 'fuzzy_result_caption'}"
 
   def console(commands)
     console_with_message(TERMINAL_CAPTION, commands)
@@ -256,13 +213,6 @@ class Step < Erector::Widget
     console_with_message("", commands)
   end
 
-  def spanish_console(commands)
-    div :class => "console" do
-      span "Escribe en la terminal:"
-      pre commands
-    end
-  end
-
   def irb msg
     div :class => "console" do
       span IRB_CAPTION
@@ -270,23 +220,9 @@ class Step < Erector::Widget
     end
   end
 
-  def spanish_irb msg
-    div :class => "console" do
-      span "Escribe en irb:"
-      pre msg
-    end
-  end
-
   def type_in_file filename, msg
     div do
-      span "Type this in the file #{filename}:"
-      source_code :ruby, msg
-    end
-  end
-
-  def spanish_type_in_file filename, msg
-    div do
-      span "Escribe en el archivo #{filename}:"
+      span "#{I18n.t 'type_in_file'} #{filename}:"
       source_code :ruby, msg
     end
   end
@@ -300,25 +236,9 @@ class Step < Erector::Widget
     end
   end
 
-  def spanish_further_reading
-    div :class => "further-reading" do
-      h1 "Leer más"
-      blockquote do
-        yield
-      end
-    end
-  end
-
   def result text
     div :class => "result" do
       span RESULT_CAPTION
-      pre text
-    end
-  end
-
-  def spanish_result text
-    div :class => "result" do
-      span "Resultado esperado:"
       pre text
     end
   end
@@ -335,7 +255,7 @@ class Step < Erector::Widget
         end
         text remaining_text
       end
-      div "The greyed-out text may differ and is not important.", :class => 'fuzzy-hint'
+      div "#{I18n.t 'greyed_out_text'}", :class => 'fuzzy-hint'
     end
   end
 
