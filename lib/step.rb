@@ -1,9 +1,10 @@
-require 'erector'
+require 'active_support/core_ext/string/strip'
 require 'big_checkbox'
+require 'erector'
 require 'erector_scss'
+require 'i18n'
 require 'markdown_renderer'
 require 'titleizer'
-require 'active_support/core_ext/string/strip'
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -80,7 +81,7 @@ class Step < Erector::Widget
     div :class => "step", :title => name do
       h1 do
         widget BigCheckbox
-        prefix "#{I18n.t 'step'} #{num}" + (!name.nil? ? ': ' : '')
+        prefix "#{ I18n.t 'step' } #{ num }" + (!name.nil? ? ': ' : '')
         text name
       end
       _render_inner_content &Proc.new if block_given?
@@ -89,7 +90,7 @@ class Step < Erector::Widget
 
   def link name
     p :class => "link" do
-      text "Go on to "
+      text "#{ I18n.t 'link_text' } "
       simple_link(name, class: :link)
     end
   end
@@ -114,7 +115,7 @@ class Step < Erector::Widget
   def next_step name
     div :class => "step next_step" do
       h1 do
-        prefix "Next Step:"
+        prefix "#{ I18n.t 'next_step' }"
       end
       link name
     end
@@ -129,7 +130,7 @@ class Step < Erector::Widget
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     h1 :class => "option" do
-      span "Option #{num}: "
+      span "#{ I18n.t 'option' } #{num}: "
       text name
     end
     _render_inner_content &Proc.new if block_given?
@@ -154,7 +155,7 @@ class Step < Erector::Widget
 
   def verify text = nil
     div :class=> "verify" do
-      h1 "#{I18n.t 'verify'} #{text}"
+      h1 "#{ I18n.t 'verify' } #{text}"
       blockquote do
         yield
       end
@@ -163,7 +164,7 @@ class Step < Erector::Widget
 
   def goals
     div :class => "goals" do
-      h1 "#{I18n.t 'goals'}"
+      h1 "#{ I18n.t 'goals' }"
       ul do
         yield
       end
@@ -215,10 +216,10 @@ class Step < Erector::Widget
 
   ## special
 
-  TERMINAL_CAPTION = "#{I18n.t 'terminal_caption'}"
-  IRB_CAPTION = "#{I18n.t 'irb_caption'}"
-  RESULT_CAPTION = "#{I18n.t 'result_caption'}"
-  FUZZY_RESULT_CAPTION = "#{I18n.t 'fuzzy_result_caption'}"
+  TERMINAL_CAPTION = "#{ I18n.t 'terminal_caption' }"
+  IRB_CAPTION = "#{ I18n.t 'irb_caption'}"
+  RESULT_CAPTION = "#{ I18n.t 'result_caption' }"
+  FUZZY_RESULT_CAPTION = "#{ I18n.t 'fuzzy_result_caption' }"
 
   def console(commands)
     console_with_message(TERMINAL_CAPTION, commands)
@@ -244,14 +245,14 @@ class Step < Erector::Widget
 
   def type_in_file filename, msg
     div do
-      span "#{I18n.t 'type_in_file'} #{filename}:"
+      span "#{ I18n.t 'type_in_file' } #{ filename }:"
       source_code :ruby, msg
     end
   end
 
   def further_reading
     div :class => "further-reading" do
-      h1 "Further Reading"
+      h1 "#{ I18n.t 'further_reading' }"
       blockquote do
         yield
       end
@@ -278,7 +279,7 @@ class Step < Erector::Widget
         end
         text remaining_text
       end
-      div "#{I18n.t 'greyed_out_text'}", :class => 'fuzzy-hint'
+      div "#{ I18n.t 'greyed_out_text' }", :class => 'fuzzy-hint'
     end
   end
 

@@ -17,7 +17,6 @@ require "raw_page"
 require "deck"
 require "deck/rack_app"
 require "titleizer"
-require 'pry'
 
 class InstallFest < Sinatra::Application
   include Erector::Mixin
@@ -147,7 +146,7 @@ class InstallFest < Sinatra::Application
 
   before '/:locale/*' do
     I18n.locale       = params[:locale]
-    request.path_info = "/#{params[:locale]}/#{params[:splat][0]}"
+    request.path_info = "/#{ params[:locale] }/#{ params[:splat][0] }"
   end
 
   get '/favicon.ico' do

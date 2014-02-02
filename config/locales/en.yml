@@ -9,6 +9,7 @@ en:
     requirements: 'Requirements to advance'
   step: 'Step'
   link_text: 'Go on to '
+  back_to: 'Back to '
   next_step: 'Next Step:'
   choose: 'Choose'
   option: 'Option'
@@ -21,3 +22,5 @@ en:
   type_in_file: 'Type this in the file '
   further_reading: 'Further reading'
   greyed_out_text: 'The greyed-out text may differ and is not important.'
+  other_pages: 'Other Pages'
+  expand_all: 'Expand All'

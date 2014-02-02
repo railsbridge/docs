@@ -9,6 +9,7 @@ es:
     requirements: 'Requerimientos para avanzar'
   step: 'Paso'
   link_text: 'Ir a '
+  back_to: 'Regresar a '
   next_step: 'Siguiente Paso:'
   choose: 'Elegir'
   option: 'Opción'
@@ -21,3 +22,5 @@ es:
   type_this_in_file: 'Escribe en el archivo '
   further_reading: 'Lecturas adicionales'
   greyed_out_text: 'El texto en gris puede diferir y no importa.'
+  other_pages: 'Otras Páginas'
+  expand_all: 'Expandir Todo'
