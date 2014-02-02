@@ -1,9 +1,9 @@
-# encoding: utf-8
 require 'erector'
 require 'big_checkbox'
 require 'erector_scss'
 require 'markdown_renderer'
-require 'i18n'
+require 'titleizer'
+require 'active_support/core_ext/string/strip'
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -12,19 +12,18 @@ class Step < Erector::Widget
 
   needs :src
   needs :doc_path
+  needs :container_page_name => false
+  needs :step_stack => false
 
   def initialize options
     super
-    @step_stack = []
+    @step_stack = options[:step_stack] || []
   end
 
   def next_step_number
     @step_stack << 0 if @step_stack.empty?
     @step_stack[-1] = @step_stack.last + 1
-  end
-
-  def as_title name
-    name.to_s.split('_').map{|s| s.capitalize}.join(' ')
+    @step_stack.join('.')
   end
 
   def prefix s
@@ -39,7 +38,7 @@ class Step < Erector::Widget
 
   # todo: move into proper Doc class
   def page_name
-    @doc_path.split('/').last.split('.').first
+    @container_page_name || @doc_path.split('/').last.split('.').first
   end
 
   def insert file
@@ -47,7 +46,7 @@ class Step < Erector::Widget
     dir = File.dirname(@doc_path)
     path = File.join(dir, "_#{file}.step")  # todo: other file types
     src = File.read(path)
-    step = Step.new(src: src, doc_path: path)
+    step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
     widget step
   end
 
@@ -90,12 +89,8 @@ class Step < Erector::Widget
 
   def link name
     p :class => "link" do
-      text "#{I18n.t 'link_text'}"
-      # todo: extract StepFile with unified name/title/path routines
-      require 'uri'
-      hash = URI.escape '#'
-      href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
-      a as_title(name), :href => href, :class => 'link'
+      text "Go on to "
+      simple_link(name, class: :link)
     end
   end
 
@@ -103,10 +98,23 @@ class Step < Erector::Widget
     link name
   end
 
+  def simple_link name, options={}
+    require 'uri'
+    hash = URI.escape '#'
+    href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
+    if block_given?
+      a({:href => href}.merge(options)) do
+        yield
+      end
+    else
+      a Titleizer.title_for_page(name), {:href => href}.merge(options)
+    end
+  end
+
   def next_step name
     div :class => "step next_step" do
       h1 do
-        prefix "#{I18n.t 'next_step'}"
+        prefix "Next Step:"
       end
       link name
     end
@@ -117,21 +125,23 @@ class Step < Erector::Widget
     _render_inner_content &Proc.new if block_given?
   end
 
-  def choice name = "between..."
-    step "#{I18n.t 'choose'} #{name}" do
-      _render_inner_content &Proc.new if block_given?
-    end
-  end
-
   def option name
     num = next_step_number
-    a(:name => "step#{current_anchor_num}")  # todo: test
-    h1 do
-      span "#{I18n.t 'option'} #{num}: "
+    a(:name => "step#{current_anchor_num}")
+    h1 :class => "option" do
+      span "Option #{num}: "
       text name
     end
     _render_inner_content &Proc.new if block_given?
   end
+
+  def option_half title
+    div class: 'half-width' do
+      strong title
+      yield
+    end
+  end
+  alias_method :half_width, :option_half
 
   def section text
     div do
@@ -162,33 +172,45 @@ class Step < Erector::Widget
 
   alias_method :goal, :li
 
+  def site_desc site_name, description
+    div class: 'site-desc' do
+      h1 do
+        a href: "/#{site_name}" do
+          text Titleizer.title_for_page(site_name)
+        end
+      end
+      div raw(md2html description)
+    end
+  end
+
   ## message
 
   def message text = nil, options = {}
+    text = text.strip_heredoc if text
     classes = (["message"] + [options[:class]]).compact
     div :class => classes do
-      img.icon src: "/img/#{options[:icon]}.png" if options[:icon]
-      rawtext(md2html text) unless text.nil?
-      yield if block_given?
+      i :class => "fa fa-#{options[:icon]} fa-3x" if options[:icon]
+      if options[:inner_class]
+        div class: options[:inner_class] do
+          unless text.nil?
+            text = "**#{text}**" if block_given?
+            rawtext(md2html text)
+          end
+          yield if block_given?
+        end
+      else
+        rawtext(md2html text) unless text.nil?
+        yield if block_given?
+      end
     end
   end
 
   def important text = nil, &block
-    message text, class: "important", icon: "warning", &block
+    message text, class: "important vertical-centerer", inner_class: "vertically-centered", icon: "exclamation-circle", &block
   end
 
   def tip text = nil, &block
-    message text, class: "tip", icon: "info", &block
-  end
-
-  def todo todo_text
-    message nil, class: "todo" do
-      span do
-        text "[TODO: "
-        text todo_text
-        text "]"
-      end
-    end
+    message text, class: "tip vertical-centerer", inner_class: "vertically-centered", icon: "info-circle", &block
   end
 
   ## special
@@ -205,7 +227,7 @@ class Step < Erector::Widget
   def console_with_message(message, commands)
     div :class => "console" do
       span message
-      pre commands
+      pre commands.strip_heredoc
     end
   end
 
@@ -239,11 +261,12 @@ class Step < Erector::Widget
   def result text
     div :class => "result" do
       span RESULT_CAPTION
-      pre text
+      pre text.strip_heredoc
     end
   end
 
   def fuzzy_result fuzzed_text
+    fuzzed_text = fuzzed_text.strip_heredoc
     div :class => "result fuzzy-result" do
       span FUZZY_RESULT_CAPTION
       remaining_text = fuzzed_text
@@ -264,7 +287,7 @@ class Step < Erector::Widget
   end
 
   def source_code *args
-    src = args.pop
+    src = args.pop.strip_heredoc
     lang = args.pop
     src = "\n:::#{lang}\n#{src}" if lang
     pre src, :class => "code"

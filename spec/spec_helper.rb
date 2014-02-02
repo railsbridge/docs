@@ -5,11 +5,14 @@ $: << "#{top}/lib"
 require "rspec"
 require "wrong/adapters/rspec"
 require "nokogiri"
+require "files"
+require 'active_support/core_ext/string/strip'
 
 def assert_loosely_equal lhs, rhs
   assert { lhs.gsub(/\n\s*/, '') == rhs.gsub(/\n\s*/, '') }
 end
 
-require "files"
-include Files   # todo: include this in an RSpec config block instead
+RSpec.configure do |c|
+  c.include Files
+end
 

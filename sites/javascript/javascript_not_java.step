@@ -9,7 +9,7 @@ Whereas Java was meant to run on the server, JavaScript was originally meant to 
 
 ### HTML and JavaScript
 
-HTML lets you create the elements in your document (web page). JavaScript lets you interact with them. The curriculum that follows assumes an understanding of HTML. If you need more background info, please see the [Railsbridge Frontend Curriculum](/frontend).
+HTML lets you create the elements in your document (web page). JavaScript lets you interact with them. The curriculum that follows assumes an understanding of HTML. If you need more background info, please see the <a href="/frontend">Railsbridge Frontend Curriculum</a>.
 
 
 MARKDOWN
