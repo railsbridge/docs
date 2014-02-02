@@ -59,7 +59,7 @@ IRB
   message 'Ruby tiene muchos métodos para modificar arreglos. ¿Qué hicieron éstos dos métodos?'
 end
 
-explicacion do
+explanation do
   message "Los arreglos son usados para cuando necesitas trabajar con un grupo grande de elementos similares. "
   message 'Una pequeña lista de métodos para arreglos:'
   table class: 'bordered' do

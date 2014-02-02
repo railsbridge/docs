@@ -17,7 +17,7 @@ step do
   message "Debes haber visto la salida de tu programa: 'Éste código está en un archivo...' etc. Si no, puede que no estés en el directorio donde creaste el archivo. Ve si lo muestra con `ls`."
 end
 
-explicacion do
+explanation do
   message "Los programas de ruby no están escritos en irb, están escritos en archivos. A medida que tu programa se hace más y más grande, ¡éste puede abarcar varios archivos!"
 end
 

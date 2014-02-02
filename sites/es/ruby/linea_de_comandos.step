@@ -45,7 +45,7 @@ step do
   message "Si ves dos puntos en la parte inferior de tu terminal cuando estás viendo una página manual, significa que estás en un **paginador**. Los paginadores son programas especiales para mostrar texto que abarca multiples páginas. Puedes presionar las flechas hacia arriba y hacia abajo para desplazarte por el texto, o escribe `q` para salir."
 end
 
-explicacion do
+explanation do
   message "La línea de comandos es una herramienta esencial para los programadores de computadoras. Si bien desalienta al principio, ésta ofrece gran flexibilidad en movimiento y manipulación de archivos en tu computadora."
   message "Hay muchos, muchos, muchos más comandos disponibles en la línea de comandos que los que has visto aquí, pero éstos son suficientes para continuar."
   message 'Resumen de los comandos:'

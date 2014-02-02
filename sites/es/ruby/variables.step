@@ -53,7 +53,7 @@ Intenta crear variables con los siguientes tipos de nombres en irb:
   VARIABLE_NAMES
 end
 
-explicacion do
+explanation do
   message "Las variables te permiten guardar datos, así después te puedes referir a ellos por el nombre. Los datos que guardas en variables permanecerán mientras tu programa se esté ejecutando."
 end
 
