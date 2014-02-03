@@ -15,8 +15,8 @@ discussion do
 message <<-MARKDOWN
 * Herramientas de desarrollo de Chrome / plugin Firebug de Firefox - ¡cómo utilizarlas!
 * ¿Qué es Bootstrap y (opcional) por qué todos lo aman (o al menos lo utilizan en todos lados)?
-* Tal vez revisar el archivo home/index.html.erb que se refiere a la vista layouts/application.html.erb de nuevo, y donde es posible que quieras hacer algunos cambios para aprovechar a bootstrap.
-* Alguién debe explicar como funciona erb - lo estarás usando para mostrar el correo del usuario en la parte derecha.
+* Tal vez revisar el archivo home/index.html.erb y cómo se relaciona con layouts/application.html.erb, y ver cómo podrías editarlos para tomar ventaja de bootstrap.
+* Alguién debe explicar cómo funciona erb - lo estarás usando para mostrar el correo del usuario en la parte derecha.
 MARKDOWN
 end
 
@@ -33,7 +33,7 @@ hints do
 message <<-MARKDOWN
 * ¡No olvides leer el readme!
 * Existen un par de formas para mover el texto - busca "Component alignment" en la documentación.
-* Devise tiene un método de ayuda para accesar al usuario actual - regresa al readme de devise y búscalo.
+* Devise tiene un método helper para accesar al usuario actual - regresa al readme de devise y búscalo.
 MARKDOWN
 end
 
