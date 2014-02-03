@@ -3,22 +3,22 @@ message <<-MARKDOWN
 
 ## Suponemos que quienes siguen los contenidos de este currículum
 * Han pasado por el installfest estándar de RailsBridge y han completado exitosamente el paso <a href="/installfest/get_a_sticker">Consigue un Sticker</a>.
-* Han pasado el RailsBridge <a href="/intro-to-rails">Suggestotron curriculum</a> al menos una vez anteriormente, o tal ves un par de veces, o quizá te sientes cómodo con Rails por alguna otra razón.
+* Han pasado el RailsBridge <a href="/intro-to-rails">Suggestotron curriculum</a> al menos una vez anteriormente, o tal vez un par de veces, o quizá te sientes cómodo con Rails por alguna otra razón.
 * ¡¡¡Quieres aprender más de Rails!!!
 
 ## Objetivos
 * ¡Hacer algo!
 * Comprender lo que los modelos, las vistas, y los controladores de una aplicación Rails hacen y como interactúan.
-* Aprender a usar los mensajes de error como guías y no como algo que da miedo.
+* Aprender a usar los mensajes de error como guías y no cómo algo que da miedo.
 
 ## ¿Qué va a pasar?
-* Vamos a construir un tablero de mensajes, donde haya post en la página principal y puedas dar click para ver la entrada original y los comentarios que hay enseguida.
+* Vamos a construir un tablero de mensajes, donde haya posts en la página principal y puedas dar click para ver la entrada original y los comentarios que hay enseguida.
 
 * Hemos dividido esto en retos:
 	* Reto 1: crear una nueva aplicación de Rails con una página de inicio estática
 	* Reto 2: instalar devise
 	* Reto 3: hacerla lucir bien con bootstrap
-	* Reto 4: agregar páginas para crear y ver los post individuales
+	* Reto 4: agregar páginas para crear y ver los posts individuales
 	* Reto 5: hacer un índice de posts
 	* Reto 6: agregar la funcionalidad para comentarios
 	* Reto 7: capacidad para responder en la misma línea
@@ -26,7 +26,7 @@ message <<-MARKDOWN
 
 * Cada vez que tu aplicación se encuentre en un estado funcional, antes de añadir cualquier otra característica, ¡haz un COMMIT! Las nuevas funcionalidades descompondrán algunas cosas, lo cual es correcto, pero vas a querer ser capaz de regresar todo a una versión anterior si es necesario.
 
-* NOTA IMPORTANTE: Nombramos a la secciones retos ¡porque son retantes! Este currículum será mas entretenido si es colaborativo — habla del tema con tu instructor, TAs, y otros estudiantes. Esto es un estilo muy diferente de currículum al Suggestotron, así que no te desanimes si no estás seguro de qué hacer enseguida.
+* NOTA IMPORTANTE: Nombramos a la secciones retos ¡porque son retantes! Este currículum será más entretenido si es colaborativo — habla del tema con tu instructor, TAs, y otros estudiantes. Esto es un estilo muy diferente de currículum al Suggestotron, así que no te desanimes si no estás seguro de qué hacer enseguida.
 
 ## Como utilizar este currículum
 * Los retos son cosas en las que tienes que trabajar en un determinado tiempo. Tienen sus requerimientos — una vez que completaste (o tu grupo) una serie de requerimientos, ve a la siguiente serie.
