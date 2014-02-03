@@ -2,14 +2,14 @@ message <<-MARKDOWN
 
 ### Objetivo
 
-Lo que pretendemos es que te familiarices con HTML, CSS, y  Javascript, los bloques mas escenciales de una experiencia web. Vas a crear una página web estática sobre ti y la posibilidad de lanzarla en web. Harás lo siguiente:
+Lo que pretendemos es que te familiarices con HTML, CSS, y Javascript, los bloques más esenciales de una experiencia web. Vas a crear una página web estática acerca de ti y la posibilidad de lanzarla en web. Harás lo siguiente:
 
 * Escribe algo de contenido y dale estructura con **HTML**,
 * Usa **CSS** para ajustar la distribución y el estilo de ese contenido,
 * Usa **Javascript** para agregar componentes interactivos.
 * Y opcionalmente, sube tu sitio web a GitHub con **git**.
 
-Aquí te damos un esquema de ejemplo de como se vería tu página:
+Aquí te damos un esquema de ejemplo de cómo se vería tu página:
 
 ![screenshot](img/page_sample.jpg)
 
@@ -17,9 +17,9 @@ Aquí te damos un esquema de ejemplo de como se vería tu página:
 
 * 1-2 horas de jugar con HTML básico, CSS y Javascript
 * Alrededor de 4 horas de construcción de tu página
-* Opcional: Si has trabajado con GitHub antes y quieres poner tu sitio web en línea usando Git y GitHub, ¡tenemos instrucciones para eso! (Por default tu sitio se mantiene de forma local.)
+* Opcional: Si has trabajado con GitHub antes y quieres poner tu sitio web en línea usando Git y GitHub, ¡tenemos instrucciones para eso! (Por defecto tu sitio se mantiene de forma local.)
 
-Esto es solo una guía aproximada, no una regla definitiva. Algunos pasos serán facilmente comprensibles y en otros deberás analizar mas a detalle. Al final del día todo funcionará. :D
+Esto es sólo una guía aproximada, no una regla definitiva. Algunos pasos serán facilmente comprensibles y en otros deberás analizar mas a detalle. Al final del día todo funcionará. :D
 
 ### Requerimientos
 
