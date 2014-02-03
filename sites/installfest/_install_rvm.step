@@ -1,0 +1,22 @@
+message <<-MARKDOWN
+RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](http://rvm.beginrescueend.com/rvm/install/) are available here, but this should work for you:
+MARKDOWN
+
+step "Install RVM" do
+  console "curl -L get.rvm.io | bash -s stable"
+  message "This will do some stuff and print a long message which you can ignore."
+end
+
+step "Configure your shell" do
+
+  message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
+
+  verify do
+    console "type rvm | head -1"
+    result "rvm is a function"
+
+    console "rvm -v"
+    fuzzy_result "rvm 1{FUZZY}.x.x (stable) by Wayne E. Seguin (wayneeseguin@gmail.com), Michal Papis <mpapis@gmail.com> [https://rvm.beginrescueend.com/]{/FUZZY}"
+  end
+
+end

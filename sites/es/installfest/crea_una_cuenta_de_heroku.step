@@ -40,4 +40,4 @@ spanish_step "Agrega tu llave SSH a tu cuenta de Heroku" do
   message "Presiona Enter para aceptar el archivo de la llave predeterminada que se utilizará"
 end
 
-next_spanish_step "crea_y_lanza_una_rails_app"
+next_step "crea_y_lanza_una_rails_app"
