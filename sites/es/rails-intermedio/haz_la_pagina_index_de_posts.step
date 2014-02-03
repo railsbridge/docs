@@ -16,7 +16,7 @@ end
 tools_and_references do
 message <<-MARKDOWN
 * RailsGuides - Listando todos los Posts: http://guides.rubyonrails.org/getting_started.html#listing-all-posts
-  * Siéntete libre de omitir las información sobre JSON en la página.
+  * Siéntete libre de omitir la información sobre JSON en la página.
 * Bootstrap - ¡Dale un diseño a esa tabla!: http://twitter.github.com/bootstrap/base-css.html#tables 
 MARKDOWN
 end
