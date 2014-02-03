@@ -2,7 +2,7 @@ requirements do
 message <<-MARKDOWN
 * El usuario deberá ser capaz de crear una cuenta e iniciar sesión.
 * El usuario deberá ver un mensaje para iniciar sesión si no lo ha hecho aún.
-* Una vez logeado, el usuario deberá ver un página estática con algún saludo.
+* Una vez iniciada la sesión, el usuario deberá ver un página estática con algún saludo.
 * La página deberá desplegar el correo del usuario logeado y un link para cerrar sesión.
 * Tú, como desarrollador, deberás explicar al instructor o algún compañero como Rails muestra la vista.
 MARKDOWN
