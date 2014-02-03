@@ -2,48 +2,17 @@ require 'erector'
 require "contents"
 require "site_index"
 require 'erector_scss'
+require 'titleizer'
+require 'html5_page'
 
-class InstallfestExternalRenderer < ExternalRenderer
-  # render <style> tags plainly, without "text/css" (which browsers will assume by default)
-  #   or the xml:space attribute (not allowed or required in html5)
-  def inline_styles
-    rendered_externals(:style).each do |external|
-      style(external.options) { rawtext external.text }
-    end
-
-    if Object.const_defined?(:Sass)
-      rendered_externals(:scss).each do |external|
-        style(external.options) { rawtext Sass.compile(external.text) }
-      end
-    end
-  end
-end
-
-class DocPage < Erector::Widgets::Page
-  needs :site_name, :doc_title, :doc_path, :page_name
+class DocPage < Html5Page
+  needs :site_name, :doc_title, :doc_path, :page_name, :src
   needs :back => nil
-  attr_reader :site_name, :doc_title, :page_name
-
-  needs :src
-  attr_reader :src
+  attr_reader :site_name, :doc_title, :page_name, :src
 
   def self.css_path
     here = File.expand_path File.dirname(__FILE__)
     File.expand_path "#{here}/../public/css"
-  end
-
-  # wire up the InstallfestExternalRenderer
-  def included_head_content
-    included_widgets = [self.class] + output.widgets.to_a + extra_widgets
-    InstallfestExternalRenderer.new(:classes => included_widgets).to_html
-  end
-
-  def doctype
-    '<!doctype html>'
-  end
-
-  def html_attributes
-    {:lang => 'en'}
   end
 
   def head_content
@@ -51,10 +20,11 @@ class DocPage < Erector::Widgets::Page
     script :src => "/jquery.min.js"
     script :src => "/js/bootstrap.min.js"
     script :src => "/js/doc_page.js"
+    link   :href => "/font-awesome/css/font-awesome.min.css", :rel => "stylesheet"
   end
 
   def site_title
-    "#{site_name.split(/[-_]/).map(&:capitalize).join(" ")}"
+    Titleizer.title_for_page(site_name)
   end
 
   def page_title
@@ -63,6 +33,7 @@ class DocPage < Erector::Widgets::Page
 
   external :style, scss(File.read("#{css_path}/header.scss"))
   external :style, scss(File.read("#{css_path}/toc.scss"))
+  external :style, scss(File.read("#{css_path}/doc_page.scss"))
 
   # this is how to load the Open Sans font when we know we're online
   # external :style,  <<-CSS
@@ -74,7 +45,6 @@ class DocPage < Erector::Widgets::Page
   @import url(/fonts/opensans.css);
   @import url(/fonts/aleo.css);
   @import url(/css/coderay.css);
-  @import url(/css/doc_page.css);
   CSS
 
   class TopLink < Erector::Widget
@@ -87,12 +57,10 @@ class DocPage < Erector::Widgets::Page
     end
   end
 
-  # todo: test
   def file_name
     @doc_path.split('/').last
   end
 
-  # todo: test
   def git_url
     "https://github.com/railsbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
   end
@@ -109,13 +77,21 @@ class DocPage < Erector::Widgets::Page
     ]
   end
 
+  def body_attributes
+    if site_name == 'docs'
+      {class: 'no-toc'}
+    else
+      {}
+    end
+  end
+
   def body_content
     nav(class: "top cf", role: "navigation") {
 
       div(class: "navbar-header cf title") {
         a(href: "/#{site_name}") {
           span("RailsBridge ", class: "brand")
-          text site_name.capitalize
+          text site_title
         }
       }
       ul(class: "navbar-nav nav") {
@@ -133,23 +109,30 @@ class DocPage < Erector::Widgets::Page
 
     widget Contents, site_name: site_name, page_name: page_name
 
-    div(class: :main) {
+    main {
       h1 doc_title, class: "doc_title"
       div(class: :doc) {
         doc_content
       }
       if @back
         div.back {
-          text "Back to "
+          text "#{ I18n.t 'back_to' } "
           a(class: "back", href: @back) do
-            text @back.split('#').first #todo: titleize etc, use real doc object
+            text Titleizer.title_for_page(@back.split('#').first)
           end
         }
       end
     }
 
-    div(class: 'bottom') {
-      p "RailsBridge Docs"
+    footer {
+      p "RailsBridge Docs is maintained by RailsBridge volunteers."
+      p do
+        text "If you find something that could be improved, please make a "
+        a "pull request ", href: "https://github.com/railsbridge/docs"
+        text "or "
+        a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
+        text "via GitHub Issues (no technical knowledge required)."
+      end
       p do
         text "Source: "
         url "https://github.com/railsbridge/docs"

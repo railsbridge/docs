@@ -4,6 +4,7 @@ step "Learn your Mac OS X Version" do
 * Click on the Apple icon in the top left of your screen.
 * Select "About This Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
+  * If it starts with 10.9, you have **Mavericks**.
   * If it starts with 10.8, you have **Mountain Lion**.
   * If it starts with 10.7, you have **Lion**.
   * If it starts with 10.6, you have **Snow Leopard**.
@@ -28,14 +29,17 @@ end
 
 step "Choose your instructions" do
   
+  option "Mavericks" do
+    link "osx_rvm"
+  end
   option "Mountain Lion/Lion/Snow Leopard" do
-    option "RailsInstaller" do
+    option_half "RailsInstaller" do
       message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
       link "osx_railsinstaller"
     end
-    option "Manually" do
+    option_half "Manually" do
       message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
-      link "osx_lion"
+      link "osx_rvm"
     end
   end
 
