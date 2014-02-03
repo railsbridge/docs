@@ -141,7 +141,7 @@ of. For example, if you ran a news website, you would only have one element
 on a page that would serve as a masthead, and you could give it an id
 like `id="handsome-header"`
 
-An id attribute will look like `id="handsome-header` in the HTML, and `#handsome-header` in the CSS.
+An id attribute will look like `id="handsome-header"` in the HTML, and `#handsome-header` in the CSS.
 
 Within these guidelines, when you use classes and IDs is a matter of style / taste.
 MARKDOWN
