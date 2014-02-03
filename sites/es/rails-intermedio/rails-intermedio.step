@@ -8,7 +8,7 @@ message <<-MARKDOWN
 
 ## Objetivos
 * ¡Hacer algo!
-* Comprender lo que los modelos, las vistas, y los controladores de una aplicación Rails hacen y como interactúan.
+* Comprender lo que los modelos, las vistas, y los controladores de una aplicación Rails hacen y cómo interactúan.
 * Aprender a usar los mensajes de error como guías y no cómo algo que da miedo.
 
 ## ¿Qué va a pasar?
