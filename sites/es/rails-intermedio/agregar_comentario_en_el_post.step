@@ -2,7 +2,7 @@ requirements do
 message <<-MARKDOWN
 * El usuario deberá ver el formulario de 'Nuevo Comentario' en la parte inferior del post.
 * El usuario podrá agregar comentarios usando el formulario adjunto de 'Nuevo Comentario'.
-* EL manejo de errores (tratar de comentar sin contenido) deberá funcionar de la misma manera que cuando se comenta en una página deparada.
+* EL manejo de errores (tratar de comentar sin contenido) deberá funcionar de la misma manera que cuando se comenta en una página separada.
 MARKDOWN
 img class: 'noborder', src: 'img/inline_reply.png'
 end
