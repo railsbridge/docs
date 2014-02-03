@@ -6,7 +6,7 @@ end
 steps do
 
   step do
-    message "Primero, incluyamos el código jQUery en el archivo index.html (no en el archivo hello.html), así podemos empezar a trabajar en el. Google y Microsoft almacenan copias publicas de jQuery que puedes enlazar, nisiquiera ocupas descargarlas. (El navegador puede descargar archivos de sitios, si incluyes el link a ellos.) Agrega esta línea dentro de tu documento en `head`:"
+    message "Primero, incluyamos el código jQuery en el archivo index.html (no en el archivo hello.html), así podemos empezar a trabajar en el. Google y Microsoft almacenan copias publicas de jQuery que puedes enlazar, ni siquiera ocupas descargarlas. (El navegador puede descargar archivos de sitios, si incluyes el link a ellos.) Agrega esta línea dentro de tu documento en `head`:"
     source_code :html, <<-HTML
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
     HTML
