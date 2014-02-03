@@ -47,7 +47,7 @@ explanation do:
 
 ## ¿Qué hicimos con jQuery?
 
-Usamos jQuery para manejar el evento click y seguimos las instrucciones para cambiar el estilo de elementos cuando se le hace click. Agarramos todo el código en una llamada `$(document).ready(function(){ ... });` para asegurarnos de que solo corra cuando el navegador lea el documento y este listo para actuar en el.
+Usamos jQuery para manejar el evento click y seguimos las instrucciones para cambiar el estilo de elementos cuando se le hace click. Agarramos todo el código en una llamada `$(document).ready(function(){ ... });` para asegurarnos de que solo corra cuando el navegador lea el documento y esté listo para actuar en el.
 
 Cuando trabajes con tu documento HTML en jQuery, estarás haciendo algo llamado **manipulación DOM.** El DOM es el documento del modelo del objeto &mdash; es la representación de tu HTML que habita en la capa de tu JavaScript. Cuando la gente dice que javascript es difícil, frecuentemente se refieren a que la _manipulación DOM_ es difícil &mdash; estás forzado a pensar en tu documento con 3 modelos completamente diferentes en cuestión de todos a uno (uno para HTML, uno para CSS, uno para JavaScript).
 jQuery le ofrece a los desarrolladores la facilidad, de una interfaz más concisa para trabajar con el DOM que con lo que hace nativamente JavaScript.
