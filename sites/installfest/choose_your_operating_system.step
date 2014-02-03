@@ -1,10 +1,20 @@
-div do
-message <<-MARKDOWN
+h2 "What's your operating system?"
 
-## Click here if you are using a [Macintosh](macintosh)
-
-## Click here if you are using a [PC running Windows](windows)
-
-## Click here if you are using a [PC running Linux](linux)
-  MARKDOWN
+div(class: "os-button") do
+  simple_link "macintosh" do
+    img src: "/img/macface.jpg"
+    h3 "Macintosh"
+  end
+end
+div(class: "os-button") do
+  simple_link "windows" do
+    img src: "/img/windows.png"
+    h3 "Windows"
+  end
+end
+div(class: "os-button") do
+  simple_link "linux" do
+    img src: "/img/tux-trans.png"
+    h3 "Linux"
+  end
 end
