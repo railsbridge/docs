@@ -21,7 +21,7 @@ end
 
 tools_and_references do
 message <<-MARKDOWN
-* RailsGuides - Configurando la aplicaicón de la página de inicio: <http://guides.rubyonrails.org/getting_started.html#setting-the-application-home-page>.
+* RailsGuides - Configurando la aplicación de la página de inicio: <http://guides.rubyonrails.org/getting_started.html#setting-the-application-home-page>.
 * RailsGuides - resumen de controles: <http://guides.rubyonrails.org/action_controller_overview.html>.
 MARKDOWN
 end
