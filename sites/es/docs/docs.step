@@ -5,7 +5,7 @@ Este sitio es mantenido por voluntarios de RailsBridge. Si encuentras algo que p
 
 Instrucciones para instalar Ruby y Rails en tu computadora. ¡Se requiere hacer esto antes de ir al taller de Rails!
 
-# [Currículum](/es/currículum)
+# [Introducción a Rails](/es/introduccion-a-rails)
 
 El "clásico" RailsBridge currículum (Suggestotron). Te lleva paso a paso para hacer una aplicación Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
 

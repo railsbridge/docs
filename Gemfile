@@ -1,23 +1,25 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem 'active_support'
-gem "erector", "~>0.9.0"
-gem "sinatra"
-gem "nokogiri"
-gem "thin"
-gem "eventmachine", "~>1.0.3"
-gem 'rack-codehighlighter'
+gem 'activesupport', '~> 3.2.0'
 gem 'coderay'
-gem "deckrb", ">=0.3.0"
-gem "sass"
-gem "redcarpet"
+gem 'deckrb', '~> 0.5.2'
+gem 'erector', '~> 0.9.0'
+gem 'eventmachine', '~>1.0.3'
+gem 'i18n'
+gem 'nokogiri'
+gem 'rack-codehighlighter'
+gem 'redcarpet'
+gem 'sass'
+gem 'sinatra', '~> 1.3.0'
+gem 'thin'
 
 group :development do
-  gem "wrong", ">=0.6.2"
-  gem "rspec"
-  gem "rerun"
-  gem "rake"
-  gem "rack-test"
-  gem "files", "~> 0.3.0"
+  gem 'files', '~> 0.3.0'
+  gem 'pry'
+  gem 'rake'
+  gem 'rack-test'
   gem 'rb-fsevent', :platform => :ruby
+  gem 'rerun'
+  gem 'rspec'
+  gem 'wrong', '~> 0.7.0'
 end
