@@ -1,9 +1,9 @@
-spanish_goals do
+goals do
   goal "Discutir que es un lenguaje de programación"
   goal "Discutir algunas de las características del lenguaje Ruby"
 end
 
-explicacion do
+explanation do
   message 'Cada aplicación en tu computadora fue escrita por alguien. Desde el Sistema Operativo hasta tu Navegador. Cada programa fue escrito en algún tipo de Lenguaje de Programación.'
   message 'Los lenguajes de programación vienen en todas formas y tamaños. Algunos son optimizados por la rapidez en la cual la computadora los ejecutará, y algunos son optimizados por la rapidez en la cual un humano puede programar en ellos.'
   message 'Ruby fue inventado a mediados de los 90\'s por un tipo llamado Matz.'
@@ -12,8 +12,8 @@ explicacion do
   message 'La popularidad de Ruby se elevó con la invención del framework **Ruby on Rails**, pero Ruby es útil para muchas más cosas que sólo websites.'
 end
 
-spanish_further_reading do
+further_reading do
   message 'https://es.wikipedia.org/wiki/Ruby'
 end
 
-next_spanish_step "linea_de_comandos"
+next_step "linea_de_comandos"
