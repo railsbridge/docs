@@ -1,4 +1,4 @@
-requeriments do
+requirements do
 message <<-MARKDOWN
 * Deberás tener una nueva aplicación Rails con una página estática que esté bajo tu control. Comprueba que el controlador para esta página se llame **HomeController**.
 * Tú, como desarrollador, deberás explicar a tu instructor o a otro compañero como Rails muestra la página.
