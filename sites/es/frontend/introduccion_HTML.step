@@ -20,7 +20,7 @@ Vamos a revisar y explicar cada una de estas palabras en orden inverso...
   Piensa en alguna ocasión en la que hayas entregado un ensayo a tu maestro. El maestro lee el ensayo y lo *marca* con comentarios o sugerencias, agregando información extra en la parte superior del contenido del texto.
 
 - __H__yper-__t__ext - Este término proviene de que las primeras computadoras solo podían trabajar con archivos de texto 
-  plano. Los usuarios de los 60s quisieron enriquecer este texto y hacerlo mas fácil de trabajar. Así, el hipertexto nació. Es texto por que el archivo es almacenado como texto plano, pero es hyper por que el texto tiene un significado especial mas allá del texto plano cuando es interpretado por un programa especial. Para HTML, ese programa especial es tu navegador.
+  plano. Los usuarios de los 60s quisieron enriquecer este texto y hacerlo más fácil de trabajar. Así, el hipertexto nació. Es texto porque el archivo es almacenado como texto plano, pero es hyper ya que el texto tiene un significado especial más allá del texto plano cuando es interpretado por un programa especial. Para HTML, ese programa especial es tu navegador.
   MARKDOWN
 
 
@@ -67,7 +67,7 @@ message <<-MARKDOWN
 
 ## HTML son Etiquetas
 
-El navegador necesita mas información que solamente la extensión del archivo para desplegar el contenido de sitio web. La manera en que proveemos esa información es *marcando* tu texto con pistas de contenido en la forma de etiquetas HTML. ¡Que es lo que acabas de hacer, agregando la etiqueta `<em>` a tu página!.
+El navegador necesita mas información que solamente la extensión del archivo para desplegar el contenido de sitio web. La manera en que proveemos esa información es *marcando* tu texto con pistas de contenido en la forma de etiquetas HTML ¡Que es lo que acabas de hacer, agregando la etiqueta `<em>` a tu página!
 
 Una etiqueta HTML está encerrada entre paréntesis angulares, los cuales lucen así: `<`,`>`. La mayoría de las etiquetas tienen una etiqueta de cierre con una diagonal. Las etiquetas describen el contenido que encierran, en nuestro ejemplo, haciendo énfasis en la palabra "mundo".
 
