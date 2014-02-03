@@ -56,4 +56,4 @@ If you've already installed the above tools and are confident they are setup cor
   MARKDOWN
 end
 
-next_spanish_step "escoge_tu_sistema_operativo"
+next_step "escoge_tu_sistema_operativo"

@@ -4,14 +4,14 @@ steps do
     message "In order to provide consistent instructions for the workshop, we are all going to use the same browser, Google Chrome. Download and install it from <http://google.com/chrome>"
   end
 
-  choice "your operating system" do
+  step "Choose your operating system" do
     option "Windows" do
       message "On Windows, the easiest way to install git and set everything up is with the Rails Installer. "
       span "Head over to our "
       a "Rails Installer instructions", :href => "/installfest/windows", :class => 'link'
       span " (courtesy the Rails workshop Installfest instructions). Come back at the end of the page. Do not make a Heroku account!"
       important "For real: come back at the bottom of the page, after step 9!"
-      span "After getting done with RailsInstaller, come back here and " 
+      span "After getting done with RailsInstaller, come back here and "
       a 'create a GitHub account', :href => "#github-account"
       span "."
     end
@@ -27,21 +27,21 @@ steps do
 
       step "Check if XCode is installed" do
         message "Look in your Applications folder for an application called XCode."
-        message "If you see XCode, choose __Option 1: Installing Homebrew__."
-        message "If you do __not__ see XCode, choose __Option 2: Installing binary Git__."
+        message "If you see XCode, choose __Installing Homebrew__."
+        message "If you do __not__ see XCode, choose __Installing binary Git__."
 
-        choice do
-          option "Installing Homebrew" do
-            a "Instructions for Installing Homebrew", :href => "/installfest/install_homebrew", :class => "link"
-
-            message "After installing hombrew, use it to install git"
-            console "brew install git"
+        option_half "Installing Homebrew" do
+          div do
+            a "Instructions for Installing Homebrew", :href => "http://brew.sh", :class => "link"
           end
 
-          option "Installing binary git" do
-            message "In another browser tab open the link below and download the latest (topmost) release of Git for OS X."
-            a "Git OS X Installer Downloads", :href => "http://code.google.com/p/git-osx-installer/downloads/list?can=3"
-          end
+          message "After installing homebrew, use it to install git"
+          console "brew install git"
+        end
+
+        option_half "Installing binary git" do
+          message "In another browser tab open the link below and download the latest (topmost) release of Git for OS X."
+          a "Git OS X Installer Downloads", :href => "http://code.google.com/p/git-osx-installer/downloads/list?can=3"
         end
       end
 

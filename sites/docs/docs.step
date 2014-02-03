@@ -1,32 +1,34 @@
 message <<MARKDOWN
 This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
+MARKDOWN
 
-# [Installfest](/installfest)
-
+site_desc 'installfest', <<-MARKDOWN
 Instructions for installing Ruby and Rails on your computer. You are required to do this before going to a Rails workshop!
+MARKDOWN
 
-# [Curriculum](/curriculum)
+site_desc 'intro-to-rails', <<-MARKDOWN
+The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
+MARKDOWN
 
-The "classic" railsbridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
-
-# [Intermediate Rails](/intermediate-rails)
-
+site_desc 'intermediate-rails', <<-MARKDOWN
 Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
+MARKDOWN
 
-# [Frontend](/frontend)
-
+site_desc 'frontend', <<-MARKDOWN
 HTML + CSS for beginners. Make a website, no server required!
+MARKDOWN
 
-# [Ruby](/ruby)
-
+site_desc 'ruby', <<-MARKDOWN
 A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
 
 Railsbridge workshops can also use Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum (currently in a separate site). It's also open source and may soon join the main Railsbridge Docs repo. It's geared towards people who may never have written code before.
+MARKDOWN
 
-# [Workshop](/workshop)
-
+site_desc 'workshop', <<-MARKDOWN
 The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
+MARKDOWN
 
+message <<MARKDOWN
 # RailsBridge curriculum-related FAQ
 
 ### Can I use the RailsBridge curricula at my event?

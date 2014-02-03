@@ -277,5 +277,5 @@ step "Congratulations!" do
   message "Show a volunteer -- you get a sticker!"
 end
 
-next_spanish_step "limpiar"
+next_step "limpiar"
 
