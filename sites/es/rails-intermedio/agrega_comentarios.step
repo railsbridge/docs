@@ -1,6 +1,6 @@
 requirements do
 message <<-MARKDOWN
-* El usuario deberá ver el enlace o botón de 'Nuevo Comentario' en la página del post la cual los llevará al formulario. El formulario deberá contener el título del post al que se le pondrán los comentarios.
+* El usuario deberá ver el enlace o botón de 'Nuevo Comentario' en la página del post el cual lo llevará al formulario. El formulario deberá contener el título del post al que se le pondrán los comentarios.
 * El usuario deberá ser capaz de agregar un comentario en un post usando el formulario 'Nuevo Comentario'.
 * El usuario deberá ver todos los comentarios en la página del post.
 * Si el usuario no llena todo lo que se requiere, deberá ver el error, pero sin perder su trabajo.
