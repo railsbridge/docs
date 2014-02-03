@@ -7,12 +7,12 @@ describe Site do
     sites = Site.all
     site_names = sites.map(&:name)
     site_names.should include("installfest")
-    site_names.should include("curriculum")
+    site_names.should include("intro-to-rails")
   end
   
   it "has doc files" do
     installfest = Site.named("installfest")
     doc_filenames = installfest.docs.map(&:filename)
-    doc_filenames.should include("install_homebrew.step")
+    doc_filenames.should include("configure_git.step")
   end
 end
