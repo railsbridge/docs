@@ -18,7 +18,7 @@ HTML
   end
 
 
-  spanish_step do
+  step do
     message "Escribe este pequeño script. Javascript es case-specific y exigente en la sintaxis, por lo tanto si tu script no se ejecuta, revisa si existen errores de dedo."
 
     source_code :html, <<HTML
