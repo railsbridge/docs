@@ -1,0 +1,97 @@
+goals do
+  goal "Crear algunos arreglos y hacer cosas con ellos"
+  goal "Recuperar datos de los arreglos"
+end
+
+step do
+  irb <<IRB
+frutas = ["kiwi", "fresa", "ciruela"]
+IRB
+  message 'Un arreglo es una lista de cosas entre corchetes, separados por comas'
+  message 'Nosotros por lo general llamamos a las cosas individuales de un arreglo **elementos**'
+  irb <<-IRB
+cosas = [5, 'casa', 19.5]
+cosas.length
+  IRB
+  message 'Un arreglo puede contener todo tipo de cosas, no solo cadenas.'
+  message '`length` es un método que te dice cuántos **elementos** son en un arreglo.'
+  irb <<-IRB
+arreglo_vacio = []
+arreglo_vacio.length
+  IRB
+  message 'El tipo de arreglo más simple es el arreglo vacío.'
+end
+
+step do
+  irb <<IRB
+frutas[0]
+frutas[1]
+frutas[2]
+IRB
+  message 'Los elementos de un arreglo están guardados en orden. Puedes recuperarlos utilizando los corchetes para acceder a ellos por su **índice**.'
+  message 'Los arreglos están ordenados: los elementos permanecen en el mismo lugar donde se iniciaron.'
+  message 'Ruby inicia contando en cero: el primer elemento es `frutas[0]`.'
+  irb <<IRB
+frutas.first
+frutas.last
+IRB
+  message 'Ruby nos da algunas maneras útiles para obtener el primer y el último elemento de un arreglo.'
+end
+
+step do
+        irb <<IRB
+['sal'] + ['pimienta']
+IRB
+  message 'Los arreglos se pueden añadir con el operador de suma.'
+  irb <<IRB
+frutas + ['mango']
+frutas
+IRB
+  message 'El operador de suma (+) no modifica el arreglo existente, éste crea uno nuevo. ¿Cómo podrias escribir esa última línea de código para también modificar el arreglo de frutas? '
+end
+
+step do
+  irb <<IRB
+frutas = ["kiwi", "fresa", "ciruela"]
+frutas.push('manzana')
+frutas.pop()
+IRB
+  message 'Ruby tiene muchos métodos para modificar arreglos. ¿Qué hicieron estos dos métodos?'
+end
+
+explanation do
+  message "Los arreglos son usados para cuando necesitas trabajar con un grupo grande de elementos similares. "
+  message 'Una pequeña lista de métodos para arreglos:'
+  table class: 'bordered' do
+    tr do
+      td 'length'
+      td '¿qué tan grande es este arreglo? (cuántos elementos)'
+    end
+    tr do
+      td 'first'
+      td 'obtiene el primer elemento del arreglo (lo mismo que arreglo[0])'
+    end
+    tr do
+      td 'last'
+      td 'obtiene el último elemento del arreglo (lo mismo que arreglo[-1])'
+    end
+    tr do
+      td 'push'
+      td 'agrega un nuevo elemento al final del arreglo'
+    end
+    tr do
+      td 'pop'
+      td 'elimina (y regresa) el último elemento del arreglo'
+    end
+  end
+end
+
+further_reading do
+  a "Documentación de Ruby para Arreglos", href: 'http://www.ruby-doc.org/core-1.9.3/Array.html'
+end
+
+<<<<<<< HEAD
+next_spanish_step "hashes"
+=======
+next_step "hashes"
+>>>>>>> master
