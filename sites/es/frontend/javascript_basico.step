@@ -6,8 +6,8 @@ end
 steps do
 
   step do
-    message "Ahora que haz completado los retos para tu index.html y archivos CSS relacionados, regresaremos a hechar un vistazo a tu archivo hello.html."
-    message "CSS hace que tus páginas luzcan bien, pero es **JavaScript** el que hace interactivas la mayoría de las páginas. Ve a tu archivo hello.html de nuevo y agrega una etiqueta script a tu página para que puedas empezar a escribir código JavaScript. En la parte inferior de tu documento, abajo de los párrafos, agrega lo siguiente:"
+    message "Ahora que has completado los retos para tu index.html y archivos CSS relacionados, regresaremos a hechar un vistazo a tu archivo hello.html."
+    message "CSS hace que tus páginas luzcan bien, pero es **JavaScript** el que las hace interactivas. Ve a tu archivo hello.html de nuevo y agrega una etiqueta script a tu página para que puedas empezar a escribir código JavaScript. En la parte inferior de tu documento, abajo de los párrafos, agrega lo siguiente:"
 
    source_code :html, <<HTML
 <script type="text/javascript">
@@ -33,7 +33,7 @@ HTML
 HTML
 
  message <<-MARKDOWN
-Actualiza la página, y da clic sobre uno de los párrafos. Deberías ver un mensaje del navegador como éste:
+Actualiza la página, y da click sobre uno de los párrafos. Deberías ver un mensaje del navegador como éste:
 <img src='img/prompt.png'>
 
 Cuando respondas el mensaje, deberías ver en negritas el cambio de nombre que acabas de realizar.
@@ -56,7 +56,7 @@ explanation do
 
 Javascript te permite hacer tus páginas interactivas. Puedes usarlo para construir
 cualquier cosa desde una simple animación hasta una gigantesca aplicación web como
-Twitter o Github. Te da control total para agregar, remover, o modificar contenido HTML. 
+Twitter o Github. Te da control total para agregar, eliminar o modificar contenido HTML. 
 También puedes usarlo para cambiar estilos y agregar o remover clases.
 
 Escribir Javascript en una página web puede ser difícil, porque no empiezas con
@@ -94,7 +94,7 @@ a través de su ID 'user-name'. Entonces pone en el contenido del elemento HTML 
 
 El `}` cierra la función que empezaste a definir en la primera línea.
 
-La línea final le dice al navegador, 'Cuando haga clic en el documento, ejecuta la función llamada replaceName que definí'
+La línea final le dice al navegador, 'Cuando haga click en el documento, ejecuta la función llamada replaceName que se definió'
 
 MARKDOWN
 source_code :js, "document.onclick = replaceName;"
