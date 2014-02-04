@@ -6,20 +6,20 @@ Este currículum pretende ser una introducción al lenguaje de programación jav
 
 En el taller, vamos a:
 
-* Aprender y usar los tipos primitivos de javascript.
+* Aprender y usar los tipos primitivos de JavaScript.
 * Aprender y usar las funciones y callbacks.
 * Entender el alcance, y el cambiante valor de la palabra clave 'this'.
 * Utilizar javascript para crear una aplicación simple de una sola página.
 * Utilizar git para el control de versiones de nuesta aplicación.
 
-Esta es solo una guía básica, no un mandato. Algunos pasos te parecerán mas fáciles que otros. Todo funcionará al final del día. :D
+Esta es solo una guía básica, no un mandato. Algunos pasos te parecerán más fáciles que otros. Todo funcionará al final del día. :D
 
 ### Requisitos
 
 Vamos a trabajar con:
 
 * [Chrome](https://www.google.com/chrome)
-  (Si tienes experiencia con las herramientas de desarrollador en otro browser, también pude funcionar.)
+  (Si tienes experiencia con las herramientas de desarrollador en otro browser, también puede funcionar.)
 * El editor de código de tu elección.
   [Sublime Text 2](http://www.sublimetext.com/2) es popular y gratis para su descarga, pero necesitarás comprar una licencia si decides seguir utilizándolo despues del taller.
   [Komodo Edit](http://www.activestate.com/komodo-edit) es una buena opción de open source, si aún no tienes alguna.
