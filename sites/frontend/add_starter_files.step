@@ -4,14 +4,20 @@ end
 
 steps do
   step do
-    message "Download the .zip file from [this link](https://github.com/eanakashima/front-end-lesson/archive/master.zip)"
-    message "When the file download finishes, find it on your computer and unzip it."
+    message <<-MARKDOWN
+      Download the .zip file from [this link](https://github.com/eanakashima/front-end-lesson/archive/master.zip)
+      When the file download finishes, find it on your computer and unzip it.
+    MARKDOWN
   end
   
   step do
-    message "The zip file should contain a file called index.html and a directory of resources."
-    message "<img src='img/zip.png'>"
-    message "Drag the file called index.html and resources folder into your project folder. Go ahead and replace the index.html file you may already have in there."
+    message <<-MARKDOWN
+      The zip file should contain a file called index.html and a directory of resources."
+
+      <img src='img/zip.png'>
+
+      Drag the file called index.html and resources folder into your project folder. Go ahead and replace the index.html file you may already have in there.
+    MARKDOWN
   end
 end
 
