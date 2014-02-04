@@ -25,7 +25,7 @@ describe StepPage do
         <div class="doc">
           <a name="step1"></a>
           <div class="step" title="hello">
-            <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
+            <h1>#{checkbox_html}<span class="prefix">#{ I18n.t 'step' } 1: </span>hello</h1>
           </div>
         </div>
       </main>

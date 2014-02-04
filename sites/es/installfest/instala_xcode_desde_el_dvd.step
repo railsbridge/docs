@@ -1,0 +1,25 @@
+step "Insert your OS X DVD or Thumb Drive"
+
+step "Locate Xcode.mpkg" do
+ message "on the OS X DVD, it is inside the \"Optional Installs\" folder."
+end
+
+step 'Double-click Xcode.mkpg' do
+ message 'This will bring up a window titled *"Install XCode."*'
+end
+
+step "Keep on clicking..." do
+ li 'Click "Continue" at the Introduction screen.'
+ li 'Click "Continue" at the License screen.'
+ li 'Click "Agree" in the popup to agree to the license.'
+ li 'Click "Continue" at the Destination Select screen.'
+ li "Click \"Continue\" at the Installation Type screen. (Don't change the checkboxes.)"
+end
+
+step 'Click "Install".' do
+ message "Enter your user password in the popup to REALLY start installing. It takes a while."
+end
+
+step 'Click "Close"' do
+ message 'once you get "The installation was successful" on the Summary screen.'
+end

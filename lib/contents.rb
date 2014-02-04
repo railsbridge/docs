@@ -228,7 +228,7 @@ class Contents < Erector::Widget
       toc_list(mark_open_and_closed(hierarchy)[:items])
 
       unless orphans.empty?
-        h1 "Other Pages"
+        h1 "#{ I18n.t 'other_pages' }"
         ul do
           orphans.each { |orphan| toc_link orphan }
         end
@@ -237,7 +237,7 @@ class Contents < Erector::Widget
       if has_collapsables(hierarchy)
         span class: "expand-all" do
           i class: "fa fa-arrows-alt"
-          text "Expand All"
+          text "#{ I18n.t 'expand_all' }"
         end
       end
     end
