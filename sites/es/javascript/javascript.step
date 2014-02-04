@@ -1,0 +1,49 @@
+message <<-MARKDOWN
+
+### Objetivo
+
+Este curriculim pretende ser una introducción al lenguaje de programación javascript. Se basa en <a href="/frontend">Front End RailsBridge Curriculum</a>. Cualquier persona familiarizada con HTML, podrá trabajar a través de este curriculum.
+
+En el taller, vamos a:
+
+* Aprender y usar los tipos primitivos de javascript.
+* Aprender y usar las funciones y callbacks.
+* Entender el alcance, y el cambiante valor de la palabra clave 'this'.
+* Utilizar javascript para crear una aplicación simple de una sola página.
+* Utilizar git para el control de versiones de nuesta aplicación.
+
+Esta es solo una guía básica, no un mandato. Algunos pasos te parecerán mas fáciles que otros. Todo funcionará al final del día. :D
+
+### Requisitos
+
+Vamos a trabajar con:
+
+* [Chrome](https://www.google.com/chrome)
+  (Si tienes experiencia con las herramientas de desarrollador en otro browser, también pude funcionar.)
+* El editor de código de tu elección.
+  [Sublime Text 2](http://www.sublimetext.com/2) es popular y gratis para su descarga, pero necesitarás comprar una licencia si decides seguir utilizándolo despues del taller.
+  [Komodo Edit](http://www.activestate.com/komodo-edit) es una buena opción de open source, si aún no tienes alguna.
+
+Herramientas opcionales si estás registrando tus cambios en Github:
+
+* Git
+* Tu cuenta [GitHub](http://github.com)
+
+### Trabajando efectiva y eficientemente
+
+Te recomendamos que hagas lo siguiente:
+
+* Inicializa tu browser o cierra todas las ventanas que tengas abiertas.
+  * Abre una ventana con dos pestañas.
+    * Una para este contenido.
+    * Una para interactuar con tu aplicación.
+* Abre tu editor de texto y _nunca lo cierres_. No nos rendimos.
+* Cierra todas las aplicaciones extras. Cierra twitter, IM, y todas las demás distracciones.
+
+Al minimizar el número de cosas con las cuales puedes interactuar, reduces la cantidad de tiempo perdido
+cambiando entre estas y el contenido de las lecciones mientras trabajas con ellas.
+El tener 50 pestañas en tu browser puede tornarse confuso y hacerte perder tiempo.
+
+MARKDOWN
+
+next_step 'javascript_no_es_java'
