@@ -86,7 +86,7 @@ end
 spanish_step "Configura la Terminal de Windows" do
   message "Toma tu tiempo para configurar el *Command Prompt with Ruby and Rails*, ésto es para que tenga un buen alto, ancho y fuente amigable. Consejo -- Haz click para abrir el siguiente link, y cuando termines esos pasos, presiona en tu navegador el botón **atrás** para continuar con este procedimiento."
 
-  spanish_link "configura_la_terminal_de_windows"
+  link "configura_la_terminal_de_windows"
 
   tip "Limpia la terminal" do
     message "Si alguna vez quieres limpiar todo el texto de salida de tu terminal"
@@ -109,12 +109,12 @@ spanish_step "Instala Windows Colors" do
 
   message "Este paso es opcional, pero **altamente** recomendado. Consejo -- haz click para abrir el link de abajo, y cuando hayas terminado esos pasos, presiona el botón de **atrás** de tu navegador para continuar con este procedimiento."
 
-  spanish_link "windows_colors"
+  link "colores_de_windows"
 
 end
 
-spanish_step "Configura Git" do
-  spanish_link "configure_git"
+step "Configure Git" do
+  link "configura_git"
 end
 
 spanish_step "Instala un Editor de Textos" do
@@ -129,4 +129,4 @@ spanish_step "Instala un Editor de Textos" do
   message "[Sublime Text 2](http://www.sublimetext.com/2) es una buena opción, si aún no tienes una."
 end
 
-next_spanish_step "create_a_heroku_account"
+next_step "crea_una_cuenta_de_heroku"

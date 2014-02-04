@@ -1,6 +1,8 @@
-  message "These instructions should work for all versions of Windows from XP on to Windows 8."
+message <<-MARKDOWN
+These instructions should work for all versions of Windows from XP to Windows 8.
 
-  message "You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings."
+You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
+MARKDOWN
 
 step "Run RailsInstaller" do
 
@@ -96,16 +98,16 @@ step "Configure the Windows Terminal" do
 
   link "configure_the_windows_terminal"
 
-  tip "clearing the terminal" do
+  tip "Clearing the Terminal" do
     message "If you ever want to clear the terminal of all its cluttered output"
     console "cls"
   end
 
-  tip "command history" do
-   message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
- end
+  tip "Command History" do
+    message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
+  end
 
-  tip "copy and paste" do
+  tip "Copy and Paste" do
 
     message "It's usually better to type commands in yourself. It takes a little longer but you learn more."
 
@@ -118,11 +120,6 @@ step "Install Windows Colors" do
   message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
 
   link "windows_colors"
-
-end
-
-step "Configure Git" do
-  link "configure_git"
 end
 
 step "Install a Text Editor" do
@@ -132,9 +129,9 @@ step "Install a Text Editor" do
 
   important "**When in doubt, use Sublime Text 2.**"
 
-  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
-
   message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
+
+  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
 end
 
-next_step "create_a_heroku_account"
+next_step "configure_git"

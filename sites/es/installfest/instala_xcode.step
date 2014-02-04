@@ -5,11 +5,11 @@ message "**Special note for folks who upgraded from Leopard to Snow Leopard:** T
 choice "installing from a drive or from the App Store" do
 
   option "install XCode from a thumb drive or DVD" do
-    spanish_link "instala_xcode_del_dvd"
+    link "instala_xcode_desde_el_dvd"
   end
 
   option "Install XCode from the Apple App Store" do
-    spanish_link "instala_xcode_de_la_app_store"
+    link "instala_xcode_desde_la_app_store"
   end
   
   option "Install Command Line Tools for XCode" do
