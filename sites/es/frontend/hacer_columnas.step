@@ -7,7 +7,7 @@ end
 steps do
 
   step do
-    message "RETO: Encuentra el div con el id 'main' en tu HTML. Ve si puedes darle un borde de un pixel en el lado izquierdo modificando la hoja de estilo existente, ‘layout.css’."
+    message "RETO: Encuentra el div con el id 'main' en tu HTML. Ve si le puedes poner un borde de un pixel en el lado izquierdo modificando la hoja de estilo existente, ‘layout.css’."
     message "Si te preocupa cuál propiedad CSS usar, ve si la puedes buscar en [dochub](http://dochub.io/#css/)."
   end
 
@@ -36,7 +36,6 @@ de la _misma_ página HTML estilizada con diferentes hojas de estilo enviadas po
 Mediante los ejemplos de este sitio puedes darte una idea de cuán ilimitadas son las posibilidades con CSS.
 
 ### Sitios de referencia de CSS
-
 * [Sitepoint](http://reference.sitepoint.com/css/elements-structural)
 * [Mozilla Developer Network](https://developer.mozilla.org/en/CSS)
 * [DocHub](http://dochub.io/#css/)
