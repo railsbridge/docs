@@ -1,32 +1,31 @@
-
-spanish_goals do
+goals do
   goal "Entender cuando utilizar las cadenas"
   goal "Aprender cómo combinar cadenas"
   goal "Aprender acerca de la interpolación de cadenas"
 end
 
 
-spanish_step do
+step do
   irb <<IRB
   'una cadena en comillas simples'
   "una cadena en comillas dobles"
 IRB
   message 'Una cadena es una serie de caracteres. Las cadenas pueden ser creadas utilizando comillas simples o dobles.'
-  message 'Éstas cadenas no fueron guardadas en una variable. ¿Qué les sucede a los datos que no han sido guardados en una variable?'
+  message 'Estas cadenas no fueron guardadas en una variable. ¿Qué les sucede a los datos que no han sido guardados en una variable?'
   message '¿Qué pasa si inicias una cadena con un tipo de comilla y la finalizas con otro tipo? ¿Cómo lo arreglas?'
 end
-  
 
-spanish_step do
-  spanish_irb <<IRB
+
+step do
+  irb <<IRB
 'Hola, ' + 'Jane'
 'manzanas' * 3
 IRB
   message 'Las cadenas pueden ser concatenadas a otras cadenas o multiplicadas por números. ¿Qué es lo que hace esto?'
 end
 
-spanish_step do
-  spanish_irb <<'IRB'
+step do
+  irb <<'IRB'
 nombre = 'Jane'
 "Hola #{nombre}"
 IRB
@@ -34,13 +33,13 @@ IRB
   message 'Esto es a lo que se llama interpolación de cadenas. La interpolación de cadenas te permite insertar una instrucción de ruby en otra cadena. Esto solamente funciona con comillas dobles: ¿Qué pasa cuando tratas de hacer lo mismo con comillas simples?'
 
 
-    spanish_irb <<'IRB'
+    irb <<'IRB'
 "Dos más dos es: #{2 + 2}"
 IRB
   message 'El código en las llaves puede ser cualquier instrucción válida en ruby. Prueba escribiendo varias cosas en las llaves para que puedas ver qué funciona y qué no.'
 end
 
-spanish_step do
+step do
   irb <<-IRB
 'Yo tengo muchos caracteres'.length
   IRB
@@ -55,9 +54,9 @@ spanish_step do
   message "Esto es un método simplemente llamado `methods` -- te dice todos los métodos que puedes utilizar en un objeto dado."
 end
 
-explicación do
-  message "Las cadenas son la manera clave para presentar la información en tus programas. Como un ser humano será el que probablemente vea la salida de tu programa eventualmente, y los seres humanos utilizan más palabras que números al hablar, frecuentemente querrás utilizar las cadenas."
-  message 'Resumen de algunos de los métodos que utilizan las cadenas:'
+explanation do
+  message "Las cadenas son la clave para presentar información en tus programas. Un humano será el que probablemente vea la salida de tu programa eventualmente, y los humanos utilizan más palabras que números al hablar, frecuentemente querrás utilizar las cadenas."
+  message 'Resumen de algunos métodos que utilizan cadenas:'
   table class: 'bordered' do
     tr do
       td 'length'
@@ -69,11 +68,11 @@ explicación do
     end
     tr do
       td 'upcase'
-      td 'regresa la misma cadena, EN MAYUSCULAS'
+      td 'regresa la misma cadena, EN MAYÚSCULAS'
     end
     tr do
       td 'delete([otra cadena])'
-      td 'borra todos los caracteres que se encuentran de la primer cadena en la segunda cadena'
+      td 'borra todas las ocurrencias de la primer cadena dentro de la segunda cadena'
     end
     tr do
       td 'methods'
@@ -82,8 +81,8 @@ explicación do
   end
 end
 
-spanish_further_reading do
+further_reading do
   a "Documentación de Ruby para el uso de Cadenas (Strings)", href: 'http://www.ruby-doc.org/core-1.9.3/String.html'
 end
 
-next_spanish_step 'arrays'
+next_step 'arreglos'
