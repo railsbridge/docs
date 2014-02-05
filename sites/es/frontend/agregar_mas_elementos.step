@@ -59,6 +59,6 @@ Ahora que sabes lo básico de trabajar con HTML, la parte mas difícil es record
   MARKDOWN
 end
 
-consider_deploying_to_github
+insert 'considera_lanzar_a_github'
 
 next_step 'hacer_columnas'
