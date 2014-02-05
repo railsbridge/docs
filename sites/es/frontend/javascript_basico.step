@@ -1,0 +1,107 @@
+goals do
+  goal "Agregar una etiqueta javascript al documento."
+  goal "Escribir un script sencillo para interactuar con él."
+end
+
+steps do
+
+  step do
+    message "Ahora que has completado los retos para tu index.html y archivos CSS relacionados, regresaremos a hechar un vistazo a tu archivo hello.html."
+    message "CSS hace que tus páginas luzcan bien, pero es **JavaScript** el que las hace interactivas. Ve a tu archivo hello.html de nuevo y agrega una etiqueta script a tu página para que puedas empezar a escribir código JavaScript. En la parte inferior de tu documento, abajo de los párrafos, agrega lo siguiente:"
+
+   source_code :html, <<HTML
+<script type="text/javascript">
+</script>
+HTML
+
+   message "Guarda y actualiza la página en el navegador. Ésta debería permanecer sin cambio alguno."
+  end
+
+
+  step do
+    message "Escribe este pequeño script. Javascript es case-specific y exigente en la sintaxis, por lo tanto si tu script no se ejecuta, revisa si existen errores de dedo."
+
+    source_code :html, <<HTML
+<script type="text/javascript">
+  function reemplazaNombre() {
+    var myNewName = window.prompt('¡Elige un nuevo nombre!');
+    document.getElementById('user-name').innerHTML = myNewName;
+  }
+
+  document.onclick = replaceName;
+</script>
+HTML
+
+ message <<-MARKDOWN
+Actualiza la página, y da click sobre uno de los párrafos. Deberías ver un mensaje del navegador como éste:
+<img src='img/prompt.png'>
+
+Cuando respondas el mensaje, deberías ver en negritas el cambio de nombre que acabas de realizar.
+
+<img src='img/hello_omg.png'>
+    MARKDOWN
+
+ important "Toma años convertirse en experto Javascript. No te preocupes si el último paso te parece confuso o tienes problemas al intentar ejecutar tu script. Lo más importante aquí es darte cuenta que puedes agregar código Javascript **directamente** en tu documento si así lo quieres, poniéndolo dentro de una etiqueta `script`, y usarlo para añadir interactividad a tu página."
+
+  end
+
+end
+   
+
+explanation do
+  
+  message <<-MARKDOWN
+
+## ¿Por qué JavaScript?
+
+Javascript te permite hacer tus páginas interactivas. Puedes usarlo para construir
+cualquier cosa desde una simple animación hasta una gigantesca aplicación web como
+Twitter o Github. Te da control total para agregar, eliminar o modificar contenido HTML. 
+También puedes usarlo para cambiar estilos y agregar o remover clases.
+
+Escribir Javascript en una página web puede ser difícil, porque no empiezas con
+un documento en blanco. Todo el contenido del navegador, incluyendo sus propios objetos
+y tus elementos HTML están ahí también. Sólo debes averiguar como accederlos con Javascript
+para que puedas manipularlos.
+
+## ¿Qué hizo el script?
+
+Explicaremos línea por línea:
+
+La primera línea declara una función 'function', que es un fragmento de código
+reusable al que puedes hacer referencia después llamándolo por su nombre:
+
+  MARKDOWN
+  source_code :js, "function replaceName() {"
+  message <<-MARKDOWN
+
+Las siguientes dos líneas son pasos que la función ejecutará. La primera crea una 
+variable llamada 'myNewName' y le asigna un valor. La ventana del navegador
+intentará obtener este valor usando su método `prompt`, una función incorporada
+que sabe cómo enviar un cuadro de texto emergente para que tú lo llenes.
+
+  MARKDOWN
+  source_code :js, "var myNewName = window.prompt('¡Elige un nuevo nombre!');"
+  message <<-MARKDOWN
+
+En la siguiente línea, mediante una función, busca un elemento HTML en el documento
+a través de su ID 'user-name'. Entonces pone en el contenido del elemento HTML el valor de la variable 
+'myNewName'.
+
+  MARKDOWN
+  source_code :js, "document.getElementById('user-name').innerHTML = myNewName;"
+  message <<-MARKDOWN
+
+El `}` cierra la función que empezaste a definir en la primera línea.
+
+La línea final le dice al navegador, 'Cuando haga click en el documento, ejecuta la función llamada replaceName que se definió'
+
+MARKDOWN
+source_code :js, "document.onclick = replaceName;"
+
+
+tip "Algunos elementos de este script, como 'document.onclick' o la propiedad '.innerHTML', están un poco desactualizados. Son excelentes para comenzar a jugar con Javascript, pero cuando escribas tu propio Javascript, tal vez quieras usar técnicas más actuales o librerías como jQuery que harán estas cosas de forma menos anticuada."
+
+end
+
+next_step 'jquery'
