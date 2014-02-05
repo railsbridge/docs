@@ -5,7 +5,7 @@ end
 steps do
   step do
     message "Descarga el archivo .zip de [este link](https://github.com/eanakashima/front-end-lesson/archive/master.zip)"
-    message "Cuando el archivo termine de descargarse, encuentralo en tu computadora y descomprimelo."
+    message "Cuando el archivo termine de descargarse, encuéntralo en tu computadora y descomprímelo."
   end
 
   step do
@@ -20,7 +20,7 @@ explanation do
 
 ## ¿Qué son estos archivos?
 
-Sólo para ahorrarte algo de tiempo, hemos suministrado un documento HTML muy basico, una hoja de estilo CSS, un archivo Javascipt,y una imagen de placeholder.Pero si hubieras querido, habrias podido escribir estos archivos tu misma con un editor de texto.
+Sólo para ahorrarte algo de tiempo, hemos suministrado un documento HTML muy básico, una hoja de estilo CSS, un archivo Javascipt,y una imagen de placeholder. Pero hubieras podido escribir estos archivos con un editor de texto.
 
 Si en el futuro vas a comenzar un nuevo proyecto, entonces prueba codificarlo todo a mano unas cuantas veces para dominarlo, y después trata de empezar con algún otro código HTML estándar de otras personas que lo hayan compartido:
 
@@ -30,4 +30,4 @@ Si en el futuro vas a comenzar un nuevo proyecto, entonces prueba codificarlo to
   MARKDOWN
 end
 
-next_step "make_a_web_page"
+next_step "hacer_una_pagina_web"
