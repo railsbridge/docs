@@ -26,7 +26,7 @@ step "Install Sublime Text 2" do
 
   important "When in doubt, use Sublime Text 2."
 
-  spanish_link "instala_sublime_text_2_para_mac"
+  link "instala_sublime_text_2_para_mac"
 end
 
 verify "successful installation" do
@@ -47,7 +47,7 @@ verify "successful installation" do
 end
 
 step "Generate an ssh public key" do
-  spanish_link "crea_una_key_ssh"
+  link "crea_una_key_ssh"
 end
 
-next_spanish_step "crea_una_cuenta_de_heroku"
+next_step "crea_una_cuenta_de_heroku"
