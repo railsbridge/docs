@@ -4,12 +4,12 @@ message <<-MARKDOWN
 
 Para revisar estos conceptos utilizaremos JavaScript para manipular un mazo de cartas que posteriormente utilizaremos para crear un juego.
 Los archivos HTML y CSS han sido provistos para ti y pueden ser copiados a tu computadora con solo clonar el reposirorio de la cuenta de RailsBridge en GitHub.
-Si tienes un [cliente de interfaz grafica para git](http://git-scm.com/downloads/guis) de tu agrado y sabes como utilizarlo, puedes usarlo;
+Si tienes un [cliente de interfaz gráfica para git](http://git-scm.com/downloads/guis) de tu agrado y sabes cómo utilizarlo, puedes usarlo;
 de lo contrario puedes utilizar la consola. Si no tines acceso a internet, o tienes algún otro problema clonando el repositorio,
 el instructor problamente pueda proveerte una copia de los archivos en una memoria USB. Recuerda preguntar a AT si no sabes que hacer o necesitas ayuda.
 
 ## Instalación de Git
-Si ya tienes instalado Git, genial! Si no, puedes seguir las instrucciones para instalarlo en
+Si ya tienes instalado Git, ¡genial! Si no, puedes seguir las instrucciones para instalarlo en
 [Railsbridge Installfest](http://installfest.railsbridge.org/installfest) para Rails, y regresar a esta página.
 
 ## Configuración de Git
@@ -31,17 +31,17 @@ en el sitio de GitHub, haz click en el boton _Download ZIP_ y guárdalos en tu d
 + Si estás copiando los archivos desde una memoria USB, guárdalos en tu directorio de `railsbridge`.
 
 Si tienes los archivos como `.zip`, debes extraerlos a un directorio de maneral normal.
-Verifica que los archivos estan en el directorio.
+Verifica que los archivos están en el directorio.
 
 Ahora deberías estar listo para escribir JavaScript y manipular los elementos en la pagina HTML (el siguiente paso).
 
-## mas información acerca de git (material extra que puedes leer despues si así lo deseas)
+## Más información acerca de git (material extra que puedes leer después si así lo deseas)
 [Git](http://git-scm.com) no solo es usado para transferir archivos, es uno de varios [sistemas de control de versiones](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software)
-que te permiten respaldar tus archivos y compartirlos con otros en un grupo de desarrollo. Railsbridge tiene sus archivos en [GitHub](http://github.com),
+que te permiten respaldar tus archivos y compartirlos con otros en un grupo de desarrollo. RailsBridge tiene sus archivos en [GitHub](http://github.com),
 un [sitio público de hosting de Git](https://git.wiki.kernel.org/index.php/GitHosting).
 
-Hay videos y documentación escrita en el uso de git in [http://git-scm.com/documentation](http://git-scm.com/documentation).
-Para mas información acerca de Railsbridge y el uso de git vea: [Railsbridge Guide on How to Git](http://railsbridge.github.io/bridge_troll/).
+Hay videos y documentación escrita en el uso de git en [http://git-scm.com/documentation](http://git-scm.com/documentation).
+Para más información acerca de RailsBridge y el uso de git vea: [Railsbridge Guide on How to Git](http://railsbridge.github.io/bridge_troll/).
 
 MARKDOWN
 
