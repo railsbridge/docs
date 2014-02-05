@@ -1,17 +1,17 @@
-  message "Estas instrucciones deben servir para todas las versiones de Windows desde  XP hasta Windows 8."
+  message "Estas instrucciones deben servir para todas las versiones de Windows desde XP hasta Windows 8."
 
   message "Debes iniciar sesión como Administrador, o introducir la contraseña de Administrador cuando instales algunos de los programas, dependiendo de la versión de Windows y las configuraciones del usuario."
 
-spanish_step "Ejecuta RailsInstaller" do
+step "Ejecuta RailsInstaller" do
 
   message <<-MARKDOWN
   RailsInstaller incluye Rails, Ruby, Git y SQLite.
 
-  Entra a <http://railsinstaller.org/>, navega hacia la sección de 'Descargas', y descarga el RailsInstaller para Windows/Ruby 1.9.
+  Ingresa a <http://railsinstaller.org/>, navega hacia la sección de 'Downloads', y descarga el RailsInstaller para Windows/Ruby 1.9.
 
   Haz click en el archivo que se descargó para correr el asistente de instalación. Haz click en 'Siguiente' en cada paso para aceptar las opciones por defecto.
 
-  Asegúrate de marcar las casillas de verificación (check box) para: *Instalar git (recomendado)* y *Agrega ejecutables para Ruby, DevKit Git (si fue marcado anteriormente) en el PATH*
+  Asegúrate de marcar las casillas de verificación (check box) para: *Install git (recommended)* y *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
 
   ![WinRailsInstaller.jpg](img/WinRailsInstaller.jpg)
 
@@ -20,56 +20,56 @@ spanish_step "Ejecuta RailsInstaller" do
   MARKDOWN
 end
 
-spanish_step "Configura tu git y ambiente ssh" do
+step "Configura tu git y ambiente ssh" do
 
-  important "Al final del instalador habrá una casilla de verificación que dice 'Configura tu git y ambiente ssh'. **Deja esta casilla de verificación marcada** Esto abrirá una terminal en la que tu tendrás que **Teclear Enter**."
+  important "Al final del instalador habrá una casilla de verificación que dice 'configure your git and ssh environment'. **Deja esta casilla de verificación marcada** Esto abrirá una terminal en la que tu tendrás que **escribir**."
 
-  message "Cuando diga *Por favor ingresa tu nombre, por ejemplo el mío es: Wayne E. Seguin*"
-  message "Teclea *tu nombre completo* en la consola y presiona **Enter**"
+  message "Cuando diga *Please enter your name, for example mine is: Wayne E. Seguin*"
+  message "Ingresa *tu nombre completo* en la consola y presiona **[enter]**"
 
-  message "Cuando diga *Por favor ingresa tu correo electrónico, por ejemplo el mío es: wayneeseguin@gmail.com*"
-  message "Ingresa *tu correo electrónico actual* en la consola y presiona **Enter**"
+  message "Cuando diga *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
+  message "Ingresa *tu correo electrónico* en la consola y presiona **[enter]**"
 
   important "Usa el **mismo correo electrónico** para heroku, git, github, y ssh."
 
   tip do
-    message "Después de este paso vas a tener las **configuraciones necesarias para usar git** y también tendrás una **llave ssh**."
+    message "Después de este paso vas a tener algunas **configuraciones necesarias para usar git** y también tendrás una **llave ssh**."
   end
 
 end
 
-spanish_step "Sólo Windows 8 - Instalar Node.js" do
+step "Sólo Windows 8 - Instalar Node.js" do
 
   message "Ve a <http://nodejs.org> y descarga el instalador"
 
-  message "Haz click en el archivo que se descargó y ejecuta el asistente de instalación. Haz click en 'Siguiente' en cada paso para aceptar las opciones por defecto."
+  message "Haz click en el archivo que se descargó y ejecuta el asistente de instalación. Haz click en 'Next' en cada paso para aceptar las opciones por defecto."
 
   message "**Reinicia tu computadora.**"
 
   message "Una vez que tu computadora ha iniciado por completo, abre **Command Prompt with Ruby and Rails** (observa abajo) y..."
 
-  spanish_console "node -v"
+  console "node -v"
   fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
 end
 
-spanish_step "Verificación Final" do
+step "Verificación Final" do
 
-  spanish_console "ruby -v"
+  console "ruby -v"
   fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
 
-  spanish_console "rails -v"
+  console "rails -v"
   fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 
 end
 
-spanish_step "Abre una terminal" do
-  message "Una gran parte de utilizar Rails es escribir comandos y presionar **Enter**. La experiencia que vas a tener usando Rails en Windows va a depender mucho en que tanto te familiarices con la terminal. Normalmente vas a trabajar en una terminal y la vas a mantener abierta junto con tu navegador."
+step "Abre una terminal" do
+  message "Una gran parte de utilizar Rails es escribir comandos y presionar **[enter]**. La experiencia que tendrás usando Rails en Windows va a depender mucho de qué tanto te familiarices con la terminal. Normalmente vas a trabajar en una terminal y la vas a mantener abierta junto con tu navegador."
 
   tip "La terminal también es llamada Símbolo del Sistema, Línea de Comandos, DOS Prompt o Ventana de DOS."
 
-  message "RailsInstaller hace una Terminal especial para que la uses cuando trabajes en Ruby, Rails o Git."
+  message "RailsInstaller abre una Terminal especial para que la uses cuando trabajes en Ruby, Rails o Git."
 
-  message "Para abrir la Terminal especial, escoje **Todos los Programas** en el menú de inicio, después escoje **RailsInstaller** y luego **Command Prompt with Ruby and Rails**. Todo tu trabajo en Rails de este RailsInstaller deberás de hacerlo en la ventana de DOS."
+  message "Para abrir la Terminal especial, elige **Todos los Programas** en el menú de inicio, después elige **RailsInstaller** y luego **Command Prompt with Ruby and Rails**. Todo tu trabajo en Rails deberás hacerlo en esta ventana del RailsInstaller."
 
   img src: 'img/railsbridge_findingCommandPrompt.png'
 
@@ -83,29 +83,29 @@ spanish_step "Abre una terminal" do
 
 end
 
-spanish_step "Configura la Terminal de Windows" do
-  message "Toma tu tiempo para configurar el *Command Prompt with Ruby and Rails*, ésto es para que tenga un buen alto, ancho y fuente amigable. Consejo -- Haz click para abrir el siguiente link, y cuando termines esos pasos, presiona en tu navegador el botón **atrás** para continuar con este procedimiento."
+step "Configura la Terminal de Windows" do
+  message "Toma tu tiempo para configurar el *Command Prompt with Ruby and Rails*, esto para que la ventana tenga el tamaño y tipo de letra adecuados. Consejo -- Haz click para abrir el siguiente link, y cuando termines esos pasos, presiona en tu navegador el botón **atrás** para continuar con este procedimiento."
 
   link "configura_la_terminal_de_windows"
 
   tip "Limpia la terminal" do
     message "Si alguna vez quieres limpiar todo el texto de salida de tu terminal"
-    spanish_console "cls"
+    console "cls"
   end
 
-  tip "historial de comandos" do
-   message "La ventana de la terminal guarda un \"historial de comandos.\"  Para ver y correr de nuevo comandos anteriores, usa las teclas de &lt;flecha arriba&gt; y &lt;flecha abajo&gt;.  También puedes editar comandos anteriores y correrlos -- esto es conveniente para comandos largos, o para corregir errores, o para ciclos (series de comandos) que repites."
+  tip "Historial de comandos" do
+   message "La ventana de la terminal guarda un \"historial de comandos.\"  Para ver y ejecutar de nuevo comandos anteriores, usa las teclas de &lt;flecha arriba&gt; y &lt;flecha abajo&gt;.  También puedes editar comandos anteriores y ejecutarlos -- esto es conveniente para comandos largos, corregir errores, o para ciclos (series de comandos) que repites."
  end
 
-  tip "copia y pega" do
+  tip "Copia y pega" do
 
-    message "Usualmente es mejor que escribas los comandos tu mismo. Es mas lento pero vas a aprender mejor."
+    message "Usualmente es mejor que escribas los comandos tu mismo. Es mas lento pero aprenderás mas."
 
-    message "Pero si tienes que hacerlo... en estas instrucciones, donde dice: \"Escribe esto en la terminal:\", por lo general puedes copiar el comando y pegarlo, y hacer click derecho en la barra de menú o en la ventana de la terminal, y luego presionar la tecla de **Enter**."
+    message "Pero si tienes que hacerlo... en estas instrucciones, donde dice: \"Escribe esto en la terminal:\", por lo general puedes copiar el comando y pegarlo, y hacer click derecho en la barra de menú o en la ventana de la terminal, y luego presionar la tecla **[enter]**."
   end
 end
 
-spanish_step "Instala Windows Colors" do
+step "Instala Colores de Windows" do
 
   message "Este paso es opcional, pero **altamente** recomendado. Consejo -- haz click para abrir el link de abajo, y cuando hayas terminado esos pasos, presiona el botón de **atrás** de tu navegador para continuar con este procedimiento."
 
@@ -113,20 +113,16 @@ spanish_step "Instala Windows Colors" do
 
 end
 
-step "Configure Git" do
-  link "configura_git"
-end
+step "Instala un Editor de Textos" do
+  message "Necesitas un editor de texto para escribir código Ruby. Si ya tienes un editor de texto preferido, como vi, emacs, jedit, etc. puedes brincarte este paso. Debe ser un editor de texto plano y no algo con estilos como Word de Microsoft o WordPad."
 
-spanish_step "Instala un Editor de Textos" do
-  message "Necesitas un editor de textos para escribir código en Ruby. Si ya tienes un editor de textos preferido, como vi, emacs, jedit, etc. puedes brincarte este paso. Debe de ser un editor de texto plano y no algo con estilos como Word de Microsoft o WordPad."
+  message "Notepad no es un editor adecuado para programación, pero puede funcionar en última instancia."
 
-  message "Notepad no es un editor bueno de programación, pero puede funcionar en un apuro."
+  important "**Si tienes duda, utiliza Sublime Text 2.**"
 
-  important "**Si no sabes cual, utiliza Sublime Text 2.**"
+  message "[Sublime Text 2](http://www.sublimetext.com/2) es una buena opción, si aún no has elegido."
 
   message "Descarga Sublime Text 2 aquí: <http://www.sublimetext.com/2>"
-
-  message "[Sublime Text 2](http://www.sublimetext.com/2) es una buena opción, si aún no tienes una."
 end
 
-next_step "crea_una_cuenta_de_heroku"
+next_step "configurar_git"
