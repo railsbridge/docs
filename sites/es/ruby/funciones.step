@@ -13,7 +13,7 @@ end
 print "¿Cuál es el radio de tu círculo? > "
 radio = gets.to_i
 
-puts "Tu círculo tiene una área de #{area_circulo(radio)}"
+puts "Tu círculo tiene un área de #{area_circulo(radio)}"
   CONTENTS
   console 'ruby area.rb'
   message 'Cuando se te solicite, ingresa un radio para tu círculo.'
