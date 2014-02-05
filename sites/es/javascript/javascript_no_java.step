@@ -1,0 +1,18 @@
+message <<-MARKDOWN
+
+### JavaScript no es Java
+
+JavaScript, el cual fue creado en Netscape en 1995, fue llamado originalmente LiveScript pero fue renombrado aproximadamente al mismo tiempo que Java se convertía en un nuevo lenguaje de programación muy popular.
+Pero son dos cosas diferentes.
+
+Mientras Java fue pensado para correr de lado del servidor, JavaScript fue pensado originalmente para correr en el browser y permitir al usuario manipular el documento web despues de haber sido cargado.
+Hoy en día también es usado como un lenguaje del lado del servidor.
+
+### HTML and JavaScript
+
+HTML permite crear los elementos en tu documento (página web). JavaScript te permite interactuar con ellos. El currículum que sigue asume un entendimiento de HTML.
+Si necesitas mas información, por favor visita <a href="/frontend">Railsbridge Frontend Curriculum</a>.
+
+MARKDOWN
+
+next_step 'clonar_un_repositorio'
