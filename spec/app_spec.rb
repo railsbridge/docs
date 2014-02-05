@@ -17,13 +17,9 @@ describe InstallFest do
     true_app = app
     until true_app.is_a? InstallFest
       next_app =
-        if true_app.respond_to?(:app)
-          true_app.app
-        elsif true_app.is_a?(Sinatra::Wrapper)  # for Sinatra 1.4
-          true_app.instance_variable_get(:@instance)
-        else
+        true_app.respond_to?(:app) ?
+          true_app.app :
           true_app.instance_variable_get(:@app)
-        end
       break if next_app.nil?
       true_app = next_app
     end
@@ -80,10 +76,10 @@ describe InstallFest do
 
   describe "custom subdomains - " do
     it "looks for a site named the same as the host" do
-      get "/", {}, {"HTTP_HOST" => "curriculum.example.com"}
+      get "/", {}, {"HTTP_HOST" => "docs.example.com"}
       assert { last_response.redirect? }
       follow_redirect! while last_response.redirect?
-      assert { last_request.path == "/curriculum/" }
+      assert { last_request.path == "/docs/" }
     end
 
     it "treats 'es' subdomain as a locale, not a site" do
