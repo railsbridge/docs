@@ -116,7 +116,7 @@ class DocPage < Html5Page
       }
       if @back
         div.back {
-          text "Back to "
+          text "#{ I18n.t 'back_to' } "
           a(class: "back", href: @back) do
             text Titleizer.title_for_page(@back.split('#').first)
           end
