@@ -3,23 +3,23 @@ message <<-MARKDOWN
 Ok, hay un paso más. No vas a utilizar aplicaciones de prueba en el taller; sólo las creamos para asegurarnos que todo estuviera funcionando correctamente. **Deberás borrarlas en este momento para evitar confusiones durante el taller.** No te preocupes por perder información - vas a repetir todos los pasos mañana, pero más lento para que puedas entender mejor lo que está pasando.
 MARKDOWN
 
-spanish_step "Elimina las aplicaciones de Heroku" do
-  message "Entra a <https://heroku.com/myapps>, inicia sesión de ser necesario, y haz click en el nombre de tu primera aplicación. Haz click en Settings. Navega hacia el final de la página y haz click en Delete App. Ingresa el nombre de la aplicación, confirma, y después repite lo mismo para la segunda aplicación."
+step "Elimina las aplicaciones de Heroku" do
+  message "Ingresa a <https://heroku.com/myapps>, inicia sesión si es necesario, y haz click en el nombre de tu primera aplicación. Haz click en Settings. Navega hacia el final de la página y haz click en Delete App. Ingresa el nombre de la aplicación, confirma, y después repite lo mismo para la segunda aplicación."
 end
 
-spanish_step "Elimina la prueba_app de tu computadora" do
+step "Elimina la prueba_app de tu computadora" do
   option "Windows" do
-    message "Desde el navegador, haz click derecho en la carpeta prueba_app (dentro de C:\\Sitios) y escoge Eliminar."
+    message "Desde el navegador, haz click derecho en la carpeta prueba_app (dentro de C:\\Sitios) y elige Eliminar."
   end
   option "Mac" do
     message "Abre tu directorio de inicio y arrastra la carpeta prueba_app a la Basura."
   end
   option "Linux" do
-    spanish_console "rm -rf ~/railsbridge/prueba_app"
+    console "rm -rf ~/railsbridge/prueba_app"
   end
 end
 
-spanish_step "Elimina la aplicación calcomanía de tu computadora" do
+step "Elimina la aplicación calcomanía de tu computadora" do
     message "Haz lo mismo para la carpeta calcomanía."
 	message "¡Ahora sí ya terminaste!"
 end
