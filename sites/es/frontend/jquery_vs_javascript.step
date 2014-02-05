@@ -1,0 +1,47 @@
+goals do
+  goal "Escribir JavaScript puro"
+  goal "Comparar JavaScript con jQuery"
+end
+
+steps do
+  
+  step do
+    message "En la última página, escribimos algo de jQuery que lucía como éste. Vamos a comentarlo por ahora, y veremos si podemos replicar la misma funcionalidad con JavaScript puro. Agrega etiquetas de comentario antes de estas líneas. En JavaScript, la manera más fácil de comentar una línea es poniéndole `//` al principio. Continuemos e intentemos esto:"
+    source_code :js, <<-JS
+//$("#copyright").click(function(){ 
+//  $(this).css('color','purple'); 
+//});"
+    JS
+    message "Ahora si guardas la página, actualizas, y das clic en copyright, nada debería pasar."
+  end
+  
+  step do
+    message "Debajo de las lineas que acabas de comentar, let's take a shot at writing the same functionality in straight JavaScript. Hay muchas maneras elegantes de hacer esto; aquí vemos una no tan elegante, pero corta:"
+    source_code :js, <<-JS
+document.getElementById('copyright').onclick = function () { 
+   this.style.color = 'purple';
+}
+    JS
+    message "Si guardas la página, actualizas, y das clic, deberías ver el mismo resultado visual (texto púrpura), but this isn't a great approach for a couple of reasons. No solo es más typing, y difícil de leer, también se puede romper fácilmente. (Tú sólo puedes poner un atributo on click a una cosa, entonces esto podría ser sobreescrito por otro script en la página y después no funcionará!) jQuery funciona de diferente forma, escuchando eventos, entonces diferentes funciones pueden ser escuchadas por el mismo evento, y puedes agregar una nueva response a un evento sin preocuparte sobre sobresescribir uno ya existente."
+  end
+  
+end
+  
+explanation do
+
+  message <<-MARKDOWN
+
+## Entonces debería usar JavaScript o jQuery?
+
+No olvides que todo lo que puedes hacer con jQuery, puedes hacerlo con Javascript puro.
+Si quieres comenzar construyendo 
+If you want to start building cool user interface features right away, jQuery will probably
+help you do that the fastest. But, long-term, to be great at jQuery, you really need to
+understand the language it's written in: JavaScript. It's worthwhile to learn about both.
+
+
+  MARKDOWN
+  
+end
+
+next_step 'resources'
