@@ -45,7 +45,7 @@ class Contents < Erector::Widget
       next if (link =~ /^http/)
       next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
       next if (link =~ /(jpg|png)$/)
-      links.push(link) unless links.include? link
+      links.push(link) if !links.include? link
     end
 
     # (stepfiles) links of the form: link "next page"
@@ -65,8 +65,8 @@ class Contents < Erector::Widget
     content = content_for(filename)
 
     # (stepfiles) links of the form: stepfile "next page"
-    content.scan /(next_step|next_spanish_step)\s*["'](.*?)["']/ do |method, link|
-      return link 
+    content.scan /next_step\s*["'](.*?)["']/ do |link, _|
+      return link
     end
 
     return nil
@@ -228,7 +228,7 @@ class Contents < Erector::Widget
       toc_list(mark_open_and_closed(hierarchy)[:items])
 
       unless orphans.empty?
-        h1 "Other Pages"
+        h1 "#{ I18n.t 'other_pages' }"
         ul do
           orphans.each { |orphan| toc_link orphan }
         end
@@ -237,7 +237,7 @@ class Contents < Erector::Widget
       if has_collapsables(hierarchy)
         span class: "expand-all" do
           i class: "fa fa-arrows-alt"
-          text "Expand All"
+          text "#{ I18n.t 'expand_all' }"
         end
       end
     end
