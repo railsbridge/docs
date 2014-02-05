@@ -54,13 +54,13 @@ class Step < Erector::Widget
   ## steps
 
   @@header_sections = {
-      steps: 'header_sections.steps',
-      explanation: 'header_sections.explanation',
-      overview: 'header_sections.overview',
-      discussion: 'header_sections.discussion',
-      hints: 'header_sections.hints',
-      tools_and_references: 'header_sections.tools_and_references',
-      requirements: 'header_sections.requirements',
+    steps: 'header_sections.steps',
+    explanation: 'header_sections.explanation',
+    overview: 'header_sections.overview',
+    discussion: 'header_sections.discussion',
+    hints: 'header_sections.hints',
+    tools_and_references: 'header_sections.tools_and_references',
+    requirements: 'header_sections.requirements',
   }
 
   @@header_sections.each do |type, header|
