@@ -1,0 +1,48 @@
+message <<-MARKDOWN
+
+# Clonar un repositorio que contenga HTML y CSS
+
+Para revisar estos conceptos utilizaremos JavaScript para manipular un mazo de cartas que posteriormente utilizaremos para crear un juego.
+Los archivos HTML y CSS han sido provistos para ti y pueden ser copiados a tu computadora con solo clonar el reposirorio de la cuenta de RailsBridge en GitHub.
+Si tienes un [cliente de interfaz grafica para git](http://git-scm.com/downloads/guis) de tu agrado y sabes como utilizarlo, puedes usarlo;
+de lo contrario puedes utilizar la consola. Si no tines acceso a internet, o tienes algún otro problema clonando el repositorio,
+el instructor problamente pueda proveerte una copia de los archivos en una memoria USB. Recuerda preguntar a AT si no sabes que hacer o necesitas ayuda.
+
+## Instalación de Git
+Si ya tienes instalado Git, genial! Si no, puedes seguir las instrucciones para instalarlo en
+[Railsbridge Installfest](http://installfest.railsbridge.org/installfest) para Rails, y regresar a esta página.
+
+## Configuración de Git
+Sigue las [instrucciones para la configuración de Git](http://installfest.railsbridge.org/installfest/configure_git) del taller
+RailsBridge Rails y regresa a esta página.
+
+## Clonar el Repositorio / Copiar los archivos
+
+Crea un directorio en el cual desees guardar tus archivos de RailsBridge (si aún no lo has hecho). Si estas utilizando la consola teclea:
+$`mkdir railsbridge`
+después, para cambiarte al directorio
+$`cd railsbridge` .
+
++ Para clonar el repositorio de RailsBridge teclea:
+$`git clone http://whatever-i'll-look-this-up-later`  _nota: No creo que estos archivos esten en el repositiorio aún,
+así que no se tiene la URL correcta_ esto guardará los archivos de Github en tu computadora.
++ Si tienes problemas instalando git: Para descargar los archivos como `.zip`, navega en tu browser a la página que los contine
+en el sitio de GitHub, haz click en el boton _Download ZIP_ y guárdalos en tu directorio de `railsbridge`.
++ Si estás copiando los archivos desde una memoria USB, guárdalos en tu directorio de `railsbridge`.
+
+Si tienes los archivos como `.zip`, debes extraerlos a un directorio de maneral normal.
+Verifica que los archivos estan en el directorio.
+
+Ahora deberías estar listo para escribir JavaScript y manipular los elementos en la pagina HTML (el siguiente paso).
+
+## mas informacion acerca de git (material extra que puedes leer despues si asi lo deseas)
+[Git](http://git-scm.com) no solo es usado para transferir archivos, es uno de varios [sistemas de control de versiones](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software)
+que te permiten respaldar tus archivos y compartirlos con otros en un grupo de desarrollo. Railsbridge tiene sus archivos en [GitHub](http://github.com),
+un [sito publico de hosting de Git](https://git.wiki.kernel.org/index.php/GitHosting).
+
+Hay videos y documentación escrita en el uso de git in [http://git-scm.com/documentation](http://git-scm.com/documentation).
+Para mas información acerca de Railsbridge y el uso de git vea: [Railsbridge Guide on How to Git](http://railsbridge.github.io/bridge_troll/).
+
+MARKDOWN
+
+next_step 'manipular_las_cartas'
