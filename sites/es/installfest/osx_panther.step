@@ -97,11 +97,11 @@ For Tiger ONLY:
 end
 
 step "Install Textmate" do
-  link "install_textmate"
+  link "instala_textmate"
 end
 
 step "Create an SSH key" do
-  link "create_an_ssh_key"
+  link "crea_una_key_ssh"
 end
 
-next_step "create_a_heroku_account"
+ext_step "crea_una_cuenta_de_heroku"

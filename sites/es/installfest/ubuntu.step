@@ -46,7 +46,7 @@ step "Install git" do
 end
 
 step "Configure Git" do
-  link_without_toc "configure_git"
+  link_without_toc "configura_git"
 end
 
 step "Install RVM" do
@@ -54,7 +54,7 @@ step "Install RVM" do
     message "If you're using Ubuntu 12.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take affect."
     img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
   end
-  link "install_rvm_and_ruby"
+  link "instala_rvm_y_ruby"
   message "Restart your terminal before continuing."
 end
 
@@ -77,4 +77,4 @@ MARKDOWN
   end
 end
 
-next_step "create_a_heroku_account"
+next_step "crea_una_cuenta_de_heroku"
