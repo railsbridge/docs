@@ -1,30 +1,29 @@
-message "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
+message "(Si utilizaste el Instalador de Rails en Windows ya deberías tener `user.name` y `user.email` configurados.)"
 
 console <<-BASH
-git config --global user.name "Your Actual Name"
-git config --global user.email "Your Actual Email"
+git config --global user.name "Tu nombre"
+git config --global user.email "Tu e-mail"
 BASH
 
-important "Use the same email address for heroku, git, github, and ssh."
+important "Utiliza el mismo e-mail para heroku, git, github, y ssh."
 
 verify do
   console "git config --get user.name"
-  result "your name"
+  result "Tu nombre"
   console "git config --get user.email"
-  result "your email address"
+  result "Tu e-mail"
 end
 
-tip "Colored output in Git" do
-  console <<-BASH
+tip "Texto de salida de Git en colores" do
+  spanish_console <<-BASH
 git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
   BASH
 
   important do
-    message "If you are using Windows, you may need to install AnsiCon to see colors (otherwise you'll see gibberish).  If you didn't do this earlier, then you should do it now."
+    message "Si estás utilizando Windows, posiblemente vas a tener que instalar AnsiCon para ver los colores (de otra manera vas a ver texto sin sentido). Si no hiciste esto anteriormente, deberás hacerlo en este momento."
 
-    link_without_toc "windows_colors"
+    link_without_toc "colores_de_windows"
   end
 end
-
