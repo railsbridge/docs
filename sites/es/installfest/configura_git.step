@@ -5,7 +5,7 @@ git config --global user.name "Tu nombre"
 git config --global user.email "Tu e-mail"
 BASH
 
-important "Utiliza el mismo e-mail para heroku, git, github, y ssh."
+important "Utiliza el mismo e-mail para Heroku, Git, GitHub, y SSH."
 
 verify do
   console "git config --get user.name"
@@ -15,7 +15,7 @@ verify do
 end
 
 tip "Texto de salida de Git en colores" do
-  spanish_console <<-BASH
+  console <<-BASH
 git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
