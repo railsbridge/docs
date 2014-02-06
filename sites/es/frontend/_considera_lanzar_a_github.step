@@ -1,0 +1,7 @@
+div :class => "deploying" do
+  h1 "#{I18n.t 'deploying'}"
+  blockquote do
+    message "Antes de continuar, ¡intenta lanzar tu página a Github!"
+    link 'lanzando_a_github'
+  end
+end
