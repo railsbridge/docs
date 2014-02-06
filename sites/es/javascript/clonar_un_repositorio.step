@@ -4,7 +4,7 @@ message <<-MARKDOWN
 
 Para revisar estos conceptos utilizaremos JavaScript para manipular un mazo de cartas que posteriormente utilizaremos para crear un juego.
 Los archivos HTML y CSS han sido provistos para ti y pueden ser copiados a tu computadora con solo clonar el reposirorio de la cuenta de RailsBridge en GitHub.
-Si tienes un [cliente de interfaz gráfica para git](http://git-scm.com/downloads/guis) de tu agrado y sabes cómo utilizarlo, puedes usarlo;
+Si tienes un [cliente de interfaz gráfica para Git](http://git-scm.com/downloads/guis) de tu agrado y sabes cómo utilizarlo, puedes usarlo;
 de lo contrario puedes utilizar la consola. Si no tienes acceso a Internet, o tienes algún otro problema clonando el repositorio,
 el instructor problamente pueda proveerte una copia de los archivos en una memoria USB. Recuerda preguntar a un AT si no sabes qué hacer o necesitas ayuda.
 
@@ -24,7 +24,7 @@ después, para cambiarte al directorio
 $`cd railsbridge` .
 
 + Para clonar el repositorio de RailsBridge teclea:
-$`git clone http://whatever-i'll-look-this-up-later`  _nota: No creo que estos archivos esten en el repositiorio aún,
+$`git clone http://whatever-i'll-look-this-up-later`  _nota: Posiblemente estos archivos aún no estén en el repositiorio,
 así que no se tiene la URL correcta_ esto guardará los archivos de GitHub en tu computadora.
 + Si tienes problemas instalando Git: Para descargar los archivos como `.zip`, navega en tu navegador a la página que los contiene
 en el sitio de GitHub, haz click en el botón _Download ZIP_ y guárdalos en tu directorio de `railsbridge`.
