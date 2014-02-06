@@ -7,7 +7,7 @@ MARKDOWN
 important "Microsoft Word y otros procesadores de texto, incluyendo TextEdit y Notepad, no funcionarán"
 
 step "Descarga Textmate 1.5.11" do
-  message "Descarga el instalador de [Textmate] (http://archive.textmate.org/TextMate_1.5.11_r1635.zip)."
+  message "Descarga el [instalador de Textmate] (http://archive.textmate.org/TextMate_1.5.11_r1635.zip)."
 end
 
 step 'Selecciona "Abrir con Archive Utility" en el dialogo de guardar' do
