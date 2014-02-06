@@ -5,12 +5,12 @@ message <<-MARKDOWN
 Para revisar estos conceptos utilizaremos JavaScript para manipular un mazo de cartas que posteriormente utilizaremos para crear un juego.
 Los archivos HTML y CSS han sido provistos para ti y pueden ser copiados a tu computadora con solo clonar el reposirorio de la cuenta de RailsBridge en GitHub.
 Si tienes un [cliente de interfaz gráfica para git](http://git-scm.com/downloads/guis) de tu agrado y sabes cómo utilizarlo, puedes usarlo;
-de lo contrario puedes utilizar la consola. Si no tines acceso a internet, o tienes algún otro problema clonando el repositorio,
-el instructor problamente pueda proveerte una copia de los archivos en una memoria USB. Recuerda preguntar a AT si no sabes que hacer o necesitas ayuda.
+de lo contrario puedes utilizar la consola. Si no tienes acceso a Internet, o tienes algún otro problema clonando el repositorio,
+el instructor problamente pueda proveerte una copia de los archivos en una memoria USB. Recuerda preguntar a un AT si no sabes qué hacer o necesitas ayuda.
 
 ## Instalación de Git
 Si ya tienes instalado Git, ¡genial! Si no, puedes seguir las instrucciones para instalarlo en
-[Railsbridge Installfest](http://installfest.railsbridge.org/installfest) para Rails, y regresar a esta página.
+[RailsBridge Installfest](http://installfest.railsbridge.org/installfest) para Rails, y regresar a esta página.
 
 ## Configuración de Git
 Sigue las [instrucciones para la configuración de Git](http://installfest.railsbridge.org/installfest/configure_git) del taller
@@ -25,9 +25,9 @@ $`cd railsbridge` .
 
 + Para clonar el repositorio de RailsBridge teclea:
 $`git clone http://whatever-i'll-look-this-up-later`  _nota: No creo que estos archivos esten en el repositiorio aún,
-así que no se tiene la URL correcta_ esto guardará los archivos de Github en tu computadora.
-+ Si tienes problemas instalando git: Para descargar los archivos como `.zip`, navega en tu browser a la página que los contine
-en el sitio de GitHub, haz click en el boton _Download ZIP_ y guárdalos en tu directorio de `railsbridge`.
+así que no se tiene la URL correcta_ esto guardará los archivos de GitHub en tu computadora.
++ Si tienes problemas instalando Git: Para descargar los archivos como `.zip`, navega en tu navegador a la página que los contiene
+en el sitio de GitHub, haz click en el botón _Download ZIP_ y guárdalos en tu directorio de `railsbridge`.
 + Si estás copiando los archivos desde una memoria USB, guárdalos en tu directorio de `railsbridge`.
 
 Si tienes los archivos como `.zip`, debes extraerlos a un directorio de maneral normal.
@@ -35,13 +35,13 @@ Verifica que los archivos están en el directorio.
 
 Ahora deberías estar listo para escribir JavaScript y manipular los elementos en la pagina HTML (el siguiente paso).
 
-## Más información acerca de git (material extra que puedes leer después si así lo deseas)
+## Más información acerca de Git (material extra que puedes leer después si así lo deseas)
 [Git](http://git-scm.com) no solo es usado para transferir archivos, es uno de varios [sistemas de control de versiones](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software)
 que te permiten respaldar tus archivos y compartirlos con otros en un grupo de desarrollo. RailsBridge tiene sus archivos en [GitHub](http://github.com),
 un [sitio público de hosting de Git](https://git.wiki.kernel.org/index.php/GitHosting).
 
-Hay videos y documentación escrita en el uso de git en [http://git-scm.com/documentation](http://git-scm.com/documentation).
-Para más información acerca de RailsBridge y el uso de git vea: [Railsbridge Guide on How to Git](http://railsbridge.github.io/bridge_troll/).
+Hay videos y documentación escrita en el uso de Git en [http://git-scm.com/documentation](http://git-scm.com/documentation).
+Para más información acerca de RailsBridge y el uso de Git vea: [La guía de Railsbridge en Cómo usar Git](http://railsbridge.github.io/bridge_troll/).
 
 MARKDOWN
 
