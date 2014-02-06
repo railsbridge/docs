@@ -76,14 +76,16 @@ end
 step "Sublime Text 2" do
   message <<-MARKDOWN
 
-Si no tienes un editor de código de preferencia, puedes instalar Sublime Text 2. Está disponible para [máquinas de 32-bits](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [máquinas de 64-bits](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
+Si no tienes un editor de código de preferencia, puedes instalar Sublime
+Text 2. Está disponible para [máquinas de
+32-bits](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) y [máquinas de 64-bits](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
 
 Checa <http://www.sublimetext.com/2> para ver las versiones más actuales.
 MARKDOWN
 
   tip "¿Cuántos bits?" do
     message %q{Si tienes duda, posiblemente tu máquina es de 32-bits.
-Corre `uname -i` y observa. "x86" en el nombre del archivo significa 32-bits, y "x86_64 significa 64-bits.}
+Ejecuta `uname -i` y observa. "x86" en el nombre del archivo significa 32-bits, y "x86_64 significa 64-bits.}
   end
 end
 
