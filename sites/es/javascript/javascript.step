@@ -2,7 +2,7 @@ message <<-MARKDOWN
 
 ### Objetivo
 
-Este currículum pretende ser una introducción al lenguaje de programación JavaScript. Se basa en <a href="/frontend">Front End RailsBridge Currículum</a>. Cualquier persona familiarizada con HTML, podrá trabajar a través de este currículum.
+Este currículum pretende ser una introducción al lenguaje de programación JavaScript. Se basa en <a href="/frontend">Currículum de RailsBridge para Frontend</a>. Cualquier persona familiarizada con HTML, podrá trabajar a través de este currículum.
 
 En el taller, vamos a:
 
@@ -19,12 +19,12 @@ Esta es solo una guía básica, no un mandato. Algunos pasos te parecerán más 
 Vamos a trabajar con:
 
 * [Chrome](https://www.google.com/chrome)
-  (Si tienes experiencia con las herramientas de desarrollador en otro browser, también puede funcionar.)
+  (Si tienes experiencia con las herramientas de desarrollador en otro navegador, también puede funcionar.)
 * El editor de código de tu elección.
-  [Sublime Text 2](http://www.sublimetext.com/2) es popular y gratis para su descarga, pero necesitarás comprar una licencia si decides seguir utilizándolo despues del taller.
+  [Sublime Text 2](http://www.sublimetext.com/2) es popular y gratis para su descarga, pero necesitarás comprar una licencia si decides seguir utilizándolo después del taller.
   [Komodo Edit](http://www.activestate.com/komodo-edit) es una buena opción de open source, si aún no tienes alguna.
 
-Herramientas opcionales si estás registrando tus cambios en Github:
+Herramientas opcionales si estás registrando tus cambios en GitHub:
 
 * Git
 * Tu cuenta [GitHub](http://github.com)
@@ -33,16 +33,16 @@ Herramientas opcionales si estás registrando tus cambios en Github:
 
 Te recomendamos que hagas lo siguiente:
 
-* Inicializa tu browser o cierra todas las ventanas que tengas abiertas.
+* Inicializa tu navegador o cierra todas las ventanas que tengas abiertas.
   * Abre una ventana con dos pestañas.
     * Una para este contenido.
     * Una para interactuar con tu aplicación.
 * Abre tu editor de texto y _nunca lo cierres_. No nos rendimos.
-* Cierra todas las aplicaciones extras. Cierra twitter, IM, y todas las demás distracciones.
+* Cierra todas las aplicaciones extras. Cierra Twitter, IM, y todas las demás distracciones.
 
 Al minimizar el número de cosas con las cuales puedes interactuar, reduces la cantidad de tiempo perdido
 cambiando entre éstas y el contenido de las lecciones mientras trabajas con ellas.
-El tener 50 pestañas en tu browser puede tornarse confuso y hacerte perder tiempo.
+El tener 50 pestañas en tu navegador puede tornarse confuso y hacerte perder tiempo.
 
 MARKDOWN
 
