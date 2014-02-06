@@ -12,7 +12,7 @@ steps do
 //  $(this).css('color','purple'); 
 //});"
     JS
-    message "Ahora si guardas la página, actualizas, y das clic en copyright, nada debería pasar."
+    message "Ahora si guardas la página, actualizas, y das click en copyright, nada debería pasar."
   end
   
   step do
@@ -22,7 +22,7 @@ document.getElementById('copyright').onclick = function () {
    this.style.color = 'purple';
 }
     JS
-    message "Si guardas la página, actualizas, y das clic, deberías ver el mismo resultado visual (texto púrpura), pero no es la mejor forma de hacerlo por dos razones. No sólo es escribir más, y difícil de leer, también se puede romper fácilmente. (Tú sólo puedes poner un atributo on click a una cosa, ¡entonces esto podría ser sobreescrito por otro script en la página y después no funcionará!) jQuery funciona de diferente forma, escuchando eventos, entonces diferentes funciones pueden ser escuchadas por el mismo evento, y puedes agregar una nueva respuesta a un evento sin preocuparte acerca de sobrescribir uno ya existente."
+    message "Si guardas la página, actualizas, y das click, deberías ver el mismo resultado visual (texto púrpura), pero no es la mejor forma de hacerlo por dos razones. No sólo es escribir más, y difícil de leer, también se puede romper fácilmente. (Tú sólo puedes poner un atributo on click a una cosa, ¡entonces esto podría ser sobreescrito por otro script en la página y después no funcionará!) jQuery funciona de diferente forma, escuchando eventos, entonces diferentes funciones pueden ser escuchadas por el mismo evento, y puedes agregar una nueva respuesta a un evento sin preocuparte acerca de sobrescribir uno ya existente."
   end
   
 end
