@@ -7,7 +7,7 @@ message <<-MARKDOWN
 Es necesario que accedas con sudo para poder completar estas instrucciones (La primera cuenta de usuario que se crea en el sistema tiene estos permisos por defecto).
 MARKDOWN
 
-step "Instalar el software y librerías empaquetados" do
+step "Instala el software y librerías empaquetados" do
   message <<-MARKDOWN
 Abre una terminal (Aplicaciones > Accessorios > Terminal). Tal vez quieras hacer click derecho en el ícono de la terminal y seleccionar "Añadir al panel" para que el icono aparezca a un lado de la ayuda y los iconos de Firefox en el panel superior.
   MARKDOWN
@@ -44,7 +44,7 @@ Abre una terminal (Aplicaciones > Accessorios > Terminal). Tal vez quieras hacer
 
 end
 
-step "Instalar Git" do
+step "Instala Git" do
   console "sudo apt-get install git"
 
   message "Si esto arroja un error, no hay problema, ya que el paso anterior pudo haber instalado previamente `git-core`"
