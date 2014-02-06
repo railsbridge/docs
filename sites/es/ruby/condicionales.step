@@ -60,7 +60,7 @@ frutas.each do |fruta|
 end
   CONTENTS
   console 'ruby condicionales_ciclos.rb'
-  message "Prueba cambiando este condicional para que solo imprima frutas con al menos 5 letras en su nombre. ¡También recuerda cambiar la cadena que estás imprimiendo!"
+  message "Prueba cambiando este condicional para que sólo imprima frutas con al menos 5 letras en su nombre. ¡También recuerda cambiar la cadena que estás imprimiendo!"
 end
 
 step do
