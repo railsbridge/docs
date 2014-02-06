@@ -64,7 +64,7 @@ los cambios surtan efecto. "
 end
 
 step "Instala Ruby" do
-  insert "install_ruby"
+  insert "instala_ruby"
 end
 
 step "Instala Rails" do
