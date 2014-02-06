@@ -1,29 +1,29 @@
-step "Open Terminal" do
-  message "Look for **Terminal.app** inside Applications -> Utilities."
+step "Abrir Terminal" do
+  message "Busca **Terminal.app** dentro de Aplicaciones -> Utilidades."
 
-  message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
+  message "Agregala a tu dock; la estarás usando mucho. (Para agregarla al dock, haz click y mantén presionado el ícono del dock una vez que Terminal se abra. Seleciona opciones -> mantener en dock.)"
 
-  tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
+  tip "Ordena tus ventanas para que Terminal y tu navegador esten uno después del otro. Vas a querer *leer* de tu navegador y *escribir* en tu terminal *al mismo tiempo*." 
 end
 
-step "Install A Compiler (XCode or GCC)" do
+step "Instala un Compilador (XCode o GCC)" do
   link "instala_xcode"
 end
 
-step "Install Git" do
-  message "Next we'll install Git, the most popular version control system in the Ruby world:"
+step "Instala Git" do
+  message "Lo siguiente, instalaremos Git, el más popular sistema de contraldor de versiones en el mundo de Ruby:"
 
   console "git --version"
   fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
   message <<-MARKDOWN
 
-If you see that output, you have Git. <a href='#install-rvm'>Move on to the next step.</a>
+Si ves esa salida, tienes Git. <a href='#install-rvm'>Muevéte al siguiente paso.</a>
 
-Otherwise, [Install Homebrew](instala_homebrew). Come back here when you're done.
+De otra forma, [Instala Homebrew](instala_homebrew). Regresa cuando hayas acabado.
   MARKDOWN
 
-  console_with_message "After installing Homebrew, type this in the terminal:", "brew install git"
+  console_with_message "Despues de instalar Homebrew, escribe esto en la terminal:", "brew install git"
 
   verify do
     console "git --version"
@@ -34,11 +34,11 @@ Otherwise, [Install Homebrew](instala_homebrew). Come back here when you're done
 end
 
 a name: "install-rvm"
-step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and_ruby'} do
+step "Instala RVM, el organizador de versiones de Ruby ", {:anchor_name => 'instala_rvm_y_ruby'} do
   link "instala_rvm_y_ruby"
 end
 
-step "Install Rails" do
+step "Instala Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
@@ -46,15 +46,15 @@ step "Install Rails" do
   end
 end
 
-step "Install Sublime Text 2" do
-  message "We'll be using the Sublime Text 2 text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate. Microsoft Word and other word processing programs won't work."
+step "Instala Sublime Text 2" do
+  message "Estaremos usando el editor de texto Sublime Text 2 durante el workshop, aunque eres libre de usar un editor diferente si lo prefieres. Este deberá ser un editor de texto plano, así como vi o TextMate. Microsoft Word y otro procesador de texto no funcionará."
 
-  important "When in doubt, use Sublime Text 2."
+  important "En caso de duda, usa Sublime Text 2."
 
   link "instala_sublime_text_2_para_mac"
 end
 
-verify "successful installation" do
+verify "Instalación exitosa" do
   console "git --version"
   fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
