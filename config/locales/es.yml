@@ -24,3 +24,5 @@ es:
   greyed_out_text: 'El texto en gris puede diferir y no importa.'
   other_pages: 'Otras Páginas'
   expand_all: 'Expandir Todo'
+  deploying: 'Lanzando'
+  troubleshooting: 'Solución de problemas'
