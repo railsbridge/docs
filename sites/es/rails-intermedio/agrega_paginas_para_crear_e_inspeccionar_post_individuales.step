@@ -27,7 +27,7 @@ end
 discussion do
 message <<-MARKDOWN
 * ¿Cómo crearías un recurso? ¿Qué parámetros necesitarás pasar?
-* Luego: ¿Qué es lo que rails hace cuando utilizas el generador de recursos? Encuentra todos los archivos nuevos. Tal vez quieras enlistarlos en un pizarrón.
+* Luego: ¿Qué es lo que Rails hace cuando utilizas el generador de recursos? Encuentra todos los archivos nuevos. Tal vez quieras enlistarlos en un pizarrón.
 * ¿Cómo asociarías un usuario con un post?
   * ¿Qué es lo que tienes que poner en la migración para crear un post?
   * ¿Cómo se asocia esto con el modelo de User y Post?
@@ -36,12 +36,12 @@ message <<-MARKDOWN
   MARKDOWN
   end
 
-  tools_and_references do
-  message <<-MARKDOWN
-  * RailsGuides - Asociaciones Active Record: <http://guides.rubyonrails.org/association_basics.html#the-belongs_to-association>.
-  * RailsGuides - Formularios de Ayuda, sección 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>
-  * RailsGuides - Routes - CRUD, Verbs, and Actions: <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>.
-  * RailsGuides - Active Record Validaciones y Llamadas: <http://guides.rubyonrails.org/active_record_validations_callbacks.html>
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Active Record Associations: <http://guides.rubyonrails.org/association_basics.html#the-belongs_to-association>.
+* RailsGuides - Form Helpers, section 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>.
+* RailsGuides - Routes - CRUD, Verbs, and Actions: <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>.
+* RailsGuides - Active Record Validations and Callbacks: <http://guides.rubyonrails.org/active_record_validations_callbacks.html>.
 MARKDOWN
 end
 
@@ -51,7 +51,7 @@ message <<-MARKDOWN
 * ¡No agregues el código del formulario manualmente! Rails ya lo hace. Revisa los links de RailsGuides mencionados anteriormente.
 * Rails tiene forma de detectar cuando algo ha sido almacenado en la base de datos. Probablemente esto sea útil para mostrar la fecha / hora en la que fue creado un post.
 * Por ahora, vamos a utilizar la dirección de correo del usuario cuando se muestre el autor del post. ¡Puedes crear nombres o identificaciones después! (También, aunque vas a obtener el email del usuario actual desde el modelo User, necesitarás un parámetro de usuario para el recurso Post.)
-* Necesitarás un método `create` para almacenar los datos de tu post - dirígete a la sección Getting Started para ver la información necesaria y ver un ejemplo de cómo crear un método: <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
+* Necesitarás un método `create` para almacenar los datos de tu post - dirígete a la sección Getting Started para obtener la información necesaria y ver un ejemplo de cómo crear un método: <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
 MARKDOWN
 end
 
