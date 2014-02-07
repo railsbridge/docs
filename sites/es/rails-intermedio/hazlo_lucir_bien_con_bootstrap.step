@@ -16,7 +16,7 @@ message <<-MARKDOWN
 * Herramientas de desarrollo de Chrome / plugin Firebug de Firefox - ¡cómo utilizarlas!
 * ¿Qué es Bootstrap y (opcional) por qué todos lo aman (o al menos lo utilizan en todos lados)?
 * Tal vez revisar el archivo home/index.html.erb y cómo se relaciona con layouts/application.html.erb, y ver cómo podrías editarlos para tomar ventaja de bootstrap.
-* Alguién debe explicar cómo funciona erb - lo estarás usando para mostrar el correo del usuario en la parte derecha.
+* Alguien debe explicar cómo funciona erb - lo estarás usando para mostrar el correo del usuario en la parte derecha.
 MARKDOWN
 end
 
@@ -43,12 +43,12 @@ pre <<-MARKDOWN
 <div class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Tabla de Mensajes</a>
+      <a class="navbar-brand" href="#">Tablero de Mensajes</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Inicio</a></li>
     </ul>
-    <p class="navbar-text pull-right">logged_in_user@email.com | <a href="log_out_link_here">Log Out</a></p>
+    <p class="navbar-text pull-right">usuario_con_sesion@email.com | <a href="log_out_link_here">Cerrar Sesión</a></p>
   </div>
 </div>
 MARKDOWN
