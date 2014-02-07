@@ -5,58 +5,58 @@ OS X 10.3-10.5 (Panther, Tiger, Leopard)
   MARKDOWN
 end
 
-step "XCode tools " do
+step "Herramientas de XCode" do
   message <<-MARKDOWN
 
-These are part of OS X, but are not installed by default.
+Son parte de OS X, pero no están instaladas por defecto.
 
-* Insert your OS X DVD.
+* Inserta tu DVD de OS X
 
-* Look for Xcode.mkpg - it may be under "Optional Installs"
+* Busca Xcode.mkpg - tal vez lo encuentres en "Instalaciones opcionales"
 
-* Double click to run the installer. It will take a while - the XCode tools are large.
+* Haz doble click para correr el instalador. Tomará un tiempo - las herramientas de XCode son pesadas.
 
   MARKDOWN
 end
 
 step "Git " do
 
-  option "Leopard or Panther" do
+  option "Leopard o Panther" do
     url "http://code.google.com/p/git-osx-installer/"
 
-    message %q{Click "Download the packages here" which will take you to a list of downloads. Pick Intel if you have an Intel Mac, and Universal Binary if you have a PowerPC Mac.}
+    message %q{Haz click en "Download the packages here" el cual te llevará a la lista de descargas. Escoge Intel si tienes una Mac Intel y Universal Binary si tienes una PowerPC Mac.}
 
     message <<-MESSAGE, class: "pertinent-info"
 
-### Do I have an Intel or PowerPC Mac?
+### ¿Tienes una Mac Intel o PowerPC?
 
-PowerPC (PPC) Macs are Apple's older line of machines with Motorola chips. Macs purchased since 2006 are almost all Intel. To find out for sure:
+Mac PowerPC (PPC) son la línea antigua de Apple con chips de Motorola. Las Macs compradas desde el 2006 son en su mayoría Intel. Para saber a cuál pertenece nuestra Mac:
 
-* Click on the Apple menu in the top left corner of your screen.
-* Select "About this Mac."
-* It should have a line that starts with "Processor." If somewhere in that line it says "Intel," then you have an Intel Mac. Otherwise, you have a PPC Mac.
+* Da click en el menú de Apple en la esquina superior izquierda de tu pantalla.
+* Selecciona "Acerca de esta Mac".
+* Debería de tener una línea que comienza con "Procesador". Si en algún lugar de esa línea dice "Intel", entonces tienes una Mac Intel. De otra forma, tienes una PowerPC. 
 
-For more information, see the [Apple Transition Timeline](http://en.wikipedia.org/wiki/Apple%E2%80%93Intel_transition#Timeline) or the [exhaustive list of Macintosh models](http://en.wikipedia.org/wiki/Timeline_of_Macintosh_models#2000s) on Wikipedia.
+Para más información, visita [Apple Transition Timeline](http://en.wikipedia.org/wiki/Apple%E2%80%93Intel_transition#Timeline) o [exhaustive list of Macintosh models](http://en.wikipedia.org/wiki/Timeline_of_Macintosh_models#2000s) en Wikipedia.
     MESSAGE
   end
 
   option "Tiger" do
-    message "ask a TA to help you install git on Tiger"
-    message "(you probably want to use MacPorts)"
+    message "Pide a un instructor que te ayude a instalar Git en Tiger"
+    message "(probablemente quieres usar MacPorts)"
   end
 
 end
 
-step "Ruby, RubyGems, and Rails " do
+step "Ruby, RubyGems, y Rails " do
 
-  option "Tiger (10.4) and Panther (10.3)" do
-    message "visit <http://rubyosx.rubyforge.org/>"
-    message "Select the correct download in the right side of the page"
+  option "Tiger (10.4) y Panther (10.3)" do
+    message "visita <http://rubyosx.rubyforge.org/>"
+    message "Selecciona la descarga correcta en el lado derecho de la página" 
   end
 
   option "Leopard (10.5)" do
-    message "use the built-in version of Ruby"
-    important "Whenever you install a gem using the built-in Ruby you should precede 'gem install' with 'sudo'"
+    message "usa la versión built-in de Ruby"
+    important "Cuando instales una gema usando el built-in de Ruby deberías utilizar 'sudo' antes de 'gem install'"
   end
   console <<-BASH
 sudo gem install rubygems-update
@@ -67,41 +67,41 @@ sudo gem install rails
 
   message <<-MARKDOWN
 
-If you are having this error:
+Si te aparece este mensaje de error:
     ERROR:  Error installing rubygems-update: hoe requires RubyGems version >= 1.3.1
 
-Try the steps in this order:
+Intenta los pasos en este orden:
 
     sudo gem update --system
     sudo gem install rubygems-update
     sudo update_rubygems
     sudo gem install rails
 
-For Tiger ONLY:
+SOLO para Tiger:
 
-* Install the "X11 User" optional package from your OS X DVD.
+* Instala el "X11 User" paquete opcional de tu DVD de OS X.
 
-* Install [<http://www.macports.org/install.php> MacPorts].
+* Instala [<http://www.macports.org/install.php> MacPorts].
 
 * Ruby: <code>sudo port install ruby</code>
 
 * Gems:
- * download [<http://rubyforge.org/frs/?group_id=126> RubyGems]
- * unpack: <code>tar xzf rubygems-1.3.5.tgz</code>
+ * descarga [<http://rubyforge.org/frs/?group_id=126> RubyGems]
+ * desempaca: <code>tar xzf rubygems-1.3.5.tgz</code>
  * <code>cd rubygems-1.3.5</code>
- * Install:<code>ruby setup.rb</code>
+ * Instala:<code>ruby setup.rb</code>
 
 * Rails: <code>sudo gem install rails --version 2.3.9 --no-rdoc --no-ri</code>
 
   MARKDOWN
 end
 
-step "Install Textmate" do
+step "Instala Textmate" do
   link "instala_textmate"
 end
 
-step "Create an SSH key" do
-  link "crea_una_key_ssh"
+step "Crea una llave SSH" do
+  link "crea_una_llave_ssh"
 end
 
-ext_step "crea_una_cuenta_de_heroku"
+next_step "crea_una_cuenta_de_heroku"
