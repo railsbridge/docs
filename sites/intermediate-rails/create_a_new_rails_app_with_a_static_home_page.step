@@ -28,7 +28,6 @@ end
 
 hints do
 message <<-MARKDOWN
-* You'll definitely want to delete the index.html that Rails provides. If you can't find it, ask your neighbor! 
 * If you have no idea what to put in your home controller, maybe try looking back at a past-Railsbridge app? Or another rails app you have lying about? 
 MARKDOWN
 end

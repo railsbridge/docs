@@ -45,7 +45,7 @@ class Contents < Erector::Widget
       next if (link =~ /^http/)
       next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
       next if (link =~ /(jpg|png)$/)
-      links.push(link) if !links.include? link
+      links.push(link) unless links.include? link
     end
 
     # (stepfiles) links of the form: link "next page"

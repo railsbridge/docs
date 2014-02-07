@@ -75,7 +75,7 @@ class InstallFest < Sinatra::Application
 
   def redirect_sites
     {
-      'curriculum' => 'intro-to-rails'
+        'curriculum' => 'intro-to-rails'
     }
   end
 
@@ -107,12 +107,12 @@ class InstallFest < Sinatra::Application
   def render_page
     begin
       options = {
-        site_name: params[:site],
-        page_name: params[:name],
-        doc_title: Titleizer.title_for_page(params[:name]),
-        doc_path: doc_path,
-        back: params[:back],
-        src: src,
+          site_name: params[:site],
+          page_name: params[:name],
+          doc_title: Titleizer.title_for_page(params[:name]),
+          doc_path: doc_path,
+          back: params[:back],
+          src: src,
       }
 
       case ext
@@ -160,11 +160,11 @@ class InstallFest < Sinatra::Application
   get "/:site/:name/src" do
     begin
       RawPage.new(
-        site_name: params[:site],
-        page_name: params[:name],
-        doc_title: doc_path.split('/').last,
-        doc_path: doc_path,
-        src: src
+          site_name: params[:site],
+          page_name: params[:name],
+          doc_title: doc_path.split('/').last,
+          doc_path: doc_path,
+          src: src
       ).to_html
     rescue Errno::ENOENT => e
       p e
@@ -210,7 +210,7 @@ class InstallFest < Sinatra::Application
   end
 
   get "/:site/:name/:section" do
-    
+
     if params[:site] == 'deck.js'  # hack: todo: put the deck.js file server *ahead* in the rack chain
       forward
     else

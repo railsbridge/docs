@@ -39,14 +39,14 @@ day... unless I really screwed something up. :D
 We're going to be working with:
 
 * ruby 1.9.3 or 2.0.0 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)
-* rails 3.2.x or rails 4.0.x
+* rails 4.0.x
 * bundler
 * sqlite
 * the text editor of your choice
 
 Everything should be set up the night before during our
 install-fest. Please ensure you have everything working _before_ you
-show up for railsbridge on Saturday.
+show up for RailsBridge on Saturday.
 
 You can verify that you have everything working by trying this out in your terminal:
 
