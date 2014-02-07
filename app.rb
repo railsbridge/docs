@@ -32,8 +32,18 @@ class InstallFest < Sinatra::Application
   attr_writer :default_site
 
   def default_site
-    if host && sites.include?(site = host.split(".").first)
-      site
+    if host
+      host_parts = host.split(".")
+      subdomain = host_parts.first
+      if ["es"].include?(subdomain)
+        params[:locale] = subdomain
+        # if request.env['PATH_INFO'] = host_parts[1..-1]
+        "es/" + @default_site
+      elsif sites.include?(subdomain)
+        subdomain
+      else
+        @default_site
+      end
     else
       @default_site
     end
@@ -65,7 +75,7 @@ class InstallFest < Sinatra::Application
 
   def redirect_sites
     {
-      'curriculum' => 'intro-to-rails'
+        'curriculum' => 'intro-to-rails'
     }
   end
 
@@ -74,7 +84,7 @@ class InstallFest < Sinatra::Application
   end
 
   def ext
-    ext = $1 if doc_path.match(/\.(.*)/)
+    $1 if doc_path.match(/\.(.*)/)
   end
 
   def doc_path
@@ -97,12 +107,12 @@ class InstallFest < Sinatra::Application
   def render_page
     begin
       options = {
-        site_name: params[:site],
-        page_name: params[:name],
-        doc_title: Titleizer.title_for_page(params[:name]),
-        doc_path: doc_path,
-        back: params[:back],
-        src: src,
+          site_name: params[:site],
+          page_name: params[:name],
+          doc_title: Titleizer.title_for_page(params[:name]),
+          doc_path: doc_path,
+          back: params[:back],
+          src: src,
       }
 
       case ext
@@ -134,6 +144,11 @@ class InstallFest < Sinatra::Application
     expires 3600, :public
   end
 
+  before '/:locale/*' do
+    I18n.locale       = params[:locale]
+    request.path_info = "/#{ params[:locale] }/#{ params[:splat][0] }"
+  end
+
   get '/favicon.ico' do
     halt 404
   end
@@ -145,11 +160,11 @@ class InstallFest < Sinatra::Application
   get "/:site/:name/src" do
     begin
       RawPage.new(
-        site_name: params[:site],
-        page_name: params[:name],
-        doc_title: doc_path.split('/').last,
-        doc_path: doc_path,
-        src: src
+          site_name: params[:site],
+          page_name: params[:name],
+          doc_title: doc_path.split('/').last,
+          doc_path: doc_path,
+          src: src
       ).to_html
     rescue Errno::ENOENT => e
       p e
@@ -180,10 +195,29 @@ class InstallFest < Sinatra::Application
   end
 
   get "/:site/:name" do
+    params[:site] = "es/#{params[:name]}" if params[:site] == 'es'
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/#{params[:name]}"
     else
+      render_page
+    end
+  end
+
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
+  get "/:site/:name/:section" do
+
+    if params[:site] == 'deck.js'  # hack: todo: put the deck.js file server *ahead* in the rack chain
+      forward
+    else
+      if params[:site] == "es"
+        params[:site] = "es/#{params[:name]}"
+        params[:name] = params[:section]
+      end
       render_page
     end
   end
@@ -206,9 +240,9 @@ class InstallFest < Sinatra::Application
       redirect "#{redirect_sites[site_name]}/"
     elsif sites.include? site_name
       # render the site's index page
-      if site_name == "es"
+      if site_name == 'es'
         params[:site] = "es/#{default_site}"
-        site_name = default_site 
+        site_name = default_site
       end
       params[:name] = site_name
       render_page
