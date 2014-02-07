@@ -8,10 +8,10 @@ MARKDOWN
   table do
     tr do
       th do
-        h2 'Crear Vista,' class: 'centered'
+        h2 'Crear Vista', class: 'centered'
       end
       th do
-        h2 'Mostrar Vista,' class: 'centered'
+        h2 'Mostrar Vista', class: 'centered'
       end
     end
     tr do
