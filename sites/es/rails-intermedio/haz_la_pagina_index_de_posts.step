@@ -1,6 +1,6 @@
 requirements do
 message <<-MARKDOWN
-* El usuario deberá ser capaz de ver en el post nombre, autor, y la fecha de publicación en la página general (o página de inicio).
+* El usuario deberá ser capaz de ver en el post: nombre, autor y la fecha de publicación en la página general (o página de inicio).
 * El nombre del post deberá enlazar a la página que la contiene.
 * La página principal deberá incluir un link o botón para "Nuevo Post"
 MARKDOWN
@@ -15,9 +15,9 @@ end
 
 tools_and_references do
 message <<-MARKDOWN
-* RailsGuides - Listando todos los Posts: http://guides.rubyonrails.org/getting_started.html#listing-all-posts
+* RailsGuides - Listing all posts: http://guides.rubyonrails.org/getting_started.html#listing-all-posts
   * Siéntete libre de omitir la información sobre JSON en la página.
-* Bootstrap - ¡Dale un diseño a esa tabla!: http://twitter.github.com/bootstrap/base-css.html#tables 
+* Bootstrap - ¡Agrega diseño a esa tabla!: http://twitter.github.com/bootstrap/base-css.html#tables 
 MARKDOWN
 end
 
