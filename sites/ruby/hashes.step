@@ -29,7 +29,7 @@ step do
   bikes = [bike1, bike2]
 IRB
   message "Hashes are often used to store the properties of some object. Here, each hash stores the properties of a bike."
-  message "The *keys* are often the name of a property (here *make*, *color*) while tha *values* are the value of the property for a given object (here, *Trek*, *silver*)."
+  message "The *keys* are often the name of a property (here *make*, *color*) while the *values* are the value of the property for a given object (here, *Trek*, *silver*)."
   message "Consider how you might have had to store this data if you didn't have hash. What else might you want to store in a hash?"
   irb <<-IRB
   bikes[0]['make']
