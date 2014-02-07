@@ -45,7 +45,7 @@ step "Create a new Rails app" do
 
   fuzzy_result <<-TEXT
     => Booting WEBrick
-    => Rails 3.2{FUZZY}.x{/FUZZY} application starting in development on http://0.0.0.0:3000
+    => Rails 4.0{FUZZY}.x{/FUZZY} application starting in development on http://0.0.0.0:3000
     => Call with -d to detach
     => Ctrl-C to shutdown server
     [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
@@ -60,7 +60,7 @@ step "Create a new Rails app" do
   message <<-MARKDOWN
     * In your browser, go to <http://localhost:3000>
 
-    ![Successful Rails Install](img/successful-rails-install.jpg)
+    ![Successful Rails Install](img/successful_rails_install.png)
 
     * Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
   MARKDOWN
@@ -74,7 +74,7 @@ step "Generate a database model" do
   end
 
   console <<-BASH
-    rails generate scaffold user name:string email:string address:text active:boolean
+    rails generate scaffold drink name:string temperature:integer
   BASH
   console <<-BASH
     rake db:migrate
@@ -86,11 +86,18 @@ step "Generate a database model" do
   message <<-MARKDOWN
     **Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command.
 
-    Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/users>
+    Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/drinks>
 
-    Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)
+    1. Click on "New drink"
+    2. Enter Cappuccino for the name
+    3. Enter 135 for the temperature.
+    4. Click on "Create Drink".
 
-    In your Terminal window where you ran `rails server`, type **Control-C** (or Control-Break,Y) to kill(stop) the server.
+    (The window where you ran `rails server` will display debugging information as you do this.)
+
+    You should see: ![Drink was successfully created](img/get_a_sticker_you_should_see.png)
+
+    In your terminal, Hold Control and hit C (or on Windows, Control-Break, Y) to stop the rails server.
   MARKDOWN
 end
 
@@ -196,7 +203,7 @@ bundle install --without production
     message "Remove this line and replace it with:"
 
     source_code :ruby, <<-RUBY
-      root 'users#index'
+      root 'drinks#index'
     RUBY
   end
 
@@ -241,15 +248,14 @@ bundle install --without production
     console "heroku run rake db:migrate"
 
     result <<-OUTPUT
-      Running rake db:migrate attached to terminal... up, run.1
-      Migrating to CreateUsers (20111204065949)
-      ==  CreateUsers: migrating ====================================================
-      -- create_table(:users)
-         -> 0.0122s
-      ==  CreateUsers: migrated (0.0123s) ===========================================
+      Migrating to CreateDrinks (20120428044153)
+      ==  CreateDrinks: migrating ===================================================
+      -- create_table(:drinks)
+         -> 0.0084s
+      ==  CreateDrinks: migrated (0.0085s) ==========================================
     OUTPUT
 
-    message "The long number after CreateUsers is a timestamp. Yours will be different!"
+    message "The long number after CreateDrinks is a timestamp. Yours will be different!"
   end
 
   step "Visit your new application" do
@@ -264,13 +270,9 @@ bundle install --without production
       console "heroku open"
     end
 
-    message "The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+    message "The URL for your app is <code>*application-name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
 
-    tip "If using <strong>Rails 4.0.x</strong>, the default welcome page will not show on Heroku. You will get a message saying that 'The page you were looking for doesn't exist.' Do not worry about this for now."
-
-    message "In the browser, add <code>/users</code> to the end of the URL and hit *enter*. Verify you see the user list page."
-
-    message "Create and save a new user to verify you can write to the database on Heroku."
+    message "Create and save a new drink to verify you can write to the database on Heroku."
 
   end
 end
