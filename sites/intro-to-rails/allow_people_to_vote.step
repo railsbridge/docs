@@ -23,7 +23,7 @@ steps {
   end
 
   step "Add a new route for voting" do
-    message "Open `app/config/routes.rb` and find the section that looks like this:"
+    message "Open `config/routes.rb` and find the section that looks like this:"
     source_code :ruby, <<-RUBY
       resources :topics
     RUBY
