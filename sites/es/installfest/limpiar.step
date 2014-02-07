@@ -19,8 +19,3 @@ step "Elimina la prueba_app de tu computadora" do
   end
 end
 
-step "Elimina la aplicación calcomanía de tu computadora" do
-    message "Haz lo mismo para la carpeta calcomanía."
-	message "¡Ahora sí ya terminaste!"
-end
-
