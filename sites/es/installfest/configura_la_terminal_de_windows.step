@@ -7,7 +7,7 @@ spanish_step "Configura la Terminal de Windows" do
 
   message "En la pestaña de *Diseño*, ajusta *Tamaño de la ventana* para que la ventana sea más o menos de la mitad de lo ancho de tu pantalla, y lo más alto posible sin que tape la barra de tareas (esto puede requerir un poco de prueba y error)."
 
-  message "En la pestaña de *Diseño*, aumenta el *Tamaño del búfer de pantalla* Alto a 1000."
+  message "En la pestaña de *Diseño*, aumenta el *Tamaño del búfer de pantalla* Altura a 1000."
 
   message "Haz click en Aplicar. En el diálogo que aparece, selecciona **Modifica el accesso rápido que inicia esta ventana.**"
 end
