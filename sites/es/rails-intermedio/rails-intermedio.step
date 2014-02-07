@@ -26,10 +26,10 @@ message <<-MARKDOWN
 
 * Cada vez que tu aplicación se encuentre en un estado funcional, antes de añadir cualquier otra característica, ¡haz un COMMIT! Las nuevas funcionalidades descompondrán algunas cosas, lo cual es correcto, pero vas a querer ser capaz de regresar todo a una versión anterior si es necesario.
 
-* NOTA IMPORTANTE: Nombramos a la secciones retos ¡porque son retantes! Este currículum será más entretenido si es colaborativo — habla del tema con tu instructor, TAs, y otros estudiantes. Esto es un estilo muy diferente de currículum al Suggestotron, así que no te desanimes si no estás seguro de qué hacer enseguida.
+* NOTA IMPORTANTE: Nombramos a la secciones retos ¡porque son desafiantes! Este currículum será más entretenido si es colaborativo — habla del tema con tu instructor, TAs, y otros estudiantes. Esto es un estilo muy diferente de currículum al Suggestotron, así que no te desanimes si no estás seguro de qué hacer enseguida.
 
 ## Como utilizar este currículum
-* Los retos son cosas en las que tienes que trabajar en un determinado tiempo. Tienen sus requerimientos — una vez que completaste (o tu grupo) una serie de requerimientos, ve a la siguiente serie.
+* Los retos son tareas en las que tienes que trabajar en un determinado tiempo. Tienen sus requerimientos — una vez que completaste (o tu grupo) una serie de requerimientos, ve a la siguiente serie.
 * Los requerimientos en este currículum no distan mucho de lo que es un requerimiento en la metodología de desarrollo ágil — lo que debe estar en la aplicación definido por quien sea que esté diseñando/decidiendo cosas relacionadas con el producto. Excepto aquí, hemos lanzado algunos requerimientos que no son para la aplicación, como la habilidad de explicar un concepto a un compañero.
 * Las discusiones son encabezadas por el instructor; es lo mas cerca que este currículum estará a una enseñanza unidireccional.
 * Las pistas son lo que parecen, como lo son Herramientas & Referencias.
