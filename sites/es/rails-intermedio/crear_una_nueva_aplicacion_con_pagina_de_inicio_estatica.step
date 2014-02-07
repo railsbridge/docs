@@ -1,0 +1,35 @@
+requirements do
+message <<-MARKDOWN
+* Deberás tener una nueva aplicación Rails con una página estática que esté bajo tu control. Comprueba que el controlador para esta página se llame **HomeController**.
+* Tú, como desarrollador, deberás explicar a tu instructor o a otro compañero cómo Rails muestra la página.
+MARKDOWN
+  img class: 'noborder', src: 'img/static_home_page.png'
+end
+
+discussion do
+message <<-MARKDOWN
+* Con el fin de tener una página estática, necesitarás una ruta, un controlador, y una vista. ¡Coméntalo con algún compañero!
+  * En serio. Si no comentas todo esto, las cosas se complicarán mucho.
+* ¡Generadores! Rails tiene bastante de ellos. Trata de explorar la salida de `rails generate`.
+* No estamos usando `rails generate scaffold` en este currículum. Porque tu generarás tus Modelos, Vistas y Controladores, esto te obligará a comprender más y practicar. Los instructores quizá comenten lo que ellos harían en un caso real y sus opiniones sobre la elección con fines de aprendizaje.
+* ¿Qué es lo que necesitas para agregar tu controlador de inicio (después de haberlo hecho) para tener tu página estática?
+* ¿Cómo se relaciona la vista home/index.html.erb con layouts/application.html.erb?
+* ¿Cuál es la importancia de yield en la vista de aplicación?
+* ¿Qué es lo que hace el controlador de home?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Configurando la aplicación de la página de inicio: <http://guides.rubyonrails.org/getting_started.html#setting-the-application-home-page>.
+* RailsGuides - resumen de controles: <http://guides.rubyonrails.org/action_controller_overview.html>.
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* Si no tienes idea de qué poner en tu controlador de inicio, tal vez quieras regresar y consultar una aplicación de RailsBridge anterior, o alguna otra aplicación Rails que hayas hecho.
+MARKDOWN
+end
+
+next_step "instala_devise"

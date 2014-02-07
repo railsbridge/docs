@@ -23,6 +23,13 @@ steps do
   end
 
   step do
+    message "Check to see if you have any existing suggestotron apps from a previous workshop."
+    console "ls"
+    message "That command will list the files in your railsbridge directory. If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+    console "rm -rf suggestotron"
+  end
+
+  step do
     console "rails new suggestotron"
     message "'rails new' creates a new rails project with the name you give."
     message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."

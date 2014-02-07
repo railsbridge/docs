@@ -11,7 +11,7 @@ describe Step do
   def html_doc(src = "step 'hello'; step 'goodbye'")
     @html_doc ||= begin
       step = Step.new(src: src,
-        doc_path: "/tmp/hello.step"
+                      doc_path: "/tmp/hello.step"
       )
       @html = step.to_html
       Nokogiri.parse("<html>#{@html}</html>")
