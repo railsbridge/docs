@@ -1,8 +1,4 @@
 class SiteIndex < Erector::Widget
-  @@here = File.expand_path(File.dirname(__FILE__))
-  @@project_root = File.dirname(@@here)
-  @@sites_dir = File.expand_path("sites", @@project_root)
-
   needs :site_name
   attr_accessor :site_name
 
@@ -12,7 +8,7 @@ class SiteIndex < Erector::Widget
 
   def sites
     return @sites if @sites
-    @sites = Dir.glob("#{@@sites_dir}/**").map { |filename| File.basename(filename) }.sort
+    @sites = Dir.glob("#{Site.sites_dir}/**").map { |filename| File.basename(filename) }.sort
   end
 
   def site_link site
