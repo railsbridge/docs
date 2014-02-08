@@ -1,10 +1,14 @@
 class Site
   @@here = File.expand_path(File.dirname(__FILE__))
   @@project_root = File.dirname(@@here)
-  @@sites_dir = File.expand_path("sites", @@project_root)
+  
+  def self.sites_dir locale = "en"
+    sites_dir = File.join(["sites", locale].compact)
+    File.expand_path(sites_dir, @@project_root)
+  end
 
-  def self.all
-    Dir["#{@@sites_dir}/*"].map{|dir| Site.new(dir)}
+  def self.all locale = "en"
+    Dir["#{sites_dir(locale)}/*"].map{|dir| Site.new(dir)}
   end
   
   def self.named name
