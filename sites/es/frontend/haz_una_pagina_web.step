@@ -33,7 +33,7 @@ Este archivo, 'index.html', incluye un link al archivo Javascript y CSS, pero se
 Las etiquetas de comentarios en HTML comienzan con `<!--` y terminan con `-->`. Aquí hay un ejemplo:
    MARKDOWN
    source_code :html, "<!-- Esto es un comentario. El navegador lo ignora -->"
-    message "Mira en index.html y encuentra los links a los archivos CSS y JavaScript. Elimina las etiquetas de los comentarios alrededor de ellos, así el navegador los podrá leer."
+    message "Hecha un vistazo a index.html y encuentra los links a los archivos CSS y JavaScript. Elimina las etiquetas de los comentarios alrededor de ellos, así el navegador los podrá leer."
   end
 
 end
