@@ -1,0 +1,88 @@
+goals do
+  goal do
+    rawtext(md2html('Utiliza `gets` para recibir la entrada de datos desde el teclado por parte del usuario de tu programa.'))
+  end
+  goal 'Utiliza una sentencia condicional para ejecutar una parte de código sólo una vez.'
+end
+
+step do
+  message 'Crea un archivo nuevo llamado condicionales.rb'
+  type_in_file 'condicionales.rb', <<-'CONTENTS'
+print "¿Cuántas manzanas tienes? > "
+contador = gets.to_i
+puts "Tienes #{contador} manzanas."
+  CONTENTS
+  console 'ruby condicionales.rb'
+  message 'Cuando se te solicite, ingresa un número de manzanas y presiona enter.'
+  message "`print` es como `puts` pero no genera una línea nueva después de imprimir en pantalla."
+  message "`gets`, o **get** **s**tring, pausa tu programa y se espera a que el usuario escriba algo y presione la tecla enter. Luego devuelve el valor hacia tu programa y continúa con la ejecución. Como el usuario pudo haber escrito cualquier cosa ('banana', '19.2', '<<!!@@') utilizamos to_i para asegurarnos que lo que venga es un entero. Si el usuario no escribió un entero válido, `to_i` regresa `0`."
+end
+
+step do
+  message 'Continuando hasta el final de condicionales.rb...'
+  type_in_file 'condicionales.rb', <<-'CONTENTS'
+if contador > 5
+  puts "¡Muchas manzanas!"
+else
+  puts 'No muchas manzanas...'
+end
+  CONTENTS
+  console 'ruby condicionales.rb'
+  message 'La estructura `if ... else ... end` es una manera de cambiar cuáles líneas de tu programa ejecutar dependiendo de los datos.'
+  message 'Prueba ejecutando tu programa con diferentes valores para __contador__ para ver cada parte del condicional ejecutada.'
+end
+
+step do
+  message 'Lo que va después de `if` es cualquier expresión que regrese un **booleano**, (los valores `true` o `false`). Aquí están algunas expresiones que regresan `true` o `false`:'
+  irb <<-IRB
+15 < 5
+10 == 12
+'foo' != 'bar'
+  IRB
+  irb <<-IRB
+'sandwich'.end_with?('h')
+'sandwich'.end_with?('z')
+[1,2,3].include?(2)
+[1,2,3].include?(9)
+  IRB
+  message 'Muchos métodos también regresan `true` o `false`. Por convención, los métodos en Ruby que regresan booleanos terminan con signo de interrogación.'
+end
+
+step do
+  message 'También puedes anidar un condicional en un ciclo.'
+  message 'Crea un nuevo archivo llamado condicionales_ciclos.rb'
+  type_in_file 'condicionales_ciclos.rb', <<-'CONTENTS'
+frutas = ['manzana', 'pera', 'albaricoque']
+frutas.each do |fruta|
+  if fruta.start_with?('a')
+    puts "#{fruta} empieza con la letra a."
+  end
+end
+  CONTENTS
+  console 'ruby condicionales_ciclos.rb'
+  message "Prueba cambiando este condicional para que sólo imprima frutas con al menos 5 letras en su nombre. ¡También recuerda cambiar la cadena que estás imprimiendo!"
+end
+
+step do
+    message 'Crea un archivo nuevo llamado ciclo_while.rb'
+    type_in_file 'ciclo_while.rb', <<-'CONTENTS'
+total = 0
+user_input = nil
+while user_input != 'alto'
+  print 'Ingresa un número para agregar al total. >'
+  user_input = gets.chomp
+  total = total + user_input.to_i
+end
+puts "¡Tu total final fue #{total}!"
+    CONTENTS
+    console 'ruby ciclo_while.rb'
+    message "Un ciclo **while** continúa repitiéndose hasta que cierta sentencia es falsa. Aquí, el programa continuamente nos pregunta un número hasta que decimos 'alto'."
+    message "¡Es fácil para un ciclo while salirse de control! Si el cuerpo de tu ciclo no hace nada para hacer la condición del ciclo **while** falsa, tu ciclo se ejecutará para siempre."
+end
+
+explanation do
+  message "Sin algún tipo de condicional, tu programa haría lo mismo cada vez. Los condicionales te permiten hacer cosas diferentes dependiendo de los datos que tienes a la mano."
+  message '¡Ahora que conoces los *condicionales*, *ciclos*, *arreglos*, *hashes* y *cadenas*, puedes hacer algunos programas complicados!'
+end
+
+next_step 'funciones'
