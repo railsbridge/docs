@@ -6,7 +6,7 @@ end
 steps do
 
   step do
-    message "Primero, incluyamos el código jQuery en el archivo index.html (no en el archivo hello.html), así podemos empezar a trabajar en el. Google y Microsoft almacenan copias publicas de jQuery que puedes enlazar, ni siquiera ocupas descargarlas. (El navegador puede descargar archivos de sitios, si incluyes el link a ellos.) Agrega está línea dentro de tu documento en `head`:"
+    message "Primero, incluyamos el código jQuery en el archivo index.html (no en el archivo hello.html), así podemos empezar a trabajar en él. Google y Microsoft almacenan copias publicas de jQuery que puedes enlazar, ni siquiera ocupas descargarlas. (El navegador puede descargar archivos de sitios, si incluyes el link a ellos.) Agrega esta línea dentro de tu documento en `head`:"
     source_code :html, <<-HTML
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
     HTML
@@ -35,7 +35,7 @@ $("#copyright").click(function(){
   $(this).css('color','purple'); 
 });
     JS
-    message "Cuando des click en la línea del copyright al final de la página, deberás de ver un resultado como esté:"
+    message "Cuando des click en la línea del copyright al final de la página, deberás ver un resultado como éste:"
     img src: 'img/jquery_result.png'
   end
 
@@ -47,10 +47,10 @@ explanation do:
 
 ## ¿Qué hicimos con jQuery?
 
-Usamos jQuery para manejar el evento click y seguimos las instrucciones para cambiar el estilo de elementos cuando se le hace click. Agarramos todo el código en una llamada `$(document).ready(function(){ ... });` para asegurarnos de que solo corra cuando el navegador lea el documento y esté listo para actuar en el.
+Usamos jQuery para manejar el evento click y seguimos las instrucciones para cambiar el estilo de elementos cuando se le hace click. Agarramos todo el código en una llamada `$(document).ready(function(){ ... });` para asegurarnos de que solo corra cuando el navegador lea el documento y esté listo para actuar en él.
 
 Cuando trabajes con tu documento HTML en jQuery, estarás haciendo algo llamado **manipulación DOM.** El DOM es el documento del modelo del objeto &mdash; es la representación de tu HTML que habita en la capa de tu JavaScript. Cuando la gente dice que javascript es difícil, frecuentemente se refieren a que la _manipulación DOM_ es difícil &mdash; estás forzado a pensar en tu documento con 3 modelos completamente diferentes en cuestión de todos a uno (uno para HTML, uno para CSS, uno para JavaScript).
-jQuery le ofrece a los desarrolladores la facilidad, de una interfaz más concisa para trabajar con el DOM que con lo que hace nativamente JavaScript.
+jQuery le ofrece a los desarrolladores la facilidad de una interfaz más concisa para trabajar con el DOM que con lo que hace nativamente JavaScript.
 
 
 ## ¿Por qué jQuery?
@@ -59,10 +59,10 @@ jQuery es una librería de código escrita en JavaScript. Cualquier cosa que pue
 
 * jQuery te permite escribir código que se ejecutará en varios navegadores sin modificación. Aunque esto se implemente conforme pasan los años, hay ciertas diferencias en cuanto como escribes JavaScript para navegadores populares (como Chrome) a diferencia de otros (como Internet Explorer 8). jQuery te deja escribir tus funciones de una sola manera, y después de que tu código es cargado en el navegador del usuario, jQuery hace el trabajo de traducir el formato correcto para el navegador que se esté utilizando.
 
-* jQuery te permite seleccionar elementos usando la misma sintaxis de CSS. Desde que varios desarrolladores web son buenos seleccionando elementos con CSS, puedes cargar el mismo conocimiento a JavaScript.
+* jQuery te permite seleccionar elementos usando la misma sintaxis de CSS. Desde que varios desarrolladores web son buenos seleccionando elementos con CSS, puedes utilizar el mismo conocimiento en JavaScript.
 
-* jQuery esta diseñado para hacerle la vida más fácil a los desarrolladores web, y tiene muchas funciones de abreviación para hacer cosas comunes como animaciones y mostrar y ocultar elementos.
-jQuery no es la única opción al framework JavaScript, solo es uno popular.
+* jQuery está diseñado para hacerle la vida más fácil a los desarrolladores web, y tiene muchas funciones de abreviación para hacer cosas comunes como animaciones y mostrar y ocultar elementos.
+jQuery no es la única opción al framework JavaScript, solo es popular.
 Puedes ver otras librerías como Dojo, Zepto o YUI.
 
   MARKDOWN
