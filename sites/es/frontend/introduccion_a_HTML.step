@@ -1,0 +1,86 @@
+goals do
+  goal "Crear un archivo HTML en blanco"
+  goal "Ver cómo el archivo es interpretado por el navegador"
+end
+
+overview do
+
+  message <<-MARKDOWN
+
+## ¿Qué es HTML?
+
+HTML significa __H__yper-__t__ext __M__arkup __L__anguage.
+
+Vamos a revisar y explicar cada una de estas palabras en orden inverso...
+
+* __L__anguage - La gente utiliza diferentes lenguajes para diferentes tipos de comunicación.
+  Usamos lenguajes tales como el Inglés y el Mandarín para la comunicación humana o lenguajes como Ruby o Java para dar instrucciones a la computadora. HTML es un lenguaje especial para describir documentos.
+
+* __M__arkup - Ser un lenguaje de *marcado* significa que HTML está mezclado con contenido de texto plano.
+  Piensa en alguna ocasión en la que hayas entregado un ensayo a tu maestro. El maestro lee el ensayo y lo *marca* con comentarios o sugerencias, agregando información extra en la parte superior del contenido del texto.
+
+- __H__yper-__t__ext - Este término proviene de que las primeras computadoras solo podían trabajar con archivos de texto 
+  plano. Los usuarios de los 60s quisieron enriquecer este texto y hacerlo más fácil de trabajar. Así, el hipertexto nació. Es texto porque el archivo es almacenado como texto plano, pero es hyper ya que el texto tiene un significado especial más allá del texto plano cuando es interpretado por un programa especial. Para HTML, ese programa especial es tu navegador.
+  MARKDOWN
+
+
+
+end
+
+steps do
+
+  step do
+  	message <<MARKDOWN
+Necesitarás arrancar tu editor de texto (como Sublime Text, Komod Edit, o Text Wrangler) para estos pasos. ¡Haremos un documento HTML!
+
+Crea un nuevo archivo y nómbralo <b>hello.html</b>. (En algunos editores, puede que necesites agregar el tipo de archivo 'HTML'; pero usualmente, la extensión .html será suficiente.)
+
+<img src='img/hello_html.png'>
+
+Nota que la extensión es .html. Le indica al navegador que el contenido lo debe desplegar como HTML.
+
+Escribe en el documento HTML que acabas de crear:
+MARKDOWN
+
+	source_code "Hello World!"
+	message "Guarda el archivo en un lugar donde puedas encontrarlo fácilmente, como tu Escritorio."
+  end
+
+  step do
+    message <<MARKDOWN
+Abre Chrome y ve al menú Archivo, Abrir Archivo, después selecciona el archivo de tu escitorio o de cualquier lugar donde lo hayas puesto.
+
+<img src='img/hello_world.png'>
+
+Aunque tu archivo no contenga una etiqueta HTML aún, los navegadores son buenos mostrando texto en pantalla, así que el navegador te mostrará tu texto.
+MARKDOWN
+  end
+
+  step do
+    message "Un poco aburrido, ¿verdad? Para hacerlo lucir un poco menos plano, agregemos una etiqueta HTML. Actualiza el contenido de tu archivo hello.html para que luzca así:"
+    source_code :html, "¡Hola <em>Mundo</em>!"
+    message "La etiqueta HTML `em` le dice a tu navegador que agregue <em>én</em>fasis a esa cadena de texto. Recarga tu navegador y verás el efecto:"
+    message "<img src='img/hello_world_jazzy.png'>"
+  end
+
+message <<-MARKDOWN
+
+## HTML son Etiquetas
+
+El navegador necesita mas información que solamente la extensión del archivo para desplegar el contenido de sitio web. La manera en que proveemos esa información es *marcando* tu texto con pistas de contenido en la forma de etiquetas HTML ¡Que es lo que acabas de hacer, agregando la etiqueta `<em>` a tu página!
+
+Una etiqueta HTML está encerrada entre paréntesis angulares, los cuales lucen así: `<`,`>`. La mayoría de las etiquetas tienen una etiqueta de cierre con una diagonal. Las etiquetas describen el contenido que encierran, en nuestro ejemplo, haciendo énfasis en la palabra "mundo".
+
+__Etiqueta de apertura__: `<em>`
+
+__Contenido__: `mundo`
+
+__Etiqueta de cierre__: `</em>`
+
+Y todas estas cosas combinadas&mdash;etiqueta de apertura, contenido, y etiqueta de cierre&mdash;son llamadas __elementos__ HTML: `<em>Mundo</em>`
+
+MARKDOWN
+
+end
+
+next_step "etiquetas_HTML"
