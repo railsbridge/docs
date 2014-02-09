@@ -36,7 +36,7 @@ Verifica que los archivos están en el directorio.
 Ahora deberías estar listo para escribir JavaScript y manipular los elementos en la pagina HTML (el siguiente paso).
 
 ## Más información acerca de Git (material extra que puedes leer después si así lo deseas)
-[Git](http://git-scm.com) no solo es usado para transferir archivos, es uno de varios [sistemas de control de versiones](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software)
+[Git](http://git-scm.com) no sólo es usado para transferir archivos, es uno de varios [sistemas de control de versiones](http://en.wikipedia.org/wiki/Comparison_of_revision_control_software)
 que te permiten respaldar tus archivos y compartirlos con otros en un grupo de desarrollo. RailsBridge tiene sus archivos en [GitHub](http://github.com),
 un [sitio público de hosting de Git](https://git.wiki.kernel.org/index.php/GitHosting).
 
