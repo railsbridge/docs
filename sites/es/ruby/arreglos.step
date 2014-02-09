@@ -47,7 +47,7 @@ IRB
 frutas + ['mango']
 frutas
 IRB
-  message 'El operador de suma (+) no modifica el arreglo existente, éste crea uno nuevo. ¿Cómo podrias escribir esa última línea de código para también modificar el arreglo de frutas? '
+  message 'El operador de suma (+) no modifica el arreglo existente, éste crea uno nuevo. ¿Cómo podrías escribir esa última línea de código para también modificar el arreglo de frutas? '
 end
 
 step do
@@ -56,7 +56,7 @@ frutas = ["kiwi", "fresa", "ciruela"]
 frutas.push('manzana')
 frutas.pop()
 IRB
-  message 'Ruby tiene muchos métodos para modificar arreglos. ¿Qué hicieron éstos dos métodos?'
+  message 'Ruby tiene muchos métodos para modificar arreglos. ¿Qué hicieron estos dos métodos?'
 end
 
 explanation do
@@ -65,7 +65,7 @@ explanation do
   table class: 'bordered' do
     tr do
       td 'length'
-      td '¿qué tan grande es éste arreglo? (cuántos elementos)'
+      td '¿qué tan grande es este arreglo? (cuántos elementos)'
     end
     tr do
       td 'first'
