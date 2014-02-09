@@ -1,0 +1,93 @@
+goals do
+  goal "Revisa tus archivos de inicio en el navegador"
+  goal "Compara estrategias para la inclusión del CSS y Javascript (misma línea vs. link)"
+end
+
+steps do
+
+ step do
+   message <<-MARKDOWN
+Arrastra la página 'index.html' de tu proyecto al ícono de tu navegador web. Tu navegador deberá verse como esto:
+
+<img src='img/page.png'>
+
+    MARKDOWN
+ end
+
+ steps do
+   message <<-MARKDOWN
+Arrastra la página 'index.html' de tu proyecto al ícono de tu editor de texto. El editor debería verse de esta forma:
+
+<img src='img/page_html.png'>
+
+Abriendo el mismo archivo en el navegador y en el editor de texto te deja ver el efecto de cada cambio en el código después de que lo haces.
+    MARKDOWN
+ end
+
+ step do
+   message <<-MARKDOWN
+Recordarás como cuando trabajamos con nuestro archivo hello.html, pusimos Javascript y CSS directamente en el documento HTML. También puedes agregar el js y el css en archivos externos, mediante un link.
+
+Este archivo, 'index.html', incluye un link al archivo Javascript y CSS, pero se comentan aparte. (en una etiqueta HTML que le diga al navegador, '¡Ignora Esto!').
+
+Las etiquetas de comentarios en HTML comienzan con `<!--` y terminan con `-->`. Aquí hay un ejemplo:
+   MARKDOWN
+   source_code :html, "<!-- Esto es un comentario. El navegador lo ignora -->"
+    message "Hecha un vistazo a index.html y encuentra los links a los archivos CSS y JavaScript. Elimina las etiquetas de los comentarios alrededor de ellos, así el navegador los podrá leer."
+  end
+
+end
+
+explanation do 
+  
+  message <<-MARKDOWN
+
+## Misma Línea vs. Links
+
+Javascript y CSS se pueden poner directamente en la página HTML, pero en proyectos más grandes, usualmente querrás poner tu js y css en archivos separados e incluirlos en tu HTML por medio de links.
+
+Agregar links te ayudará a mantener tu código organizado y facilitará su mantenimiento. Quiere decir que, por ejemplo, si cambias el estilo de los botones en tu sitio web, deberás cambiarlo en un solo lugar, en vez de cambiarlo en cada página.
+
+### Javascript
+
+* Una etiqueta Javascript se ve así cuando se incluye directamente en el código HTML:
+
+  MARKDOWN
+  source_code :html, <<-HTML
+<script type="text/javascript">
+  // ¡Tu código va aquí! 
+</script>
+  HTML
+  message <<-MARKDOWN
+
+* Una etiqueta Javascript se ve de esta forma cuando el código está enlazado:
+
+ MARKDOWN
+ source_code :html, <<-HTML
+<script src="resources/javascript.js" type="text/javascript"></script>
+  HTML
+  message <<-MARKDOWN
+
+### CSS
+
+* Una hoja de estilo CSS se ve de esta forma cuando se incluye directamente en el código HTML:
+  
+  MARKDOWN
+  source_code :html, <<-HTML
+<style type="text/css" media="all">
+  /* ¡Tus estilos van aquí! */ 
+</style>
+  HTML
+  message <<-MARKDOWN
+
+* Una etiqueta CSS se ve de esta forma cuando el código está enlazado:
+
+  MARKDOWN
+  source_code :html, <<-HTML
+<link rel="stylesheet" href="resources/layout.css" type="text/css">
+  HTML
+end
+
+insert 'considera_lanzar_a_github'
+
+next_step "agrega_mas_elementos"
