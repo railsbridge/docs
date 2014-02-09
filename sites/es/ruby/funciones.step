@@ -1,0 +1,28 @@
+goals do
+  goal "Crear una función"
+  goal "Llamar una función"
+end
+
+step do
+  message 'Crea un nuevo archivo llamado area.rb'
+  type_in_file 'area.rb', <<-'CONTENTS'
+def area_circulo(radio)
+  Math::PI * (radio ** 2)
+end
+
+print "¿Cuál es el radio de tu círculo? > "
+radio = gets.to_i
+
+puts "Tu círculo tiene un área de #{area_circulo(radio)}"
+  CONTENTS
+  console 'ruby area.rb'
+  message 'Cuando se te solicite, ingresa un radio para tu círculo.'
+end
+
+explanation do
+  message "A medida que tus programas se vuelven más y más complicados, querrás agrupar código en **funciones** que puedan ser llamadas una y otra vez."
+  message "Una **función** inicia con **def**, seguida del nombre. Después viene cualquier **variable** que se necesite, seguida del propio cuerpo de la función. Por último, la definición de funciones se termina con la palabra clave **end**."
+  message "Algunos programadores te dirán que técnicamente Ruby no tiene **funciones**, y que realmente todos son **métodos**. Sería bueno golpear a estas personas."
+end
+
+next_step 'objetos'
