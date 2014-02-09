@@ -1,4 +1,4 @@
-spanish_step "Configura la Terminal de Windows" do
+step "Configura la Terminal de Windows" do
   message "Haz click derecho en la barra del menú y selecciona **Propiedades**"
 
   message "En la pestaña de *Opciones*, habilita la casilla de **Modalidad de edición rápida**. Esto te permitirá cortar y pegar visualmente."
