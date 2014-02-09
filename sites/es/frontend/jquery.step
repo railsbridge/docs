@@ -16,7 +16,7 @@ end
 
 step do
   message "jQuery es una librería de JavaScript que está diseñada para facilitar la interacción con el contenido de tu HTML. Cuando estás escribiendo jQuery, estás escribiendo JavaScript &mdash; estás interactuando con objetos y funciones que jQuery ya tiene definidos."
-  message "Desde que usas jQuery para interactuar con tu documento, querrás esperar a que tu documento esté listo y cargado antes de ejecutar tu código. jQuery tiene un método de carga llamado 'ready' y lo revisa, y ejecuta tu código después. Agreguemos esto a tu archivo 'javascript.js', así podrás escribir algo de jQuery."
+  message "Desde que usas jQuery para interactuar con tu documento, querrás esperar a que tu documento esté listo y cargado antes de ejecutar tu código. jQuery tiene un método de carga llamado 'ready' y lo revisa, y ejecuta tu código después. Agreguémos esto a tu archivo 'javascript.js', así podrás escribir algo de jQuery."
   source_code :js, <<-JS
 $(document).ready(function() {
   /* Agrega código de los siguientes pasos aquí */.
@@ -29,13 +29,13 @@ $(document).ready(function() {
     source_code :js, <<-JS
 $("selector").click(function(){ /* do something */ });
     JS
-    message "Agreguemos un selector real y hagámos que la función arroje un resultado:"
+    message "Agreguémos un selector real y hagamos que la función arroje un resultado:"
     source_code :js, <<-JS
 $("#copyright").click(function(){ 
   $(this).css('color','purple'); 
 });
     JS
-    message "Cuando des click en la línea del copyright al final de la página, deberás ver un resultado como éste:"
+    message "Cuando hagas click en la línea del copyright al final de la página, deberás ver un resultado como éste:"
     img src: 'img/jquery_result.png'
   end
 
@@ -57,7 +57,7 @@ jQuery le ofrece a los desarrolladores la facilidad de una interfaz más concisa
 
 jQuery es una librería de código escrita en JavaScript. Cualquier cosa que puedas hacer con jQuery puedes escribirla directamente también en JavaScript sin jQuery, pero hay ciertas ventajas:
 
-* jQuery te permite escribir código que se ejecutará en varios navegadores sin modificación. Aunque esto se implemente conforme pasan los años, hay ciertas diferencias en cuanto como escribes JavaScript para navegadores populares (como Chrome) a diferencia de otros (como Internet Explorer 8). jQuery te deja escribir tus funciones de una sola manera, y después de que tu código es cargado en el navegador del usuario, jQuery hace el trabajo de traducir el formato correcto para el navegador que se esté utilizando.
+* jQuery te permite escribir código que se ejecutará en varios navegadores sin modificación. Aunque esto se implemente conforme pasan los años, hay ciertas diferencias en cuanto a cómo escribes JavaScript para navegadores populares (Chrome) a diferencia de otros (Internet Explorer 8). jQuery te deja escribir tus funciones de una sola manera, y después de que tu código es cargado en el navegador del usuario, jQuery hace el trabajo de traducir el formato correcto para el navegador que se esté utilizando.
 
 * jQuery te permite seleccionar elementos usando la misma sintaxis de CSS. Desde que varios desarrolladores web son buenos seleccionando elementos con CSS, puedes utilizar el mismo conocimiento en JavaScript.
 
