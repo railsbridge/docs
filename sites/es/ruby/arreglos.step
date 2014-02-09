@@ -47,7 +47,7 @@ IRB
 frutas + ['mango']
 frutas
 IRB
-  message 'El operador de suma (+) no modifica el arreglo existente, éste crea uno nuevo. ¿Cómo podrias escribir esa última línea de código para también modificar el arreglo de frutas? '
+  message 'El operador de suma (+) no modifica el arreglo existente, éste crea uno nuevo. ¿Cómo podrías escribir esa última línea de código para también modificar el arreglo de frutas? '
 end
 
 step do
