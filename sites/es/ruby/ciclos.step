@@ -36,13 +36,13 @@ numeros = [109, 10, 1001]
 numeros.each { |n| puts n * 2 }
   IRB
   message 'Las llaves aquí definen un **bloque**, y lo que sea que está entre los pipes es una **variable de bloque**.'
-  message '`each` toma el primer elemento en el arreglo y lo envia al bloque, el cual temporalmente se guarda en la **variable de bloque**, luego ejecuta el código que se encuentra después de los pipes. Regresa y hace esto de nuevo por cada uno de los elementos.'
+  message '`each` toma el primer elemento en el arreglo y lo envía al bloque, el cual temporalmente se guarda en la **variable de bloque**, luego ejecuta el código que se encuentra después de los pipes. Regresa y hace esto de nuevo por cada uno de los elementos.'
   irb <<-'IRB'
 patos = ['hugo', 'paco', 'luis']
 patos.each { |pato| puts "¡#{pato} cuac!" }
 patos.each { |zombie| puts "¡#{zombie} cuac!" }
   IRB
-  message 'No importa cómo llames a tu variable de bloque: las dos sentencias anteriores son exactamente equivalentes para Ruby. Sin embargo deberías nombrar las variables con un nombre útil, ¡así el código tendrá sentido para ti más tarde! '
+  message 'No importa cómo llames a tu variable de bloque: las dos sentencias anteriores son exactamente equivalentes para Ruby. Sin embargo deberías asignar un nombre útil, ¡así el código tendrá sentido para ti después! '
 end
 
 step do
