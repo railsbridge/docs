@@ -1,12 +1,12 @@
 message <<-MARKDOWN
-### Meta
+### Objetivo
 
 Para enseñarte Ruby vamos a explicar los bloques básicos usados en el lenguaje y así permitirte reforzar lo que has aprendido a través de los retos.
 
-Cuando hayas completado este curriculum deberías entender:
+Cuando hayas completado este currículum deberías entender:
 
 * La línea de comandos y porque la usamos
-* Como ejecutar tu código de Ruby interactivamente (irb) o desde un archivo
+* Cómo ejecutar tu código de Ruby interactivamente (irb) o desde un archivo
 * Tipos simples como números, cadenas y booleanos
 * Estructuras de datos como arreglos y hashes
 * Conceptos de objetos como las Clases
@@ -15,9 +15,9 @@ Cuando hayas completado este curriculum deberías entender:
 
 Vamos a estar trabajando con:
 
-* ruby 1.9.3 instalado via rvm (mac o linux) o RailsInstaller (windows)
-* un programa de línea de comandos como Terminal (mac) o CMD.EXE (windows)
-* el editor de texto de tu elección
+* Ruby 1.9.3 instalado vía rvm (mac o linux) o RailsInstaller (windows)
+* Un programa de línea de comandos como Terminal (mac) o CMD.EXE (windows)
+* El editor de texto de tu elección
 
 Todo deberá estar instalado la noche anterior durante nuestro installfest. Por favor asegúrate de tener todo funcionando _antes_ de presentarte al taller.
 
@@ -42,7 +42,7 @@ Cada lección se mostrará como ésta:
   <div class="goals">
     <h1>Objetivo:</h1>
     <p>Descripción del paso actual.
-    <p>Rojo porque los objetivos grandes son de miedo.
+    <p>Rojo porque los objetivos grandes provocan miedo.
   </div>
   <div class="steps">
     <h1>Pasos:</h1>

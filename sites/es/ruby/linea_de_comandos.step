@@ -3,12 +3,12 @@ goals do
   goal "Hacer un nuevo directorio"
   goal "Buscar algunos directorios en tu computadora"
   goal do
-    rawtext md2html("Aprender los comandos `pwd`, `mkdir`, `ls`, `cd` and `man`")
+    rawtext md2html("Aprender los comandos `pwd`, `mkdir`, `ls`, `cd` y `man`")
   end
 end
 
 step do
-  message 'Abre una aplicación de línea de comandos en tu computadora. En Macs, éste programa es llamado Terminal. En Windows, es posible que quieras usar el acceso directo a "Command Prompt With Ruby and Rails" que viene con el RailsInstaller.'
+  message 'Abre una aplicación de línea de comandos en tu computadora. En Macs, este programa es llamado Terminal. En Windows, es posible que quieras usar el acceso directo a "Command Prompt With Ruby and Rails" que viene con el RailsInstaller.'
   console "pwd"
   message '`pwd` significa "print working directory" (imprime directorio de trabajo). Ésto te muestra el **directorio** en el que estás trabajando actualmente. Los directorios son también comúnmente llamados **carpetas**.'
   message '`pwd` puede ayudar orientándote en la línea de comandos por si te pierdes en alguna parte de tu computadora.'
@@ -18,7 +18,7 @@ step do
   console 'mkdir railsbridge_ruby'
   message '`mkdir` significa **m**ake **d**irectory (crea un directorio/carpeta). Usa mkdir cuando quieras crear un nuevo directorio.'
   message 'La línea de comandos es sólo una manera de manipular los archivos en tu computadora. Trata de encontrar el nuevo directorio que creaste en el Finder o Windows Explorer.'
-  message 'Si te sale un error diciendo que el directorio ya existe, posiblemente alguien hizo éstos pasos en tu computadora antes. No te preocupes.'
+  message 'Si te sale un error diciendo que el directorio ya existe, posiblemente alguien hizo estos pasos en tu computadora antes. No te preocupes.'
 end
 
 step do
@@ -42,7 +42,7 @@ end
 step do
   console 'man ls'
   message '`man` significa **manual** y te muestra la documentación de un comando. Esto puede incluir varias opciones usadas para ejecutar el comando en diferentes maneras.'
-  message "Si ves dos puntos en la parte inferior de tu terminal cuando estás viendo una página manual, significa que estás en un **paginador**. Los paginadores son programas especiales para mostrar texto que abarca multiples páginas. Puedes presionar las flechas hacia arriba y hacia abajo para desplazarte por el texto, o escribe `q` para salir."
+  message "Si ves dos puntos en la parte inferior de tu terminal cuando estás viendo una página manual, significa que estás en un **paginador**. Los paginadores son programas especiales para mostrar texto que abarca múltiples páginas. Puedes presionar las flechas hacia arriba y hacia abajo para desplazarte por el texto, o escribe `q` para salir."
 end
 
 explanation do
@@ -63,12 +63,12 @@ explanation do
     tr do
       td 'cd [directory]'
       td 'change directory'
-      td 'hace éste directorio el directorio actual'
+      td 'hace este directorio el directorio actual'
     end
     tr do
       td 'man [cmd]'
       td 'manual'
-      td "muestra el manual para éste comando. presiona 'q' para salir."
+      td "muestra el manual para este comando. presiona 'q' para salir."
     end
   end
 end
