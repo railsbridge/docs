@@ -1,0 +1,40 @@
+message <<-MARKDOWN
+# ¡Construyámos un tablero de mensajes!
+
+## Suponemos que quienes siguen los contenidos de este currículum
+* Han pasado por el installfest estándar de RailsBridge y han completado exitosamente el paso <a href="/installfest/get_a_sticker">Consigue un Sticker</a>.
+* Han pasado el RailsBridge <a href="/intro-to-rails">Suggestotron curriculum</a> al menos una vez anteriormente, o tal vez un par de veces, o quizá te sientes cómodo con Rails por alguna otra razón.
+* ¡¡¡Quieres aprender más de Rails!!!
+
+## Objetivos
+* ¡Hacer algo!
+* Comprender lo que los modelos, las vistas, y los controladores de una aplicación Rails hacen y cómo interactúan.
+* Aprender a usar los mensajes de error como guías y no cómo algo que da miedo.
+
+## ¿Qué va a pasar?
+* Vamos a construir un tablero de mensajes, donde haya posts en la página principal y puedas dar click para ver la entrada original y los comentarios que hay enseguida.
+
+* Hemos dividido esto en retos:
+	* Reto 1: crear una nueva aplicación de Rails con una página de inicio estática
+	* Reto 2: instalar devise
+	* Reto 3: hacerla lucir bien con bootstrap
+	* Reto 4: agregar páginas para crear y ver los posts individuales
+	* Reto 5: hacer un índice de posts
+	* Reto 6: agregar la funcionalidad para comentarios
+	* Reto 7: capacidad para responder en la misma línea
+	* Reto ∞: otras funcionalidades que elijas
+
+* Cada vez que tu aplicación se encuentre en un estado funcional, antes de añadir cualquier otra característica, ¡haz un COMMIT! Las nuevas funcionalidades descompondrán algunas cosas, lo cual es correcto, pero vas a querer ser capaz de regresar todo a una versión anterior si es necesario.
+
+* NOTA IMPORTANTE: Nombramos a la secciones retos ¡porque son desafiantes! Este currículum será más entretenido si es colaborativo — habla del tema con tu instructor, TAs, y otros estudiantes. Esto es un estilo muy diferente de currículum al Suggestotron, así que no te desanimes si no estás seguro de qué hacer enseguida.
+
+## Como utilizar este currículum
+* Los retos son tareas en las que tienes que trabajar en un determinado tiempo. Tienen sus requerimientos — una vez que completaste (o tu grupo) una serie de requerimientos, ve a la siguiente serie.
+* Los requerimientos en este currículum no distan mucho de lo que es un requerimiento en la metodología de desarrollo ágil — lo que debe estar en la aplicación definido por quien sea que esté diseñando/decidiendo cosas relacionadas con el producto. Excepto aquí, hemos lanzado algunos requerimientos que no son para la aplicación, como la habilidad de explicar un concepto a un compañero.
+* Las discusiones son encabezadas por el instructor; es lo mas cerca que este currículum estará a una enseñanza unidireccional.
+* Las pistas son lo que parecen, como lo son Herramientas & Referencias.
+
+* ¡Solo instructores!: Hay una guía de enseñanza en http://bit.ly/int-railsbridge-guide
+MARKDOWN
+
+next_step "crear_una_nueva_aplicacion_con_pagina_de_inicio_estatica"
