@@ -42,7 +42,7 @@ Nota que la extensión es .html. Le indica al navegador que el contenido lo debe
 Escribe en el documento HTML que acabas de crear:
 MARKDOWN
 
-	source_code "Hello World!"
+	source_code "¡Hola Mundo!"
 	message "Guarda el archivo en un lugar donde puedas encontrarlo fácilmente, como tu Escritorio."
   end
 
@@ -73,7 +73,7 @@ Una etiqueta HTML está encerrada entre paréntesis angulares, los cuales lucen 
 
 __Etiqueta de apertura__: `<em>`
 
-__Contenido__: `mundo`
+__Contenido__: `Mundo`
 
 __Etiqueta de cierre__: `</em>`
 
