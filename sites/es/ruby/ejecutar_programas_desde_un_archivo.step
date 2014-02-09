@@ -6,7 +6,7 @@ end
 step do
   message "En tu editor de texto, crea un archivo llamado mi_programa.rb"
   type_in_file 'mi_programa.rb', <<-CONTENTS
-puts '¡Éste código está en un archivo!'
+puts '¡Este código está en un archivo!'
 alguna_variable = 19
 puts "¡Creé una variable con el valor #{19}!"
   CONTENTS
@@ -14,7 +14,7 @@ end
 
 step do
   console 'ruby mi_programa.rb'
-  message "Debes haber visto la salida de tu programa: 'Éste código está en un archivo...' etc. Si no, puede que no estés en el directorio donde creaste el archivo. Ve si lo muestra con `ls`."
+  message "Debes haber visto la salida de tu programa: 'Este código está en un archivo...' etc. Si no, puede que no estés en el directorio donde creaste el archivo. Ve si lo muestra con `ls`."
 end
 
 explanation do
