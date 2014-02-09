@@ -1,6 +1,6 @@
 console %q{ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"}
 
-important "Si eso no funciona, visita <https://github.com/mxcl/homebrew/wiki/installation> y ahí sigue las instrucciones."
+important "Si eso no funciona, visita <https://github.com/mxcl/homebrew/wiki/installation> y sigue las instrucciones."
 
 verify do
   console "brew -v"
