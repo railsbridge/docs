@@ -1,14 +1,13 @@
-step "Configure the Windows Terminal" do
-  message "Right-click on the menu bar and select **Properties**"
+spanish_step "Configura la Terminal de Windows" do
+  message "Haz click derecho en la barra del menú y selecciona **Propiedades**"
 
-  message "Under the *Options* tab, check the box for **QuickEdit Mode**. This will let you visually cut and paste."
+  message "En la pestaña de *Opciones*, habilita la casilla de **Modalidad de edición rápida**. Esto te permitirá cortar y pegar visualmente."
 
-  message "Under the *Font* tab, select Lucida Console from the font chooser box. This lets you view non-ascii characters."
+  message "En la pestaña de *Fuente*, selecciona Lucida Console de la caja de opciones de fuentes. Esto te permite ver caracteres No-ASCII."
 
-  message "In the *Layout* tab, adjust *Window Size* so the window is about half as wide as your screen, and is as tall as possible without covering the task bar (this may require some trial and error)."
+  message "En la pestaña de *Diseño*, ajusta *Tamaño de la ventana* para que la ventana sea más o menos de la mitad de lo ancho de tu pantalla, y lo más alto posible sin que tape la barra de tareas (esto puede requerir un poco de prueba y error)."
 
-  message "In the *Layout* tab, increase **Screen Buffer Size** Height to 1000."
+  message "En la pestaña de *Diseño*, aumenta el *Tamaño del búfer de pantalla* Altura a 1000."
 
-  message "Click OK. In the dialog that comes up, select **Modify shortcut that started this window.**"
+  message "Haz click en Aplicar. En el diálogo que aparece, selecciona **Modifica el accesso rápido que inicia esta ventana.**"
 end
-
