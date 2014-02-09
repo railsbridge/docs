@@ -2,16 +2,16 @@ message "(Si utilizaste el Instalador de Rails en Windows ya deberías tener `us
 
 console <<-BASH
 git config --global user.name "Tu nombre"
-git config --global user.email "Tu e-mail"
+git config --global user.email "Tu email"
 BASH
 
-important "Utiliza el mismo e-mail para Heroku, Git, GitHub, y SSH."
+important "Utiliza el mismo email para Heroku, Git, GitHub, y SSH."
 
 verify do
   console "git config --get user.name"
   result "Tu nombre"
   console "git config --get user.email"
-  result "Tu e-mail"
+  result "Tu email"
 end
 
 tip "Texto de salida de Git en colores" do
