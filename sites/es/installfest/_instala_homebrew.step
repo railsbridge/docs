@@ -1,0 +1,14 @@
+console %q{ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"}
+
+important "Si eso no funciona, visita <https://github.com/mxcl/homebrew/wiki/installation> y sigue las instrucciones."
+
+verify do
+  console "brew -v"
+  fuzzy_result "Homebrew 0.9{FUZZY}.4{/FUZZY}"
+end
+
+tip <<TIP
+  Homebrew usa `sudo` para preparar tu directorio `/usr/local`. 'sudo' significa 'super user do' y es una forma de hacer que tu computadora haga todo lo que le pides. Es el tema de una caricatura famosa:
+
+  ![sudo make me a sandwich](http://imgs.xkcd.com/comics/sandwich.png)
+TIP

@@ -1,5 +1,5 @@
 step "Change to your home directory" do
-  switch_to_home_directory
+  cambia_al_directorio_principal
 end
 
 step "Create a railbridge directory" do
