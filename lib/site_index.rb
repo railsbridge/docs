@@ -1,14 +1,10 @@
 class SiteIndex < Erector::Widget
-  needs :site_name
+  needs :site_name, :locale
   attr_accessor :site_name
-
-  def initialize(options)
-    self.site_name = options[:site_name]
-  end
 
   def sites
     return @sites if @sites
-    @sites = Dir.glob("#{Site.sites_dir}/**").map { |filename| File.basename(filename) }.sort
+    @sites = Dir.glob("#{Site.sites_dir(@locale)}/**").map { |filename| File.basename(filename) }.sort
   end
 
   def site_link site

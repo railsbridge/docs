@@ -11,20 +11,21 @@ class ::InstallFest
   def dup *args
     @@latest_instance = super
   end
+
   def self.latest_instance
     @@latest_instance
   end
 end
 
 describe InstallFest do
-  include Rack::Test::Methods
+  include Rack::Test::Methods # see http://www.sinatrarb.com/testing.html
 
   def app
     InstallFest
   end
 
   # find the actual InstallFest app, discarding Rack middleware
-  def true_app    
+  def true_app
     InstallFest.latest_instance
   end
 
@@ -41,7 +42,7 @@ describe InstallFest do
   end
 
   it "redirects / to the default site" do
-    get! "/"    
+    get! "/"
     assert { last_request.path == "/docs/" }
   end
 
@@ -63,21 +64,30 @@ describe InstallFest do
     # note: I'd rather pass settings into the constructor, but Sinatra uses that interface (for a downstream app)
 
     before { get '/' }
-    
-    it "accepts default_site via setter" do
-      true_app.default_site = "intro-to-rails"
-      assert { true_app.default_site == "intro-to-rails" }
-    end
-    
+
     describe "learns the locale from" do
       it "the locale parameter" do
         true_app.params = {locale: 'es'}
         assert { true_app.locale == 'es' }
       end
 
+      it "the l parameter" do
+        true_app.params = {l: 'es'}
+        assert { true_app.locale == 'es' }
+      end
+
       it "the subdomain" do
         true_app.request = Rack::Request.new({"HTTP_HOST" => "es.example.com"})
         assert { true_app.locale == 'es' }
+      end
+
+      it "the SITE_LOCALE environment var" do
+        begin
+          ENV["SITE_LOCALE"] = "es"
+          assert { true_app.locale == 'es' }
+        ensure
+          ENV["SITE_LOCALE"] = nil
+        end
       end
     end
   end
@@ -88,14 +98,15 @@ describe InstallFest do
     follow_redirect! while last_response.redirect?
     assert { last_request.path == "/docs/" }
   end
-  
+
   describe "in the 'es' locale" do
-    it "uses the 'es' subdir as the sites_dir" do   
+    it "uses the 'es' subdir as the sites_dir" do
       get "/", locale: "es"
-      
+
       es_dir = File.expand_path(File.join(__FILE__, "..", "..", "sites", "es"))
       assert { true_app.sites_dir == es_dir }
     end
+
   end
 
   describe "page headers" do

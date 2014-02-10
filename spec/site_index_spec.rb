@@ -5,7 +5,7 @@ require_relative "../lib/site_index"
 
 describe SiteIndex do
   before :all do
-    @site_index = SiteIndex.new(site_name: 'frontend')
+    @site_index = SiteIndex.new(site_name: 'frontend', locale: 'en')
   end
 
   it "lists all sites in the /sites/ directory" do

@@ -6,7 +6,7 @@ require 'titleizer'
 require 'html5_page'
 
 class DocPage < Html5Page
-  needs :site_name, :doc_title, :doc_path, :page_name, :src
+  needs :site_name, :doc_title, :doc_path, :page_name, :src, :locale
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name, :src
 
@@ -62,7 +62,7 @@ class DocPage < Html5Page
   end
 
   def git_url
-    "https://github.com/phpbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
+    "https://github.com/phpbridge/docs/blob/master/sites/#{@locale}/#{@site_name}/#{file_name}"
   end
 
   def src_url
@@ -98,7 +98,7 @@ class DocPage < Html5Page
 
         li(class: "dropdown") {
           a("curriculum", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_title
+          widget SiteIndex, site_name: site_name, locale: @locale
         }
 
         top_links.each do |top_link|
