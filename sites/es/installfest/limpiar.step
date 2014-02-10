@@ -18,4 +18,3 @@ step "Elimina la prueba_app de tu computadora" do
     console "rm -rf ~/railsbridge/prueba_app"
   end
 end
-

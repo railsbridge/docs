@@ -1,0 +1,16 @@
+message <<-MARKDOWN
+¿Qué otras características quieres?
+
+Sugerencias:
+
+* Páginas de perfil para usuarios (inserta nombres de usuario o detalles, haz que se muestren junto a los mensajes).
+* Publica/Comenta historias para usuarios individuales (¿en su página de perfil?).
+* Imágenes de perfil con [Gravatar](https://gravatar.com/).
+* Agrega opciones de login con [Omniauth](https://github.com/intridea/omniauth), incluyendo Twitter, Facebook, Github, Google, y más.
+  * Revisa Devise [documentación para integrarlo con Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview).
+* Manipula el diseño de la página para que no se vea mal, si es que se ve mal, pero probablemente luzca muy bien.
+* Puedes estilizarla con Markdown o algo similar.
+* Sube a Heroku y manda el mensaje a todos tus amigos.
+
+## ...¡y eso es todo! ¡Buena suerte! ¡Haz más cosas! ¡Y regresa de nuevo!
+MARKDOWN

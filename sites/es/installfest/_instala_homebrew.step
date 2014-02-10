@@ -1,7 +1,6 @@
-
 console %q{ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"}
 
-important "If that doesn't work, visit <https://github.com/mxcl/homebrew/wiki/installation> and follow the instructions there."
+important "Si eso no funciona, visita <https://github.com/mxcl/homebrew/wiki/installation> y sigue las instrucciones."
 
 verify do
   console "brew -v"
@@ -9,7 +8,7 @@ verify do
 end
 
 tip <<TIP
-  Homebrew uses `sudo` to prepare your `/usr/local` directory. 'sudo' stands for 'super user do' and it's a way to get your computer to do anything you ask it to do. It is the subject of a famous cartoon:
+  Homebrew usa `sudo` para preparar tu directorio `/usr/local`. 'sudo' significa 'super user do' y es una forma de hacer que tu computadora haga todo lo que le pides. Es el tema de una caricatura famosa:
 
   ![sudo make me a sandwich](http://imgs.xkcd.com/comics/sandwich.png)
 TIP
