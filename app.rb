@@ -2,8 +2,8 @@ require 'sinatra'
 require 'digest/md5'
 require 'erector'
 
-# require 'wrong'
-# include Wrong::D
+#require 'wrong'
+#include Wrong::D
 
 here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
@@ -25,11 +25,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_site = "docs"
+    @default_sites = {en: "docs", es: "hola"}
     @default_locale = "en"   # nil for English   # todo: make a cleaner way to switch default locales
   end
 
-  attr_reader :here
+  attr_reader :here, :default_locale
   attr_writer :default_site, :default_locale
 
   # todo: test
@@ -42,7 +42,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     if host && sites.include?(site = subdomain)
       site
     else
-      @default_site
+      @default_sites[locale.to_sym]
     end
   end
 
@@ -67,11 +67,12 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
       'curriculum' => 'intro-to-rails'
     }
   end
-  
+
   def locale
-    (params && params[:locale]) or
+    (params && (params[:locale] or params[:l])) or
       (host && subdomain =~ /^..$/ && subdomain) or   # note: only allows 2-char locales for now -- should check against a list of locales
-      @default_locale
+      (ENV['SITE_LOCALE']) or
+      default_locale
   end
 
   def src
@@ -102,6 +103,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         doc_path: doc_path,
         back: params[:back],
         src: src,
+        locale: locale,
       }
 
       case ext
@@ -135,13 +137,6 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   before do
     expires 3600, :public
-
-    if request.path =~ /^\/es(.*)/
-      params[:locale] = "es"
-      request.env["PATH_INFO"] = $1
-      # p request.env["PATH_INFO"]
-      # p request.params[:locale]
-    end
   end
 
   get '/favicon.ico' do
@@ -151,7 +146,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   get "/" do
     redirect "/#{default_site}/"
   end
-  
+
   get "/:site/:name/src" do
     begin
       RawPage.new(
@@ -159,7 +154,8 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         page_name: params[:name],
         doc_title: doc_path.split('/').last,
         doc_path: doc_path,
-        src: src
+        src: src,
+        locale: locale,
       ).to_html
     rescue Errno::ENOENT => e
       p e
@@ -184,7 +180,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     # remove any extraneous slash from otherwise well-formed page URLs
     redirect request.fullpath.chomp('/')
   end
-  
+
   get "/:site/:name" do
     site_name = params[:site]
     if redirect_sites[site_name]
