@@ -26,7 +26,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     super
     @here = File.expand_path(File.dirname(__FILE__))
     @default_sites = {en: "docs", es: "hola"}
-    @default_locale = "en"   # nil for English   # todo: make a cleaner way to switch default locales
+    @default_locale = "en"
   end
 
   attr_reader :here, :default_locale
