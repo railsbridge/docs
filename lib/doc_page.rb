@@ -107,7 +107,7 @@ class DocPage < Html5Page
       }
     }
 
-    widget Contents, site_name: site_name, page_name: page_name
+    widget Contents, locale: @locale, site_name: site_name, page_name: page_name
 
     main {
       h1 doc_title, class: "doc_title"
