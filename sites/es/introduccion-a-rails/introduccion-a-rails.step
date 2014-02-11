@@ -43,9 +43,9 @@ Vamos a estar trabajando con:
 * El editor de texto de tu elección
 
 Todo debe ser configurado la noche anterior durante nuestro install-fest.
-Por favor asegúrate que tienes todo funcionando _antes_ que te aparezcas para RailsBridge el Sábado.
+Por favor asegúrate que tienes todo funcionando _antes_ de presentarte a RailsBridge el Sábado.
 
-Puedes verificar que tienes todo funcionando intentando ésto en tu terminal:
+Puedes verificar que tienes todo funcionando intentando esto en tu terminal:
 
 <div class="console"><pre>
 $ irb
@@ -58,7 +58,7 @@ $
 </pre>
 </div>
 
-Si puedes hacer eso, probablemente estás listo para ir.
+Si puedes hacer eso, probablemente estás listo para continuar.
 
 ### Trabajando efectiva y eficientemente
 
@@ -66,7 +66,7 @@ Te recomendamos que hagas lo siguiente:
 
 * Inicializa tu terminal y abre 2 pestañas:
   * Una es para cosas regulares
-  * Una será para irb (aka la consola de Rails). Se explicará después
+  * Una será para irb (la consola de Rails). Se explicará después
 * Inicializa tu navegador o cierra todas las ventanas que tengas abiertas.
   * Abre una ventana con dos pestañas.
     * Una para este contenido.
@@ -91,7 +91,7 @@ Cada lección se mostrará como ésta:
   </div>
   <div class="steps">
     <h1>Pasos:</h1>
-    <pre class="term">pasos a tomar.</pre>
+    <pre class="term">pasos a seguir.</pre>
     <div class="console">
       <pre>
 def code_to_write
