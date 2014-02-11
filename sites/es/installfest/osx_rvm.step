@@ -10,6 +10,10 @@ step "Instala un Compilador (XCode o GCC)" do
   link "instala_xcode"
 end
 
+step "Instala Homebrew" do
+  insert "instala_homebrew"
+end
+
 step "Instala Git" do
   message "Lo siguiente, instalaremos Git, el más popular sistema de contraldor de versiones en el mundo de Ruby:"
 
@@ -17,25 +21,28 @@ step "Instala Git" do
   fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
   message <<-MARKDOWN
-
 Si ves esa salida, tienes Git. <a href='#install-rvm'>Muevéte al siguiente paso.</a>
-
-De otra forma, [Instala Homebrew](instala_homebrew). Regresa cuando hayas acabado.
   MARKDOWN
 
-  console_with_message "Despues de instalar Homebrew, escribe esto en la terminal:", "brew install git"
+  console_with_message "De otra forma, escribe esto en la terminal:", "brew install git"
 
   verify do
     console "git --version"
     fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
   end
-
-  link "configura_git"
 end
 
 a name: "install-rvm"
-step "Instala RVM, el organizador de versiones de Ruby ", {:anchor_name => 'instala_rvm_y_ruby'} do
-  link "instala_rvm_y_ruby"
+step "Instala RVM, el organizador de versiones de Ruby ", {:anchor_name => 'instala_rvm'} do
+  link "instala_rvm"
+end
+
+step "Configura RVM para usar Homebrew" do
+  console "rvm autolibs homebrew"
+end
+
+step "Instala Ruby" do
+  insert "instala_ruby"
 end
 
 step "Instala Rails" do
@@ -47,11 +54,7 @@ step "Instala Rails" do
 end
 
 step "Instala Sublime Text 2" do
-  message "Estaremos usando el editor de texto Sublime Text 2 durante el workshop, aunque eres libre de usar un editor diferente si lo prefieres. Este deberá ser un editor de texto plano, así como vi o TextMate. Microsoft Word y otro procesador de texto no funcionará."
-
-  important "En caso de duda, usa Sublime Text 2."
-
-  link "_instala_sublime_text_2_para_mac"
+  insert "instala_sublime_text_2_para_mac"
 end
 
 verify "Instalación exitosa" do
@@ -65,12 +68,4 @@ verify "Instalación exitosa" do
   fuzzy_result "/Users/alex/.rvm/gems/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/rails"
 end
 
-step "Generate an ssh public key" do
-  link "crea_una_key_ssh"
-end
-
-step "Congratulations!" do
-  message "You have everything you need to write a Ruby on Rails application."
-end
-
-next_step "crea_una_cuenta_de_heroku"
+next_step "configura_git"
