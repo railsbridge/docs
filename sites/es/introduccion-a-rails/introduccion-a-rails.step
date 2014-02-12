@@ -1,0 +1,112 @@
+message <<-MARKDOWN
+### Objetivo
+
+Para enseñarte Ruby on Rails vamos a utilizar un ejemplo de la "Vida Real".
+Has decidido crear un sistema de votos para que tú y tus amigos interactúen.
+Has decidido que como mínimo, te gustaría permitir a tus usuarios:
+
+* Ver los temas ordenados por número de votos
+* Votar temas
+* Crear, editar y eliminar temas
+
+Hasta has dibujado una pantalla inicial de lo que quieres y cómo quieres que se vea:
+
+![screenshot](/intro-to-rails/img/finished_app.png)
+
+### Meta-Objetivo
+
+Cuando hayas completado el objetivo de hoy de tener la aplicación básica online,
+deberías entender:
+
+* La sintaxis básica de Ruby
+* Cómo probar tu código de Ruby (irb)
+* Cómo ir desde los requerimientos hasta una nueva aplicación Rails funcional
+* Cómo tener tu aplicación en online
+* Las herramientas básicas que un desarrollador de RoR utiliza (source control, editor, console, local server)
+
+### Horario
+
+* Alrededor de 1 hora de Ruby
+* Alrededor de 4 horas de Rails, divididas en pasos de 1 hora
+
+Ésta es sólo una guía aproximada, no un mandato. En algunos pasos te irás rápido y en algunos otros te irás lento.
+Todo funcionará al final del día... a menos que realmente algo esté muy roto. :D
+
+### Requerimientos
+
+Vamos a estar trabajando con:
+
+* Ruby 1.9.3 o 2.0.0 instalado vía RVM (Mac o Linux) o RailsInstaller (Mac o Windows)
+* Rails 4.0.x
+* bundler
+* sqlite
+* El editor de texto de tu elección
+
+Todo debe ser configurado la noche anterior durante nuestro install-fest.
+Por favor asegúrate que tienes todo funcionando _antes_ de presentarte a RailsBridge el sábado.
+
+Puedes verificar que tienes todo funcionando intentando esto en tu terminal:
+
+<div class="console"><pre>
+$ irb
+>> 1 + 2
+=> 3
+>> require "active_support"
+=> true
+>> exit
+$
+</pre>
+</div>
+
+Si puedes hacer eso, probablemente estás listo para continuar.
+
+### Trabajando efectiva y eficientemente
+
+Te recomendamos que hagas lo siguiente:
+
+* Inicializa tu terminal y abre 2 pestañas:
+  * Una es para cosas regulares
+  * Una será para irb (la consola de Rails). Se explicará después
+* Inicializa tu navegador o cierra todas las ventanas que tengas abiertas.
+  * Abre una ventana con dos pestañas.
+    * Una para este contenido.
+    * Una para interactuar con tu aplicación.
+* Abre tu editor de texto y _nunca lo cierres_. No nos rendimos.
+* Cierra todas las aplicaciones extras. Cierra Twitter, IM, y todas las demás distracciones.
+
+Al minimizar el número de cosas con las cuales puedes interactuar, reduces la cantidad de tiempo perdido
+cambiando entre éstas y el contenido de las lecciones mientras trabajas con ellas.
+El tener 50 pestañas en tu navegador puede tornarse confuso y hacerte perder tiempo.
+
+### Formato
+
+Cada lección se mostrará como ésta:
+
+<div style="background: white; border: 1px solid black; padding-left: 4em;">
+  <h1 class="doc_title" style="margin-top: 0em;">Título del paso</h1>
+  <div class="goals">
+    <h1>Objetivo:</h1>
+    <p>Descripción del paso actual.
+    <p>Rojo porque los objetivos grandes provocan miedo.
+  </div>
+  <div class="steps">
+    <h1>Pasos:</h1>
+    <pre class="term">pasos a seguir.</pre>
+    <div class="console">
+      <pre>
+def code_to_write
+  1 + 1
+end</pre>
+    </div>
+    <p>Amarillo porque hemos conseguido que se haga, pero no tenemos ni idea de lo que está pasando
+  </div>
+  <div class="explanation">
+    <h1>Explicación</h1>
+    <p>Detalles de lo que en realidad los pasos hicieron... explicar detalladamente la causa y el efecto.
+    <p>Verde porque ahora juntos podemos ligar todo.
+  </div>
+</div>
+MARKDOWN
+
+next_step "lenguaje_ruby"
+
