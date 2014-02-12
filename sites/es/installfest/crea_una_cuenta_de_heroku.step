@@ -1,4 +1,4 @@
-message "Estaremos usando Heroku para poner nuestras aplicacion porque es simple y gratis para el nivel que esteremos necesitando."
+message "Estaremos usando Heroku para publicar nuestra aplicación. Eso será suficiente por ahora."
 
 step "Visita la página web de Heroku" do
   url "http://heroku.com"
@@ -7,7 +7,7 @@ end
 step "Crea una cuenta" do
   message "Haz click en el botón grande de **Sign Up** (está más o menos a la mitad de la página)"
   message "Ingresa tu correo electrónico."
-  important "Utiliza el mismo correo electrónico para heroku, git, github y ssh."
+  important "Utiliza el mismo correo electrónico para Heroku, Git, Github y SSH."
 end
 
 step "Activa tu cuenta" do
