@@ -1,0 +1,78 @@
+goals do
+  goal "Agregar las etiquetas estándar HTML de head y body"
+  goal "Agregar un título en la página"
+  goal "Comprender el uso de etiquetas no visibles como head"
+end
+
+overview do
+
+  message <<-MARKDOWN
+
+## La etiqueta HTML y Doctype
+
+La línea `<!DOCTYPE html>` es llamada doctype, y le dice al navegador qué variante de HTML estás usando. `<!DOCTYPE html>` le dice al navegador que estás usando HTML5, la última versión de HTML.
+
+(Existen doctypes antiguos que son largos y complicados, desde cuando la gente usaba varias versiones de HTML y XHTML, pero son molestos, y generalmente puedes usar esta versión más corta para nuevos sitios web.)
+
+El `<html>` encierra toda tu página, y declara de manera inequívoca, "¡¡¡Aquí está mi HTML!!!"
+
+## Las Páginas, Cómo las Personas, Tienen Cabeza (encabezado) y un Cuerpo
+
+  MARKDOWN
+  source_code :html, <<HTML
+<!DOCTYPE html>
+<html>
+  <head>Invisible, Cosas Importantes</head>
+  <body>Contenido Actual Visible</body>
+</html>
+HTML
+  message <<-MARKDOWN
+
+### El encabezado
+
+La etiqueta head contiene información _acerca_ del documento, incluyendo:
+
+* qué lenguaje o conjunto de caracteres estás usando
+* cuál debería ser el título de la página
+* qué archivos CSS y JavaScript incluir (y dónde se encuentran)
+
+La información en la sección `<head>` __no__ es desplegada.
+
+También puede contener etiquetas de metadatos que pueden decirle al motor de búsqueda u otro programa, más acerca del archivo, como quién lo escribió o palabras clave relevantes.
+
+### El Cuerpo
+
+La etiqueta body tiene el contenido actual de tu archivo, ¡las cosas que quieres que tu usuario vea, lea o interactúe!
+
+  MARKDOWN
+
+end
+
+steps do
+
+  step do
+    message <<-MARKDOWN
+Vamos agregar las etiquetas doctype, HTML, head y body a tu archivo. Deberá verse así:
+
+<img src='img/hello_structure.png'>
+
+Guarda el archivo y actualiza el navegador. Todo debe verse casi igual.
+
+    MARKDOWN
+  end
+
+  step do
+    message "Agreguemos un título a nuestra página dentro de la sección `<head>`. Agrega esta línea:"
+    source_code :html, "<title>Mi página HTML de ejemplo</title>"
+    message <<-MARKDOWN
+Cuando actualices tu navegador, debes de ver el título en la pestaña de Chrome.
+
+<img src='img/hello_title.png'>
+
+(Si no lo muestra, verifica que pusiste la línea entre las etiquetas de apertura y cierre, y que hayas guardado tu archivo.)
+   MARKDOWN
+  end
+
+end
+
+next_step "CSS_basico"
