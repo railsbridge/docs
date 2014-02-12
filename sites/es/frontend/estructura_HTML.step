@@ -1,7 +1,7 @@
 goals do
-  goal "Agrega las etiquetas estándar HTML de head y body"
-  goal "Agrega un título en la página"
-  goal "Comprende el uso de etiquetas no visibles como head"
+  goal "Agregar las etiquetas estándar HTML de head y body"
+  goal "Agregar un título en la página"
+  goal "Comprender el uso de etiquetas no visibles como head"
 end
 
 overview do
@@ -10,13 +10,13 @@ overview do
 
 ## La etiqueta HTML y Doctype
 
-La línea `<!DOCTYPE html>` es llamada doctype, y le dice al navegador que variante de HTML estas usando. `<!DOCTYPE html>` le dice al navegador que estas usando HTML5, la última versión de HTML.
+La línea `<!DOCTYPE html>` es llamada doctype, y le dice al navegador qué variante de HTML estás usando. `<!DOCTYPE html>` le dice al navegador que estás usando HTML5, la última versión de HTML.
 
-(Puedes ver doctypes viejos por ahí que son largos y más complicados, desde cuando la gente usaba varias versiones de HTML y XHTML, pero son molestos, y generalmente puedes usar esta versión más corta para nuevos sitios web.)
+(Existen doctypes antiguos que son largos y complicados, desde cuando la gente usaba varias versiones de HTML y XHTML, pero son molestos, y generalmente puedes usar esta versión más corta para nuevos sitios web.)
 
-El `<html>` encierra toda tu página, y declara manera inequívoca, "¡¡¡Aquí está mi HTML!!!"
+El `<html>` encierra toda tu página, y declara de manera inequívoca, "¡¡¡Aquí está mi HTML!!!"
 
-## Las Páginas, Cómo las Personas, Tienen Cabeza y un Cuerpo
+## Las Páginas, Cómo las Personas, Tienen Cabeza (encabezado) y un Cuerpo
 
   MARKDOWN
   source_code :html, <<HTML
@@ -28,17 +28,17 @@ El `<html>` encierra toda tu página, y declara manera inequívoca, "¡¡¡Aquí
 HTML
   message <<-MARKDOWN
 
-### La cabeza
+### El encabezado
 
 La etiqueta head contiene información _acerca_ del documento, incluyendo:
 
-* que lenguaje o conjunto de caracteres estás usando
+* qué lenguaje o conjunto de caracteres estás usando
 * cuál debería ser el título de la página
-* que archivos CSS y JavaScript incluir (y dóde se encuentran)
+* qué archivos CSS y JavaScript incluir (y dónde se encuentran)
 
 La información en la sección `<head>` __no__ es desplegada.
 
-También puede contener etiquetas de metadatos que puede ser un motor de búsquedas o de otro programa acerca del archivo, como quién lo escribió o que palabras clave son relevantes.
+También puede contener etiquetas de metadatos que pueden decirle al motor de búsqueda u otro programa, más acerca del archivo, como quién lo escribió o palabras clave relevantes.
 
 ### El Cuerpo
 
@@ -62,14 +62,14 @@ Guarda el archivo y actualiza el navegador. Todo debe verse casi igual.
   end
 
   step do
-    message "Agreguemos un título a nuestra página dentro de la sección `<head>`. Agrega está línea:"
+    message "Agreguemos un título a nuestra página dentro de la sección `<head>`. Agrega esta línea:"
     source_code :html, "<title>Mi página HTML de ejemplo</title>"
     message <<-MARKDOWN
 Cuando actualices tu navegador, debes de ver el título en la pestaña de Chrome.
 
 <img src='img/hello_title.png'>
 
-(Si no lo muestra, verifica que pusiste la línea entre las etiquetas de apertura y cierre, y hayas guardado tu archivo antes de actualizar.)
+(Si no lo muestra, verifica que pusiste la línea entre las etiquetas de apertura y cierre, y que hayas guardado tu archivo.)
    MARKDOWN
   end
 
