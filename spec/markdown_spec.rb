@@ -21,8 +21,13 @@ describe MarkdownPage do
       site_name: "greetings",
       page_name: 'hello',
       doc_title: "Hello",
-      doc_path: "/tmp/hello.step"
+      doc_path: "/tmp/hello.step",
+      locale: "en"
     )
+
+    # this is a hack to make the TOC work in the absence of a real site
+    Site.should_receive(:named).and_return(mock(dir: "/tmp"))
+
     html_doc = Nokogiri.parse(page.to_html)
     main_html = html_doc.css("main").first.serialize(:save_with => 0).chomp
 
