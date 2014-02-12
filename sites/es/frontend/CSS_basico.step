@@ -7,25 +7,25 @@ overview do
   message <<-MARKDOWN
 ## ¿Qué es CSS?
 
-CSS significa __C__ascading __S__tyle__s__heets. Es un lenguaje para crear **reglas** que puedan **selecionar** varios elementos en la página y cambiar sus **propiedades visuales**.
+CSS significa __C__ascading __S__tyle__s__heets (hojas de estilo en cascada). Es un lenguaje para crear **reglas** que puedan **selecionar** varios elementos en la página y cambiar sus **propiedades visuales**.
 
-* __C__ascading - La 'cascada' es uno de los elementos complicados de CSS para dominar, pero básicamente significa que puedes definir varias reglas de estilos de diferentes valores, y el CSS los aplicará a todos, resolviendo cualquier conflicto permitiendo que reglas más estrictas sobreescriban (o sobre _cascada_) a las débiles.
+* __C__ascading - La 'cascada' es uno de los elementos de CSS mas difícil de dominar, pero básicamente significa que puedes definir varias reglas de estilos de diferentes valores, y el CSS los aplicará a todos, resolviendo cualquier conflicto permitiendo que reglas más estrictas sobreescriban (o sobre _cascada_) a las débiles.
 
-* __S__tyle__s__heets - Los archvios CSS son llamados 'stylesheets' porque te permiten poner tus reglas de estilos en un documento por separado (una 'hoja') de tipo .css, y depués escoger incluir una o más en una página HTML. Está es una _muy_ importante característica para sitios con muchas páginas, ya que permite escribir tus reglas una vez y luego incluirlas en todo tu sitio con un solo link en cada página.
+* __S__tyle__s__heets - Los archivos CSS son llamados 'stylesheets' porque te permiten poner tus reglas de estilos en un documento por separado (una 'hoja') de tipo .css, y después puedas incluir una o más en una página HTML. Está es una _muy_ importante característica para sitios con muchas páginas, ya que permite escribir tus reglas una vez y luego incluirlas en todo tu sitio con un solo link en cada página.
 
-## Las Reglas CSS están Hechas por un Selector y Atributos
+## Las Reglas CSS están hechas por un Selector y Atributos
 
-* Está sección incluye vocabulario que probablemente quieras memorizar después del taller.*
+* Esta sección incluye vocabulario que probablemente quieras memorizar después del taller.*
 
-El **selector** le dice al navegador a que elementos agregar el estilo. En esta página sólo usaremos etiquetas existentes, `<h1>` y `<p>` como nuestros selectores.
+El **selector** le dice al navegador qué elementos agregar el estilo. En esta página sólo usaremos etiquetas existentes, `<h1>` y `<p>` como nuestros selectores.
 
-Los **atributos** le dicen al navegador como estilizar los elementos que seleccionaste. La primera parte, `padding:` es una **propiedad**, y la parte depués de los dos puntos `20px` es el **valor**. La línea se termina con un punto y coma.
+Los **atributos** le dicen al navegador cómo estilizar. La primera parte, `padding:` es una **propiedad**, y la parte después de los dos puntos `20px` es el **valor**. La línea se termina con un punto y coma.
 
 Todo junto, el selector y las propiedades son llamados **reglas**.
 
 <img src='img/css.png'>
 
-(Olvidarás el punto y coma en algún momento, y tu CSS se romperá, pero es una solución fácil.)
+(Olvidarás el punto y coma en algún momento, y tu CSS se romperá, pero se soluciona fácilmente.)
 
 ## ¿Por qué están HTML y CSS por separado?
 
@@ -70,7 +70,7 @@ Al guardar y actualizar tu navegador, deberás ver los estilos que agregaste:
 
 <img src='img/hello_style.png'>
 
-Los atributos `type` y `media` dentro de la etiqueta `<style>` le dan al navegador más contexto sobre como utilizar la información incluida. En este caso, le decimos que el tipo es HTML/CSS, y eso será mostrado en la pantalla (a diferencia de `media=\"print\"`, que es especialmente usada para estilizado.)
+Los atributos `type` y `media` dentro de la etiqueta `<style>` le dan al navegador más contexto sobre cómo utilizar la información incluida. En este caso, le decimos que el tipo es HTML/CSS, y eso será mostrado en la pantalla (a diferencia de `media=\"print\"`, que es especialmente usada para estilizar.)
    MARKDOWN
   end
 
