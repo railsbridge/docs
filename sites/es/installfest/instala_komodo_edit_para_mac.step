@@ -1,28 +1,28 @@
 message <<-MARKDOWN
 
-We'll be using the KomodoEdit text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or Textmate. 
+Estaremos usando text editor durante el taller, aunque eres libre de usar un editor diferente si lo prefieres. Debe ser un editor de texto-plano, asi como vi o Textmate.
 
 MARKDOWN
 
-important "Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work."
+important "Microsoft Word y otras procesadores de texto, incluyendo TextEdit y Notepad, no van a funcionar."
 
-step "Download KomodoEdit" do
-  message "Download the [KomodoEdit installer](http://downloads.activestate.com/Komodo/releases/8.0.0/Komodo-Edit-8.0.0-12188-macosx.dmg)."
+step "Descargar KomodoEdit" do
+  message "Descarga el [instalador KomodoEdit](http://downloads.activestate.com/Komodo/releases/8.0.0/Komodo-Edit-8.0.0-12188-macosx.dmg)."
 end
 
-step 'Select "Open with DiskImageMounter" in the file save dialog' do
+step 'Selecciona "Abrir con DiskImageMounter" en el archivo de guardar diálogo'
   message <<-MARKDOWN
-This should be the default.
+Este debería ser el de por defecto
 
-It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Something like this:
+Abrirá un instalador con un ícono de KomodoEdit y una foto de tu carpeta de Aplicaciones. Algo como esto:
   MARKDOWN
-  img src: 'img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
+  img src: '/installfest/img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
 end
 
-step "Drag KomodoEdit into your Applications folder." do
-  message "It will open an installer with a KomodoEdit icon and a picture of your Applications folder. Drag KomodoEdit into your Applications folder."
+step "Arrastra KomodoEdit dentro de tu carpeta de Aplicaciones." do
+  message "Abrirá un instalador con un ícono de KomodoEdit y una foto de tu carpeta de Aplicaciones. Arrastra KomodoEdit dentro de tu carpeta de Aplicaciones."
 end
 
-step "Unmount the installer disk image" do
-  message "by dragging it from your desktop to the trash"
+step "Expulsa el instaldor" do
+  message "Solo arrastralo de tu escritorio a la basura."
 end
