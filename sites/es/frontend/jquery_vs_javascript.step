@@ -1,0 +1,43 @@
+goals do
+  goal "Escribir JavaScript puro"
+  goal "Comparar JavaScript con jQuery"
+end
+
+steps do
+  
+  step do
+    message "En la última página, escribimos algo de jQuery que lucía como éste. Vamos a comentarlo por ahora, y veremos si podemos replicar la misma funcionalidad con JavaScript puro. Agrega etiquetas de comentario antes de estas líneas. En JavaScript, la manera más fácil de comentar una línea es poniéndole `//` al principio. Continuemos e intentemos esto:"
+    source_code :js, <<-JS
+//$("#copyright").click(function(){ 
+//  $(this).css('color','purple'); 
+//});"
+    JS
+    message "Ahora si guardas la página, actualizas, y das click en copyright, nada debería pasar."
+  end
+  
+  step do
+    message "Debajo de las líneas que acabas de comentar, escribiremos la misma funcionalidad pero ahora con JavaScript. Hay muchas maneras elegantes de hacer esto; aquí vemos una no tan elegante, pero corta:"
+    source_code :js, <<-JS
+document.getElementById('copyright').onclick = function () { 
+   this.style.color = 'purple';
+}
+    JS
+    message "Si guardas la página, actualizas, y das click, deberías ver el mismo resultado visual (texto púrpura), pero no es la mejor forma de hacerlo por dos razones. No sólo es escribir más, y difícil de leer, también se puede romper fácilmente. (Tú sólo puedes poner un atributo on click a una cosa, ¡entonces esto podría ser sobreescrito por otro script en la página y después no funcionará!) jQuery funciona de diferente forma, escuchando eventos, entonces diferentes funciones pueden ser escuchadas por el mismo evento, y puedes agregar una nueva respuesta a un evento sin preocuparte acerca de sobrescribir uno ya existente."
+  end
+  
+end
+  
+explanation do
+
+  message <<-MARKDOWN
+
+## ¿Entonces debería usar JavaScript o jQuery?
+
+No olvides que todo lo que puedes hacer con jQuery, puedes hacerlo con Javascript puro.
+Si quieres comenzar construyendo bonitas interfaces de usuario, jQuery probablemente te ayudará a hacerlo de la manera más rápida. Pero, a largo plazo, para ser bueno en jQuery necesitas entender el lenguaje con el que está escrito: Javascript. Vale la pena aprender los dos.
+
+  MARKDOWN
+  
+end
+
+next_step 'recursos'

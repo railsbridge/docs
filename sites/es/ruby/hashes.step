@@ -1,0 +1,50 @@
+goals do
+  goal "Hacer algunos hashes y obtener sus datos"
+  goal "Entender por qué se podría utilizar un Hash"
+  goal "Entender la diferencia entre Arreglos y Hashes"
+end
+
+step do
+  irb <<-IRB
+estados = {"CA" => "California", "DE" => "Delaware"}
+  IRB
+  message 'Un arreglo sólo guarda elementos en algún orden. Un hash guarda pares de elementos, asociando **llaves** con **valores**.'
+  message 'El caracter `{` es comúnmente llamado \'llave\', y el `=>` es llamado \'rocket\' o \'hashrocket\''
+  irb <<-IRB
+estados.keys
+estados.values
+  IRB
+  message 'Puedes obtener de un hash un arreglo de sólo sus llaves o sus valores.'
+  irb <<-IRB
+estados['CA']
+estados['DE']
+  IRB
+  message 'Con arreglos, accedemos a los elementos por su **índice**, un número. Con un hash, accedemos a los elementos por su **llave**.'
+end
+
+step do
+  irb <<-IRB
+  bici1 = {'marca' => 'Trek', 'color' => 'Plata'}
+  bici2 = {'marca' => 'Cannondale', 'color' => 'Azul'}
+  bicicletas = [bici1, bici2]
+IRB
+  message "Los hashes son comúnmente utilizados para guardar las propiedades de algún objeto. Aquí, cada hash guarda las propiedades de una bicicleta."
+  message "Las *llaves* son comúnmente el nombre de la propiedad (aquí *marca*, *color*) mientras que los *valores* son el valor de la propiedad de un objeto dado (aquí, *Trek*, *Plata*)."
+  message "Considera cómo hubieras tenido que guardar estos datos si no hubieras tenido un hash. ¿Qué más pudieras guardar en un hash?"
+  irb <<-IRB
+  bicicletas[0]['marca']
+  bicicletas[1]['color']
+IRB
+  message 'Cuando los objetos están muy anidados en arreglos y hashes, puedes acceder a los elementos uno después del otro como ésto.'
+  message "Por ejemplo, en la primera línea, estamos obteniendo la primer *bicicleta* en el arreglo *bicicletas* (`bicicletas[0]`) y después estamos obteniendo su *marca* (`bicicletas[0]['marca']`)"
+end
+
+explanation do
+  message "Los hashes son una fundamental manera de agrupar grandes cantidades de datos relacionados. En otros lenguajes, los hashes son llamados **diccionarios**, **maps**, o **arreglos asociativos**."
+end
+
+further_reading do
+  a "Documentación de Ruby para Hashes", href: 'http://www.ruby-doc.org/core-1.9.3/Hash.html'
+end
+
+next_step 'ciclos'

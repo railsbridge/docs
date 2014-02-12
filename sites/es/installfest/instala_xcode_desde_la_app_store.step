@@ -1,6 +1,5 @@
 message "La App Store es una aplicación que instala otras aplicaciones."
 
-
 step "Abre la App Store" do 
   message "Puedes encontrar la App Store en la carpeta de aplicaciones"
 end
