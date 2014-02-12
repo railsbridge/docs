@@ -1,6 +1,6 @@
 goals do
-  goal "Oriéntate con las herramientas de desarrollo de tu navegador. Son un gran punto de partida para seguir construyendo tu conocimiento de HTML, CSS, y JavaScript."
-  tip "Las imágenes a continuación son especificias para el navegador de Chrome, que esta disponibe para Mac y PC y tiene buenas herramientas de desarrollador. Pero si prefieres otro navegador, hay similares herramientas que puedes usar, ya sea integradas (Internet Explorer 9, Safari) o instaladas mediante plugins (FireFox)."
+  goal "Oriéntate con las herramientas de desarrollo de tu navegador. Son un buen punto de partida para seguir construyendo tu conocimiento de HTML, CSS, y JavaScript."
+  tip "Las imágenes a continuación son específicas para el navegador Chrome, que está disponibe para Mac y PC y tiene buenas herramientas de desarrollador. Pero si prefieres otro navegador, hay similares herramientas que puedes usar, ya sea integradas (Internet Explorer 9, Safari) o instaladas mediante plugins (FireFox)."
 end
 
 steps do
@@ -23,22 +23,22 @@ steps do
 
       Dando click a la etiqueta HTML en el panel de elementos lo destacará en la ventana del navegador. Es una gran herramienta para depurar problemas de estilo. En la parte derecha del panel, obtendrás una lista de estilos que se aplican a ese elemento.
     MARKDOWN
-    tip "Los elementos en el panel de Chrome se actualizarán para que coincidan con el estado de tu DOM como vaya siendo modificado con JavaScript. Algunos paneles de elementos no lo hacen &mdash; solo muestran como se vería el HTML al actualizar la página."
+    tip "Los elementos en el panel de Chrome se actualizarán para que coincidan con el estado de tu DOM como vaya siendo modificado con JavaScript. Algunos paneles de elementos no lo hacen &mdash; sólo muestran como se vería el HTML al actualizar la página."
   end
 
   step do
     message <<-MARKDOWN
-      En el panel de 'Network', podrás ver que otros archivos y recursos está cargando tu HTML.
+      En el panel de 'Network', podrás ver qué otros archivos y recursos está cargando tu HTML.
 
       <img src='img/devtools_network.png'>
 
-      Si das click en el nombre de algún archivo, puedes observar el contenido que tiene el archivo. Este panel es buen lugar para depurar problemas de vinculación o errores de cargado. (Puedes ver los encabezados de HTTP y solicitar parámetros también, investigando un poco.)
+      Si das click en el nombre de algún archivo, puedes observar el contenido que tiene el archivo. Este panel es un buen lugar para depurar problemas de vinculación o errores de cargado. (Puedes ver los encabezados de HTTP y solicitar parámetros también, investigando un poco.)
     MARKDOWN
   end
 
   step do
     message <<-MARKDOWN
-      En 'Console' es la arma secreta del desarrollador para JavaScript. Te deja ejecutar JavaScript escribiendo en ella directamente &mdash; y ejecuta tus scripts _en el contexto de tu página_, por lo que puedes interactuar directamente con objetos y funciones que has definido. Es útil para depuración y experimentación.
+      La 'Consola' es el arma secreta del desarrollador para JavaScript. Te deja ejecutar JavaScript escribiendo en ella directamente &mdash; y ejecuta tus scripts _en el contexto de tu página_, por lo que puedes interactuar directamente con objetos y funciones que has definido. Es útil para depuración y experimentación.
 
       <img src='img/devtools_console.png'>
     MARKDOWN
@@ -46,7 +46,7 @@ steps do
 
   step do
     message <<-MARKDOWN
-      El panel de 'Sources' es otra herramienta para JavaScript. Si estas acostumbrado a trabajar con un IDE que tiene un depurador, serás capaz de utilizar muchas de las mismas técnicas (como breakpoints, stack traces, y ver las expresiones) en el navegador.
+      El panel de 'Sources' es otra herramienta para JavaScript. Si estás acostumbrado a trabajar con un IDE que tiene un depurador, serás capaz de utilizar muchas de las mismas técnicas (como breakpoints, stack traces, y ver las expresiones) en el navegador.
 
       <img src='img/devtools_script.png'>
     MARKDOWN
@@ -59,7 +59,7 @@ explanation do
 
 ## Sigue Aprendiendo con las Herramientas de Desarrollo
 
-Con buenas herramientas de desarrollo en el navegador, puedes escoger cada sitio que visites. Si ves estilos con CSS interesantes o animaciones en JavaScript, siempre puedes ver bajo la capa y averiguar cómo fueron hechas. Es una buena forma de seguir aprendiendo como desarrollador front-end.
+Con las herramientas de desarrollo adecuadas, puedes inspeccionar cada sitio que visites. Si ves estilos con CSS interesantes o animaciones en JavaScript, podrás averiguar cómo fueron hechos. Es una buena forma de seguir aprendiendo como desarrollador front-end.
 
   MARKDOWN
 end
