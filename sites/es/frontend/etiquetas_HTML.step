@@ -1,6 +1,6 @@
 goals do
   goal "Agregar algunas etiquetas a tu archivo HTML"
-  goal "Aprende más sobre etiquetas disponibles"
+  goal "Aprender más sobre etiquetas disponibles"
 end
 
 overview do
@@ -10,9 +10,9 @@ overview do
 ## Utiliza las Etiquetas para Separar Bloques de Contenido
 
 
-Las etiquetas trasmiten un significado. Y con el fin de mostrar su contenido, todo debería estar dentro de una etiqueta, no solo palabras que desees enfatizar. Así que vamos a utilizar la etiqueta paragraph `<p>` y la etiqueta header 1 `<h1>`.
+Las etiquetas trasmiten un significado. Y con el fin de mostrar su contenido, todo debería estar dentro de una etiqueta, no sólo palabras que desees enfatizar. Así que vamos a utilizar la etiqueta paragraph `<p>` y la etiqueta header 1 `<h1>`.
 
-Te darás cuenta que si incluso pones en líneas y espacios extra, HTML tratará a cualquier número o línea nueva o espacio de caractéres cómo otro espacio más. Cuando vayas a empezar con HTML, esto puede resultar trabajoso, por que tienes que escribir
+Te darás cuenta que si incluso pones líneas y espacios extra, HTML tratará a cualquier número o línea nueva o espacio de caracteres como otro espacio más. Cuando vayas a empezar con HTML, esto puede resultar trabajoso, por que tienes que escribir
   MARKDOWN
 
   source_code :html, <<HTML
@@ -21,7 +21,7 @@ Te darás cuenta que si incluso pones en líneas y espacios extra, HTML tratará
 HTML
   message <<-MARKDOWN
 
-Cuando todo lo quieras sea una línea en blanco en medio de dos sentencias. Pero a medida vas avanzando, este aspecto de HTML será más útil, porque significa que puedes dar formato a tu código siempre y cuando sea legible para **ti**, sin preocuparte por lo que el navegador piense de tus líneas y espacios en blanco.
+Cuando sólo quieras una línea en blanco entre de dos sentencias. Pero a medida que vas avanzando, este aspecto de HTML será más útil, porque significa que puedes dar formato a tu código siempre y cuando sea legible para **ti**, sin preocuparte por lo que el navegador piense de tus líneas y espacios en blanco.
 
 ## Etiquetas Anidadas
 
@@ -31,7 +31,7 @@ Es común para una etiqueta HTML estar anidada dentro de otra. En el ejemplo ant
   source_code :html, "<h1><em></em></h1>"
 
   important do
-    message "Solo asegurate que las etiquetas están correctamente _anidadas_. Por ejemplo, no debes hacer:"
+    message "Sólo asegúrate de que las etiquetas están correctamente _anidadas_. Por ejemplo, no debes hacer:"
 
     source_code :html, "<h1><em>¡Hola Mundo!</h1> ¡Me agradas!</em>"
 
@@ -42,7 +42,7 @@ end
 steps do
 
   step do
-    message "Agrega mas líneas de contenido a tu archivo HTML. Preséntate"
+    message "Agrega más líneas de contenido a tu archivo HTML. Preséntate"
 
     source_code :html, <<-HTML
 ¡Hola <em>Mundo</em>!
@@ -92,9 +92,9 @@ explanation do
 
   message <<-MARKDOWN
 
-## Etiquetas para cada Ocasión
+## Etiquetas para cada ocasión
 
-El meteórico ascenso de popularidad de la web y la reciente proliferación de aplicaciones web ha hecho a HTML muy popular. Aunque originalmente era utilizado sólo para documentos simples, ahora HTML tiene etiquetas para integrar vídeo y reproducir música, incrustación de imágenes, rellenado de formularios web, y todo tipo de más etiquetas útiles.
+El meteórico ascenso de popularidad de la web y la reciente proliferación de aplicaciones web han hecho a HTML muy popular. Aunque originalmente era utilizado sólo para documentos simples, ahora HTML tiene etiquetas para integrar vídeo y reproducir música, incrustación de imágenes, rellenado de formularios web, y todo tipo de etiquetas útiles.
 
 Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párrafos. Pero existen más etiquetas que puedes utilizar:
 
@@ -129,7 +129,7 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
     }
     tr {
       td "table, tr, td"
-      td "Puedes hacer tablas (como está) con filas y celdas de datos"
+      td "Puedes hacer tablas (como ésta) con filas y celdas de datos"
     }
     tr {
       td "form"
@@ -141,7 +141,7 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
     }
     tr {
       td "div"
-      td "Un marcador de sección que no hace nada específico al contenido propio, pero después crea una nueva líena. (Más sobre esto adelante.)"
+      td "Un marcador de sección que no hace nada específico al contenido propio, pero después crea una nueva línea. (Más de esto verémos adelante.)"
     }
     tr {
       td "span"
@@ -151,7 +151,7 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
 
   message <<-MARKDOWN
 
-  HTML5 introdujo varias etiquetas nuevas para hacer HTML más *semántico*, es decir que las etiquetas deben describir el contenido. Alguno de los nuevos elementos introducidos por HTML5 incluyen:
+  HTML5 introdujo varias etiquetas nuevas para hacer HTML más *semántico*, es decir que las etiquetas deben describir el contenido. Algunos de los nuevos elementos introducidos por HTML5 incluyen:
 
   MARKDOWN
 
@@ -169,7 +169,7 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
     }
     tr {
       td "header"
-      td "El encabezado para una página. (Esté es diferente del elemento head, ¡que contiene metadatos acerca de la página!)"
+      td "El encabezado para una página. (Éste es diferente del elemento head, ¡que contiene metadatos acerca de la página!)"
     }
     tr {
       td "footer"
@@ -187,7 +187,7 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
 
   message <<-MARKDOWN
 
-¡No trates de memorizar todas las etiquetas! Siempre puedes consultar sitios cómo:
+¡No trates de memorizar todas las etiquetas! Siempre puedes consultar sitios como:
 
 * [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
 * [DocHub](http://dochub.io/#html/)
