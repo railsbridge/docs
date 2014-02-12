@@ -137,11 +137,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   before do
     expires 3600, :public
-  end
-
-  before '/:locale/*' do
-    I18n.locale       = params[:locale]
-    request.path_info = "/#{ params[:locale] }/#{ params[:splat][0] }"
+    I18n.locale = locale
   end
 
   get '/favicon.ico' do
