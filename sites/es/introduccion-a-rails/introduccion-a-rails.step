@@ -1,7 +1,7 @@
 message <<-MARKDOWN
 ### Objetivo
 
-Para enseñarte Ruby on Rails vamos a utilizar un ejemplo del "Mundo Real".
+Para enseñarte Ruby on Rails vamos a utilizar un ejemplo de la "Vida Real".
 Has decidido crear un sistema de votos para que tú y tus amigos interactúen.
 Has decidido que como mínimo, te gustaría permitir a tus usuarios:
 
