@@ -13,7 +13,7 @@ steps do
 
     console_without_message "irb"
 
-    message "La tuya se puede ver diferente, pero debería verse algo así:"
+    message "Debería verse así, pero puede diferir un poco:"
 
     console_without_message "1.9.3p362 :001 > "
   end
