@@ -126,4 +126,4 @@ pluraliza("kiwi")
   end
 end
 
-next_step "empezar"
+next_step "iniciando"
