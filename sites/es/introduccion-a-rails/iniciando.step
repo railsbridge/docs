@@ -55,7 +55,7 @@ En **Sublime Text 2**, puedes utilizar la opción del menú: `Project > Add Fold
 
 <img src='/intro-to-rails/img/sublime_add_folder_to_project.png' />
 
-Selecciona tu directorio `suggestotron` desde el diálogo que se abre. Si todo funciona Sublime se vería algo así:
+Selecciona tu directorio `suggestotron` desde el diálogo que se abre. Si todo funciona, en Sublime se vería algo así::
 
 <img src='/intro-to-rails/img/sublime_project_as_folder.png' />
     MARKDOWN
@@ -68,8 +68,8 @@ Selecciona tu directorio `suggestotron` desde el diálogo que se abre. Si todo f
 
   table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
     tr {
-      th "File/Folder"
-      th "Purpose"
+      th "Archivo/Directorio"
+      th "Propósito"
     }
     tr {
       td "app/"
@@ -85,7 +85,7 @@ Selecciona tu directorio `suggestotron` desde el diálogo que se abre. Si todo f
     }
     tr {
       td "public/"
-      td "El único directorio visto por el mundo como-es. Si pones archivos aquí, estarán al servicio directamente sin ningún tipo de procesamiento de Rails."
+      td "El único directorio que es público.. Si pones archivos aquí, estarán al servicio directamente sin ningún tipo de procesamiento de Rails."
     }
     tr {
       td "app/assets/"
