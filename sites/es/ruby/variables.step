@@ -57,4 +57,4 @@ explanation do
   message "Las variables te permiten guardar datos, así después te puedes referir a ellos por el nombre. Los datos que guardas en variables permanecerán mientras tu programa se esté ejecutando."
 end
 
-next_step "strings"
+next_step "cadenas"
