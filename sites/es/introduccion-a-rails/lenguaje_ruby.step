@@ -1,0 +1,129 @@
+goals do
+  goal "Ser capaz de utilizar los bloques básicos de código de Ruby"
+  goal "Utilizar IRB para ejecutar código de Ruby"
+  goal "Hacer cálculos simples"
+  goal "Utilizar y entender las variables"
+  goal "Utilizar y entender los arreglos"
+  goal "Utilizar ciclos y sentencias condicionales"
+end
+
+steps do
+  step do
+    message "Excribe esto en la terminal para inicializar el intérprete Interactivo de Ruby, un programa que te permite probar código de Ruby:"
+
+    console_without_message "irb"
+
+    message "Debería verse así, pero puede diferir un poco:"
+
+    console_without_message "1.9.3p362 :001 > "
+  end
+
+  step do
+    console_with_message "A continuación intenta un poco de matemáticas simples, está incorporado a Ruby. Escribe estas líneas en IRB:", "3 + 3\n7 * 6"
+  end
+
+  step do
+    message "**Las variables** son nombres con valores asignados"
+
+    console_without_message "mi_variable = 5"
+
+    message "Esto asigna el valor `5` al nombre `mi_variable`."
+  end
+
+  step do
+    message "También puedes hacer matemáticas con variables:"
+    console_without_message <<-RUBY
+mi_variable + 2
+mi_variable * 3
+    RUBY
+  end
+
+  step do
+    message "Las variables también pueden contener más de un valor. Son llamados **arreglos**."
+
+    console_without_message 'frutas = ["kiwi", "fresa", "ciruela"]'
+
+    message "Aquí se usa la variable `frutas` para contener una colección de nombres de frutas."
+  end
+
+  step do
+    console <<-RUBY
+frutas = frutas + ["naranja"]
+frutas = frutas - ["kiwi"]
+    RUBY
+
+    message "`+` y `-` son llamados operadores. Se pueden usar con el arreglo de frutas de igual manera que se usan con números."
+
+  end
+
+  step do
+    message "Todo en Ruby tiene una **clase**. Escribe esto en IRB:"
+
+    console_without_message <<-RUBY
+7.class
+"kiwi".class
+frutas.class
+RUBY
+
+    message "Estos son los tres tipos de datos introducidos hasta el momento: **Fixnum** (números), **String** (texto), y **Array** (listas)."
+  end
+
+  step do
+    message "Cada clase tiene diferentes **métodos** que pueden ser usados en **instancias** de esa clase."
+
+    console_without_message <<-RUBY
+frutas.length
+frutas.first
+    RUBY
+
+    message "Puedes ver todos los métodos disponibles para un objeto:"
+    console_without_message <<-RUBY
+frutas.methods
+    RUBY
+
+    message "Y **encadenar** métodos:"
+    console_without_message <<-RUBY
+frutas.methods.sort
+    RUBY
+  end
+
+  step do
+    message "Los arreglos tienen un método llamado **each** el cual itera sobre la lista ejecutando código por cada elemento."
+    console_without_message <<-RUBY
+frutas.each do |fruta|
+  puts fruta
+end
+    RUBY
+    message "Esto toma el primer elemento del arreglo `frutas` (`\"kiwi\"`), lo asigna a la variable `fruta`, y ejecuta el código entre `do` y `end`. Luego hace lo mismo por cada elemento en la lista. El código de arriba debería imprimir una lista de frutas."
+  end
+
+  step do
+    message "Un **condicional** ejecuta código sólo cuando una sentencia evaluada es verdadera."
+
+    console_without_message <<-RUBY
+if mi_variable > 1
+  puts "¡YAY!"
+end
+    RUBY
+
+    message "Esto imprime`¡YAY!` si el valor almacenado en `mi_variable` es mayor que 1."
+
+    message "Intenta cambiando el `>` en el condicional por un `<`."
+  end
+
+  step do
+    message "También puedes hacer tus propios métodos:"
+    console_without_message <<-RUBY
+def pluraliza(palabra)
+  palabra + "s"
+end
+pluraliza("kiwi")
+    RUBY
+
+    message "Los métodos toman **parámetros**, los cuales son las variables con las que trabajan. En este caso, hicimos un método llamado pluraliza que toma un parámetro, una palabra."
+
+    message "Los métodos también pueden regresar datos. En este caso, pluraliza regresa la palabra con una 's' agregada al final de ella. En Ruby, las funciones regresan lo que la última línea de la función evalúa."
+  end
+end
+
+next_step "iniciando"
