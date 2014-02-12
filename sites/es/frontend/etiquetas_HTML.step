@@ -7,7 +7,7 @@ overview do
 
   message <<-MARKDOWN
 
-## Utiliza las Etiquetas para Separar Bloques de Contenido
+## Utiliza las etiquetas para separar bloques de contenido
 
 
 Las etiquetas trasmiten un significado. Y con el fin de mostrar su contenido, todo debería estar dentro de una etiqueta, no sólo palabras que desees enfatizar. Así que vamos a utilizar la etiqueta paragraph `<p>` y la etiqueta header 1 `<h1>`.
