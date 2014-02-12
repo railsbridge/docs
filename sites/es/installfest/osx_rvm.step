@@ -1,7 +1,7 @@
 step "Abrir Terminal" do
   message "Busca **Terminal.app** dentro de Aplicaciones -> Utilidades."
 
-  message "Agregala a tu dock; la estarás usando mucho. (Para agregarla al dock, haz click y mantén presionado el ícono del dock una vez que Terminal se abra. Seleciona opciones -> mantener en dock.)"
+  message "Agrégala a tu dock; la estarás usando mucho. (Para agregarla al dock, haz click y mantén presionado el ícono del dock una vez que Terminal se abra. Selecciona opciones -> mantener en dock.)"
 
   tip "Ordena tus ventanas para que Terminal y tu navegador esten uno después del otro. Vas a querer *leer* de tu navegador y *escribir* en tu terminal *al mismo tiempo*." 
 end
@@ -15,13 +15,13 @@ step "Instala Homebrew" do
 end
 
 step "Instala Git" do
-  message "Lo siguiente, instalaremos Git, el más popular sistema de contraldor de versiones en el mundo de Ruby:"
+  message "Lo siguiente, instalaremos Git, el sistema de control de versiones más popular en el mundo de Ruby:"
 
   console "git --version"
   fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
   message <<-MARKDOWN
-Si ves esa salida, tienes Git. <a href='#install-rvm'>Muevéte al siguiente paso.</a>
+Si ves ese mensaje, tienes Git. <a href='#install-rvm'>Muevéte al siguiente paso.</a>
   MARKDOWN
 
   console_with_message "De otra forma, escribe esto en la terminal:", "brew install git"
