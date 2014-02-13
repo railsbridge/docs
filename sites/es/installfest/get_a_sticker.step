@@ -1,0 +1,37 @@
+step "Pide a un voluntario verificar las versiones de tus herramientas" do
+
+  message "Encuentra un voluntario y pídeles observar los siguientes pasos"
+
+  verify "Instalación de herramienta" do
+
+    tip "La mayoría de las veces, los números de las versiones no tienen que ser iguales. En general, si los *primeros dos* números son iguales, o si el numero completo que tienes es *mayor* que el de abajo, entonces esta bien."
+
+    h3 "Si estas en OSX o Linux:"
+
+    console "rvm -v"
+    fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]{/FUZZY}"
+
+    h3 "En todos los sistemas operativos:"
+
+    console "ruby -v"
+    fuzzy_result "ruby 1.9{FUZZY}.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]{/FUZZY}"
+
+    console "bundle -v"
+    fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
+
+    console "rails -v"
+    fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
+
+    tip 'El currículo de RailsBridge esta escrito para Rails 4, así si que si aun tienes Rails 3.x, tienes que instalar Rails 4 con `gem install rails`''
+  end
+end
+
+step "Muestra tu aplicación de Heroku a un voluntario" do
+  message "Visita el sitio de Heroku que creaste en la pagina anterior y crea una nueva bebida"
+end
+
+step "Felicidades!" do
+  message "Obtienes una calcomanía! (O un chócala en caso de no haber mas calcomanías)."
+end
+
+next_step "limpiar"
