@@ -18,6 +18,7 @@ La consola es donde podemos experimentar con JavaScript, tecleando después del 
 MARKDOWN
 
 steps do
+
   step { message "En la consola, teclea `5` y presiona enter. Nota que se mostrará el valor `5` como respuesta. Así, nuestro valor de retorno de la expresión `5` es `5`." }
   step { message "Intenta `typeof(5)` y nota que tipo de objeto es `5`."}
   step { message "Intenta crear números decimales."}
@@ -25,7 +26,7 @@ steps do
   step { message "Intenta sumar o restar números en la consola tecleando `6 + 12` o `15 - 32`."}
   step { message "Intenta un caso extremo con números, como `12 / 0`." }
   step { message "Para asignar un número a una variable, teclea `numeroFavorito = 5` en el prompt de la consola. Después utiliza numeroFavorito en la siguiente expresión, como `numeroFavorito + 7`. Las variables en JavaScript son tradicionalmente 'camel-cased' con la primer letra de cada palabra en mayúscula." }
-  step { message Matemáticas más complejas, como exponentes, requieren que utilicemos el objeto Math, como en `Math.pow(12, 2)`, ¡pero no debe detenernos en intentarlo!"}
+  step { message "Matemáticas más complejas, como exponentes, requieren que utilicemos el objeto Math, como en `Math.pow(12, 2)`, ¡pero no debe detenernos en intentarlo!"}
   step { message "Puntos Extra: Echa un vistazo a [La Documentación de Mozilla para Desarrolladores](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) para más información del objeto Math, ¡intenta utilizar los demás métodos que se describen en tu consola!"}
 end
 

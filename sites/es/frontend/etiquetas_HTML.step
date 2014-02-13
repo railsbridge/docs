@@ -86,8 +86,6 @@ Mi nombre es Rachel.
   end
 
 end
-
-
 explanation do
 
   message <<-MARKDOWN
@@ -162,7 +160,8 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
     }
     tr {
       td "section"
-      td "Una sección del documento
+      td "Una sección del documento"
+    }
     tr {
       td "nav"
       td "Una sección de navegación"
@@ -179,7 +178,7 @@ Acabas de utilizar dos etiquetas conocidas, `h1` para títulos y `p` para párra
       td "main"
       td "El contenido importante de la página"
     }
-    tr{
+    tr {
       td "aside"
       td "Contenido no esencial"
     }

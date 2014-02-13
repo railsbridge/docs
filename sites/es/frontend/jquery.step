@@ -41,8 +41,8 @@ $("#copyright").click(function(){
 
 end
 
-explanation do:
-  
+explanation do
+
   message <<-MARKDOWN
 
 ## ¿Qué hicimos con jQuery?
