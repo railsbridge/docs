@@ -3,13 +3,13 @@ require "spec_helper"
 require_relative "../app"
 require_relative "../lib/site_index"
 
-describe Contents do
+describe SiteIndex do
   before :all do
-    @site_index = SiteIndex.new(site_name: 'frontend')
+    @site_index = SiteIndex.new(site_name: 'frontend', locale: 'en')
   end
 
   it "lists all sites in the /sites/ directory" do
-    all_sites = Dir['sites/**'].map { |site_path| site_path.sub('sites/', '') }
+    all_sites = Dir['sites/en/**'].map { |site_path| site_path.sub('sites/en/', '') }
     @site_index.sites.should =~  all_sites
   end
 

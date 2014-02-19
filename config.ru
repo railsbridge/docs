@@ -21,4 +21,7 @@ I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'config', 'locales', '*.
 I18n.backend.load_translations
 
 require './app'
-run InstallFest
+run Rack::Cascade.new([
+  Deck::RackApp.public_file_server,
+  InstallFest
+  ])

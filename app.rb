@@ -2,8 +2,8 @@ require 'sinatra'
 require 'digest/md5'
 require 'erector'
 
-# require 'wrong'
-# include Wrong::D
+#require 'wrong'
+#include Wrong::D
 
 here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
@@ -17,35 +17,32 @@ require "raw_page"
 require "deck"
 require "deck/rack_app"
 require "titleizer"
+require "site"
 
-class InstallFest < Sinatra::Application
+class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_site = "docs"
-    set_downstream_app # todo: test
+    @default_sites = {en: "docs", es: "hola"}
+    @default_locale = "en"
   end
 
-  attr_reader :here
-  attr_writer :default_site
+  attr_reader :here, :default_locale
+  attr_writer :default_site, :default_locale
+
+  # todo: test
+  # returns the most-specific hostname component, e.g. "foo" for "foo.example.com"
+  def subdomain
+    host.split(".").first
+  end
 
   def default_site
-    if host
-      host_parts = host.split(".")
-      subdomain = host_parts.first
-      if ["es"].include?(subdomain)
-        params[:locale] = subdomain
-        # if request.env['PATH_INFO'] = host_parts[1..-1]
-        "es/" + @default_site
-      elsif sites.include?(subdomain)
-        subdomain
-      else
-        @default_site
-      end
+    if host && sites.include?(site = subdomain)
+      site
     else
-      @default_site
+      @default_sites[locale.to_sym]
     end
   end
 
@@ -57,16 +54,8 @@ class InstallFest < Sinatra::Application
     "#{sites_dir}/#{params[:site]}"
   end
 
-  def sites_dir= dir
-    @sites_dir = dir.tap { set_downstream_app }
-  end
-
-  def set_downstream_app
-    @app = ::Deck::RackApp.public_file_server
-  end
-
   def sites_dir
-    @sites_dir || "#{@here}/sites"
+    Site.sites_dir(locale)
   end
 
   def sites
@@ -77,6 +66,13 @@ class InstallFest < Sinatra::Application
     {
         'curriculum' => 'intro-to-rails'
     }
+  end
+
+  def locale
+    (params && (params[:locale] or params[:l])) or
+      (host && subdomain =~ /^..$/ && subdomain) or   # note: only allows 2-char locales for now -- should check against a list of locales
+      (ENV['SITE_LOCALE']) or
+      default_locale
   end
 
   def src
@@ -98,21 +94,16 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  def title_for_page page_name
-    page_name.split(/[-_]/).map do |w|
-      w == "osx" ? "OS X" : w.capitalize
-    end.join(' ')
-  end
-
   def render_page
     begin
       options = {
-          site_name: params[:site],
-          page_name: params[:name],
-          doc_title: Titleizer.title_for_page(params[:name]),
-          doc_path: doc_path,
-          back: params[:back],
-          src: src,
+        site_name: params[:site],
+        page_name: params[:name],
+        doc_title: Titleizer.title_for_page(params[:name]),
+        doc_path: doc_path,
+        back: params[:back],
+        src: src,
+        locale: locale,
       }
 
       case ext
@@ -136,17 +127,17 @@ class InstallFest < Sinatra::Application
 
     rescue Errno::ENOENT => e
       p e
+      e.backtrace.each do |line|
+        break if line =~ /sinatra\/base.rb/
+        puts "\t"+line
+      end
       halt 404
     end
   end
 
   before do
     expires 3600, :public
-  end
-
-  before '/:locale/*' do
-    I18n.locale       = params[:locale]
-    request.path_info = "/#{ params[:locale] }/#{ params[:splat][0] }"
+    I18n.locale = locale
   end
 
   get '/favicon.ico' do
@@ -160,11 +151,12 @@ class InstallFest < Sinatra::Application
   get "/:site/:name/src" do
     begin
       RawPage.new(
-          site_name: params[:site],
-          page_name: params[:name],
-          doc_title: doc_path.split('/').last,
-          doc_path: doc_path,
-          src: src
+        site_name: params[:site],
+        page_name: params[:name],
+        doc_title: doc_path.split('/').last,
+        doc_path: doc_path,
+        src: src,
+        locale: locale,
       ).to_html
     rescue Errno::ENOENT => e
       p e
@@ -175,8 +167,6 @@ class InstallFest < Sinatra::Application
   get "/:site/:name.:ext" do
     if sites.include?(params[:site])
       send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
-    else
-      forward # send it on to the downstream file server
     end
   end
 
@@ -184,8 +174,6 @@ class InstallFest < Sinatra::Application
   get "/:site/img/:name.:ext" do
     if sites.include?(params[:site])
       send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
-    else
-      forward # send it on to the downstream file server
     end
   end
 
@@ -210,22 +198,7 @@ class InstallFest < Sinatra::Application
   end
 
   get "/:site/:name/:section" do
-
-    if params[:site] == 'deck.js'  # hack: todo: put the deck.js file server *ahead* in the rack chain
-      forward
-    else
-      if params[:site] == "es"
-        params[:site] = "es/#{params[:name]}"
-        params[:name] = params[:section]
-      end
-      render_page
-    end
-  end
-
-  get "/:file.:ext" do
-    # treat root URLs with dots in them like static assets and serve them
-    #   from the downstream file server (coderay.css, jquery-1.7.2.js)
-    forward
+    render_page
   end
 
   get "/:site" do
@@ -246,8 +219,6 @@ class InstallFest < Sinatra::Application
       end
       params[:name] = site_name
       render_page
-    else
-      forward # send it on to the downstream file server
     end
   end
 end

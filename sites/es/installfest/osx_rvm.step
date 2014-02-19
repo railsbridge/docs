@@ -1,0 +1,71 @@
+step "Abrir Terminal" do
+  message "Busca **Terminal.app** dentro de Aplicaciones -> Utilidades."
+
+  message "Agrégala a tu dock; la estarás usando mucho. (Para agregarla al dock, haz click y mantén presionado el ícono del dock; una vez que Terminal se abra, selecciona opciones -> mantener en dock.)"
+
+  tip "Ordena tus ventanas para que Terminal y tu navegador estén uno después del otro. Vas a querer *leer* de tu navegador y *escribir* en tu terminal *al mismo tiempo*." 
+end
+
+step "Instala un Compilador (XCode o GCC)" do
+  link "instala_xcode"
+end
+
+step "Instala Homebrew" do
+  insert "instala_homebrew"
+end
+
+step "Instala Git" do
+  message "Para continuar, instalaremos Git, el sistema de control de versiones más popular en el mundo de Ruby:"
+
+  console "git --version"
+  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+
+  message <<-MARKDOWN
+Si ves ese mensaje, tienes Git. <a href='#install-rvm'>Muevéte al siguiente paso.</a>
+  MARKDOWN
+
+  console_with_message "De otra forma, escribe esto en la terminal:", "brew install git"
+
+  verify do
+    console "git --version"
+    fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+  end
+end
+
+a name: "install-rvm"
+step "Instala RVM, el organizador de versiones de Ruby ", {:anchor_name => 'instala_rvm'} do
+  link "instala_rvm"
+end
+
+step "Configura RVM para usar Homebrew" do
+  console "rvm autolibs homebrew"
+end
+
+step "Instala Ruby" do
+  insert "instala_ruby"
+end
+
+step "Instala Rails" do
+  console "gem install rails"
+  verify do
+    console "rails -v"
+    fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
+  end
+end
+
+step "Instala Sublime Text 2" do
+  insert "instala_sublime_text_2_para_mac"
+end
+
+verify "Instalación exitosa" do
+  console "git --version"
+  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+
+  console "which ruby"
+  fuzzy_result "/Users/alex/.rvm/rubies/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/ruby"
+
+  console "which rails"
+  fuzzy_result "/Users/alex/.rvm/gems/ruby-1.9{FUZZY}.3-p290{/FUZZY}/bin/rails"
+end
+
+next_step "configura_git"

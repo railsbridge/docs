@@ -8,7 +8,7 @@ real_sites_dir = File.expand_path "#{here}/../sites"
 
 describe Contents do
   let(:site_name) { 'meals' }
-  let(:site_dir) { "#{here}/sites/#{site_name}" }
+  let(:site_dir) { "#{here}/sites/#{site_name}" }  # note: locale is not currently in spec/sites
   let(:page_name) { 'prepare_a_meal' }
   before do
     @toc = Contents.new(site_name: site_name, site_dir: site_dir, page_name: page_name)
@@ -16,8 +16,8 @@ describe Contents do
 
   describe "absolute links" do
     let(:site_name) { 'docs' }
-    let(:site_dir) { "#{real_sites_dir}/#{site_name}" }
-    let(:page_name) { 'docs' }
+    let(:site_dir) { "#{real_sites_dir}/en/#{site_name}" }
+    let(:page_name) { 'docs' }    
     before do
       @toc_html = Nokogiri.parse(@toc.to_html)
     end
@@ -30,7 +30,7 @@ describe Contents do
 
   describe 'capitalization' do
     let(:site_name) { 'installfest' }
-    let(:site_dir) { "#{real_sites_dir}/#{site_name}" }
+    let(:site_dir) { "#{real_sites_dir}/en/#{site_name}" }
     let(:page_name) { 'installfest' }
     before do
       @toc_html = Nokogiri.parse(@toc.to_html)
