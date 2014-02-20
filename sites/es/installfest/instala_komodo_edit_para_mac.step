@@ -1,22 +1,22 @@
 message <<-MARKDOWN
 
-Estaremos usando text editor durante el taller, aunque eres libre de usar un editor diferente si lo prefieres. Debe ser un editor de texto-plano, asi como vi o Textmate.
+Estaremos usando KomodoEdit en el taller, aunque eres libre de usar un editor diferente si lo prefieres. Debe ser un editor de texto-plano, asi como vi o Textmate.
 
 MARKDOWN
 
-important "Microsoft Word y otras procesadores de texto, incluyendo TextEdit y Notepad, no van a funcionar."
+important "Microsoft Word y otros procesadores de texto, incluyendo TextEdit y Notepad, no van a funcionar."
 
 step "Descargar KomodoEdit" do
   message "Descarga el [instalador KomodoEdit](http://downloads.activestate.com/Komodo/releases/8.0.0/Komodo-Edit-8.0.0-12188-macosx.dmg)."
 end
 
-step 'Selecciona "Abrir con DiskImageMounter" en el archivo de guardar diálogo'
+step 'Selecciona "Abrir con DiskImageMounter" ' do
   message <<-MARKDOWN
 Este debería ser el de por defecto
 
 Abrirá un instalador con un ícono de KomodoEdit y una foto de tu carpeta de Aplicaciones. Algo como esto:
   MARKDOWN
-  img src: '/installfest/img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
+  img src: '/en/installfest/img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
 end
 
 step "Arrastra KomodoEdit dentro de tu carpeta de Aplicaciones." do
