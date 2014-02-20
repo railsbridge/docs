@@ -12,7 +12,7 @@ end
 
 step 'Selecciona "Abrir con DiskImageMounter" ' do
   message <<-MARKDOWN
-Este debería ser el de por defecto
+Ésta debería ser la acción predeterminada 
 
 Abrirá un instalador con un ícono de KomodoEdit y una foto de tu carpeta de Aplicaciones. Algo como esto:
   MARKDOWN
@@ -23,6 +23,6 @@ step "Arrastra KomodoEdit dentro de tu carpeta de Aplicaciones." do
   message "Abrirá un instalador con un ícono de KomodoEdit y una foto de tu carpeta de Aplicaciones. Arrastra KomodoEdit dentro de tu carpeta de Aplicaciones."
 end
 
-step "Expulsa el instaldor" do
-  message "Solo arrastralo de tu escritorio a la basura."
+step "Desmonta el instalador" do
+  message "Sólo arrástralo de tu escritorio a la basura."
 end
