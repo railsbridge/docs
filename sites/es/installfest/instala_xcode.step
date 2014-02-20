@@ -1,6 +1,6 @@
-message "La instalación de XCode es directa, con una advertencia. Cuando te pregunta acerca de los componentes a instalar, necesitas asegurar que \"Unix Tools\" esta seleccionado. Aparte de eso, solo es dar click en Continuar/Ok/Si/etc."
+message "La instalación de XCode es directa, con una advertencia. Cuando te pregunta acerca de los componentes a instalar, necesitas asegurate de que \"Unix Tools\" está seleccionado. Posteriormente, solo es dar click en Continuar/Ok/Si/etc."
 
-option "Instala XCode de la App Store (OSX 10.7 Lion o mayor)" do
+option "Instala XCode de la App Store (OSX 10.7 Lion o posterior)" do
   link "instala_xcode_desde_la_app_store"
 end
 
