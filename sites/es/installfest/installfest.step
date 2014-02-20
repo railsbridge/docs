@@ -1,57 +1,57 @@
-message "This is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
+message "Este es un conjunto de instrucciones paso a paso para la instalación de Ruby, Rails y otras herramientas importantes para computadoras Mac, Windows, o Linux. Originalmente desarrollado por [Railsbridge Workshops](http://railsbridge.org), es un proyecto de documentación open-source apoyado por la comunidad. Si quieres contribuir, haz click en el link [git] en la esquina superior derecha de cualquier página y envía tu cambio en Github."
 
-step "Prepare for the Installfest" do
+step "Prepárate para el Installfest" do
   message <<-MARKDOWN
 
 
-## You must bring:
+## Debes traer::
 
-* **Your laptop.** You need to have a working wifi connection and a browser.
-  * If you have a choice between a Mac and a Windows laptop, please bring the Mac.
-  * Linux is an acceptable alternative, but the Installfest is only tested on Ubuntu.
-* **Power cord for your laptop**
-* If you already have accounts on Heroku or GitHub, make sure you know your username and password.
+* **Tu laptop.** Debes tener una conexión wifi que funcione y un navegador.
+  * Si puedes escoger entre una laptop Mac y una Windows, por favor trae la Mac.
+  * Linux es una alternativa aceptable, pero el Installfest sólo se ha probado en Ubuntu.
+* **Cable de poder para tu laptop**
+* Si ya tienes cuentas en Heroku o Github, asegúrate de saber el nombre de usuario y contraseña.
 
-## Possibly also helpful to bring:
+## Posiblemente también podría ser conveniente traer:
 
-* Extension cord
-* Power strip
-* Camera
+* Extensión
+* Multicontacto
+* Cámara
 * Snacks
 
   MARKDOWN
 end
 
-step "Don't Panic!" do
+step "¡Que no cunda el pánico!" do
   message <<-MARKDOWN
 
 
-Even if you get stuck, please go through the rest of the instructions and download all the things you'll need. Bandwidth will be at a premium during the workshop, so it will help immensely to have everything on your laptop already.
+Incluso si te atoras en algo, por favor sigue con el resto de las instrucciones y descarga toda las cosas que necesitarás. El ancho de banda estará muy ocupado durante el taller, así que será de inmensa ayuda tener todo listo ya en tu computadora.
 
-There are a lot of steps, and the instructions may seem like they're in a foreign language, but: **don't panic!** By the end of the workshop, you'll know what everything is and how to use it.
+Hay muchos pasos, y las instrucciones parecerá que están en otro lenguaje, pero: **¡que no cunda el pánico!** Para el final del taller, sabrás qué es cada cosa y cómo se usa.
 
   MARKDOWN
 end
 
-step "Read This Overview" do
+step "Lee esta Introducción" do
   message <<-MARKDOWN
 
-You will be installing the following tools:
+Instalarás las siguientes herramientas:
 
 * Ruby
 * Rails
 * Git
 * Heroku
-* Sublime Text 2 (or some editor)
-* Various useful "ruby gems", including...
+* Sublime Text 2 (o algún editor de textos)
+* Varias "ruby gems" útiles, incluyendo...
   * bundler
   * sqlite
 
-You will also create an account on Heroku, an application hosting platform.
+También crearás una cuenta en Heroku, una plataforma para almacenar aplicaciones.
 
-If you already have an account on Heroku, make sure you know your username and password.
+Si ya tienes una cuenta en Heroku, asegúrate de saber tu nombre de usuario y contraseña.
 
-If you've already installed the above tools and are confident they are setup correctly, skip ahead to the [Get a Sticker](consigue_un_sticker) step.
+Si ya has instalado alguna de las herramientas anteriores y estás confiada en que están configuradas correctamente, ve directo al paso [Consigue un sticker ](consigue_un_sticker).
 
   MARKDOWN
 end
