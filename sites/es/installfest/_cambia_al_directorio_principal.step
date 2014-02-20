@@ -3,10 +3,10 @@ message "`cd` representa cambio de directorio."
 div do
   option_half "Windows" do
     console "cd c:\\Sites"
-    message "`cd c:\\Sites` establece nuestro directorio de Sites a nuestro directorio actual."
+    message "`cd c:\\Sites` establece el directorio Sites como nuestro directorio actual."
   end
   option_half "Mac o Linux" do
     console "cd ~"
-    message "`cd ~` establece nuestro directorio de Home a nuestro directorio actual."
+    message "`cd ~` establece el directorio Home como nuestro directorio actual."
   end
 end
