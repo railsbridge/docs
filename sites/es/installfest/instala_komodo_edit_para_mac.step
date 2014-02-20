@@ -16,7 +16,7 @@ Este debería ser el de por defecto
 
 Abrirá un instalador con un ícono de KomodoEdit y una foto de tu carpeta de Aplicaciones. Algo como esto:
   MARKDOWN
-  img src: '/en/installfest/img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
+  img src: 'img/Komodo-Edit-5.png', alt: 'Komodo Edit 5'
 end
 
 step "Arrastra KomodoEdit dentro de tu carpeta de Aplicaciones." do
