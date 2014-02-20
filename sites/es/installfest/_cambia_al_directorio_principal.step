@@ -1,10 +1,12 @@
-message "`cd` stands for change directory."
+message "`cd` representa cambio de directorio."
 
-option "Windows" do
-  console "cd c:\\Sites"
-  message "`cd c:\\Sites` sets our Sites directory to our current directory."
-end
-option "Mac or Linux" do
-  console "cd ~"
-  message "`cd ~` sets our home directory to our current directory."
+div do
+  option_half "Windows" do
+    console "cd c:\\Sites"
+    message "`cd c:\\Sites` establece nuestro directorio de Sites a nuestro directorio actual."
+  end
+  option_half "Mac o Linux" do
+    console "cd ~"
+    message "`cd ~` establece nuestro directorio de Home a nuestro directorio actual."
+  end
 end
