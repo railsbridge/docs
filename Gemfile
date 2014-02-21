@@ -15,6 +15,7 @@ gem 'thin'
 
 group :development do
   gem 'files', '~> 0.3.0'
+  gem 'git-duet'
   gem 'pry'
   gem 'rake'
   gem 'rack-test'
