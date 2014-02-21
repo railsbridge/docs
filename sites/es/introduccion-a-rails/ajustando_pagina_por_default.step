@@ -94,6 +94,6 @@ explanation {
   MARKDOWN
 }
 
-insert 'consider_deploying'
+insert 'considerar_mandar_a_heroku'
 
 next_step "voting_on_topics"

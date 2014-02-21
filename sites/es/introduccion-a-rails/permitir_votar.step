@@ -80,6 +80,6 @@ steps {
   end
 }
 
-insert 'consider_deploying'
+insert 'considerar_mandar_a_heroku'
 
-next_step "redirect_to_the_topics_list_after_creating_a_new_topic"
+next_step "redirigir_a_la_lista_de_temas_despues_de_crear_uno"
