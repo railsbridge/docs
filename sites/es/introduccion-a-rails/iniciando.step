@@ -1,4 +1,4 @@
-img src: "/intro-to-rails/img/Start_page.png", alt: "Start Page"
+img src: "img/Start_page.png", alt: "Start Page"
 
 goals do
   goal "Crear tu nueva aplicación"
@@ -53,11 +53,11 @@ Abre el directorio suggestotron como un proyecto en tu editor de texto.
 
 En **Sublime Text 2**, puedes utilizar la opción del menú: `Project > Add Folder to Project...`
 
-<img src='/intro-to-rails/img/sublime_add_folder_to_project.png' />
+<img src='img/sublime_add_folder_to_project.png' />
 
 Selecciona tu directorio `suggestotron` desde el diálogo que se abre. Si todo funciona, en Sublime se vería algo así::
 
-<img src='/intro-to-rails/img/sublime_project_as_folder.png' />
+<img src='img/sublime_project_as_folder.png' />
     MARKDOWN
   end
 
