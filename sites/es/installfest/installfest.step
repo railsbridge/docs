@@ -1,4 +1,4 @@
-message "Este es un conjunto de instrucciones paso a paso para la instalación de Ruby, Rails y otras herramientas importantes para computadoras Mac, Windows, o Linux. Originalmente desarrollado por [Railsbridge Workshops](http://railsbridge.org), es un proyecto de documentación open-source apoyado por la comunidad. Si quieres contribuir, haz click en el link [git] en la esquina superior derecha de cualquier página y envía tu cambio en Github."
+message "Este es un conjunto de instrucciones paso a paso para la instalación de Ruby, Rails y otras herramientas importantes para computadoras Mac, Windows, o Linux. Originalmente desarrollado por [Railsbridge Workshops](http://railsbridge.org), es un proyecto de documentación open-source apoyado por la comunidad. Si quieres contribuir, haz click en el link [git] en la esquina superior derecha de cualquier página y envía tu cambio en GitHub."
 
 step "Prepárate para el Installfest" do
   message <<-MARKDOWN
@@ -9,8 +9,8 @@ step "Prepárate para el Installfest" do
 * **Tu laptop.** Debes tener una conexión wifi que funcione y un navegador.
   * Si puedes escoger entre una laptop Mac y una Windows, por favor trae la Mac.
   * Linux es una alternativa aceptable, pero el Installfest sólo se ha probado en Ubuntu.
-* **Cable de poder para tu laptop**
-* Si ya tienes cuentas en Heroku o Github, asegúrate de saber el nombre de usuario y contraseña.
+* **Cable de poder (cargador) para tu laptop**
+* Si ya tienes cuentas en Heroku o GitHub, asegúrate de saber el nombre de usuario y contraseña.
 
 ## Posiblemente también podría ser conveniente traer:
 
