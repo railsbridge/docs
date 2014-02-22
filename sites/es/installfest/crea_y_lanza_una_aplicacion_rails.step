@@ -54,7 +54,7 @@ Si `rails server` inicia sin errores, ¡estás lista! Se verá algo así:
 
 message "Si así fue, ¡felicidades! haz instalado Ruby Y Rails correctamente y haz iniciado el servidor."
 
-tip "Si no funcionó, pide ayuda a un asistente."
+tip "Si no funcionó, pide ayuda a un instructor."
 
 message <<-MARKDOWN
 
@@ -147,10 +147,10 @@ Git remote heroku added
   console "git remote show"
   result "heroku"
 
-  message "Si aquí te salen mensajes advirtiendo sobre llaves públicas es posible que sea alguna confusión con alguna llave SSH utilizada por otra aplicación en tu computadora. LLama a un voluntario para que te ayude a resolverlo. Con suerte, ésto sólo se necesitará hacer la primera vez que crees una aplicación de Heroku."
+  message "Si aquí te salen mensajes advirtiendo sobre llaves públicas es posible que sea alguna confusión con alguna llave SSH utilizada por otra aplicación en tu computadora. LLama a un voluntario para que te ayude a resolverlo. Con suerte, esto sólo se necesitará hacer la primera vez que crees una aplicación de Heroku."
   end
 
-  step "Prepara tu aplicación rails para lanzarla a Heroku" do
+  step "Prepara tu aplicación Rails para lanzarla a Heroku" do
     message <<-MARKDOWN
 
 Inicia tu editor de texto y abre el archivo "Gemfile" localizado dentro de tu carpeta test_app. (En Windows, debe de estar en `C:\\Sites\\test_app` y en Linux/OS X, debe de estar dentro de `~/test_app`.)
@@ -162,7 +162,7 @@ gem 'sqlite3'
   RUBY
 
   message <<-MARKDOWN
-Por ésto:
+Por esto:
   MARKDOWN
 
   source_code :ruby, <<-RUBY
@@ -225,7 +225,7 @@ To git@heroku.com:floating-winter-18.git
 
     important "Asegúrate de encontrar y aprenderte el nombre de tu aplicación de Heroku en la salida de comandos."
 
-    message "Este proceso posiblemente tome el doble de tiempo que tu 'bundle install' y después regresará el puntero a tu línea de comandos. Si toma más tiempo que eso, llama a un asistente."
+    message "Este proceso posiblemente tome el doble de tiempo que tu 'bundle install' y después regresará el puntero a tu línea de comandos. Si toma más tiempo que eso, llama a un instructor."
 
     console "heroku run rake db:migrate"
 
