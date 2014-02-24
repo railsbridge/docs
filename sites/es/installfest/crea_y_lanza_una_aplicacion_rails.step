@@ -113,7 +113,7 @@ Con Git, generalmente hay muchas maneras de hacer cosas similares.
   * `git add .` ("git add dot") agrega todos los archivos nuevos y editados, pero *mantiene* los archivos que has eliminado.
   * `git add -A` agrega todo, incluyendo archivos eliminados.
 
-"Agregar archivos eliminados" puede oirse raro, pero si piensas en un sistema de control de versiones como mantener registro de *cambios*, puede que tenga más sentido.
+"Agregar archivos eliminados" puede oirse raro, pero si piensas en un sistema de control de versiones como una forma de mantener registro de *cambios*, puede que tenga más sentido.
 
     MARKDOWN
   end
@@ -186,7 +186,7 @@ end
 bundle install --without production
     BASH
 
-    message "De nuevo, espera por la entrada de la línea de comandos, y busca justo arriba el mensaje 'Your bundle is complete!'. Si esto falla, busca un voluntario para que te ayude a editar `config/environments/production.rb`"
+    message "De nuevo, espera por la entrada de la línea de comandos, y busca justo arriba el mensaje 'Your bundle is complete!'. Si esto falla, busca un instructor para que te ayude a editar `config/environments/production.rb`"
   end
 
   step "Agregar mis cambios a git" do
