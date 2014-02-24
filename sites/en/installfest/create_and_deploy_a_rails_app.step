@@ -205,6 +205,9 @@ bundle install --without production
     source_code :ruby, <<-RUBY
       root 'drinks#index'
     RUBY
+
+    message "Note that you must remove the leading '#', as lines that start with a # are
+    comments and will not have any effect."
   end
 
   step "Add the changes to git" do
