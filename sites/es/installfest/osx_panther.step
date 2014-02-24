@@ -97,11 +97,7 @@ SOLO para Tiger:
 end
 
 step "Instala Textmate" do
-  link "instala_textmate"
+  insert "instala_textmate"
 end
 
-step "Crea una llave SSH" do
-  link "crea_una_llave_ssh"
-end
-
-next_step "crea_una_cuenta_de_heroku"
+next_step "crea_una_llave_ssh"

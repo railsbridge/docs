@@ -24,6 +24,7 @@ GEM
     ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
     files (0.3.1)
+    git-duet (0.2.0)
     i18n (0.6.5)
     json (1.8.1)
     listen (1.0.3)
@@ -107,6 +108,7 @@ DEPENDENCIES
   erector (~> 0.9.0)
   eventmachine (~> 1.0.3)
   files (~> 0.3.0)
+  git-duet
   i18n
   nokogiri
   pry
