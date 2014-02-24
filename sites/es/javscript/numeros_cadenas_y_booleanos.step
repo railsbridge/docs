@@ -1,0 +1,54 @@
+goals do
+  goal "Utilizar la consola del navegador"
+  goal "Entender los tipos primitivos: números, cadenas y booleanos"
+end
+
+overview do
+  message <<-MARKDOWN
+
+## Utilizando la consola del navegador
+
+Vamos a experimentar con JavaScript utilizando la consola de nuestro navegador. Te recomendamos utilizar Chrome, para consistencia durante la clase.
+
+Para abrir la consola en Mac, usa el acceso directo `Command` + `Option` + `J`. Para abrir la consola en Windows o Linux, usa el accesso directo `Control` + `Shift` + `J`. También puedes hacer click derecho en el navegador, seleccionar la opción 'Inspeccionar Elemento' del menú, y hacer click en la pestaña 'Consola'
+
+La consola es donde podemos experimentar con JavaScript, tecleando después del prompt `>`. La consola además nos mostrará el valor retornado por una expresión que tecleemos y mostrará cualquier error que tengamos.
+
+## Números
+MARKDOWN
+
+steps do
+
+  step { message "En la consola, teclea `5` y presiona enter. Nota que se mostrará el valor `5` como respuesta. Así, nuestro valor de retorno de la expresión `5` es `5`." }
+  step { message "Intenta `typeof(5)` y nota que tipo de objeto es `5`."}
+  step { message "Intenta crear números decimales."}
+  step { message "Intenta crear números irracionales (un número que sólo puede ser expresado como la relación de dos números, como 2/3). Nota que se convertirá a decimal."}
+  step { message "Intenta sumar o restar números en la consola tecleando `6 + 12` o `15 - 32`."}
+  step { message "Intenta un caso extremo con números, como `12 / 0`." }
+  step { message "Para asignar un número a una variable, teclea `numeroFavorito = 5` en el prompt de la consola. Después utiliza numeroFavorito en la siguiente expresión, como `numeroFavorito + 7`. Las variables en JavaScript son tradicionalmente 'camel-cased' con la primer letra de cada palabra en mayúscula." }
+  step { message "Matemáticas más complejas, como exponentes, requieren que utilicemos el objeto Math, como en `Math.pow(12, 2)`, ¡pero no debe detenernos en intentarlo!"}
+  step { message "Puntos Extra: Echa un vistazo a [La Documentación de Mozilla para Desarrolladores](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) para más información del objeto Math, ¡intenta utilizar los demás métodos que se describen en tu consola!"}
+end
+
+message <<-MARKDOWN
+## Cadenas
+Las cadenas son unidades de texto, y las podemos encapsular en `'comillas simples'` o `"comillas dobles"`.
+MARKDOWN
+steps do
+  step { message "Intenta crear una cadena tecleando`'esta es una cadena'` en el prompt de la consola."}
+  step { message "Puedes obtener los caracteres de una cadena con `'esta es una cadena'[6]`, en donde el número 6 es el índice del caracter que quieres, iniciando en 0."}
+  step { message "Concatena cadenas con `'mi nombre es' + 'Michelle' + '.'`."}
+  step { message "Asigna una cadena a una variable escribiendo `miNombre = 'Michelle'`."}
+  step { message "Utiliza la variable como si fuera una cadena: `'¿Tu nombre es ' + miNombre + '?'`"}
+  step { message "Si tienes más conocimento sobre el tema, echa un vistazo a [La Documentación sobre cadenas en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)."}
+end
+
+message <<-MARKDOWN
+## Booleanos (True/False)
+Los Booleanos son un tipo de objeto utilizado para identificar valores verdaderos o falsos en JavaScript. Son mayormente utilizados para verificar si una condición es verdadera o no, o si existe algo.
+MARKDOWN
+steps do
+  step {message "Intenta crear un Booleano tecleando `'x = false'`."}
+  step {message "`Teclea x==false?console.log(`'yes`'):console.log(`'no`');`."}
+end
+end

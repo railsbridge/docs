@@ -1,0 +1,10 @@
+message "`cd` significa cambiar directorio."
+
+option "Windows" do
+  console "cd c:\\Sites"
+  message "`cd c:\\Sites` inicializa el directorio Sites como nuestro directorio actual. "
+end
+option "Mac o Linux" do
+  console "cd ~"
+  message "`cd ~` inicializa el directorio home como nuestro directorio actual."
+end

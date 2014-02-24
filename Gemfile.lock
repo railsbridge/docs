@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (3.2.16)
+    activesupport (3.2.15)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     coderay (1.1.0)
@@ -24,7 +24,8 @@ GEM
     ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
     files (0.3.1)
-    i18n (0.6.9)
+    git-duet (0.2.0)
+    i18n (0.6.5)
     json (1.8.1)
     listen (1.0.3)
       rb-fsevent (>= 0.9.3)
@@ -32,7 +33,7 @@ GEM
       rb-kqueue (>= 0.2)
     method_source (0.8.2)
     mini_portile (0.5.2)
-    multi_json (1.8.4)
+    multi_json (1.8.2)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
@@ -43,11 +44,6 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry (0.9.12.6-x86-mingw32)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
-      slop (~> 3.4)
-      win32console (~> 1.3)
     rack (1.5.2)
     rack-codehighlighter (0.5.0)
       nokogiri (>= 1.4.1)
@@ -56,9 +52,9 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.1.1)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.3)
+    rake (10.1.0)
+    rb-fsevent (0.9.3)
+    rb-inotify (0.9.2)
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
@@ -76,9 +72,9 @@ GEM
     ruby2ruby (2.0.7)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
-    ruby_parser (3.3.0)
+    ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
-    sass (3.2.13)
+    sass (3.2.12)
     sexp_processor (4.4.1)
     sinatra (1.3.6)
       rack (~> 1.4)
@@ -94,7 +90,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     trollop (2.0)
-    win32console (1.3.2-x86-mingw32)
     wrong (0.7.1)
       diff-lcs (~> 1.2.5)
       predicated (~> 0.2.6)
@@ -113,6 +108,7 @@ DEPENDENCIES
   erector (~> 0.9.0)
   eventmachine (~> 1.0.3)
   files (~> 0.3.0)
+  git-duet
   i18n
   nokogiri
   pry

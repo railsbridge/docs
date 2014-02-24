@@ -1,29 +1,29 @@
 message <<MARKDOWN
-Este sitio es mantenido por voluntarios de RailsBridge. Si encuentras algo que pudiera ser mejorado, por favor haz un [pull request](https://github.com/railsbridge/docs) o [envíanos una nota](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no se requiere conocimiento técnico).
+Este sitio es mantenido por voluntarios de RailsBridge. Si encuentras algo que pudiera ser mejorado, por favor haz un [pull request](https://github.com/railsbridge/docs) o [envíanos una nota](https://github.com/railsbridge/docs/issues/new) vía GitHub Issues (no se requiere conocimiento técnico).
 
-# [Installfest](/es/installfest)
+# [Installfest](/installfest)
 
 Instrucciones para instalar Ruby y Rails en tu computadora. ¡Se requiere hacer esto antes de ir al taller de Rails!
 
-# [Introducción a Rails](/es/introduccion-a-rails)
+# [Introducción a Rails](/introduccion-a-rails)
 
 El "clásico" RailsBridge currículum (Suggestotron). Te lleva paso a paso para hacer una aplicación Rails, un comando a la vez, usando helpers como `rails generate scaffold`.
 
-# [Rails Intermedio](/es/rails-intermedio)
+# [Rails Intermedio](/rails-intermedio)
 
 Currículum para estudiantes quienes han hecho Suggestotron más de una vez. 'Modo fácil' ya no está disponible - ¡este currículum no te dirá que teclear!
 
-# [Frontend](/es/frontend)
+# [Frontend](/frontend)
 
 HTML + CSS para principiantes. ¡Haz un website, no se requiere servidor!
 
-# [Ruby](/es/ruby)
+# [Ruby](/ruby)
 
 Un currículum específico de ruby, extraído de las diapositivas de "Ruby para principiantes". Aún nuevo, con espacio para tus contribuciones.
 
 Los talleres de RailsBridge también pueden usar el currículum de Alex [Aprende a escribir código en Ruby](http://codelikethis.com/lessons/learn_to_code) (actualmente en un sitio separado). También es código abierto y puede que pronto se úna al repo principal de RailsBridge Docs. Está orientado hacia la gente que posiblemente nunca antes ha escrito código.
 
-# [Taller](/es/taller)
+# [Taller](/taller)
 
 El RailsBridge junkyard! Dispositivas para la apertura/cierre de presentaciones, entrenamiento para facilitadores.
 
@@ -36,10 +36,10 @@ El RailsBridge junkyard! Dispositivas para la apertura/cierre de presentaciones,
 Ligeramente diferente: si estás organizando un evento y te preguntas si pudiera ser considerado un taller de RailsBridge, sólo tenemos dos peticiones:
 
 * El evento debe ser gratuito.
-* ¡El evento debe hacer ver a la tecnología mas acogedora!
+* ¡El evento debe hacer ver a la tecnología más acogedora!
 
 Si no estás haciendo esas dos cosas, aún puedes usar el sitio totalmente, sólo pedimos que no llames a tu evento como un taller de RailsBridge.
-(Talleres de Caridad han usado "Rails Workshop con el currículum de RailsBridge" en el pasado, lo cual es estupéndo.)
+(Talleres de Caridad han usado "Rails Workshop con el currículum de RailsBridge" en el pasado, lo cual es estupendo.)
 
 ### Quiero ayudar, pero no sé cómo.
 

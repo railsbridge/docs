@@ -1,19 +1,19 @@
-message "The Apple App Store is an application that installs other applications."
+message "La App Store es una aplicación que instala otras aplicaciones."
 
-step "Open the App Store application" do
-  message "You can find App Store in the Applications folder"
+step "Abre la App Store" do 
+  message "Puedes encontrar la App Store en la carpeta de aplicaciones"
 end
 
-step "Install XCode" do
-  message "Search for 'XCode' and click the 'Install' button"
+step "Instala XCode" do
+  message "Busca 'XCode' y da click en el botón 'Install'"
   img src: 'img/appstore.jpg', alt: 'XCode in the App Store'
 end
 
-step "Launch XCode"
+step "Abre XCode"
 
-step "Install the Command Line Tools" do
-  message "Open the Preferences menu and select the Downloads tab."
-  message "Then click the 'Install' button next to 'Command Line Tools'."
+step "Instala las Command Line Tools" do
+  message "Abre el menú Preferences y selecciona la pestaña de Downloads"
+  message "Luego da click en el botón de 'Install' que está después de 'Command Line Tools'."
   img src: 'img/xcode-prefs.jpg', alt: 'XCode Preferences'
 end
 

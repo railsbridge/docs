@@ -1,0 +1,99 @@
+img src: "img/Start_page.png", alt: "Start Page"
+
+goals do
+  goal "Crear tu nueva aplicación"
+message "¡Iniciemos! Al final de este paso, tendremos una aplicación Rails totalmente nueva."
+end
+
+steps do
+
+  tip "Si tienes _algún_ problema, pregunta a un instructor inmediatamente"
+
+  step do
+    insert 'cambiar_al_directorio_raiz'
+  end
+
+  step do
+    console "mkdir railsbridge"
+    message "Este comando crea un directorio nuevo para guardar nuestro proyecto."
+  end
+
+  step do
+    console "cd railsbridge"
+  end
+
+  step do
+    message "Revisa si tienes alguna aplicación suggestotron existente de talleres anteriores."
+    console "ls"
+    message "Ese comando listará los archivos en tu directorio railsbridge. Si tienes alguna vieja aplicación suggestotron en esa lista, puedes eliminarla para prevenir problemas:"
+    console "rm -rf suggestotron"
+  end
+
+  step do
+    console "rails new suggestotron"
+    message "'rails new' crea un proyecto nuevo de Rails con el nombre dado."
+    message "En este caso le dijimos que creara un proyecto nuevo llamado `suggestotron`. Vamos a entrar en detalle sobre lo que se ha creado más adelante."
+  end
+
+  step do
+    console "cd suggestotron"
+    message "'cd' significa cambiar directorio."
+    message "'cd suggestotron' hace suggestotron nuestro directorio actual."
+  end
+
+  step do
+    console "ls"
+    message "'ls' significa 'lista (cosas)'."
+    message "Te mostrará el contenido del directorio actual."
+  end
+
+  step do
+    message <<-MARKDOWN
+Abre el directorio suggestotron como un proyecto en tu editor de texto.
+
+En **Sublime Text 2**, puedes utilizar la opción del menú: `Project > Add Folder to Project...`
+
+<img src='img/sublime_add_folder_to_project.png' />
+
+Selecciona tu directorio `suggestotron` desde el diálogo que se abre. Si todo funciona, en Sublime se vería algo así::
+
+<img src='img/sublime_project_as_folder.png' />
+    MARKDOWN
+  end
+
+  message <<-MARKDOWN
+  Puedes ver que <code>rails new</code> creó muchos directorios y
+  archivos. Estos son en los que nos vamos a enfocar hoy:
+  MARKDOWN
+
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+    tr {
+      th "Archivo/Directorio"
+      th "Propósito"
+    }
+    tr {
+      td "app/"
+      td "Contiene los controladores, modelos, y vistas para tu aplicación. Harás la mayor parte de tu trabajo aquí."
+    }
+    tr {
+      td "config/"
+      td "Configura las reglas de ejecución, rutas, base de datos y más detalles de tu aplicación."
+    }
+    tr {
+      td "db/"
+      td "Muestra tu esquema actual de la base de datos, también las migraciones de la base de datos."
+    }
+    tr {
+      td "public/"
+      td "El único directorio que es público.. Si pones archivos aquí, estarán al servicio directamente sin ningún tipo de procesamiento de Rails."
+    }
+    tr {
+      td "app/assets/"
+      td "Aquí es donde deberían ir tus imágenes, JavaScript, hojas de estilo (CSS), y otros archivos estáticos. Aplicaciones modernas de Rails utilizan algo llamado the Assets Pipeline, el cual para mayor rapidez combina todos los archivos JavaScript y CSS de este directorio en un sólo archivo."
+    }
+  end
+
+  message "Hay mucho más de lo que `rails new` ha creado. Probablemente lo suficiente como para llenar un libro, así que vamos a ignorarlo por ahora."
+end
+
+next_step "agregar_el_proyecto_al_repositorio"

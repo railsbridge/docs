@@ -1,26 +1,21 @@
-message "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+message "La instalación de XCode es directa, con una advertencia. Cuando te pregunta acerca de los componentes a instalar, necesitas asegurarte de que \"Unix Tools\" está seleccionado. Posteriormente, sólo es dar click en Continuar/Ok/Si/etc."
 
-message "**Special note for folks who upgraded from Leopard to Snow Leopard:** The SQLite gem does not compile with an older version of XCode installed. If you upgraded your machine from an older version of OS X, and you have an older XCode, you still need to reinstall it from your **Snow Leopard** DVD. The steps below should work fine to upgrade it."
-
-choice "installing from a drive or from the App Store" do
-
-  option "install XCode from a thumb drive or DVD" do
-    link "instala_xcode_desde_el_dvd"
-  end
-
-  option "Install XCode from the Apple App Store" do
-    link "instala_xcode_desde_la_app_store"
-  end
-  
-  option "Install Command Line Tools for XCode" do
-    message "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
-    message "Download and install the latest **Command Line Tools for Xcode** package"
-  end
-
+option "Instala XCode de la App Store (OSX 10.7 Lion o posterior)" do
+  link "instala_xcode_desde_la_app_store"
 end
 
-verify "your compiler was installed" do
+option "Instala XCode de un disco duro o un DVD (OSX 10.6 Snow Leopard)" do
+  link "instala_xcode_desde_el_dvd"
+end
+
+option "Instala la herramienta de Línea de Comandos para XCode" do
+  message "Visita la [Página de descargas de la sección de Desarolladores de Apple](https://developer.apple.com/downloads)"
+  message "Descarga e instala el paquete más reciente de **Command Line Tools for XCode**"
+end
+
+verify "que tu compilador fue instalado" do
   console "gcc --version"
   result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
-end
 
+  message "Tus resultados pueden diferir un poco. Básicamente, siempre y cuando no diga algo como 'command not found', estamos bien."
+end

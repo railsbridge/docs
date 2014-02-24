@@ -1,0 +1,46 @@
+goals do
+  goal "Entender la diferencia entre irb y la línea de comandos"
+  goal "Entender cómo y cuándo usar irb"
+  goal "Ejecutar algunas sentencias simples de ruby"
+end
+
+step do
+  console "irb"
+  message 'irb es el intérprete **i**nteractivo de **r**u**b**y.'
+  message 'En irb, puedes experimentar con pequeñas piezas de código para darte cuenta de qué hacen.'
+end
+
+step do
+  irb <<-IRB
+5 + 9
+109 / 17
+2 ** 8
+5 > 6
+  IRB
+  message '¿Qué pasó después de cada línea? ¿Qué crees que hacen estas sentencias?'
+end
+
+step do
+  message 'Vamos a echar un vistazo más de cerca a la salida de irb:'
+  irb '1 + 2'
+  result <<-MESSAGE
+1.9.3p125 :015 > 1 + 2
+ => 3
+1.9.3p125 :016 >
+  MESSAGE
+  message 'Aquí, `=> 3` es el **valor de retorno** de la **sentencia** `1 + 2`. Cada sentencia en ruby tiene un **valor de retorno**: irb te muestra ese valor después de que escribes una sentencia completa y presionas enter.'
+end
+
+step do
+  irb <<-IRB
+exit
+  IRB
+  message '`exit` es la manera garantizada de salir de irb. Dependiendo de tu sistema operativo, Control-C o Control-D en una línea vacía también puede funcionar.'
+  message 'Practica entrando y saliendo de irb unas cuantas veces.  ¿Cómo puedes saber que estás dentro o fuera de irb?'
+end
+
+explanation do
+  message "irb no es un lugar para escribir código: es un lugar para experimentar y descubrir cómo ciertas características del lenguaje funcionan. Cuando escribes un programa hecho y derecho, lo guardarás en un archivo de texto en tu computadora."
+end
+
+next_step "variables"

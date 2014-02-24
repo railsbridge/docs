@@ -6,7 +6,7 @@
 
 This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The RailsBridge documentation project is home to a few subprojects, including the RailsBridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the RailsBridge workshop "Suggestotron" curriculum.
 
-Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the intro rails curriculum can be found under ROOT/sites/intro-to-rails.
+Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/en/installfest, while the intro rails curriculum can be found under ROOT/sites/en/intro-to-rails. (The "en" means "English" -- see "Locales" below.)
 
 These files can be in any of these formats:
 
@@ -25,8 +25,17 @@ These files can be in any of these formats:
 If the above fails (say, because `rerun` doesn't work on your system), try
 
     rackup
-    
+
 Then open <http://localhost:9292> in a web browser, and verify that you can navigate the installfest slides.
+
+## Locales
+
+To serve sites from "sites/en", use `rake run` or a vanilla deploy.
+
+To server sites from another locale (say, "es" or Spanish)...
+  * Locally, use the SITE_LOCALE environment variable: `SITE_LOCALE=es rake run`
+  * On a server, make the server respond to a locale subdomain: `http://es.railsbridge.org`
+  * Or to temporarily test, use a `locale` or `l` parameter: `http://docs.railsbridge.org/?l=es` (note that in this mode, links are not rewritten, so if they fail you will have to manually add the parameter again)
 
 ## Contributing
 
