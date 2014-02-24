@@ -1,4 +1,4 @@
-message "Los registros de salida del servidor de Rails y los resultados de las pruebas son mucho más fáciles de leer si el texto de salida es a color, pero la 'Terminal de Comandos con Ruby y Rails' es por defecto en blanco y negro. Agrega colores siguiendo los siguientes pasos."
+message "Los registros de salida del servidor de Rails y los resultados de las pruebas son mucho más fáciles de leer si el texto de salida es a color, pero la 'Terminal de Comandos con Ruby y Rails' es por defecto en blanco y negro. Agrega colores siguiendo estos pasos."
 
 step "Descarga ANSICON" do
   message "En el navegador, visita <http://ansicon.adoxa.vze.com/>"
