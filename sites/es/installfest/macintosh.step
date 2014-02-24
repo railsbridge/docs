@@ -1,22 +1,22 @@
-step "Aprende la version de tu Mac OS X" do
+step "Aprende la versión de tu Mac OS X" do
   message <<-MARKDOWN
 
 * Haz click en el ícono de Apple en la esquina superior izquierda de tu pantalla.
 * Selecciona "Acerca de esta Mac".
 * En la ventana que se muestra, debajo del título "Mac OS X" habrá un número de versión.
-  * Sí comienza con 10.9, tienes **Mavericks**.
-  * Sí comienza con 10.8, tienes **Mountain Lion**.
-  * Sí comienza con 10.7, tienes **Lion**.
-  * Sí comienza con 10.6, tienes **Snow Leopard**.
-  * Sí comienza con 10.5, tienes **Leopard**.
-  * Sí comienza con 10.4, tienes **Tiger**.
-  * Sí comienza con 10.3, tienes **Panther**.
+  * Si comienza con 10.9, tienes **Mavericks**.
+  * Si comienza con 10.8, tienes **Mountain Lion**.
+  * Si comienza con 10.7, tienes **Lion**.
+  * Si comienza con 10.6, tienes **Snow Leopard**.
+  * Si comienza con 10.5, tienes **Leopard**.
+  * Si comienza con 10.4, tienes **Tiger**.
+  * Si comienza con 10.3, tienes **Panther**.
 
 * Escribe la versión de Mac OS X que tienes.
-* Además, a la derecha del "Processor", habrá un tipo de procesador.
-  * Sí termina con **Intel Core i7**, **Intel Core i5**, o **Intel Core i3**, puedes seguir.
-  * Sí termina con **Intel Core 2 Duo**, puedes seguir.
-  * Sí termina con **Intel Core Duo** o algo más, no puedes seguir. Por favor contacta a un instructor.
+* Además, a la derecha de "Processor", habrá un tipo de procesador.
+  * Si termina con **Intel Core i7**, **Intel Core i5**, o **Intel Core i3**, puedes seguir.
+  * Si termina con **Intel Core 2 Duo**, puedes seguir.
+  * Si termina con **Intel Core Duo** o algo más, no puedes seguir. Por favor contacta a un instructor.
 
 * Una vez que hayas terminado, puedes cerrar la ventana "Acerca de esta Mac".
 
@@ -34,7 +34,7 @@ step "Escoge tus instrucciones" do
   end
   option "Mountain Lion/Lion/Snow Leopard" do
     option_half "RailsInstaller" do
-      message "RailsInstaller es una forma fácil para preparar y correr Ruby y Rails en OSX. Intenta esto primero."
+      message "RailsInstaller es una forma fácil de empezar a trabajar con Ruby y Rails en OSX. Intenta esto primero."
       link "osx_railsinstaller"
     end
     option_half "Manualmente" do
