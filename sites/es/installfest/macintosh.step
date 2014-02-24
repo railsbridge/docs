@@ -38,14 +38,14 @@ step "Escoge tus instrucciones" do
       link "osx_railsinstaller"
     end
     option_half "Manualmente" do
-      message "Sí algo va mal con RailsInstaller, o quieres hacer las cosas por 'el camino largo', usa estas instrucciones."
+      message "Si algo va mal con RailsInstaller, o quieres hacer las cosas por 'el camino largo', usa estas instrucciones."
       link "osx_rvm"
     end
   end
 
   option "Leopard/Tiger/Panther" do
-    important "Sí es posible, deberías intentar actualizar a **Snow Leopard**. Apple ya no lo vende en la App Store, por lo que tendrás que comprarlo [online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) o encontrar una copia de un amigo."
-    message "De otra forma, puedes intentar seguir las intrucciones de Panther, pero prepárate para algunas dificultades."
+    important "Si es posible, deberías intentar actualizar a **Snow Leopard**. Apple ya no lo vende en la App Store, por lo que tendrás que comprarlo [online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) o conseguir una copia de un amigo."
+    message "De lo contrario, puedes intentar seguir las intrucciones de Panther, pero prepárate para algunas dificultades."
     link "osx_panther"
   end
 end
