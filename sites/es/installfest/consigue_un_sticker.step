@@ -1,17 +1,17 @@
-step "Have a volunteer check your tool versions" do
+step "Pide a un instructor verificar las versiones de tus herramientas" do
 
-  message "Find a volunteer and have them watch the next steps."
+  message "Pídele al instructor observar los siguientes pasos"
 
-  verify "tool installation" do
+  verify "Instalación de herramienta" do
 
-    tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+    tip "La mayoría de las veces, los números de las versiones no tienen que ser iguales. En general, si los *primeros dos* números son iguales, o si el numero completo que tienes es *mayor* que el de abajo, entonces está bien."
 
-    h3 "If you're on OSX or Linux:"
+    h3 "Si estás en OSX o Linux:"
 
     console "rvm -v"
     fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.beginrescueend.com/]{/FUZZY}"
 
-    h3 "On all operating systems:"
+    h3 "En todos los sistemas operativos:"
 
     console "ruby -v"
     fuzzy_result "ruby 1.9{FUZZY}.3p125 (2012-02-16 revision 34643) [x86_64-darwin11.3.0]{/FUZZY}"
@@ -22,17 +22,16 @@ step "Have a volunteer check your tool versions" do
     console "rails -v"
     fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 
-    tip 'The RailsBridge curriculum is written for Rails 4, so if you still have Rails 3.x, you need to install Rails 4 with `gem install rails`.'
+    tip 'El currículum de RailsBridge está escrito para Rails 4, así que si aun tienes Rails 3.x, tienes que instalar Rails 4 con `gem install rails`'
   end
 end
 
-step "Show your Heroku app to a volunteer" do
-  message "Visit the heroku site you made on the previous page and create a new drink."
+step "Muestra tu aplicación de Heroku a un voluntario" do
+  message "Visita el sitio de Heroku que creaste en la página anterior y crea una nueva bebida"
 end
 
-step "Congratulations!" do
-  message "You get a sticker! (Or a high-five if there aren't any stickers)."
+step "¡Felicidades!" do
+  message "¡Obtienes un sticker! (O un chócala en caso de no haber mas calcomanías)."
 end
 
 next_step "limpiar"
-
