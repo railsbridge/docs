@@ -22,7 +22,7 @@ step "Pide a un instructor verificar las versiones de tus herramientas" do
     console "rails -v"
     fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 
-    tip 'El currículum de RailsBridge está escrito para Rails 4, así que si aun tienes Rails 3.x, tienes que instalar Rails 4 con `gem install rails`''
+    tip 'El currículum de RailsBridge está escrito para Rails 4, así que si aun tienes Rails 3.x, tienes que instalar Rails 4 con `gem install rails`'
   end
 end
 
