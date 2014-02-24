@@ -1,46 +1,45 @@
-step "Change to your home directory" do
+step "Cámbiate a tu directorio de inicio" do
   insert 'cambia_al_directorio_principal'
 end
 
-step "Create a railbridge directory" do
+step "Crea el directorio railsbridge" do
   console "mkdir railsbridge"
-  message "`mkdir` stands for make directory (folder)."
+  message "`mkdir` significa crea un directorio (carpeta)."
   message "We've made a folder called `railsbridge`."
+  message "Hemos creado una carpeta llamada `railsbridge`."
 end
 
-step "Change to your new railsbridge directory" do
+step "Cámbiate a tu nuevo directorio railsbridge" do
   console "cd railsbridge"
 end
 
-step "Create a new Rails app" do
+step "Crea una nueva aplicación Rails" do
 
   console "rails new test_app"
 
-  message "The command's output is voluminous, and will take some time to complete, with a long pause in the middle, after all the 'create...' statements ending in 'bundle install'.  When it fully completes, it will return you to your home prompt.  Look for the 'Your bundle is complete!' message just above."
-
+  message "La salida de comandos será muy grande, y tomará algo de tiempo en completarse, con una pausa larga a la mitad, después de todos las sentencias 'create..' terminará con 'bundle install'. Cuando termine completamente, te regresará a tu línea de comandos. Busca el mensaje 'Your bundle is complete!' justo arriba."
   tip do
-    message "On Linux, you may have to enable this line to your Gemfile:"
+    message "En Linux, tal vez tendrás que habilitar esta línea en tu Gemfile:"
     pre "gem 'therubyracer', :platforms => :ruby"
-	message "Just delete the '#' in front of the statement"
+	message "Sólo borra el '#' que está al frente del enunciado"
   end
 
   console "cd test_app"
   console "rails server"
 
-  tip "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes to the popup."
+  tip "En Windows, tal vez tendrás que permitir que Ruby y Rails se comuniquen a través de tu firewall. Di sí al popup."
 
-  tip "Shortcut: Just type 'rails s'" do
+  tip "Atajo: Sólo escribe 'rails s'" do
     message <<-MARKDOWN
-Throughout your Rails programming career you're going to type `rails server` a
-lot.  In fact, you'll type this so much that DHH and the Rails Core team
-decided to save you 5 keystrokes per server restart.  Simply typing `rails s`
-is the same as `rails server`.
+A través de tu carrera de programación en Rails vas a escribir `rails server` muchas veces. De hecho,
+lo escribirás tanto que DHH y el equipo del núcleo de Rails decidieron ahorrarte que presiones 5 teclas
+cada vez que reinicies el servidor. Simplemente escribir `rails s` es lo mismo que `rails server`.
   MARKDOWN
   end
 
   message <<-MARKDOWN
-The first command should produce no output.
-If `rails server` starts up with no errors, you're golden! It'll look something like this:
+El primer comando no genera salida.
+Si `rails server` inicia sin errores, ¡estás lista! Se verá algo así:
   MARKDOWN
 
   fuzzy_result <<-TEXT
@@ -53,24 +52,24 @@ If `rails server` starts up with no errors, you're golden! It'll look something 
 [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid={FUZZY}24805{/FUZZY} port=3000
   TEXT
 
-message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
+message "Si así fue, ¡felicidades! haz instalado Ruby Y Rails correctamente y haz iniciado el servidor."
 
-tip "If it doesn't work, ask a TA for help."
+tip "Si no funcionó, pide ayuda a un instructor."
 
 message <<-MARKDOWN
 
-* In your browser, go to <http://localhost:3000>
+* En tu navegador, ve a <http://localhost:3000>
 
 ![Successful Rails Install](img/successful-rails-install.jpg)
 
-* Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
+* De nuevo en la ventana de la Terminal donde ejecutaste <code>rails server</code>, escribe **Control-C** (no escribas esto en la consola, sino que presiona las teclas Control y C al mismo tiempo) para matar(detener) el servidor. Windows preguntará "¿Termiar el trabajo en ejecución (S/N)?". Escribe "S".
 
   MARKDOWN
-  important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
+  important "En Windows, algunas veces Control-C no funciona. En este caso, busca la tecla 'Terminar' o 'Pausar' y presiona Control-Terminar, después responde S en la terminal de comandos. Si no hay una tecla de Pausa/Terminar en tu teclado, puedes ejecutar `ruby script/rails server` en vez de `rails server`, la cual te permitará terminar el servidor con Control-C."
   end
 
-step "Generate a database model" do
-  tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
+step "Genera un modelo de base de datos" do
+  tip "Si tu terminal de comandos no muestra que (aún) estás en la carpeta test_app" do
     console "cd test_app"
   end
 
@@ -84,18 +83,18 @@ rake db:migrate
 rails server
   BASH
 
-  message "**Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command."
+  message "**Nota:** lo anterior son tres comandos separados. Escribe cada línea en la terminal separadamente, no como un sólo comando."
   
-  message "Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/users>"
+  message "Espera hasta que la consola muestre que el servidor Webrick ha iniciado (justo como antes). Entonces, en el navegador, visita <http://localhost:3000/users>"
 
-  message "Click *New user* to create a user to make sure we can save to the database.  Click *Back* to see your results. (The window where you ran `rails server` will display debugging information as you do so.)"
+  message "Haz click en *Nuevo usuario* para crear un usuario y asergurarte que puedes guardar en la base de datos. Haz click en *Atrás* para ver tus resultados. (La ventana donde ejecutaste `rails server` mostrará información de depuración mientras lo haces.)"
 
-  message "In your Terminal window where you ran `rails server`, type Control-C (or Control-Break,Y) to kill(stop) the server."
+  message "En la ventana de tu terminal donde ejecutaste `rails server`, escribe Control-C (o Control-Terminar, S) para matar(detener) el servidor."
 
 end
 
-step "Use git" do
-  tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
+step "Utiliza git" do
+  tip "si tu terminal de comandos no muestra que estás (aún) en la carpeta test_app" do
     console "cd test_app"
   end
   
@@ -108,29 +107,29 @@ git init
   console "git add -A"
   tip "git add" do
     message <<-MARKDOWN
-With Git, there are usually many ways to do very similar things.
+Con Git, generalmente hay muchas maneras de hacer cosas similares.
 
-  * `git add foo.txt` adds a file named `foo.txt`
-  * `git add .` ("git add dot") adds all new files and changed files, but *keeps* files that you've deleted
-  * `git add -A` adds everything, including deletions
+  * `git add foo.txt` agrega un archivo llamado `foo.txt`
+  * `git add .` ("git add dot") agrega todos los archivos nuevos y editados, pero *mantiene* los archivos que has eliminado.
+  * `git add -A` agrega todo, incluyendo archivos eliminados.
 
-"Adding deletions" may sound weird, but if you think of a version control system as keeping track of *changes*, it might make more sense.
+"Agregar archivos eliminados" puede oirse raro, pero si piensas en un sistema de control de versiones como una forma de mantener registro de *cambios*, puede que tenga más sentido.
 
     MARKDOWN
   end
 
   console "git commit -m \"initial commit\""
-  result "a lot of lines like create mode 100644 Gemfile"
+  result "muchas líneas como create mode 100644 Gemfile"
 
   console "git log"
-  result "(Your git name and \"initial commit\" message.)"
+  result "(Tu nombre en git y mensaje del \"commit inicial\".)"
 end
 
-step "Deploy your app to Heroku" do
+step "Lanza tu aplicación a Heroku" do
 
-  step "Create a Heroku application from this local Rails application." do
+  step "Crea una aplicación de Heroku desde esta aplicación de Rails local" do
 
-  message "The very first time you use `heroku` you must enter your Heroku email address and password. Your password may not be shown as you type it, but don't worry, it's being entered! If you have already provided your credentials before, you won't be prompted for them again."
+  message "La primera vez que utilices `heroku` debes introducir tu correo electrónico de Heroku y tu contraseña. Tu contraseña no se verá mientras la escribes, pero no te preocupes, ¡si se introdujo! Si ya has proporcionado tus credenciales anteriormente, no te pedirá que las pongas de nuevo."
 
   console "heroku create"
   result <<-OUTPUT
@@ -143,27 +142,27 @@ http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
 Git remote heroku added
   OUTPUT
 
-    message "Heroku apps are automatically given lyrical names that look like '[adjective]-[noun]-[number]'.  Each name is different."
+    message "A las aplicaciones de Heroku se les asignan nombres que se ven como '[adjetivo]-[sustantivo]-[número]. Cada nombre es diferente.'"
   
   console "git remote show"
   result "heroku"
 
-  message "If you get messages here complaining about public keys it's probably due to some confusion with SSH key usage by another app on your computer.  Call a volunteer over to help you figure it out.  Luckily this only needs to be done the first time you create a Heroku app."
+  message "Si aquí te salen mensajes advirtiendo sobre llaves públicas es posible que sea alguna confusión con alguna llave SSH utilizada por otra aplicación en tu computadora. LLama a un voluntario para que te ayude a resolverlo. Con suerte, esto sólo se necesitará hacer la primera vez que crees una aplicación de Heroku."
   end
 
-  step "Prepare your rails app for deploying to Heroku" do
+  step "Prepara tu aplicación Rails para lanzarla a Heroku" do
     message <<-MARKDOWN
 
-Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\test_app` and on Linux/OS X, it should be under `~/test_app`.)
+Inicia tu editor de texto y abre el archivo "Gemfile" localizado dentro de tu carpeta test_app. (En Windows, debe de estar en `C:\\Sites\\test_app` y en Linux/OS X, debe de estar dentro de `~/test_app`.)
 
-Inside this file, change the line:
+Dentro de este archivo, cambia la línea:
 MARKDOWN
   source_code :ruby, <<-RUBY
 gem 'sqlite3'
   RUBY
 
   message <<-MARKDOWN
-To this:
+Por esto:
   MARKDOWN
 
   source_code :ruby, <<-RUBY
@@ -177,20 +176,20 @@ group :production do
 end
   RUBY
 
-  message "Save the file."
+  message "Guarda los cambios del archivo."
 
-  tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
-    message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails." 
+  tip "¿Por qué Sqlite (sqlite3) y PostgreSQL (pg)?" do
+    message "SQLite y PostgreSQL son diferentes tipos de bases de datos. Estamos usando SQLite para nuestros ambientes de desarrollo y pruebas porque es más simple de instalar. Estamos usando PostgreSQL: en nuestro ambiente de producción porque Heroku ya hizo el trabajo pesado de instalarlo por nosotros y es más potente que SQLite. Por defecto en Rails, se tienen serpados los ambientes de pruebas, desarrollo y producción."
   end
 
     console <<-BASH
 bundle install --without production
     BASH
 
-    message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
+    message "De nuevo, espera por la entrada de la línea de comandos, y busca justo arriba el mensaje 'Your bundle is complete!'. Si esto falla, busca un instructor para que te ayude a editar `config/environments/production.rb`"
   end
 
-  step "Add the changes to git" do
+  step "Agregar mis cambios a git" do
 
     console <<-BASH
 git add .
@@ -198,11 +197,11 @@ git commit -m "Updates for heroku deployment"
     BASH
   end
 
-  step "Deploy (push) to heroku" do
+  step "Lanza a Heroku" do
 
     console "git push heroku master"
 
-    message "It may ask: \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" Type <code>yes</code> and hit *enter*."
+    message "Posiblemente preguntará \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" Escribe <code>yes</code> y presiona *enter*."
 
     result <<-OUTPUT
 The authenticity of host 'heroku.com (75.101.145.87)' can't be established.
@@ -224,9 +223,9 @@ To git@heroku.com:floating-winter-18.git
  * [new branch]      master -> master
     OUTPUT
 
-    important "Be sure to find and learn your Heroku application name in the output."
+    important "Asegúrate de encontrar y aprenderte el nombre de tu aplicación de Heroku en la salida de comandos."
 
-    message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, talk to a TA."
+    message "Este proceso posiblemente tome el doble de tiempo que tu 'bundle install' y después regresará el puntero a tu línea de comandos. Si toma más tiempo que eso, llama a un instructor."
 
     console "heroku run rake db:migrate"
 
@@ -239,26 +238,26 @@ Migrating to CreateUsers (20111204065949)
 ==  CreateUsers: migrated (0.0123s) ===========================================
     OUTPUT
 
-    message "The long number after CreateUsers is a timestamp. Yours will be different!"
+    message "El número largo después de CreateUsers es una marca de tiempo. ¡La tuya será diferente!"
   end
 
-  step "Visit your new application" do
+  step "Visita tu nueva aplicación" do
 
-    message "In the browser, go to your application's URL. You'll need your Heroku application name."
+    message "En el navegador, ve a la URL de tu aplicación. Necesitarás el nombre de tu aplicación de Heroku."
 
-    tip "To find your Heroku application name" do
+    tip "Para encontrar el nombre de tu aplicación de Heroku" do
       console "heroku info"
     end
 
-    tip "To quickly open your heroku application in a browser" do
+    tip "Para rápidamente abrir tu aplicación de Heroku en un navegador" do
       console "heroku open"
     end
 	
-    message "The URL for your app is <code>*application name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+    message "La URL para tu aplicación es <code>*nombre-de-la-aplicación*.heroku.com</code> -- así que con el ejemplo del paso anterior, sería <code>floating-winter-18.heroku.com</code>.  Verifica que puedes ver la página de bienvenida. Deja esta ventana del navegador abierta."
 
-    message "In the browser, add <code>/users</code> to the end of the URL and hit *enter*. Verify you see the user list page."
+    message "En el navegador, agrega <code>/users</code> al final del URL y presiona *enter*. Verifica que puedes ver la página del listado de usuarios."
 
-    message "Create and save a new user to verify you can write to the database on Heroku."
+    message "Crea y guarda un nuevo usuario para verificar que puedes escribir a la base de datos en Heroku"
 
   end
 end
