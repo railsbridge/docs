@@ -104,7 +104,7 @@ describe InstallFest do
       get "/", {}, {"HTTP_HOST" => "es.example.com"}
       assert { last_response.redirect? }
       follow_redirect! while last_response.redirect?
-      assert { last_request.path == "/hola/" }
+      assert { last_request.path == "/docs/" }
     end
   end
 

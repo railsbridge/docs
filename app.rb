@@ -25,7 +25,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_sites = {en: "docs", es: "hola"}
+    @default_sites = {en: "docs", es: "docs"}
     @default_locale = "en"
   end
 
