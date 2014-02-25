@@ -2,7 +2,7 @@ goals do
   goal "Crear un repositorio local de Git"
   goal "Agregar todos nuestros archivos al repositorio de Git"
 
-  message "Con el fin de publicar nuestra aplicación, se necesita agregar nuestra aplicación y cualquier cambio que se haga a un \"Sistema de control de versiones\". En nuestro caso vamos a utilizar *Git* porque es (relativamente) fácil y es lo que nuestra aplicación servidor, *Heroku*, utiliza."
+  message "Con el fin de publicar nuestro trabajo, se necesita agregar nuestra aplicación y cualquier cambio que se haga a un \"Sistema de control de versiones\". En nuestro caso vamos a utilizar *Git* porque es (relativamente) fácil y es lo que nuestra aplicación servidor, *Heroku*, utiliza."
 end
 
 steps do
@@ -49,7 +49,7 @@ end
 
 explanation do
   message <<-MARKDOWN
-Revisando tu aplicación en Git, estás creando un historial de tu punto de partida. Todas las veces que hagas un cambio durante el taller de hoy, lo agregaremos a Git antes de seguir. De esta manera, si algo se rompe, o haces un cambio que no te gusta, puedes usar Git como un todo-poderoso "deshacer". ¡Pero eso sólo funciona cuando recuerdas hacer commit pronto y a menudo!
+Registrando tu aplicación en Git, estás creando un historial de tu punto de partida. Todas las veces que hagas un cambio durante el taller de hoy, lo agregaremos a Git antes de seguir. De esta manera, si algo se rompe, o haces un cambio que no te gusta, puedes usar Git como un todo-poderoso "deshacer". ¡Pero eso sólo funciona cuando recuerdas hacer commit pronto y a menudo!
   MARKDOWN
 end
 
