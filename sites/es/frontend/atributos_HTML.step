@@ -49,7 +49,7 @@ steps do
 <ul>
   <li>Lunares</li>
   <li>Soccer</li>
-  <li>Programming</li>
+  <li>Programación</li>
 </ul>
 <p>Escuché que RailsBridge necesita voluntarios, ¡¿¡puedo ser voluntario!?!</p>
 HTML
@@ -109,7 +109,7 @@ HTML
 }
 CSS
     message <<-MARKDOWN
-(Nota: El span es solo un elemento que te deja aplicar una clase, un id, o algún otro atributo a un string de texto  sin añadir saltos de línea. Los navegadores no le darán ningún estilo por default.)
+(Nota: El span es sólo un elemento que te deja aplicar una clase, un id, o algún otro atributo a un string de texto sin añadir saltos de línea. Los navegadores no le darán ningún estilo por defecto.)
 
 Después de agregar la regla de estilo y actualizar la página en el navegador, verás algo bastante feo como esto:
     MARKDOWN
@@ -128,7 +128,7 @@ explanation do
 Un atributo **clase** debe utilizarse para agrupar elementos que _pueden_ existir más de una vez en una determinada página. Por ejemplo, puedes dar a algunos párrafos la clase `"special"` y usarla para resaltarlos. 
 Inclusive si solo tienes un párrafo se verá diferente, tal vez quieras agregarlo después.
 
-Un atributo de clase debe verse así en el HTML `class="special"` y `.special` en el CSS. ¡No mezcles donde va el punto!
+Un atributo de clase debe verse así en el HTML `class="special"` y `.special` en el CSS. ¡No confundas en dónde va el punto!
 
 ### IDs
 Un **id** es una etiqueta única. Se usa para identificar algo que es único. Por ejemplo, si ejecutas un sitio web de noticias, sólo tendrás un elemento en la página que servirá como cabecera, y podrás asignarle un id como `id="handsome-header"`
