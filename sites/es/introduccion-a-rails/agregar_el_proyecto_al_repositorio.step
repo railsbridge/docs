@@ -2,7 +2,7 @@ goals do
   goal "Crear un repositorio local de Git"
   goal "Agregar todos nuestros archivos al repositorio de Git"
 
-  message "Con el fin de publicar nuestra aplicación, se necesita agregar nuestra aplicación y cualquier cambio que se haga a un \"Sistema de control de versiones\". En nuestro caso vamos a utilizar *git* porque es (relativamente) fácil y es lo que nuestra aplciación servidor, *Heroku*, utiliza."
+  message "Con el fin de publicar nuestra aplicación, se necesita agregar nuestra aplicación y cualquier cambio que se haga a un \"Sistema de control de versiones\". En nuestro caso vamos a utilizar *Git* porque es (relativamente) fácil y es lo que nuestra aplicación servidor, *Heroku*, utiliza."
 end
 
 steps do
@@ -16,41 +16,41 @@ steps do
   step do
     console "git status"
 
-    message "`git status` tells you everything git sees as modified, new, or missing."
-  message "The first time you run this, you should see a ton of stuff."
-  message "The second time you run this, you shouldn't see much of anything."
+  message "`git status` te dice todo lo que se ha modificado, nuevo o faltante."
+  message "La primer vez que ejecutes esto, deberás ver muchos cambios."
+  message "La segunda vez que lo ejecutes, no deberás ver tanto."
   end
 
   step do
     console "git add ."
-    message "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
+    message "`git add .` le dice a Git que quieres agregar al repositorio, el directorio actual (`.`) y todo lo que hay."
     tip "git add" do
       message <<-MARKDOWN
-        With Git, there are usually many ways to do very similar things.
+        Con Git, normalmente hay muchas maneras de hacer cosas similares.
 
-        * `git add foo.txt` adds a file named `foo.txt`
-        * `git add .` adds all new files and changed files, but *keeps* files that you've deleted
-        * `git add -A` adds everything, including deletions
+        * `git add foo.txt` agrega un archivo llamado `foo.txt`
+        * `git add .` agrega todos los archivos nuevos y cambios en archivos, pero *mantiene* los archivos que has eliminado
+        * `git add -A` agrega todo, incluyendo archivos eliminados.
 
-        "Adding deletions" may sound weird, but if you think of a version control system as keeping
-        track of *changes*, it might make more sense. Most people use `git add .` but `git add -A`
-        can be safer. No matter what, `git status` is your friend.
+        "Agregar archivos eliminados" puede sonar raro, pero si piensas en un sistema de control de versiones para mantener
+        el historial de *cambios*, puede tener más sentido. La mayoría de la gente usa `git add .` pero `git add -A`
+        puede ser más seguro. No importa como sea, `git status` es tu amigo.
       MARKDOWN
     end
   end
 
   step do
-    console "git commit -m \"Added all the things\""
-    message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
-    message "This is done in two steps so you can group multiple changes together."
-    message "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+    console "git commit -m \"Todas las cosas agregadas\""
+    message "`git commit` le dice a Git que realmente _haga_ todas las cosas que has dicho que querías hacer."
+    message "Esto está hecho en dos pasos así que puedes agrupar múltiples cambios juntos."
+    message "`-m \"Todas las cosas agregadas\"` es sólo un atajo para decir cuál es el mensaje de tu commit. Puedes saltar esa parte y Git te mostrará un editor para agregar un mensaje más detallado."
   end
 end
 
 explanation do
   message <<-MARKDOWN
-By checking your application into git now, you're creating a record of your starting point. Whenever you make a change during today's workshop, we'll add it to git before moving on. This way, if anything ever breaks, or you make a change you don't like, you can use git as an all-powerful "undo" technique. But that only works when you remember to commit early and often!
+Revisando tu aplicación en Git, estás creando un historial de tu punto de partida. Todas las veces que hagas un cambio durante el taller de hoy, lo agregaremos a Git antes de seguir. De esta manera, si algo se rompe, o haces un cambio que no te gusta, puedes usar Git como un todo-poderoso "deshacer". ¡Pero eso sólo funciona cuando recuerdas hacer commit pronto y a menudo!
   MARKDOWN
 end
 
-next_step "running_your_application_locally"
+next_step "ejecutando_la_aplicacion_localmente"
