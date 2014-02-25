@@ -96,7 +96,7 @@ CSS
   <li>Soccer</li>
   <li>Programación</li>
 </ul>
-<p>Escuche que RailsBridge necesita voluntarios, ¡¿¡puedo ser voluntario!?!</p>
+<p>Escuché que RailsBridge necesita voluntarios, ¡¿¡puedo ser voluntario!?!</p>
 HTML
     message "Guarda y actualiza la página en tu navegador. De nuevo, no deberás ver ninguna diferencia."
   end
