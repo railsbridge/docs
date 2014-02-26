@@ -57,7 +57,7 @@ In this class, you will utilize Ruby to learn:
 *  How to run your Ruby code interactively (irb) or from a file
 *  Make a very simple website run on your own computer
 
-Follow along at http://codelikethis.com/lessons/learn_to_code
+Follow along at http://docs.railsbridge.org/learn-to-code
 
 # Go at your own pace
 
@@ -71,7 +71,7 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 ## And if you and your pair finish early...
 
 * Let us know!
-* Start working on my Ruby For Programmers lessons
+* Start working on Ruby For Programmers lessons
   * http://testfirst.org
   * http://codelikethis.com/lessons/
 * Build a Rails website
@@ -80,17 +80,14 @@ Follow along at http://codelikethis.com/lessons/learn_to_code
 # Technical requirements
 
 * WIFI
-  * SSID: CCV-RADIUS
-  * Username: guest-girlsdevit
-  * Password: Ruby921
-  * Accept that the server is invalid
-* a live Ruby installation 
+  * Ask for SSID and password
+* a live Ruby installation
   * e.g. http://railsinstaller.org -- click on the *BIG GREEN BUTTON*
-  * Ruby version 2.0 preferred, but 1.9 is fine too 
+  * Ruby version 2.1 preferred, but 1.9 is fine too
     * run `ruby -v` to check
 * a text editor
   * e.g. Sublime Text 2
-  * www.sublimetext.com/2
+  * http://www.sublimetext.com/2
 
 * If you do not have both of these things, RAISE YOUR HAND
   * visit http://installfest.railsbridge.org for more instructions
