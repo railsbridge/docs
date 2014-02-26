@@ -108,9 +108,8 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
       case ext
 
-        when "deck.md"
-          slides = Deck::Slide.split(src)
-          Deck::SlideDeck.new(:slides => slides).to_pretty
+        when "deck.md", "deck"
+          render_deck
 
         when "md"
           MarkdownPage.new(options).to_html
@@ -133,6 +132,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
       end
       halt 404
     end
+  end
+
+  def render_deck
+    slides = Deck::Slide.split(src)
+    Deck::SlideDeck.new(:slides => slides).to_pretty
   end
 
   before do
@@ -165,7 +169,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   get "/:site/:name.:ext" do
     if sites.include?(params[:site])
-      send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
+      if params[:ext] == "deck"  # to show a markdown page as slides, change the ".md" to ".deck"
+        render_deck
+      else
+        send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
+      end
     end
   end
 
