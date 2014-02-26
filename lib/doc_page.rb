@@ -4,6 +4,7 @@ require "site_index"
 require 'erector_scss'
 require 'titleizer'
 require 'html5_page'
+require 'flags'
 
 class DocPage < Html5Page
   needs :site_name, :doc_title, :doc_path, :page_name, :src, :locale
@@ -95,6 +96,10 @@ class DocPage < Html5Page
         }
       }
       ul(class: "navbar-nav nav") {
+
+        li {
+          widget Flags
+        }
 
         li(class: "dropdown") {
           a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
