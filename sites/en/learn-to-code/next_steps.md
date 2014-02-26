@@ -1,10 +1,5 @@
 # Next Steps
 
-* Burlington Ruby Conference next weekend (still a few tickets left!)
-  * Ladies' Lunch during first day of conference 11:30, free to public
-
-* [Girl Develop It](http://www.meetup.com/Girl-Develop-It-Burlington/)'s Code & Coffee sessions
-
 * [Try Ruby](http://tryruby.org/) at <http://tryruby.org/>
 * Sign up for Code School at <http://codeschool.com>
   * Code School's "Ruby Bits" class
@@ -19,8 +14,6 @@
 
 # Thanks
 
-* to Girl Develop It
 * to all the TAs
 * to all the students!
-
 
