@@ -4,30 +4,24 @@ goals {
 
   message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
 
-  goal "Create a database table for topics with a title and a description"
+  goal "Create a a simple *Table* in the database for topics with a title and a description"
+  goal "Automatically generate the corresponding *Scaffold* in Rails (namely, the *Model*, the *View*, and the *Controller*)."
 
-  message "In this step we'll learn a bit about Rails architecture. By the end of this step you should understand the following concepts:"
-
-  ul {
-    li "A record"
-    li "Model"
-    li "View"
-    li "Controller"
-  }
 }
 
 steps {
-
 
   step {
     console "rails generate scaffold topic title:string description:text"
     message <<-MARKDOWN
 * `generate scaffold` tells rails to create everything necessary to get up and running with topics.
 * `topic` tells rails the name of the new model.
-* `title:string` says that topics have a title, which is a string.
-* `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too.)
+* `title:string` says that topics have a title, which is a "string".
+* `description:text` says that topics have a description which is a "text". (What's the difference between "string" and "text"? Basically "text" is for strings that might be very long.)
+
     MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step."
+    message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
+    link "rails_architecture"
   }
 
   step {
@@ -40,43 +34,14 @@ explanation {
 
   h2 "Rake"
   message <<-MARKDOWN
-`rake` _(Ruby Make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application. Here, `rake db:migrate` is a task provided by the Rails framework.
+`rake` _(ruby make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application.
 
-You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task.
+Here, `rake db:migrate` is a task provided by the Rails framework. It creates a bunch of new files, including a *migration*, a *model*, a *view*, and a *controller*.
+
   MARKDOWN
 
-  h2 "Explaining Rails architecture and its relation to the database"
-
-  img src: "img/mvc.png", alt: "MVC"
-
-  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
-
-  h3 "Model"
-  message <<-MARKDOWN
-* For all the Models we create in RailsBridge, Model objects have a corresponding record in the the database. The name of the table in the database is the plural version of the Model's class name. For example, if the Model is called 'Duck', it will automatically query or write to the 'ducks' table in the database.
-* Methods internal to Rails make it easy to automatically write records to the the database and query the database to get the records again later.
-* The Model is a bridge between the database and your application's code.
-  MARKDOWN
-
-  h3 "View"
-  message <<-MARKDOWN
-* The View generates the HTML that will be displayed in the browser.
-* View files are written in ERB, a templating language. It contains HTML with Ruby code embedded in it. The ruby variables in the view stand as placeholders for content that will be filled in when a user requests the page.
-* (There are several other templating languages available, but in RailsBridge we always stick to ERB.)
-  MARKDOWN
-
-  h3 "Controller"
-  message <<-MARKDOWN
-* Controllers pass Ruby objects between the Models and the Views.
-* Each url corresponds to a specific method in a Controller.
-* After this step, when you visit any page in your application, that request will be handled by a method in a Controller.
-  MARKDOWN
-
-
-  message <<-MARKDOWN
-When Models, Views and Controllers are all put together, they follow a pattern: Given a url, Rails will look up which Controller method (also called an "Action") to use. The Controller Action will use methods in a corresponding Model. The Model will need to read or write to the database, and return an object containing that data to the Controller. The Controller will take that object and pass it to the View. (Actions normally have a corresponding View file, and Rails will automatically find and use that file.)
-Models, Views and Controllers each have specific jobs.  Separating responsibilities like this make it easier to develop, especially as it gets bigger. (When each file has a clear responsibility it's easier to fix problems and add new features.)
-  MARKDOWN
+  tip "You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task."
 }
+
 
 next_step "CRUD_with_scaffolding"
