@@ -19,7 +19,7 @@ El proceso de instalación de la noche anterior es mayormente copiar-y-pegar, y 
 Ingresa a [Habilidades fundamentales](habilidades_fundamentales) para ver una serie de diapositivas que describen las habilidades básicas requeridas para ser un programador que no involucran escribir código.
 
 ### Diapositivas
-El currículum del taller RailsBridge se encuentra en http://docs.railsbridge.org/es/, el cual está hospedado en http://github.com/railsbridge/docs
+El currículum en español del taller RailsBridge se encuentra en http://es.railsbridge.org/, el cual está hospedado en http://github.com/codificadas/docs
 
 Aquí se encuentra un bosquejo del plan/flujo de las diapositivas pasadas:
 
