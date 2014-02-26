@@ -24,6 +24,23 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * maintains a count of steps at the same level
   * prefixes name with e.g. "Step 1:"
 
+`goals do`
+
+  * a titled, formatted list of goals
+
+`goal "text"`
+
+  * an individual goal (marked up with \<li\>)
+  * text can be markdown
+
+`steps do`
+
+  * a titled, formatted list of steps
+
+`explanation do`
+
+  * a titled, formatted block for a summary of what the student just did
+
 `link "name"`
 
   * links to a step whose file name is `filename`
@@ -38,19 +55,6 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * creates a step which is named "Option 1: foo" instead "Step 1: foo"
   * supports nested blocks, which reset the step count again
 
-`verify`
-
-`verify "name"`
-
-  * usually contains `console` and `result` notes
-  * kind of like a step, but doesn't increment the number count
-
-`tip "name"`
-
-  * called out in a blue box
-  * the name is *not* markdown, but is a bold title for the tip box
-  * content should be inside a nested block
-  
 `insert "filename"`
 
   * inserts the contents of one file inside another
@@ -58,6 +62,7 @@ Here Docs are especially useful with `message`s since you can just dump in markd
   * current limitations:
     * only works with `.step` files
     * inserted file must be in same directory as inserting file
+    * prepends an underscore to the file name
 
 ## messages
 
@@ -65,10 +70,16 @@ Here Docs are especially useful with `message`s since you can just dump in markd
 
   * makes a paragraph of text anywhere in the document
   * the text parameter is passed through a Markdown converter
-  
+
 `important "text"`
 
   * like a message, but called out in a red box
+
+`tip "name" do`
+
+  * called out in a blue box
+  * the name is *not* markdown, but is an optional bold title for the tip box
+  * content should be inside a nested block
 
 ## special
 
@@ -85,6 +96,16 @@ Special elements do *not* format their text as Markdown.
   * indicates that the student should see some output in the terminal
   * says "expected result:" and then puts the text in a `pre` block
 
+`verify`
+
+`verify "name"`
+
+  * usually contains `console` and `result` notes
+  * kind of like a step, but doesn't increment the number count
+
+`irb "text"`
+
+  * like "console" but indicates that the student should type something into irb
 
 
 ## erector elements

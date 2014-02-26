@@ -170,7 +170,11 @@ class Step < Erector::Widget
     end
   end
 
-  alias_method :goal, :li
+  def goal *args
+    li do
+      message *args
+    end
+  end
 
   def site_desc site_name, description
     div class: 'site-desc' do
@@ -215,6 +219,7 @@ class Step < Erector::Widget
 
   ## special
 
+  # todo: i18n
   TERMINAL_CAPTION = "Type this in the terminal:"
   IRB_CAPTION = "Type this in irb:"
   RESULT_CAPTION = "Expected result:"
