@@ -33,6 +33,7 @@ describe MarkdownPage do
 
     assert_loosely_equal(main_html, <<-HTML.strip_heredoc)
       <main>
+        <a href="hello.step.deck" style="float: right">Slides</a>
         <h1 class="doc_title">Hello</h1>
         <div class="doc">
           <h1>This is a heading</h1>
