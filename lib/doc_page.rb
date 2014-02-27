@@ -115,6 +115,7 @@ class DocPage < Html5Page
     widget Contents, locale: @locale, site_name: site_name, page_name: page_name
 
     main {
+      before_title
       h1 doc_title, class: "doc_title"
       div(class: :doc) {
         doc_content
@@ -143,6 +144,10 @@ class DocPage < Html5Page
         url "https://github.com/railsbridge/docs"
       end
     }
+  end
+
+  def before_title
+    # placeholder for subclass override
   end
 
 end
