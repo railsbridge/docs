@@ -4,30 +4,24 @@ goals {
 
   message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
 
-  goal "Create a database table for topics with a title and a description"
+  goal "Create a a simple *Table* in the database for topics with a title and a description"
+  goal "Automatically generate the corresponding *Scaffold* in Rails (namely, the *Model*, the *View*, and the *Controller*)."
 
-  message "In this step we'll learn a bit about MVC (Model-View-Controller) architecture. By the end of this step you should understand the following concepts:"
-
-  ul {
-    li "A record"
-    li "Model"
-    li "View"
-    li "Controller"
-  }
 }
 
 steps {
-
 
   step {
     console "rails generate scaffold topic title:string description:text"
     message <<-MARKDOWN
 * `generate scaffold` tells rails to create everything necessary to get up and running with topics.
 * `topic` tells rails the name of the new model.
-* `title:string` says that topics have a title, which is a string.
-* `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too.)
+* `title:string` says that topics have a title, which is a "string".
+* `description:text` says that topics have a description which is a "text". (What's the difference between "string" and "text"? Basically "text" is for strings that might be very long.)
+
     MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step."
+    message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
+    link "rails_architecture"
   }
 
   step {
@@ -40,40 +34,14 @@ explanation {
 
   h2 "Rake"
   message <<-MARKDOWN
-`rake` _(Ruby Make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application. Here, `rake db:migrate` is a task provided by the Rails framework.
+`rake` _(ruby make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application.
 
-You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task.
+Here, `rake db:migrate` is a task provided by the Rails framework. It creates a bunch of new files, including a *migration*, a *model*, a *view*, and a *controller*.
+
   MARKDOWN
 
-  h2 "Explaining MVC and Records"
-
-  img src: "img/mvc.png", alt: "MVC"
-
-  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
-
-  h3 "Model"
-  message <<-MARKDOWN
-* saves data to the database
-* accesses data from the database
-* bridge between the database and objects
-  MARKDOWN
-
-  h3 "View"
-  message <<-MARKDOWN
-* display the data for human (or machine) consumption
-* webpages are views
-  MARKDOWN
-
-  h3 "Controller"
-  message <<-MARKDOWN
-* acts as the glue between the models and the views
-* combines data from multiple models
-* summarizes and filters data
-  MARKDOWN
-
-  message <<-MARKDOWN
-In MVC, models, views, and controllers have very specific jobs.  Separating responsibilities like this make it easy to maintain and extend rails applications.  When responsibilities become muddied it gets much harder to debug issues and add new functionality.
-  MARKDOWN
+  tip "You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task."
 }
+
 
 next_step "CRUD_with_scaffolding"
