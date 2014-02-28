@@ -1,38 +1,33 @@
 goals {
 
-  model_diagram header: 'Topics', fields: %w(id title description)
+  model_diagram header: 'Temas', fields: %w(id titulo descripcion)
 
-  message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
+  message "El suggestotron tiene una lista de temas por los que la gente puede votar. Nosotros guardaremos esos temas en una base de datos. En este paso harás lo siguiente:"
 
-  goal "Create a database table for topics with a title and a description"
+  goal "Crear una simple tabla en la base de datos para temas con un título y una descripción"
 
-  message "In this step we'll learn a bit about MVC (Model-View-Controller) architecture. By the end of this step you should understand the following concepts:"
+  goal "Generar automáticamente el correspondiente *Scaffold* en Rails (es decir, el *Modelo*, la *Vista*, y el *Controlador*)."
 
-  ul {
-    li "A record"
-    li "Model"
-    li "View"
-    li "Controller"
-  }
 }
 
 steps {
 
 
   step {
-    console "rails generate scaffold topic title:string description:text"
+    console "rails generate scaffold tema titulo:string descripcion:text"
     message <<-MARKDOWN
-* `generate scaffold` tells rails to create everything necessary to get up and running with topics.
-* `topic` tells rails the name of the new model.
-* `title:string` says that topics have a title, which is a string.
-* `description:text` says that topics have a description which is a "text". (We're befuddled by the difference too.)
+* `generate scaffold` le dice a Rails que realice todo lo necesario para ponerse en marcha con temas.
+* `tema` le dice a Rails el nombre del nuevo modelo.
+* `titulo:string` dice que los temas tienen un título, el cual es una cadena.
+* `descripcion:text` dice que los temas tienen una descripción, que es de tipo texto. (Nosotros también estamos confundidos con la diferencia entre estos dos tipos.)
     MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step."
+    message "Si quieres, toma un poco de tiempo para curiosear entre los archivos que se enlistan en este paso. Puedes aprender acerca de ellos en la página de [Arquitectura Rails](arquitectura_rails)."
+    link "arquitectura_rails"
   }
 
   step {
     console "rake db:migrate"
-    message "This tells rails to update the database to include a table for our new model."
+    message "Esto le dice a Rails que actualice la base de datos y crea una tabla para nuestro nuevo modelo."
   }
 }
 
@@ -40,40 +35,11 @@ explanation {
 
   h2 "Rake"
   message <<-MARKDOWN
-`rake` _(Ruby Make)_ is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application. Here, `rake db:migrate` is a task provided by the Rails framework.
-
-You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task.
+`rake` _(Ruby Make)_ es una herramienta que permite ejecutar pequeños programas de Ruby (**tareas**) que usas frecuentemente en tu aplicación. Aquí, `rake db:migrate` es una tarea proporcionada por el framework Rails. Éste crea un grupo de nuevos archivos, incluyendo una *migración*, un *modelo*, una *vista*, y un *controlador*.
+  
   MARKDOWN
 
-  h2 "Explaining MVC and Records"
-
-  img src: "img/mvc.png", alt: "MVC"
-
-  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
-
-  h3 "Model"
-  message <<-MARKDOWN
-* saves data to the database
-* accesses data from the database
-* bridge between the database and objects
-  MARKDOWN
-
-  h3 "View"
-  message <<-MARKDOWN
-* display the data for human (or machine) consumption
-* webpages are views
-  MARKDOWN
-
-  h3 "Controller"
-  message <<-MARKDOWN
-* acts as the glue between the models and the views
-* combines data from multiple models
-* summarizes and filters data
-  MARKDOWN
-
-  message <<-MARKDOWN
-In MVC, models, views, and controllers have very specific jobs.  Separating responsibilities like this make it easy to maintain and extend rails applications.  When responsibilities become muddied it gets much harder to debug issues and add new functionality.
-  MARKDOWN
+  tip"Puedes ejecutar `rake -T` para ver la lista de todos los comandos `rake` a los que actualmente tu aplicación responde, junto con una descripción corta de cada tarea."
 }
 
 next_step "CRUD_with_scaffolding"
