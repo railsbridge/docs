@@ -4,16 +4,10 @@ goals {
 
   message "El suggestotron tiene una lista de temas por los que la gente puede votar. Nosotros guardaremos esos temas en una base de datos. En este paso harás lo siguiente:"
 
-  goal "Crear una base de datos para los temas con un título y una descripción"
+  goal "Crear una simple tabla en la base de datos para temas con un título y una descripción"
 
-  message "En esta ocasión aprenderemos un poco sobre la arquitectura MVC (Modelo-Vista-Controlador). Al final de este paso deberías entender los siguientes conceptos:"
+  goal "Generar automáticamente el correspondiente *Scaffold* en Rails (es decir, el *Modelo*, la *Vista*, y el *Controlador*)."
 
-  ul {
-    li "Un registro"
-    li "Modelo"
-    li "Vista"
-    li "Controlador"
-  }
 }
 
 steps {
@@ -22,17 +16,18 @@ steps {
   step {
     console "rails generate scaffold tema titulo:string descripcion:text"
     message <<-MARKDOWN
-* `generate scaffold` le dice a rails que realice todo lo necesario para ponerse en marcha con temas.
-* `tema` le dice a rails el nombre del nuevo modelo.
+* `generate scaffold` le dice a Rails que realice todo lo necesario para ponerse en marcha con temas.
+* `tema` le dice a Rails el nombre del nuevo modelo.
 * `titulo:string` dice que los temas tienen un título, el cual es una cadena.
 * `descripcion:text` dice que los temas tienen una descripción, que es de tipo texto. (Nosotros también estamos confundidos con la diferencia entre estos dos tipos.)
     MARKDOWN
-    message "Si quieres, toma un poco de tiempo para curiosear entre los archivos que se generan al ejecutar este comando."
+    message "Si quieres, toma un poco de tiempo para curiosear entre los archivos que se enlistan en este paso. Puedes aprender acerca de ellos en la página de [Arquitectura Rails](arquitectura_rails)."
+    link "arquitectura_rails"
   }
 
   step {
     console "rake db:migrate"
-    message "Este comando le dice a rails que actualice la base de datos para incluir la tabla con nuestro nuevo modelo."
+    message "Esto le dice a Rails que actualice la base de datos y crea una tabla para nuestro nuevo modelo."
   }
 }
 
@@ -40,40 +35,11 @@ explanation {
 
   h2 "Rake"
   message <<-MARKDOWN
-`rake` _(Ruby Make)_ es una herramienta que permite ejecutar pequeños programas de Ruby (**tareas**) que usas frecuentemente en tu aplicación. Aquí, `rake db:migrate` es una tarea proporcionada por el framework Rails.
-
-Puedes ejecutar `rake -T` para ver la lista de todos los comandos `rake` a los que actualmente tu aplicación responde, junto con una descripción corta de cada tarea.
+`rake` _(Ruby Make)_ es una herramienta que permite ejecutar pequeños programas de Ruby (**tareas**) que usas frecuentemente en tu aplicación. Aquí, `rake db:migrate` es una tarea proporcionada por el framework Rails. Éste crea un grupo de nuevos archivos, incluyendo una *migración*, un *modelo*, una *vista*, y un *controlador*.
+  
   MARKDOWN
 
-  h2 "Explicando MVC y Registros"
-
-  img src: "img/mvc.png", alt: "MVC"
-
-  message "Rails implementa una noción muy específica del patrón **Modelo/Vista/Controlador**, que guía la forma de estructurar tus aplicaciones web."
-
-  h3 "Modelo"
-  message <<-MARKDOWN
-* guarda información en la base de datos
-* accesa a la información de la base de datos
-* sirve como un puente entre la base de datos y los objetos
-  MARKDOWN
-
-  h3 "Vista"
-  message <<-MARKDOWN
-* es la manera en que se presenta la información para consumo de un humano (o una máquina)
-* las páginas web son vistas
-  MARKDOWN
-
-  h3 "Controlador"
-  message <<-MARKDOWN
-* actúa como el pegamento entre los modelos y las vistas
-* combina la información entre múltiples modelos
-* resume y filtra información
-  MARKDOWN
-
-  message <<-MARKDOWN
-En MVC, modelos, vistas, y controladores tienen trabajos específicos. Separar responsabilidades de esta manera hace que las aplicaciones en rails sean fáciles de mantener y extender. Cuando las responsabilidades se mezclan entre sí se hace más difícil depurar problemas y agregar nuevas funcionalidades.
-  MARKDOWN
+  tip"Puedes ejecutar `rake -T` para ver la lista de todos los comandos `rake` a los que actualmente tu aplicación responde, junto con una descripción corta de cada tarea."
 }
 
 next_step "CRUD_with_scaffolding"
