@@ -141,6 +141,7 @@ table.bordered tr {
 .explanation > h1:before,
 .deploying > h1:before,
 .overview > h1:before,
+.challenge > h1:before,
 .further-reading > h1:before {
   content: "\00a0";
   display: inline-block;

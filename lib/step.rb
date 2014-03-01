@@ -58,6 +58,7 @@ class Step < Erector::Widget
     overview:"Overview",
     discussion:"Discussion Items",
     hints:"Hints",
+    challenge:"Challenge(s)",
     tools_and_references:"Tools and References",
     requirements:"Requirements to advance",
   }
