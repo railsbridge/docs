@@ -1,0 +1,7 @@
+message "When your program gets longer than one screenful, it gets hard to keep track of. Most interesting problems have hundreds of lines of code.  Let's look at tools that make it more manageable."
+goals do
+    goal "Use functions to break up code into tasks"
+    goal "Use classes to group variables and functions that naturally go together"
+end
+
+next_step 'functions'

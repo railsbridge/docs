@@ -4,16 +4,20 @@ goals do
 end
 
 explanation do
-  message 'Every application on your computer was written by somebody. From the Operating System to your Web Browser. Every program was written in some kind of Programming Language.'
-  message 'Programming languages come in all shapes and sizes. Some are optimized for the speed at which the computer will execute them, and some are optimized for the speed at which a human can program in them.'
-  message 'Ruby was invented in the mid-1990s by a guy named Matz.'
-  message 'Ruby takes a lot of ideas from the language Perl and Smalltalk'
-  message 'Ruby is an **interpreted** language. Unlike **compiled** languages, where the computer has to read your entire code up front, in Ruby the computer reads your code line-by-line.'
-  message 'Ruby\'s popularity soared with the invention of the **Ruby on Rails** web framework, but Ruby is useful for many more things than just websites.'
+  message <<-CONTENTS
+  Every application on your computer was written by somebody, from the operating system to your web browser. Every program was written in some kind of programming language.
+
+  Programming languages come in all shapes and sizes. Some are optimized for the speed at which the computer will execute them, and some are optimized for the speed at which a human can program in them.
+
+  Ruby was invented in the mid-1990s by Yukihiro Matsumoto -- Matz for short. Matz\' goals were to make programming faster and easier. \'Ruby is designed to make programmers happy.\'
+
+  Ruby\'s popularity soared with the invention of the **Ruby on Rails** web framework, but Ruby is useful for many more things than just websites. 
+  CONTENTS
 end
 
 further_reading do
-  message 'https://en.wikipedia.org/wiki/Ruby_(programming_language)'
+  message '[Wikipedia\'s article on Ruby](https://en.wikipedia.org/wiki/Ruby_\(programming_language\))'
+  message 'If you know another programming language, see [Ruby From Other Languages](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages) for a comparison'
 end
 
 next_step "command_line"

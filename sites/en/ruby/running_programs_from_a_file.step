@@ -1,24 +1,92 @@
+message <<-INTRO
+irb isn't a good tool for writing long programs.  Code is entered one line at a
+time. You can't save your work, and you can't share it when you're done.
+
+Instead, we write code in a file and run it from the command line.
+
+For writing code, we use a program called a text editor.
+
+A text editor is a word processor that saves in plain text format.  This is
+unlike Word, which saves files in a special format that only Word can read.
+
+We may have recommended a particular text editor during the Installfest, such as
+SublimeText.  You can use any editor you like so long as it saves plain text.
+
+It'll helpful to keep your text editor running, since you'll be coming back to
+it often.
+INTRO
+
 goals do
-  goal "Write a ruby program into a file"
-  goal "Execute a ruby program stored in a file"
+  goal "Use a text editor."
+  goal "Write and save a Ruby program into a file"
+  goal "Start and connect to the RailsBridge virtual machine, if you are using it for the workshop"
+  goal "Run Ruby code saved in a file"
 end
 
 step do
-  message "In your text editor, create a file called my_program.rb"
-  type_in_file 'my_program.rb', <<-CONTENTS
+  message "Start your text editor."
+  message "In your text editor, create a new file called **my_program.rb**"
+  type_in_file "my_program.rb", <<-CONTENTS
 puts 'This code is in a file!'
 some_variable = 19
-puts "I stored a variable with the value #{19}!"
-  CONTENTS
+puts "I stored a variable with the value #\{some_variable\}!"
+CONTENTS
 end
 
 step do
-  console 'ruby my_program.rb'
-  message "You should have seen the output of your program: 'This code is in a file...' etc. If you didn't, you might not be in the directory where you created the file. See if it shows up in `ls`."
+  message <<-INFO
+Save the file.
+
+If you're using the RailsBridge virtual machine, *save the file
+in the same folder you created the virtual machine.* That folder is shared
+between your laptop and the vm, like Google Drive.
+
+Did you notice we added  `.rb` at the end of the name? It's standard practice to
+name Ruby files this way, to help people and tools recognize the file contains
+Ruby code.
+
+When you saved the file, your text editor may have added colors to the code.  It
+recognizes the file contains Ruby, and will mark up different kinds of words
+with different colors. This is called "syntax highlighting", which makes it
+easier to read code.
+INFO
 end
+
+step do
+  message "Let's look at the file."
+  message "Open your <a href='/ruby/command_line'>terminal</a>, connect to the
+    <a href='/ruby/using_virtual_machines'>VM</a>, and `cd` to your workspace directory"
+  console "ls"
+  result  "my_program.rb"
+  console "more my_program.rb"
+  result <<-CONTENTS
+puts 'This code is in a file!'
+some_variable = 19
+puts "I stored a variable with the value #\{some_variable\}!"
+CONTENTS
+  message "**my_program.rb** was saved in plain text - you see exactlty what you
+    typed.  If this were a Word document, you would see a screenful of weird
+    characters and formatting, and you would get errors when you ran it."
+end
+
+
+step do
+  message "Now run the code.  Stay in your workspace directory."
+  console "ruby my_program.rb"
+  result <<-CONTENTS
+This code is in a file!
+I stored a variable with the value 19!
+CONTENTS
+  message "If you didn't see this message, troubleshoot with a TA. We will do
+    this for the rest of the tutorial, so it's important to ensure everything
+    works."
+end
+
 
 explanation do
-  message "Actual ruby programs aren't written in irb, they're written in files. As your program becomes larger and larger, it may span many files!"
+  message "Congratulations!  You've run your first Ruby program!"
+  message "Ruby programs are written in files and run from the command line. As
+    your program becomes larger and larger, it may span many files!"
 end
 
-next_step "conditionals"
+next_step "summary:_tools"
