@@ -23,19 +23,14 @@ We're going to be working with:
   [Sublime Text 2](http://www.sublimetext.com/2) is popular and free to download, but you should buy a license if you keep using it after the workshop.
   [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
 
-Optional, if you'd add this code to a GitHub account:
-
-* Git
-* Your [GitHub](http://github.com) account
+If you would like to add this code to GitHub, you'll also need to install Git and create a [GitHub](http://github.com) account.
 
 ### Working Effectively and Efficiently
 
 We highly recommend you do the following:
 
 * Open your browser fresh or hide any windows you already have open.
-  * Bring up one window with two tabs
-    * One for this content
-    * One for interacting with your app.
+  * Bring up one window with just the tabs you need
 * Open your text editor.
 * Minimize distractions as much as possible
 

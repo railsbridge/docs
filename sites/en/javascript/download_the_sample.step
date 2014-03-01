@@ -1,0 +1,44 @@
+message <<-MARKDOWN
+
+### Download the tutorial
+
+Today, we're going to recreate the classic game Snake in the Javascript programming language.
+
+Before you can start the tutorial, you'll need to [download the tutorial](/js-snake-game-tutorial.zip)download the tutorial</a> to your computer to edit the source code.
+
+Once you have these tools available, we need to open the files we'll be working with:
+  * Open game/snake.js in your text editor
+  * Open game/index.html in your browser
+  * Open your browsers javascript console
+  * To test that your console is working, try typing `alert("hello world");` in your browser's javascript console and dismiss the window that pops up.
+
+### Using the Browser's Console
+
+We'll experiment with javascript using the console of our browser. We recommend everyone use Chrome, for consistency through the class.
+
+To open the console on a Mac, use the shortcut `Command` + `Option` + `J`. To open the console in Windows or Linux, use the keyboard shortcut `Control` + `Shift` + `J`. Alternatively, right click, select 'Inspect Element' from the right-click menu, and click the 'Console' tab.
+
+The console is where we can experiment with javascript, by typing after the `>` prompt. The console will also show us the return value of an expression we type and will display any errors we get.
+
+
+### Stop and reflect
+
+* The javascript console is one of the fastest ways to get feedback on
+  whether the code does what you expect. How else can you get feedback about if
+  your code does what you expect?
+* Why shouldn't you use Word or Google Docs to edit code?
+
+MARKDOWN
+
+next_step 'numbers_strings_and_booleans'
+
+message <<-MARKDOWN
+
+### Helpful Links
+1. [How to launch dev tools in chrome](https://developers.google.com/chrome-developer-tools/)
+2. [How to launch dev tools in internet explorer](http://www.microsoft.com/en-us/download/details.aspx?id=18359)
+3. [How to launch dev tools in firefox](https://developer.mozilla.org/en-US/Firefox_OS/Debugging/Setting_up)
+4. [How to launch dev tools in safari](https://developer.apple.com/library/safari/documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html)
+
+MARKDOWN
+
