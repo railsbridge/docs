@@ -5,7 +5,7 @@
 # Schedule for the day
 
  * **09:00**-09:30: Breakfast
- * **09:30**-11:00: Opening presentation, **Workshop**
+ * **09:30**-11:00: Opening presentation, introductions, **Workshop**
  * **11:00**-11:30: Break
  * **11:30**-13:00: **Workshop**
  * **13:00**-14:00: Lunch
@@ -14,6 +14,18 @@
  * **15:30**-17:00: **Workshop**
  * **17:00**-17:30: Closing presentation, Survey, eBook giveaway
  * **17:30**-18:00: Retrospective
+
+<!SLIDE bullets>
+# Please thank our awesome sponsors!
+
+![RubyFuza](img/rubyfuza_2014.gif)
+
+### goodies
+
+![Smashing Magazine](img/smashing-magazine.png)
+![A Book Apart](img/aba-logo.png)
+![Pragmatic Bookshelf](img/pragprog-logo.png)
+![Platform45](img/platform45-logo.png)
 
 <!SLIDE bullets>
 # Open source workshop
@@ -79,5 +91,6 @@
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: <http://rbcpt.org/code>
+### Resources: <http://rbcpt.org/resources>
 
 # rbcpt.org/start
