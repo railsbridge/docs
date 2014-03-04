@@ -1,99 +1,98 @@
 goals {
 
   message <<-MARKDOWN
-  Now that the structure is complete, let's make the flow work smoothly.
+  Ahora que la estructura está completa, vamos a hacer que el flujo funcione sin problemas.
 
-  Currently when you go to <http://localhost:3000> you see the "Welcome aboard" message.
+  Actualmente cuando vas a <http://localhost:3000> ves el mensaje "Welcome aboard".
 
-  It would be easier to use our app if <http://localhost:3000> went directly to the topics list.
+  Sería más fácil usar nuestra aplicación si <http://localhost:3000> fuera directamente a la lista de temas.
 
-  In this step we'll make that happen and learn a bit about routes in Rails.
+  En este paso haremos que eso ocurra y aprenderemos un poco acerca de rutas en Rails (Rails routes).
   MARKDOWN
 }
 
 steps {
 
-  step "Add a root route" do
-    message "Open the file `config/routes.rb` in an editor."
+  step "Agregar una ruta raíz" do
+    message "Abre el archivo `config/routes.rb` en un editor."
 
-    message "Search the file for **root**, it should be near the top if you are using Rails 4."
+    message "Busca en el archivo **root**, debería estar cerca de la parte superior si estás usando Rails 4."
 
-    message "Uncomment the line that contains the example command by removing the `#` sign in front of it, and change it to read `root 'topics#index'`. When you are done the line should look like this:"
+    message "Descomenta la línea que contiene la instrucción de ejemplo removiendo el `#` delante de él, y cámbialo por `root 'temas#index'`. Cuando hayas terminado la línea debería verse así:"
 
     source_code :ruby, <<-RUBY
-root 'topics#index'
+root 'temas#index'
     RUBY
 
     em do
-      message "(Rails 3.x users should add `root to: 'topics#index'` and will need to remove their `public/index.html` file)."
+      message "(Los usuarios de Rails 3.x deben agregar `root to: 'temas#index'` y necesitarán eliminar su archivo `public/index.html`)."
     end
   end
 
-  step "Confirm your changes" do
-    message "Go back to <http://localhost:3000/>. You should be taken to the topics list automatically."
+  step "Confirma tus cambios" do
+    message "Regresa a <http://localhost:3000/>. Deberías ser llevado automáticamente a la lista de temas."
   end
 }
 
 explanation {
 
  message <<-MARKDOWN
-  * `root 'topics#index'` is a rails route that says the default
-    address for your site is `topics#index`. `topics#index` is the topics
-    list page (the topics controller with the index action).
-  * Rails routes control how URLs (web addresses) get matched with
-    code on the server. Similar to how addresses match with houses and
-    apartments.
-  * The file `config/routes.rb` is like an address directory listing the
-    possible addresses and which code goes with each one
-  * `routes.rb` uses some shortcuts so it doesn't always show all the
-    possible URLs. To explore the URLs in more detail we can use the
+  * `root 'temas#index'` es una ruta de Rails que dice que la dirección 
+    por defecto para tu sitio es `temas#index`. `temas#index` es la página
+    de la lista de temas (el controlador 'temas' con la acción 'index').
+  * Rails routes controla cómo las URLs (direcciones web) coinciden con el código
+    en el servidor. Es similar a cómo las direcciones coinciden con las casas 
+    y departamentos.
+  * El archivo `config/routes.rb` es como un directorio que lista las posibles
+    direcciones y cual código va con cuál.
+  * `routes.rb` usa algunos atajos por lo que no siempre muestra todas las 
+    posibles URLs. Para explorar las URLs a más detalle podemos usar la
     terminal.
 
-  At the terminal type `rake routes`. You should get something that
-  looks like this:
+  En la terminal escribe `rake routes`. Deberías obtener algo como esto:
 
   ````
     $ rake routes
 
         Prefix Verb   URI Pattern                Controller#Action
-        topics GET    /topics(.:format)          topics#index
-               POST   /topics(.:format)          topics#create
-     new_topic GET    /topics/new(.:format)      topics#new
-    edit_topic GET    /topics/:id/edit(.:format) topics#edit
-         topic GET    /topics/:id(.:format)      topics#show
-               PATCH  /topics/:id(.:format)      topics#update
-               PUT    /topics/:id(.:format)      topics#update
-               DELETE /topics/:id(.:format)      topics#destroy
-          root GET    /                          topics#index
+         temas GET    /temas(.:format)           temas#index
+               POST   /temas(.:format)           temas#create
+      new_tema GET    /temas/new(.:format)       temas#new
+     edit_tema GET    /temas/:id/edit(.:format)  temas#edit
+          tema GET    /temas/:id(.:format)       temas#show
+               PATCH  /temas/:id(.:format)       temas#update
+               PUT    /temas/:id(.:format)       temas#update
+               DELETE /temas/:id(.:format)       temas#destroy
+          root GET    /                          temas#index
   ````
-  This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
+  Aquí se muestran todas las URLs a las que tu aplicación responde. El código que comienza con dos puntos son variables, por lo que :id es el número identificador del registro. El código en paréntesis es opcional.
 
-  In Rails 4, you can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
+  En Rails 4, también puedes obtener esta información en tu sitio en desarrollo. Ve a <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> y verás algo como esto:
 
   <img src='img/rails4_rails_info_routing.png'>
 
-  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
+  También verás esta tabla en Rails 4 cada vez que intentes acceder a una ruta inválida (prueba <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
 
-### Exploring Routes (optional)
+### Explorando Rutas (opcional)
 
-  Now you can have a look at the paths that are available in your app.
-  Let's try looking at one of the topics routes we just generated.
-  Open up your rails console and play:
+  Ahora puedes tener un vistazo de las rutas que están disponibles en tu aplicación.
+  Intentemos ver una de las rutas de temas que acabamos de generar.
+  Abre tu consola de Rails y juega:
 
     $ rails console
-    >> app.topics_path
-    => "/topics"
-    >> app.topics_url
-    => "http://www.example.com/topics"
+    >> app.temas_path
+    => "/temas"
+    >> app.temas_url
+    => "http://www.example.com/temas"
 
-  `app` is a special object that represents your entire application.
-  You can ask it about its routes (as we just did), play with its
-  database connections, or make pseudo-web requests against it with
-  `get` or `post` (and lots more).
+  `app` es un objeto especial que representa toda la aplicación.
+  A este objeto puedes pedirle las rutas (tal como acabamos de hacer),
+  jugar con sus conexiones a la base de datos, o hacer pseudo peticiones
+  web con `get` o `post` (y mucho más).
 
   MARKDOWN
 }
 
 insert 'considerar_mandar_a_heroku'
 
-next_step "voting_on_topics"
+next_step "votando_sobre_temas"
