@@ -2,7 +2,7 @@ goals {
 
   goal "Crear una tabla en la base de datos para temas con un título y una descripción"
 
-  message "En este paso aprenderemos un poco sobre la arquitectura Rails. Al final de esta paso deberías entender los siguientes conceptos:"
+  message "En este paso aprenderemos un poco sobre la arquitectura Rails. Al final de este paso, deberías entender los siguientes conceptos:"
 
   ul {
     li "Tabla"
@@ -30,20 +30,20 @@ explanation {
   h3 "Vista"
   message <<-MARKDOWN
 * La vista genera el código HTML que se mostrará en el navegador.
-* Los archivos Vista son escritos en ERB, un lenguaje de plantillas. Este contiene HTML con código Ruby incrustado en él. Las variables Ruby en la vista se presentan como marcadores de contenido que será llenado cuando el usuario solicite la página.
+* Los archivos Vista son escritos en ERB, un lenguaje de plantillas. Éste contiene HTML con código Ruby incrustado en él. Las variables Ruby en la vista se presentan como marcadores de contenido que será llenado cuando el usuario solicite la página.
 * (Existen muchos otros lenguajes de plantillas disponibles, pero en RailsBridge estamos muy apegados a ERB.)
   MARKDOWN
 
   h3 "Controlador"
   message <<-MARKDOWN
 * Los Controladores transfieren objetos Ruby entre los Modelos y las Vistas.
-* Cada url corresponde a un método específico en un Controlador.
+* Cada URL corresponde a un método específico en un Controlador.
 * Cuando visitas cualquier página en tu aplicación, esa solicitud se maneja por un método en un Controlador.
   MARKDOWN
 
   message <<-MARKDOWN
 Cuando Modelos, Vistas y Controladores se ponen juntos, ellos siguen un patrón: Dada una URL, Rails busca cual método del Controlador (también llamado "Acción") usar. La Acción del Controlador usará métodos del correspondiente Modelo. El Modelo necesita leer o escribir en la base de datos, y regresa al Controlador un objeto que contiene la información. El Controlador tomará el objeto y lo pasará a la Vista. (Las Acciones normalmente tienen un archivo de Vista correspondiente, y Rails automáticamente encontrará y usará ese archivo.)
 
-Modelos, Vistas y Controladores tienen trabajos específicos. Separar responsabilidades de esta manera facilita desarrollar, especialmente en proyectos que pueden crecer. (Cuando cada archivo tiene una clara responsabilidad es fácil corregir problemas y agregar nuevas características.)
+Modelos, Vistas y Controladores tienen trabajos específicos. Separar responsabilidades de esta manera facilita desarrollar, especialmente en proyectos que pueden crecer. (Cuando cada archivo tiene una clara responsabilidad, es fácil corregir problemas y agregar nuevas características.)
   MARKDOWN
 }
