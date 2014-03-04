@@ -1,0 +1,49 @@
+goals {
+
+  goal "Crear una tabla en la base de datos para temas con un título y una descripción"
+
+  message "En este paso aprenderemos un poco sobre la arquitectura Rails. Al final de este paso, deberías entender los siguientes conceptos:"
+
+  ul {
+    li "Tabla"
+    li "Modelo"
+    li "Vista"
+    li "Controlador"
+  }
+}
+
+explanation {
+
+  h2 "Arquitectura Rails y su relación con la base de datos"
+
+  img src: "img/mvc.png", alt: "MVC"
+
+  message "Rails implementa una noción muy específica del patrón **Modelo/Vista/Controlador**, que guía la forma de estructurar tus aplicaciones web."
+
+  h3 "Modelo"
+  message <<-MARKDOWN
+* Para todos los modelos que creamos en RailsBridge, el modelo de objetos tiene un registro correspondiente en la base de datos. El nombre de la tabla en la base de datos es el plural del nombre de la clase del Modelo. Por ejemplo, si el modelo se llama 'Pato', éste automáticamente buscará o consultará en la tabla 'patos' de la base de datos.
+* Métodos internos de Rails facilitan escribir registros automáticamente en la base de datos y consultar en ella para obtener los registros después.
+* El Modelo es un puente entre la base de datos y el código de tu aplicación.
+  MARKDOWN
+
+  h3 "Vista"
+  message <<-MARKDOWN
+* La vista genera el código HTML que se mostrará en el navegador.
+* Los archivos Vista son escritos en ERB, un lenguaje de plantillas. Éste contiene HTML con código Ruby incrustado en él. Las variables Ruby en la vista se presentan como marcadores de contenido que será llenado cuando el usuario solicite la página.
+* (Existen muchos otros lenguajes de plantillas disponibles, pero en RailsBridge estamos muy apegados a ERB.)
+  MARKDOWN
+
+  h3 "Controlador"
+  message <<-MARKDOWN
+* Los Controladores transfieren objetos Ruby entre los Modelos y las Vistas.
+* Cada URL corresponde a un método específico en un Controlador.
+* Cuando visitas cualquier página en tu aplicación, esa solicitud se maneja por un método en un Controlador.
+  MARKDOWN
+
+  message <<-MARKDOWN
+Cuando Modelos, Vistas y Controladores se ponen juntos, ellos siguen un patrón: Dada una URL, Rails busca cual método del Controlador (también llamado "Acción") usar. La Acción del Controlador usará métodos del correspondiente Modelo. El Modelo necesita leer o escribir en la base de datos, y regresa al Controlador un objeto que contiene la información. El Controlador tomará el objeto y lo pasará a la Vista. (Las Acciones normalmente tienen un archivo de Vista correspondiente, y Rails automáticamente encontrará y usará ese archivo.)
+
+Modelos, Vistas y Controladores tienen trabajos específicos. Separar responsabilidades de esta manera facilita desarrollar, especialmente en proyectos que pueden crecer. (Cuando cada archivo tiene una clara responsabilidad, es fácil corregir problemas y agregar nuevas características.)
+  MARKDOWN
+}
