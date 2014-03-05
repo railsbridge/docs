@@ -12,7 +12,7 @@ steps do
   step do
     insert 'switch_to_home_directory'
   end
-  
+
   step do
     console "mkdir railsbridge"
     message "This command creates a new directory for us to store our project in."
@@ -30,7 +30,7 @@ steps do
   end
 
   step do
-    console "rails new suggestotron"
+    console "rails new suggestotron -m https://raw.github.com/railsbridge-montreal/rails_template/master/intro_to_rails.rb"
     message "'rails new' creates a new rails project with the name you give."
     message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
   end
