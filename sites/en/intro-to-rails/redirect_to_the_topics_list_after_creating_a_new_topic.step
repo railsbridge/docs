@@ -18,12 +18,12 @@ steps {
 
     message "Find the line:"
 
-    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
+    source_code :ruby, "redirect_to @topic, notice: 'Topic was successfully created.'"
 
 
     message 'and change `@topic` to `topics_path` like this:'
 
-    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
+    source_code :ruby, "redirect_to topics_path, notice: 'Topic was successfully created.'"
 
     message 'so that the file looks like this:'
 
@@ -33,11 +33,9 @@ def create
 
   respond_to do |format|
     if @topic.save
-      format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
-      format.json { render action: 'show', status: :created, location: @topic }
+      redirect_to topics_path, notice: 'Topic was successfully created.'
     else
-      format.html { render action: 'new' }
-      format.json { render json: @topic.errors, status: :unprocessable_entity }
+      render action: 'new'
     end
   end
 end
@@ -47,12 +45,12 @@ message "In the same file, locate the update method. "
 
     message "Find the line:"
 
-    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
+    source_code :ruby, "redirect_to @topic, notice: 'Topic was successfully updated.'"
 
 
     message 'and change `@topic` to `topics_path` like before:'
 
-    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
+    source_code :ruby, "redirect_to topics_path, notice: 'Topic was successfully updated.'"
   end
 
   step "Add the flash message to your application view" do
@@ -76,8 +74,7 @@ message "In the same file, locate the update method. "
 explanation {
 
   message <<-MARKDOWN
-  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
-    * `format.html` means that the server should send html back to the browser
+  * `redirect_to topics_path, notice: 'Topic was successfully created.'`:
     * `redirect_to topics_path` means show the **topics list page** when we're done creating or updating a topic
     * `notice: 'Topic was successfully created/updated.'` puts the message into the flash so it will be displayed on the topics list
   MARKDOWN
