@@ -1,113 +1,107 @@
-# Thanks!
+# ¡Gracias!
 
-RailsBridge wouldn't be what it is without your help. Thanks for contributing.
+RailsBridge no sería lo que es sin tu ayuda.¡Gracias por contribuir!
 
-We ask that contributions be made as pull requests via GitHub. If those words
-are totally foreign to you
-[see here](#its-my-first-time-on-github-ever-what-do-i-do)
+Te pedimos que las contribuciones sean hechas como un Pull Request via
+GitHub. Si estas palabras son totalmente desconocidas para ti,
+[mira esto](#its-my-first-time-on-github-ever-what-do-i-do).
 
-# When Submitting a Pull Request
+# Cuando envíes un Pull Request
 
-*Here's a couple of tricks to grease the wheels and make it easy for the
-maintainers to love you. :heart:*
+*Aquí hay un par de trucos para engrasar los motores y hacer más fácil que los encargados del repo te
+amen :heart:*
 
-## Before You Start!
+## ¡Antes de comenzar!
 
-- If you have an existing fork, please make sure it's up to date.
-  It just makes your life easier! If not, make sure you fork *before* cloning,
-  otherwise you'll need to spend some time juggling remotes.
-  Look at the section "Pull in upstream changes" in GitHub's
-  [Fork A Repo](https://help.github.com/articles/fork-a-repo) article.
+- Si ya cuentas con un fork existente, por favor asegúrate de que está actualizado.
+  ¡Esto hace tu vida más fácil!. Si no, asegúrate de que creas tu fork *antes* de clonarlo,
+  de lo contrario necesitarás pasar algo de tiempo manipulando repositorios remotos.
+  Mira la sección "Pull in upstream changes" en el artículo sobre 
+  [Fork A Repo](https://help.github.com/articles/fork-a-repo).
 
-- Create a local topic branch before you start working. This branch is going to
-  be named for what you plan to change. `fix-typo-in-slides`, `move-resources`,
-  and `mountain-lion-support` are all good names for topic branches. If you've
-  never created a local branch before, you can use `git checkout -b
-  new-branch-name`
 
-## Before Submitting
+- Crea una rama local antes de comenzar a trabajar. Esta rama se llamará de acuerdo
+  a lo que planeas cambiar. `corregir-typo-en-diapositivas`, `mover-recursos`,
+  y `agregar-soporte-para-mountain-lion` son buenos nombres para tus ramas. Si nunca antes
+  has creado una rama local, puedes usar el comando `git checkout -b  nnombre-de-tu-rama`.
 
-- Please, please, *please* run `rake` from the terminal before you submit. It
-  not only runs our test suite but also checks the docs for syntax errors.
 
-- Push to a branch on GitHub. Just like you developed in a local branch, you
-  should push to a branch of your repo on GitHub as well. The `master` branch is
-  best used as a clean copy of the upstream docs repo in case you need to make
-  some unrelated changes. To push to a branch,
-  if your branch is named "fix-typo-in-slides",
-  use `git push origin fix-typo-in-slides`.
+## Antes de enviar
 
-## Submitting a Pull Request
+- Por favor, por favor, por favor corre `rake` en tu terminal antes de tu envío. No únicamente
+  corren nuestro conjunto de pruebas sino que también revisa errores de sintáxis en los documentos.
 
-- Read the article ["Using Pull Requests"](https://help.github.com/articles/using-pull-requests)
-  on GitHub.
+- Empuja tu rama a GitHub. Así como desarrollaste en una rama local, deberías empujar esa rama a
+  tu rpropio epositorio de GitHub. La rama `master` es mayormente usada como una copia limpia de los
+  documentos más actualizados en caso de que necesites hacer algunos cambios no relacionados. Para
+  empujar una rama, si tu rama se llama "corregir-typo-en-diapositivas", usa
+  `git push origin corregir-typo-en-diapositivas`.
 
-- When you submit a pull request (PR), make sure your topic branch is selected
-  on the right-hand side of the Pull Request Preview page, like this:
+
+## Enviando un Pull Request
+
+- Lee el artículo ["Using Pull Requests"](https://help.github.com/articles/using-pull-requests)
+  en GitHub
+
+- Cuando envíes un pull request (PR), asegúrate de que tu rama esté seleccionada del lado derecho de la
+  Página de Vista Previa de Pull Request, como ésta:
 
   ![choosing pull request branch](https://github-images.s3.amazonaws.com/help/change-branches.png)
 
-- Remember, pull requests are submitted *from* your repo, but show up on the
-  *upstream* repo.
+- Recuerda, los pull request son enviados *desde* tu repo, pero mostrados en el repo más avanzado.
 
-## Discussion and Waiting On A Merge
+## Discusión y espere de un Merge
 
-- Every pull request will receive a response from the team.
-- Not every pull request will be merged as is.
-- Not every pull request will be merged at all.
-- If a pull request falls significantly behind master, we may ask that you close
-  it, rebase your changes off of master, and submit a new pull request.
-- feel free to "ping" the team by adding a short comment to your pull request
-  if it's been more than a week with no reply
+- Todos los pull request recibirán una respuesta de algún miembro del equipo.
+- No todos los pull request serán mergeados tal cual fueron enviados.
+- No todos los pull request serán mergeados.
+- Si un pull request está muy por detrás de master, podríamos pedirte que lo cierres, actualices tu rama con
+  los cambios de master, y envíes un nuevo pull request.
+- Siéntete con la libertar de "notificar" al equipo con un comentario corto en tu pull request si ha pasado
+  más de una semana y no has obtenido respuesta alguna.
 
-## After your merge has been accepted
 
-- go back to your fork and keep it up to date, e.g.
+## Después de que tu merge haya sido aceptado
+
+- Regresa a tu fork y manténlo actualizado, por ejemplo:
 
         git checkout master
         git pull upstream master
         git push origin master
 
-- you can also delete your topic branch if you like
 
-        git branch -dr fix-typo-in-slides
+- También puedes borrar la rama si gustas
 
-# It's My First Time on GitHub Ever What Do I Do?
+        git branch -dr corregir-typo-en-diapositivas
 
-Relax, you came to the right place. In order to contribute you'll need to be
-able to familiarize yourself with some concepts from git and GitHub. It's going
-to be a lot of information, but you're :sparkles:awesome:sparkles:! So you it'll
-be fine.
+# Es mi primera ves en GitHub, ¿Qué hago?
 
-First, you'll need a GitHub account, which is totally free. You can sign up
-[here](https://github.com/signup/free).
+Calma, estás en el lugar adecuado. Para contribuir necesitarás familiarizarte con
+algunos conceptos de Git y GitHub. Va a ser mucha información, pero tú eres
+:sparkles:increíble:sparkles:! así que estará bien.
 
-Next, browse the [GitHub Help site](https://help.github.com).
+Antes que nada, necesitarás una cuenta de Github, que es totalmente gratuita. Puedes
+registrarte [aquí](https://github.com/signup/free).
 
-You'll want to read about
-[forking](https://help.github.com/articles/fork-a-repo) and then make your own
-fork of [railsbridge/docs](https://github.com/railsbridge/docs). Once you've
-done so, you can clone it and get started by reading up on [what to do when
-submitting a pull request](#when-submitting-a-pull-request), read up on
-[pull requests](https://help.github.com/articles/using-pull-requests)
-themselves.
+Después, navega por el [sitio de ayuda de GitHub](https://help.github.com).
 
-If this is all too much, or you'd like a helping hand,
-[@nuclearsandwich](https://github.com/nuclearsandwich) has volunteered to help
-anyone who wants to contribute do so. His email is behind that profile link.
+Quizá quieras leer sobre [forking](https://help.github.com/articles/fork-a-repo) y
+posteriorment hacer tu propio fork de [codificadas/docs](https://github.com/codificadas/docs). 
+Ya que lo hayas hecho, puedes clonarlo y empezar por leer [cuando envíes un pull request](#when-submitting-a-pull-request), también lee sobre [pull requests](https://help.github.com/articles/using-pull-requests)
+por sí mismos.
 
-# Closing
+Si crees que es demasiado, o te gustaría una mano que te ayude, 
+[@codificadas](https://github.com/codificadas) han decidido ser voluntarias para ayudar a cualquiera que
+guste contribuir. Su email está debajo de su perfil en el enlace.
 
-If you haven't taken the time to go through the Git Immersion lab.
+# Conclusión
 
-Do it. It's worth it no matter how much git-fu you have.
+Si no te has dado el tiempo de tomar el Laboratorio de Inmersión a Git, hazlo.
+
+Vale la pena sin importar qué tanto git-fu tengas.
 http://gitimmersion.com
 
-Also, [Pro Git](http://git-scm.com/book) is a great (and free!) book about Git.
+También, [Pro Git](http://git-scm.com/book) es un libro grandioso (¡y gratuito!) acerca de Git.
 
-We apologize for how long this document is! Hopefully it addressed
-most of your concerns about git, contributing, and github. Feel free
-to ask more questions on the
-[railsbridge-workshops](http://groups.google.com/group/railsbridge-workshops)
-mailing list. And we're open to any suggestions about improvements,
-including to this document.
+¡Nos disculpamos por el tamaño de este documento! Esperamos que que ayude con la mayoría de tus
+dudas sobre git, contribuciones, y GiHub. Siéntete libre de preguntarnos más. También estamos abiertos a cualquier suferencia sobre mejoras, incluyendo este documento.
