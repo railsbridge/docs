@@ -80,6 +80,6 @@ steps {
   end
 }
 
-insert 'considerar_mandar_a_heroku'
+insert 'considerar_lanzar_a_heroku'
 
 next_step "redirigir_a_la_lista_de_temas_despues_de_crear_uno"
