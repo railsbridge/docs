@@ -1,7 +1,7 @@
 div :class => "deploying" do
-  h1 "Implementando"
+  h1 "Deploying"
   blockquote do
-    message "Antes del siguiente paso, ¡podrías considerar lanzar tu aplicación a Heroku!"
-    link 'lanzando_a_heroku'
+    message "Before the next step, you could try deploying your app to Heroku!"
+    link 'deploying_to_heroku'
   end
 end
