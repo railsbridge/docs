@@ -74,7 +74,7 @@ amen :heart:*
 
         git branch -dr corregir-typo-en-diapositivas
 
-# Es mi primera ves en GitHub, ¿Qué hago?
+# Es mi primera vez en GitHub, ¿Qué hago?
 
 Calma, estás en el lugar adecuado. Para contribuir necesitarás familiarizarte con
 algunos conceptos de Git y GitHub. Va a ser mucha información, pero tú eres
