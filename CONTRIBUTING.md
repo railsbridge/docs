@@ -16,23 +16,23 @@ amen :heart:*
 - Si ya cuentas con un fork existente, por favor asegúrate de que está actualizado.
   ¡Esto hace tu vida más fácil!. Si no, asegúrate de que creas tu fork *antes* de clonarlo,
   de lo contrario necesitarás pasar algo de tiempo manipulando repositorios remotos.
-  Mira la sección "Pull in upstream changes" en el artículo sobre 
+  Mira la sección "Pull in upstream changes" en el artículo sobre
   [Fork A Repo](https://help.github.com/articles/fork-a-repo).
 
 
 - Crea una rama local antes de comenzar a trabajar. Esta rama se llamará de acuerdo
   a lo que planeas cambiar. `corregir-typo-en-diapositivas`, `mover-recursos`,
   y `agregar-soporte-para-mountain-lion` son buenos nombres para tus ramas. Si nunca antes
-  has creado una rama local, puedes usar el comando `git checkout -b  nnombre-de-tu-rama`.
+  has creado una rama local, puedes usar el comando `git checkout -b nombre-de-tu-rama`.
 
 
 ## Antes de enviar
 
 - Por favor, por favor, por favor corre `rake` en tu terminal antes de tu envío. No únicamente
-  corren nuestro conjunto de pruebas sino que también revisa errores de sintáxis en los documentos.
+  corren nuestro conjunto de pruebas sino que también revisa errores de sintaxis en los documentos.
 
 - Empuja tu rama a GitHub. Así como desarrollaste en una rama local, deberías empujar esa rama a
-  tu rpropio epositorio de GitHub. La rama `master` es mayormente usada como una copia limpia de los
+  tu propio repositorio de GitHub. La rama `master` es mayormente usada como una copia limpia de los
   documentos más actualizados en caso de que necesites hacer algunos cambios no relacionados. Para
   empujar una rama, si tu rama se llama "corregir-typo-en-diapositivas", usa
   `git push origin corregir-typo-en-diapositivas`.
@@ -50,7 +50,7 @@ amen :heart:*
 
 - Recuerda, los pull request son enviados *desde* tu repo, pero mostrados en el repo más avanzado.
 
-## Discusión y espere de un Merge
+## Discusión y espera del Merge
 
 - Todos los pull request recibirán una respuesta de algún miembro del equipo.
 - No todos los pull request serán mergeados tal cual fueron enviados.
@@ -86,11 +86,10 @@ registrarte [aquí](https://github.com/signup/free).
 Después, navega por el [sitio de ayuda de GitHub](https://help.github.com).
 
 Quizá quieras leer sobre [forking](https://help.github.com/articles/fork-a-repo) y
-posteriorment hacer tu propio fork de [codificadas/docs](https://github.com/codificadas/docs). 
-Ya que lo hayas hecho, puedes clonarlo y empezar por leer [cuando envíes un pull request](#when-submitting-a-pull-request), también lee sobre [pull requests](https://help.github.com/articles/using-pull-requests)
-por sí mismos.
+posteriorment hacer tu propio fork de [codificadas/docs](https://github.com/codificadas/docs).
+Ya que lo hayas hecho, puedes clonarlo y empezar por leer [cuando envíes un pull request](#when-submitting-a-pull-request), también lee sobre [pull requests](https://help.github.com/articles/using-pull-requests).
 
-Si crees que es demasiado, o te gustaría una mano que te ayude, 
+Si crees que es demasiado, o te gustaría una mano que te ayude,
 [@codificadas](https://github.com/codificadas) han decidido ser voluntarias para ayudar a cualquiera que
 guste contribuir. Su email está debajo de su perfil en el enlace.
 
@@ -103,5 +102,5 @@ http://gitimmersion.com
 
 También, [Pro Git](http://git-scm.com/book) es un libro grandioso (¡y gratuito!) acerca de Git.
 
-¡Nos disculpamos por el tamaño de este documento! Esperamos que que ayude con la mayoría de tus
-dudas sobre git, contribuciones, y GiHub. Siéntete libre de preguntarnos más. También estamos abiertos a cualquier suferencia sobre mejoras, incluyendo este documento.
+¡Nos disculpamos por el tamaño de este documento! Esperamos que ayude con la mayoría de tus
+dudas sobre git, contribuciones, y GitHub. Siéntete libre de preguntarnos más. También estamos abiertos a cualquier sugerencia sobre mejoras, incluyendo este documento.
