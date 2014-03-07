@@ -26,6 +26,10 @@ site_desc 'ruby', <<-MARKDOWN
 A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
 MARKDOWN
 
+site_desc 'intro-to-javascript', <<-MARKDOWN
+A Javascript specific curriculum that walks you through [building a simple game](http://snake-tutorial.zeespencer.com/).
+MARKDOWN
+
 site_desc 'workshop', <<-MARKDOWN
 The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
 MARKDOWN
