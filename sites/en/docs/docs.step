@@ -26,6 +26,10 @@ site_desc 'ruby', <<-MARKDOWN
 A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
 MARKDOWN
 
+site_desc 'intro-to-javascript', <<-MARKDOWN
+A Javascript specific curriculum that walks you through [building a simple game](http://snake-tutorial.zeespencer.com/).
+MARKDOWN
+
 site_desc 'workshop', <<-MARKDOWN
 The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
 MARKDOWN
@@ -53,7 +57,7 @@ First, [make a GitHub account](https://github.com/). Then, [create an issue](htt
 Don't know what you could work on? Browse the [issues list](https://github.com/railsbridge/docs/issues) and the [To Do list](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List). Those have lots of ideas.
 
 
-### I have different question about RailsBridge.
+### I have a different question about RailsBridge.
 
 The [RailsBridge website](http://www.railsbridge.org) probably has an answer!
 
