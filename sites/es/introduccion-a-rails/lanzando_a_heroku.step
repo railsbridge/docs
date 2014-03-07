@@ -2,7 +2,7 @@ h2 do
   span "Si todavía no has lanzado tu aplicación a Heroku, comienza con "
   a 'Configuración inicial', href: '#first-time'
   span ". De otra manera, empieza en "
-  a 'Siempre hacer', href: '#every-time'
+  a 'Cómo lanzar', href: '#every-time'
   span "."
 end
 
@@ -49,63 +49,63 @@ end
 git add .
 git commit -m "Gemfile modificado para heroku"
     SHELL
-    tip "Hay un punto despues de la palabra add en la primera línea."
+    tip "Hay un punto después de la palabra add en la primera línea."
   end
 end
 
 a name: 'every-time'
-situation "Every time" do
-  step "Aplica todos los cambios pendientes a git" do
+situation "Cómo lanzar" do
+  step "Aplica todos los cambios pendientes en git" do
     message "Heroku sólo recibirá los archivos a los que se les ha aplicado commit dentro de nuestro repositorio  local git. Por ello necesitamos asegurarnos de que todos los cambios en los archivos han sido aplicados mediante el comando commit."
     console "git status"
-    message "`git status` muestra todos los cambios pendientes. If it has no output, you're already ready to deploy! Otherwise..."
+    message "`git status` muestra todos los cambios pendientes. Si no se muestra ningún cambio, ¡estás listo para lanzar la aplicación! De otra manera..."
 
     console <<-SHELL
 git add .
-git commit -m "Some helpful message for your future self"
+git commit -m "Algún mensaje de ayuda que te ayude en el futuro"
     SHELL
-    message "Your commit message should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
+    message "El mensaje debe destacar lo más importante de los cambios hechos: algo como 'Agregar votos al índice de temas'."
   end
 
-  step "Push changes to heroku" do
+  step "Envía los cambios a Heroku" do
     console "git push heroku master"
-    message "This takes all changes you've committed locally and pushes them to heroku."
+    message "Esto toma los cambios aplicados y los envía a Heroku."
   end
 
-  step "Run database migrations on Heroku" do
+  step "Ejecuta las migraciones de la base de datos sobre Heroku" do
     console "heroku run rake db:migrate"
-    message "This tells Heroku to run your migrations on its database, like running rake db:migrate locally. Heroku's database is separate from the one on your computer, which means it needs to be updated every time you make changes to the structure of your database.  It also means that you'll not see any of the data you entered into the sqlite3 database on your computer."
+    message "Esto le dice a Heroku que ejecute tus migraciones en su base de datos, similar a cuando se ejecuta rake db:migrate localmente. La base de datos de Heroku es independiente de la que está en tu computadora, lo que significa que debe ser actualizada cada vez que haces cambios a la estructura de tu base de datos. También significa que no verás en Heroku ninguno de los datos que insertaste en la base de datos sqlite3 de tu computadora."
   end
 
-  step "Visit your application" do
+  step "Visita tu aplicación" do
     console "heroku open"
-    message "This opens the new application in your browser."
+    message "Esto abre la nueva aplicación en tu explorador."
   end
 end
 
 explanation do
   message <<-MARKDOWN
-  First, we had to do some work to make Heroku happy with our application. This required updating the Gemfile and bundling.
+  En primer lugar, tuvimos que hacer algo de trabajo para hacer  que Heroku se lleve bien con nuestra aplicación. Esto requirió actualizar el Gemfile y empaquetar la aplicación con bundle.
 
-  * The Gemfile is a list of all the Ruby libraries your application needs.
-    What we've declared here is that we want to use the `sqlite3` library
-    while we're developing on our computer (the development group) but when
-    deploying to heroku (the production group) we want to use the `pg` library,
-    which is made for the type of database that heroku uses.
+  * El Gemfile es una lista de todas las librerías de Ruby que tu aplicación necesita.
+    Lo que hemos declarado aquí es que queremos usar la librería `sqlite3` 
+    mientras estamos desarrollando en nuestra computadora (el grupo de desarrollo) pero cuando
+    lanzamos a Heroku (el grupo de producción) queremos usar la librería `pg`,
+    la cual está hecha para el tipo de base de datos que usa Heroku.
 
-  * Bundler is how Ruby projects keep track of the gems that they use. We told
-    bundler what we wanted to use in the `Gemfile`, now we need to make sure those
-    gems are installed. Since we don't have the type of database heroku does, we
-    skip the production gems. Don't worry though! Bundler still logs them so
-    Heroku will install them when they get your code.
+  * Usar bundle es la manera en que los proyectos de Ruby realizan un seguimiento de las gemas que usan. Nosotros decimos
+    que se empaquete lo que queremos usar en el `Gemfile`, ahora necesitamos asegurarnos de que esas 
+    gemas están instaladas. Dado que no tenemos el mismo tipo de base de datos que Heroku, 
+    nos saltamos las gemas de producción. ¡Pero no te preocupes! El bundle guarda los registros, de manera que 
+    Heroku instalará las gemas cuando reciba tu código.
   MARKDOWN
 
-  message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
+  message "Deberías ser capaz de lanzar tu aplicación siempre que esté en buen estado de funcionamiento. Tu flujo de trabajo típico será como sigue:"
   img src: "img/workflow.png", alt: "workflow", style: "border: none"
   ol do
-    li { message "Add or change some code" }
-    li { message "Commit your changes (`git commit`)" }
-    li { message "(repeat)" }
+    li { message "Agregar o modificar código" }
+    li { message "Aplicar los cambios (`git commit`)" }
+    li { message "(repetir)" }
   end
-  message "Any time your changes are committed, you should feel free to `git push heroku master` and boom! Your changes are live!"
+  message "En cualquier momento en que tus cambios son aplicados, debes sentirte libre de ejecutar `git push heroku master` Y ¡Pum! ¡Los cambios están en vivo en Heroku!"
 end
