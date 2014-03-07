@@ -1,0 +1,98 @@
+goals {
+
+  message <<-MARKDOWN
+  Ahora que la estructura está completa, vamos a hacer que el flujo funcione sin problemas.
+
+  Actualmente cuando vas a <http://localhost:3000> ves el mensaje "Welcome aboard".
+
+  Sería más fácil usar nuestra aplicación si <http://localhost:3000> fuera directamente a la lista de temas.
+
+  En este paso haremos que eso ocurra y aprenderemos un poco acerca de rutas en Rails (Rails routes).
+  MARKDOWN
+}
+
+steps {
+
+  step "Agrega una ruta raíz" do
+    message "Abre el archivo `config/routes.rb` en un editor."
+
+    message "Busca en el archivo **root**, debería estar cerca de la parte superior si estás usando Rails 4."
+
+    message "Descomenta la línea que contiene la instrucción de ejemplo eliminando el `#` delante de él, y cámbialo por `root 'topics#index'`. Cuando hayas terminado la línea debería verse así:"
+
+    source_code :ruby, <<-RUBY
+root 'topics#index'
+    RUBY
+
+    em do
+      message "(Los usuarios de Rails 3.x deben agregar `root to: 'topics#index'` y necesitarán eliminar su archivo `public/index.html`)."
+    end
+  end
+
+  step "Confirma tus cambios" do
+    message "Regresa a <http://localhost:3000/>. Deberías ser llevado automáticamente a la lista de temas."
+  end
+}
+
+explanation {
+
+ message <<-MARKDOWN
+  * `root 'topics#index'` es una ruta de Rails que dice que la dirección 
+    por defecto para tu sitio es `topics#index`. `topics#index` es la página
+    de la lista de temas (el controlador 'topics' con la acción 'index').
+  * Rails routes controla cómo las URLs (direcciones web) coinciden con el código
+    en el servidor. Es similar a cómo las direcciones coinciden con las casas 
+    y departamentos.
+  * El archivo `config/routes.rb` es como un directorio que lista las posibles
+    direcciones y cual código va con cuál.
+  * `routes.rb` usa algunos atajos por lo que no siempre muestra todas las 
+    posibles URLs. Para explorar las URLs a más detalle podemos usar la
+    terminal.
+
+  En la terminal escribe `rake routes`. Deberías obtener algo como esto:
+
+  ````
+    $ rake routes
+
+        Prefix Verb   URI Pattern                Controller#Action
+        topics GET    /topics(.:format)           topics#index
+               POST   /topics(.:format)           topics#create
+     new_topic GET    /topics/new(.:format)       topics#new
+    edit_topic GET    /topics/:id/edit(.:format)  topics#edit
+         topic GET    /topics/:id(.:format)       topics#show
+               PATCH  /topics/:id(.:format)       topics#update
+               PUT    /topics/:id(.:format)       topics#update
+               DELETE /topics/:id(.:format)       topics#destroy
+          root GET    /                           topics#index
+  ````
+  Aquí se muestran todas las URLs a las que tu aplicación responde. El código que comienza con dos puntos son variables, por lo que :id es el número identificador del registro. El código en paréntesis es opcional.
+
+  En Rails 4, también puedes obtener esta información en tu sitio en desarrollo. Ve a <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> y verás algo como esto:
+
+  <img src='img/rails4_rails_info_routing.png'>
+
+  También verás esta tabla en Rails 4 cada vez que intentes acceder a una ruta inválida (prueba <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
+
+### Explorando Rutas (opcional)
+
+  Ahora puedes dar un vistazo a las rutas que están disponibles en tu aplicación.
+  Intentemos ver una de las rutas de temas que acabamos de generar.
+  Abre tu consola de Rails y escribe:
+
+    $ rails console
+    >> app.topics_path
+    => "/topics"
+    >> app.topics_url
+    => "http://www.example.com/topics"
+
+  `app` es un objeto especial que representa toda la aplicación.
+  A este objeto puedes pedirle las rutas (tal como acabamos de hacer),
+  jugar con sus conexiones a la base de datos, o hacer pseudo peticiones
+  web con `get` o `post` (y mucho más).
+
+  MARKDOWN
+}
+
+insert 'considerar_lanzar_a_heroku'
+
+next_step "votando_sobre_temas"
