@@ -115,13 +115,6 @@ step "Configure the Windows Terminal" do
   end
 end
 
-step "Install Windows Colors" do
-
-  message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
-
-  link "windows_colors"
-end
-
 step "Install a Text Editor" do
   message "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
 
