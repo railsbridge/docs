@@ -108,7 +108,7 @@ explanation {
 * En Rails, las relaciones entre modelos son llamadas asociaciones.
 * Asociaciones (por regla general) vienen en pares.
 * Un tema tendrá muchos votos, por lo tanto ponemos `has_many :votes` en el modelo Topic.
-  * CUando preguntamos a un tema por sus votos, obtendrás un arreglo de votos
+  * Cuando preguntamos a un tema por sus votos, obtendrás un arreglo de votos
     para ese tema.
 * Un voto es para un tema en particular, por lo tanto ponemos `belongs_to :topic`
   en el modelo Vote.
