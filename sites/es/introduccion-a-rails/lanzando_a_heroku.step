@@ -18,13 +18,13 @@ situation "Configuración inicial" do
 
     message "Heroku ejecutará nuestra aplicación un poco diferente a como lo hace nuestra computadora, por lo cual requiere que hagamos uns pequeños cambios a nuestro `Gemfile`."
 
-    message "Abre el archivo llamado `Gemfile` en Sublime Text, o tu editor preferido, y encuentra el siguiente bloque:"
+    message "Abre el archivo llamado `Gemfile` en Sublime Text, o tu editor preferido, y encuentra la siguiente línea:"
 
     source_code :ruby, <<-RUBY
 gem 'sqlite3'
     RUBY
 
-    message "**Elimina ese bloque** y reemplázalo con:"
+    message "**Elimina esa línea** y reemplázalo con:"
 
     source_code :ruby, <<-RUBY
 group :development, :test do
@@ -56,13 +56,13 @@ end
 a name: 'every-time'
 situation "Cómo lanzar" do
   step "Aplica todos los cambios pendientes en git" do
-    message "Heroku sólo recibirá los archivos a los que se les ha aplicado commit dentro de nuestro repositorio  local git. Por ello necesitamos asegurarnos de que todos los cambios en los archivos han sido aplicados mediante el comando commit."
+    message "Heroku sólo recibirá los archivos a los que se les ha aplicado commit dentro de nuestro repositorio local git. Por ello necesitamos asegurarnos de que todos los cambios en los archivos han sido aplicados mediante el comando commit."
     console "git status"
     message "`git status` muestra todos los cambios pendientes. Si no se muestra ningún cambio, ¡estás listo para lanzar la aplicación! De otra manera..."
 
     console <<-SHELL
 git add .
-git commit -m "Algún mensaje de ayuda que te ayude en el futuro"
+git commit -m "Algún mensaje útil en el futuro"
     SHELL
     message "El mensaje debe destacar lo más importante de los cambios hechos: algo como 'Agregar votos al índice de temas'."
   end
@@ -85,7 +85,7 @@ end
 
 explanation do
   message <<-MARKDOWN
-  En primer lugar, tuvimos que hacer algo de trabajo para hacer  que Heroku se lleve bien con nuestra aplicación. Esto requirió actualizar el Gemfile y empaquetar la aplicación con bundle.
+  En primer lugar, tuvimos que hacer algo de trabajo para hacer que Heroku se lleve bien con nuestra aplicación. Esto requirió actualizar el Gemfile y empaquetar la aplicación con bundle.
 
   * El Gemfile es una lista de todas las librerías de Ruby que tu aplicación necesita.
     Lo que hemos declarado aquí es que queremos usar la librería `sqlite3` 
@@ -100,12 +100,12 @@ explanation do
     Heroku instalará las gemas cuando reciba tu código.
   MARKDOWN
 
-  message "Deberías ser capaz de lanzar tu aplicación siempre que esté en buen estado de funcionamiento. Tu flujo de trabajo típico será como sigue:"
+  message "Deberías ser capaz de lanzar tu aplicación siempre que esté funcionando adecuadamente. Tu flujo de trabajo típico será el siguiente:"
   img src: "img/workflow.png", alt: "workflow", style: "border: none"
   ol do
     li { message "Agregar o modificar código" }
     li { message "Aplicar los cambios (`git commit`)" }
     li { message "(repetir)" }
   end
-  message "En cualquier momento en que tus cambios son aplicados, debes sentirte libre de ejecutar `git push heroku master` Y ¡Pum! ¡Los cambios están en vivo en Heroku!"
+  message "Siempre que tus cambios sean aplicados mediante commit, siéntete libre de ejecutar `git push heroku master` Y ¡Pum! ¡Los cambios están en vivo en Heroku!"
 end
