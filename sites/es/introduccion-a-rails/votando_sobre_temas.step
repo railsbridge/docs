@@ -18,7 +18,7 @@ explanation {
   * Cómo ya lo hemos hecho antes, creamos un nuevo modelo llamado "vote"
   * Lo único diferente es que ahora agregamos un campo de tipo entero llamado `topic_id`.
     * `topic_id` es el dato que necesitamos para indicar una relación entre votos y temas.
-  * No generamos un scaffold completo esta vez porque no necesitamos el CRUD completo para votos; estos sólo van a ser considerados como parte de los temas.
+  * No generamos un scaffold esta vez porque no necesitamos el CRUD completo para votos; estos sólo van a ser considerados como parte de los temas.
   MARKDOWN
 }
 
