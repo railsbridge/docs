@@ -24,7 +24,7 @@ situation "Configuración inicial" do
 gem 'sqlite3'
     RUBY
 
-    message "**Elimina esa línea** y reemplázalo con:"
+    message "**Elimina esa línea** y reemplázala con:"
 
     source_code :ruby, <<-RUBY
 group :development, :test do
