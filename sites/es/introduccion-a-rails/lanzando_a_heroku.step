@@ -1,30 +1,30 @@
 h2 do
-  span "If you haven't yet deployed to heroku, start at "
-  a 'First-time setup', href: '#first-time'
-  span ". Otherwise, start at "
-  a 'Every time', href: '#every-time'
+  span "Si todavía no has lanzado tu aplicación a Heroku, comienza con "
+  a 'Configuración inicial', href: '#first-time'
+  span ". De otra manera, empieza en "
+  a 'Cómo lanzar', href: '#every-time'
   span "."
 end
 
 a name: 'first-time'
-situation "First-time setup" do
-  step "Create a heroku application" do
+situation "Configuración inicial" do
+  step "Crea una aplicación heroku" do
     console "heroku create"
-    message "`heroku create` registers a new application on heroku's system. You should see some output including your new app's URL."
+    message "`heroku create` registra una nueva aplicación en heroku. Al hacer esto deberías ver algunas líneas de salida, incluyendo la URL de tu nueva aplicación."
   end
 
-  step "Edit the Gemfile" do
-    important "Each application has its own `Gemfile`. Be sure you're opening the one inside your app's folder."
+  step "Edita el Gemfile" do
+    important "Cada aplicación tiene su propio `Gemfile`. Asegúrate de que estás abriendo el que corresponde a la carpeta de tu aplicación."
 
-    message "Heroku will run our application slightly differently than our development computer does, which requires us to make a small change to our `Gemfile`."
+    message "Heroku ejecutará nuestra aplicación un poco diferente a como lo hace nuestra computadora, por lo cual requiere que hagamos uns pequeños cambios a nuestro `Gemfile`."
 
-    message "Open the file called `Gemfile` in Sublime Text, or your preferred editor, and find the line containing:"
+    message "Abre el archivo llamado `Gemfile` en Sublime Text, o tu editor preferido, y encuentra la siguiente línea:"
 
     source_code :ruby, <<-RUBY
 gem 'sqlite3'
     RUBY
 
-    message "**Remove that line** and replace it with:"
+    message "**Elimina esa línea** y reemplázala con:"
 
     source_code :ruby, <<-RUBY
 group :development, :test do
@@ -38,74 +38,74 @@ end
     RUBY
   end
 
-  step "Apply the Gemfile changes" do
+  step "Procesa los cambios del Gemfile" do
     console "bundle install --without production"
-    message "Every time the Gemfile changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
+    message "Cada vez que el Gemfile cambia, necesitas ejecutar ``bundle install`` para que los cambios sean procesados. La versión procesada de los cambios es almacenada en otro archivo llamado ``Gemfile.lock``."
   end
 
-  step "Commit the Gemfile changes" do
-    message "There are now changes to Gemfile and Gemfile.lock that need to be committed before we can push to heroku."
+  step "Aplica los cambios del Gemfile" do
+    message "Ahora hay cambios en el Gemfile y Gemfile.lock que necesitan ser aplicados antes de que podamos enviarlos a Heroku."
     console <<-SHELL
 git add .
-git commit -m "Changed Gemfile for heroku"
+git commit -m "Gemfile modificado para heroku"
     SHELL
-    tip "There is a period after the word add in the first line."
+    tip "Hay un punto después de la palabra add en la primera línea."
   end
 end
 
 a name: 'every-time'
-situation "Every time" do
-  step "Commit any pending changes to git" do
-    message "Heroku will only receive the files we've committed into our local git repository. So we need to make sure all changed files have been committed."
+situation "Cómo lanzar" do
+  step "Aplica todos los cambios pendientes en git" do
+    message "Heroku sólo recibirá los archivos a los que se les ha aplicado commit dentro de nuestro repositorio local git. Por ello necesitamos asegurarnos de que todos los cambios en los archivos han sido aplicados mediante el comando commit."
     console "git status"
-    message "`git status` shows you any pending changes you've created. If it has no output, you're already ready to deploy! Otherwise..."
+    message "`git status` muestra todos los cambios pendientes. Si no se muestra ningún cambio, ¡estás listo para lanzar la aplicación! De otra manera..."
 
     console <<-SHELL
 git add .
-git commit -m "Some helpful message for your future self"
+git commit -m "Algún mensaje útil en el futuro"
     SHELL
-    message "Your commit message should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
+    message "El mensaje debe destacar lo más importante de los cambios hechos: algo como 'Agregar votos al índice de temas'."
   end
 
-  step "Push changes to heroku" do
+  step "Envía los cambios a Heroku" do
     console "git push heroku master"
-    message "This takes all changes you've committed locally and pushes them to heroku."
+    message "Esto toma los cambios aplicados y los envía a Heroku."
   end
 
-  step "Run database migrations on Heroku" do
+  step "Ejecuta las migraciones de la base de datos sobre Heroku" do
     console "heroku run rake db:migrate"
-    message "This tells Heroku to run your migrations on its database, like running rake db:migrate locally. Heroku's database is separate from the one on your computer, which means it needs to be updated every time you make changes to the structure of your database.  It also means that you'll not see any of the data you entered into the sqlite3 database on your computer."
+    message "Esto le dice a Heroku que ejecute tus migraciones en su base de datos, similar a cuando se ejecuta rake db:migrate localmente. La base de datos de Heroku es independiente de la que está en tu computadora, lo que significa que debe ser actualizada cada vez que haces cambios a la estructura de tu base de datos. También significa que no verás en Heroku ninguno de los datos que insertaste en la base de datos sqlite3 de tu computadora."
   end
 
-  step "Visit your application" do
+  step "Visita tu aplicación" do
     console "heroku open"
-    message "This opens the new application in your browser."
+    message "Esto abre la nueva aplicación en tu explorador."
   end
 end
 
 explanation do
   message <<-MARKDOWN
-  First, we had to do some work to make Heroku happy with our application. This required updating the Gemfile and bundling.
+  En primer lugar, tuvimos que hacer algo de trabajo para hacer que Heroku se lleve bien con nuestra aplicación. Esto requirió actualizar el Gemfile y empaquetar la aplicación con bundle.
 
-  * The Gemfile is a list of all the Ruby libraries your application needs.
-    What we've declared here is that we want to use the `sqlite3` library
-    while we're developing on our computer (the development group) but when
-    deploying to heroku (the production group) we want to use the `pg` library,
-    which is made for the type of database that heroku uses.
+  * El Gemfile es una lista de todas las librerías de Ruby que tu aplicación necesita.
+    Lo que hemos declarado aquí es que queremos usar la librería `sqlite3` 
+    mientras estamos desarrollando en nuestra computadora (el grupo de desarrollo) pero cuando
+    lanzamos a Heroku (el grupo de producción) queremos usar la librería `pg`,
+    la cual está hecha para el tipo de base de datos que usa Heroku.
 
-  * Bundler is how Ruby projects keep track of the gems that they use. We told
-    bundler what we wanted to use in the `Gemfile`, now we need to make sure those
-    gems are installed. Since we don't have the type of database heroku does, we
-    skip the production gems. Don't worry though! Bundler still logs them so
-    Heroku will install them when they get your code.
+  * Usar bundle es la manera en que los proyectos de Ruby realizan un seguimiento de las gemas que usan. Nosotros decimos
+    que se empaquete lo que queremos usar en el `Gemfile`, ahora necesitamos asegurarnos de que esas 
+    gemas están instaladas. Dado que no tenemos el mismo tipo de base de datos que Heroku, 
+    nos saltamos las gemas de producción. ¡Pero no te preocupes! El bundle guarda los registros, de manera que 
+    Heroku instalará las gemas cuando reciba tu código.
   MARKDOWN
 
-  message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
+  message "Deberías ser capaz de lanzar tu aplicación siempre que esté funcionando adecuadamente. Tu flujo de trabajo típico será el siguiente:"
   img src: "img/workflow.png", alt: "workflow", style: "border: none"
   ol do
-    li { message "Add or change some code" }
-    li { message "Commit your changes (`git commit`)" }
-    li { message "(repeat)" }
+    li { message "Agregar o modificar código" }
+    li { message "Aplicar los cambios (`git commit`)" }
+    li { message "(repetir)" }
   end
-  message "Any time your changes are committed, you should feel free to `git push heroku master` and boom! Your changes are live!"
+  message "Siempre que tus cambios sean aplicados mediante commit, siéntete libre de ejecutar `git push heroku master` Y ¡Pum! ¡Los cambios están en vivo en Heroku!"
 end
