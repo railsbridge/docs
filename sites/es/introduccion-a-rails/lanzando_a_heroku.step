@@ -44,7 +44,7 @@ end
   end
 
   step "Aplica los cambios del Gemfile" do
-    message "Ahora hay cambios en el Gemfile y Gemfile.lock que necesitan ser aplicados antes de que podamos enviarlos a heroku."
+    message "Ahora hay cambios en el Gemfile y Gemfile.lock que necesitan ser aplicados antes de que podamos enviarlos a Heroku."
     console <<-SHELL
 git add .
 git commit -m "Gemfile modificado para heroku"
