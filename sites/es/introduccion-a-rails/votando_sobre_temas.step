@@ -1,9 +1,9 @@
 goals {
-  goal "Create a model for votes"
+  goal "Crear un modelo para los votos"
 
   model_diagram header: 'Votes', fields: %w(id topic_id)
 
-  message "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
+  message "Se puede votar sobre cada tema en suggestotron. Para contar los votos, necesitamos registrarlos. En esta ocasión agregaremos esa tabla."
 }
 
 steps {
@@ -15,13 +15,11 @@ rake db:migrate
 
 explanation {
   message <<-MARKDOWN
-  * Just like before, we're creating a new model named "vote"
-  * The only thing really different is the integer we added called `topic_id`.
-    * `topic_id` is the data we need to draw the line between votes and topics.
-  * We didn't generate a full scaffold this time because we aren't
-    going to do the full CRUD for votes; they're just going to be
-    considered part of topics as-is.
+  * Cómo ya lo hemos hecho antes, creamos un nuevo modelo llamado "vote"
+  * Lo único diferente es que ahora agregamos un campo de tipo entero llamado `topic_id`.
+    * `topic_id` es el dato que necesitamos para indicar una relación entre votos y temas.
+  * No generamos un scaffold esta vez porque no necesitamos el CRUD completo para votos; estos sólo van a ser considerados como parte de los temas.
   MARKDOWN
 }
 
-next_step "hooking_up_votes_and_topics"
+next_step "conectando_votos_y_temas"
