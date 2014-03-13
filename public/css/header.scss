@@ -1,6 +1,6 @@
-$railsbridge_purple: #6c266f;
-$railsbridge_blue: #2493b8;
-$railsbridge_darkerblue: #428bca;
+$site_main: #3f213f;
+$site_secondary: #93c047;
+$site_tertiary: darken($site_secondary, 10);
 
 nav *, nav *:before, nav *:after {
   -webkit-box-sizing: border-box;
@@ -73,7 +73,7 @@ nav *, nav *:before, nav *:after {
     a:focus {
       color: #fff;
       text-decoration: none;
-      background-color: $railsbridge_darkerblue;
+      background-color: $site_tertiary;
       outline: 0;
     }
   }
@@ -133,7 +133,7 @@ nav *, nav *:before, nav *:after {
   li a:active,
   li a:hover,
   li a:focus {
-    background-color: $railsbridge_blue;
+    background-color: $site_secondary;
     color: white;
   }
 }
@@ -148,10 +148,9 @@ nav *, nav *:before, nav *:after {
   min-height: 50px;
   margin-bottom: 20px;
   border: 0;
-  background-color: $railsbridge_purple;
-  background-image: url("/img/navbar_texture.gif");
+  background-color: $site_main;
   border-bottom-width: 12px;
-  border-bottom-color: $railsbridge_blue;
+  border-bottom-color: $site_secondary;
   border-bottom-style: solid;
 
   .navbar-header {
