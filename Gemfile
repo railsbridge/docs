@@ -22,3 +22,5 @@ group :development do
   gem "bourbon"  # do 'cd public/css; bourbon update' to get new bourbon
   gem 'rb-fsevent', :platform => :ruby
 end
+
+gem 'debugger', group: [:development, :test]
