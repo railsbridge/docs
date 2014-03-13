@@ -52,7 +52,7 @@ steps do
   <li>Soccer</li>
   <li>Programming</li>
 </ul>
-<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+<p>I hear PHPBridge needs volunteers, should I volunteer!?!</p>
 HTML
   end
 
@@ -67,7 +67,7 @@ HTML
   <li>Soccer</li>
   <li>Programming</li>
 </ul>
-<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+<p>I hear PHPBridge needs volunteers, should I volunteer!?!</p>
 HTML
     message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes."
     message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
@@ -98,7 +98,7 @@ CSS
   <li>Soccer</li>
   <li>Programming</li>
 </ul>
-<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+<p>I hear PHPBridge needs volunteers, should I volunteer!?!</p>
 HTML
     message "Save and refresh the page in the browser. Again, you shouldn't see any difference."
   end
