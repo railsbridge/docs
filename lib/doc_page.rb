@@ -42,7 +42,7 @@ class DocPage < Erector::Widgets::Page
   end
 
   def page_title
-    "#{doc_title} - #{Titleizer.title_for_page(site_title)}"
+    "#{doc_title} - #{site_title}"
   end
 
   external :style, scss(File.read("#{css_path}/header.scss"))
@@ -78,7 +78,7 @@ class DocPage < Erector::Widgets::Page
 
   # todo: test
   def git_url
-    "https://github.com/railsbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
+    "https://github.com/phpbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
   end
 
   def src_url
@@ -106,14 +106,14 @@ class DocPage < Erector::Widgets::Page
 
       div(class: "navbar-header cf title") {
         a(href: "/#{site_name}") {
-          span("RailsBridge ", class: "brand")
-          text Titleizer.title_for_page(site_title)
+          span("PHPBridge: ", class: "brand")
+          text site_title
         }
       }
       ul(class: "navbar-nav nav") {
 
         li(class: "dropdown") {
-          a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
+          a("curriculum", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
           widget SiteIndex, site_name: site_title
         }
 
@@ -141,17 +141,25 @@ class DocPage < Erector::Widgets::Page
     }
 
     div(class: 'bottom') {
-      p "RailsBridge Docs is maintained by RailsBridge volunteers."
+      p do
+        text "PHPBridge Docs is maintained by "
+        a "PHPWomen", href: "http://phpwomen.org"
+      end
       p do
         text "If you find something that could be improved, please make a "
-        a "pull request ", href: "https://github.com/railsbridge/docs"
+        a "pull request ", href: "https://github.com/phpbridge/docs"
         text "or "
-        a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
+        a "drop us a note ", href: "https://github.com/phpbridge/docs/issues/new"
         text "via GitHub Issues (no technical knowledge required)."
       end
       p do
         text "Source: "
-        url "https://github.com/railsbridge/docs"
+        url "https://github.com/phpbridge/docs"
+      end
+      p do
+        a(:href => "https://railsbridge.org") {
+          img.ccby :src => "/img/cc-by.png"
+        }
       end
     }
   end
