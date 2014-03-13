@@ -21,7 +21,7 @@ When you have completed today's goal of getting the basic
 application online you should understand:
 
 * Basic PHP syntax
-* How to try your PHP code (boris)
+* How to try your PHP code (Psy Shell)
 * How to go from requirements to a new working web application
 * How to get your application online
 * The basic tools a web developer uses (source control, editor, console, local server)
@@ -56,7 +56,7 @@ We highly recommend you do the following:
 
 * Bring up your terminal and open 2 tabs:
   * One is for regular terminal stuffs
-  * One will be for boris (aka php console). We'll explain later
+  * One will be for Psy Shell (aka php console). We'll explain later
 * Open your browser fresh or hide any windows you already have open.
   * Bring up one window with two tabs
     * One for this content
