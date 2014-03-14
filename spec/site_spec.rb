@@ -7,7 +7,7 @@ describe Site do
     sites = Site.all
     site_names = sites.map(&:name)
     site_names.should include("installfest")
-    site_names.should include("intro-to-rails")
+    site_names.should include("intro-to-php")
   end
   
   it "has doc files" do

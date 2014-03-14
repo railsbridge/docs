@@ -1,12 +1,18 @@
-# The Railsbridge Documentation Project
+# The PHPBridge Documentation Project
 
-[![Build Status](https://travis-ci.org/railsbridge/docs.png)](https://travis-ci.org/railsbridge/docs)
+[![Build Status](https://travis-ci.org/phpbridge/docs.png)](https://travis-ci.org/phpbridge/docs)
+
+## Lovingly Based on RailsBridge
+
+Thanks to the amazing work of the volunteers behind [RailsBridge](http://railsbridge.org) and their
+decision to release all of their content under a Creative Common (CC-BY) license, we are able to create
+PHPBridge by standing on their shoulders and building up.
 
 ## Overview
 
-This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The RailsBridge documentation project is home to a few subprojects, including the RailsBridge installfest instructions, which leads students through the various complicated setup instructions for getting Ruby, Rails, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the RailsBridge workshop "Suggestotron" curriculum.
+This is a Sinatra app, deployed at <http://docs.railsbridge.org>. The PHPBridge documentation project is home to a few subprojects, including the PHPBridge installfest instructions, which leads students through the various complicated setup instructions for getting PHP, MySQL, Git, etc. installed on their computer (whatever combination of computer, OS, and version they happened to bring to the workshop!), as well as the PHPBridge workshop "Suggestotron" curriculum.
 
-Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the intro rails curriculum can be found under ROOT/sites/intro-to-rails.
+Each subproject (a "site") comprises files stored under the "sites" directory; for instance, the installfest instructions are located at ROOT/sites/installfest, while the intro PHP curriculum can be found under ROOT/sites/intro-to-php.
 
 These files can be in any of these formats:
 

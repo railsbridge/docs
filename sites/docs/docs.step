@@ -1,16 +1,18 @@
 message <<MARKDOWN
-This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
+![PHPBridge Logo](/img/phpbridge-logo.png)
+
+This site is maintained by [PHPWomen](http://phpwomen.org). If you find something that could be improved, please make a [pull request](https://github.com/phpbridge/docs) or [drop us a note](https://github.com/phpbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
 MARKDOWN
 
 site_desc 'installfest', <<-MARKDOWN
-Instructions for installing Ruby and Rails on your computer. You are required to do this before going to a Rails workshop!
+Instructions for installing PHP on your computer. You are required to do this before going to a PHP workshop!
 MARKDOWN
 
-site_desc 'intro-to-rails', <<-MARKDOWN
-The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
+site_desc 'intro-to-php', <<-MARKDOWN
+The "classic" PHPBridge curriculum (Suggestotron). Takes you step-by-step through making a PHP app, one line at a time.
 MARKDOWN
 
-site_desc 'intermediate-rails', <<-MARKDOWN
+site_desc 'intermediate-php', <<-MARKDOWN
 Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
 MARKDOWN
 
@@ -18,36 +20,31 @@ site_desc 'frontend', <<-MARKDOWN
 HTML + CSS for beginners. Make a website, no server required!
 MARKDOWN
 
-site_desc 'ruby', <<-MARKDOWN
-A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
-
-Railsbridge workshops can also use Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum (currently in a separate site). It's also open source and may soon join the main Railsbridge Docs repo. It's geared towards people who may never have written code before.
-MARKDOWN
-
 site_desc 'workshop', <<-MARKDOWN
-The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
+The PHPBridge junkyard! Slide decks for opening/closing presentations, teacher training.
 MARKDOWN
 
 message <<MARKDOWN
-# RailsBridge curriculum-related FAQ
+# PHPBridge curriculum-related FAQ
 
-### Can I use the RailsBridge curricula at my event?
-Anyone can use this site! It's under a Creative Commons license ([CC-BY,  specifically](http://creativecommons.org/licenses/by/3.0/)), which means you're welcome to share, remix, or use our content commercially. We just ask for attribution.
+### Can I use the PHPBridge curricula at my event?
+Anyone can use this site! It's under a Creative Commons license ([CC-BY,  specifically](http://creativecommons.org/licenses/by/3.0/)), which means you're welcome to share, remix, or use our content commercially. In fact,
+we are based on the fantastic work done by [RailsBridge](http://railsbridge.org).
 
-Slightly different: if you're organizing an event and wonder if it could be considered a RailsBridge Workshop, we just have two requests:
+Slightly different: if you're organizing an event and wonder if it could be considered a PHPBridge Workshop, we just have two requests:
 
 * The event should be free of charge.
 * The event should work toward making tech more welcoming!
 
-If you're not doing those two things, you can totally still use the site, we just ask that you not call your event a RailsBridge workshop.
-(Charity workshops have used "Rails Workshop featuring the RailsBridge curriculum" in the past, which is neat.)
+If you're not doing those two things, you can totally still use the site, we just ask that you not call your event a PHPBridge workshop.
+(For example you can use "PHP Workshop featuring the PHPBridge curriculum".)
 
 ### I want to help, but I don't know how.
-First, [make a GitHub account](https://github.com/). Then, [create an issue](https://github.com/railsbridge/docs/issues) with the idea you have. We'll help you turn it into reality (assuming it's in line with our lofty goals :D).
+First, [make a GitHub account](https://github.com/). Then, [create an issue](https://github.com/phpbridge/docs/issues) with the idea you have. We'll help you turn it into reality (assuming it's in line with our lofty goals :D).
 
-Don't know what you could work on? Browse the [issues list](https://github.com/railsbridge/docs/issues) and the [To Do list](https://github.com/railsbridge/docs/wiki/RailsBridge-To-Do-List). Those have lots of ideas.
+Don't know what you could work on? Browse the [issues list](https://github.com/phpbridge/docs/issues) for ideas.
 
 
-### I have different question about RailsBridge.
-The [RailsBridge website](http://www.railsbridge.org) probably has an answer!
+### I have different question about PHPBridge.
+The [PHPBridge website](http://www.phpbridge.org) probably has an answer!
 MARKDOWN

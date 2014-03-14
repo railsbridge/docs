@@ -65,7 +65,7 @@ class InstallFest < Sinatra::Application
 
   def redirect_sites
     {
-      'curriculum' => 'intro-to-rails'
+      'curriculum' => 'intro-to-php'
     }
   end
 
