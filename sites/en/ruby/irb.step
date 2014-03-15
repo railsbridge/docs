@@ -1,46 +1,84 @@
 goals do
-  goal "Understand the difference between irb and the command line"
   goal "Understand how and when to use irb"
-  goal "Execute some simple ruby statements"
+  goal "Understand how to start and stop irb"
+  goal "Understand the difference between irb and the command line"
+  goal "Execute some simple Ruby statements"
 end
 
 step do
+  message "irb is the **i**nteractive **r**u**b**y interpreter. It's a program
+    that runs Ruby code as you type it in."
+  message "Start irb."
   console "irb"
-  message 'irb is the **i**nteractive **r**u**b**y interpreter.'
-  message 'In irb, you can experiment with short pieces of code to figure out what they do.'
+  result "irb: line 001 >"
+  message "The prompt changed.  This is irb's way of reminding you that it's
+    running, and telling you it's ready."
+  message "Hit **Enter** a few times."
+  result "irb: line 002 >
+irb: line 003 >
+irb: line 004 >"
+
 end
 
 step do
+   message "irb will run until you quit."
+   irb "exit"
+   message "You're back at the command line. Notice that the prompt no longer says irb."
+   message "`exit` is the guaranteed way to get out of irb. Depending on your
+     operating system, Control-C or Control-D on an empty line may also work."
+   message "Practice going in and out of irb a couple of times. How can you tell
+     when you're in irb?  How can you tell when you're back at the command line?"
+end
+
+
+step do
+   message "irb is its own program with its own commands. Although we start it
+     from the command line, the commands to change directories and so on don't
+     work in irb."
+   message "Restart irb."
+   console "irb"
+   irb "pwd"
+   result <<-YIKES
+   NameError: undefined local variable or method `pwd' for main:Object
+   	from (irb):1
+   	from /usr/bin/irb:12:in `<main>'
+   YIKES
+   message "This ferocious error message is irb saying \"Huh? What??\" because
+     only irb understands Ruby."
+end
+
+step do
+  message "In irb, you can experiment with short pieces of code to figure out what they do."
   irb <<-IRB
 5 + 9
 109 / 17
 2 ** 8
 5 > 6
   IRB
-  message 'What happened after each line? What do you think these statements do?'
+  message "What happened after each line? What do you think these statements do?"
 end
 
 step do
-  message 'Lets take a closer look at the output of irb:'
-  irb '1 + 2'
+  message "Lets take a closer look at the output of irb:"
+  irb "1 + 2"
   result <<-MESSAGE
 1.9.3p125 :015 > 1 + 2
- => 3 
-1.9.3p125 :016 > 
+ => 3
+1.9.3p125 :016 >
   MESSAGE
-  message 'Here, `=> 3` is the **return value** of the **statement** `1 + 2`. Every statement in ruby has a **return value**: irb shows you that value after you type a complete statement and press enter.'
+  message "Here, `=> 3` is the **return value** of the **statement** `1 + 2`,
+    the result of running your code."
+  message "Every statement in Ruby has a **return value**: irb shows you that
+    value after you type a complete statement and press ENTER."
 end
 
-step do
-  irb <<-IRB
-exit
-  IRB
-  message '`exit` is the guaranteed way to get out of irb. Depending on your operating system, Control-C or Control-D on an empty line may also work.'
-  message 'Practice going in and out of irb a couple of times. How can you tell when you\'re in or out of irb?'
-end
 
 explanation do
-  message "irb isn't a place to write code: it's a place to experiment and find out how certain language features work. When you write a full-fledged program, you'll save it into a text file on your computer."
+  message "irb is a place to experiment and find out how certain language
+    features work. It's not a good place to write long programs.  It doesn't let
+    you save your work, and it's not a very friendly text editor."
+  message "When you write a full-fledged program, you'll save it into a text
+    file on your computer.  We'll see this in a later step."
 end
 
-next_step "variables"
+next_step "running_programs_from_a_file"

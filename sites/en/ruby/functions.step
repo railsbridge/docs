@@ -1,28 +1,69 @@
+
+message "A function is a step in a process.  Think back to the last recipe you cooked.  There were steps like 'mix', 'measure', and 'bake'."
+
 goals do
   goal "Create a function"
   goal "Call a function"
 end
 
+
 step do
-  message 'Create a new file called area.rb'
+  message 'In your text editor, create a new file called area.rb'
   type_in_file 'area.rb', <<-'CONTENTS'
-def circle_area(radius)
+def calculate_circle_area(radius)
   Math::PI * (radius ** 2)
 end
 
 print "What is the radius of your circle? > "
 radius = gets.to_i
 
-puts "Your circle has an area of #{circle_area(radius)}"
+puts "Your circle has an area of #{calculate_circle_area(radius)}"
   CONTENTS
-  console 'ruby area.rb'
-  message 'When prompted, type in a radius for your circle.'
+  message "Save your work. "
 end
+
+step do
+  message "Run the file."
+  console 'ruby area.rb'
+  message 'When prompted, type in a radius for your circle and hit return.'
+end
+
+step do
+  message "We can write functions in IRB too."
+
+  irb <<-CONTENTS
+
+  def backwards( phrase )
+    phrase.reverse
+  end
+CONTENTS
+
+
+ message <<-CONTENTS
+A function begins with `def`.  It's followed by the name of the function, and then a list of what you plan to send in.  
+
+Inside the function is the code that does the work.  The function ends with a statement that evaluates to a function. What does it mean to evaluate a statement?  When we type `puts "Two plus two is \#{2 + 2}", Ruby evaluates the statement inside the curly brackets.  2 + 2 evaluates to 4, and 3 < 9 evaluates to true.  "Hello".reverse evaluates to "olleH". The function hands the value back by saying it.
+
+After you typed 'end' and hit return, irb typed `nil`.  This is fine. Ruby always reports what it got when it ran your command, and functions result in `nil`.
+CONTENTS
+  message "... and then **call** our function:"
+
+  message "To call a function, first say the name of the function, then send in the values the function needs to do its job."
+
+  irb "backwards 'Hello' "
+end
+
+
+step do
+  message "We can store the result in a variable."
+  irb "mirror = backwards 'Hello'"
+end
+
 
 explanation do
   message "As your programs get more and more complicated, you'll want to group code into **functions** that can be called over and over again."
-  message "A **function** begins with **def**, followed by the function name. Next comes any **variables** it takes, followed by the actual body of the function. Lastly, function definitions are finished with the **end** keyword."
-  message "Pedantic Programmers might want to tell you that Ruby doesn't technically have **functions**, and everything in ruby is really a **method**. It is appropriate to slap these people."
+  message "Pedantic Programmers might want to tell you that Ruby doesn't technically have **functions**, and everything in Ruby is really a **method**. It is appropriate to slap these people."
 end
 
-next_step 'objects'
+
+next_step 'classes'

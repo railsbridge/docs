@@ -1,44 +1,32 @@
+  message 'Loops are a way of doing something multiple times. In this loop, we printed each fruit to the screen in order.'
+
 goals do
   goal "Use loops to do operations for every element in an array."
-  goal do 
+  goal do
     rawtext(md2html("Use `puts` to print strings to the screen."))
   end
   goal 'Learn the two different syntaxes for creating blocks in Ruby.'
 end
 
 step do
-  irb <<-IRB
-puts 'Hello World'
-  IRB
-  message '`puts` (**put** **s**tring) is a way of printing information to the user of your program.'
-  message 'Take some time to contemplate the output of `puts` in irb:'
-  result <<-RESULT
-1.9.3p125 :006 > puts 'Hello World'
-Hello World
- => nil 
-1.9.3p125 :007 >
-  RESULT
-  message 'The method `puts` always has the **return value** of `nil`, which is what we see after the `=>` in the output. Printing \'Hello World\' to the screen is just a side-effect.'
-end
-  
-step do
-  irb <<-IRB
-fruits = ['peach', 'plum', 'pear']
-fruits.each { |fruit| puts fruit }
-  IRB
-  message 'The straight up-and-down `|` is called the \'pipe character\', and is typically the shifted version of the `\` (backslash) on your keyboard.'
-  message 'Loops are a way of doing something here multiple times. In this loop, we printed each fruit to the screen in order.'
+message "What do you predict this will do?"
+irb "3.times { puts 'Hip, hip, hooray!'}"
+message "The `times` method will do something as many times as you tell it."
+message "The chunk of code between the brackets is called a `block`.  It will get run each time."
 end
 
 step do
-  irb <<-IRB
-numbers = [109, 10, 1001]
-numbers.each { |n| puts n * 2 }
-  IRB
-  message 'The curly braces here define a **block**, and whatever\'s in the pipes is a **block variable**.'
-  message '`each` takes the first element in the array and sends it to the block, which temporarily stores it in the **block variable** and then runs the code after the pipes. It then goes back and does this again for each of the remaining items in the array.'  
+message "We often want to do something to each item in a collection."
+irb <<-CONTENTS
+beatles = [ "John", "Paul", "George", "Ringo"]
+beatles.each { |beatle| puts "Hi, my name is \#{beatle}"}
+CONTENTS
+
+message 'The straight up-and-down `|` is called the **\'pipe character\'**. On a US keyboard, it\'s typically the shifted version of the `\` (backslash) key.'
+message "The variable between the pipes is a **block variable**.  It's a way to refer to each item in the collection."
+  message '`each` takes the first element in the array and sends it to the block, which temporarily stores it in the **block variable** and then runs the code after the pipes. It then goes back and does this again for each of the remaining items in the array.'
   irb <<-'IRB'
-ducks = ['huey', 'dewey', 'louie']
+ducks = ['Huey', 'Dewey', 'Louie']
 ducks.each { |duck| puts "#{duck} quacks!" }
 ducks.each { |zombie| puts "#{zombie} quacks!" }
   IRB
@@ -46,8 +34,19 @@ ducks.each { |zombie| puts "#{zombie} quacks!" }
 end
 
 step do
+irb "('a'..'z').each { |letter| puts letter }"
+message "In ruby, we have a special construct called a **range**. A range gives us a shortcut in defining a list of objects that fall within starting and ending point. In the example above, we're defining a range of all the lowercase characters between and including 'a' and 'z'. When used with an `each` statement, a range will loop through each value within that starting point and ending point."
+
+irb "('a'...'z').each { |letter| puts letter }"
+
+message "How is this line different from the previous example? The three dots tells us to **omit** the ending point."
+end
+
+step do
+    message "There's a second way to make a block in Ruby.  Instead of { },  we surround the code with  **`do`** and **`end`**."
     irb <<-'IRB'
-total = 256 ** 3
+
+total = 99
 colors = ['red', 'blue', 'green']
 colors.each do |color|
   puts "#{total} colors of paint on the wall..."
@@ -56,12 +55,36 @@ colors.each do |color|
   puts "#{total} colors of paint on the wall!"
 end
     IRB
-    message "The ** operator means 'to the power of', as in '256 to the third power'"
-    message "There's more than one way to make a block in ruby. The `do ... end` syntax is typically used when a block needs to span multiple lines, while the `{ ... }` syntax is for a single line block."
+    message " The `do ... end` syntax is typically used when a block needs to span multiple lines, while the `{ ... }` syntax is for a single line block."
+end
+
+challenge do
+  message "Let's write a program that greets everyone in your group. Use an array to store everyone's name."
+
+  message 'Here is a sample of how the program might run.'
+
+  source_code <<-'CONTENTS'
+Oh, hello, Sally Samsonite!
+Oh, hello, Johnny Jameson!
+Oh, hello, Beth Benitsky!
+Oh, hello, Corinne Camelia!
+CONTENTS
+
+  message 'Your program should be written in a way that group members can be removed and added to your array without requiring a change to the rest of your program. Use what you now know about loops so that only one `puts` statement is in your program.'
+
+  message "Let's write a program that adds up a set of numbers in an array. The numbers you can use as a test case are 4, 6, 5, 5, 10"
+
+  message 'Here is a sample of how the program might run.'
+
+  source_code <<-'CONTENTS'
+The sum of all of the numbers is 30.
+CONTENTS
+
+  message "Your program should be written in a way that doesn't require massive changes when the array of numbers is modified."
 end
 
 explanation do
   message "As you build complex programs, you'll want to do something to many pieces of data without typing it all out. Loops help solve this problem."
 end
 
-next_step 'running_programs_from_a_file'
+next_step "summary:_basics"

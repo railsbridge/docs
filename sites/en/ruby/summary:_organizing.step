@@ -1,0 +1,15 @@
+goals do
+end
+
+message  ""
+
+step do
+end
+
+step do
+end
+
+step do
+end
+
+next_step "how_to_write_a_program"

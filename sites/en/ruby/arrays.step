@@ -84,10 +84,19 @@ explanation do
       td 'remove (and return) the element at the end of the array'
     end
   end
+
+  message "We are learning that different types of objects in ruby have different sets of methods. We can call `pop` on object of type `Array`, but we can't call it on an object of type `Float`."
+
+  irb <<IRB
+[].pop
+3.0.pop
+IRB
+
+  message "In object oriented programming, each type of object shares a common list of methods. This list of methods is different for every type of object. When you attempt to call a method that is not available for the object's type, you get a `NoMethodError` and the interpreter stops running the program."
 end
 
 further_reading do
   a "Ruby's documentation for Array", href: 'http://www.ruby-doc.org/core-1.9.3/Array.html'
 end
 
-next_step "hashes"
+next_step 'hashes'

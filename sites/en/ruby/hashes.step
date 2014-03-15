@@ -8,7 +8,7 @@ step do
   irb <<-IRB
 states = {"CA" => "California", "DE" => "Delaware"}
   IRB
-  message 'An array just stored items in some order. A hash stores pairs of items, associating **keys** with **values**.'
+  message "Arrays are ideal when we want to store an ordered list of items. We can access elements in an array by their position, but sometimes the position doesn't really help us much. We may want to access items in the list based on a name, or **key**. A hash stores pairs of items, associating **keys** with **values**."
   message 'The `{` character is typically called a \'curly brace\', and the `=>` is called a \'rocket\' or \'hashrocket\''
   irb <<-IRB
 states.keys
@@ -24,12 +24,12 @@ end
 
 step do
   irb <<-IRB
-  bike1 = {'make' => 'Trek', 'color' => 'Silver'}
-  bike2 = {'make' => 'Cannondale', 'color' => 'Blue'}
-  bikes = [bike1, bike2]
+  bike_1 = {'make' => 'Trek', 'color' => 'Silver'}
+  bike_2 = {'make' => 'Cannondale', 'color' => 'Blue'}
+  bikes = [bike_1, bike_2]
 IRB
   message "Hashes are often used to store the properties of some object. Here, each hash stores the properties of a bike."
-  message "The *keys* are often the name of a property (here *make*, *color*) while the *values* are the value of the property for a given object (here, *Trek*, *silver*)."
+  message "The *keys* are often the name of a property (here *make*, *color*) while tha *values* are the value of the property for a given object (here, *Trek*, *silver*)."
   message "Consider how you might have had to store this data if you didn't have hash. What else might you want to store in a hash?"
   irb <<-IRB
   bikes[0]['make']

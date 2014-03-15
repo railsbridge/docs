@@ -1,23 +1,36 @@
+message "A variable is a way to name a piece of data so we can do things with
+it. It can hold all kinds of things - words, numbers, the result of a function,
+and even a function itself."
+
 goals do
+  goal "Understand what a variable is for"
   goal "Store data in variables"
   goal "Replace data in an existing variable"
 end
 
 step do
-  message 'Start irb again'
-  console 'irb'
+  message "Start up irb."
+  console "irb"
 end
 
 step do
-  irb 'my_variable = 5'
-  message 'This creates a new variable called my_variable and stores the value 5 in it.'
-  irb 'another_variable = "hi"'
-  message 'This creates another variable and stores the value "hi" in it.'
+  irb "my_variable = 5"
+  message "This creates a new variable called `my_variable` and stores the value 5 in it."
+  message "Let's confirm that. To see what value a variable holds, type its name."
+    irb "my_variable"
+    result "5"
+
+  irb "another_variable = \"hi\""
+
+  message "This creates another variable and stores the value \"hi\" in it."
+
 end
 
 step do
-  irb 'my_variable = 10'
-  message 'This reassigns my_variable, which already exists, to 10.'
+  irb "my_variable = 10"
+  message "`my_variable` has a new value."
+  irb "my_variable"
+  result "10"
 end
 
 step do
@@ -27,11 +40,35 @@ bananas = 10 + 5
 fruits = 2 + apples + bananas
 bananas = fruits - apples
   IRB
-  message 'Variables are assigned using a single equals sign (=).'
-  message 'The right side of the equals sign is evaluated first, then the value is assigned to the variable named on the left side of the equals.'
+  message "Variables are assigned a value using a single equals sign (=)."
+  message "The right side of the equals sign is evaluated, and the result is
+    assigned to the variable named on the left side of the equals."
+  end
+
+step do
+   message "You've created a lot of variables. Let's see the list."
+   irb "local_variables"
+   result "[:bananas, :fruits, :apples, :another_variable, :my_variable]"
+   message "Here Ruby gives you a list of variables you've defined in irb so
+     far. This might be useful for when you want to see what variable names are
+     already in use."
+   end
+step do
+  message <<-CONTENT
+  The opposite of a variable is `constant` - a value that doesn't change. 
+  Numbers, strings, nil, true, and false are constants.  
+  Check out what happens if you assign a value to a constant."
+  CONTENT
+  irb <<-IRB
+  true = false
+  1 = 1
+  "a" = 1
+  IRB
+  message "(Notice in the last example we put the a in quotation marks to make it a string.)"
 end
 
 step do
+  message "There are some rules about what you can name a variable."
 	message <<-VARIABLE_NAMES
 Try making variables with the following kinds of names names in irb:
 
@@ -53,8 +90,15 @@ Which worked? Which didn't?
   VARIABLE_NAMES
 end
 
-explanation do
-  message "Variables allow you to store data so you can refer to it by name later. The data you store in variables will persist as long as your program keeps running."
+step do
+  message "Variables can hold the result of a function."
+  irb 'shouting = "hey, you!".upcase'
 end
 
-next_step "strings"
+explanation do
+  message "Variables allow you to store data so you can refer to it by name
+    later. The data you store in variables will persist as long as your program
+    keeps running and vanish when it stops."
+  end
+
+next_step "datatypes"

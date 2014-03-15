@@ -1,7 +1,7 @@
 message <<-MARKDOWN
 ### Goal
 
-To teach you Ruby we are going to explain the basic building blocks used in the ruby language and allow you reinforce what you've learned through challenges.
+To teach you Ruby we are going to explain the basic building blocks used in the Ruby language and allow you reinforce what you've learned through challenges.
 
 When you have completed this curriculum you should understand:
 
@@ -15,11 +15,13 @@ When you have completed this curriculum you should understand:
 
 We're going to be working with:
 
-* ruby 1.9.3 installed via rvm (mac or linux) or RailsInstaller (windows)
-* a command line program like Terminal (mac) or CMD.EXE (windows)
-* the text editor of your choice
+* Ruby
+* A command line program
+* A text editor of your choice
 
-Everything should be set up the night before during our installfest. Please ensure you have everything working _before_ you show up for the workshop proper.
+Everything should be set up the night before during our
+<a href="http://www.railsbridgeboston.org/installfest">Installfest</a>. Please
+ensure you have everything working _before_ you show up for the workshop.
 
 You can verify that you have everything working by trying this out in your terminal:
 
@@ -54,6 +56,13 @@ def code_to_write
 end</pre>
     </div>
     <p>Yellow because we've gotten it done, but we have no clue what's going on.
+  </div>
+  <div class="challenge">
+    <h1>Challenges</h1>
+
+    <p>A list of activities to try to reinforce the concepts learned in the lesson</p>
+
+    <p>Orange because it stimulates the brain by <a href="http://www.color-wheel-pro.com/color-meaning.html">increasing its oxygen supply</a>.</p>
   </div>
   <div class="explanation">
     <h1>Explanation</h1>
