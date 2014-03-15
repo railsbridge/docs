@@ -1,5 +1,5 @@
 message <<-MARKDOWN
-RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](http://rvm.beginrescueend.com/rvm/install/) are available here, but this should work for you:
+RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](https://rvm.io/rvm/install) are available here, but this should work for you:
 MARKDOWN
 
 step "Install RVM" do
