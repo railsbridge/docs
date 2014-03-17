@@ -42,7 +42,7 @@ You will be installing the following tools:
 * Rails
 * Git
 * Heroku
-* Sublime Text 2 (or (some editor)[editors])
+* Sublime Text 2 (or [some editor](editors))
 * Various useful "ruby gems", including...
   * bundler
   * sqlite
