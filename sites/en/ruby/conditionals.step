@@ -1,7 +1,5 @@
 goals do
-  goal do
-    rawtext(md2html('Use `gets` to get input from the user of your program.'))
-  end
+  goal 'Use `gets` to get input from the user of your program.'
   goal 'Use a conditional statement to execute a branch of code only some of the time.'
   goal 'if/elsif/else, while, unless'
 end

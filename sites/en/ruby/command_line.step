@@ -16,9 +16,7 @@ goals do
   goal "Learn about the command line"
   goal "Make a new directory"
   goal "Browse some directories on your computer"
-  goal do
-    rawtext md2html("Learn the commands `pwd`, `mkdir`, `ls`, `cd` and `man`")
-  end
+  goal "Learn the commands `pwd`, `mkdir`, `ls`, `cd` and `man`"
 end
 
 step do

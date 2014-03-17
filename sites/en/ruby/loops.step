@@ -2,9 +2,7 @@
 
 goals do
   goal "Use loops to do operations for every element in an array."
-  goal do
-    rawtext(md2html("Use `puts` to print strings to the screen."))
-  end
+  goal "Use `puts` to print strings to the screen."
   goal 'Learn the two different syntaxes for creating blocks in Ruby.'
 end
 

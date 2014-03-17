@@ -123,7 +123,7 @@ class DocPage < Html5Page
       if @back
         div.back {
           text "Back to "
-          a(class: "back", href: @back) do
+          a(class: "back", href: URI.escape(@back, URI::PATTERN::RESERVED)) do
             text Titleizer.title_for_page(@back.split('#').first)
           end
         }
