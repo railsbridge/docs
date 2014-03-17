@@ -40,4 +40,4 @@ explanation do
   message "Data is stored on your object using **instance variables** that start with an `@` sign. Instance variables behave like normal variables, but are only visible from inside a specific instance of your object. If you want the data to be externally accessible, you have to write more methods."
 end
 
-next_step 'summary:_organizing'
+next_step 'how_to_write_a_program'
