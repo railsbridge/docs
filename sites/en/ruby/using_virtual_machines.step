@@ -1,9 +1,11 @@
 message <<-INTRO
-For this workshop we asked OS X and Windows users to use a virtual machine. To
+Some workshops ask OS X and Windows users to use a virtual machine. To
 run Ruby, you need to start and connect to the virtual machine.
-
-Linux and Chromebook users can skip to the next step.
 INTRO
+
+tip do
+  message "If students aren't using a virtual machine at your workshop, head back to <a href='command_line'>the curriculum.</a>"
+end
 
 goals do
   goal "Define virtual machine, Vagrant, and VirtualBox"
@@ -14,9 +16,7 @@ end
 
 message <<-CONTENTS
 Most laptops don't come with Ruby installed. Getting 75+ people ready at a
-workshop is a big logistical challenge.  Participants in the January 2014
-workshop are using four different operating systems,  with at least 15 versions
-all together.
+workshop is a big logistical challenge.
 
 To get going quickly and to have things work the same for everyone, we're using
 a virtual machine. Using a virtual machine adds some extra steps, which we'll
@@ -112,5 +112,3 @@ Beginner's Guide to Creating VMs with
 VirtualBox](http://lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox)
 CONTENTS
 end
-
-next_step "irb"
