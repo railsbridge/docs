@@ -18,6 +18,10 @@ describe Titleizer do
     expect(Titleizer.title_for_page('CRUD_with_scaffolding')).to eq('CRUD With Scaffolding')
   end
 
+  it 'uppercases php as PHP' do
+    expect(Titleizer.title_for_page('php_is_what_we_do')).to eq ('PHP Is What We Do')
+  end
+
   it 'uppercases dvd' do
     expect(Titleizer.title_for_page('why_cant_my_vhs_play_this_dvd')).to eq('Why Cant My Vhs Play This DVD')
   end
@@ -28,5 +32,9 @@ describe Titleizer do
 
   it 'capitalizes sentences' do
     expect(Titleizer.title_for_page('sandwich_parade_on_tuesday')).to eq('Sandwich Parade On Tuesday')
+  end
+
+  it 'transforms docs to Get Started' do
+    expect(Titleizer.title_for_page('docs')).to eq('Get Started')
   end
 end
