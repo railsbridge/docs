@@ -105,8 +105,10 @@ class Step < Erector::Widget
 
   def simple_link name, options={}
     require 'uri'
-    hash = URI.escape '#'
-    href = "#{_escaped(name)}?back=#{_escaped(page_name)}#{hash}step#{current_anchor_num}"
+    href = "#{_escaped(name)}?back=#{_escaped(page_name)}"
+    if @step_stack.length > 1
+      href += URI.escape('#') + "step#{current_anchor_num}"
+    end
     if block_given?
       a({:href => href}.merge(options)) do
         yield
