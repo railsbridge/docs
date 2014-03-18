@@ -155,4 +155,8 @@ explanation do
   end
 end
 
-next_step "using_virtual_machines"
+tip do
+  message "If your workshop is using a Virtual Machine (ask a TA!) now is the time to take a detour to [Using Virtual Machines](using_virtual_machines)"
+end
+
+next_step 'irb'
