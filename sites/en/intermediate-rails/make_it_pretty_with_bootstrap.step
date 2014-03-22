@@ -22,7 +22,7 @@ end
 
 tools_and_references do
 message <<-MARKDOWN
-* A gem for Bootstrap!! Let’s use the gem bootstrap-sass-rails: https://github.com/yabawock/bootstrap-sass-rails
+* A gem for Bootstrap!! Here's where to get it https://github.com/twbs/bootstrap-sass
 * Bootstrap docs: http://getbootstrap.com/css/
 * Here's a link to the navbar section: http://getbootstrap.com/components/#nav
 * Reference for HTML and CSS: http://www.htmldog.com/
