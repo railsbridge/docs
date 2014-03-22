@@ -48,7 +48,9 @@ MediaWiki is the format of pages on the Devchix Wiki. This format is not fully s
 
 StepFile is a new, Ruby-based DSL for describing complex, nested instructions in clear, reusable chunks.
 
-[Deck.rb](https://github.com/alexch/deck.rb) converts Markdown files into an interactive in-browser HTML+JavaScript slide deck.
+    rackup
+
+Then open <http://localhost:9292> in a web browser, and verify that you can navigate the installfest slides.
 
 #Organizer Instructions (probably outdated -- double check)
 

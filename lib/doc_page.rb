@@ -4,9 +4,10 @@ require "site_index"
 require 'erector_scss'
 require 'titleizer'
 require 'html5_page'
+require 'flags'
 
 class DocPage < Html5Page
-  needs :site_name, :doc_title, :doc_path, :page_name, :src
+  needs :site_name, :doc_title, :doc_path, :page_name, :src, :locale
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name, :src
 
@@ -62,7 +63,7 @@ class DocPage < Html5Page
   end
 
   def git_url
-    "https://github.com/railsbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
+    "https://github.com/railsbridge/docs/blob/master/sites/#{@locale}/#{@site_name}/#{file_name}"
   end
 
   def src_url
@@ -96,9 +97,13 @@ class DocPage < Html5Page
       }
       ul(class: "navbar-nav nav") {
 
+        li {
+          widget Flags
+        }
+
         li(class: "dropdown") {
           a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_name
+          widget SiteIndex, site_name: site_name, locale: @locale
         }
 
         top_links.each do |top_link|
@@ -107,9 +112,10 @@ class DocPage < Html5Page
       }
     }
 
-    widget Contents, site_name: site_name, page_name: page_name
+    widget Contents, locale: @locale, site_name: site_name, page_name: page_name
 
     main {
+      before_title
       h1 doc_title, class: "doc_title"
       div(class: :doc) {
         doc_content
@@ -117,7 +123,7 @@ class DocPage < Html5Page
       if @back
         div.back {
           text "Back to "
-          a(class: "back", href: @back) do
+          a(class: "back", href: URI.escape(@back, URI::PATTERN::RESERVED)) do
             text Titleizer.title_for_page(@back.split('#').first)
           end
         }
@@ -137,6 +143,10 @@ class DocPage < Html5Page
         url "https://github.com/RailsBridge-CapeTown"
       end
     }
+  end
+
+  def before_title
+    # placeholder for subclass override
   end
 
 end

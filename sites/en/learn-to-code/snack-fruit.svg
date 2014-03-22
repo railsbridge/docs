@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="557.4165"
+   height="173.03773"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="snack-fruit.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3782"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="219.93496"
+     inkscape:cy="-166.42237"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1059"
+     inkscape:window-height="712"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-22.911047,-165.28643)">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.61747706px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+       id="rect2985"
+       width="217.52534"
+       height="63.323776"
+       x="23.219786"
+       y="165.59517"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="400.02045"
+       y="270.50412"
+       id="text3763"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3765"
+         x="400.02045"
+         y="270.50412">&quot;Apple&quot;</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-opacity:1"
+       id="rect3769"
+       width="208.09143"
+       height="82.832512"
+       x="371.73615"
+       y="217.97618"
+       ry="41.416256" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-opacity:1"
+       id="rect3771"
+       width="48.487324"
+       height="50.507626"
+       x="185.86807"
+       y="173.52946" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.79353762;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 205.91789,195.5996 c 163.95117,64.95622 163.95117,64.95622 163.95117,64.95622"
+       id="path3773"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="36.365494"
+       y="209.89497"
+       id="text4219"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4221"
+         x="36.365494"
+         y="209.89497">snack</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4253"
+       y="209.89497"
+       x="36.365494"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="209.89497"
+         x="36.365494"
+         id="tspan4255"
+         sodipodi:role="line">snack</tspan></text>
+    <rect
+       ry="0"
+       y="274.69165"
+       x="23.219786"
+       height="63.323776"
+       width="217.52534"
+       id="rect4289"
+       style="fill:none;stroke:#000000;stroke-width:0.61747706px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" />
+    <rect
+       y="282.62595"
+       x="185.86807"
+       height="50.507626"
+       width="48.487324"
+       id="rect4291"
+       style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4295"
+       y="318.99146"
+       x="36.365494"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="318.99146"
+         x="36.365494"
+         id="tspan4297"
+         sodipodi:role="line">fruit</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.9528985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="M 205.68293,311.21871 C 366.0634,274.23844 366.0634,274.23844 366.0634,274.23844"
+       id="path4299"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="36.365494"
+       y="318.99146"
+       id="text4301"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4303"
+         x="36.365494"
+         y="318.99146" /></text>
+  </g>
+</svg>

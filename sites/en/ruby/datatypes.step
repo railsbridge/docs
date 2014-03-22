@@ -1,0 +1,98 @@
+goals do
+  goal "Know the basic data types"
+  goal "Know why it matters"
+  message "Variables are easygoing about the objects they hold. You can assign a word, then assign a number, then a list of words."
+  message "But sometimes it matters what type of data we assign a variable. The fancy word for \"type of data\" is **class**."
+  message "Ruby has several built-in classes. In a later section, we'll explore how to make your own classes."
+end
+
+step do
+  message "How can you find out what class something is?"
+  irb '"Letters and words".class'
+  result "String"
+  message "\"class\" is a **method**, a behavior you can ask an object to perform. "
+  message "To call a method on an object, type the object or variable name, then
+    a period, and finally the method name. "
+  message "Here's a preview of the datatypes we'll cover:"
+  irb <<-TRYME
+'a'.class
+5.class
+3.14.class
+true.class
+:symbol.class
+[ 1, 2, 3].class
+{name: "value"}.class
+nil.class
+Class.class
+TRYME
+end
+
+step do
+  message "Different classes come with different methods. Browse the String
+    class' methods. (Ruby will put a ':' before the method name.)"
+  irb '"five".methods'
+  message "There are a lot of them. Can you predict what some of them do?"
+  message "Numbers have different methods."
+  irb "5.methods"
+  message "Notice that number methods include arithmetic operators."
+  message "Knowing what class an object is tells us what methods we can call."
+end
+
+step do
+  message "Some datatypes are incompatible.  For example, Ruby knows how to
+    concatenate two objects of the same class."
+  irb <<-TRYME
+5 + 5
+"5" + "5"
+TRYME
+  message "Ruby can guess how to convert some classes into a similar class."
+  irb "5 + 5.0"
+  message "... but it's totally confused by different objects."
+  irb <<-TRYME
+5 + "5"
+"5" + 5
+TRYME
+end
+
+step do
+  message "When you have incompatible data types, you can use an object's
+    *conversion methods* to get a translated version of the object."
+  message "Conversion methods can be spotted by their name; they begin with
+    `to_`, e.g. `to_s` converts to a string, `to_i` to an integer, and `to_f` to
+    a float (decimal)."
+  irb <<-TRYME
+5.to_s
+5.to_s.class
+5.to_f
+5.to_f.class
+5.67.to_i
+"5".to_i
+"5".to_i.class
+TRYME
+  message "There isn't always a sensible conversion from one class to another."
+  irb <<-TRYME
+"I am not a number".to_i
+"five".to_i
+TRYME
+  message "Conversion methods are used most often in calculations and in printing."
+  irb <<-TRYME
+5 + "5".to_i
+"5 plus" + 5.to_s
+TRYME
+  message "It's common to include a `to_s` method when you make your own classes so it prints nicely."
+  message "To explore further, try converting the examples in step 1 to
+    different classes.  To more easily see what conversion methods an object has,
+    call `methods.sort` on it."
+  irb "5.methods.sort"
+end
+
+explanation do
+  message "Sometimes it's necessary to think about what type of data you're working with."
+  message "Use the `class` method to find out what class an object is."
+  message "Use the `methods` method to find out what methods an object has."
+  message "Use conversion methods to get a transformed version of an object."
+  message "A `TypeError` message is a hint to look more carefully at an object's class."
+  message "Let's look at the basic datatypes in more detail."
+end
+
+next_step "strings"

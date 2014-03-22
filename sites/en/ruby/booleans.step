@@ -1,0 +1,117 @@
+message "George Boole was an English mathematician who specialized in logic,
+especially logic rules involving true and false.  The Boolean datatype
+is named in his honor.
+
+In code, as in life, we base a lot of decisions on whether something is true or
+false. *\"If it is raining, then I will bring an umbrella; otherwise I will wear
+sunglasses.\"*  In the conditionals section we'll make decisions. First we need to look at true and false."
+
+goals do
+  goal "Meet True and False"
+  goal "Compare numbers and strings"
+  goal "Evaluate 'and', 'or', and 'not' logic"
+  goal "Understand methods ending with question marks (predicates)"
+end
+
+
+step do
+  message 'Here are some expressions that return `true` or `false`:'
+  irb <<-IRB
+15 < 5
+15 > 5
+15 >= 5
+10 == 12
+  IRB
+end
+
+
+step do
+  message 'Notice we use a double equals sign to check if things are equal.  It\'s a common mistake to use a single equals sign.'
+  irb <<-IRB
+a = 'apple'
+b = 'banana'
+a == b
+puts a + b
+a = b
+puts a + b
+IRB
+   message "Surprise!"
+end
+
+step do
+  message "For 'not equals', try these:"
+  irb <<-IRB
+a = 'apple'
+b = 'banana'
+a != b
+IRB
+  message "The exclamation point means **the opposite of**"
+  irb <<-IRB
+!true
+!false
+!(a == b)
+IRB
+  message "In `!(a == b)`,  Ruby first evaluated `a == b`, then gave the opposite."
+  message "It also means **not true** .  In conditionals, we'll see things like
+
+
+        if not sunny
+            puts \"Bring an umbrella!\"
+
+We can also say
+
+        if sunny == false
+            puts \"Bring an umbrella!\"
+but \"if not sunny\" is a little more natural sounding.  It's also a little safer
+- that double equals is easy to mistype as a single equals."
+end
+
+step do
+    message "We can check more than one condition with `and` and `or` . `&&` and `||` (two pipes) is another notation for `and` and `or`."
+    message "We do something like this when we Google for 'microsoft and cambridge and not seattle'"
+irb <<-IRB
+# First let's define variables:
+yes = true
+no = false
+# Now experiment.  Boolean rule 1:  AND means everything must be true. 
+# true and true are true
+yes and yes
+yes && yes
+# true and false fail the test - AND means everything must be true
+yes and no
+no and yes
+no and no
+# Boolean rule 2: OR says at least one must be true. 
+yes or no
+yes || no
+yes or yes
+IRB
+end
+
+
+step do
+  message 'By convention, methods in Ruby that return booleans end with a question mark.'
+  irb <<-IRB
+'sandwich'.end_with?('h')
+'sandwich'.end_with?('z')
+[1,2,3].include?(2)
+[1,2,3].include?(9)
+'is my string'.empty?
+''.empty?
+'is this nil'.nil?
+nil.nil?
+  IRB
+end
+
+
+explanation do
+    message "In code we ask a lot of questions. Boolean logic gives us tools to express the questions. "
+end
+
+further_reading do
+    message "Some languages offer wiggle room about what evaluates to true or false. Ruby has very little. See [What's Truthy and Falsey in Ruby?](https://gist.github.com/jfarmer/2647362)"
+    message "[What's Truthy and Falsey in Ruby?](https://gist.github.com/jfarmer/2647362) has a more detailed walkthrough of booleans."
+    message "Ruby documentation for [true](http://www.ruby-doc.org/core-2.1.0/TrueClass.html) and [false]](http://www.ruby-doc.org/core-2.1.0/TrueClass.html)"
+end
+
+next_step "conditionals"

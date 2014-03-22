@@ -2,19 +2,19 @@ require 'titleizer'
 class Contents < Erector::Widget
   attr_accessor :site_dir
   attr_accessor :page_name
-  needs :page_name, :site_name, :site_dir => nil
+  # todo: replace site_name, locale, site_dir with Site object
+  needs :page_name, :site_name, :locale => nil, :site_dir => nil
 
   def initialize options
     super options
 
     self.page_name = options[:page_name]
 
-    if options.include? :site_dir
-      self.site_dir = options[:site_dir]
+    if options.include? :site_dir  # used in tests
+      @site_dir = options[:site_dir]
     else
-      here = File.expand_path File.dirname(__FILE__)
-      top = File.expand_path "#{here}/.."
-      self.site_dir = "#{top}/sites/#{@site_name}"
+      site = Site.named(@site_name, @locale)
+      @site_dir = site.dir if site
     end
   end
 

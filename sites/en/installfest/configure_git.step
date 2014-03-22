@@ -1,0 +1,30 @@
+message "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
+
+console <<-BASH
+git config --global user.name "Your Actual Name"
+git config --global user.email "Your Actual Email"
+BASH
+
+important "Use the same email address for heroku, git, github, and ssh."
+
+verify do
+  console "git config --get user.name"
+  result "your name"
+  console "git config --get user.email"
+  result "your email address"
+end
+
+tip "Colored output in Git" do
+  console <<-BASH
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+  BASH
+
+  important do
+    message "If you are using Windows, the output of Git will not have colors."
+  end
+end
+
+next_step "create_an_ssh_key"
+

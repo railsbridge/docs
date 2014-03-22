@@ -1,0 +1,11 @@
+
+goals do
+goal "Learn about different kinds of data: what they\'re called, what you can do with them"
+goal "Store data in a variable so you can use it later"
+goal "Make decisions with conditionals"
+goal "Hold collections of data in arrays and hashes"
+goal "Loop over a collection"
+end
+
+
+next_step 'variables'

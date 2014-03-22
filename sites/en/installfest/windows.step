@@ -1,0 +1,132 @@
+message <<-MARKDOWN
+These instructions should work for all versions of Windows from XP to Windows 8.
+
+You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
+MARKDOWN
+
+step "Run RailsInstaller" do
+
+  message <<-MARKDOWN
+  RailsInstaller includes Rails, Ruby, Git, and SQLite.
+
+  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+
+  Alternatively, ask a volunteer for a flash drive with the file on.
+
+  Click on the RailsInstaller file to run the install wizard.  Click Next at each step to accept the defaults.
+
+  Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
+
+  ![WinRailsInstaller.jpg](img/WinRailsInstaller.jpg)
+
+  Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
+
+  MARKDOWN
+end
+
+step "Configure your git and ssh environment" do
+
+  important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+
+  message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
+  message "Type your full name into the console and press **[enter]**"
+
+  message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
+  message "Type your email address into the console and press **[enter]**"
+
+  important "Use the **same email address** for heroku, git, github, and ssh."
+
+  tip do
+    message "After this step you will have some **git config settings** and you will also have an **ssh key**."
+  end
+
+end
+
+step "Windows 8 Only - Install Node.js" do
+
+  message "Go to <http://nodejs.org> and download the installer"
+
+  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+
+  message "**Reboot your computer.**"
+
+  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** (see below) and..."
+
+  console "node -v"
+  fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
+end
+
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+
+  console "gem install rails"
+
+  message "...and you're done. New Rails! Woo."
+end
+
+step "Sanity Check" do
+
+  console "ruby -v"
+  fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
+
+  console "rails -v"
+  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
+
+end
+
+step "Open a Terminal" do
+  message "Much of using Rails is typing commands and hitting **[enter]**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser."
+
+  tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
+
+  message "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
+
+  message "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+
+  img src: 'img/railsbridge_findingCommandPrompt.png'
+
+  tip "Pin It to Win It" do
+    img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
+  end
+
+  message "Here is a summary of your settings after this process:"
+
+  img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.jpg'
+
+end
+
+step "Configure the Windows Terminal" do
+  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+
+  link "configure_the_windows_terminal"
+
+  tip "Clearing the Terminal" do
+    message "If you ever want to clear the terminal of all its cluttered output"
+    console "cls"
+  end
+
+  tip "Command History" do
+    message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
+  end
+
+  tip "Copy and Paste" do
+
+    message "It's usually better to type commands in yourself. It takes a little longer but you learn more."
+
+    message "But if you must... in these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
+  end
+end
+
+step "Install a Text Editor" do
+  message "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
+
+  message "Notepad is not a good programming editor, but it will work in a pinch."
+
+  important "**When in doubt, use Sublime Text 2.**"
+
+  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
+
+  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
+end
+
+next_step "configure_git"

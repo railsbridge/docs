@@ -1,0 +1,162 @@
+message "<P>The <B>command line</B> is a text-based way to interact with your computer.</P>
+
+<P>In Windows and OS X we use graphical user interfaces (GUIs). GUIs let you operate your computer with pictures
+and a mouse. We start programs by clicking an icon, look through files and folders in Finder or File Explorer,
+or pick a command from a dropdown menu.</P>
+
+<P>In the command line, we type commands to run programs and navigate through files and folders. We will need this to run
+  Ruby progams from files.  This lesson covers the commands we need for the workshop.</P>"
+
+message "It\'s helpful to keep Finder (OS X), File Explorer (Windows), or
+Nautilus (Ubuntu) open during this topic.  We\'ll make files and move between
+directories. A graphical file browser will help you see the results more
+clearly."
+
+goals do
+  goal "Learn about the command line"
+  goal "Make a new directory"
+  goal "Browse some directories on your computer"
+  goal "Learn the commands `pwd`, `mkdir`, `ls`, `cd` and `man`"
+end
+
+step do
+  message 'Open up a command line application on your computer.'
+  message "**On Macs:** In Finder, start Applications > Utilities > Terminal, or find the Terminal application through Spotlight (click the magnifying glass in the top right of the screen and start typing 'Terminal')"
+  message '**On Windows:** open up **Git Shell** from your desktop or All Programs menu. Do not use Power Shell! It doesn\'t support the ssh command that we need.'
+  message '**On Linux:** press Ctrl + Alt + T or Find Terminal under the Accessories category of your applications menu.'
+
+  message 'We will call this "the console" or "the command line", no matter what program you\'re using. '
+  message 'Consoles will either start in your home directory, the way OS X and Windows open up in your Desktop, or in the directory you ended in during your last console session.  We\'ll talk more about the home directory in a few steps.'
+
+end
+
+step do
+  message 'The first word you type in the terminal is always the name of a program.
+             Many programs are included in OS X and Windows, like `ls` and `pwd`.  Others
+             are programs you installed, like `ruby`, `irb`, or `vagrant`.'
+  console 'ls'
+  message 'Hit **RETURN** or **ENTER** to run the command.'
+  message '`ls` stands for **list**, and lists the contents of the current directory.'
+  message 'You are in your home directory. You may see directories like
+  \'Documents\' or \'Desktop\'.  If you start up Finder, File Explorer, or
+  Nautilus, you\'ll see the same files and folders listed.'
+end
+
+step do
+  console "pwd"
+  message '`pwd` means "print working directory". It shows you what **directory** you\'re currently in. Directories are also often called **folders**.'
+  message '`pwd` can tell you where you are if you get lost somewhere in your computer.'
+  message 'What directory are you in right now?'
+end
+
+step do
+  console 'cd workspace'
+  message '`cd` means **c**hange **d**irectory. You use `cd` when you want to move from the current directory into some other directory.'
+  console 'pwd'
+  message "Notice how it changed? The working directory ends in '/workspace'."
+end
+
+step do
+  console 'mkdir railsbridge_ruby'
+  message '`mkdir` means **m**ake **d**irectory. You use `mkdir` when you want to create a new directory.'
+  console 'ls'
+  message 'Now the directory "railsbridge_ruby" shows up in the list.'
+  message 'The command line is just one way of manipulating the files on your computer. Try to find the new directory you created in Finder or Windows Explorer.'
+  message 'If you get an error saying the directory already exists, maybe someone did these steps on your computer before. Don\'t fret.'
+end
+
+step do
+  message "Let\'s go back to your home directory."
+  console 'cd ~'
+  message "`~` is the tilde key. On US keyboards, it's on the top left, next the
+  1 key, and you have to press `SHIFT` along with it.
+
+   On the command line, the tilde means your **home directory**, a directory owned by the account currently logged in to the computer.
+    Your home directory might be something like `/home/sparklepants` (Linux) or `/Users/saucyfrank` (Mac).
+
+What\'s your home directory?"
+  console 'pwd'
+  message "Remember that you can always get back to your home with `cd ~`."
+end
+
+step do
+    message 'The dash is a special shortcut that brings you back to your last
+    location, like an "undo" for `cd`.'
+    console 'cd -'
+    message 'What command shows you your current directory?'
+    console 'pwd'
+    message 'You should be back in "railsbridge\_ruby\another\_directory".'
+
+end
+
+
+step do
+   message "There are two tricks to save you some typing. The first one is command history."
+   message "Press the `up arrow` key."
+   result 'pwd'
+   message "Press `ENTER` to run the command."
+   message "Keep pressing the arrow key to replay commands. The `up arrow` moves backward through history, and the `down arrow` moves forward."
+end
+
+step do
+    message "The `TAB` key will autocomplete a command."
+    console <<-LINES
+cd ~
+ls
+cd rai
+    LINES
+    message '... and hit `TAB`.'
+    result 'cd railsbridge_ruby'
+    message <<-LINES
+Autocomplete will be as smart as it can.  If you started with `cd`, it will list directories.
+     If it could be a command, it will suggest commands. When there are multiple matches, it will show you the options.
+     LINES
+     console 'p'
+     message '... and hit `TAB`. What happens?  Hit `TAB` a second time.'
+     result 'Display all 203 possibilities? (y or n)'
+     message 'When autocomplete is stumped, it\'ll wait for another hint. It will ask when there are too many possibilities.'
+     console 'y'
+     message 'There are quite a few commands that begin with `p`!  Autocomplete can remind you when you don\'t know what all the choices are.'
+
+end
+
+challenge do
+  message "Using the command line and your editor, create a new directory that contains a set of text files. These text files will be lists of the various things you want to learn."
+
+  message "For example, you might want to learn various things about ruby and HTML. You could create a `ruby.txt` file and a `html.txt` file in the same directory. In each file, enter in a few questions you have about those topics."
+end
+
+explanation do
+  message "The command line is an essential tool for computer programmers. While daunting at first, it offers great flexibility in moving around your computer and manipulating files."
+  message "There are many, many, many more commands available on the command line than what we've seen here, but these are enough to get you going."
+  message 'Command summary:'
+
+  table class: 'bordered' do
+    tr do
+      td 'pwd'
+      td 'print working directory'
+      td 'print the full path to your current directory'
+    end
+    tr do
+      td 'ls'
+      td 'list directory'
+      td 'display the contents of the current directory'
+    end
+    tr do
+      td 'cd [directory]'
+      td 'change directory'
+      td 'make this directory the current directory'
+    end
+    tr do
+      td 'man [cmd]'
+      td 'manual'
+      td "show the manual for this command. press 'q' to quit."
+    end
+  end
+end
+
+tip do
+  message "If your workshop is using a Virtual Machine (ask a TA!) now is the time to take a detour to [Using Virtual Machines](using_virtual_machines)"
+end
+
+next_step 'irb'

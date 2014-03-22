@@ -1,0 +1,103 @@
+
+message  "
+Symbols are, if not unique to Ruby, at least not found in most other languages. 
+
+Symbols help Ruby use memory more efficiently. Every time you store a value in an object, Ruby sets aside a little piece of memory to hold it. If enough memory is tied up, we'll see an effect on performance. Perhaps you've seen your laptop run more and more slowly when lots of programs are open, or seen it speed up when you add more RAM.  
+
+Symbols let Ruby variables point to the same object in several places instead of allocating a new copy.  As a metaphor, think of how a rental car company lets several drivers use the same car instead of buying their own. 
+
+Efficient memory use isn't a concern in simple programs, but it's considered good form . At this stage, focus on recognizing and declaring symbols.  You'll see symbols regularly as you look at code.
+"
+
+
+goals do
+    goal "Know a symbol when you see it"
+    goal "Learn how to declare a symbol"
+    goal "Notice when symbols are used"
+end
+
+
+
+step do
+    message "Symbols start with a colon. Let's look at one."
+    irb <<-CONTENTS
+    :north
+    :north.class
+    :north.methods
+    CONTENTS
+end
+
+
+step do
+    message "Here are more examples:"
+    irb <<-CONTENTS
+    :TUESDAY
+    :"symbols can have spaces if in quotes but it's a lot to type"
+    :'single quotes work too'
+CONTENTS
+    message "Experiment with naming symbols. Do they use the same rules as variables?"
+end
+
+
+step do
+    message "Symbols are constants, like letters and numbers, so they can't be assigned a value."
+    irb <<-CONTENTS
+    :north = :south
+     CONTENTS
+
+   message "Symbols print their names when they're converted to strings."
+   irb <<-CONTENTS
+    :Saturday.to_s
+    puts "Today is \#{:Saturday}"
+    CONTENTS
+   
+   message  "Symbols are used in a similar way to enums or named constants in other languages -  for unchanging ideas that you want to refer to the same way, no matter where you are in a program. Unlike enums and named constants, you never initialize them with a value." 
+end
+
+step do
+    message <<-CONTENTS
+How do we know it's the same object? Ruby assigns an object_id number when it creates an object, like a serial number.  These are the same object.  
+    CONTENTS
+    irb <<-CONTENTS
+:friday.object_id
+:friday.object_id
+    CONTENTS
+    message "Now create two variables with the value 'Friday' and check their object_id. "
+    message "Ruby allocated a fresh chunk of memory each time, even though the strings says the same thing."
+
+    message <<-CONTENTS
+Ruby automatically treats strings, numbers,  and some values as symbols.   
+
+In irb, check the object ids of a word, your lucky number, true and false, and nil.  Check the same value twice to prove it's the same object. ( Tip: to save typing, use the up-arrow key to scroll back through your last irb commands.)
+    CONTENTS
+end
+
+
+step do
+    message "Calendars are a good example of when to use symbols. The days and months repeat. In a one year calendar making 52 new Mondays takes some memory, but not too much.  What if you wanted to make a ten year calendar, or one with no limits?  This is a good place for symbols. 
+
+    days = [:Monday, :Tuesday, :Wednesday, :Thursday, :Friday, 
+            :Saturday, :Sunday]
+
+    months = [:January, :February, :March, :April, :May, :June, 
+              :July, :August, :September, :October, :November, :December]
+    
+    today = :Friday
+    month = :May  
+
+"
+end
+
+
+explanation do
+    message "Symbols are memory-efficient labels we re-use to keep track of all kinds of things in Ruby. You'll see them again soon in Hashes."
+    message "When you see a symbol, think about why the programmer chose to use one. Is the idea important here, or the contents?"
+end
+
+further_reading  do
+    message "[The Difference Between Ruby Symbols and Strings ](http://www.robertsosinski.com/2009/01/11/the-difference-between-ruby-symbols-and-strings/)"
+    message "[The Ruby_Newbie Guide to Symbols](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)"
+    message "[The Ruby documentation says](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/):  *If you\’re in doubt whether to use a Symbol or a String, consider what\’s more important: the identity of an object (i.e. a Hash key), or the contents.*"
+end
+
+next_step 'working_with_collections'

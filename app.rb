@@ -2,8 +2,8 @@ require 'sinatra'
 require 'digest/md5'
 require 'erector'
 
-# require 'wrong'
-# include Wrong::D
+#require 'wrong'
+#include Wrong::D
 
 here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
@@ -17,25 +17,32 @@ require "raw_page"
 require "deck"
 require "deck/rack_app"
 require "titleizer"
+require "site"
 
-class InstallFest < Sinatra::Application
+class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_site = "docs"
-    set_downstream_app # todo: test
+    @default_sites = {en: "docs", es: "hola"}
+    @default_locale = "en"
   end
 
-  attr_reader :here
-  attr_writer :default_site
+  attr_reader :here, :default_locale
+  attr_writer :default_site, :default_locale
+
+  # todo: test
+  # returns the most-specific hostname component, e.g. "foo" for "foo.example.com"
+  def subdomain
+    host.split(".").first
+  end
 
   def default_site
-    if host && sites.include?(site = host.split(".").first)
+    if host && sites.include?(site = subdomain)
       site
     else
-      @default_site
+      @default_sites[locale.to_sym]
     end
   end
 
@@ -47,16 +54,8 @@ class InstallFest < Sinatra::Application
     "#{sites_dir}/#{params[:site]}"
   end
 
-  def sites_dir= dir
-    @sites_dir = dir.tap { set_downstream_app }
-  end
-
-  def set_downstream_app
-    @app = ::Deck::RackApp.public_file_server
-  end
-
   def sites_dir
-    @sites_dir || "#{@here}/sites"
+    Site.sites_dir(locale)
   end
 
   def sites
@@ -67,6 +66,13 @@ class InstallFest < Sinatra::Application
     {
       'curriculum' => 'intro-to-rails'
     }
+  end
+
+  def locale
+    (params && (params[:locale] or params[:l])) or
+      (host && subdomain =~ /^..$/ && subdomain) or   # note: only allows 2-char locales for now -- should check against a list of locales
+      (ENV['SITE_LOCALE']) or
+      default_locale
   end
 
   def src
@@ -88,12 +94,6 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  def title_for_page page_name
-    page_name.split(/[-_]/).map do |w|
-      w == "osx" ? "OS X" : w.capitalize
-    end.join(' ')
-  end
-
   def render_page
     begin
       options = {
@@ -103,13 +103,13 @@ class InstallFest < Sinatra::Application
         doc_path: doc_path,
         back: params[:back],
         src: src,
+        locale: locale,
       }
 
       case ext
 
-        when "deck.md"
-          slides = Deck::Slide.split(src.force_encoding('utf-8'))
-          Deck::SlideDeck.new(:slides => slides).to_pretty
+        when "deck.md", "deck"
+          render_deck
 
         when "md"
           MarkdownPage.new(options).to_html
@@ -126,8 +126,17 @@ class InstallFest < Sinatra::Application
 
     rescue Errno::ENOENT => e
       p e
+      e.backtrace.each do |line|
+        break if line =~ /sinatra\/base.rb/
+        puts "\t"+line
+      end
       halt 404
     end
+  end
+
+  def render_deck
+    slides = Deck::Slide.split(src)
+    Deck::SlideDeck.new(:slides => slides).to_pretty
   end
 
   before do
@@ -149,7 +158,8 @@ class InstallFest < Sinatra::Application
         page_name: params[:name],
         doc_title: doc_path.split('/').last,
         doc_path: doc_path,
-        src: src
+        src: src,
+        locale: locale,
       ).to_html
     rescue Errno::ENOENT => e
       p e
@@ -159,9 +169,11 @@ class InstallFest < Sinatra::Application
 
   get "/:site/:name.:ext" do
     if sites.include?(params[:site])
-      send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
-    else
-      forward # send it on to the downstream file server
+      if params[:ext] == "deck"  # to show a markdown page as slides, change the ".md" to ".deck"
+        render_deck
+      else
+        send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
+      end
     end
   end
 
@@ -169,8 +181,6 @@ class InstallFest < Sinatra::Application
   get "/:site/img/:name.:ext" do
     if sites.include?(params[:site])
       send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
-    else
-      forward # send it on to the downstream file server
     end
   end
 
@@ -188,10 +198,13 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  get "/:file.:ext" do
-    # treat root URLs with dots in them like static assets and serve them
-    #   from the downstream file server (coderay.css, jquery-1.7.2.js)
-    forward
+  get "/:site/:name/:section/" do
+    # remove any extraneous slash from otherwise well-formed page URLs
+    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+  end
+
+  get "/:site/:name/:section" do
+    render_page
   end
 
   get "/:site" do
@@ -208,8 +221,6 @@ class InstallFest < Sinatra::Application
       # render the site's index page
       params[:name] = site_name
       render_page
-    else
-      forward # send it on to the downstream file server
     end
   end
 end

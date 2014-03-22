@@ -201,7 +201,7 @@ describe Step do
 
       page = Nokogiri.parse("<html>#{step_obj_for(outer_path).to_html}</html>")
 
-      assert { page.css('a').first[:href] == "somewhere_else?back=outer%23step" }
+      assert { page.css('a').first[:href] == "somewhere_else?back=outer" }
     end
   end
 end
