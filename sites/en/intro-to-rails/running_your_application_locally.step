@@ -5,6 +5,13 @@ end
 
 steps do
   step do
+    tip do
+      message "On Linux, you may have to enable this line in your Gemfile:"
+      pre "gem 'therubyracer', :platforms => :ruby"
+      message "Just delete the '#' in front of the statement, then save the file. All that is left is to do a bundle install"
+      console "bundle install"
+    end
+
     console "rails server"
   end
   step do
