@@ -50,8 +50,6 @@
 * Input/Output
   * keyboard, mouse, touch screen, monitor
 
-bonus: [Von Neumann Machine]()
-
 # Computer Anatomy: Software
 
 * Operating System

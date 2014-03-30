@@ -44,7 +44,7 @@ class Contents < Erector::Widget
     content.scan /\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
       next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
-      next if (link =~ /(jpg|png)$/)
+      next if (link =~ /\.\w{3}$/) # jpg/gif/svg/etc
       links.push(link) if !links.include? link
     end
 
