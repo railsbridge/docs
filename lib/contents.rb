@@ -41,10 +41,10 @@ class Contents < Erector::Widget
     content = content_for(filename)
 
     # (markdown) links of the form: [link text](link_page)
-    content.scan /\[.*?\]\((.*?)\)/ do |link, _|
+    # but NOT images of the form ![alt text](image_link.jpg)
+    content.scan /[^!]\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
       next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
-      next if (link =~ /\.\w{3}$/) # jpg/gif/svg/etc
       links.push(link) if !links.include? link
     end
 
