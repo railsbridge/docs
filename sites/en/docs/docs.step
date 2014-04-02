@@ -2,9 +2,13 @@ message <<MARKDOWN
 This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
 MARKDOWN
 
+h1 'Setup'
+
 site_desc 'installfest', <<-MARKDOWN
 Instructions for installing Ruby and Rails on your computer. You are required to do this before going to a Rails workshop!
 MARKDOWN
+
+h1 'Rails'
 
 site_desc 'intro-to-rails', <<-MARKDOWN
 The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
@@ -14,9 +18,17 @@ site_desc 'intermediate-rails', <<-MARKDOWN
 Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
 MARKDOWN
 
+h1 'Frontend'
+
 site_desc 'frontend', <<-MARKDOWN
 HTML + CSS for beginners. Make a website, no server required!
 MARKDOWN
+
+site_desc 'intro-to-javascript', <<-MARKDOWN
+A Javascript specific curriculum that walks you through [building a simple game](http://snake-tutorial.zeespencer.com/).
+MARKDOWN
+
+h1 'Ruby'
 
 site_desc 'learn-to-code', <<-MARKDOWN
 A course which teaches how to code from the ground up, using Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum. It's geared towards people who may never have written code before and teaches just enough Ruby to get across basic principles like variables, objects, and the command line.
@@ -26,9 +38,7 @@ site_desc 'ruby', <<-MARKDOWN
 A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
 MARKDOWN
 
-site_desc 'intro-to-javascript', <<-MARKDOWN
-A Javascript specific curriculum that walks you through [building a simple game](http://snake-tutorial.zeespencer.com/).
-MARKDOWN
+h1 'Other'
 
 site_desc 'workshop', <<-MARKDOWN
 The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
