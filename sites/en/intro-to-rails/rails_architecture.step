@@ -46,4 +46,8 @@ When Models, Views and Controllers are all put together, they follow a pattern: 
 
 Models, Views and Controllers each have specific jobs.  Separating responsibilities like this make it easier to develop, especially as it gets bigger. (When each file has a clear responsibility it's easier to fix problems and add new features.)
   MARKDOWN
+  
+  message <<-MARKDOWN
+  [Youtube video on MVC architecture](https://www.youtube.com/watch?v=eTdVkgF_Slo)
+  MARKDOWN
 }
