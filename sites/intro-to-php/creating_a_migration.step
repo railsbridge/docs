@@ -1,3 +1,5 @@
+# @todo Delete
+
 goals {
 
   model_diagram header: 'Topics', fields: %w(id title description)

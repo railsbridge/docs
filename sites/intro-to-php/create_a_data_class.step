@@ -1,0 +1,138 @@
+goals do
+	goal "Write a class to get our data"
+	goal "Display the topics on a web page"
+	message "A class is a special piece of code for performing a given task"
+end
+
+steps do
+	step do
+		message "Create a new file called `TopicData.php` in the `public` directory"
+
+		message "Type the following to create our empty class:"
+
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+				// CLASS CONTENTS GO HERE
+			}
+			?>
+		PHP
+	end
+
+	step do
+		message "Now create a connect function:"
+
+		# @todo DB user/pass
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+				protected $connection;
+			
+				public function connect()
+				{
+					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", null);
+				}
+			}
+			?>
+		PHP
+	end
+
+	step do
+		message "Next lets make the class fetch all of our topics:"
+
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+
+				protected $connection = null;
+
+				public function connect()
+				{
+					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", null);
+				}
+
+				public function getAllTopics()
+				{
+					$query = $this->connection->prepare("SELECT * FROM topics");
+					$query->execute();
+
+					return $query;
+				}
+			}
+			?>
+		PHP
+
+		message "Notice how we use the same `SELECT` as in the previous section"
+	end
+
+	step do
+		message "Now we can use the data class, in `index.php`, to get our topics:"
+
+		source_code :php, <<-PHP
+			<?php
+			require 'TopicData.php';
+
+			$data = new TopicData();
+			$data->connect();
+
+			$topics = $data->getAllTopics();
+		PHP
+
+		message "Now `$topics` is a database result object containing our topics."
+	end
+
+	step do
+		message "Now we have our topics lets display them by using a `foreach` to iterate over them:"
+
+		source_code :php, <<-PHP
+			<?php
+			foreach ($topics as $topic) {
+				echo "<h3>" .$topic['title']. " (ID: " .$topic['id']. ")</h3>";
+				echo "<p>";
+				echo nl2br($topic['description']);
+				echo "</p>";
+			}
+			?>
+		PHP
+	end
+
+	step do
+		message "To see what this looks like, view it in your browser!"
+    	# @todo Figure out networking for private IPs
+    	
+    	img src: "img/List_of_topics.png", alt: "List of topics"
+	end
+
+
+=begin
+	step do
+		message "Lets abstract the connection details:"
+
+		# @todo DB user/pass
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+				protected $connection;
+				protected $username = '';
+				protected $password = '';
+				protected $hostname = '';
+				protected $databasename = '';
+
+				public function __construct($username, $password, $databasename, $hostname)
+				{
+					$this->hostname = $hostname;
+					$this->databasename = $databasename;
+					$this->username = $username;
+					$this->password = $password;
+				}
+			
+				public function connect()
+				{
+					$this->connection = new PDO ("mysql:host=$this->hostname;dbname=$this->databasename", $this->username, $this->password);
+				}
+			}
+			?>
+		PHP
+	end
+=end
+end
