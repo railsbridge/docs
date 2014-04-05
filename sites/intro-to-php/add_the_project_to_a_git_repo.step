@@ -3,7 +3,7 @@ goals do
   goal "Create a local git repository"
   goal "Add all our files to the git repository"
 
-  message "In order to publish our application, we need to add our application and any changes we make over time to a \"revision control system\". In our case we're going to use *git* because it is (relatively) easy and it is what our app server, *Heroku*, uses."
+  message "To track our changes over time, we are going to use a version control system — we have chosen to go with `git`."
 end
 
 steps do
@@ -11,7 +11,7 @@ steps do
   step do
     console "git init"
 
-    message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -a` (list all files)."
+    message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -al` (list all files)."
   end
 
   step do
@@ -19,7 +19,7 @@ steps do
 
     message "`git status` tells you everything git sees as modified, new, or missing."
   message "The first time you run this, you should see a ton of stuff."
-  message "The second time you run this, you shouldn't see much of anything."
+  message "After you are done, you shouldn't see much of anything."
   end
 
   step do
@@ -41,10 +41,10 @@ steps do
   end
 
   step do
-    console "git commit -m \"Added all the things\""
+    console "git commit -m \"Created my first PHP file\""
     message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
     message "This is done in two steps so you can group multiple changes together."
-    message "`-m \"Added all the things\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+    message "`-m \"Created my first PHP file\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
   end
 end
 
