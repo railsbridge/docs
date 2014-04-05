@@ -26,6 +26,14 @@ describe Titleizer do
     expect(Titleizer.title_for_page('whats_the_deal_with_html')).to eq('Whats The Deal With HTML')
   end
 
+  it 'uppercases argv' do
+    expect(Titleizer.title_for_page('argv')).to eq('ARGV')
+  end
+
+  it 'keeps irb lowercase' do
+    expect(Titleizer.title_for_page('irb_as_a_service')).to eq('irb As A Service')
+  end
+
   it 'capitalizes sentences' do
     expect(Titleizer.title_for_page('sandwich_parade_on_tuesday')).to eq('Sandwich Parade On Tuesday')
   end
