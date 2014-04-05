@@ -62,7 +62,7 @@ steps do
 			?>
 		PHP
 
-		message "Notice how we use the same `SELECT` as in the previous section"
+		tip "Notice how we use the same `SELECT` as in the previous section"
 	end
 
 	step do
@@ -85,14 +85,12 @@ steps do
 		message "Now we have our topics lets display them by using a `foreach` to iterate over them:"
 
 		source_code :php, <<-PHP
-			<?php
 			foreach ($topics as $topic) {
 				echo "<h3>" .$topic['title']. " (ID: " .$topic['id']. ")</h3>";
 				echo "<p>";
 				echo nl2br($topic['description']);
 				echo "</p>";
 			}
-			?>
 		PHP
 	end
 
