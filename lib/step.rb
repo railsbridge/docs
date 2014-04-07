@@ -278,7 +278,7 @@ class Step < Erector::Widget
         end
         text remaining_text
       end
-      div "The greyed-out text may differ and is not important.", :class => 'fuzzy-hint'
+      div "The result you get may differ and is not important.", :class => 'fuzzy-hint'
     end
   end
 
