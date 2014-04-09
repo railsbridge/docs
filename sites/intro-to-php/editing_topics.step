@@ -17,7 +17,7 @@ steps do
 				echo "<p>";
 				echo nl2br($topic['description']);
 				echo "</p>";
-				echo '<p><a href="/edit.php?id=' .$topic['id']. '">Edit</a></p>';
+				echo "<p><a href='/edit.php?id=" .$topic['id']. "'>Edit</a></p>";
 			}
 			?>
 		PHP
@@ -188,3 +188,5 @@ steps do
 		message "Once you've made this change, check it out in your browser!"
 	end
 end
+
+next_step "deleting_topics"
