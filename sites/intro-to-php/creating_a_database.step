@@ -86,4 +86,4 @@ steps do
 
 end
 
-next_step "create_a_data_class"
+next_step "creating_a_data_class"

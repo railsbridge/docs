@@ -117,3 +117,5 @@ steps do
 	end
 
 end
+
+next_step "editing_topics"
