@@ -135,4 +135,4 @@ steps do
 =end
 end
 
-next_step "let_users_add_topics"
+next_step "adding_topics"
