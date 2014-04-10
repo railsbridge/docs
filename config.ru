@@ -1,6 +1,8 @@
 require 'rack/codehighlighter'
 require 'coderay'
 
+Encoding.default_external = Encoding::UTF_8
+
 use Rack::ShowExceptions
 use Rack::ShowStatus
 use Rack::Static, :urls => ["/css", "/img"], :root => "public"
