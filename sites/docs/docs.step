@@ -12,16 +12,8 @@ site_desc 'intro-to-php', <<-MARKDOWN
 The "classic" PHPBridge curriculum (Suggestotron). Takes you step-by-step through making a PHP app, one line at a time.
 MARKDOWN
 
-site_desc 'intermediate-php', <<-MARKDOWN
-Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
-MARKDOWN
-
 site_desc 'frontend', <<-MARKDOWN
 HTML + CSS for beginners. Make a website, no server required!
-MARKDOWN
-
-site_desc 'workshop', <<-MARKDOWN
-The PHPBridge junkyard! Slide decks for opening/closing presentations, teacher training.
 MARKDOWN
 
 message <<MARKDOWN
