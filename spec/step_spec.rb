@@ -154,7 +154,7 @@ describe Step do
             hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
             i am more text!
           </pre>
-          <div class="fuzzy-hint">The greyed-out text may differ and is not important.</div>
+          <div class="fuzzy-hint">The result you get may differ and is not important.</div>
         </div>
       HTML
     end
