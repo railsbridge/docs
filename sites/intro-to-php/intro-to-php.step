@@ -77,20 +77,19 @@ Each lesson will look like this:
   <div class="goals">
     <h1>Goal:</h1>
     <p>Description of the current step.
-    <p>Red because big goals are scary.
+    <p>Red because big goals are scary
   </div>
   <div class="steps">
     <h1>Steps:</h1>
-    <pre class="term">steps to take.</pre>
-    <div class="console">
-      <pre>
-&lt;?php
-function codeToWrite() {
-  return 1 + 1;
-}
-?&gt;</pre>
+    <div class="step">
+      <h1>
+        <img src="img/fake_checkbox.png">&nbsp;<span class="prefix">Step 1</span>
+      </h1>
+      <div>
+        <pre>Commands to run, or code to write</pre>
+      </div>
+      <p>Yellow because we've gotten it done, but we have no clue what's going on.
     </div>
-    <p>Yellow because we've gotten it done, but we have no clue what's going on.
   </div>
   <div class="explanation">
     <h1>Explanation</h1>
