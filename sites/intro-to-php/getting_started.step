@@ -8,7 +8,7 @@ end
 
 steps do
 
-  tip "If you have _any_ problems, contact a TA immediately."
+  insert "tip_TA"
 
   step do
     insert 'switch_to_home_directory'
