@@ -33,20 +33,20 @@ steps do
 
   step do
     message "Next try some simple math that's built into PHP. Type these lines into psysh:"
-    console_without_message "3 + 3;\n7 * 6;"
+    source_code :php, "3 + 3;\n7 * 6;"
   end
 
   step do
     message "**Variables** are names with values assigned to them. Each name starts with the `$` symbol."
 
-    console_without_message "$my_variable = 5;"
+    source_code :php, "$my_variable = 5;"
 
     message "This assigns the value `5` to the name `$my_variable`."
   end
 
   step do
     message "You can also do math with variables:"
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
 $my_variable + 2;
 $my_variable * 3;
     PHP
@@ -55,7 +55,7 @@ $my_variable * 3;
   step do
     message "Variables can also hold more than one value. This is called an **array**."
 
-    console_without_message '$fruits = ["kiwi", "strawberry", "plum"];'
+    source_code :php, '$fruits = ["kiwi", "strawberry", "plum"];'
 
     message "Here we're using the variable `$fruits` to hold a collection of fruit names."
   end
@@ -63,7 +63,7 @@ $my_variable * 3;
   step do
      message "Each value in an array has a key. These can be numbers or words:"
 
-     console_without_message '$fruits = [2 => "kiwi", "berry" => "strawberry", 6 => "plum"];'
+     source_code :php, '$fruits = [2 => "kiwi", "berry" => "strawberry", 6 => "plum"];'
 
      message "If you do not specify a key, they will be numbers starting from zero, or the last number."
   end
@@ -71,33 +71,33 @@ $my_variable * 3;
   step do
     message "You can easily add a new value to an array:"
 
-    console_without_message '$fruits[] = "orange";'
+    source_code :php, '$fruits[] = "orange";'
   end
 
   step do
     message "You can also remove items from an array:"
 
-    console_without_message 'unset($fruits["berry"]);'
+    source_code :php, 'unset($fruits["berry"]);'
     
     message "Or remove the last item added:"
     
-    console_without_message 'array_pop($fruits);'
+    source_code :php, 'array_pop($fruits);'
   end
 
   step do
     message "To inspect your array, you can use a built-in function"
 
-    console_without_message 'print_r($fruits);'
+    source_code :php, 'print_r($fruits);'
 
     message "For more detailed information about the variable, you can use `var_dump()`"
 
-    console_without_message 'var_dump($fruits);'
+    source_code :php, 'var_dump($fruits);'
   end
 
   step do
     message "A **conditional** runs code only when a statement evaluates to true."
 
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
 if ($my_variable > 1) {
   echo "YAY!";
 }
@@ -113,7 +113,7 @@ if ($my_variable > 1) {
   step do
      message "To perform an action if the conditional statement does not evaluate to true, we use `else`:"
 
-     console_without_message <<-PHP
+     source_code :php, <<-PHP
 if ($my_variable < 1) {
 	echo "YAY!";
 } else {
@@ -125,7 +125,7 @@ if ($my_variable < 1) {
   step do
     message "You can combine these two, to add more conditionals using `elseif`:"
 
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
 if ($my_variable < 1) {
   echo "YAY!";
 } elseif ($my_variable > 4) {
@@ -141,7 +141,7 @@ if ($my_variable < 1) {
 
     message "The simplest loop, is known as a `while` loop which will iterate until a given condition returns false:"
 
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
       $fruits = ["kiwi", "plum", "orange", "banana"];
       $i = 0;
       while ($i < sizeof($fruits)) {
@@ -160,7 +160,7 @@ Another common loop, is known as the `for` loop. This loop has three conditions:
 - The third is evaluated at the end of each iteration
     MARKDOWN
 
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
   for ($i = 0; $i < sizeof($fruits), $i++) {
     echo $fruits[$i] . PHP_EOL;
   }
@@ -170,7 +170,7 @@ Another common loop, is known as the `for` loop. This loop has three conditions:
   step do
     message "Another common loop is `foreach` which is the most common and easiest way to loop through an array:"
 
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
   foreach ($fruits as $fruit) {
     echo $fruit . PHP_EOL;
   }
@@ -179,7 +179,7 @@ Another common loop, is known as the `for` loop. This loop has three conditions:
 
   step do
     message "While PHP features thousands of built-in functions, you can also make your own:"
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
 function happy()
 {
   echo "YAY!";
@@ -192,7 +192,7 @@ function happy()
   end
 
   step do
-    console_without_message <<-PHP
+    source_code :php, <<-PHP
 function pluralize($word)
 {
   return $word . "s";
