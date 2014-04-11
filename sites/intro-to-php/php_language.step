@@ -1,6 +1,6 @@
 goals do
   goal "Be able to use the basic building blocks of PHP code"
-  goal "Use Boris to run PHP code"
+  goal "Use Psysh to run PHP code"
   goal "Do simple calculations"
   goal "Use and understand variables"
   goal "Use and understand arrays"
