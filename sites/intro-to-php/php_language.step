@@ -53,6 +53,30 @@ $my_variable * 3;
   end
 
   step do
+    message "To display the value of a variable, or any other value, you use `echo`. Try the following"
+
+    source_code :php, <<-PHP
+    echo $my_variable;
+    PHP
+
+    source_code :php, <<-PHP
+    echo "Programming is easy!";
+    PHP
+
+    source_code :php, <<-PHP
+    echo "13 * 8";
+    PHP
+
+    source_code :php, <<-PHP
+    echo 13 * 8;
+    PHP
+
+    source_code :php, <<-PHP
+    echo "My variable is: $my_variable"
+    PHP
+  end
+
+  step do
     message "Variables can also hold more than one value. This is called an **array**."
 
     source_code :php, '$fruits = ["kiwi", "strawberry", "plum"];'
@@ -203,6 +227,24 @@ pluralize("kiwi");
     message "Functions can take **parameters**, which are the variables they work on. In this case, we made a function called `pluralize` that takes one parameter, a word."
 
     message "Functions can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In PHP, we use the `return` keyword to do this."
+  end
+
+  step do
+    message "When using PHP outside of Psysh, you should put it inside `<?php` and `?>` tags:"
+
+    source_code :php, <<-PHP
+    <?php
+    // Code goes Here
+    ?>
+    PHP
+
+    tip "You may notice the two-slashes at the start of the middle line above. This is know as a comment and is ignored by PHP."
+  end
+
+  step do
+    message 'As a shortcut, you can use what is known as "short echo tags" to echo simple variables:'
+
+    source_code :php, "<?=$variable;?>"
   end
 end
 
