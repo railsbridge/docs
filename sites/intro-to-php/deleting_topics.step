@@ -77,3 +77,5 @@ steps do
 		PHP
 	end
 end
+
+next_step "styling_suggestotron"
