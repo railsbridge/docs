@@ -99,9 +99,12 @@ class Step < Erector::Widget
     end
   end
 
-  def link name
+
+  def link name, options = {}
+    options = {caption: LINK_CAPTION}.merge(options)
     p :class => "link" do
-      text "Go on to "
+      text options[:caption]
+      text " "
       simple_link(name, class: :link)
     end
   end
@@ -242,6 +245,7 @@ class Step < Erector::Widget
   IRB_CAPTION = "Type this in irb:"
   RESULT_CAPTION = "Expected result:"
   FUZZY_RESULT_CAPTION = "Approximate expected result:"
+  LINK_CAPTION = "Go on to"
 
   def console(commands)
     console_with_message(TERMINAL_CAPTION, commands)

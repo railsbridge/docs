@@ -94,6 +94,15 @@ describe Step do
       hash = URI.escape '#'
       assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
     end
+
+    it "has an optional parameter for the caption" do
+      html_doc(<<-RUBY)
+      step "breakfast" do
+        link "breakfast", caption: "Eat some"
+      end
+      RUBY
+      assert { html_doc.css("p.link").text == "Eat some Breakfast" }
+    end
   end
 
   describe 'source_code' do
