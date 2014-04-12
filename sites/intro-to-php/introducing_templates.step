@@ -66,7 +66,7 @@ steps do
 	step do
 		message "We can re-use a lot of our HTML on all our pages."
 
-		message "We are going to create our template file, `src/views/base.phtml`, with the common HTML:"
+		message "We are going to create our template file, `views/base.phtml`, with the common HTML:"
 
 		tip "We use the `.phtml` extension to differentiate between regular PHP files, and templates files"
 
@@ -120,8 +120,8 @@ steps do
 
 			$topics = $data->getAllTopics();
 
-			$template = new \\Suggestotron\\Template("../src/views/base.phtml");
-			$template->render("../src/views/index/index.phtml", ['topics' => $topics]);
+			$template = new \\Suggestotron\\Template("../views/base.phtml");
+			$template->render("../views/index/index.phtml", ['topics' => $topics]);
 			?>
 		PHP
 	end
@@ -146,7 +146,7 @@ steps do
     step do
     	message "Now that our templates are working, lets add them to our other pages!"
 
-    	message "For `add.php`, we will create a `src/views/index/add.phtml`:"
+    	message "For `add.php`, we will create a `views/index/add.phtml`:"
 
     	source_code :html, <<-HTML
 			<h2>New Topic</h2>
@@ -177,8 +177,8 @@ steps do
 			    $data->add($_POST);
 			}
 
-			$template = new \\Suggestotron\\Template("../src/views/base.phtml");
-			$template->render("../src/views/index/add.phtml");
+			$template = new \\Suggestotron\\Template("../views/base.phtml");
+			$template->render("../views/index/add.phtml");
 			?>
 		PHP
 	end
@@ -186,7 +186,7 @@ steps do
 	step do
 		message "Now, do the same for `edit.php`. `delete.php` has no display, so we don't need to do it there."
 
-		message "For `edit.php`, we will create a `src/views/index/edit.phtml`:"
+		message "For `edit.php`, we will create a `views/index/edit.phtml`:"
 
     	source_code :php, <<-HTML
 			<h2>Edit Topic</h2>
@@ -236,8 +236,8 @@ steps do
 			    exit;
 			}
 
-			$template = new \\Suggestotron\\Template("../src/views/base.phtml");
-			$template->render("../src/views/index/edit.phtml", ['topic' => $topic]);
+			$template = new \\Suggestotron\\Template("../views/base.phtml");
+			$template->render("../views/index/edit.phtml", ['topic' => $topic]);
 			?>
 		PHP
 	end
