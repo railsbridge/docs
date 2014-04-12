@@ -44,10 +44,21 @@ class Step < Erector::Widget
   def insert file
     # todo: unify into common 'find & process a document file' unit
     dir = File.dirname(@doc_path)
-    path = File.join(dir, "_#{file}.step")  # todo: other file types
-    src = File.read(path)
-    step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-    widget step
+
+    # todo: other file types
+
+    if File.exist?(path = File.join(dir, "_#{file}.step"))
+      src = File.read(path)
+      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+      widget step
+    elsif File.exist?(path = File.join(dir, "#{file}.step"))
+      src = File.read(path)
+      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+      widget step
+    elsif File.exist?(path = File.join(dir, "#{file}.md"))
+      src = File.read(path)
+      message src
+    end
   end
 
   ## steps

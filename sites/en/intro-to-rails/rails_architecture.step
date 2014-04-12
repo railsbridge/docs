@@ -16,7 +16,7 @@ explanation {
 
   h2 "Rails architecture and its relation to the database"
 
-  img src: "img/mvc.png", alt: "MVC"
+  img(src: "img/mvc.png", alt: "MVC")
 
   message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
 
