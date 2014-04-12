@@ -20,6 +20,12 @@ Now open a Web Browser (like Firefox or Chrome or Safari or Internet Explorer) a
 
     http://localhost:4567/hi
 
+# Congratulations
+
+You just wrote a web server.
+
+No, really.
+
 # Hello, Whoever
 
 Change `hi.rb` to look like this:
@@ -54,6 +60,6 @@ they see this:
 
 # Detour: Deploying to Heroku
 
-* todo - link to Railsbridge pages describing account setup & deploy steps
+* Railsbridge pages describing account setup & [deploy](/installfest/deploy_a_rails_app) steps
 
 
