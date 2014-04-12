@@ -180,3 +180,5 @@ steps do
         HTML
     end
 end
+
+next_step "introducing_templates"

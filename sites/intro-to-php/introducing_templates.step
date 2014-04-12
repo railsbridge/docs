@@ -1,0 +1,244 @@
+goals do
+	goal "Add templates to easily style all of Suggestotron"
+	goal "Learn about namespaces"
+
+	message "Templates allow us to re-use our work easily!"
+end
+
+steps do
+	step do
+		message "We are going to create a new class for handling our templates."
+
+		message "Now that we are adding more classes, let us create a folder especially for them:"
+
+		message "This folder should live in the root of our project, and is called `src`"
+
+		img src: "img/add_src_directory.png"
+	end
+
+	step do
+		message "Our template class will live in the `src/Suggestotron/Template.php` file:"
+
+		source_code :php, <<-PHP
+			<?php
+			namespace Suggestotron;
+
+			class Template {
+				protected $base_template;
+				protected $page;
+
+				public function __construct($base_template)
+				{
+					$this->base_template = $base_template;
+				}
+
+				public function render($page, $data = array())
+				{
+					foreach ($data as $key => $value) {
+						$this->{$key} = $value;
+					}
+
+					$this->page = $page;
+					require $this->base_template;
+				}
+
+				public function content()
+				{
+					require $this->page;
+				}
+			}
+			?>
+		PHP
+
+		important "We are not the first people to create a `Template` class, to prevent it from conflicting with other peoples code, we use a namespace to make it unique. In this case, `Suggestotron`."
+
+		message "To refer to our `Template` class, we should now use its full name `\\Suggestotron\\Template`"
+	end
+
+	step do
+		message "Now that we have a specific place for them to live, we should move our `TopicData` class to `src/Suggestotron/TopicData.php, don't forget to add our namespace:"
+
+		message "Our `TopicData` class will now be `\\Suggestotron\\TopicData`"
+
+		img src: "img/topicdata_namespace.png"
+	end
+
+	step do
+		message "We can re-use a lot of our HTML on all our pages."
+
+		message "We are going to create our template file, `src/views/base.phtml`, with the common HTML:"
+
+		tip "We use the `.phtml` extension to differentiate between regular PHP files, and templates files"
+
+		message "This includes our header, our container, and our footer"
+
+		source_code :html, <<-HTML
+			<!doctype html>
+			<html>
+				<head>
+					<title>Suggestotron</title>
+					<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+					<script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
+					<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+				</head>
+				<body>
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="container-fluid">
+					    	<div class="navbar-header">
+					      		<a class="navbar-brand" href="/">Suggestotron</a>
+					    	</div>
+					    	<form class="navbar-form navbar-right" role="search">
+					    		<a href="/add.php" class="btn btn-default">
+					    			<span class="glyphicon glyphicon-plus-sign"></span>
+				    				Add Topic
+					    		</a>
+				    		</form>
+					  	</div>
+					</nav>
+					<div class="container">
+						<!-- Specific Page Content Goes Here -->
+						<?php $this->content(); ?>
+					</div>
+					<script type="text/javascript">
+						$('[data-toggle="popover"]').popover();
+					</script>
+				</body>
+			</html>
+		HTML
+	end
+
+	step do
+		message "Now we can update our `index.php` to use our template:"
+
+		source_code :php, <<-PHP
+			<?php
+			require '../src/Suggestotron/TopicData.php';
+			require '../src/Suggestotron/Template.php';
+
+			$data = new \\Suggestotron\\TopicData();
+			$data->connect();
+
+			$topics = $data->getAllTopics();
+
+			$template = new \\Suggestotron\\Template("../src/views/base.phtml");
+			$template->render("../src/views/index/index.phtml", ['topics' => $topics]);
+			?>
+		PHP
+	end
+
+	step do
+		message "If we check our site right now, you'll likely see that it's still broken!"
+
+		fuzzy_result "Fatal error: Class 'suggestotron\\PDO' not found in <path>/suggestotron/src/Suggestotron/TopicData.php on line 15"
+
+		message "This is because the code is inside the `Suggestotron` namespace, where the `PDO` class does not live"
+
+		message "To fix this, we must fully-qualify the PDO class, by prefixing it with a `\\`:"
+
+		source_code :php, <<-PHP
+		public function connect()
+		{
+			$this->connection = new \\PDO("mysql:host=192.168.1.10;dbname=suggestotron", "root", null);
+		}
+        PHP
+    end
+
+    step do
+    	message "Now that our templates are working, lets add them to our other pages!"
+
+    	message "For `add.php`, we will create a `src/views/index/add.phtml`:"
+
+    	source_code :html, <<-HTML
+			<h2>New Topic</h2>
+			<form action="add.php" method="POST">
+			    <label>
+			        Title: <input type="text" name="title">
+			    </label>
+			    <br>
+			    <label>
+			        Description:
+			        <br>
+			        <textarea name="description" cols="50" rows="20"></textarea>
+			    </label>
+			    <br>
+			    <input type="submit" class="btn btn-primary" value="Add Topic">
+			</form>
+		HTML
+
+		message "Then add the templates to `add.php`:"
+
+		source_code :php, <<-PHP
+			<?php
+			require '../src/Suggestotron/TopicData.php';
+			require '../src/Suggestotron/Template.php';
+
+			if (isset($_POST) && sizeof($_POST) > 0) {
+			    $data = new \\Suggestotron\\TopicData();
+			    $data->add($_POST);
+			}
+
+			$template = new \\Suggestotron\\Template("../src/views/base.phtml");
+			$template->render("../src/views/index/add.phtml");
+			?>
+		PHP
+	end
+
+	step do
+		message "Now, do the same for `edit.php`. `delete.php` has no display, so we don't need to do it there."
+
+		message "For `edit.php`, we will create a `src/views/index/edit.phtml`:"
+
+    	source_code :php, <<-HTML
+			<h2>Edit Topic</h2>
+			<form action="edit.php" method="POST">
+			    <label>
+			        Title: <input type="text" name="title" value="<?=$topic['title'];?>">
+			    </label>
+			    <br>
+			    <label>
+			        Description:
+			        <br>
+			        <textarea name="description" cols="50" rows="20"><?=$topic['description'];?></textarea>
+			    </label>
+			    <br>
+			    <input type="hidden" name="id" value="<?=$topic['id'];?>">
+			    <input type="submit" class="btn btn-primary" value="Edit Topic">
+			</form>
+		HTML
+
+		message "Then `edit.php` needs to use the templates:"
+
+		source_code :php, <<-PHP
+			<?php
+			require '../src/Suggestotron/TopicData.php';
+			require '../src/Suggestotron/Template.php';
+
+			if (isset($_POST['id']) && !empty($_POST['id'])) {
+			    $data = new \\Suggestotron\\TopicData();
+			    if ($data->update($_POST)) {
+			        header("Location: /index.php");
+			        exit;
+			    } else {
+			        echo "An error occurred";
+			    }
+			}
+
+			if (!isset($_GET['id']) || empty($_GET['id'])) {
+			    echo "You did not pass in an ID.";
+			    exit;
+			}
+
+			$data = new \\Suggestotron\\TopicData();
+			$topic = $data->getTopic($_GET['id']);
+
+			if ($topic === false) {
+			    echo "Topic not found!";
+			    exit;
+			}
+
+			$template = new \\Suggestotron\\Template("../src/views/base.phtml");
+			$template->render("../src/views/index/edit.phtml", ['topic' => $topic]);
+			?>
+		PHP
+	end
+end
