@@ -101,7 +101,5 @@ step "Generate a database model" do
   MARKDOWN
 end
 
-end
-
 next_step "deploy_a_rails_app"
 
