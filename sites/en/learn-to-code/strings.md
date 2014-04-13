@@ -41,16 +41,3 @@ Definitely try these out in irb! It's pretty fun.
 * What does your name look like, repeated 1000 times?
 * What is the tenth character of "Matz is nice"? (Trick question!)
 
-# Interpolation
-
-    first = "Joe"
-    last = "Smith"
-    
-`+` does *concatenation*
-    
-    full = first + " " + last
-
-`#{}` does *interpolation*
-
-    full = "#{first} #{last}"
-

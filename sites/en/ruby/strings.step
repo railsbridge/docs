@@ -35,6 +35,21 @@ IRB
   message 'The code in the curly braces can be any valid Ruby statement. Try putting various things in the curly brackets to see what works and what doesn\'t.'
 end
 
+tip <<-'MD'
+# Concatenation vs. Interpolation
+
+    first = "Joe"
+    last = "Smith"
+
+`+` does *concatenation*
+
+    full = first + " " + last
+
+`#{}` does *interpolation*
+
+    full = "#{first} #{last}"
+MD
+
 step do
   message "Try out some of these String methods."
   irb <<-IRB

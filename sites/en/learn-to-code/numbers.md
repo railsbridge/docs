@@ -28,8 +28,8 @@ Q: What is 1 plus 2 times 3?
 
 A: *It depends!*
 
-    (1 + 2) * 3 == 9
-    1 + (2 * 3) == 7
+  * `(1 + 2) * 3` is 9
+  * `1 + (2 * 3)` is 7
 
 # Parentheses Are Free
 
@@ -62,9 +62,9 @@ Don't panic! The solution is easy.
 Numbers know a message that converts them into strings. `to_s` means "to string".
 
     "1" + 2.to_s
-    
+
 Likewise, strings know a message that converts them into numbers.
-    
+
     1 + "2".to_i
 
 `to_i` means "to integer".
@@ -75,7 +75,7 @@ Try this in irb!
 
 # WTFixnum?
 
-The error said `can't convert Fixnum into String`. 
+The error said `can't convert Fixnum into String`.
 
 Q: What is a Fixnum?
 
