@@ -48,6 +48,6 @@ Models, Views and Controllers each have specific jobs.  Separating responsibilit
   MARKDOWN
   
   message <<-MARKDOWN
-  [Youtube video on MVC architecture](https://www.youtube.com/watch?v=eTdVkgF_Slo)
+  If you want to learn more about Rails Architecture, you may want to watch this video explanation (3 min 30 sec) [MVC architecture *Youtube*](https://www.youtube.com/watch?v=eTdVkgF_Slo)
   MARKDOWN
 }
