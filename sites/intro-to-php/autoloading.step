@@ -53,3 +53,5 @@ steps do
 		message "Now that we have done that, every time we use `new \\Some\\ClassName` it will try to autoload using the `\\Suggestotron\\Autoloader->load()` method automatically."
 	end
 end
+
+next_step "configuration"

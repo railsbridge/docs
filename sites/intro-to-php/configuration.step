@@ -1,0 +1,146 @@
+goals do
+	goal "Create a simple, global, configuration file to allow you to easily customize your application"
+
+	message "A configuration file is critical for allowing you to do things like moving your site between servers"
+end
+
+steps do
+	step do
+		message "The first thing we will do is add a `config` directory, and place an `autoload.php` file within it:"
+
+		source_code :php, <<-PHP
+			<?php
+			return [
+				'class_path' => realpath('../src')
+			];
+			?>
+		PHP
+	end
+
+	step do
+		message "Next, we will create our `\\Suggestotron\\Config` class:"
+
+		source_code :php, <<-PHP
+			<?php
+			namespace Suggestotron;
+
+			class Config {
+				static public $directory;
+				static public $config = [];
+
+				public static setDirectory($path)
+				{
+					self::$directory = $path;
+				}
+
+				public static get($config)
+				{
+					$config = strtolower($config);
+
+					self::$config[$config] = require self::$path . '/' . $config . '.php';
+
+					return self::$config[$config];
+				}
+			}
+		PHP
+	end
+
+	step do
+		message "To use the `\\Suggestotron\\Config` class we must still include it manually, to setup everything else"
+
+		source_code :php, <<-PHP
+		<?php
+		require_once '../src/Suggestotron/Config';
+		\\Suggestotron\\Config::setDirectory('../src');
+		?>
+		PHP
+
+		message "Once you have done this, the configuration is available everywhere using:"
+
+		source_code :php, <<-PHP
+		$config = \\Suggestotron\\Config::get('autoload');
+		PHP
+	end
+
+	step do
+		message "Next, we will update our autoloader to use the configuration settings:"
+
+		source_code :php, <<-PHP
+		$config = \\Suggestotron\\Config::get('autoload');
+
+		$file = $config['class_path'] . '/' . str_replace("\\", "/", $className) . '.php';
+		PHP
+	end
+
+	step do
+		message "Then, update each of our `index.php`, `add.php`, `edit.php`, `delete.php` files to use the config:"
+
+		source_code :php, <<-PHP
+		<?php
+		require_once '../src/Suggestotron/Config.php';
+		\\Suggestotron\\Config::setDirectory('../config');
+
+		$config = \\Suggestotron\\Config::get('autoload');
+		require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
+		?>
+		PHP
+	end
+
+	step do
+		message "Other configuration options, might be your database, for example. Now create a `config/database.php`:"
+
+		source_code :php, <<-PHP
+		<?php
+		return [
+			"username" => "phpbridge",
+			"password" => "elephpant",
+			"hostname" => "localhost",
+			"dbname" => "suggestotron",
+		];
+		?>
+		PHP
+	end
+
+	step do
+		message "Then just update our `\\Suggestotron\\TopicData` class to use the configuration:"
+
+		source_code :php, <<-PHP
+		public function connect()
+		{
+		    $config = \\Suggestotron\\Config::get('database');
+
+		    $this->connection = new \PDO("mysql:host=" .$config['hostname']. ";dbname=" .$config['dbname'], $config['username'], $config['password']);
+		}
+        PHP
+	end
+
+	step do
+		message "Let us add one more configuration file, for customizing our Suggestotron, `config/site.php`:"
+
+		source_code :php, <<-PHP
+		<?php
+		return [
+			"title" => "Suggestotron"
+		];
+		?>
+		PHP
+	end
+
+	step do
+		message "Finally, lets update our base template, `base.php`:"
+
+		message "At the top, first get the configuration:"
+		source_code :php, <<-PHP
+		<?php
+		$config = \\Suggestotron\\Config::get('site');
+		?>
+		PHP
+
+		message "Then, update the `<title>` to use the configuration option:"
+		source_code :php, <<-PHP
+			<title><?=$config['title'];?></title>
+		PHP
+
+		message "Now, if you change the configuration file, your page title will automatically update everywhere. Go ahead, play!"
+	end
+end
