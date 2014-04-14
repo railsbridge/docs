@@ -1,0 +1,57 @@
+situation "We keep repeating ourselves!" do
+	message 'In each of our files we have these repetetive `require "../src/Suggestotron/*.php"` lines. What if we could get rid of them?'
+end
+
+goals do
+	goal "Make our code simpler, and easier to write, using autoloading"
+
+	message "An autoloader will automatically load your classes when you need them!"
+end
+
+steps do
+	step do
+		message "An autoloader is just a simple function that will automatically find and load a class based on its name"
+
+		message "We will place our autoloader in `src/Suggestotron/Autoloader.php`:"
+
+		source_code :php, <<-PHP
+			<?php
+			namespace Suggestotron;
+
+			class Autoloader {
+				public function load($className)
+				{
+					$file = __DIR__  . "/../" . str_replace("\\\\", "/", $className) . '.php';
+				
+					if (file_exists($file)) {
+						require $file;
+					} else {
+						return false;
+					}
+				}
+
+				public function register()
+				{
+					spl_autoload_register([$this, 'load']);
+				}
+			}
+
+			$loader = new Autoloader();
+			$loader->register();
+		PHP
+
+		important "This autoloader is as simple as possible, but will *not* handle every situation. We highly recommend learning about [Composer](http://getcomposer.org) as it will automate most of this for you!"
+	end
+
+	step do
+		message "We can replace all our other `require` statements, with a single `require` for the autoloader itself:"
+
+		source_code :php, <<-PHP
+			require '../src/Suggestotron/Autoloader.php';
+		PHP
+
+		message "Now that we have done that, every time we use `new \\Some\\ClassName` it will try to autoload using the `\\Suggestotron\\Autoloader->load()` method automatically."
+	end
+end
+
+next_step "configuration"
