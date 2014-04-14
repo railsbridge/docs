@@ -144,3 +144,5 @@ steps do
 		message "Now, if you change the configuration file, your page title will automatically update everywhere. Go ahead, play!"
 	end
 end
+
+next_step "pretty_urls"
