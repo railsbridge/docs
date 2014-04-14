@@ -8,12 +8,14 @@ module Titleizer
       'crud',
       'mvc',
       'html',
+      'url'
     ]
 
     special_cases = {
       'osx' => 'OS X',
       'irb' => 'irb',
       'docs' => 'Get Started',
+      'urls' => 'URLs'
     }
 
     page_name.split(/[-_]/).map do |w|
