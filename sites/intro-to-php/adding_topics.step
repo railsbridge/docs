@@ -116,6 +116,20 @@ steps do
 		message "**Now** when you submit your form, it will save the topic, yay! You can verify this by looking at `index.php`"
 	end
 
+	step do
+		message "We can automatically forward our users to the list by using the `header()` method with a `Location: /url` argument:"
+
+		source_code :php, <<-PHP
+			if (isset($_POST) && sizeof($_POST) > 0) {
+				$data = new TopicData();
+				$data->add($_POST);
+				header("Location: /");
+				exit;
+			}
+		PHP
+
+		message "Once we send the header, we must be sure to `exit;` so no other code is run."
+	end
 end
 
 next_step "editing_topics"
