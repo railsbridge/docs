@@ -8,7 +8,8 @@ module Titleizer
       'crud',
       'mvc',
       'html',
-      'url'
+      'url',
+      'dry'
     ]
 
     special_cases = {

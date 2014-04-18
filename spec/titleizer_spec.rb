@@ -22,6 +22,10 @@ describe Titleizer do
     expect(Titleizer.title_for_page('php_is_what_we_do')).to eq ('PHP Is What We Do')
   end
 
+  it 'uppercases dry as DRY' do
+    expect(Titleizer.title_for_page('getting_dry')).to eq ('Getting DRY')
+  end
+
   it 'uppercases dvd' do
     expect(Titleizer.title_for_page('why_cant_my_vhs_play_this_dvd')).to eq('Why Cant My Vhs Play This DVD')
   end
