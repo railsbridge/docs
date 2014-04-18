@@ -181,6 +181,7 @@ steps do
 			        exit;
 			    } else {
 			        echo "An error occurred";
+			        exit;
 			    }
 			}
 		PHP
