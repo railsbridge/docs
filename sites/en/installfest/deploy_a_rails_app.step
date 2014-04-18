@@ -100,7 +100,7 @@ bundle install --without production
     message "Remove this line and replace it with:"
 
     source_code :ruby, <<-RUBY
-      root 'drinks#index'
+      root to: 'drinks#index'
     RUBY
 
     message "Note that you must remove the leading '#', as lines that start with a # are
