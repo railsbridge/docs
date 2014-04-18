@@ -1,0 +1,199 @@
+situation "DRY — Don't Repeat Yourself" do
+	message "As developers we try not to repeat ourselves. As you've seen, doing similar things multiple times, means that we have update multiple places when we want to make changes."
+
+	message "By trying to be more DRY, we reduce the number of places where changes need to be made."
+end
+
+goals do
+	goal "Make our code more DRY by combining similar functionality"
+end
+
+situation "Introducing Controllers" do
+	message "If you try to use one of our old URLs (e.g. <http://localhost:8080/add.php>) you will notice it is now broken!"
+
+	message "Because we now have a router, our users should not be accessing these files directly anymore — we *can* solve this by moving the files out of the `public` folder."
+
+	message "**However**, there is another way: Controllers — a special class for containing functionality relating to a specific thing — like Topics."
+end
+
+steps do
+	step do
+		message "Our controller — which could be one of many — will live in the class, `\\Suggestotron\\Controller\\Topics`, and will have one method for each action (list, add, edit, delete) that our application has:"
+
+		source_code :php, <<-PHP
+			<?php
+			namespace Suggestotron\\Controller;
+
+			class Topics {
+				public function listAction()
+				{
+
+				}
+
+				public function addAction()
+				{
+
+				}
+
+				public function editAction()
+				{
+
+				}
+
+				public function deleteAction()
+				{
+
+				}
+			}
+			?>
+		PHP
+
+		message "Our router will call these methods, instead of including our `.php` files."
+	end
+
+	step do
+		message "Next, we can migrate the contents of our `.php` files to their respective methods. For example, the `listAction()` would look like this:"
+
+		source_code :php, <<-PHP
+			public function listAction() {
+				$data = new \\Suggestotron\\TopicData();
+
+				$topics = $data->getAllTopics();
+
+				$template = new \\Suggestotron\\Template("../views/base.phtml");
+				$template->render("../views/index/list.phtml", ['topics' => $topics]);
+			}
+		PHP
+	end
+
+	step do
+		message "Once you have completed all the methods, you will notice there is a lot of repeated code, specifically:"
+
+		source_code :php, <<-PHP
+			$data = new \\Suggestotron\\TopicData();
+		PHP
+
+		message "and:"
+
+		source_code :php, <<-PHP
+			$template = new \\Suggestotron\\Template("../views/base.phtml");
+		PHP
+
+		message "To remove this duplication, we can move those lines to their own method, and assign the objects to properties."
+
+		message "Because **all** of our actions need this, we can do it automatically in the special `__construct()` method:"
+
+		source_code :php, <<-PHP
+		protected $data;
+		protected $template;
+
+		public function __construct()
+		{
+			$this->data = new \\Suggestotron\\TopicData();
+			$this->template = new \\Suggestotron\\Template("../views/base.phtml");
+		}
+		PHP
+
+		message "Now we just update the actions, to remove those duplicated lines, and instead of `$data` or `$template` we use `$this->data` and `$this->template` respectively."
+
+		message "For example, our `addAction` will look like this:"
+
+		source_code :php, <<-PHP
+			public function addAction()
+			{
+				if (isset($_POST) && sizeof($_POST) > 0) {
+				    $this->data->add($_POST);
+				}
+
+				$this->template->render("../views/index/add.phtml");
+			}
+		PHP
+
+		message "Notice how small it is now! Just 4 lines of code!"
+	end
+
+	step do
+		message "Additionally, we have a lot of duplicate paths like `../views/`. Like our Autoloader, we should put this in our configuration."
+
+		message "Rather than add a whole new file for this, let's just add it to our `config/site.php`:"
+
+		source_code :php, <<-PHP
+			<?php
+			return [
+				'title' => 'Suggestotron!',
+				'view_path' => realpath('../views')
+			];
+			?>
+		PHP
+
+		message "You probably already noticed that our calls the `$this->template->render()` are very similar in each action."
+		
+		message "We can create a new helper method to simplify this:"
+
+		source_code :php, <<-PHP
+		protected function render($template, $data = array())
+		{
+			$config = \\Suggestotron\\Config::get('site');
+
+			$this->template->render($config['view_path'] . "/" . $template, $data);
+		}
+		PHP
+
+		message "Now update your actions to use the new method instead of `$this->template->render():`"
+
+		source_code :php, <<-PHP
+			public function listAction()
+			{
+				$topics = $this->data->getAllTopics();
+
+				$this->render("index/list.phtml", ['topics' => $topics]);
+			}
+		PHP
+	end
+
+	step do
+		message "The last thing we need to do is to update the path to the base template, because this needs the config also, lets move that to a property and update our `__construct()` method:"
+
+		source_code :php, <<-PHP
+			protected $config;
+
+
+			public function __construct()
+			{
+				$this->config = \\Suggestotron\\Config::get('site');
+				$this->data = new \\Suggestotron\\TopicData();
+				$this->template = new \\Suggestotron\\Template($this->config['view_path'] . "/base.phtml");
+			}
+		PHP
+
+		message "Don't forget to replace `$config` with `$this->config` in our `render()` method."
+	end
+
+	step do
+		message "To use our controller, we just update our router:"
+
+		source_code :php, <<-PHP
+			public function start($route)
+			{
+				// If our route starts with a /, remove it
+				if ($route{0} == "/") {
+					$route = substr($route, 1);
+				}
+
+				$controller = new \\Suggestotron\\Controller\\Topics();
+
+				$method = [$controller, $route . 'Action'];
+
+				if (is_callable($method)) {
+					return $method();
+				}
+
+				require 'error.php';
+			}
+		PHP
+	end
+
+	step do
+		message "Finally, if you didn't already, you can remove the old `.php` files (except `index.php`!)"
+	end
+end

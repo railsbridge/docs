@@ -78,6 +78,8 @@ steps do
 				Add Topic
 			</a>
 		HTML
+
+		message "Finally, update the `<form>` actions in `views/index/add.phtml` and `views/index/edit.phtml, to point to the correct URLs."
 	end
 
 	step do
@@ -121,3 +123,5 @@ steps do
 		PHP
 	end
 end
+
+next_step "getting_dry"
