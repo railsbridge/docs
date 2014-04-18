@@ -1,5 +1,5 @@
 # @todo Replace Image
-img src: "img/Start_page.png", alt: "Start Page"
+img src: "img/phpinfo.png", alt: "Start Page"
 
 goals do
   goal "Create Your New Application"
