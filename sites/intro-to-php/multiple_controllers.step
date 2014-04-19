@@ -333,4 +333,23 @@ steps do
 		<form action="/topic/edit" method="POST">
 		HTML
 	end
+
+	step do
+		message "Our final step, is to update our existing controller, `\\Suggestotron\\Controller\\Topics`, to use the new base controller:"
+
+		source_code :php, <<-PHP
+		class Topics extends \\Suggestotron\\Controller {
+			protected $data;
+			
+			public function __construct()
+			{
+				parent::__construct();
+				$this->data = new \\Suggestotron\\TopicData();
+			}
+		PHP
+
+		tip "We use a special method called, `parent::__construct()` to call the `\\Suggestotron\\Controller->__construct()` method."
+	end
 end
+
+next_step "introducing_models"
