@@ -288,6 +288,7 @@ class Step < Erector::Widget
 
   def source_code *args
     src = args.pop.strip_heredoc
+    src.gsub!(/(?:^\t)|\G\t/m, '    ');
     lang = args.pop
     src = "\n:::#{lang}\n#{src}" if lang
     pre src, :class => "code"
