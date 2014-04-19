@@ -238,3 +238,5 @@ steps do
 		message "Go take a look at your masterpiece: <http://localhost:8080>"
     end
 end
+
+next_step "credits_and_next_steps"
