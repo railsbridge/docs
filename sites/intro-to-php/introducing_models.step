@@ -1,0 +1,124 @@
+message "A model, is just a fancy name for a class that specifically encapsulates all functionality related to a thing, e.g. topics, votes, or users."
+
+message "Our `\\Suggestotron\\TopicData` class, is an example of a model class."
+
+situation "Managing Database Connections" do
+	message "Currently, we create the database connection every time we instantiate `\\Suggestotron\\TopicData`. 
+	However, what if we want multiple instances of the object? What we need the database connection in other models?"
+
+	message "We should instead, have a single way to create a single shared connection, that any object can easily re-use."
+end
+
+goals do
+	goal "Refactor our database connection code, so we can re-use the connections in many places"
+end
+
+steps do
+	step do
+		message "We are going to create what is known as a singleton class, which is responsible for managing our connection."
+
+		message ""
+
+		source_code :php, <<-PHP
+			<?php
+			namespace Suggestotron;
+
+			class Db {
+				static protected $instance = null;
+
+				protected $connection = null;
+				protected function __construct() {
+			        $config = \\Suggestotron\\Config::get('database');
+
+			        $this->connection = new \\PDO("mysql:host=" .$config['hostname']. ";dbname=" .$config['dbname'], $config['username'], $config['password']);
+				}
+
+				public function getConnection()
+				{
+					return $this->connection;
+				}
+
+				static public function getInstance()
+				{
+					if (!(static::$instance instanceof static)) {
+						static::$instance = new static();
+					}
+
+					return static::$instance->getConnection();
+				}
+			}
+
+			?>
+		PHP
+
+		message "This class sets `__construct()` to protected, which means that it cannot be instantiated outside of this class (or it's children) and therefore requires the use of `\\Suggestotron\\Db::getInstance()` to create a new object."
+
+		message "`\\Suggestotron\\Db::getInstance()` will check for an existing copy and return that instead if one exists. Otherwise, it creates and stores a new instance."
+	end
+
+	step do
+		message "To use our new class, we simply replace all instances of `$this->connection` with `\\Suggestotron\\Db::getInstance()` in our `\\Suggestotron\\TopicData` class, and remove the existing database connection code."
+
+		message "We can completely remove the following code:"
+
+		source_code :php, <<-PHP
+		protected $connection = null;
+
+		public function __construct()
+		{
+		    $this->connect();
+		}
+
+		public function connect()
+		{
+		    $config = \\Suggestotron\\Config::get('database');
+
+		    $this->connection = new \\PDO("mysql:host=" .$config['hostname']. ";dbname=" .$config['dbname'], $config['username'], $config['password']);
+		}
+		PHP
+
+        message "Then, our `getAllTopics()` method for instance, will look something like this:"
+
+        source_code :php, <<-PHP
+        public function getAllTopics()
+        {
+            $query = \\Suggestotron\\Db::getInstance()->prepare("SELECT * FROM topics");
+            $query->execute();
+            return $query;
+        }
+        PHP
+    end
+
+    step do
+    	message "To better organize our code, we're going to rename our `\\Suggestotron\\TopicData` class to identify it as a model, in the same way we do controllers. Therefore, it will be called `\\Suggestotron\\Model\\Topics`."
+
+    	message "First, we will move the file to `/Suggestotron/Model/Topics.php`, and then we will update the namespace, and the class name:"
+
+    	source_code :php, <<-PHP
+		<?php
+		namespace Suggestotron\\Model;
+
+		class Topics {
+		PHP
+
+		message "Finally, update our `\\Suggestotron\\Controller\\Topics` to use our renamed class."
+
+		source_code :php, <<-PHP
+		class Topics extends \\Suggestotron\\Controller {
+			protected $data;
+			
+			public function __construct()
+			{
+				parent::__construct();
+				$this->data = new \\Suggestotron\\Model\\Topics();
+			}
+		PHP
+	end
+
+	explanation do
+     	message <<-MD
+     		- You can now access the database connection from **anywhere** using `\\Suggestotron\\Db::getInstance()`.
+     		- Also, our models are now consistently named, similar to controllers.
+		MD
+    end
+end
