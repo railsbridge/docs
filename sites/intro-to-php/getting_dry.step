@@ -197,3 +197,5 @@ steps do
 		message "Finally, if you didn't already, you can remove the old `.php` files (except `index.php`!)"
 	end
 end
+
+next_step "multiple_controllers"
