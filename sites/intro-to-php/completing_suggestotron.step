@@ -232,6 +232,9 @@ steps do
     end
 
     step do
-    	message "Your application should now be complete! Congratulations!"
+    	message 'Guess what?  _**You\'re done!!!**_ Congratulations, you just "finished" your first web app!'
+		message "(They're never _really_ ever finished... have fun tweaking it!)"
+
+		message "Go take a look at your masterpiece: <http://localhost:8080>"
     end
 end
