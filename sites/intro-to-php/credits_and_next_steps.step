@@ -1,39 +1,30 @@
-message <<MARKDOWN
-Guess what?  _**You're done!!!**_ Congratulations, you just \"finished\" your first rails app!
-
-(They're never _really_ ever finished... have fun tweaking it!)
+message <<-MARKDOWN
+Now that you've finished the Suggestotron curriculum, what next?
 
 # Extra Credit
 
 If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
 
 * Add a downvote button that does the opposite of what the upvote button does
-* Sort topics by their number of votes
 * Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
-* If your class has a **lot** of time left over:
-  * Users should be allowed to vote only once: give votes a user_id and allow a user to have voted on each topic only once. But wait, what is a 'user' in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
-  * Users should be able to give a post a 'negative' vote instead of a positive one. How might you represent that in this system?
+* Add success messages when adding/editing topics
+* Add error messages when adding/editing/deleting topics
+* Make it so that all error messages are shown in the templates (e.g. going to the edit page without an ID)
 
+# Authors
+
+- [Davey Shafik](http://twitter.com/dshafik)
+- [Michelle Sanver](http://twitter.com/michellesanver)
+
+## Lovingly Based on RailsBridge
+
+Thanks to the amazing work of the volunteers behind [RailsBridge](http://railsbridge.org) and their
+decision to release all of their content under a Creative Common (CC-BY) license, we are able to create
+PHPBridge by standing on their shoulders and building up.
+
+# What next?
+
+- It's probably time for the closing presentation.
+- After that, start a project, tutorial, and come back again!
+- All our favorite resources can be found on the PHPBridge site: <http://phpbridge.org/learn/resources>
 MARKDOWN
-
-h1 "Authors"
-
-ul do
-  li "Sarah Allen"
-  li "Sarah Mei"
-  li "Alex Chaffee"
-  li "Ryan Davis"
-  li "Steven! Ragnarok"
-  li "...and many, many others"
-end
-
-h1 "What next?"
-
-ul do
-  li "Probably time for the closing presentation." 
-  li "After that, start a project, tutorial, and come back again!"
-  li do 
-    span "All our favorite resources can be found on the RailsBridge site: " 
-    a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
-  end
-end
