@@ -49,5 +49,3 @@ verify "successful installation" do
   console "rails -v"
   fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
 end
-
-next_step "configure_git"

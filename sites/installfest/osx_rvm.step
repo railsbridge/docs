@@ -67,5 +67,3 @@ verify "successful installation" do
   console "which rails"
   fuzzy_result "/Users/alex/.rvm/gems/ruby-{FUZZY}1.9.3-p290{/FUZZY}/bin/rails"
 end
-
-next_step "configure_git"
