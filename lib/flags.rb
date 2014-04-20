@@ -3,14 +3,6 @@
 # Put them in public/flags
 class Flags < Erector::Widget
 
-  # swiped from DocPage -- todo: unify
-  def self.css_path
-    here = File.expand_path File.dirname(__FILE__)
-    File.expand_path "#{here}/../public/css"
-  end
-
-  external :style, scss(File.read("#{css_path}/flags.scss"))
-
   def initialize *args
     super
     @locales = ["us", "es"]
@@ -22,7 +14,7 @@ class Flags < Erector::Widget
         subdomain = (locale == "us" ? "docs" : locale)
         li {
           a(href:"http://#{subdomain}.railsbridge.org") {
-            img src: "/flags/#{locale.upcase}.png"
+            img src: "/railsbridge/images/flags/#{locale.upcase}.png"
           }
         }
       end

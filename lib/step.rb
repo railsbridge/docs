@@ -6,9 +6,6 @@ require 'titleizer'
 require 'active_support/core_ext/string/strip'
 
 class Step < Erector::Widget
-  external :style, <<-CSS
-    @import url(/css/step.css);
-  CSS
 
   needs :src
   needs :doc_path
