@@ -1,4 +1,10 @@
-message "This is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
+message <<-MD
+  This is a set of step-by-step instructions for installing Vagrant, VirtualBox, and the 
+  PHPBridge virtual machine on Mac, or Windows. Originally developed for 
+  the [PHPBridge Workshops](http://phpbridge.org), it is a community-supported open-source 
+  documentation project. If you want to contribute, click the [git] link at the top-right corner
+  of any page and submit your change on GitHub.
+MD
 
 step "Prepare for the Installfest" do
   message <<-MARKDOWN
@@ -7,16 +13,14 @@ step "Prepare for the Installfest" do
 ## You must bring:
 
 * **Your laptop.** You need to have a working wifi connection and a browser.
-  * Recent versions of Microsoft® Windows, Mac OS X, and Debian, Ubuntu, or Fedora Linux are all supported
+  * Recent versions of Microsoft® Windows (Vista, 7, or 8), Mac OS X, and Ubuntu Linux are all supported
 * **Power cord for your laptop**
-* If you already have an account on GitHub, make sure you know your username and password.
 
 ## Possibly also helpful to bring:
 
 * Notepad & Pen or Pencil
 * Extension cord
 * Power strip
-* Camera
 * Snacks
 
   MARKDOWN
@@ -24,12 +28,9 @@ end
 
 step "Don't Panic!" do
   message <<-MARKDOWN
-
-
-Even if you get stuck, please go through the rest of the instructions and download all the things you'll need. Bandwidth will be at a premium during the workshop, so it will help immensely to have everything on your laptop already.
-
-There are a lot of steps, and the instructions may seem like they're in a foreign language, but: **don't panic!** By the end of the workshop, you'll know what everything is and how to use it.
-
+    The instructions may seem like they're in a foreign language, but: 
+    **don't panic!** By the end of the workshop, you'll know what
+    everything is and how to use it.
   MARKDOWN
 end
 
@@ -38,17 +39,16 @@ step "Read This Overview" do
 
 You will be installing the following tools:
 
-* PHP
-* MySQL
-* Git
-* Sublime Text 3
 * Vagrant
-* Various useful PHP tools, including...
-  * composer
-  * boris
-  * PHPUnit
+* VirtualBox
+* Sublime Text 3
 
-If you've already installed the above tools and are confident they are setup correctly, skip ahead to the <a href="get_a_sticker">Get a Sticker</a> step.
+The provided virtual machine contains the following:
+
+* PHP 5.5
+* MySQL 5.5
+* composer
+* psysh
 
   MARKDOWN
 end

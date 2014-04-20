@@ -1,0 +1,7 @@
+situation "Vagrant" do
+  message "Vagrant is a tool for managing VirtualBox virtual machines. It allows you to easily
+  build, share, and use other peoples virtual machines. *It's kindof awesome actually.*"
+
+  message "Like VirtualBox, Vagrant is free and open source. You can find more information at
+  <http://www.vagrantup.com>."
+end

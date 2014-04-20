@@ -1,0 +1,11 @@
+situation "Sublime Text 3" do
+	message "Sublime Text is a versatile text editor. It is great for editing all kinds of text files, including HTML, PHP, CSS, JavaScript and other source code files."
+
+	message "It provides lots of great features including syntax highlighting, and has many many more features available via plugins"
+
+	message "It is also super configurable, so you can make it what you want!"
+
+	message "It isn't free, but it has a trial that is perfect for our purposes. The trial never runs out, but if you like, we highly recommend that you buy it!"
+
+	message "You can find more information at <http://www.sublimetext.com>"
+end

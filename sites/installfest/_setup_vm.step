@@ -1,0 +1,5 @@
+situation "Setting up the PHPBridge Virtual Machine" do
+  message "Now that we have everything installed, we can setup the PHPBridge virtual machine!"
+
+  message "This virtual machine is a partially pre-configured environment that will let you get to work immediately to create something cool!"
+end

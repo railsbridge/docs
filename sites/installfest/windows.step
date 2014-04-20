@@ -4,134 +4,186 @@ These instructions should work for all versions of Windows from XP to Windows 8.
 You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
 MARKDOWN
 
-step "Run RailsInstaller" do
+insert "downloads_thumb_drive"
 
-  message <<-MARKDOWN
-  RailsInstaller includes Rails, Ruby, Git, and SQLite.
+insert "virtualbox"
 
-  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+step "Download VirtualBox for Windows" do
+  message "Download the latest installer from <https://www.virtualbox.org/wiki/Downloads>."
 
-  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
+  message "You want the file called: `VirtualBox <version> for Windows hosts x86/amd64`"
 
-  Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
-
-  ![WinRailsInstaller.jpg](img/WinRailsInstaller.jpg)
-
-  Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites
-
-  MARKDOWN
+  img src: "img/virtualbox_download_win.png", alt: "Download VirtualBox for Windows"
 end
 
-step "Configure your git and ssh environment" do
+step "Install VirtualBox" do
+  message "Once you have the installer, `Double Click` to run."
+  message "Walk through the installation wizard and **keep all the default options**."
 
-  important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+  important "You may be prompted to accept the installation of multiple drivers, or security prompts. Make sure to *accept them all*."
 
-  message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
-  message "Type *your actual full name* into the console and press **[enter]**"
-
-  message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
-  message "Type *your actual email address* into the console and press **[enter]**"
-
-  important "Use the **same email address** for heroku, git, github, and ssh."
-
-  tip do
-    message "After this step you will have some **git config settings** and you will also have an **ssh key**."
-  end
-
+  message "When complete, **you may be prompted to restart**. *Do so*."
 end
 
-step "Windows 8 Only — Install Node.js" do
+insert "vagrant"
 
-  message "Go to <http://nodejs.org> and download the installer"
+step "Download Vagrant for Windows" do
+  message "Download the latest installer from <http://www.vagrantup.com/downloads.html>."
 
-  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+  message "You want the file called: `Windows Universal (32 and 64-bit)`"
 
-  message "**Reboot your computer.**"
-
-  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** (see below) and..."
-
-  console "node -v"
-  fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
+  img src: "img/vagrant_download_win.png", alt: "Download Vagrant for Windows"
 end
 
-step "Update Rails" do
-  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+step "Install Vagrant" do
+  message "Once you have the installer, `Double Click` to run."
+  message "Walk through the installation wizard and **keep all the default options**."
 
-  console "gem install rails"
-
-  message "...and you're done. New Rails! Woo."
+  message "When complete, **you may be prompted to restart**. *Do so*."
 end
 
-step "Sanity Check" do
+situation "Git for Windows: msysgit" do
+  message "To allow Vagrant to easily access our virtual machines, we're going to install msysgit."
 
-  console "ruby -v"
-  fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
+  message "msysgit is the Windows version of git, a version control system. You'll learn more about git later."
 
-  console "rails -v"
-  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
-
+  message "You can learn more about msysgit at <http://msysgit.github.io>"
 end
 
-step "Open a Terminal" do
-  message "Much of using Rails is typing commands and hitting **[enter]**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser."
+step "Download Git (msysgit) for Windows" do
+  message "Download the latest installer from <http://msysgit.github.io>."
 
+  message "Simply click the big \"Download\" button:"
+
+  img src: "img/msysgit_download.png", alt: "Download msysgit for Windows"
+end
+
+step "Install Git (msysgit) for Windows" do
+  message "Once you have the installer, `Double Click` to run."
+
+  message "As you go through the installer, follow the settings below (otherwise leave the defaults):"
+
+  img src: "img/msysgit_install_step1.png"
+
+  img src: "img/msysgit_install_step2.png"
+
+  img src: "img/msysgit_install_step3.png"
+end
+
+insert "setup_vm"
+
+step "Copy the neccessary files" do
+  tip "You will be provided with a copy of the virtual machine (\"the box\") on a USB thumb drive."
+
+  message "Create a new folder on your computer called `phpbridge` in your user folder."
+
+  message "Inside this folder, copy the `foundations.v0.box` and `Vagrantfile` files."
+end
+
+step "Open up a terminal" do
   tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
 
-  message "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
+    important "If you are using **Windows Vista**, it does not normally come with Powershell by default. Unless you have installed it yourself, you *probably* don't have it."
 
-  message "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+    option "For Windows Vista (with Powershell), Windows 7, and Windows 8" do
+      message "Open up `Powershell` by going to the `Start Menu`, and searching for `Powershell`. Click to open it."
 
-  img src: 'img/railsbridge_findingCommandPrompt.png'
+      img src: "img/win_search_powershell.png"
+    end
 
-  tip "Pin It to Win It" do
-    img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
-  end
+    option "For Windows Vista (without Powershell)" do
+      message "Open up the `Command Prompt` by going to the Start Menu, and searching for `Command Prompt`. Click to open it."
 
-  message "Here is a summary of your settings after this process:"
+      img src: "img/win_search_cmd.jpg"
+    end
 
-  img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.jpg'
+    option "For Windows XP" do
+      message "Open up the `Command Prompt` by pressing the `Windows Key + R`, or going to the `Start Menu` and clicking `Run`."
 
+      img src: "img/win_run.png"
+
+      message "Type in `cmd`, and hit `Enter`."
+
+      img src: "img/win_run_cmd.png"
+    end
 end
 
-step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+step "Run the Virtual Machine" do
+  message "First, browse to the new `phpbridge` folder you created earlier."
 
-  link "configure_the_windows_terminal"
-
-  tip "Clearing the Terminal" do
-    message "If you ever want to clear the terminal of all its cluttered output"
-    console "cls"
+  option "For Windows Vista, 7 and 8" do
+    console "cd C:\\Users\\<username>\\phpbridge"
   end
 
-  tip "Command History" do
-    message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
+  option "For Windows XP" do
+    console "cd C:\\Documents and Settings\\<username>\\phpbridge"
   end
 
-  tip "Copy and Paste" do
+  message "Then run use vagrant to bring up our new virtual machine:"
 
-    message "It's usually better to type commands in yourself. It takes a little longer but you learn more."
+  option "For Windows Vista (with Powershell), 7 and 8" do
+    console "vagrant up"
+  end
 
-    message "But if you must... in these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
+  option "For Windows Vista (without Powershell), and XP" do
+    console "vagrant.exe up"
+  end
+
+  fuzzy_result <<-TEXT
+    Bringing machine 'default' up with 'virtualbox' provider...
+    ==> default: Clearing any previously set forwarded ports...
+    ==> default: Clearing any previously set network interfaces...
+    ==> default: Preparing network interfaces based on configuration...
+        default: Adapter 1: nat
+    ==> default: Forwarding ports...
+        default: 8080 => 8080 (adapter 1)
+        default: 22 => 2222 (adapter 1)
+    ==> default: Booting VM...
+    ==> default: Waiting for machine to boot. This may take a few minutes...
+        default: SSH address: 127.0.0.1:2222
+        default: SSH username: vagrant
+        default: SSH auth method: private key
+        default: Error: Connection timeout. Retrying...
+    ==> default: Machine booted and ready!
+  TEXT
+end
+
+verify "Your Installation" do
+  message "Once your virtual machine has booted and is ready to go, we can connect to it to begin working!"
+
+  option "For Windows Vista (with Powershell), 7 and 8" do
+    console "vagrant ssh"
+  end
+
+  option "For Windows Vista (without Powershell), and XP" do
+    console "vagrant.exe ssh"
   end
 end
 
-step "Install Windows Colors" do
+insert "sublimetext3"
 
-  message "This step is optional, but **highly** recommended.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+step "Download Sublime Text 3" do
+  message "Download the latest installer from <http://www.sublimetext.com/3>"
 
-  link "windows_colors"
+  message "You want to file for `Windows` or `Windows 64 bit`. *If you don't know which you need, pick the first one!"
+
+  img src: "img/sublime_download_win.png"
 end
 
-step "Install a Text Editor" do
-  message "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
+step "Install Sublime Text 3" do
+  message "Once you have the installer, `Double Click` to run."
 
-  message "Notepad is not a good programming editor, but it will work in a pinch."
+  message "As you go through the installer, follow the settings below (otherwise leave the defaults):"
 
-  important "**When in doubt, use Sublime Text 2.**"
-
-  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
-
-  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
+  img src: "img/win_sublime3_step1.png"
 end
 
-next_step "configure_git"
+explanation do
+  message <<-MD
+    You now have a fully functional Ubuntu Linux Virtual Machine on which to complete the PHPBridge curriculum, *congrats!*
+
+    Additionally, you have the Sublime Text editor in which to write your code.
+
+    You will perform the majority of the curriculum either inside Sublime Text, or inside the Virtual Machine in a terminal.
+  MD
+end
