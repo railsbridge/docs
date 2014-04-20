@@ -1,0 +1,9 @@
+explanation do
+  message <<-MD
+    You now have a fully functional Ubuntu Linux Virtual Machine on which to complete the PHPBridge curriculum, *congrats!*
+
+    Additionally, you have the Sublime Text editor in which to write your code.
+
+    You will perform the majority of the curriculum either inside Sublime Text, or inside the Virtual Machine in a terminal.
+  MD
+end
