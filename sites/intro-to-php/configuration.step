@@ -92,8 +92,8 @@ steps do
 		source_code :php, <<-PHP
 		<?php
 		return [
-			"username" => "phpbridge",
-			"password" => "elephpant",
+			"username" => "root",
+			"password" => "root",
 			"hostname" => "localhost",
 			"dbname" => "suggestotron",
 		];

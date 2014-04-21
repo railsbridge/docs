@@ -7,9 +7,11 @@ steps do
 
 	step do
 		message "Run the MySQL command line tool"
-		console "mysql -u phpbridge -p"
+		console "mysql -u root -p"
 
-		message "You will be prompted for a password. The password is `elephpant`."
+		message "You will be prompted for a password. The password is `root`."
+
+		important "Using the root username for a real website is a *bad idea*. For more information on adding a new user, see [this tutorial](https://www.digitalocean.com/community/articles/how-to-create-a-new-user-and-grant-permissions-in-mysql)."
 	end
 
 	step do
