@@ -101,6 +101,8 @@ steps do
 	end
 end
 
+explanation do
+	message "With just these few lines of code we are able to connect to our database, fetch our data, and dynamically create an HTML page. *How neat is that?*"
 end
 
 next_step "adding_topics"
