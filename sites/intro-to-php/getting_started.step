@@ -33,7 +33,7 @@ steps do
     message <<-MARKDOWN
 Open the phpbridge folder as a project in your text editor.
 
-In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+In **Sublime Text**, you can use the `Project > Add Folder to Project...` menu option:
 
 <img src='img/sublime_add_folder_to_project.png' />
 
