@@ -40,10 +40,10 @@ We're going to be working with:
 
 * PHP
 * MySQL Database Server
-* Composer
 * Terminal
 * Bootstrap 3
 * Sublime Text Editor
+* Psysh
 * Vagrant & VirtualBox
 * Ubuntu Linux
 
@@ -53,14 +53,12 @@ We will provide you with everything you need to get started on the day.
 
 We highly recommend you do the following:
 
-* Bring up your terminal and open 2 tabs:
-  * One is for regular terminal stuffs
-  * One will be for Psy Shell (aka php console). We'll explain later
 * Open your browser fresh or hide any windows you already have open.
   * Bring up one window with two tabs
     * One for this content
     * One for interacting with your app.
 * Open your text editor and _do not ever close it_. We're not quitters.
+* When we get to the Terminal, you'll want to keep that open too
 * Hide all extra applications. Turn off twitter, IM, and all other distractions.
 
 By minimizing the number of things you interact with, you reduce the
