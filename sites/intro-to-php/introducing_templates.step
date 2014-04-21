@@ -56,7 +56,14 @@ steps do
 	end
 
 	step do
-		message "Now that we have a specific place for them to live, we should move our `TopicData` class to `src/Suggestotron/TopicData.php, don't forget to add our namespace:"
+		message "Now that we have a specific place for them to live, we should move our `TopicData` class to `src/Suggestotron/TopicData.php`, don't forget to add our namespace:"
+
+		source_code :php, <<-PHP
+		<?php
+		namespace Suggestotron;
+
+		class TopicData {
+		PHP
 
 		message "Our `TopicData` class will now be `\\Suggestotron\\TopicData`"
 
@@ -64,7 +71,17 @@ steps do
 	end
 
 	step do
-		message "We can re-use a lot of our HTML on all our pages."
+		message "We can re-use a lot of our HTML on all our pages. Essentially, the only part unique to each page is the content inside the `container` div:"
+
+		source_code :html, <<-HTML
+		<div class="container">
+			<!-- Specific Page Content Goes Here -->
+		</div>
+		HTML
+
+		message "We can split our HTML into re-usable templates, that will live in the `views` directory."
+
+		message "This directory should live in the root of our project, just like `src`."
 
 		message "We are going to create our template file, `views/base.phtml`, with the common HTML:"
 
@@ -108,6 +125,43 @@ steps do
 	end
 
 	step do
+		message "We then take our `index.php` specific HTML and create `views/index/index.html`."
+
+		source_code :php, <<-PHP
+		<?php
+		$topics = $this->topics;
+		foreach ($topics as $topic) {
+		    ?>
+		    <section>
+		        <div class="row">
+		            <div class="col-xs-12">
+		                <h3><?=$topic['title'];?></h3>
+		            </div>
+		        </div>
+		        <div class="row">
+		            <div class="col-xs-8">
+		                <p class="text-muted">
+		                    <?=nl2br($topic['description']);?>
+		                </p>
+		            </div>
+		            <div class="col-xs-4">
+		                <p class="pull-right">
+		                    <a href="/edit.php?id=<?=$topic['id']; ?>" class="btn btn-primary">Edit</a>
+		                    <a href="/delete.php?id=<?=$topic['id']; ?>" class="btn btn-danger" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-title="Are you sure?" data-content=" This cannot be undone!">Delete</a>
+		                </p>
+		            </div>
+		        </div>
+		    </section>
+		    <hr>
+		    <?php
+		}
+		?>
+		PHP
+
+		message "Our topic data, previously assigned to `$topics` is now assigned to `$this->topics` by our template class. The first thing we do in our template file is re-assign it to `$topics` so we can use it easily inside our template."
+	end
+
+	step do
 		message "Now we can update our `index.php` to use our template:"
 
 		source_code :php, <<-PHP
@@ -124,6 +178,8 @@ steps do
 			$template->render("../views/index/index.phtml", ['topics' => $topics]);
 			?>
 		PHP
+
+		tip "Notice how we pass the `$topics` variable into the `$template->render()` function. This allows our template to access the data we want it to. It will be accessible as `$this->topics` within the template."
 	end
 
 	step do
@@ -131,15 +187,21 @@ steps do
 
 		fuzzy_result "Fatal error: Class 'suggestotron\\PDO' not found in <path>/suggestotron/src/Suggestotron/TopicData.php on line 15"
 
-		message "This is because the code is inside the `Suggestotron` namespace, where the `PDO` class does not live"
+		message "This is because the `TopicData` class is now inside the `Suggestotron` namespace, where the `PDO` class does not live"
 
-		message "To fix this, we must fully-qualify the PDO class, by prefixing it with a `\\`:"
+		message "To fix this, we must fully-qualify the PDO class in `\\Suggestotron\\TopicData->connect()`, by prefixing it with a `\\`:"
 
 		source_code :php, <<-PHP
 		public function connect()
 		{
 			$this->connection = new \\PDO("mysql:host=192.168.1.10;dbname=suggestotron", "root", null);
 		}
+        PHP
+
+        message "Additionally, we need to prefix the `\\PDO::FETCH_ASSOC` constant passed to `$query->fetch()` in `\\Suggestotron\\TopicData->getTopic()`:"
+
+        source_code :php, <<-PHP
+        return $query->fetch(\\PDO::FETCH_ASSOC);
         PHP
     end
 
@@ -184,11 +246,12 @@ steps do
 	end
 
 	step do
-		message "Now, do the same for `edit.php`. `delete.php` has no display, so we don't need to do it there."
-
-		message "For `edit.php`, we will create a `views/index/edit.phtml`:"
+		message "Now, do the same for `edit.php`. For `edit.php`, we will create a `views/index/edit.phtml`:"
 
     	source_code :php, <<-HTML
+			<?php
+			$topic = $this->topic;
+			?>
 			<h2>Edit Topic</h2>
 			<form action="edit.php" method="POST">
 			    <label>
@@ -272,5 +335,10 @@ steps do
 		PHP
 	end
 end
+
+explanation do
+	message "By adding templates, we can easily make our sites styles consistent. Additionally, we stop ourselves from repeating the same HTML code everywhere, and can change it in one place and effect all of our pages at once!"
+end
+
 
 next_step "autoloading"
