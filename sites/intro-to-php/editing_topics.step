@@ -124,7 +124,7 @@ steps do
 		require 'TopicData.php';
 
 		if (!isset($_GET['id']) || empty($_GET['id'])) {
-			echo "You did not pass in an ID."
+			echo "You did not pass in an ID.";
 			exit;
 		}
 
@@ -146,32 +146,30 @@ steps do
 		message "Now that we have our form, we can go ahead and update the row in the database. First, lets add an `TopicData->update()` method"
 
 		source_code :php, <<-PHP
-			<?php
-	        public function update($data)
-	        {
-	            $query = $this->connection->prepare(
-	                "UPDATE topics 
-	                    SET 
-	                        title = :title, 
-	                        description = :description
-	                    WHERE
-	                        id = :id"
-	            );
+			public function update($data)
+			{
+			    $query = $this->connection->prepare(
+			        "UPDATE topics 
+			            SET 
+			                title = :title, 
+			                description = :description
+			            WHERE
+			                id = :id"
+			    );
 
-	            $data = [
-	                ':id' => $data['id'],
-	                ':title' => $data['title'],
-	                ':description' => $data['description']
-	            ];
+			    $data = [
+			        ':id' => $data['id'],
+			        ':title' => $data['title'],
+			        ':description' => $data['description']
+			    ];
 
-	            $query->execute($data);
-	        }
-	        ?>
+			    return $query->execute($data);
+			}
         PHP
     end
 
     step do
-    	message "Finally, like with adding topics, we need to call it in `edit.php` by adding the following at the top:"
+    	message "Finally, like with adding topics, we need to call it in `edit.php` by adding the following under the `require 'TopicData.php';`:"
 
     	source_code :php, <<-PHP
 			if (isset($_POST['id']) && !empty($_POST['id'])) {
@@ -187,7 +185,15 @@ steps do
 		PHP
 
 		message "Once you've made this change, check it out in your browser!"
+
+		message "<http://localhost:8080/edit.php?id=2>"
 	end
+end
+
+explanation do
+	message "Similar to when our users created topics, we take our users input, `$_POST`, but this time we perform an `UPDATE` SQL command."
+
+	message "Also, we've started to add some input validation, which is critical for security!"
 end
 
 next_step "deleting_topics"
