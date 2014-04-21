@@ -67,4 +67,10 @@ Select your `phpbridge` folder from the file picker that opens. If everything wo
   end
 end
 
+explanation do
+  message "We now have a running PHP server, showing the configuration of our PHP installation."
+
+  message "Any changes you make from now on will be immediately visible simply by refreshing your browser."
+end
+
 next_step "add_the_project_to_a_git_repo"
