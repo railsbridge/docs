@@ -59,57 +59,6 @@ step "Install Vagrant for Ubuntu Linux" do
   console "dpkg -i </path/to/downloaded.deb>"
 end
 
-step "Copy the neccessary files" do
-  tip "You will be provided with a copy of the virtual machine (\"the box\") on a USB thumb drive."
-
-  message "Create a new folder on your computer called `phpbridge` in your user folder."
-
-  message "Inside this folder, copy the `foundations.v0.box` and `Vagrantfile` files."
-end
-
-step "Run the Virtual Machine" do
-  message "First, in your terminal, browse to the new `phpbridge` folder you created earlier."
-
-  console "cd ~/phpbridge"
-  
-  message "Then use vagrant to bring up our new virtual machine:"
-
-  console "vagrant up"
-  
-  fuzzy_result <<-TEXT
-    Bringing machine 'default' up with 'virtualbox' provider...
-    ==> default: Clearing any previously set forwarded ports...
-    ==> default: Clearing any previously set network interfaces...
-    ==> default: Preparing network interfaces based on configuration...
-        default: Adapter 1: nat
-    ==> default: Forwarding ports...
-        default: 8080 => 8080 (adapter 1)
-        default: 22 => 2222 (adapter 1)
-    ==> default: Booting VM...
-    ==> default: Waiting for machine to boot. This may take a few minutes...
-        default: SSH address: 127.0.0.1:2222
-        default: SSH username: vagrant
-        default: SSH auth method: private key
-        default: Error: Connection timeout. Retrying...
-    ==> default: Machine booted and ready!
-  TEXT
-end
-
-verify "Your Installation" do
-  message "Once your virtual machine has booted and is ready to go, we can connect to it to begin working!"
-
-  console "vagrant ssh"
-
-  fuzzy_result <<-TEXT
-  Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic x86_64)
-
-   * Documentation:  https://help.ubuntu.com/
-  Welcome to your Vagrant-built virtual machine.
-  Last login: Sun Apr 20 22:03:49 2014 from 10.0.2.2
-  vagrant@precise64:~$
-  TEXT
-end
-
 insert "sublimetext3"
 
 step "Download Sublime Text 3" do
@@ -124,6 +73,22 @@ step "Install Sublime Text 3" do
   message "Once you have the installer, in your terminal, install it:"
 
   console "dpkg -i </path/to/downloaded.deb>"
+end
+
+step "Copy the neccessary files" do
+  tip "You will be provided with a copy of the virtual machine (\"the box\") on a USB thumb drive."
+
+  message "Create a new folder on your computer called `phpbridge` in your user folder."
+
+  message "Inside this folder, copy the `foundations.v0.box` and `Vagrantfile` files."
+end
+
+step "Run the Virtual Machine" do
+  message "First, in your terminal, browse to the new `phpbridge` folder you created earlier."
+
+  console "cd ~/phpbridge"
+
+  insert "initial_vagrant_up"
 end
 
 insert "summary"

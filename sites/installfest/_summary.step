@@ -1,3 +1,18 @@
+verify "Your Installation" do
+  message "Once your virtual machine has booted and is ready to go, we can connect to it to begin working!"
+
+  console "vagrant ssh"
+
+  fuzzy_result <<-TEXT
+  Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+   * Documentation:  https://help.ubuntu.com/
+  Welcome to your Vagrant-built virtual machine.
+  Last login: Sun Apr 20 22:03:49 2014 from 10.0.2.2
+  vagrant@precise64:~$
+  TEXT
+end
+
 explanation do
   message <<-MD
     You now have a fully functional Ubuntu Linux Virtual Machine on which to complete the PHPBridge curriculum, *congrats!*
