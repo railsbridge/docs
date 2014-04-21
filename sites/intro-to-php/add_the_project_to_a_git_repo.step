@@ -7,9 +7,33 @@ goals do
 end
 
 steps do
+  step do
+    message "Open up a second terminal. For Mac OS X, press `Cmd+T`. On Linux, try `Ctrl+T` and on Windows, you will need to open a new window the same way you opened the current one."
+
+    message "Once you have a second terminal, connect to the virtual machine again:"
+
+    console_without_message "vagrant ssh"
+  end
 
   step do
+    message "Switch to our project directory"
+
+    console "cd /var/www/phpbridge"
+  end
+
+  step "Setup Git" do
+    console <<-CMD
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name""
+    CMD
+
+    message "This tells git (and anyone who has access to your repository) who made the changes — this is critical when working in teams."
+  end
+
+  step "Initialize our Repository" do
     console "git init"
+
+    result "Initialized empty Git repository in /var/www/phpbridge/.git/"
 
     message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -al` (list all files)."
   end
@@ -17,9 +41,20 @@ steps do
   step do
     console "git status"
 
+    result <<-TEXT
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    # public/
+    #
+    nothing added to commit but untracked files present (use "git add" to track)
+    TEXT
+
     message "`git status` tells you everything git sees as modified, new, or missing."
-  message "The first time you run this, you should see a ton of stuff."
-  message "After you are done, you shouldn't see much of anything."
   end
 
   step do
@@ -45,6 +80,12 @@ steps do
     message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
     message "This is done in two steps so you can group multiple changes together."
     message "`-m \"Created my first PHP file\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+
+    fuzzy_result <<-TEXT
+    [master (root-commit) a74d816] Created my first PHP file
+     1 file changed, 3 insertions(+)
+     create mode 100644 public/index.php
+    TEXT
   end
 end
 
