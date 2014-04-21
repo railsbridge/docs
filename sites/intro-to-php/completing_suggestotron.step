@@ -241,6 +241,10 @@ explanation do
 	message "(They're never _really_ ever finished... have fun tweaking it!)"
 
 	message "Go take a look at your masterpiece: <http://localhost:8080>"
+
+	message "It should look something like this:"
+
+	img src: "img/finished_app.png"
 end
 
 next_step "credits_and_next_steps"
