@@ -27,6 +27,8 @@ steps do
 			</form>
 		HTML
 
+		message "You can browse to this file at <http://localhost:8080/add.php>"
+
 		message 'When you click on "Add Topic", the form will be submitted back to the server'
 
 		message 'Adding the following will let you see what was sent'
@@ -41,7 +43,9 @@ steps do
 	end
 
 	step do
-		message "Now that we have our data, we can go ahead and save it in our database"
+		message "Now that we have our data, we can go ahead and save it in our database."
+
+		message "Add the following the top of `add.php`:"
 
 		source_code :php, <<-PHP
 			<?php
@@ -54,7 +58,7 @@ steps do
 			?>
 		PHP
 
-		message "Submitting the form in your browser will show this:"
+		message "Submitting the form in your browser will now show this:"
 
 		fuzzy_result "Fatal error: Call to undefined method TopicData::add() in /var/www/phpbridge/public/add.php on line 6"
 
@@ -67,7 +71,6 @@ steps do
 		important "For security, we are using a prepared query to ensure our data is escaped securely before sending it to our database"
 
 		source_code :php, <<-PHP
-			<?php
 			public function add($data)
 			{
 				$query = $this->connection->prepare(
@@ -87,7 +90,6 @@ steps do
 
 				$query->execute($data);
 			}
-			?>
 		PHP
 
 		tip "Notice how we're using the same `INSERT` SQL code from earlier"
@@ -113,23 +115,27 @@ steps do
 	end
 
 	step do
-		message "**Now** when you submit your form, it will save the topic, yay! You can verify this by looking at `index.php`"
+		message "**Now** when you submit your form, it will save the topic, yay! You can verify this by looking at `index.php`, <http://localhost:8080>"
 	end
 
 	step do
-		message "We can automatically forward our users to the list by using the `header()` method with a `Location: /url` argument:"
+		message "We can automatically forward our users to the list by using the `header()` method with a `Location: /url` argument."
+
+		message "Add the following after the call to `$data->add($_POST)`:"
 
 		source_code :php, <<-PHP
-			if (isset($_POST) && sizeof($_POST) > 0) {
-				$data = new TopicData();
-				$data->add($_POST);
-				header("Location: /");
-				exit;
-			}
+			header("Location: /");
+			exit;
 		PHP
 
 		message "Once we send the header, we must be sure to `exit;` so no other code is run."
 	end
+end
+
+explanation do
+	message "Our users can now add their own topics, no SQL knowledge required!"
+
+	message "We taking the users input from an HTML form, `$_POST`, and using `INSERT` to add it to our database."
 end
 
 next_step "editing_topics"
