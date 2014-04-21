@@ -60,7 +60,7 @@ steps do
 
 		message "Submitting the form in your browser will now show this:"
 
-		fuzzy_result "Fatal error: Call to undefined method TopicData::add() in /var/www/phpbridge/public/add.php on line 6"
+		fuzzy_result "Fatal error: Call to undefined method TopicData::add() in /var/www/suggestotron/public/add.php on line 6"
 
 		message "Don't worry! This is because we haven't added a `TopicData->add()` method yet. We will do that next!"
 	end
@@ -98,7 +98,7 @@ steps do
 	step do
 		message "If you submit your form now, you will see another error:"
 
-		fuzzy_result "Fatal error: Call to a member function prepare() on a non-object in /var/www/phpbridge/public/TopicData.php on line 20"
+		fuzzy_result "Fatal error: Call to a member function prepare() on a non-object in /var/www/suggestotron/public/TopicData.php on line 20"
 
 		message "This is because we **forgot** to call `TopicData->connect()`. Wouldn't it be nice if we didn't even *have* to remember this?"
 

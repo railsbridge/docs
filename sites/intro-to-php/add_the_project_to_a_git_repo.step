@@ -18,7 +18,7 @@ steps do
   step do
     message "Switch to our project directory"
 
-    console "cd /var/www/phpbridge"
+    console "cd /var/www/suggestotron"
   end
 
   step "Setup Git" do
@@ -33,7 +33,7 @@ steps do
   step "Initialize our Repository" do
     console "git init"
 
-    result "Initialized empty Git repository in /var/www/phpbridge/.git/"
+    result "Initialized empty Git repository in /var/www/suggestotron/.git/"
 
     message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -al` (list all files)."
   end
