@@ -84,6 +84,12 @@ steps do
 			3 rows in set (0.00 sec)
 		TEXT
 	end
+
+	step do
+		message "We are done with the database for now. To quit, type the following:"
+
+		console_without_message "\\q"
+	end
 end
 
 explanation do
