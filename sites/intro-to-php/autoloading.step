@@ -50,8 +50,12 @@ steps do
 			require '../src/Suggestotron/Autoloader.php';
 		PHP
 
-		message "Now that we have done that, every time we use `new \\Some\\ClassName` it will try to autoload using the `\\Suggestotron\\Autoloader->load()` method automatically."
+		message "Make this change in `index.php`, `add.php`, `edit.php` and `delete.php`."
 	end
+end
+
+explanation do
+	message "Now that we have an autoloader, every time we use `new \\Some\\ClassName` it will try to autoload by passing the name to the `\\Suggestotron\\Autoloader->load()` method automatically."
 end
 
 next_step "configuration"
