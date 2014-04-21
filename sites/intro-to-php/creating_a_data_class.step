@@ -22,7 +22,6 @@ steps do
 	step do
 		message "Now create a connect function:"
 
-		# @todo DB user/pass
 		source_code :php, <<-PHP
 			<?php
 			class TopicData {
@@ -30,7 +29,7 @@ steps do
 			
 				public function connect()
 				{
-					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", null);
+					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "phpbridge", "elephpant");
 				}
 			}
 			?>
