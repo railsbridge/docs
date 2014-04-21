@@ -7,8 +7,9 @@ steps do
 
 	step do
 		message "Run the MySQL command line tool"
-		# @todo Add a "phpbridge" user to the base image
-		console "mysql -u root"
+		console "mysql -u phpbridge -p"
+
+		message "You will be prompted for a password. The password is `elephpant`."
 	end
 
 	step do
