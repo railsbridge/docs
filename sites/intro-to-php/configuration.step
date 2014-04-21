@@ -6,7 +6,7 @@ end
 
 steps do
 	step do
-		message "The first thing we will do is add a `config` directory, and place an `autoload.php` file within it:"
+		message "The first thing we will do is add a `config` directory, at the same level as `src` and `views`, and place an `autoload.php` file within it:"
 
 		source_code :php, <<-PHP
 			<?php
@@ -28,24 +28,22 @@ steps do
 				static public $directory;
 				static public $config = [];
 
-				public static setDirectory($path)
+				static public function setDirectory($path)
 				{
 					self::$directory = $path;
 				}
 
-				public static get($config)
+				static public function get($config)
 				{
 					$config = strtolower($config);
 
-					self::$config[$config] = require self::$path . '/' . $config . '.php';
+					self::$config[$config] = require self::$directory . '/' . $config . '.php';
 
 					return self::$config[$config];
 				}
 			}
 		PHP
-	end
 
-	step do
 		message "To use the `\\Suggestotron\\Config` class we must still include it manually, to setup everything else"
 
 		source_code :php, <<-PHP
@@ -68,7 +66,7 @@ steps do
 		source_code :php, <<-PHP
 		$config = \\Suggestotron\\Config::get('autoload');
 
-		$file = $config['class_path'] . '/' . str_replace("\\", "/", $className) . '.php';
+		$file = $config['class_path'] . '/' . str_replace("\\\\", "/", $className) . '.php';
 		PHP
 	end
 
@@ -82,7 +80,6 @@ steps do
 
 		$config = \\Suggestotron\\Config::get('autoload');
 		require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
-		?>
 		PHP
 	end
 
@@ -109,7 +106,7 @@ steps do
 		{
 		    $config = \\Suggestotron\\Config::get('database');
 
-		    $this->connection = new \PDO("mysql:host=" .$config['hostname']. ";dbname=" .$config['dbname'], $config['username'], $config['password']);
+		    $this->connection = new \\PDO("mysql:host=" .$config['hostname']. ";dbname=" .$config['dbname'], $config['username'], $config['password']);
 		}
         PHP
 	end
