@@ -84,7 +84,12 @@ steps do
 			3 rows in set (0.00 sec)
 		TEXT
 	end
+end
 
+explanation do
+	message "You have now create your first database, your first table, *and* your first rows of data!"
+
+	message "We will be accessing this data via our PHP code in our application. Not only will our application be able to read it, but it will be able to create new data, edit, and delete existing data."
 end
 
 next_step "creating_a_data_class"
