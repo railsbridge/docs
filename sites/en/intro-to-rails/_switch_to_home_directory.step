@@ -1,5 +1,7 @@
 message "`cd` stands for change directory."
 
+message "If you are still in IRB, type `quit` to exit."
+
 option "Windows" do
   console "cd c:\\Sites"
   message "`cd c:\\Sites` sets our Sites directory to our current directory."
