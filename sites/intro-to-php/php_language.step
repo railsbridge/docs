@@ -248,4 +248,8 @@ pluralize("kiwi");
   end
 end
 
+explanation do
+  message "With this small amount of code, you've learned a lot of the syntax you will use every day!"
+end
+
 next_step "getting_started"
