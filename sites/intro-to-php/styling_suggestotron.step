@@ -73,7 +73,7 @@ steps do
 
         source_code :php, <<-PHP
             echo "<a href='/edit.php?id=" .$topic['id']. "' class='btn btn-primary'>Edit</a>";
-            echo " | ";
+            echo " ";
             echo "<a href='/delete.php?id=" .$topic['id']. "' class='btn btn-danger'>Delete</a>";
         PHP
     end
@@ -154,7 +154,9 @@ steps do
     step do
         message "The last thing we're going to do, is to add a warning for when people go to delete topics" 
 
-        message "To use the Bootstrap javascript, we need to also include jQuery, which you can get from [jquery.com](http://jquery.com). We then include both Javascript files in our `<head>` section:"
+        message "To use the Bootstrap javascript, we need to also include jQuery, which you can get from [jquery.com](http://jquery.com)."
+        message "Place the jquery Javascript file in the `public/js` directory."
+        message "We then include both Javascript files in our `<head>` section:"
 
         source_code :html, <<-HTML
             <script type="text/javascript" src="/js/jquery-2.1.0.min.js"></script>
@@ -179,6 +181,10 @@ steps do
             </script>
         HTML
     end
+end
+
+explanation do
+    message "By using off-the-shelf frameworks, Bootstrap 3 and jquery, we are able to quickly add a professional user interface to our application, drastically improving our user experience."
 end
 
 next_step "introducing_templates"
