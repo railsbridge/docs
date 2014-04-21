@@ -22,7 +22,6 @@ steps do
 	step do
 		message "Now create a connect function:"
 
-		# @todo DB user/pass
 		source_code :php, <<-PHP
 			<?php
 			class TopicData {
@@ -30,7 +29,7 @@ steps do
 			
 				public function connect()
 				{
-					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", null);
+					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", "root");
 				}
 			}
 			?>
@@ -66,7 +65,7 @@ steps do
 	end
 
 	step do
-		message "Now we can use the data class, in `index.php`, to get our topics:"
+		message "Now we can use the data class in `index.php`, to get our topics:"
 
 		source_code :php, <<-PHP
 			<?php
@@ -95,44 +94,14 @@ steps do
 	end
 
 	step do
-		message "To see what this looks like, view it in your browser!"
-    	# @todo Figure out networking for private IPs
+		message "To see what this looks like, refresh the application in your browser!"
     	
     	img src: "img/List_of_topics.png", alt: "List of topics"
 	end
+end
 
-
-=begin
-	step do
-		message "Lets abstract the connection details:"
-
-		# @todo DB user/pass
-		source_code :php, <<-PHP
-			<?php
-			class TopicData {
-				protected $connection;
-				protected $username = '';
-				protected $password = '';
-				protected $hostname = '';
-				protected $databasename = '';
-
-				public function __construct($username, $password, $databasename, $hostname)
-				{
-					$this->hostname = $hostname;
-					$this->databasename = $databasename;
-					$this->username = $username;
-					$this->password = $password;
-				}
-			
-				public function connect()
-				{
-					$this->connection = new PDO ("mysql:host=$this->hostname;dbname=$this->databasename", $this->username, $this->password);
-				}
-			}
-			?>
-		PHP
-	end
-=end
+explanation do
+	message "With just these few lines of code we are able to connect to our database, fetch our data, and dynamically create an HTML page. *How neat is that?*"
 end
 
 next_step "adding_topics"

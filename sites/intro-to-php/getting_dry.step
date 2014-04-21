@@ -11,7 +11,7 @@ end
 situation "Introducing Controllers" do
 	message "If you try to use one of our old URLs (e.g. <http://localhost:8080/add.php>) you will notice it is now broken!"
 
-	message "Because we now have a router, our users should not be accessing these files directly anymore — we *can* solve this by moving the files out of the `public` folder."
+	message "Because we now have a router, our users should not be accessing these files directly anymore — we *can* solve this by moving the files out of the `public` directory."
 
 	message "**However**, there is another way: Controllers — a special class for containing functionality relating to a specific thing — like Topics."
 end

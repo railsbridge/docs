@@ -12,11 +12,7 @@ end
 steps do
 
   step do
-    message "Start your PHP environment from the terminal, using vagrant:"
-
-    console_without_message "vagrant up"
-
-    message "Once this has completed, connect to the virtual machine:"
+    message "Start by connecting to the virtual machine:"
 
     console_without_message "vagrant ssh"
   end 
@@ -246,6 +242,10 @@ pluralize("kiwi");
 
     source_code :php, "<?=$variable;?>"
   end
+end
+
+explanation do
+  message "With this small amount of code, you've learned a lot of the syntax you will use every day!"
 end
 
 next_step "getting_started"

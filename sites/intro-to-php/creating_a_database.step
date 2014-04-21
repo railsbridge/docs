@@ -7,8 +7,11 @@ steps do
 
 	step do
 		message "Run the MySQL command line tool"
-		# @todo Add a "phpbridge" user to the base image
-		console "mysql -u root"
+		console "mysql -u root -p"
+
+		message "You will be prompted for a password. The password is `root`."
+
+		important "Using the root username for a real website is a *bad idea*. For more information on adding a new user, see [this tutorial](https://www.digitalocean.com/community/articles/how-to-create-a-new-user-and-grant-permissions-in-mysql)."
 	end
 
 	step do
@@ -84,6 +87,17 @@ steps do
 		TEXT
 	end
 
+	step do
+		message "We are done with the database for now. To quit, type the following:"
+
+		console_without_message "\\q"
+	end
+end
+
+explanation do
+	message "You have now create your first database, your first table, *and* your first rows of data!"
+
+	message "We will be accessing this data via our PHP code in our application. Not only will our application be able to read it, but it will be able to create new data, edit, and delete existing data."
 end
 
 next_step "creating_a_data_class"

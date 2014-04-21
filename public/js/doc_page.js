@@ -18,4 +18,6 @@ $(document).ready(function () {
     $('.closed').removeClass('closed');
     $('.expand-all').remove();
   });
+
+  $('a[href*="http://localhost:8080"]').attr('target', '_blank');
 });

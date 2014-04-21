@@ -1,4 +1,3 @@
-# @todo Replace Image
 img src: "img/phpinfo.png", alt: "Start Page"
 
 goals do
@@ -15,29 +14,28 @@ steps do
   end
   
   step do
-    console "mkdir phpbridge"
+    console "mkdir suggestotron"
     message "This command creates a new directory for us to store our project in."
   end
 
   step do
-    console "cd phpbridge"
+    console "cd suggestotron"
   end
 
   step do
     console "mkdir public"
-    message "This creates a folder to hold everything that will be publicly accessible"
+    message "This creates a directory to hold everything that will be publicly accessible"
   end
 
   step do
-    # @todo Update the second image
     message <<-MARKDOWN
-Open the phpbridge folder as a project in your text editor.
+Open the `suggestotron` directory as a project in your text editor.
 
-In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+In **Sublime Text**, you can use the `Project > Add Folder to Project...` menu option:
 
 <img src='img/sublime_add_folder_to_project.png' />
 
-Select your `phpbridge` folder from the file picker that opens. If everything works out Sublime should look something like this:
+Select your `suggestotron` directory from the file picker that opens. If everything works out Sublime should look something like this:
 
 <img src='img/sublime_project_as_folder.png' />
     MARKDOWN
@@ -61,10 +59,15 @@ Select your `phpbridge` folder from the file picker that opens. If everything wo
 
   step do
     text "Point your web browser to "
-    # @todo Figure out networking for private IPs
     url "http://localhost:8080" 
     p 'See your "web app" actually running!'
   end
+end
+
+explanation do
+  message "We now have a running PHP server, showing the configuration of our PHP installation."
+
+  message "Any changes you make from now on will be immediately visible simply by refreshing your browser."
 end
 
 next_step "add_the_project_to_a_git_repo"

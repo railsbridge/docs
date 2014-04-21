@@ -16,9 +16,9 @@ steps do
 
 		message "To get started, we run the `mysql` command in the terminal:"
 
-		console "mysql -u phpbridge -p"
+		console "mysql -u root -p"
 
-		message "When prompted, enter the password: `elephpant`."
+		message "When prompted, enter the password: `root`."
 	end
 
 	step do

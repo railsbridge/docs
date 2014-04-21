@@ -76,6 +76,17 @@ steps do
 			}
 		PHP
 	end
+
+	step do
+		message "Once again, you can check this out in your browser. Try going to topic list and deleting the new topic you added earlier:"
+
+		message "<http://localhost:8080/>"
+	end
 end
 
+explanation do
+	message "By now, you've should have a pretty good handle on how this works."
+
+	message "You're able to create, retrieve, update, and delete rows from the database, this is known as **CRUD**, and is something you will find in almost every application."
+end
 next_step "styling_suggestotron"
