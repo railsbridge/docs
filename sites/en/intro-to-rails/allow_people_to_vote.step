@@ -5,7 +5,7 @@ goals {
 steps {
 
   step "Add a new controller action for voting" do
-    message "Edit `app/controllers/topics_controller.rb` to add a method like this:"
+    message "Edit `app/controllers/topics_controller.rb` to add the new method. You can put it anywhere in the file as long as it appears before the word `private`."
 
     source_code :ruby, <<-RUBY
       def upvote
