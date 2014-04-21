@@ -9,9 +9,9 @@ steps do
 	step do
 		message "We are going to create a new class for handling our templates."
 
-		message "Now that we are adding more classes, let us create a folder especially for them:"
+		message "Now that we are adding more classes, let us create a directory especially for them:"
 
-		message "This folder should live in the root of our project, and is called `src`"
+		message "This directory should live in the root of our project, and is called `src`"
 
 		img src: "img/add_src_directory.png"
 	end

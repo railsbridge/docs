@@ -24,18 +24,18 @@ steps do
 
   step do
     console "mkdir public"
-    message "This creates a folder to hold everything that will be publicly accessible"
+    message "This creates a directory to hold everything that will be publicly accessible"
   end
 
   step do
     message <<-MARKDOWN
-Open the `suggestotron` folder as a project in your text editor.
+Open the `suggestotron` directory as a project in your text editor.
 
 In **Sublime Text**, you can use the `Project > Add Folder to Project...` menu option:
 
 <img src='img/sublime_add_folder_to_project.png' />
 
-Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should look something like this:
+Select your `suggestotron` directory from the file picker that opens. If everything works out Sublime should look something like this:
 
 <img src='img/sublime_project_as_folder.png' />
     MARKDOWN
