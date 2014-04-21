@@ -12,11 +12,7 @@ end
 steps do
 
   step do
-    message "Start your PHP environment from the terminal, using vagrant:"
-
-    console_without_message "vagrant up"
-
-    message "Once this has completed, connect to the virtual machine:"
+    message "Start by connecting to the virtual machine:"
 
     console_without_message "vagrant ssh"
   end 
