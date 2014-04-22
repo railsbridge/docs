@@ -21,7 +21,7 @@ steps {
     message "Uncomment the line that contains the example command by removing the `#` sign in front of it, and change it to read `root 'topics#index'`. When you are done the line should look like this:"
 
     source_code :ruby, <<-RUBY
-root to: 'topics#index'
+root 'topics#index'
     RUBY
 
     em do
