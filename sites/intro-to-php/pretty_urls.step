@@ -17,7 +17,7 @@ end
 
 steps do
 	step do
-		"We will start by creating a Router class. This will take the dynamic URL and map it to our application code:"
+		message "We will start by creating a Router class. This will take the dynamic URL and map it to our application code:"
 
 		source_code :php, <<-PHP
 		<?php
@@ -29,13 +29,12 @@ steps do
 				$path = realpath("./" . $route . ".php");
 
 				if (file_exists($path)) {
-					require path;
+					require $path;
 				} else {
 					require 'error.php';
 				}
 			}
 		}
-		?>
 		PHP
 
 		message "This will look for a file with the same name as the route and include it, or include an `error.php` file"
@@ -52,11 +51,11 @@ steps do
 			$config = \\Suggestotron\\Config::get('autoload');
 			require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
 
-			$data = new \Suggestotron\TopicData();
+			$data = new \\Suggestotron\\TopicData();
 
 			$topics = $data->getAllTopics();
 
-			$template = new \Suggestotron\Template("../views/base.phtml");
+			$template = new \\Suggestotron\\Template("../views/base.phtml");
 			$template->render("../views/index/list.phtml", ['topics' => $topics]);
 			?>
 		PHP
@@ -79,7 +78,7 @@ steps do
 			</a>
 		HTML
 
-		message "Finally, update the `<form>` actions in `views/index/add.phtml` and `views/index/edit.phtml, to point to the correct URLs."
+		message "Finally, update the `<form>` actions in `views/index/add.phtml` and `views/index/edit.phtml`, to point to the correct URLs."
 	end
 
 	step do
@@ -113,15 +112,19 @@ steps do
 		message "Go ahead and remove the following, and you'll see the site still works!"
 
 		source_code :php, <<-PHP
-			<?php
 			require_once '../src/Suggestotron/Config.php';
 			\\Suggestotron\\Config::setDirectory('../config');
 
 			$config = \\Suggestotron\\Config::get('autoload');
 			require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
-			?>
 		PHP
 	end
+end
+
+explanation do
+	message "By programmitically handling our URLs, we can create pretty URLs in any structure we want, without needing to create complex directory structures."
+
+	message "This allows us to share common code between many pages — similiar to our templates — and reduce our applications complexity."
 end
 
 next_step "getting_dry"

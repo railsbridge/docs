@@ -103,13 +103,15 @@ steps do
 			{
 				if (isset($_POST) && sizeof($_POST) > 0) {
 				    $this->data->add($_POST);
+				    header("Location: /");
+					exit;
 				}
 
 				$this->template->render("../views/index/add.phtml");
 			}
 		PHP
 
-		message "Notice how small it is now! Just 4 lines of code!"
+		message "Notice how small it is now! Just 6 lines of code!"
 	end
 
 	step do
@@ -196,6 +198,10 @@ steps do
 	step do
 		message "Finally, if you didn't already, you can remove the old `.php` files (except `index.php`!)"
 	end
+end
+
+explanation do
+	message "By implementing a Controller we have further simplified our code. It should be a goal to keep your code as simple as possible: Future you will thank you."
 end
 
 next_step "multiple_controllers"

@@ -1,4 +1,4 @@
-message "A model, is just a fancy name for a class that specifically encapsulates all functionality related to a thing, e.g. topics, votes, or users."
+message "A `model` is just a fancy name for a class that specifically encapsulates all functionality related to a thing, e.g. topics, votes, or users."
 
 message "Our `\\Suggestotron\\TopicData` class, is an example of a model class."
 
@@ -17,7 +17,7 @@ steps do
 	step do
 		message "We are going to create what is known as a singleton class, which is responsible for managing our connection."
 
-		message ""
+		message "We will call this class, `\\Suggestotron\\Db`."
 
 		source_code :php, <<-PHP
 			<?php
@@ -47,8 +47,6 @@ steps do
 					return static::$instance->getConnection();
 				}
 			}
-
-			?>
 		PHP
 
 		message "This class sets `__construct()` to protected, which means that it cannot be instantiated outside of this class (or it's children) and therefore requires the use of `\\Suggestotron\\Db::getInstance()` to create a new object."

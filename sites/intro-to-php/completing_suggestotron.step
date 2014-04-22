@@ -69,33 +69,35 @@ steps do
 		message "Update our Topics model class, to insert an empty row when creating new topics automatically:"
 
 		source_code :php, <<-PHP
-        public function add($data)
-        {
-            $query = \\Suggestotron\\Db::getInstance()->prepare(
-                "INSERT INTO topics (
-                        title,
-                        description
-                ) VALUES (
-                        :title,
-                        :description
-                )"
-            );
+		public function add($data)
+		{
+			$query = \\Suggestotron\\Db::getInstance()->prepare(
+			    "INSERT INTO topics (
+			            title,
+			            description
+			    ) VALUES (
+			            :title,
+			            :description
+			    )"
+			);
 
-            $data = [
-                ':title' => $data['title'],
-                ':description' => $data['description']
-            ];
+			$data = [
+			    ':title' => $data['title'],
+			    ':description' => $data['description']
+			];
 
-            $query->execute($data);
+			$query->execute($data);
 
-            $id = \\Suggestotron\\Db::getInstance()->lastInsertId();
+			// Grab the newly created topic ID
+			$id = \\Suggestotron\\Db::getInstance()->lastInsertId();
 
-            $sql = "INSERT INTO votes (
-        				topic_id,
-        				count
-    				) VALUES (
-    					:id,
-    					0
+			// Add empty vote row
+			$sql = "INSERT INTO votes (
+						topic_id,
+						count
+					) VALUES (
+						:id,
+						0
 					)";
 
 			$data = [
@@ -104,7 +106,7 @@ steps do
 
 			$query = \\Suggestotron\\Db::getInstance()->prepare($sql);
 			$query->execute($data);
-        }
+		}
         PHP
     end
 
@@ -130,7 +132,7 @@ steps do
             }
 
             $sql = "DELETE FROM votes WHERE topic_id = :id";
-            $query = \Suggestotron\Db::getInstance()->prepare($sql);
+            $query = \\Suggestotron\\Db::getInstance()->prepare($sql);
 
             return $query->execute($data);
         }
@@ -175,7 +177,7 @@ steps do
 			class Votes extends \\Suggestotron\\Controller {
 				public function addAction($options) {
 					if (!isset($options['id']) || empty($options['id'])) {
-						echo "No topic id specified!"
+						echo "No topic id specified!";
 						exit;
 					}
 
@@ -185,7 +187,6 @@ steps do
 					header("Location: /");
 				}
 			}
-			?>
 		PHP
 	end
 
@@ -197,46 +198,53 @@ steps do
                 'controller' => '\\Suggestotron\\Controller\\Votes',
         ],
         PHP
+
+        message "This route should be placed **above** the generic `/:controller(/:action)` route which will otherwise catch the request."
     end
 
     step do
-    	message "To allow our users to actually vote, we'll add a button to our topic list view, `index/list.phtml`:"
+    	message "To allow our users to actually vote, we'll add a button to our topic list view, `index/list.phtml`, before our `Edit` and `Delete` buttons:"
 
 		source_code :php, <<-PHP
 		<a href="/vote/add/<?=$topic['id']; ?>" class="btn btn-success">
 			<span class="glyphicon glyphicon-thumbs-up">
-				<strong><?=(isset($topic['votes'])) ? $topic['votes'] : 0;?></strong>
+				<strong><?=(isset($topic['count'])) ? $topic['count'] : 0;?></strong>
 			</span>
 		</a>
 		PHP
     end
 
     step do
-    	message "Finally, we need to update our `\\Suggestotron\\Topics` model, to both retrieve the votes for each topic, and sort by the number of votes:"
+    	message "Finally, we need to update our `\\Suggestotron\\Model\\Topics` model, to both retrieve the votes for each topic, and sort by the number of votes:"
 
     	source_code :php, <<-PHP
         public function getAllTopics()
         {
             $sql = "SELECT 
-                        * 
+                        topics.*,
+                        votes.count
                     FROM topics INNER JOIN votes ON (
                         votes.topic_id = topics.id
                     )
                     ORDER BY votes.count DESC, topics.title ASC";
 
-            $query = \Suggestotron\Db::getInstance()->prepare($sql);
+            $query = \\Suggestotron\\Db::getInstance()->prepare($sql);
             $query->execute();
             return $query;
         }
         PHP
     end
+end
 
-    step do
-    	message 'Guess what?  _**You\'re done!!!**_ Congratulations, you just "finished" your first web app!'
-		message "(They're never _really_ ever finished... have fun tweaking it!)"
+explanation do
+	message 'Guess what?  _**You\'re done!!!**_ Congratulations, you just "finished" your first web app!'
+	message "(They're never _really_ ever finished... have fun tweaking it!)"
 
-		message "Go take a look at your masterpiece: <http://localhost:8080>"
-    end
+	message "Go take a look at your masterpiece: <http://localhost:8080>"
+
+	message "It should look something like this:"
+
+	img src: "img/finished_app.png"
 end
 
 next_step "credits_and_next_steps"

@@ -51,7 +51,7 @@ steps do
 						'action' => 'list',
 					],
 					'/:controller(/:action)' => [
-						'controller' => '\\Suggestotron\\Controller\\$controller',
+						'controller' => '\\Suggestotron\\Controller\\:controller',
 						'action' => 'index',
 					]
 				]
@@ -68,7 +68,7 @@ steps do
 	end
 
 	step do
-		message "Now that we have our config, we can use it directly in our router:"
+		message "Now that we have our config, we can use it to re-write our `\\Suggestotron\\Router->start()` method:"
 
 		source_code :php, <<-PHP
 		class Router {
@@ -116,7 +116,7 @@ steps do
 		try {
 			foreach ($this->config['routes'] as $path => $defaults) {
 				$regex = '@' . preg_replace(
-		            '@:([\w]+)@',
+		            '@:([\\w]+)@',
 		            '(?P<$1>[^/]+)',
 		            str_replace(')', ')?', (string) $path)
 		        ) . '@';
@@ -169,6 +169,24 @@ steps do
 		source_code :php, <<-PHP
 		catch (\\Suggestotron\\Controller\\Exception $e) {
 			$this->error();
+		}
+		PHP
+	end
+
+	step do
+		message "We must also define the `\\Suggestotron\\Router->error()` method:"
+
+		source_code :php, <<-PHP
+		function error()
+		{
+			if (isset($this->config['errors'])) {
+				$route = $this->config['errors'];
+				$this->start($route);
+			} else {
+				echo "An unknown error occurred, please try again!";
+			}
+
+			exit;
 		}
 		PHP
 	end
@@ -252,9 +270,9 @@ steps do
 	end
 
 	step do
-		message "To update our existing code, we can now take advantage of the options passed to the action via the URL, making our URLs even prettier!"
+		message "We can now take advantage of the options passed to the action via the URL, making our URLs even prettier!"
 
-		message "Each action should now take an argument, `$options`, and for our edit/delete methods, we can now switch to using `$options['id']` instead of `$_GET['id']`."
+		message "We need to update `\\Suggestotron\\Controller\\Topics` so that each action can take an argument, `$options`, and for our edit/delete methods, we can now switch to using `$options['id']` instead of `$_GET['id']`."
 
 		message "Additionally, be sure to correct any `header()` redirects, to point to the new locations:"
 
@@ -316,6 +334,8 @@ steps do
 			<a href="/topic/edit/<?=$topic['id']; ?>" class="btn btn-primary">Edit</a>
 			<a href="/topic/delete/<?=$topic['id']; ?>" class="btn btn-danger" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-title="Are you sure?" data-content=" This cannot be undone!">Delete</a>
 		PHP
+
+		message "Notice how we now use `/topic/<action>/<id>` as our URL, *no more `GET` arguments!*"
 	end
 
 	step do
@@ -337,10 +357,22 @@ steps do
 	step do
 		message "Our final step, is to update our existing controller, `\\Suggestotron\\Controller\\Topics`, to use the new base controller:"
 
+		message "Just like with `\\Suggestotron\\Controller\\Errors`, we `extend` the base controller."
+
 		source_code :php, <<-PHP
 		class Topics extends \\Suggestotron\\Controller {
-			protected $data;
-			
+		PHP
+
+		message "Then we can start removing the now-duplicated code."
+
+		source_code :php, <<-PHP
+			protected $template;
+			protected $config;
+		PHP
+
+		message "Our constructor can be simplified too:"	
+
+		source_code :php, <<-PHP
 			public function __construct()
 			{
 				parent::__construct();
@@ -349,7 +381,13 @@ steps do
 		PHP
 
 		tip "We use a special method called, `parent::__construct()` to call the `\\Suggestotron\\Controller->__construct()` method."
+
+		message "We can also remove the `render()` function entirely."
 	end
+end
+
+explanation do
+	message "By adding the ability for multiple controllers, we have given ourselves a structure in to which we can continue to add new features to our application easily."
 end
 
 next_step "introducing_models"
