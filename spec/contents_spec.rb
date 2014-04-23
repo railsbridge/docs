@@ -29,16 +29,17 @@ describe Contents do
   end
 
   describe 'capitalization' do
-    let(:site_name) { 'installfest' }
+    let(:site_name) { 'intro-to-php' }
     let(:site_dir) { "#{real_sites_dir}/#{site_name}" }
-    let(:page_name) { 'installfest' }
+    let(:page_name) { 'intro-to-php' }
     before do
       @toc_html = Nokogiri.parse(@toc.to_html)
     end
 
-    it 'capitalizes OS X' do
+    it 'capitalizes PHP' do
       links = @toc_html.css('a').inject({}) { |hsh, link| hsh[link.text] = link.attr('href'); hsh }
-      links['OS X RVM'].should == '/installfest/osx_rvm'
+      p links
+      links['PHP Language'].should == '/intro-to-php/php_language'
     end
   end
 

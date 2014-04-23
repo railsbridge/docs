@@ -1,51 +1,87 @@
-step "Learn your Mac OS X Version" do
-  message <<-MARKDOWN
+message <<-MARKDOWN
+These instructions should work for all versions of Mac OS X from 10.7 (Lion) to 10.9 (Mavericks)
 
-* Click on the Apple icon in the top left of your screen.
-* Select "About This Mac"
-* In the window that comes up, under the title "Mac OS X" there will be a version number.
-  * If it starts with 10.9, you have **Mavericks**.
-  * If it starts with 10.8, you have **Mountain Lion**.
-  * If it starts with 10.7, you have **Lion**.
-  * If it starts with 10.6, you have **Snow Leopard**.
-  * If it starts with 10.5, you have **Leopard**.
-  * If it starts with 10.4, you have **Tiger**.
-  * If it starts with 10.3, you have **Panther**.
+You may need to login as an admin account, or give the Administrator password when installing some programs.
+MARKDOWN
 
-* Write down the Mac OS X version you have.
-* In addition, to the right of the "Processor", there will be the a processor type.
-  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
-  * If it ends with **Intel Core 2 Duo**, you are good to go.
-  * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
+insert "downloads_thumb_drive"
 
-* Once complete, you may close the "About This Mac" window.
+insert "virtualbox"
 
-Below is an example.
+step "Download VirtualBox for Mac OS X" do
+  message "Download the latest installer from <https://www.virtualbox.org/wiki/Downloads>."
 
-![OS X Snow Leopard](img/AboutThisMac.png)
+  message "You want the file called: `VirtualBox <version> for OS X hosts x86/amd64`"
 
-  MARKDOWN
+  img src: "img/virtualbox_download_osx.png", alt: "Download VirtualBox for Mac OS X"
 end
 
-step "Choose your instructions" do
-  
-  option "Mavericks" do
-    link "osx_rvm"
-  end
-  option "Mountain Lion/Lion/Snow Leopard" do
-    option_half "RailsInstaller" do
-      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
-      link "osx_railsinstaller"
-    end
-    option_half "Manually" do
-      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
-      link "osx_rvm"
-    end
-  end
+step "Install VirtualBox" do
+  message "Once you have the disk image (`.dmg` file), if it has not automatically opened, double click to open."
 
-  option "Leopard/Tiger/Panther" do
-    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
-    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
-    link "osx_panther"
-  end
+  img src: "img/virtualbox_install_osx_step1.png"
+
+  message "Next, double click on the `VirtualBox.pkg` to start the installer. Walk through the installation wizard and **keep all the default options**."
+
+  img src: "img/virtualbox_install_osx_step2.png"
+
+  important "You may be prompted to accept the installation of multiple drivers, or security prompts. Make sure to *accept them all*."
+
+  message "When complete, **you may be prompted to restart**. *Do so*."
 end
+
+insert "vagrant"
+
+step "Download Vagrant for Mac OS X" do
+  message "Download the latest installer from <http://www.vagrantup.com/downloads.html>."
+
+  message "You want the file called: `Mac OS X Universal (32 and 64-bit)`"
+
+  img src: "img/vagrant_download_osx.png", alt: "Download Vagrant for Mac OS X"
+end
+
+step "Install Vagrant" do
+  message "Once you have the disk image (`.dmg` file), if it has not automatically opened, double click to open."
+
+  img src: "img/vagrant_install_osx_step1.png"
+
+  message "Next, double click on the `VirtualBox.pkg` to start the installer. Walk through the installation wizard and **keep all the default options**."
+
+  img src: "img/vagrant_install_osx_step2.png"
+
+  important "You may be prompted to accept the installation of multiple drivers, or security prompts. Make sure to *accept them all*."
+
+  message "When complete, **you may be prompted to restart**. *Do so*."
+end
+
+insert "sublimetext3"
+
+step "Download Sublime Text 3" do
+  message "Download the latest installer from <http://www.sublimetext.com/3>"
+
+  message "You want to file for `OS X`"
+
+  img src: "img/sublime_download_osx.png"
+end
+
+step "Install Sublime Text 3" do
+  message "Once you have the disk image (`.dmg` file), if it has not automatically opened, double click to open."
+
+  message "Next, simply drag the `Sublime Text` application to the `Applications` folder"
+
+  img src: "img/osx_sublime3_step1.png"
+end
+
+insert "setup_vm"
+
+step "Run the Virtual Machine" do
+  tip "The Terminal application can be found under `Applications > Utilities`, or type `Terminal` into Spotlight."
+
+  message "First, in your terminal, browse to the new `phpbridge` folder you created earlier."
+
+  console "cd ~/phpbridge/project"
+
+  insert "initial_vagrant_up"
+end
+
+insert "summary"

@@ -3,3 +3,11 @@ situation "Setting up the PHPBridge Virtual Machine" do
 
   message "This virtual machine is a partially pre-configured environment that will let you get to work immediately to create something cool!"
 end
+
+step "Copy the neccessary files" do
+  tip "You will be provided with a copy of the virtual machine (\"the box\") on a USB thumb drive."
+
+  message "Create a new folder on your computer called `phpbridge` in your user folder."
+
+  message "Inside this folder, copy the `project` and `vm` directories."
+end
