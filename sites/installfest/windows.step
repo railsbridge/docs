@@ -89,18 +89,10 @@ step "Install Sublime Text 3" do
 
   message "As you go through the installer, follow the settings below (otherwise leave the defaults):"
 
-  img src: "img/win_sublime3_step1.png"
+  img src: "img/sublime_install_win_step1.png"
 end
 
 insert "setup_vm"
-
-step "Copy the neccessary files" do
-  tip "You will be provided with a copy of the virtual machine (\"the box\") on a USB thumb drive."
-
-  message "Create a new folder on your computer called `phpbridge` in your user folder."
-
-  message "Inside this folder, copy the `foundations.v0.box` and `Vagrantfile` files."
-end
 
 step "Open up a terminal" do
   tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
@@ -134,11 +126,11 @@ step "Run the Virtual Machine" do
   message "First, in your terminal, browse to the new `phpbridge` folder you created earlier."
 
   option "For Windows Vista, 7 and 8" do
-    console "cd C:\\Users\\<username>\\phpbridge"
+    console "cd C:\\Users\\<username>\\phpbridge\\project"
   end
 
   option "For Windows XP" do
-    console "cd C:\\Documents and Settings\\<username>\\phpbridge"
+    console "cd C:\\Documents and Settings\\<username>\\phpbridge\\project"
   end
 
   important "If you are using Command Prompt (Windows Vista, or XP), anytime you see the `vagrant` command, you may need to substitute it for `vagrant.exe`."

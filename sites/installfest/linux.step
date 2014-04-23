@@ -75,18 +75,12 @@ step "Install Sublime Text 3" do
   console "dpkg -i </path/to/downloaded.deb>"
 end
 
-step "Copy the neccessary files" do
-  tip "You will be provided with a copy of the virtual machine (\"the box\") on a USB thumb drive."
-
-  message "Create a new folder on your computer called `phpbridge` in your user folder."
-
-  message "Inside this folder, copy the `foundations.v0.box` and `Vagrantfile` files."
-end
+insert "setup_vm"
 
 step "Run the Virtual Machine" do
   message "First, in your terminal, browse to the new `phpbridge` folder you created earlier."
 
-  console "cd ~/phpbridge"
+  console "cd ~/phpbridge/project"
 
   insert "initial_vagrant_up"
 end
