@@ -18,14 +18,14 @@
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
 
-![RubyFuza](img/rubyfuza_2014.gif)
+![Siyelo](img/siyelo-logo.png)
+![Hetzner](img/hetzner-logo.png)
+![Unboxed](img/unboxed-logo.png)
 
 ### goodies
 
-![Smashing Magazine](img/smashing-magazine.png)
-![A Book Apart](img/aba-logo.png)
 ![Pragmatic Bookshelf](img/pragprog-logo.png)
-![Platform45](img/platform45-logo.png)
+![Pluralsight](img/pluralsight-fullcolor-175x39-v3.png)
 
 <!SLIDE bullets>
 # Open source workshop
