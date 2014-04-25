@@ -88,7 +88,7 @@
 ### Don't be shy: ask questions
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
-### Code of Conduct: <http://rbcpt.org/code>
-### Resources: <http://rbcpt.org/resources>
+### Code of Conduct: [rbcpt.org/code](http://rbcpt.org/code/)
+### Resources: [rbcpt.org/resources](http://rbcpt.org/resources/)
 
-# rbcpt.org/start
+# [rbcpt.org/start](http://rbcpt.org/start/)
