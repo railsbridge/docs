@@ -62,6 +62,4 @@
  * **13:00**-14:00: Lunch
  * **14:00**-15:00: **Workshop**
  * **15:00**-15:30: Break
- * **15:30**-17:00: **Workshop**
- * **17:00**-17:30: Closing presentation, Survey, eBook giveaway
- * **17:30**-18:00: Retrospective
+ * **15:30**-18:00: **Workshop**
