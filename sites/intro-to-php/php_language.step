@@ -68,7 +68,7 @@ $my_variable * 3;
     PHP
 
     source_code :php, <<-PHP
-    echo "My variable is: $my_variable"
+    echo "My variable is: $my_variable";
     PHP
   end
 
