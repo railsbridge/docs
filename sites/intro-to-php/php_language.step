@@ -234,7 +234,7 @@ pluralize("kiwi");
     ?>
     PHP
 
-    tip "You may notice the two-slashes at the start of the middle line above. This is know as a comment and is ignored by PHP."
+    tip "You may notice the two-slashes at the start of the middle line above. This is known as a comment and is ignored by PHP."
   end
 
   step do
