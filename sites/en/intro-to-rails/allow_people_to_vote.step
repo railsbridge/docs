@@ -76,7 +76,10 @@ steps {
 
   step "Confirm your changes in the browser" do
     message "Go back to <http://localhost:3000/topics> and play."
-    message "Revel in the fact that you didn't have to restart the server to see these changes. Hawt, no?"
+    message "Revel in the fact that you didn't have to restart the server to see these changes. Awesome, no?"
+    message "<h2>Pair teach again with sticky notes and paper</h2>"
+    message "It's talking time again! Describe what you've just done, and the steps you took, with a partner."
+    message "If there are things you're unsure about, write them down too, then ask a teacher to explain."
   end
 }
 
