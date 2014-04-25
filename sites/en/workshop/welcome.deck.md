@@ -84,6 +84,7 @@
 
 <!SLIDE bullets>
 # Last but not least
+### Recap as you go
 ### Check the Glossary
 ### Don't be shy: ask questions
 ### Teachers are here to help

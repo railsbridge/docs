@@ -45,6 +45,7 @@
 <!SLIDE bullets>
 # And finally...
 
+### Who, Where, Why?
 ### Don't be shy: ask questions
 ### Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
