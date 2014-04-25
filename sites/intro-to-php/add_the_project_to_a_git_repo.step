@@ -24,7 +24,7 @@ steps do
   step "Setup Git" do
     console <<-CMD
     git config --global user.email "you@example.com"
-    git config --global user.name "Your Name""
+    git config --global user.name "Your Name"
     CMD
 
     message "This tells git (and anyone who has access to your repository) who made the changes — this is critical when working in teams."
