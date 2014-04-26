@@ -1,0 +1,13 @@
+message "Check to see if you have any existing suggestotron apps from a previous workshop."
+div do
+  option_half "Windows" do
+    console "dir"
+    message "That command will list the files in your railsbridge directory. If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+    console "delete suggestotron"
+  end
+  option_half "Mac or Linux" do
+    console "ls"
+    message "That command will list the files in your railsbridge directory. If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+    console "rm -rf suggestotron"
+  end
+end
