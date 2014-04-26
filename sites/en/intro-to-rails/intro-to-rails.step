@@ -52,7 +52,7 @@ Everything should be set up the night before during our
 install-fest. Please ensure you have everything working _before_ you
 show up for RailsBridge on Saturday.
 
-You can verify that you have everything working by trying this out in your terminal:
+You can verify that you have everything working by trying this out in an IRB session:
 
 <div class="console"><pre>
 >> 1 + 2
@@ -63,7 +63,7 @@ You can verify that you have everything working by trying this out in your termi
 </pre>
 </div>
 
-If you can do that, you are probably good to go.
+If you can do that, you are probably good to go. Exit IRB by typing `quit` and then continue.
 
 ### Working Effectively and Efficiently
 
