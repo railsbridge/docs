@@ -1,4 +1,5 @@
 message "`cd` stands for change directory."
+
 div do
   option_half "Windows" do
     console "cd c:\\Sites"
