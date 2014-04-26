@@ -37,12 +37,17 @@ explanation {
 
   * The second change we made was to make the link text 'Delete' instead of destroy.
 
+
+  MARKDOWN
+}
+
+tip {
+  message <<-MARKDOWN
   ## Three key words
 
   Find a partner and decide on three key words from this section. Write each word down on a sticky note, then put them all on a bit of paper.
 
   If some of the words made you frown, wave at a teacher and talk to them about it.
-
   MARKDOWN
 }
 

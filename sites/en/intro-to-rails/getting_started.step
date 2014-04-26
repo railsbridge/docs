@@ -12,7 +12,7 @@ steps do
   step do
     insert 'switch_to_home_directory'
   end
-  
+
   step do
     console "mkdir railsbridge"
     message "This command creates a new directory for us to store our project in."
@@ -97,8 +97,10 @@ Select your `suggestotron` folder from the file picker that opens. If everything
 
   message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
 
+end
+
+tip "Great! You've created a brand new (empty) Rails app!" do
   message <<-MARKDOWN
-  <h2>Great! You've created a brand new (empty) Rails app!</h2>
   Why not take a break and stretch your legs?
   MARKDOWN
 end

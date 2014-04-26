@@ -95,11 +95,16 @@ explanation {
 
     >> exit
 
+  <h2>Excellent! You've learnt about routes and you're about to send your app out to the Internetz!</h2>
+
+  Stand up. High five the person next to you. Excellent.
+
   MARKDOWN
 
+}
+
+tip {
   message <<-MARKDOWN
-  <h1>Excellent! You've learnt about routes and you're about to send your app out to the Internetz!</h1>
-  Stand up. High five the person next to you. Excellent.
 
   ## Short recap
 
@@ -107,10 +112,9 @@ explanation {
 
   Write down things that you're unsure about too, then get a teacher to help you understand.
 
-
-
   MARKDOWN
 }
+
 
 insert 'consider_deploying'
 

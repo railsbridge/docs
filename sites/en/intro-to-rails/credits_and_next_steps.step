@@ -5,13 +5,21 @@ message <<MARKDOWN
 (Well, they're never _really_ finished... have fun tweaking it!)
 And yes... you get another sticker!
 
-### Help us make RailsBridge better
+MARKDOWN
 
-Please take five minutes to [complete our (anonymous) survey](https://docs.google.com/forms/d/1ltF233clMPo4y2kul7rVmFXU_Tu9496wkDJp65Up-wA/viewform).
 
-It's only four questions! We use your answers to do cool things. So far we've improved the documentation, got better coffee, added an overview, and lots more.
+tip "Help us make RailsBridge better" do
 
-Thank you!
+  message "Please take five minutes to [complete our (anonymous) survey](https://docs.google.com/forms/d/1ltF233clMPo4y2kul7rVmFXU_Tu9496wkDJp65Up-wA/viewform)."
+
+  message "It's only four questions! We use your answers to do cool things. So far we've improved the documentation, got better coffee, added an overview, and lots more."
+
+  message "Thank you!"
+end
+
+
+
+message <<MARKDOWN
 
 # Extra Credit
 
