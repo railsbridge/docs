@@ -125,7 +125,7 @@ steps do
 	end
 
 	step do
-		message "We then take our `index.php` specific HTML and create `views/index/index.html`."
+		message "We then take our `index.php` specific HTML and create `views/index/index.phtml`."
 
 		source_code :php, <<-PHP
 		<?php
@@ -162,7 +162,7 @@ steps do
 	end
 
 	step do
-		message "Now we can update our `index.php` to use our template:"
+		message "Now we can update our `public/index.php` to use our template:"
 
 		source_code :php, <<-PHP
 			<?php
