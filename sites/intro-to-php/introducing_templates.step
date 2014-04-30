@@ -170,7 +170,6 @@ steps do
 			require '../src/Suggestotron/Template.php';
 
 			$data = new \\Suggestotron\\TopicData();
-			$data->connect();
 
 			$topics = $data->getAllTopics();
 
