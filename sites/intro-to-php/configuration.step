@@ -18,7 +18,7 @@ steps do
 	end
 
 	step do
-		message "Next, we will create our `\\Suggestotron\\Config` class:"
+		message "Next, we will create our `\\Suggestotron\\Config` class in `src/Suggestotron/Config.php`:"
 
 		source_code :php, <<-PHP
 			<?php
@@ -49,7 +49,7 @@ steps do
 		source_code :php, <<-PHP
 		<?php
 		require_once '../src/Suggestotron/Config';
-		\\Suggestotron\\Config::setDirectory('../src');
+		\\Suggestotron\\Config::setDirectory('../config');
 		?>
 		PHP
 
@@ -124,13 +124,15 @@ steps do
 	end
 
 	step do
-		message "Finally, lets update our base template, `base.php`:"
+		message "Finally, lets update our base template, `views/base.phtml`:"
 
 		message "At the top, first get the configuration:"
 		source_code :php, <<-PHP
 		<?php
 		$config = \\Suggestotron\\Config::get('site');
 		?>
+		<!doctype html>
+		...
 		PHP
 
 		message "Then, update the `<title>` to use the configuration option:"
