@@ -69,7 +69,7 @@ steps do
 			<a href="/delete?id=<?=$topic['id']; ?>" class="btn btn-danger" data-container="
 		PHP
 
-		message "Also, we should update our link to `new.php` in the base template (`base.php`):"
+		message "Also, we should update our link to `add.php` in the base template (`base.phtml`):"
 
 		source_code :html, <<-HTML
 			<a href="/add" class="btn btn-default">
