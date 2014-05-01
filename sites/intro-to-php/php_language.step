@@ -181,7 +181,7 @@ Another common loop, is known as the `for` loop. This loop has three conditions:
     MARKDOWN
 
     source_code :php, <<-PHP
-  for ($i = 0; $i < sizeof($fruits), $i++) {
+  for ($i = 0; $i < sizeof($fruits); $i++) {
     echo $fruits[$i] . PHP_EOL;
   }
     PHP
