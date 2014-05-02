@@ -16,4 +16,7 @@ use Rack::Codehighlighter, :coderay,
 # Thin::Logging.debug = true
 
 require './app'
-run InstallFest
+run Rack::Cascade.new([
+  Deck::RackApp.public_file_server,
+  InstallFest
+  ])

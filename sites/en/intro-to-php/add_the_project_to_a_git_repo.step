@@ -1,0 +1,98 @@
+
+goals do
+  goal "Create a local git repository"
+  goal "Add all our files to the git repository"
+
+  message "To track our changes over time, we are going to use a version control system — we have chosen to go with `git`."
+end
+
+steps do
+  step do
+    message "Open up a second terminal. For Mac OS X, press `Cmd+T`. On Linux, try `Ctrl+T` and on Windows, you will need to open a new window the same way you opened the current one."
+
+    message "Once you have a second terminal, connect to the virtual machine again:"
+
+    console_without_message "vagrant ssh"
+  end
+
+  step do
+    message "Switch to our project directory"
+
+    console "cd /var/www/suggestotron"
+  end
+
+  step "Setup Git" do
+    console <<-CMD
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    CMD
+
+    message "This tells git (and anyone who has access to your repository) who made the changes — this is critical when working in teams."
+  end
+
+  step "Initialize our Repository" do
+    console "git init"
+
+    result "Initialized empty Git repository in /var/www/suggestotron/.git/"
+
+    message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -al` (list all files)."
+  end
+
+  step do
+    console "git status"
+
+    result <<-TEXT
+    # On branch master
+    #
+    # Initial commit
+    #
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    # public/
+    #
+    nothing added to commit but untracked files present (use "git add" to track)
+    TEXT
+
+    message "`git status` tells you everything git sees as modified, new, or missing."
+  end
+
+  step do
+    console "git add ."
+    message "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
+    tip "git add" do
+      message <<-MARKDOWN
+        With Git, there are usually many ways to do very similar things.
+
+        * `git add foo.txt` adds a file named `foo.txt`
+        * `git add .` adds all new files and changed files, but *keeps* files that you've deleted
+        * `git add -A` adds everything, including deletions
+
+        "Adding deletions" may sound weird, but if you think of a version control system as keeping
+        track of *changes*, it might make more sense. Most people use `git add .` but `git add -A`
+        can be safer. No matter what, `git status` is your friend.
+      MARKDOWN
+    end
+  end
+
+  step do
+    console "git commit -m \"Created my first PHP file\""
+    message "`git commit` tells git to actually _do_ all things you've said you wanted to do."
+    message "This is done in two steps so you can group multiple changes together."
+    message "`-m \"Created my first PHP file\"`  is just a shortcut to say what your commit message is. You can skip that part and git will bring up an editor to fill out a more detailed message."
+
+    fuzzy_result <<-TEXT
+    [master (root-commit) a74d816] Created my first PHP file
+     1 file changed, 3 insertions(+)
+     create mode 100644 public/index.php
+    TEXT
+  end
+end
+
+explanation do
+  message <<-MARKDOWN
+By checking your application into git now, you're creating a record of your starting point. Whenever you make a change during today's workshop, we'll add it to git before moving on. This way, if anything ever breaks, or you make a change you don't like, you can use git as an all-powerful "undo" technique. But that only works when you remember to commit early and often!
+  MARKDOWN
+end
+
+next_step "creating_a_database"

@@ -1,0 +1,250 @@
+situation "Complete Suggestotron" do
+	message "Suggestrotron is not really complete unless we can rank suggestions by popular vote."
+
+	message "We're going to use all of the new skills we've learned, to build out this new feature."
+end
+
+goals do
+	goal "Add voting to Suggestotron"
+end
+
+steps do
+	step do
+		message "Just like with our topics, we will start out by defining our database table, `votes`:"
+
+		model_diagram header: 'votes', fields: %w(id title_id count)
+
+		message "To get started, we run the `mysql` command in the terminal:"
+
+		console "mysql -u root -p"
+
+		message "When prompted, enter the password: `root`."
+	end
+
+	step do
+		message "We then run our SQL code:"
+
+		source_code :sql, <<-SQL
+		USE suggestotron;
+
+		CREATE TABLE votes ( 
+			id INT unsigned NOT NULL AUTO_INCREMENT, 
+			topic_id INT unsigned NOT NULL, 
+			count INT NOT NULL DEFAULT 0, 
+			PRIMARY KEY(id) 
+		);
+		SQL
+	end
+
+	step do
+		message "Create empty vote records for each of your existing topics:"
+
+		source_code :sql, <<-SQL
+		INSERT INTO votes (
+			topic_id,
+			count
+		) SELECT id, 0 FROM topics;
+		SQL
+
+		message "Verify our data:"
+
+		source_code :sql, <<-SQL
+		SELECT * FROM votes;
+		SQL
+
+		fuzzy_result <<-TEXT
+		SELECT * FROM votes;
+		+----+----------+-------+
+		| id | topic_id | count |
+		+----+----------+-------+
+		|  1 |        1 |     0 |
+		|  2 |        2 |     0 |
+		|  3 |        3 |     0 |
+		+----+----------+-------+
+		3 rows in set (0.00 sec)
+		TEXT
+	end
+
+	step do
+		message "Update our Topics model class, to insert an empty row when creating new topics automatically:"
+
+		source_code :php, <<-PHP
+		public function add($data)
+		{
+			$query = \\Suggestotron\\Db::getInstance()->prepare(
+			    "INSERT INTO topics (
+			            title,
+			            description
+			    ) VALUES (
+			            :title,
+			            :description
+			    )"
+			);
+
+			$data = [
+			    ':title' => $data['title'],
+			    ':description' => $data['description']
+			];
+
+			$query->execute($data);
+
+			// Grab the newly created topic ID
+			$id = \\Suggestotron\\Db::getInstance()->lastInsertId();
+
+			// Add empty vote row
+			$sql = "INSERT INTO votes (
+						topic_id,
+						count
+					) VALUES (
+						:id,
+						0
+					)";
+
+			$data = [
+				':id' => $id
+			];
+
+			$query = \\Suggestotron\\Db::getInstance()->prepare($sql);
+			$query->execute($data);
+		}
+        PHP
+    end
+
+    step do
+    	message "We must also remove this data, when deleting the topic:"
+
+    	source_code :php, <<-PHP
+    	public function delete($id) {
+            $query = \Suggestotron\Db::getInstance()->prepare(
+                "DELETE FROM topics
+                    WHERE
+                        id = :id"
+            );
+
+            $data = [
+                ':id' => $id,
+            ];
+
+            $result = $query->execute($data);
+
+            if (!$result) {
+                return false;
+            }
+
+            $sql = "DELETE FROM votes WHERE topic_id = :id";
+            $query = \\Suggestotron\\Db::getInstance()->prepare($sql);
+
+            return $query->execute($data);
+        }
+        PHP
+    end
+
+	step do
+		message "We now need a model class to manage our votes, `\\Suggestotron\\Model\\Votes`:"
+
+		source_code :php, <<-PHP
+		<?php
+		namespace Suggestotron\\Model;
+
+		class Votes {
+			public function addVote($topic_id)
+			{
+				$sql = "UPDATE votes 
+	                    SET 
+	                        count = count + 1
+	                    WHERE
+	                        topic_id = :id";
+
+		        $query = \\Suggestotron\\Db::getInstance()->prepare($sql);
+
+		        $data = [
+		            ':id' => $topic_id,
+		        ];
+
+		        return $query->execute($data);
+			}
+		}
+		PHP
+	end
+
+	step do
+		message "Next up, we create our controller, `\\Suggestotron\\Controller\\Votes`, with an `add` action."
+
+		source_code :php, <<-PHP
+			<?php
+			namespace Suggestotron\\Controller;
+
+			class Votes extends \\Suggestotron\\Controller {
+				public function addAction($options) {
+					if (!isset($options['id']) || empty($options['id'])) {
+						echo "No topic id specified!";
+						exit;
+					}
+
+					$votes = new \\Suggestotron\\Model\\Votes();
+					$votes->addVote($options['id']);
+
+					header("Location: /");
+				}
+			}
+		PHP
+	end
+
+	step do
+		message "To access our new controller, we should add a route to `config/routes.php`:"
+
+		source_code :php, <<-PHP
+        '/vote(/:action(/:id))' => [
+                'controller' => '\\Suggestotron\\Controller\\Votes',
+        ],
+        PHP
+
+        message "This route should be placed **above** the generic `/:controller(/:action)` route which will otherwise catch the request."
+    end
+
+    step do
+    	message "To allow our users to actually vote, we'll add a button to our topic list view, `index/list.phtml`, before our `Edit` and `Delete` buttons:"
+
+		source_code :php, <<-PHP
+		<a href="/vote/add/<?=$topic['id']; ?>" class="btn btn-success">
+			<span class="glyphicon glyphicon-thumbs-up">
+				<strong><?=(isset($topic['count'])) ? $topic['count'] : 0;?></strong>
+			</span>
+		</a>
+		PHP
+    end
+
+    step do
+    	message "Finally, we need to update our `\\Suggestotron\\Model\\Topics` model, to both retrieve the votes for each topic, and sort by the number of votes:"
+
+    	source_code :php, <<-PHP
+        public function getAllTopics()
+        {
+            $sql = "SELECT 
+                        topics.*,
+                        votes.count
+                    FROM topics INNER JOIN votes ON (
+                        votes.topic_id = topics.id
+                    )
+                    ORDER BY votes.count DESC, topics.title ASC";
+
+            $query = \\Suggestotron\\Db::getInstance()->prepare($sql);
+            $query->execute();
+            return $query;
+        }
+        PHP
+    end
+end
+
+explanation do
+	message 'Guess what?  _**You\'re done!!!**_ Congratulations, you just "finished" your first web app!'
+	message "(They're never _really_ ever finished... have fun tweaking it!)"
+
+	message "Go take a look at your masterpiece: <http://localhost:8080>"
+
+	message "It should look something like this:"
+
+	img src: "img/finished_app.png"
+end
+
+next_step "credits_and_next_steps"

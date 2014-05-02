@@ -1,0 +1,11 @@
+situation "VirtualBox" do
+  message <<-MARKDOWN
+  VirtualBox is a tool that allows you to create virtual computers running their own
+  operating system, and that you can safely play around in without worrying about
+  breaking your actual computer.
+
+  VirtualBox is free (as in beer) and open source, you can find more information at
+  <https://www.virtualbox.org>.
+
+  MARKDOWN
+end

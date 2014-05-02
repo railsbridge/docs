@@ -1,0 +1,101 @@
+message <<-MARKDOWN
+### Goal
+
+To teach you PHP we are going to use a "Real World"
+example. You've decided to create a voting system for you and your
+friends to play with. You've decided at a minimum, you'd like to
+allow users to:
+
+* view the topics sorted by number of votes
+* vote on topics
+* create, edit, and destroy topics
+
+You've sketched up an initial screenshot of what you want it to look like:
+
+![screenshot](img/suggestotron_mockup.png)
+
+### Meta-Goal
+
+When you have completed today's goal of getting the basic
+application online you should understand:
+
+* Basic PHP syntax
+* How to try your PHP code (Psy Shell)
+* How to go from requirements to a new working web application
+* How to get your application online
+* The basic tools a web developer uses (source control, editor, console, local server)
+
+### Schedule
+
+* 1-ish hour of introduction to the language 
+* 5-ish hours of building your application
+
+This is just a rough guideline, not a mandate. Some steps you'll go
+over and some you'll go under. It'll all work out by the end of the
+day...
+
+### Requirements
+
+We're going to be working with:
+
+* PHP
+* MySQL Database Server
+* Terminal
+* Bootstrap 3
+* Sublime Text Editor
+* Psysh
+* Vagrant & VirtualBox
+* Ubuntu Linux
+
+We will provide you with everything you need to get started on the day.
+
+### Working Effectively and Efficiently
+
+We highly recommend you do the following:
+
+* Open your browser fresh or hide any windows you already have open.
+  * Bring up one window with two tabs
+    * One for this content
+    * One for interacting with your app.
+* Open your text editor and _do not ever close it_. We're not quitters.
+* When we get to the Terminal, you'll want to keep that open too
+* Hide all extra applications. Turn off twitter, IM, and all other distractions.
+
+By minimizing the number of things you interact with, you reduce the
+amount of time spent switching between them and the context lost as
+you work through the lessons. Having 50 tabs open in your web
+browser gets confusing and wastes time.
+
+### Format
+
+Each lesson will look like this:
+
+<div style="background: white; border: 1px solid black; padding-left: 4em;">
+  <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
+  <div class="goals">
+    <h1>Goal:</h1>
+    <p>Description of the current step.
+    <p>Red because big goals are scary
+  </div>
+  <div class="steps">
+    <h1>Steps:</h1>
+    <div class="step">
+      <h1>
+        <img src="img/fake_checkbox.png">&nbsp;<span class="prefix">Step 1</span>
+      </h1>
+      <div>
+        <pre>Commands to run, or code to write</pre>
+      </div>
+      <p>Yellow because we've gotten it done, but we have no clue what's going on.
+    </div>
+  </div>
+  <div class="explanation">
+    <h1>Explanation</h1>
+    <p>Details of what the steps actually did... spell out the cause and effect.
+    <p>Green because we can tie everything together now.
+  </div>
+</div>
+MARKDOWN
+
+next_step "php_language"
+

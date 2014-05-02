@@ -1,0 +1,31 @@
+message <<-MARKDOWN
+Now that you've finished the Suggestotron curriculum, what next?
+
+# Extra Credit
+
+If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
+
+* Add [appropriate icons](http://getbootstrap.com/components/#glyphicons) to the Edit and Delete buttons
+* Add a downvote button that does the opposite of what the upvote button does
+* Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
+* Add success messages when adding/editing topics
+* Add error messages when adding/editing/deleting topics
+* Make it so that all error messages are shown in the templates (e.g. going to the edit page without an ID)
+
+# Authors
+
+- [Davey Shafik](http://twitter.com/dshafik)
+- [Michelle Sanver](http://twitter.com/michellesanver)
+
+## Lovingly Based on RailsBridge
+
+Thanks to the amazing work of the volunteers behind [RailsBridge](http://railsbridge.org) and their
+decision to release all of their content under a Creative Common (CC-BY) license, we are able to create
+PHPBridge by standing on their shoulders and building up.
+
+# What next?
+
+- It's probably time for the closing presentation.
+- After that, start a project, tutorial, and come back again!
+- All our favorite resources can be found on the PHPBridge site: <http://phpbridge.org/learn/resources>
+MARKDOWN

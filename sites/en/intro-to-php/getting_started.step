@@ -1,0 +1,73 @@
+img src: "img/phpinfo.png", alt: "Start Page"
+
+goals do
+  goal "Create Your New Application"
+message "Let's get started! By the end of this step, we'll have a brand-new (empty) web app."
+end
+
+steps do
+
+  insert "tip_TA"
+
+  step do
+    insert 'switch_to_home_directory'
+  end
+  
+  step do
+    console "mkdir suggestotron"
+    message "This command creates a new directory for us to store our project in."
+  end
+
+  step do
+    console "cd suggestotron"
+  end
+
+  step do
+    console "mkdir public"
+    message "This creates a directory to hold everything that will be publicly accessible"
+  end
+
+  step do
+    message <<-MARKDOWN
+Open the `suggestotron` directory as a project in your text editor.
+
+In **Sublime Text**, you can use the `Project > Add Folder to Project...` menu option:
+
+<img src='img/sublime_add_folder_to_project.png' />
+
+Select your `suggestotron` directory from the file picker that opens. If everything works out Sublime should look something like this:
+
+<img src='img/sublime_project_as_folder.png' />
+    MARKDOWN
+  end
+
+  step do
+    message "Next, create a new file called `index.php` in the `public` directory, and type the following:"
+
+    source_code :php, <<-PHP
+      <?php
+      phpinfo();
+      ?>
+    PHP
+  end
+
+  step do
+    message "Now, start the PHP web server"
+
+    console "php -S 0.0.0.0:8080 -t ./public/"
+  end
+
+  step do
+    text "Point your web browser to "
+    url "http://localhost:8080" 
+    p 'See your "web app" actually running!'
+  end
+end
+
+explanation do
+  message "We now have a running PHP server, showing the configuration of our PHP installation."
+
+  message "Any changes you make from now on will be immediately visible simply by refreshing your browser."
+end
+
+next_step "add_the_project_to_a_git_repo"

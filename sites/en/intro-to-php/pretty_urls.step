@@ -1,0 +1,130 @@
+goals do
+	goal 'Get rid of the unsightly ".php" in our URLs, modernizing our app!'
+	goal 'Reduce duplication of code'
+
+	message "Modern web applications use magical URLs that don't map 1:1 with files, to make them more dynamic and maintainable."
+end
+
+important "Different web servers (e.g. Nginx, Apache) must be configured differently for this to work, but the most popular ones all support it"
+
+situation "Dynamic URLs" do
+	message "By default with our PHP server, if we enter a URL that does not exist, we are sent to `index.php`"
+
+	message "We can then look at the `$_SERVER` super-global to find out the page they requested. This value lives in `$_SERVER['PATH_INFO']`"
+	
+	message "For example, if we visit <http://localhost:8080/add>, `$_SERVER['PATH_INFO']` is set to `/add`"
+end
+
+steps do
+	step do
+		message "We will start by creating a Router class. This will take the dynamic URL and map it to our application code:"
+
+		source_code :php, <<-PHP
+		<?php
+		namespace Suggestotron;
+
+		class Router {
+			public function start($route)
+			{
+				$path = realpath("./" . $route . ".php");
+
+				if (file_exists($path)) {
+					require $path;
+				} else {
+					require 'error.php';
+				}
+			}
+		}
+		PHP
+
+		message "This will look for a file with the same name as the route and include it, or include an `error.php` file"
+	end
+
+	step do
+		message "Now we need to re-purpose our `index.php` to use our router, instead of simply showing our list. First, we will move our list to `list.php`:"
+
+		source_code :php, <<-PHP
+			<?php
+			require_once '../src/Suggestotron/Config.php';
+			\\Suggestotron\\Config::setDirectory('../config');
+
+			$config = \\Suggestotron\\Config::get('autoload');
+			require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
+
+			$data = new \\Suggestotron\\TopicData();
+
+			$topics = $data->getAllTopics();
+
+			$template = new \\Suggestotron\\Template("../views/base.phtml");
+			$template->render("../views/index/list.phtml", ['topics' => $topics]);
+			?>
+		PHP
+	end
+
+	step do
+		message "We then move our template from `views/index/index.phtml` to `views/index/list.phtml`, and update our links to point to `/edit` and `/delete`:"
+
+		source_code :php, <<-PHP
+			<a href="/edit?id=<?=$topic['id']; ?>" class="btn btn-primary">Edit</a>
+			<a href="/delete?id=<?=$topic['id']; ?>" class="btn btn-danger" data-container="
+		PHP
+
+		message "Also, we should update our link to `add.php` in the base template (`base.phtml`):"
+
+		source_code :html, <<-HTML
+			<a href="/add" class="btn btn-default">
+				<span class="glyphicon glyphicon-plus-sign"></span>
+				Add Topic
+			</a>
+		HTML
+
+		message "Finally, update the `<form>` actions in `views/index/add.phtml` and `views/index/edit.phtml`, to point to the correct URLs."
+	end
+
+	step do
+		message "Then, we can make the necessary changes to our `index.php`:"
+
+		source_code :php, <<-PHP
+		<?php
+		require_once '../src/Suggestotron/Config.php';
+		\\Suggestotron\\Config::setDirectory('../config');
+
+		$config = \\Suggestotron\\Config::get('autoload');
+		require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
+
+		if (!isset($_SERVER['PATH_INFO']) || empty($_SERVER['PATH_INFO']) || $_SERVER['PATH_INFO'] == '/') {
+			$route = 'list';
+		} else {
+			$route = $_SERVER['PATH_INFO'];
+		}
+
+		$router = new \\Suggestotron\\Router();
+		$router->start($route);
+		?>
+		PHP
+	end
+
+	step do
+		message "Now, if you visit the site, and click around, you will see our URLs are much nicer"
+
+		message "Additionally, we can start to remove some duplicated code, we no longer need to setup our config and our autoloader in each of these files"
+
+		message "Go ahead and remove the following, and you'll see the site still works!"
+
+		source_code :php, <<-PHP
+			require_once '../src/Suggestotron/Config.php';
+			\\Suggestotron\\Config::setDirectory('../config');
+
+			$config = \\Suggestotron\\Config::get('autoload');
+			require_once $config['class_path'] . '/Suggestotron/Autoloader.php';
+		PHP
+	end
+end
+
+explanation do
+	message "By programmitically handling our URLs, we can create pretty URLs in any structure we want, without needing to create complex directory structures."
+
+	message "This allows us to share common code between many pages — similiar to our templates — and reduce our applications complexity."
+end
+
+next_step "getting_dry"

@@ -94,6 +94,15 @@ describe Step do
       hash = URI.escape '#'
       assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
     end
+
+    it "has an optional parameter for the caption" do
+      html_doc(<<-RUBY)
+      step "breakfast" do
+        link "breakfast", caption: "Eat some"
+      end
+      RUBY
+      assert { html_doc.css("p.link").text == "Eat some Breakfast" }
+    end
   end
 
   describe 'source_code' do
@@ -201,7 +210,7 @@ describe Step do
 
       page = Nokogiri.parse("<html>#{step_obj_for(outer_path).to_html}</html>")
 
-      assert { page.css('a').first[:href] == "somewhere_else?back=outer%23step" }
+      assert { page.css('a').first[:href] == "somewhere_else?back=outer" }
     end
   end
 end

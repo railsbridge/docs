@@ -3,30 +3,17 @@ require "contents"
 require "site_index"
 require 'erector_scss'
 require 'titleizer'
-require 'docs_external_renderer'
+require 'html5_page'
+require 'flags'
 
-class DocPage < Erector::Widgets::Page
-  needs :site_name, :doc_title, :doc_path, :page_name, :src
+class DocPage < Html5Page
+  needs :site_name, :doc_title, :doc_path, :page_name, :src, :locale
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name, :src
 
   def self.css_path
     here = File.expand_path File.dirname(__FILE__)
     File.expand_path "#{here}/../public/css"
-  end
-
-  # wire up the DocsExternalRenderer
-  def included_head_content
-    included_widgets = [self.class] + output.widgets.to_a + extra_widgets
-    DocsExternalRenderer.new(:classes => included_widgets).to_html
-  end
-
-  def doctype
-    '<!doctype html>'
-  end
-
-  def html_attributes
-    {:lang => 'en'}
   end
 
   def head_content
@@ -71,14 +58,12 @@ class DocPage < Erector::Widgets::Page
     end
   end
 
-  # todo: test
   def file_name
     @doc_path.split('/').last
   end
 
-  # todo: test
   def git_url
-    "https://github.com/phpbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
+    "https://github.com/phpbridge/docs/blob/master/sites/#{@locale}/#{@site_name}/#{file_name}"
   end
 
   def src_url
@@ -112,9 +97,13 @@ class DocPage < Erector::Widgets::Page
       }
       ul(class: "navbar-nav nav") {
 
+        li {
+          widget Flags
+        }
+
         li(class: "dropdown") {
           a("curriculum", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_title
+          widget SiteIndex, site_name: site_name, locale: @locale
         }
 
         top_links.each do |top_link|
@@ -123,9 +112,10 @@ class DocPage < Erector::Widgets::Page
       }
     }
 
-    widget Contents, site_name: site_name, page_name: page_name
+    widget Contents, locale: @locale, site_name: site_name, page_name: page_name
 
-    div(class: :main) {
+    main {
+      before_title
       h1 doc_title, class: "doc_title"
       div(class: :doc) {
         doc_content
@@ -133,14 +123,14 @@ class DocPage < Erector::Widgets::Page
       if @back
         div.back {
           text "Back to "
-          a(class: "back", href: @back) do
+          a(class: "back", href: URI.escape(@back, URI::PATTERN::RESERVED)) do
             text Titleizer.title_for_page(@back.split('#').first)
           end
         }
       end
     }
 
-    div(class: 'bottom') {
+    footer {
       p do
         text "PHPBridge Docs is maintained by "
         a "PHPWomen", href: "http://phpwomen.org"
@@ -172,6 +162,10 @@ class DocPage < Erector::Widgets::Page
         ga('send', 'pageview');
       js
     }
+  end
+
+  def before_title
+    # placeholder for subclass override
   end
 
 end

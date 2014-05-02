@@ -44,10 +44,21 @@ class Step < Erector::Widget
   def insert file
     # todo: unify into common 'find & process a document file' unit
     dir = File.dirname(@doc_path)
-    path = File.join(dir, "_#{file}.step")  # todo: other file types
-    src = File.read(path)
-    step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-    widget step
+
+    # todo: other file types
+
+    if File.exist?(path = File.join(dir, "_#{file}.step"))
+      src = File.read(path)
+      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+      widget step
+    elsif File.exist?(path = File.join(dir, "#{file}.step"))
+      src = File.read(path)
+      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+      widget step
+    elsif File.exist?(path = File.join(dir, "#{file}.md"))
+      src = File.read(path)
+      message src
+    end
   end
 
   ## steps
@@ -58,6 +69,7 @@ class Step < Erector::Widget
     overview:"Overview",
     discussion:"Discussion Items",
     hints:"Hints",
+    challenge:"Challenge(s)",
     tools_and_references:"Tools and References",
     requirements:"Requirements to advance",
   }
@@ -87,9 +99,12 @@ class Step < Erector::Widget
     end
   end
 
-  def link name
+
+  def link name, options = {}
+    options = {caption: LINK_CAPTION}.merge(options)
     p :class => "link" do
-      text "Go on to "
+      text options[:caption]
+      text " "
       simple_link(name, class: :link)
     end
   end
@@ -98,10 +113,16 @@ class Step < Erector::Widget
     link name
   end
 
+  def _escaped str
+    URI.escape(str, URI::PATTERN::RESERVED)
+  end
+
   def simple_link name, options={}
     require 'uri'
-    hash = URI.escape '#'
-    href = name + "?back=#{page_name}#{hash}step#{current_anchor_num}"
+    href = "#{_escaped(name)}?back=#{_escaped(page_name)}"
+    if @step_stack.length > 1
+      href += URI.escape('#') + "step#{current_anchor_num}"
+    end
     if block_given?
       a({:href => href}.merge(options)) do
         yield
@@ -170,11 +191,15 @@ class Step < Erector::Widget
     end
   end
 
-  alias_method :goal, :li
+  def goal *args
+    li do
+      message *args
+    end
+  end
 
   def site_desc site_name, description
     div class: 'site-desc' do
-      h1 do
+      h2 do
         a href: "/#{site_name}" do
           text Titleizer.title_for_page(site_name)
         end
@@ -215,10 +240,12 @@ class Step < Erector::Widget
 
   ## special
 
+  # todo: i18n
   TERMINAL_CAPTION = "Type this in the terminal:"
   IRB_CAPTION = "Type this in irb:"
   RESULT_CAPTION = "Expected result:"
   FUZZY_RESULT_CAPTION = "Approximate expected result:"
+  LINK_CAPTION = "Go on to"
 
   def console(commands)
     console_with_message(TERMINAL_CAPTION, commands)

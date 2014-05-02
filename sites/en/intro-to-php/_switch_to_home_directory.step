@@ -1,0 +1,4 @@
+message "`cd` stands for change directory."
+
+console "cd /var/www" 
+message "`cd /var/www` changes to the default web directory."
