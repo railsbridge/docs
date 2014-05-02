@@ -17,7 +17,7 @@ GEM
       thin
       trollop
     diff-lcs (1.2.5)
-    erector (0.9.0)
+    erector (0.10.0)
       treetop (>= 1.2.3)
     eventmachine (1.0.3)
     ffi (1.9.3)
@@ -75,9 +75,8 @@ GEM
       eventmachine (>= 1.0.0)
       rack (>= 1.0.0)
     tilt (1.4.1)
-    treetop (1.4.15)
-      polyglot
-      polyglot (>= 0.3.1)
+    treetop (1.5.3)
+      polyglot (~> 0.3)
     trollop (2.0)
     wrong (0.7.1)
       diff-lcs (~> 1.2.5)
@@ -93,7 +92,7 @@ DEPENDENCIES
   activesupport (~> 3.2.0)
   coderay
   deckrb (~> 0.5.2)
-  erector (~> 0.9.0)
+  erector (~> 0.10.0)
   eventmachine (~> 1.0.3)
   files (~> 0.3.0)
   nokogiri
