@@ -1,0 +1,103 @@
+goals do
+	goal "Create a database"
+	message "Lets create our Suggestotron database add some example data"
+end
+
+steps do
+
+	step do
+		message "Run the MySQL command line tool"
+		console "mysql -u root -p"
+
+		message "You will be prompted for a password. The password is `root`."
+
+		important "Using the root username for a real website is a *bad idea*. For more information on adding a new user, see [this tutorial](https://www.digitalocean.com/community/articles/how-to-create-a-new-user-and-grant-permissions-in-mysql)."
+	end
+
+	step do
+		message "Create your database"
+
+		source_code :sql, <<-SQL
+			CREATE DATABASE suggestotron;
+			USE suggestotron;
+		SQL
+	end
+
+	step do
+		message "Next, create our table, it's going to look like this:"
+		model_diagram header: 'topics', fields: %w(id title description)
+
+		source_code :sql, <<-SQL
+			CREATE TABLE topics ( 
+				id INT unsigned NOT NULL AUTO_INCREMENT, 
+				title VARCHAR(255) NOT NULL, 
+				description TEXT NULL, 
+				PRIMARY KEY(id) 
+			);
+		SQL
+	end
+
+	step do
+		message "Now we can insert our test data"
+		source_code :sql, <<-SQL
+			INSERT INTO topics (
+				title,
+				description
+			) VALUES (
+				'Make Rainbow ElePHPants',
+				'Create an elePHPant with rainbow fur'
+			);
+
+			INSERT INTO topics (
+				title,
+				description
+			) VALUES (
+				'Make Giant Kittens',
+				'Like kittens, but larger'
+			);
+
+			INSERT INTO topics (
+				title,
+				description
+			) VALUES (
+				'Complete PHPBridge',
+				'Because I am awesome'
+			);
+		SQL
+
+		message "After each `INSERT` you will see something like:"
+		fuzzy_result "Query OK, 1 row affected (0.02 sec)"
+	end
+
+	step do
+		message "To view our data, we can `SELECT` it from the table:"
+		source_code :sql, <<-SQL
+			SELECT * FROM topics;
+		SQL
+
+		result <<-TEXT
+			+----+-------------------------+--------------------------------------+
+			| id | title                   | description                          |
+			+----+-------------------------+--------------------------------------+
+			|  1 | Make Rainbow ElePHPants | Create an elePHPant with rainbow fur |
+			|  2 | Make Giant Kittens      | Like kittens, but larger             |
+			|  3 | Complete PHPBridge      | Because I am awesome                 |
+			+----+-------------------------+--------------------------------------+
+			3 rows in set (0.00 sec)
+		TEXT
+	end
+
+	step do
+		message "We are done with the database for now. To quit, type the following:"
+
+		console_without_message "\\q"
+	end
+end
+
+explanation do
+	message "You have now create your first database, your first table, *and* your first rows of data!"
+
+	message "We will be accessing this data via our PHP code in our application. Not only will our application be able to read it, but it will be able to create new data, edit, and delete existing data."
+end
+
+next_step "creating_a_data_class"

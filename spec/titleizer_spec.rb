@@ -38,6 +38,10 @@ describe Titleizer do
     expect(Titleizer.title_for_page('this_is_a_pretty_url')).to eq ('This Is A Pretty URL')
   end
 
+  it 'uppercases url as URL' do
+    expect(Titleizer.title_for_page('this_is_a_pretty_url')).to eq ('This Is A Pretty URL')
+  end
+
   it 'capitalizes sentences' do
     expect(Titleizer.title_for_page('sandwich_parade_on_tuesday')).to eq('Sandwich Parade On Tuesday')
   end

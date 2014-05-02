@@ -21,7 +21,7 @@ class Flags < Erector::Widget
       @locales.each do |locale|
         subdomain = (locale == "us" ? "docs" : locale)
         li {
-          a(href:"http://#{subdomain}.railsbridge.org") {
+          a(href:"http://#{subdomain}.phpbridge.org") {
             img src: "/flags/#{locale.upcase}.png"
           }
         }

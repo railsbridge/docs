@@ -1,0 +1,107 @@
+goals do
+	goal "Write a class to get our data"
+	goal "Display the topics on a web page"
+	message "A class is a special piece of code for performing a given task"
+end
+
+steps do
+	step do
+		message "Create a new file called `TopicData.php` in the `public` directory"
+
+		message "Type the following to create our empty class:"
+
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+				// CLASS CONTENTS GO HERE
+			}
+			?>
+		PHP
+	end
+
+	step do
+		message "Now create a connect function:"
+
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+				protected $connection;
+			
+				public function connect()
+				{
+					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", "root");
+				}
+			}
+			?>
+		PHP
+	end
+
+	step do
+		message "Next lets make the class fetch all of our topics:"
+
+		source_code :php, <<-PHP
+			<?php
+			class TopicData {
+
+				protected $connection = null;
+
+				public function connect()
+				{
+					$this->connection = new PDO("mysql:host=localhost;dbname=suggestotron", "root", null);
+				}
+
+				public function getAllTopics()
+				{
+					$query = $this->connection->prepare("SELECT * FROM topics");
+					$query->execute();
+
+					return $query;
+				}
+			}
+			?>
+		PHP
+
+		tip "Notice how we use the same `SELECT` as in the previous section"
+	end
+
+	step do
+		message "Now we can use the data class in `index.php`, to get our topics:"
+
+		source_code :php, <<-PHP
+			<?php
+			require 'TopicData.php';
+
+			$data = new TopicData();
+			$data->connect();
+
+			$topics = $data->getAllTopics();
+		PHP
+
+		message "Now `$topics` is a database result object containing our topics."
+	end
+
+	step do
+		message "Now we have our topics lets display them by using a `foreach` to iterate over them:"
+
+		source_code :php, <<-PHP
+			foreach ($topics as $topic) {
+				echo "<h3>" .$topic['title']. " (ID: " .$topic['id']. ")</h3>";
+				echo "<p>";
+				echo nl2br($topic['description']);
+				echo "</p>";
+			}
+		PHP
+	end
+
+	step do
+		message "To see what this looks like, refresh the application in your browser!"
+    	
+    	img src: "img/List_of_topics.png", alt: "List of topics"
+	end
+end
+
+explanation do
+	message "With just these few lines of code we are able to connect to our database, fetch our data, and dynamically create an HTML page. *How neat is that?*"
+end
+
+next_step "adding_topics"

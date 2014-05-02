@@ -47,14 +47,7 @@ To server sites from another locale (say, "es" or Spanish)...
 
 Check out [CONTRIBUTING.md](CONTRIBUTING.md) to see how to join our [list of contributors](https://github.com/railsbridge/docs/contributors)!
 
-## License
-
-The documentation (including anything under the `sites` subdir as well as some hardcoded text elsewhere) is licensed under a Creative Commons license ([CC-BY,  specifically](http://creativecommons.org/licenses/by/3.0/)), which means you're welcome to share, remix, or use our content commercially. We just ask for attribution.
-
-The code is licensed under an [MIT license](http://opensource.org/licenses/MIT), like Ruby itself. Copyright (c) 2010-2014 by RailsBridge.
-
-## Other Resources
+## Resources
 
 - Workship Organizers see [WORKSHOP.md](WORKSHOP.md)
 - [StepFile Reference](step_file_reference.md)
-

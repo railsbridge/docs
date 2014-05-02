@@ -25,7 +25,7 @@ class DocPage < Html5Page
   end
 
   def site_title
-    Titleizer.title_for_page(site_name)
+    "#{Titleizer.title_for_page(site_name)}"
   end
 
   def page_title
