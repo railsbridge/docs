@@ -177,7 +177,7 @@ steps do
 		message "We must also define the `\\Suggestotron\\Router->error()` method:"
 
 		source_code :php, <<-PHP
-		function error()
+		public function error()
 		{
 			if (isset($this->config['errors'])) {
 				$route = $this->config['errors'];

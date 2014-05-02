@@ -125,7 +125,7 @@ steps do
 	end
 
 	step do
-		message "We then take our `index.php` specific HTML and create `views/index/index.html`."
+		message "We then take our `index.php` specific HTML and create `views/index/index.phtml`."
 
 		source_code :php, <<-PHP
 		<?php
@@ -236,6 +236,8 @@ steps do
 			if (isset($_POST) && sizeof($_POST) > 0) {
 			    $data = new \\Suggestotron\\TopicData();
 			    $data->add($_POST);
+			    header("Location: /");
+			    exit;
 			}
 
 			$template = new \\Suggestotron\\Template("../views/base.phtml");
