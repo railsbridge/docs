@@ -162,7 +162,7 @@ steps do
 	end
 
 	step do
-		message "Now we can update our `index.php` to use our template:"
+		message "Now we can update our `public/index.php` to use our template:"
 
 		source_code :php, <<-PHP
 			<?php
