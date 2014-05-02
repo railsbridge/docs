@@ -89,7 +89,7 @@ class Step < Erector::Widget
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     a(:name => options[:anchor_name]) if options[:anchor_name]
-    div :class => "step", :title => name do
+    div :class => "step" do
       h1 do
         widget BigCheckbox
         prefix "Step #{num}" + (!name.nil? ? ': ' : '')
