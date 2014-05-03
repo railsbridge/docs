@@ -26,7 +26,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
-  AVAILABLE_LOCALES = %w(en es)
+  AVAILABLE_LOCALES = %w(en es zh-tw)
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
@@ -41,7 +41,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_sites = {en: "docs", es: "hola"}
+    @default_sites = {en: "docs", es: "hola", :"zh-tw" => "nihao" }
   end
 
   attr_reader :here
