@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'digest/md5'
 require 'erector'
+require 'i18n'
+require 'i18n/backend/fallbacks'
 
 #require 'wrong'
 #include Wrong::D
@@ -22,15 +24,28 @@ require "site"
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
+  # Set available locales in Array of Strings; this is also used when
+  # checking availability in dynamic locale assigment, so must be as Strings.
+  AVAILABLE_LOCALES = %w(en es)
+
+  configure do
+    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+    I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
+    I18n.backend.load_translations
+
+    I18n.available_locales = AVAILABLE_LOCALES
+    I18n.enforce_available_locales = true
+    I18n.default_locale = :en
+  end
+
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
     @default_sites = {en: "docs", es: "hola"}
-    @default_locale = "en"
   end
 
-  attr_reader :here, :default_locale
-  attr_writer :default_site, :default_locale
+  attr_reader :here
+  attr_writer :default_site
 
   # todo: test
   # returns the most-specific hostname component, e.g. "foo" for "foo.example.com"
@@ -42,7 +57,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     if host && sites.include?(site = subdomain)
       site
     else
-      @default_sites[locale.to_sym]
+      @default_sites[I18n.locale.to_sym] # no symbol DoS because it's whitelisted
     end
   end
 
@@ -55,7 +70,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def sites_dir
-    Site.sites_dir(locale)
+    Site.sites_dir(I18n.locale)
   end
 
   def sites
@@ -68,11 +83,18 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     }
   end
 
-  def locale
+  before do
+    begin
+      I18n.locale = dynamic_locale
+    rescue I18n::InvalidLocale
+      I18n.locale = I18n.default_locale
+    end
+  end
+
+  def dynamic_locale
     (params && (params[:locale] or params[:l])) or
-      (host && subdomain =~ /^..$/ && subdomain) or   # note: only allows 2-char locales for now -- should check against a list of locales
-      (ENV['SITE_LOCALE']) or
-      default_locale
+      (host && AVAILABLE_LOCALES.include?(subdomain) && subdomain) or
+      (ENV['SITE_LOCALE'])
   end
 
   def src
@@ -103,7 +125,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         doc_path: doc_path,
         back: params[:back],
         src: src,
-        locale: locale,
+        locale: I18n.locale,
       }
 
       case ext

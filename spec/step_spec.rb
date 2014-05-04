@@ -3,6 +3,7 @@ require 'spec_helper'
 require "step_page"
 
 describe Step do
+  before { I18n.locale = :en }
 
   def to_html nokogiri_node
     nokogiri_node.serialize(:save_with => 0).chomp

@@ -3,7 +3,7 @@ class Site
   @@project_root = File.dirname(@@here)
 
   def self.sites_dir locale = "en"
-    sites_dir = File.join(["sites", locale].compact)
+    sites_dir = File.join(["sites", locale.to_s].compact)
     File.expand_path(sites_dir, @@project_root)
   end
 

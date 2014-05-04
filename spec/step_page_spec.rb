@@ -3,6 +3,7 @@ require "spec_helper"
 require "step_page"
 
 describe StepPage do
+  before { I18n.locale = :en }
 
   # functional test -- brittle
   it "renders a step file" do
