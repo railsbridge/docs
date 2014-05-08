@@ -68,8 +68,8 @@ steps {
     message <<-MARKDOWN
       * `pluralize(topic.votes.count, "vote")` displays the number of votes the topic has, plus the word 'vote' or 'votes' accordingly.
       * `button_to '+1'` creates an html button with the text '+1'.
-      * `topic_upvote_path(topic)` creates the appropriate URL for the action we want to invoke. In this case, we want to upvote the current topic.
-        * `topic_upvote_path(topic)` would return `/topics/42/upvote` (if topic.id was 42)
+      * `upvote_topic_path(topic)` creates the appropriate URL for the action we want to invoke. In this case, we want to upvote the current topic.
+        * `upvote_topic_path(topic)` would return `/topics/42/upvote` (if topic.id was 42)
       * `method: :post` ensures we do the create action of CRUD, not the read action.
     MARKDOWN
   end
