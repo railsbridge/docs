@@ -1,3 +1,5 @@
+<!-- next_step "hashes" -->
+
 # ARGV
 
 There is a magic array named `ARGV`. 

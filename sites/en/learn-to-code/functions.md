@@ -1,3 +1,5 @@
+<!-- next_step "sinatra" -->
+
 # Functions
 
 * just like a VARIABLE is a name for a chunk of data

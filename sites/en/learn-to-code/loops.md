@@ -1,3 +1,5 @@
+<!-- next_step "arrays" -->
+
 # Loops
 
 Computers are like robots. They are good at doing things over and over and over and over again.
@@ -18,7 +20,7 @@ To stop it, hold down the CONTROL key and press the C key.
 
 # One Infinite Loop
 
-![One Infinite Loop](one-infinite-loop.jpg)
+![One Infinite Loop](img/one-infinite-loop.jpg)
 
 *Fun Fact:* The address of Apple HQ is
 

@@ -1,3 +1,5 @@
+<!-- next_step "variables" -->
+
 # Numbers
 
 The following operations work on numbers:

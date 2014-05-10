@@ -1,8 +1,10 @@
+<!-- next_step "loops" -->
+
 # Truthiness
 
 Computers have a very strict idea of when things are *true* and *false*.
 
-![Truthiness](truthiness.png)
+![Truthiness](img/truthiness.png)
 
 (Unlike Stephen Colbert...)
 

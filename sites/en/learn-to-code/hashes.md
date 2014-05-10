@@ -1,3 +1,5 @@
+<!-- next_step "functions" -->
+
 # Hashes
 
 * `Hash` is a built-in type

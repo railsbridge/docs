@@ -1,10 +1,12 @@
+<!-- next_step "the_command_line" -->
+
 # Nil
 
 *nil* is a magic object
 
 # There Is No Spoon
 
-![](spoon.jpg)
+![](img/spoon.jpg)
 
 *nil* is the object that means "there is no object"
 

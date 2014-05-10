@@ -1,3 +1,5 @@
+<!-- next_step "nil" -->
+
 # Variables
 
 A VARIABLE is a NAME for an object. You give an object a name using the ASSIGNMENT operator (it looks like an equal sign).
@@ -12,7 +14,7 @@ Anywhere you can use an object, you can use a variable instead.
 
 # The Warehouse Metaphor
 
-![Warehouse from Raiders of the Lost Ark](warehouse.jpg)
+![Warehouse from Raiders of the Lost Ark](img/warehouse.jpg)
 
 Think of memory as a giant warehouse.
 
@@ -56,7 +58,7 @@ Let's spend a few minutes just playing around in IRB. Some things to try:
 
     snack = "Apple"
 
-![snack-apple](snack-apple.svg)
+![snack-apple](img/snack-apple.svg)
 
 Think of a variable as **pointing** to an object.
 
@@ -78,7 +80,7 @@ Changing a variable (using ASSIGNMENT) just changes the name of an object. It do
     fruit = "Apple"
     snack = fruit
 
-![snack-fruit](snack-fruit.svg)
+![snack-fruit](img/snack-fruit.svg)
 
 After this both `snack` and `fruit`...
 
@@ -92,7 +94,7 @@ most messages return *new* values
     fruit = "banana"
     snack = fruit.upcase
 
-![fruit-banana-snack-banana](fruit-banana-snack-banana.svg)
+![fruit-banana-snack-banana](img/fruit-banana-snack-banana.svg)
 
 `"banana"` and `"BANANA"` are two *different objects* in memory
 

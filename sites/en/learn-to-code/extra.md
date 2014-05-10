@@ -1,3 +1,5 @@
+<!-- next_step "next_steps" -->
+
 # Extra Fun Ruby Stuff
 
 We've gone over the basics, but Ruby has lots of other language features. Here's a quick overview, with links to more info about them.

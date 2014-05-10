@@ -1,3 +1,5 @@
+<!-- next_step "input_and_output" -->
+
 # The Command Line
 
 * the TERMINAL is a window into which you can talk directly to your computer

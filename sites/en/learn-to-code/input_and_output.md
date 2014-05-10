@@ -1,3 +1,5 @@
+<!-- next_step "logic" -->
+
 # Input and Output
 
 * Computers have many senses -- keyboard, mouse, network card, digital camera, etc. Collectively, these are called INPUT.

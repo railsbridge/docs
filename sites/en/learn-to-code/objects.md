@@ -1,3 +1,5 @@
+<!-- next_step "strings" -->
+
 # Objects
 
 An OBJECT is a location in computer memory where you can store DATA (aka VALUES).
@@ -36,7 +38,7 @@ On screen she looks like this...
 
 ...but here's what she looks like up close:
 
-![picture of Dot the Operator](dot.jpg)
+![picture of Dot the Operator](img/dot.jpg)
 
 # Dot's job
 

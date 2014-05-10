@@ -1,3 +1,5 @@
+<!-- next_step "extra" -->
+
 # Sinatra
 
 Sinatra is a Web Application Framework. It includes a Web Server and lets you write code to show when people request web pages.
@@ -60,6 +62,6 @@ they see this:
 
 # Detour: Deploying to Heroku
 
-* Railsbridge pages describing account setup & [deploy](/installfest/deploy_a_rails_app) steps
+* Railsbridge pages describing account setup & <a href="/installfest/deploy_a_rails_app">deploy</a> steps
 
 

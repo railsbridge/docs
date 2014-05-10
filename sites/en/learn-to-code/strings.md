@@ -1,3 +1,5 @@
+<!-- next_step 'numbers' -->
+
 # String Messages
 
 A string understands lots of messages. Here are a few:
