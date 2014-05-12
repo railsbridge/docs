@@ -86,7 +86,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def doc_path
     @doc_path ||= begin
       base = "#{site_dir}/#{params[:name]}"
-      %w{step md deck.md mw}.each do |ext|
+      Site::DOC_TYPES.each do |ext|
         path = "#{base}.#{ext}"
         return path if File.exist?(path)
       end

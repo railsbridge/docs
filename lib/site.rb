@@ -1,4 +1,6 @@
 class Site
+  DOC_TYPES = %w{step md deck.md mw}
+
   @@here = File.expand_path(File.dirname(__FILE__))
   @@project_root = File.dirname(@@here)
 
@@ -14,8 +16,6 @@ class Site
   def self.named name, locale = "en"
     all(locale).detect{|site| site.name == name }
   end
-
-  DOC_TYPES = %w{step md deck.md mw}
 
   attr_reader :dir
 
