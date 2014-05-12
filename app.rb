@@ -177,10 +177,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
-  # todo: make this work in a general way, without hardcoded 'img'
-  get "/:site/img/:name.:ext" do
+  get "/:site/:subdir/:name.:ext" do
     if sites.include?(params[:site])
-      send_file "#{site_dir}/img/#{params[:name]}.#{params[:ext]}"
+      send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}"
     end
   end
 
@@ -200,7 +199,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   get "/:site/:name/:section/" do
     # remove any extraneous slash from otherwise well-formed page URLs
-    redirect "#{params[:site]}/#{params[:name]}/#{params[:section]}"
+    redirect request.fullpath.chomp('/')
   end
 
   get "/:site/:name/:section" do
