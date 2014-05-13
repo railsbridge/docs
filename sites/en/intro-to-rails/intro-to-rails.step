@@ -39,7 +39,7 @@ day... unless I really screwed something up. :D
 We're going to be working with:
 
 * ruby 1.9.3, 2.0.0 or 2.1.0 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)
-* rails 4.0.x
+* rails 4.1.x
 * bundler
 * sqlite
 * the text editor of your choice

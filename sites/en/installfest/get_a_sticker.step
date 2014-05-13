@@ -22,7 +22,7 @@ step "Have a volunteer check your tool versions" do
     fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
 
     console "rails -v"
-    fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
+    fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
 
     tip 'The RailsBridge curriculum is written for Rails 4, so if you still have Rails 3.x, you need to install Rails 4 with `gem install rails`.'
   end

@@ -1,3 +1,9 @@
+tip do
+  console_with_message "From here on, this guide assumes you have Rails 4.1.x. To check your Rails version, type this in the terminal:", "rails -v"
+  fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+  message "If your computer reports a Rails version less than 4.0, ask a TA help get you back on track."
+end
+
 step "Change to your home directory" do
   insert 'switch_to_home_directory'
 end
@@ -45,7 +51,7 @@ step "Create a new Rails app" do
 
   fuzzy_result <<-TEXT
     => Booting WEBrick
-    => Rails 4.0{FUZZY}.x{/FUZZY} application starting in development on http://0.0.0.0:3000
+    => Rails 4.{FUZZY}1.x{/FUZZY} application starting in development on http://0.0.0.0:3000
     => Call with -d to detach
     => Ctrl-C to shutdown server
     [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
