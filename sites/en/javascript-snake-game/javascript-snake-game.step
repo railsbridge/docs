@@ -1,0 +1,56 @@
+# Lesson 1 - Building Snake in JavaScript
+
+markdown <<-MARKDOWN
+  Today, we're going to recreate the classic game snake in the Javascript
+  programming language.  
+MARKDOWN
+
+canvas id: 'chunk-game', height: 600, width: 800
+
+script src: 'js/chunk.js'
+
+script src: 'js/snake.js'
+
+markdown <<-MARKDOWN
+  ### Download the tutorial
+
+  Before you can start the tutorial, you'll need to <a
+    href="js-snake-game-tutorial.zip">download the tutorial</a> to your computer
+  to edit the source code.
+  
+  ### Launch your programming environment
+
+  When programming, there's generally four tools you'll want on hand:
+
+  * Your browser to see the code running (I recommend Chrome)
+  * A text editor to change the code (I recommend <a
+    href="http://www.sublimetext.com/">Sublime</a>)
+  * A javascript console so you can experiment and print out debugging
+  messages. These are built into your browser.
+  
+  Once you have these tools available, we need to open the files we'll be working with:
+  
+  * Open game/snake.js in your text editor
+  * Open game/index.html in your browser
+  * Open your browsers javascript console
+  * type `alert("hello world");` in your browsers javascript console and
+  dismiss the window that pops up
+
+  <img src='img/helloworld.png' height="300" width="600">
+  
+  ### Stop and reflect
+  
+  * The javascript console is one of the fastest ways to get feedback on
+  whether the code does what you expect. How else can you get feedback about if
+  your code does what you expect?
+  * Why shouldn't you use Word or Google Docs to edit code?
+
+  ### Helpful Links
+
+  * <a href="https://developers.google.com/chrome-developer-tools/">How to launch dev tools in chrome.</a>
+  * <a href="http://www.microsoft.com/en-us/download/details.aspx?id=18359">How to launch dev tools in internet explorer.</a>
+  * <a href="https://developer.mozilla.org/en-US/Firefox_OS/Debugging/Setting_up">How to launch dev tools in firefox.</a>
+  * <a href="https://developer.apple.com/library/safari/documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html">How to launch dev tools in safari.</a>
+MARKDOWN
+
+next_step 'lesson-2'

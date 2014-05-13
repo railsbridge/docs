@@ -225,6 +225,7 @@ class Step < Erector::Widget
       end
     end
   end
+  alias_method :markdown, :message
 
   def important text = nil, &block
     message text, class: "important vertical-centerer", inner_class: "vertically-centered", icon: "exclamation-circle", &block
@@ -350,6 +351,24 @@ class Step < Erector::Widget
         end
       end
     end
+  end
+
+  def js_expected_results(lesson)
+    h3 'Expected Results'
+
+    h4 'What your snake.js file should look like:'
+
+    src_path = File.join(File.dirname(@doc_path), 'js', "#{lesson}.js")
+
+    source_code :js, File.read(src_path)
+
+    h4 'How the game should work:'
+
+    canvas id: 'chunk-game', height: '600', width: '800'
+
+    script src: 'js/chunk.js'
+
+    script src: "js/#{lesson}.js"
   end
 
   private

@@ -80,6 +80,7 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.6.3)
       sexp_processor (~> 4.1)
+    rubyzip (1.1.6)
     sass (3.4.8)
     sexp_processor (4.4.4)
     sinatra (1.4.5)
@@ -133,6 +134,7 @@ DEPENDENCIES
   redcarpet
   rerun
   rspec
+  rubyzip
   sass
   sinatra (~> 1.4.0)
   sprockets

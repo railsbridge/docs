@@ -5,6 +5,8 @@ require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'font-awesome-sass'
 require 'bootstrap-sass'
+require 'zip'
+require 'tmpdir'
 
 #require 'wrong'
 #include Wrong::D
@@ -214,6 +216,21 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     rescue Errno::ENOENT => e
       p e
       halt 404
+    end
+  end
+
+  get "/:site/:name.zip" do
+    manifest_path = "#{site_dir}/#{params[:name]}.zip-manifest"
+    if File.exists?(manifest_path)
+      manifest_files = File.read(manifest_path).split("\n")
+      zip_path = File.join(Dir.tmpdir, "#{params[:name]}.zip")
+      FileUtils.rm_rf(zip_path)
+      Zip::File.open(zip_path, Zip::File::CREATE) do |zipfile|
+        manifest_files.each do |filename|
+          zipfile.add(File.join(params[:name], File.basename(filename)), File.join(site_dir, filename))
+        end
+      end
+      send_file zip_path
     end
   end
 

@@ -1,0 +1,76 @@
+# Lesson 6 - Snake can move in every direction
+
+markdown <<-MARKDOWN
+  Now that the snake is moving on it's own, let's make it so it can move in
+  different directions!
+
+  First, we'll create a function that moves the segment based upon it's
+  direction (down, up, right, left):
+
+  ```js
+  var moveSegment = function(segment) {
+    if (segment.direction === "down") {
+      return { top: segment.top + 1, left: segment.left }
+    } else if (segment.direction === "up") {
+      return { top: segment.top - 1, left: segment.left }
+    } else if (segment.direction === "right") {
+      return { top: segment.top, left: segment.left + 1 }
+    } else if (segment.direction === "left") {
+      return { top: segment.top, left: segment.left - 1 }
+    }
+    return segment;
+  }
+  ```
+
+  `if` statements choose what code to run. Here a series of `if` and `else if`s
+  to return a new object with coordinates offset from the passed in segment.
+
+  When the passed in segment doesn't have a direction or it doesn't match the
+  directions in our `if`/`else if` then we return the original segment object.
+
+  Our returned segment doesn't have a direction; which means the snake will
+  only move once! To keep the snake moving we need to assign every `newSegment` a
+  direction.
+
+  Let's change our `moveSnake` function to give the `newSegment` the same
+  direction as the `oldSegment`. This will keep the snake moving in the same
+  direction.
+
+  ```js
+  var moveSnake = function(snake) {
+    var oldSegment = snake[0];
+    var newSegment = moveSegment(oldSegment);
+    newSegment.direction = oldSegment.direction;
+    var newSnake = [newSegment];
+    return newSnake;
+  }
+  ```
+
+  Next add a direction to our initial snakes segments.
+
+  ```js
+  var snake = [{ top: 0, left: 0, direction: "down" }];
+  ```
+
+  Now our snake knows where to start moving!
+MARKDOWN
+
+js_expected_results 'lesson-6'
+
+markdown <<-MARKDOWN
+  ### Play Time!
+
+  * Use a switch statement instead of a series of ifs
+  * Make sure each direction works!
+
+  ### Syntax Breakdown
+
+  `===` tells the computer to check for EXACT equality. For example: "down" === "down" will return true but "down" === "DOWN" will return false.
+
+  ### Helpful Links
+
+  1. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FStatements%2Fswitch">switch statements</a>
+  1. <a href="http://www.impressivewebs.com/why-use-triple-equals-javascipt/">=== vs ==</a>
+MARKDOWN
+
+next_step "lesson-7"

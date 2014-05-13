@@ -1,0 +1,32 @@
+# Lesson 7 - Changing the Snakes Movement Direction
+
+markdown <<-MARKDOWN
+  To change the direction of the snake, we need to change the direction of
+  its first segment. Add the following function to snake.js:
+
+  ```js
+  var changeDirection = function(direction) {
+    snake[0].direction = direction;
+  }
+  ```
+
+  Next, we have CHUNK call changeDirection when an arrow key is pressed.
+  Add the following line at the end of snake.js:
+
+  ```js
+  CHUNK.onArrowKey(changeDirection);
+  ```
+
+  This tells CHUNK to call the `changeDirection` function every time an arrow key
+  is pressed.
+
+  Just like we pass our snake object into the `drawSnake` function, we can pass
+  the `changeDirection` function into the `onArrowKey` function.
+
+  In JavaScript, we can pass functions into functions just like we can pass
+  arrays, strings, integers, and objects into functions
+MARKDOWN
+
+js_expected_results 'lesson-7'
+
+next_step 'lesson-8'

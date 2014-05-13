@@ -13,6 +13,7 @@ gem 'coderay'
 gem "deckrb", "~> 0.5.2"
 gem "sass"
 gem "redcarpet"
+gem "rubyzip"
 gem "i18n", "~> 0.6.9"
 gem 'font-awesome-sass'
 gem 'bootstrap-sass'
