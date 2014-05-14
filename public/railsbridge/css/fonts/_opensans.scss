@@ -4,17 +4,19 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url('opensans.woff') format('woff');
+  src: local('Open Sans'), local('OpenSans'), url('fonts/opensans.woff') format('woff');
 }
+
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'), url('opensans-italic.woff') format('woff');
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url('fonts/opensans-italic.woff') format('woff');
 }
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('opensans-bold.woff') format('woff');
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/opensans-bold.woff') format('woff');
 }

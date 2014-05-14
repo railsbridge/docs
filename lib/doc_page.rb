@@ -32,20 +32,10 @@ class DocPage < Html5Page
     "#{doc_title} - #{site_title}"
   end
 
-  external :style, scss(File.read("#{css_path}/header.scss"))
-  external :style, scss(File.read("#{css_path}/toc.scss"))
-  external :style, scss(File.read("#{css_path}/doc_page.scss"))
-
-  # this is how to load the Open Sans font when we know we're online
-  # external :style,  <<-CSS
-  # @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
-  # CSS
-
   # but this is to load the Open Sans font when we might be offline
   external :style,  <<-CSS
-  @import url(/fonts/opensans.css);
-  @import url(/fonts/aleo.css);
   @import url(/css/coderay.css);
+  @import url(/railsbridge/css/doc_page.css);
   CSS
 
   class TopLink < Erector::Widget
