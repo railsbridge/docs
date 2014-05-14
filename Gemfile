@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby '2.1.1'
+
 gem 'activesupport', '~> 3.2.0'
 gem "erector", "~> 0.10.0"
 gem "sinatra", "~> 1.3.0"
