@@ -28,7 +28,7 @@ end
 discussion do
 message <<-MARKDOWN
 * What is a nested resource? When is it appropriate and how does it help?
-* How do the replies_controller and posts_controller interact?
+* How do the `RepliesController` and `PostsController` interact?
 * What should happen to the routes file for this nesting business to work?
 MARKDOWN
 end
