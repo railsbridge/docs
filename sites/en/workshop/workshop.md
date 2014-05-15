@@ -33,7 +33,7 @@ deck.rb
 * [Welcome](welcome)
 * [Closing](closing)
 
-Or make a presentation in the format of your choice. Powerpoint, Keynote, your own [reveal.js](http://lab.hakim.se/reveal-js/)deck &mdash; follow your heart!
+Or make a presentation in the format of your choice. Powerpoint, Keynote, your own [reveal.js](http://lab.hakim.se/reveal-js/) deck &mdash; follow your heart!
 
 # Other?
 See the Table of Contents for a full list of materials.
