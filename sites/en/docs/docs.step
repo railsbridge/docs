@@ -11,11 +11,15 @@ MARKDOWN
 h1 'Rails'
 
 site_desc 'intro-to-rails', <<-MARKDOWN
-The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`.
+The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`, and deploying that app to the Internet.
+MARKDOWN
+
+site_desc 'job-board', <<-MARKDOWN
+Build a simple job board from scratch with a little less of the magic of Rails scaffolding. This curriculum is great for a second or third RailsBridge attendee or for students who want to focus on how the app is wired together. (This curriculum doesn't include deploying to the Internet.)
 MARKDOWN
 
 site_desc 'intermediate-rails', <<-MARKDOWN
-Curriculum for students who have taken Suggestotron more than once. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
+Curriculum for students who have completed the Suggestotron and the Job Board curricula. 'Easy mode' is now OFF - this curriculum won't tell you what to type in!
 MARKDOWN
 
 h1 'Frontend'

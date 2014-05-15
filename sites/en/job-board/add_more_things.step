@@ -1,0 +1,18 @@
+message <<-MARKDOWN
+
+  ## Time to add more things!
+
+  The time where we tell you what to type in has finally ended. You should do one or all of the things below!
+
+  Working independently or in pairs is super fun at this point.
+
+  * Add a show page for each listing and move the Edit and Delete links to there.
+  * Add validations — postings without titles or descriptions shouldn't be allowed, right?
+  * Add other useful fields to jobs
+  * Display jobs index in a table; make sortable with data_tables
+  * Add tags (time for a has_many, folks!!!)
+  * Make it look better
+  * Add a user model and auth with Devise
+  * Test it! Write a controller spec.
+
+MARKDOWN

@@ -238,6 +238,22 @@ class Step < Erector::Widget
     message text, class: "tip vertical-centerer", inner_class: "vertically-centered", icon: "info-circle", &block
   end
 
+  def discussion(title, content)
+    div class: "discussion" do
+      h4 "Discussion: #{title}"
+      hr
+      message content
+    end
+  end
+
+  def error(error, question = nil)
+    div class: "error" do
+      h4 "Error! Woo!!!"
+      p error
+      message question if question
+    end
+  end
+
   ## special
 
   # todo: i18n
@@ -260,6 +276,11 @@ class Step < Erector::Widget
 
   def console_without_message(commands)
     console_with_message("", commands)
+  end
+
+  def source_code_with_message(text, *args)
+    message text
+    source_code(*args)
   end
 
   def irb msg
