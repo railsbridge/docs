@@ -115,14 +115,14 @@ img.noborder {
   color: #E77902;
 }
 
-.discussion {
+.discussion_box {
   padding: 1em;
   background-color: #FFF5AE;
   border-radius: 4px;
   margin: 30px 0 10px 0;
 }
 
-.discussion > h4, .error > h4 {
+.discussion_box > h4, .error_box > h4 {
   text-align: center;
   margin: 0;
   font-family: 'Aleo Regular';
@@ -130,16 +130,16 @@ img.noborder {
   font-size: 1.2em;
 }
 
-.discussion > hr {
+.discussion_box > hr {
   border-color: black;
   width: 60%;
 }
 
-.error > h4 {
+.error_box > h4 {
   padding-bottom: 10px;
 }
 
-.error {
+.error_box {
   padding: 1em;
   color: black;
   background-color: rgb(202, 255, 178);
@@ -147,7 +147,7 @@ img.noborder {
   min-height: 43px;
 }
 
-.error > p:first-of-type {
+.error_box > p:first-of-type {
   background: white;
   padding: 10px 5px;
   margin: 2px;

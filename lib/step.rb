@@ -239,7 +239,7 @@ class Step < Erector::Widget
   end
 
   def discussion_box(title, content)
-    div class: "discussion" do
+    div class: "discussion_box" do
       h4 "Discussion: #{title}"
       hr
       message content
@@ -247,7 +247,7 @@ class Step < Erector::Widget
   end
 
   def error_box(error, question = nil)
-    div class: "error" do
+    div class: "error_box" do
       h4 "Error! Woo!!!"
       p error
       message question if question
