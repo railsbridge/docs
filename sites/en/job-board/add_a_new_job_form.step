@@ -19,7 +19,7 @@ message <<-MARKDOWN
   That's the one we want for our form. Let's visit that page and see what it says: <http://localhost:3000/jobs/new>.
 MARKDOWN
 
-error "The action 'new' could not be found for JobsController", "This looks familiar!"
+error_box "The action 'new' could not be found for JobsController", "This looks familiar!"
 
 source_code_with_message "Let's add a method to our jobs controller called `new`:", :ruby,
 <<-RUBY
@@ -65,7 +65,7 @@ ERB
 
 message "Save that file, and reload the page."
 
-error "First argument in form cannot contain nil or be empty", "What do you think that means? What is the first argument? What is it supposed to be?"
+error_box "First argument in form cannot contain nil or be empty", "What do you think that means? What is the first argument? What is it supposed to be?"
 
 message "In order for the method `form_for` to do its job, it has to know about the thing that it's building the form for. So we need to give it an object. We do that in the controller."
 
@@ -78,6 +78,6 @@ RUBY
 
 message "Now we should see our mostly unstyled form!"
 
-discussion "Form HTML", "What HTML did the form helpers produce? Using the web inspector, look through the form code and compare it to the file you've been working on in Sublime."
+discussion_box "Form HTML", "What HTML did the form helpers produce? Using the web inspector, look through the form code and compare it to the file you've been working on in Sublime."
 
 next_step "make_the_form_work"

@@ -238,7 +238,7 @@ class Step < Erector::Widget
     message text, class: "tip vertical-centerer", inner_class: "vertically-centered", icon: "info-circle", &block
   end
 
-  def discussion(title, content)
+  def discussion_box(title, content)
     div class: "discussion" do
       h4 "Discussion: #{title}"
       hr
@@ -246,7 +246,7 @@ class Step < Erector::Widget
     end
   end
 
-  def error(error, question = nil)
+  def error_box(error, question = nil)
     div class: "error" do
       h4 "Error! Woo!!!"
       p error

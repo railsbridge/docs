@@ -22,7 +22,7 @@ message <<-MARKDOWN
   Before we show the jobs, let's actually look at what that is doing. Go back to your Rails console and run `Job.all`.
 MARKDOWN
 
-discussion "Rails Console", <<-MARKDOWN
+discussion_box "Rails Console", <<-MARKDOWN
   The Rails console is super fun! It's giving us direct access to our local database.
 
   * Try running `Job.all.to_sql`. What does that do?
@@ -39,7 +39,7 @@ source_code_with_message "Add this to app/views/jobs/index.html.erb:", :ruby,
   <% end %>
 RUBY
 
-discussion "ERB", <<-MARKDOWN
+discussion_box "ERB", <<-MARKDOWN
   What is this doing? Go through this line by line, having one person explain each line.
 
   Compare the ERB to the HTML that shows up on the page. ("Inspect Element" is your friend!)

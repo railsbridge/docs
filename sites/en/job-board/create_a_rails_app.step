@@ -42,7 +42,7 @@ message <<-MARKDOWN
   (You must have at least one window open, so if that option is greyed out, open a window with cmd+n (Mac) or ctl+n (PC))
 MARKDOWN
 
-discussion "Text Editor vs Command Line", "Review the differences between the the command line and your text editor, even if everyone already knows!"
+discussion_box "Text Editor vs Command Line", "Review the differences between the the command line and your text editor, even if everyone already knows!"
 
 message "# Fix Up Those Defaults"
 
@@ -52,7 +52,7 @@ source_code_with_message "And delete the following line:", :ruby, "gem 'turbolin
 
 console_with_message "Save the file, and then in the command line, run the following command:", "bundle"
 
-discussion "What does 'bundle' do?", <<-MARKDOWN
+discussion_box "What does 'bundle' do?", <<-MARKDOWN
  Bundler is the tool the Ruby community uses for dependency management.
 
  * What's dependency management?

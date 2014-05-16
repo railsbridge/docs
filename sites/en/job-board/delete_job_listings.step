@@ -19,7 +19,7 @@ source_code :erb, "<h5><%= link_to 'Delete Posting', job, method: :delete %></h5
 
 message "Go to the index, and try to delete something."
 
-error "The action 'destroy' could not be found for JobsController", "This is like my favorite error now! First, let's add the method:"
+error_box "The action 'destroy' could not be found for JobsController", "This is like my favorite error now! First, let's add the method:"
 
 source_code :ruby,
 <<-RUBY

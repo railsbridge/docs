@@ -10,7 +10,7 @@ MARKDOWN
 
 message "Now, try to submit your form."
 
-error "The action 'create' could not be found for JobsController", ""
+error_box "The action 'create' could not be found for JobsController", ""
 
 message <<-MARKDOWN
   So, let's add it:
@@ -26,7 +26,7 @@ RUBY
 
 message "Reload the page!"
 
-error "Missing template jobs/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/lillie/railsbridge/job_board/app/views'",
+error_box "Missing template jobs/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/lillie/railsbridge/job_board/app/views'",
 <<-MARKDOWN
   Familiar error, right? We don't have a template called create.html.erb.
 
@@ -52,7 +52,7 @@ message <<-MARKDOWN
   Sadly, no. We just took our form contents and dropped them on the ground.
 MARKDOWN
 
-discussion "Logging & Server Output",
+discussion_box "Logging & Server Output",
 <<-MARKDOWN
   Arrange your screens so that you can see your server logs (in the terminal window) at the same time as your browser. Now, refresh the form page, and look at what happens in the server. You should see output like `Started GET "/jobs/new"`.
 

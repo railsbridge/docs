@@ -12,7 +12,7 @@ message <<-MARKDOWN
   To start, let's visit the page that we want to put our jobs on: <http://localhost:3000/jobs>.
 MARKDOWN
 
-error "No route matches [GET] '/jobs'",
+error_box "No route matches [GET] '/jobs'",
 <<-MARKDOWN
   That's pretty reasonable, since we currently don't have any routes at all right now.
 MARKDOWN
@@ -37,7 +37,7 @@ message <<-MARKDOWN
   Now, lets go look at what that made, by using the excellently helpful page available on any Rails 4 app: <http://localhost:3000/rails/info>.
 MARKDOWN
 
-discussion "How to read the routes page.", <<-MARKDOWN
+discussion_box "How to read the routes page.", <<-MARKDOWN
   In your browser, visit <http://localhost:3000/rails/info>. Go over each of the columns and how to read it.
 
   * Helper
@@ -56,7 +56,7 @@ message <<-MARKDOWN
   Since adding the line `resources :jobs` made a route matching `/jobs`, let's go visit that page again: <http://localhost:3000/jobs>
 MARKDOWN
 
-error "uninitialized constant JobsController", "Why does Rails now think it needs a JobsController?"
+error_box "uninitialized constant JobsController", "Why does Rails now think it needs a JobsController?"
 
 message <<-MARKDOWN
   # Add a controller
@@ -66,7 +66,7 @@ MARKDOWN
 
 console "rails generate controller jobs"
 
-discussion "What did that command do?", <<-MARKDOWN
+discussion_box "What did that command do?", <<-MARKDOWN
   What files were made by that last command? Are they awesome?
 
   How will this change what error we see when we go to the jobs page?
@@ -74,7 +74,7 @@ MARKDOWN
 
 message "Now: refresh <http://localhost:3000/jobs>"
 
-error "The action 'index' could not be found for JobsController", <<-MARKDOWN
+error_box "The action 'index' could not be found for JobsController", <<-MARKDOWN
   What is telling Rails to look in JobsController?
 
   Let's go back to <http://localhost:3000/rails/info> again and look at what controller and method (AKA action) the route /jobs is pointing to.
@@ -94,7 +94,7 @@ RUBY
 
 message "And refresh <http://localhost:3000/jobs>"
 
-error "Missing template jobs/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/probablyyou/railsbridge/job_board/app/views'",
+error_box "Missing template jobs/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/probablyyou/railsbridge/job_board/app/views'",
 <<-MARKDOWN
   What's the important part of the this error? How does Rails decide to look for something called jobs/index? How did it decide to look in the views directory?
 

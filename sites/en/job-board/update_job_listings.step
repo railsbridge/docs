@@ -29,7 +29,7 @@ message <<-MARKDOWN
   *Noooooooooo!!!!!!!!!!*
 MARKDOWN
 
-discussion "Partials",
+discussion_box "Partials",
 <<-MARKDOWN
   * What's a partial?
   * Why should we use them?
@@ -82,7 +82,7 @@ ERB
 
 message "Refresh the page."
 
-error "First argument in form cannot contain nil or be empty", "It looks like we don't have a job ... because we haven't gotten our job out of the database! Let's go to the jobs_controller and fix that."
+error_box "First argument in form cannot contain nil or be empty", "It looks like we don't have a job ... because we haven't gotten our job out of the database! Let's go to the jobs_controller and fix that."
 
 source_code_with_message "in jobs_controller.rb, add the following", :ruby,
 <<-RUBY
@@ -91,7 +91,7 @@ source_code_with_message "in jobs_controller.rb, add the following", :ruby,
   end
 RUBY
 
-discussion "Params", "What is `Job.find(params[:id])` doing? What is `params` again?"
+discussion_box "Params", "What is `Job.find(params[:id])` doing? What is `params` again?"
 
 message <<-MARKDOWN
   # Actually Update The Job
@@ -99,7 +99,7 @@ message <<-MARKDOWN
   So now the form works. Let's try to update that job posting. Change something about the job posting, and submit the form.
 MARKDOWN
 
-error "The action 'update' could not be found for JobsController", "So it looks like the form is finding the right route, but the method is missing from the controller."
+error_box "The action 'update' could not be found for JobsController", "So it looks like the form is finding the right route, but the method is missing from the controller."
 
 source_code_with_message "Let's add the update method to the file jobs_controller.rb", :ruby,
 <<-RUBY
@@ -119,7 +119,7 @@ message <<-MARKDOWN
   Try again, and ... no errors! But we're still not seeing our changes.
 MARKDOWN
 
-discussion "What is this controller method missing?", <<-MARKDOWN
+discussion_box "What is this controller method missing?", <<-MARKDOWN
   Who knows what we're missing?
 
   Take a look at the `create` method on the jobs controller and compare what we're doing in each.

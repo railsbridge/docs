@@ -10,7 +10,7 @@ message <<-MARKDOWN
   We'll start with the application layout, which you can find in the views directory, at `app/views/layouts/application.html.erb`.
 MARKDOWN
 
-discussion "What's an application layout?", <<-MARKDOWN
+discussion_box "What's an application layout?", <<-MARKDOWN
   None of the view pages that we've been working with so far have had the necessary structure for a valid HTML page. No `<head>` or `<body>` or JavaScript or CSS tags. This application layout file is where all of that stuff exists!
 
   * How does is this page related to the individual page content? Try comparing the source in the browser to this file, and see where the individual page's code starts showing up.

@@ -6,7 +6,7 @@ message <<-MARKDOWN
   * Learn what a migration file is
 MARKDOWN
 
-discussion "Databases & SQL",
+discussion_box "Databases & SQL",
 <<-MARKDOWN
   Review how relational databases are structured, how we communicate with them (hint: SQL!).
 MARKDOWN
@@ -67,7 +67,7 @@ message <<-MARKDOWN
   This uses a utility called rake to run a task called `db:migrate`, which in turn looks through all of your migration files and runs any that haven't already been run at some point in the past.
 MARKDOWN
 
-discussion "Why do we use migrations?",
+discussion_box "Why do we use migrations?",
 <<-MARKDOWN
   Talk about the pros and cons of using migrations to update the database, instead of just updating the schema directly. Also, discuss what the database schema is!
 

@@ -13,7 +13,7 @@ message <<-MARKDOWN
   !["Screenshot of Rails routes page"](img/rails-routes.png)
 MARKDOWN
 
-discussion "CRUD", "Really, compare those two things! Out loud! As a group!"
+discussion_box "CRUD", "Really, compare those two things! Out loud! As a group!"
 
 message <<-MARKDOWN
   To have a useful app, we need to be able to create job postings, see them all and their details, change them, and delete them. The way that Rails wants us to do this is by following RESTful routing conventions, which are perfectly encapsulated by the output of `resource :jobs` in our routes.rb file.
