@@ -72,7 +72,7 @@ message "In order for the method `form_for` to do its job, it has to know about 
 source_code_with_message "Open up the jobs_controller, and update the new method:", :ruby,
 <<-RUBY
   def new
-    @jobs = Jobs.new
+    @jobs = Job.new
   end
 RUBY
 

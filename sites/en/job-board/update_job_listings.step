@@ -66,7 +66,7 @@ ERB
 
 source_code_with_message "Now, in `app/views/jobs/new.html.erb`, add the following line:", :erb,
 <<-ERB
-  <%= render :form %>
+  <%= render "form" %>
 ERB
 
 message <<-MARKDOWN
@@ -77,7 +77,7 @@ MARKDOWN
 
 source_code_with_message "Now that we have a form partial, we can reuse it! In `app/views/jobs/edit.html.erb`, we can add the same line under the header:", :erb,
 <<-ERB
-<%= render :form %>
+<%= render "form" %>
 ERB
 
 message "Refresh the page."

@@ -22,7 +22,7 @@ message <<-MARKDOWN
 
   So it's looking for a route, but can't find one. Let's add one!
 
-  Open up the routes file. It's in the config directory. If you're using Sublime Text 2, you can open it using keyboard shortcuts:
+  Open up the routes file. It's in the config directory, called `routes.rb`. If you're using Sublime Text 2, you can open it using keyboard shortcuts:
 
    * Hitting cmd + p (on Mac) or ctl + p (on PC)
    * typing in `route`
