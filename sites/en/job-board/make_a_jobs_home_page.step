@@ -28,7 +28,7 @@ message <<-MARKDOWN
    * typing in `route`
    * hitting enter
 
-  Magic!
+  Magic! (Sublime is using fuzzy search, so you can use the entire file path, or just part of the filename to go to files.)
 MARKDOWN
 
 source_code_with_message "We're going to need a resource route, which will create EIGHT different routes for us. Add this to line two:", :ruby, "resources :jobs"
@@ -81,7 +81,7 @@ error_box "The action 'index' could not be found for JobsController", <<-MARKDOW
 MARKDOWN
 
 message <<-MARKDOWN
-  It's looking for a method called index on the jobs controller! But there isn't one, boooo. So let's add it.
+  It's looking for a method called index on the jobs controller! Since there isn't a controller method for this route, we'll need to add it.
 
   Open up your jobs controller (again, try to use keyboard shortcuts: cmd+p on Mac or ctl+p on PC to find the file at app/controllers/jobs_controller.rb).
 MARKDOWN

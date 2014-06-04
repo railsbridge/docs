@@ -26,13 +26,13 @@ ERB
 message <<-MARKDOWN
   Okay, so that's awesome. Now we just have to add a form for editing. I wonder if it is any different from the create form? I guess we could copy and paste the other form?
 
-  *Noooooooooo!!!!!!!!!!*
+  We could copy and paste from the other form, but we try to avoid that because duplicated code is hard to maintain. For example, if I want to add placeholder text for the inputs in the form, when the code is duplicated, I’ll need to update the code in each place the form was copied. (In large apps it’s easy to miss a place that would need to be updated.) The solution is to reuse rather than duplicate the code, and the way to reuse code in views is by using partials.
 MARKDOWN
 
-discussion_box "Partials",
+discussion_box "Don't Repeat Yourself",
 <<-MARKDOWN
-  * What's a partial?
-  * Why should we use them?
+  * What are some reasons to DRY up our code?
+  * What are some strategies for DRYing up code throughout a Rails app?
 MARKDOWN
 
 message <<-MARKDOWN

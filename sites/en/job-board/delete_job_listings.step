@@ -2,7 +2,6 @@ message <<-MARKDOWN
   # What we're going to do
 
   * Remove postings
-  * That's about it
 
   Once a job is filled, we don't want a listing for it hanging out forever. Let's add a way to delete postings.
 

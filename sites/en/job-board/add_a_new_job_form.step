@@ -3,7 +3,7 @@ message <<-MARKDOWN
 
   * Use Rails form helpers to create the HTML for the form
   * Learn to use the Rails server output for great good
-  * Update the controller so that the form save submissions to the database
+  * Update the controller so that the form saves submissions to the database
   * Learn about the beauty of the params hash
 
   # Side Note: Web forms are not perfectly straightfoward
@@ -30,7 +30,7 @@ RUBY
 message <<-MARKDOWN
   Refresh <http://localhost:3000/jobs/new>, and we see that familiar "Template is missing" error. So, let's add that template.
 
-  Under app/views/jobs, add a file called new.html.erb. This will be our form. Add some html to the topic to keep things moving along:
+  Under app/views/jobs, add a file called new.html.erb. This will be our form. Add some html to the template to keep things moving along:
 MARKDOWN
 
 source_code :html,

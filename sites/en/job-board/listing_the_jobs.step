@@ -4,7 +4,7 @@ message <<-MARKDOWN
   * Show the jobs!
   * Learn about ERB
 
-  Going back to the jobs index (<http://localhost:3000/jobs>) and not seeing our new jobs kinda sucks. Let's actually build the job board part of this job board now!
+  Going back to the jobs index (<http://localhost:3000/jobs>), we expect to see the new jobs. Let's actually build the job board part of this job board now!
 
   # Get all the jobs out of the database
 
@@ -26,7 +26,8 @@ discussion_box "Rails Console", <<-MARKDOWN
   The Rails console is super fun! It's giving us direct access to our local database.
 
   * Try running `Job.all.to_sql`. What does that do?
-  * Something else here!
+  * Try selecting an individual Job record.
+  * Try updating an that individual record from the console!
 MARKDOWN
 
 message "# Show those jobs!"

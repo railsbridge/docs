@@ -10,14 +10,13 @@ message <<-MARKDOWN
 
   First, let's get into a directory for RailsBridge projects (either by finding your existing one & moving there or making a new folder).
 
-  If you don't already have a RailsBridge folder, use the command `mkdir` to create one:
+  If you don't already have a RailsBridge folder, use the commands `mkdir` and `cd` to create one and move into it:
 MARKDOWN
 
 console_without_message "mkdir railsbridge"
+console_without_message "cd railsbridge"
 
 message <<-MARKDOWN
-  and then use `cd railsbridge` to move into it.
-
   # Rails New!!!
 MARKDOWN
 

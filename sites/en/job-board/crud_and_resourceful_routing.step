@@ -13,7 +13,7 @@ message <<-MARKDOWN
   !["Screenshot of Rails routes page"](img/rails-routes.png)
 MARKDOWN
 
-discussion_box "CRUD", "Really, compare those two things! Out loud! As a group!"
+discussion_box "CRUD", "Talk through the different uses for the HTTP verbs. What is their general purpose, and what are we specifically using them for??"
 
 message <<-MARKDOWN
   To have a useful app, we need to be able to create job postings, see them all and their details, change them, and delete them. The way that Rails wants us to do this is by following RESTful routing conventions, which are perfectly encapsulated by the output of `resource :jobs` in our routes.rb file.
@@ -28,7 +28,7 @@ message <<-MARKDOWN
 
   You could make your URLs look like anything you wanted, like: `/all_the_jobs` or `/add_a_job` or `show_job`. This would totally work if you set up your controller methods and the route file correctly.
 
-  But we don't do this, generally, because Rails prefers resourceful routing, in which the paths are structured around a specific resource &mdash; in our case, jobs.
+ But we generally avoid this because the RESTful routing is a best practice that Rails makes easy to follow. In RESTful routes, the paths are structured around a specific resource &mdash; in our case, jobs. Check out more about [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) urls.
 
   Another example: if we were making a puppy app, I would expect that going to `/puppies` would show me an index of all the puppies, and `/puppies/1` would find the puppy with the ID of one and show me their individual page, and `/puppies/1/edit` would show me the form to update a given puppy.
 

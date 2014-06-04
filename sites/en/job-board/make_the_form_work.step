@@ -5,7 +5,7 @@ message <<-MARKDOWN
   * Learn how to read server output
   * Review happy debugging techniques
 
-  # Form Partytime
+  # Partytime: Use the form to Create Objects
 MARKDOWN
 
 message "Now, try to submit your form."

@@ -31,7 +31,7 @@ message <<-MARKDOWN
 
   # Make that migration file useful
 
-  Open up the migration file that you just made (cmd+p / ctl+p and type createjobs and hit enter) and you'll see the following:
+  Open up the migration file that you just made (cmd+p / ctl+p, type 'create jobs', and hit enter) and you'll see the following:
 MARKDOWN
 
 source_code :ruby, <<-RUBY
@@ -77,7 +77,7 @@ MARKDOWN
 message <<-MARKDOWN
   # Check out the model
 
-  The migration we just ran updated the database, but that doesn't mean that we can talk to the database using Ruby yet. Look at the file `app/models/job.rb`. The `jobs` class inherits from ActiveRecord::Base, so that we can talk to the database with Ruby instead of SQL!
+  The migration we just ran updated the database, but that doesn't mean that we can talk to the database using Ruby yet. Look at the file `app/models/job.rb`. The `Job` class inherits from ActiveRecord::Base, so that we can talk to the database with Ruby instead of SQL!
 
   Okay, so we've got some place to store our jobs. But how can we make any? THROUGH THE MAGIC OF FORMS!!!
 MARKDOWN
