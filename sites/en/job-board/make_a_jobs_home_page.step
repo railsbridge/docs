@@ -12,12 +12,11 @@ message <<-MARKDOWN
   To start, let's visit the page that we want to put our jobs on: <http://localhost:3000/jobs>.
 MARKDOWN
 
-error_box "No route matches [GET] '/jobs'",
-<<-MARKDOWN
-  That's pretty reasonable, since we currently don't have any routes at all right now.
-MARKDOWN
+error_box "No route matches [GET] '/jobs'"
 
 message <<-MARKDOWN
+  That's pretty reasonable, since we currently don't have any routes at all right now.
+
   # Adding Routes
 
   So it's looking for a route, but can't find one. Let's add one!
@@ -56,9 +55,11 @@ message <<-MARKDOWN
   Since adding the line `resources :jobs` made a route matching `/jobs`, let's go visit that page again: <http://localhost:3000/jobs>
 MARKDOWN
 
-error_box "uninitialized constant JobsController", "Why does Rails now think it needs a JobsController?"
+error_box "uninitialized constant JobsController"
 
 message <<-MARKDOWN
+  Why does Rails now think it needs a JobsController?
+
   # Add a controller
 
   Time for a shortcut!!! Unlike the scaffold that we make in Suggestotron that makes about a million different files, we're just going to use a Rails generator to make the files we need.
@@ -74,13 +75,13 @@ MARKDOWN
 
 message "Now: refresh <http://localhost:3000/jobs>"
 
-error_box "The action 'index' could not be found for JobsController", <<-MARKDOWN
+error_box "The action 'index' could not be found for JobsController"
+
+message <<-MARKDOWN
   What is telling Rails to look in JobsController?
 
   Let's go back to <http://localhost:3000/rails/info> again and look at what controller and method (AKA action) the route /jobs is pointing to.
-MARKDOWN
 
-message <<-MARKDOWN
   It's looking for a method called index on the jobs controller! Since there isn't a controller method for this route, we'll need to add it.
 
   Open up your jobs controller (again, try to use keyboard shortcuts: cmd+p on Mac or ctl+p on PC to find the file at app/controllers/jobs_controller.rb).
@@ -94,14 +95,13 @@ RUBY
 
 message "And refresh <http://localhost:3000/jobs>"
 
-error_box "Missing template jobs/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/probablyyou/railsbridge/job_board/app/views'",
-<<-MARKDOWN
+error_box "Missing template jobs/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/probablyyou/railsbridge/job_board/app/views'"
+
+message <<-MARKDOWN
   What's the important part of the this error? How does Rails decide to look for something called jobs/index? How did it decide to look in the views directory?
 
   Talk through what Rails is trying, and failing, to do, and how file names and method names are important here.
-MARKDOWN
 
-message <<-MARKDOWN
   # Add a view
 
   Within app/views/jobs, add a file called index.html.erb.

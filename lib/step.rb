@@ -246,11 +246,10 @@ class Step < Erector::Widget
     end
   end
 
-  def error_box(error, question = nil)
+  def error_box(error)
     div class: "error_box" do
       h4 "Error! Woo!!!"
       p error
-      message question if question
     end
   end
 

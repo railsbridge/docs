@@ -82,9 +82,8 @@ ERB
 
 message "Refresh the page."
 
-error_box "First argument in form cannot contain nil or be empty", "It looks like we don't have a job ... because we haven't gotten our job out of the database! Let's go to the jobs_controller and fix that."
-
-source_code_with_message "in jobs_controller.rb, add the following", :ruby,
+error_box "First argument in form cannot contain nil or be empty"
+source_code_with_message "It looks like we don't have a job ... because we haven't gotten our job out of the database! Let's go to the jobs_controller and fix that. In jobs_controller.rb, add the following", :ruby,
 <<-RUBY
   def edit
     @job = Job.find(params[:id])
@@ -99,14 +98,13 @@ message <<-MARKDOWN
   So now the form works. Let's try to update that job posting. Change something about the job posting, and submit the form.
 MARKDOWN
 
-error_box "The action 'update' could not be found for JobsController", "So it looks like the form is finding the right route, but the method is missing from the controller."
+error_box "The action 'update' could not be found for JobsController"
 
-source_code_with_message "Let's add the update method to the file jobs_controller.rb", :ruby,
+source_code_with_message "So it looks like the form is finding the right route, but the method is missing from the controller. Let's add the update method to the file jobs_controller.rb", :ruby,
 <<-RUBY
   def update
   end
 RUBY
-
 
 source_code_with_message "Try it again, and ... template missing error! Similarly to create, we don't have a template to render for update. So let's just send them back to the jobs listing.", :ruby,
 <<-RUBY
