@@ -19,9 +19,9 @@ message <<-MARKDOWN
   That's the one we want for our form. Let's visit that page and see what it says: <http://localhost:3000/jobs/new>.
 MARKDOWN
 
-error_box "The action 'new' could not be found for JobsController", "This looks familiar!"
+error_box "The action 'new' could not be found for JobsController"
 
-source_code_with_message "Let's add a method to our jobs controller called `new`:", :ruby,
+source_code_with_message "This looks familiar! Let's add a method to our jobs controller called `new`:", :ruby,
 <<-RUBY
   def new
   end
@@ -65,9 +65,9 @@ ERB
 
 message "Save that file, and reload the page."
 
-error_box "First argument in form cannot contain nil or be empty", "What do you think that means? What is the first argument? What is it supposed to be?"
+error_box "First argument in form cannot contain nil or be empty"
 
-message "In order for the method `form_for` to do its job, it has to know about the thing that it's building the form for. So we need to give it an object. We do that in the controller."
+message "What do you think that means? What is the first argument? What is it supposed to be? In order for the method `form_for` to do its job, it has to know about the thing that it's building the form for. So we need to give it an object. We do that in the controller."
 
 source_code_with_message "Open up the jobs_controller, and update the new method:", :ruby,
 <<-RUBY

@@ -10,7 +10,7 @@ MARKDOWN
 
 message "Now, try to submit your form."
 
-error_box "The action 'create' could not be found for JobsController", ""
+error_box "The action 'create' could not be found for JobsController"
 
 message <<-MARKDOWN
   So, let's add it:
@@ -26,14 +26,13 @@ RUBY
 
 message "Reload the page!"
 
-error_box "Missing template jobs/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/lillie/railsbridge/job_board/app/views'",
+error_box "Missing template jobs/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/lillie/railsbridge/job_board/app/views'"
+
 <<-MARKDOWN
   Familiar error, right? We don't have a template called create.html.erb.
 
   BUT!!! This time we're not going to make one.
-MARKDOWN
 
-message <<-MARKDOWN
   We actually want to go somewhere useful, right? Let's go back to the main jobs page (where we will eventually be listing our jobs). We need to tell the create method where to go, instead of letting it decide based on method name.
 MARKDOWN
 
