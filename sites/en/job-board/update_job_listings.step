@@ -106,7 +106,6 @@ source_code_with_message "So it looks like the form is finding the right route, 
   end
 RUBY
 
-
 source_code_with_message "Try it again, and ... template missing error! Similarly to create, we don't have a template to render for update. So let's just send them back to the jobs listing.", :ruby,
 <<-RUBY
   def update
