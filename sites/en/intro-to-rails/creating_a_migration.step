@@ -4,7 +4,7 @@ goals {
 
   message "The suggestotron has a list of topics that people can vote on. We'll store our topics in the database. In this step you'll do the following:"
 
-  goal "Create a a simple *Table* in the database for topics with a title and a description"
+  goal "Create a simple *Table* in the database for topics with a title and a description"
   goal "Automatically generate the corresponding *Scaffold* in Rails (namely, the *Model*, the *View*, and the *Controller*)."
 
 }
