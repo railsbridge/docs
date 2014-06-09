@@ -122,7 +122,7 @@ pluralize("kiwi")
 
     message "Methods take **parameters**, which are the variables they work on. In this case, we made a method called pluralize that takes one parameter, a word."
 
-    message "Methods can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In Ruby, functions return whatever the last line of the function evaluates to."
+    message "Methods can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In Ruby, methods return whatever the last line of the method evaluates to."
   end
 end
 
