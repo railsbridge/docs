@@ -25,21 +25,21 @@ message <<-MARKDOWN
 MARKDOWN
 
 source_code :erb,
-<<-ERB
+  <<-ERB
   <header>
     <div class="left-nav">
       <ul>
-          <li><%= link_to "Home", jobs_path %></li>
+        <li><%= link_to "Home", jobs_path %></li>
       </ul>
     </div>
     <div class="right-nav">
       <ul>
-          <li><%= link_to "Add Job", new_job_path %></li>
+        <li><%= link_to "Add Job", new_job_path %></li>
       </ul>
     </div>
     <div class="clearfix"></div>
   </header>
-ERB
+  ERB
 
 message <<-MARKDOWN
   Things to note:

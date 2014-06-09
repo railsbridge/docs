@@ -28,7 +28,7 @@ message <<-MARKDOWN
 
   You could make your URLs look like anything you wanted, like: `/all_the_jobs` or `/add_a_job` or `show_job`. This would totally work if you set up your controller methods and the route file correctly.
 
- But we generally avoid this because the RESTful routing is a best practice that Rails makes easy to follow. In RESTful routes, the paths are structured around a specific resource &mdash; in our case, jobs. Check out more about [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) urls.
+  But we generally avoid this because the RESTful routing is a best practice that Rails makes easy to follow. In RESTful routes, the paths are structured around a specific resource &mdash; in our case, jobs. Check out more about [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) urls.
 
   Another example: if we were making a puppy app, I would expect that going to `/puppies` would show me an index of all the puppies, and `/puppies/1` would find the puppy with the ID of one and show me their individual page, and `/puppies/1/edit` would show me the form to update a given puppy.
 
