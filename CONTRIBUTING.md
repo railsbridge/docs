@@ -42,11 +42,6 @@ maintainers to love you. :heart:*
 - Read the GitHub Guide on [Forking](https://guides.github.com/activities/forking/), especially the part about
   [Pull Requests](https://guides.github.com/activities/forking/#making-a-pull-request).
 
-- When you submit a pull request (PR), make sure your topic branch is selected
-  on the right-hand side of the Pull Request Preview page, like this:
-
-  ![choosing pull request branch](https://github-images.s3.amazonaws.com/help/pull_requests/send-pull-request.png)
-
 - Remember, pull requests are submitted *from* your repo, but show up on the
   *upstream* repo.
 
