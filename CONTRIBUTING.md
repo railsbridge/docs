@@ -39,13 +39,8 @@ maintainers to love you. :heart:*
 
 ## Submitting a Pull Request
 
-- Read the article ["Using Pull Requests"](https://help.github.com/articles/using-pull-requests)
-  on GitHub.
-
-- When you submit a pull request (PR), make sure your topic branch is selected
-  on the right-hand side of the Pull Request Preview page, like this:
-
-  ![choosing pull request branch](https://github-images.s3.amazonaws.com/help/change-branches.png)
+- Read the GitHub Guide on [Forking](https://guides.github.com/activities/forking/), especially the part about
+  [Pull Requests](https://guides.github.com/activities/forking/#making-a-pull-request).
 
 - Remember, pull requests are submitted *from* your repo, but show up on the
   *upstream* repo.
@@ -82,7 +77,9 @@ be fine.
 First, you'll need a GitHub account, which is totally free. You can sign up
 [here](https://github.com/signup/free).
 
-Next, browse the [GitHub Help site](https://help.github.com).
+Next, browse the [GitHub Help site](https://help.github.com) and the
+[Github Guides](https://guides.github.com/). The Help Site is more technical, and the
+Guides are very easy to understand tutorials.
 
 You'll want to read about
 [forking](https://help.github.com/articles/fork-a-repo) and then make your own
@@ -98,10 +95,8 @@ anyone who wants to contribute do so. His email is behind that profile link.
 
 # Closing
 
-If you haven't taken the time to go through the Git Immersion lab.
-
-Do it. It's worth it no matter how much git-fu you have.
-http://gitimmersion.com
+If you haven't taken the time yet, go through the [Git Immersion lab](http://gitimmersion.com)
+at <http://gitimmersion.com>. Do it. It's worth it no matter how much git-fu you have.
 
 Also, [Pro Git](http://git-scm.com/book) is a great (and free!) book about Git.
 
