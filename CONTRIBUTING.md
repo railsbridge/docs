@@ -78,7 +78,7 @@ First, you'll need a GitHub account, which is totally free. You can sign up
 [here](https://github.com/signup/free).
 
 Next, browse the [GitHub Help site](https://help.github.com) and the
-[Github Guides](https://guides.github.com/). The Help Site is more technical, and the
+[GitHub Guides](https://guides.github.com/). The Help Site is more technical, and the
 Guides are very easy to understand tutorials.
 
 You'll want to read about
@@ -101,7 +101,7 @@ at <http://gitimmersion.com>. Do it. It's worth it no matter how much git-fu you
 Also, [Pro Git](http://git-scm.com/book) is a great (and free!) book about Git.
 
 We apologize for how long this document is! Hopefully it addressed
-most of your concerns about git, contributing, and github. Feel free
+most of your concerns about git, contributing, and GitHub. Feel free
 to ask more questions on the
 [railsbridge-workshops](http://groups.google.com/group/railsbridge-workshops)
 mailing list. And we're open to any suggestions about improvements,

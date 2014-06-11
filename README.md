@@ -1,4 +1,4 @@
-# The Railsbridge Documentation Project
+# The RailsBridge Documentation Project
 
 [![Build Status](https://travis-ci.org/railsbridge/docs.png)](https://travis-ci.org/railsbridge/docs)
 
