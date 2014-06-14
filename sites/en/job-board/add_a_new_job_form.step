@@ -72,7 +72,7 @@ message "What do you think that means? What is the first argument? What is it su
 source_code_with_message "Open up the jobs_controller, and update the new method:", :ruby,
 <<-RUBY
   def new
-    @jobs = Job.new
+    @job = Job.new
   end
 RUBY
 
