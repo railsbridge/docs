@@ -70,7 +70,7 @@ explanation {
 
   In Rails 4, you can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
 
-  <img src='img/rails4_rails_info_routing.png'>
+  <img src='img/rails4_rails_info_routing.png' alt='Screenshot of browser-based Rails routing info page'>
 
   You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
 

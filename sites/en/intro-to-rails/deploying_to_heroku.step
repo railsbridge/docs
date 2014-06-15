@@ -101,7 +101,7 @@ explanation do
   MARKDOWN
 
   message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
-  img src: "img/workflow.png", alt: "workflow", style: "border: none"
+  img src: "img/workflow.png", alt: "Diagram showing git workflow of making changes, committing them, and pushing to Heroku.", style: "border: none"
   ol do
     li { message "Add or change some code" }
     li { message "Commit your changes (`git commit`)" }

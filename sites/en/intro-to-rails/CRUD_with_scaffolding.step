@@ -21,19 +21,19 @@ steps {
 
   step {
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "You should see a page listing topics that looks something like this:"
+    message "You should see the 'Listing Topics' page with headers for title and description, and a link to add a new topic:"
 
-    img src: "img/Seattle_topic_list_page.png", alt: "Topic List Page"
+    img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
   }
 
   step {
     message <<-MARKDOWN
   * Click on "New Topic"
   * Fill in the form and click "Create Topic"
-  * You should see a confirmation page like this:
+  * You should see a page showing your new topic with a message that your topic was successfully created:
     MARKDOWN
 
-    img alt: "topic created", src: "img/Seattle_topic_created.png"
+    img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
   }
 
   step {
@@ -41,7 +41,7 @@ steps {
       * Click on "back"
       * You should see the topic list again, this time with your new topic listed:
 
-      ![list with topic](img/Seattle_list_with_topic.png)
+      ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
 
       * Try the 'show', 'edit', and 'destroy' links to see what they do
       * You've created a basic database driven web site, congrats!
