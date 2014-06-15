@@ -24,12 +24,6 @@ step "Create a new Rails app" do
 
   message "The command's output is voluminous, and will take some time to complete, with a long pause in the middle, after all the 'create...' statements ending in 'bundle install'.  When it fully completes, it will return you to your home prompt.  Look for the 'Your bundle is complete!' message just above."
 
-  tip do
-    message "On Linux, you may have to enable this line to your Gemfile:"
-    pre "gem 'therubyracer', :platforms => :ruby"
-    message "Just delete the '#' in front of the statement"
-  end
-
   console "cd test_app"
   console "rails server"
 
