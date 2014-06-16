@@ -1,4 +1,4 @@
-img src: "img/Start_page.png", alt: "Start Page"
+img src: "img/Start_page.png", alt: "Screenshot of a Ruby on Rails default home page"
 
 goals do
   goal "Create Your New Application"
@@ -53,11 +53,11 @@ Open the suggestotron folder as a project in your text editor.
 
 In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
 
-<img src='img/sublime_add_folder_to_project.png' />
+![Sublime Text Project menu screenshot](img/sublime_add_folder_to_project.png)
 
-Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should look something like this:
+Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should show the directories of your app in a tree structure on the left:
 
-<img src='img/sublime_project_as_folder.png' />
+![Screenshot of Suggestotron project folder tree in Sublime Text](img/sublime_project_as_folder.png)
     MARKDOWN
   end
 
