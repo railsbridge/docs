@@ -101,6 +101,7 @@ DEPENDENCIES
   erector (~> 0.10.0)
   eventmachine (~> 1.0.3)
   files (~> 0.3.0)
+  i18n (~> 0.6.9)
   nokogiri
   rack-codehighlighter
   rack-test

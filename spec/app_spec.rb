@@ -68,23 +68,23 @@ describe InstallFest do
     describe "learns the locale from" do
       it "the locale parameter" do
         true_app.params = {locale: 'es'}
-        assert { true_app.locale == 'es' }
+        assert { true_app.dynamic_locale == 'es' }
       end
 
       it "the l parameter" do
         true_app.params = {l: 'es'}
-        assert { true_app.locale == 'es' }
+        assert { true_app.dynamic_locale == 'es' }
       end
 
       it "the subdomain" do
         true_app.request = Rack::Request.new({"HTTP_HOST" => "es.example.com"})
-        assert { true_app.locale == 'es' }
+        assert { true_app.dynamic_locale == 'es' }
       end
 
       it "the SITE_LOCALE environment var" do
         begin
           ENV["SITE_LOCALE"] = "es"
-          assert { true_app.locale == 'es' }
+          assert { true_app.dynamic_locale == 'es' }
         ensure
           ENV["SITE_LOCALE"] = nil
         end

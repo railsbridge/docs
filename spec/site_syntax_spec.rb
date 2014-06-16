@@ -18,7 +18,7 @@ describe "Syntax check all sites" do
         describe "#{site.name} pages..." do
           site.docs.each do |doc|
             it "renders #{doc.filename}" do
-              path = "/#{site.name}/#{doc.name}"
+              path = URI.escape "/#{site.name}/#{doc.name}"
               get path, locale: locale
               if (last_response.status != 200)
                 errors = last_response.errors

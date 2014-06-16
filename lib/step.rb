@@ -63,21 +63,13 @@ class Step < Erector::Widget
 
   ## steps
 
-  @@header_sections = {
-    steps:"Steps",
-    explanation:"Explanation",
-    overview:"Overview",
-    discussion:"Discussion Items",
-    hints:"Hints",
-    challenge:"Challenge(s)",
-    tools_and_references:"Tools and References",
-    requirements:"Requirements to advance",
-  }
-
-  @@header_sections.each do |type, header|
-    define_method type do |&block|
+  %w[
+    steps explanation overview discussion hints challenge 
+    tools_and_references requirements
+  ].each do |type|
+    define_method type.to_sym do |&block|
       div :class => type do
-        h1 header
+        h1 I18n.t(type, :scope => "header_section")
         blockquote do
           block.call if block
         end
@@ -92,7 +84,8 @@ class Step < Erector::Widget
     div :class => "step", :title => name do
       h1 do
         widget BigCheckbox
-        prefix "Step #{num}" + (!name.nil? ? ': ' : '')
+        prefix I18n.t("general.step_title", :num => num) +
+              (!name.nil? ? I18n.t("general.step_title_suffix") : '')
         text name
       end
       _render_inner_content &Proc.new if block_given?
@@ -101,7 +94,7 @@ class Step < Erector::Widget
 
 
   def link name, options = {}
-    options = {caption: LINK_CAPTION}.merge(options)
+    options = {caption: I18n.t("captions.link")}.merge(options)
     p :class => "link" do
       text options[:caption]
       text " "
@@ -114,7 +107,7 @@ class Step < Erector::Widget
   end
 
   def _escaped str
-    URI.escape(str, URI::PATTERN::RESERVED)
+    URI.escape(str)
   end
 
   def simple_link name, options={}
@@ -135,8 +128,9 @@ class Step < Erector::Widget
   def next_step name
     div :class => "step next_step" do
       h1 do
-        prefix "Next Step:"
+        prefix I18n.t("general.next_step")
       end
+      # FIXME: Translate with i18n. Currently it is hard to get site_name.
       link name
     end
   end
@@ -150,7 +144,7 @@ class Step < Erector::Widget
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     h1 :class => "option" do
-      span "Option #{num}: "
+      span I18n.t("general.option", :num => num)
       text name
     end
     _render_inner_content &Proc.new if block_given?
@@ -175,7 +169,7 @@ class Step < Erector::Widget
 
   def verify text = nil
     div :class=> "verify" do
-      h1 "Verify #{text}"
+      h1 I18n.t("general.verify", :text => text)
       blockquote do
         yield
       end
@@ -184,7 +178,7 @@ class Step < Erector::Widget
 
   def goals
     div :class => "goals" do
-      h1 "Goals"
+      h1 I18n.t("general.goals")
       ul do
         yield
       end
@@ -255,15 +249,8 @@ class Step < Erector::Widget
 
   ## special
 
-  # todo: i18n
-  TERMINAL_CAPTION = "Type this in the terminal:"
-  IRB_CAPTION = "Type this in irb:"
-  RESULT_CAPTION = "Expected result:"
-  FUZZY_RESULT_CAPTION = "Approximate expected result:"
-  LINK_CAPTION = "Go on to"
-
   def console(commands)
-    console_with_message(TERMINAL_CAPTION, commands)
+    console_with_message(I18n.t('captions.terminal'), commands)
   end
 
   def console_with_message(message, commands)
@@ -284,21 +271,21 @@ class Step < Erector::Widget
 
   def irb msg
     div :class => "console" do
-      span IRB_CAPTION
+      span I18n.t("captions.irb")
       pre msg
     end
   end
 
   def type_in_file filename, msg
     div do
-      span "Type this in the file #{filename}:"
+      span I18n.t("general.type_in_file", :filename => filename)
       source_code :ruby, msg
     end
   end
 
   def further_reading
     div :class => "further-reading" do
-      h1 "Further Reading"
+      h1 I18n.t("general.further_reading")
       blockquote do
         yield
       end
@@ -307,7 +294,7 @@ class Step < Erector::Widget
 
   def result text
     div :class => "result" do
-      span RESULT_CAPTION
+      span I18n.t("captions.result")
       pre text.strip_heredoc
     end
   end
@@ -315,7 +302,7 @@ class Step < Erector::Widget
   def fuzzy_result fuzzed_text
     fuzzed_text = fuzzed_text.strip_heredoc
     div :class => "result fuzzy-result" do
-      span FUZZY_RESULT_CAPTION
+      span I18n.t("captions.fuzzy_result")
       remaining_text = fuzzed_text
       pre do
         while match = remaining_text.match(/(.*?){FUZZY}(.*?){\/FUZZY}(.*)/m)
@@ -325,7 +312,7 @@ class Step < Erector::Widget
         end
         text remaining_text
       end
-      div "The greyed-out text may differ and is not important.", :class => 'fuzzy-hint'
+      div I18n.t("general.fuzzy_hint"), :class => 'fuzzy-hint'
     end
   end
 
