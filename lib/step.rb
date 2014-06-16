@@ -107,7 +107,7 @@ class Step < Erector::Widget
   end
 
   def _escaped str
-    URI.escape(str)
+    URI.escape(str, URI::PATTERN::RESERVED)
   end
 
   def simple_link name, options={}

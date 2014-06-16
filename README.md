@@ -40,7 +40,7 @@ To server sites from another locale (say, "es" or Spanish)...
 
 The server listens on `0.0.0.0:9292`.
 
-Now you have to setup subdomain for the site. If you have Pow, run:
+Now you have to set up subdomain mappings for the site. If you have Pow, run:
 
     $ echo 9292 > ~/.pow/railsbridge # works for any subdomain
 
