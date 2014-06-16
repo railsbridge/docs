@@ -4,24 +4,6 @@
 
 You may have never programmed before. Now you will.
 
-# Schedule
-
-9:00 introductions
-
-9:30 lecture
-
-10:45 - 11:00 mandatory break
-
-12:30 lunch
-
-1:30 class resumes
-
-3:00 - 3:30 stretch break & snacks & coffee
-
-4:30 discussion and next steps
-
-5:00 bye
-
 # What is coding?
 
 * coding = programming
