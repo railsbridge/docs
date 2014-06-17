@@ -103,6 +103,8 @@ bundle install --without production
       root 'drinks#index'
     RUBY
 
+    message "Save the file."
+
     message "Note that you must remove the leading '#', as lines that start with a # are
     comments and will not have any effect."
   end
