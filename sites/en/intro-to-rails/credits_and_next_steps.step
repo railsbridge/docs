@@ -29,11 +29,28 @@ If you got all the way through Suggestotron with some time to spare, here's some
 
 ### Downvote button
 
-Users should be able to give a post a _negative_ vote (downvote) instead of a _positive_ one (upvote). How might you represent that in this system? Add a downvote button that does the opposite of what the current upvote button does.
+Users should be able to give a post a negative vote (_downvote_) instead of a positive one (_upvote_). How might you represent that in this system? Add a downvote button that does the opposite of what the current upvote button does.
 
 ### Sort topics
 
 Sort topics by their number of votes, in descending order.
+
+MARKDOWN
+
+tip do
+  message "You will want to modify the index method in `app/controllers/topics_controller.rb` so that `@topics` contains a sorted list of topics."
+  message "Have a look at the line in the index method:"
+  source_code :ruby, <<-RUBY
+  @topics = Topic.all 
+  RUBY
+  message "It might change to something like this:"
+  source_code :ruby, <<-RUBY
+  @topics = Topic.sorted
+  RUBY
+  message "How can you add a `sorted` method to the topic model? What code do you need to put in this method to sort the topics?"
+end
+
+message <<MARKDOWN
 
 ### About page
 
@@ -41,7 +58,7 @@ Add an 'About' page, linked from the bottom of the Suggestotron topics list. Lin
 
 ### One vote per user (if your class has a **lot** of time left over)
 
-Users should be allowed to vote only once: give votes a user_id and allow a user to vote on each topic only once. But wait... what is a 'user' in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
+Users should be allowed to vote only once: give votes a `user_id` field and allow a user to vote on each topic only once. But wait... what is a _user_ in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
 
 ### It's Broken! Fix it!
 
