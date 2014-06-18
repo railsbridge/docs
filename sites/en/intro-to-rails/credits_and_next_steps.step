@@ -25,14 +25,23 @@ message <<MARKDOWN
 
 # Extra Credit
 
-If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
+If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try. Don't hesitate to ask a teacher for hints or explanations
 
-* Add a downvote button that does the opposite of what the upvote button does
-* Sort topics by their number of votes
-* Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
-* If your class has a **lot** of time left over:
-  * Users should be allowed to vote only once: give votes a user_id and allow a user to have voted on each topic only once. But wait, what is a 'user' in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
-  * Users should be able to give a post a 'negative' vote instead of a positive one. How might you represent that in this system?
+### Downvote button
+
+Users should be able to give a post a _negative_ vote (downvote) instead of a _positive_ one (upvote). How might you represent that in this system? Add a downvote button that does the opposite of what the current upvote button does.
+
+### Sort topics
+
+Sort topics by their number of votes, in descending order.
+
+### About page
+
+Add an 'About' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
+
+### One vote per user (if your class has a **lot** of time left over)
+
+Users should be allowed to vote only once: give votes a user_id and allow a user to vote on each topic only once. But wait... what is a 'user' in our system? Get a volunteer to introduce everyone to [Devise](https://github.com/plataformatec/devise), a simple way to add authentication to a Rails application.
 
 ### It's Broken! Fix it!
 
