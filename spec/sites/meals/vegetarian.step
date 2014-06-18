@@ -1,4 +1,4 @@
-Make sure not to use any meat!
+message "Make sure not to use any meat!"
 
 insert 'find_utensils'
 

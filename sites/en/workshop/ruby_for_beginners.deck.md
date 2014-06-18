@@ -227,7 +227,7 @@ Create a variable whose name has:
   
 * a number anywhere (like `y2k`)
 
-* a number at the start (like '101dalmations')
+* a number at the start (like '101dalmatians')
 
 * a number at the end  (like 'starwars2')
 

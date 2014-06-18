@@ -34,7 +34,7 @@ describe InstallFest do
 
       sites_dir = dir "sites"  do
           dir "meals" do
-            f = file "breakfast.deck.md", breakfast
+            file "breakfast.deck.md", breakfast
           end
       end
       Site.stub(:sites_dir) { sites_dir }

@@ -305,7 +305,7 @@ class Step < Erector::Widget
       span I18n.t("captions.fuzzy_result")
       remaining_text = fuzzed_text
       pre do
-        while match = remaining_text.match(/(.*?){FUZZY}(.*?){\/FUZZY}(.*)/m)
+        while match = remaining_text.match(/(.*?)\{FUZZY}(.*?)\{\/FUZZY}(.*)/m)
           text match[1]
           span match[2], :class => 'fuzzy-lightened'
           remaining_text = match[3]

@@ -2,7 +2,7 @@ requirements do
 message <<-MARKDOWN
 * The user should be able to create a post with a title, author, date published, and content. The author should be the current user. 
 * The complete post should appear on its own page (aka its show page).
-* If the user doesn’t submit all required fields, they should see some error messaging, but shouldn’t lose any of their work.
+* If the user doesn't submit all required fields, they should see some error messaging, but shouldn't lose any of their work.
 MARKDOWN
   table do
     tr do
@@ -50,7 +50,7 @@ message <<-MARKDOWN
 * Rails has some built in ways to associate one model with another. See the RailsGuides link above for hints on how to make a user the owner of a post!
 * Don't hand code the form! You don't have to! Rails will help. See RailsGuide link above! 
 * Rails has a built-in way to note when something was stored in the database. Probably handy for showing the date / time a post was created.
-* For now, we're going to use the user's email address when displaying a posts's author. You can add names or other identifiers later! (Also, even though you're going to get the current user's email address from the User model, you'll still need a user parameter for your Post resource.)
+* For now, we're going to use the user's email address when displaying a post's author. You can add names or other identifiers later! (Also, even though you're going to get the current user's email address from the User model, you'll still need a user parameter for your Post resource.)
 * You need a `create` method to store your post data - scroll down a little bit in this section of the Getting Started guide for very helpful information and to see an example of a create method: <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
 MARKDOWN
 end

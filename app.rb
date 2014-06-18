@@ -25,7 +25,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   include Erector::Mixin
 
   # Set available locales in Array of Strings; this is also used when
-  # checking availability in dynamic locale assigment, so must be as Strings.
+  # checking availability in dynamic locale assignment, they must be strings.
   AVAILABLE_LOCALES = %w(en es)
 
   configure do
@@ -102,7 +102,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def ext
-    ext = $1 if doc_path.match(/\.(.*)/)
+    $1 if doc_path.match(/\.(.*)/)
   end
 
   def doc_path

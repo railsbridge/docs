@@ -163,9 +163,7 @@ div.back:before {
 
 table.bordered td,
 table.bordered tr {
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
+  border: 1px solid black;
   padding-left: 5px;
   padding-right: 5px;
 }

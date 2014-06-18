@@ -32,7 +32,7 @@ class Contents < Erector::Widget
   end
 
   def content_for filename
-    open("#{site_dir}/#{filename}").read()
+    open("#{site_dir}/#{filename}").read
   end
 
   def subpages_for filename
@@ -45,20 +45,20 @@ class Contents < Erector::Widget
     content.scan /[^!]\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
       next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
-      links.push(link) if !links.include? link
+      links.push(link)
     end
 
     # (stepfiles) links of the form: link "next page"
     content.scan /link\s*["'](.*?)["']/ do |link, _|
-      links.push(link) if !links.include? link
+      links.push(link)
     end
 
     # (stepfiles) links of the form: site_desc "some site"
     content.scan /site_desc\s*["'](.*?)["']/ do |link, _|
-      links.push('/' + link) if !links.include? link
+      links.push('/' + link)
     end
 
-    links
+    links.uniq
   end
 
   def next_step_for filename

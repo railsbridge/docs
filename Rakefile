@@ -12,7 +12,7 @@ begin
     t.pattern = "spec/**/*_spec.rb"
     t.rspec_opts =
         "--format d"
-    t.rspec_opts += " --color" if !windows?
+    t.rspec_opts += " --color" unless windows?
     # t.ruby_opts="-w"
   end
 rescue LoadError # swallow Heroku deploy error

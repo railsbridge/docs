@@ -57,7 +57,7 @@ describe Step do
 
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
-    assert { names == ["step1", "happy_step"] }
+    assert { names == %w(step1 happy_step) }
   end
 
   it "nests anchor numbers" do
@@ -73,11 +73,11 @@ describe Step do
     RUBY
 
     titles = html_doc.css('.step').map{|div| div["title"]}
-    assert { titles == ["breakfast", "cereal", "eggs", "lunch", "salad", "sandwich"] }
+    assert { titles == %w(breakfast cereal eggs lunch salad sandwich) }
 
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
-    assert { names == ["step1", "step1-1", "step1-2", "step2", "step2-1", "step2-2"] }
+    assert { names == %w(step1 step1-1 step1-2 step2 step2-1 step2-2) }
   end
 
   describe 'link' do

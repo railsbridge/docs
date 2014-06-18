@@ -30,7 +30,7 @@ nav *, nav *:before, nav *:after {
   list-style: none;
   background-color: #fff;
   border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
@@ -39,14 +39,13 @@ nav *, nav *:before, nav *:after {
 
   &:before {
     content: "";
-    border-color: transparent transparent white transparent;
     position: absolute;
     height: 0;
     width: 0;
     top: -19px;
     left: 148px;
-    border-width: 10px;
-    border-style: solid;
+    border: 10px solid transparent;
+    border-bottom-color: white;
   }
 
   li {
@@ -62,7 +61,6 @@ nav *, nav *:before, nav *:after {
       padding: 3px 20px;
       font-weight: normal;
       line-height: 1.428571429;
-      color: #333;
       white-space: nowrap;
     }
   }
@@ -111,9 +109,7 @@ nav *, nav *:before, nav *:after {
     > a {
       position: relative;
       display: block;
-      padding: 10px 15px;
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding: 15px;
       line-height: 20px;
     }
 

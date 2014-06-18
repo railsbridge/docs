@@ -26,7 +26,7 @@ message <<-MARKDOWN
 
 * Each time you get your app into a functional state, before adding any more features, COMMIT TO GIT! The new features will probably break things, which is neat, but you’ll want to be able to roll back to a prior version if necessary.
 
-MAJORLY IMPORTANT NOTE: We called the sections challenges because they are challenging! This curriculum will be most fun as a collaboration — talk things through with your teacher, TAs, and other students. This is a very different style of curriculum than Suggestotron, so don’t be discouraged if you aren’t quite sure what to do next.
+MAJORLY IMPORTANT NOTE: We called the sections challenges because they are challenging! This curriculum will be most fun as a collaboration — talk things through with your teacher, TAs, and other students. This is a very different style of curriculum than Suggestotron, so don’t be discouraged if you aren't quite sure what to do next.
 
 ## How to use this curriculum
 * Challenges are the big chunks of stuff to work on at a given time. These are gated by requirements — once you (or your group) has completed a set of requirements, go on to the next set.
