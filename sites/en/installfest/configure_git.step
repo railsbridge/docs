@@ -22,7 +22,7 @@ git config --global color.branch auto
   BASH
 
   important do
-    message "If you are using Windows, the output of Git will not have colors."
+    message "If you are using Windows, the output of Git will not have colours."
   end
 end
 
