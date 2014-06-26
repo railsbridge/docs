@@ -21,7 +21,6 @@ steps {
 
     MARKDOWN
     message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
-    link "rails_architecture"
   }
 
   step {
