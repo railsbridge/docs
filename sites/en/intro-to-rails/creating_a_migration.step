@@ -42,5 +42,6 @@ Here, `rake db:migrate` is a task provided by the Rails framework. It creates a 
   tip "You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task."
 }
 
+insert "glossary"
 
 next_step "CRUD_with_scaffolding"
