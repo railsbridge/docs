@@ -102,4 +102,6 @@ tip "Great! You've created a brand new (empty) Rails app!" do
   MARKDOWN
 end
 
+insert "glossary"
+
 next_step "add_the_project_to_a_git_repo"

@@ -1,0 +1,9 @@
+div :class => "further-reading" do
+  h1 "Glossary"
+  blockquote do
+    message "Remember - if you are ever stuck trying to make sense of all this alphabet soup - the glossaries may be helpful!"
+    link 'glossary'
+    link 'commandline_glossary'
+  end
+end
+

@@ -54,4 +54,6 @@ By checking your application into git now, you're creating a record of your star
   MARKDOWN
 end
 
+insert "glossary"
+
 next_step "running_your_application_locally"

@@ -110,3 +110,5 @@ explanation do
   end
   message "Any time your changes are committed, you should feel free to `git push heroku master` and boom! Your changes are live!"
 end
+
+insert "glossary"
