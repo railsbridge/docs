@@ -31,6 +31,13 @@
 ### Community project
 ### Documentation and slides can be edited by anyone
 
+<!SLIDE bullets>
+# Survey
+
+### We want to make it more betterer
+### Make notes as you go along
+#### Some things we've added: extra credit; diagrams; sponsors; breaks; overview; glossary; resources page; lightning talks; railsbridgebridge
+
 
 <!SLIDE bullets>
 # Why are we here?
@@ -84,10 +91,9 @@
 
 <!SLIDE bullets>
 # Last but not least
-### Recap as you go
 ### Check the Glossary
-### Don't be shy: ask questions
-### Teachers are here to help
+### Help us improve the docs
+### Ask questions: Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: [rbcpt.org/code](http://rbcpt.org/code/)
 ### Resources: [rbcpt.org/resources](http://rbcpt.org/resources/)

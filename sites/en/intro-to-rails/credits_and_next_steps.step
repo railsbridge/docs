@@ -12,7 +12,7 @@ MARKDOWN
 
 tip "Help us make RailsBridge better" do
 
-  message "Please take five minutes to [complete our (anonymous) survey](https://docs.google.com/forms/d/1ltF233clMPo4y2kul7rVmFXU_Tu9496wkDJp65Up-wA/viewform)."
+  message "Please take five minutes to [complete our (anonymous) survey](http://rbcpt.org/exitsurvey/)."
 
   message "It's only four questions! We use your answers to do cool things. So far we've improved the documentation, got better coffee, added an overview, and lots more."
 
@@ -41,7 +41,7 @@ tip do
   message "You will want to modify the index method in `app/controllers/topics_controller.rb` so that `@topics` contains a sorted list of topics."
   message "Have a look at the line in the index method:"
   source_code :ruby, <<-RUBY
-  @topics = Topic.all 
+  @topics = Topic.all
   RUBY
   message "It might change to something like this:"
   source_code :ruby, <<-RUBY

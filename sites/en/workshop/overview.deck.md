@@ -46,8 +46,8 @@
 # And finally...
 
 ### Who, Where, Why?
-### Don't be shy: ask questions
-### Teachers are here to help
+### Help us improve the docs
+### Ask questions: Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: [rbcpt.org/code](http://rbcpt.org/code/)
 ### Schedule for tomorrow: [rbcpt.org/schedule](http://rbcpt.org/schedule/)
