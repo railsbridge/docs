@@ -11,7 +11,7 @@
  * **13:00**-14:00: Lunch
  * **14:00**-15:00: **Workshop**
  * **15:00**-15:30: Break
- * **15:30**-18:00: **Workshop**
+ * **15:30**-18:00: **Workshop**, Survey
 
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
