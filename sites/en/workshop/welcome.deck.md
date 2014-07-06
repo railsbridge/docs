@@ -4,9 +4,9 @@
 <!SLIDE bullets>
 # Schedule for the day
 
- * **09:00**-09:30: Breakfast, Sticky notes
+ * **09:00**-09:30: Breakfast
  * **09:30**-11:00: Opening presentation, introductions, **Workshop**
- * **11:00**-11:30: Break
+ * **11:00**-11:30: Break, Lightning Talk, Exercise
  * **11:30**-13:00: **Workshop**
  * **13:00**-14:00: Lunch
  * **14:00**-15:00: **Workshop**
