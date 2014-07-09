@@ -1,3 +1,9 @@
+important <<-MARKDOWN
+This page is currently only the seed of what may some day be a curriculum.
+
+If you're looking for a more complete curriculum, try <a href="/intro-to-javascript">Intro to Javascript</a>
+MARKDOWN
+
 message <<-MARKDOWN
 
 ### Goal
