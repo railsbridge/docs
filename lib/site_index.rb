@@ -2,9 +2,22 @@ class SiteIndex < Erector::Widget
   needs :site_name, :locale
   attr_accessor :site_name
 
+  def categorized_sites
+    {
+      'setup' => ['installfest'],
+      'rails' => ['intro-to-rails', 'job-board', 'intermediate-rails'],
+      'frontend' => ['frontend', 'intro-to-javascript'],
+      'ruby' => ['learn-to-code', 'ruby']
+    }
+  end
+
   def sites
     return @sites if @sites
     @sites = Dir.glob("#{Site.sites_dir(@locale)}/**").map { |filename| File.basename(filename) }.sort
+  end
+
+  def site_category category
+    li Titleizer.title_for_page(category), class: 'category'
   end
 
   def site_link site
@@ -20,7 +33,14 @@ class SiteIndex < Erector::Widget
 
   def content
     ul :class => "dropdown-menu" do
-      sites.each do |site|
+      categorized_sites.each do |category, category_sites|
+        site_category category
+        category_sites.each do |site|
+          site_link site
+        end
+      end
+      site_category I18n.t('sites.other_categories')
+      (sites - categorized_sites.values.flatten).each do |site|
         site_link site
       end
     end

@@ -13,6 +13,10 @@ describe SiteIndex do
     @site_index.sites.should =~  all_sites
   end
 
+  it "only references existing sites in the 'categorized_sites' method" do
+    @site_index.sites.should include(*@site_index.categorized_sites.values.flatten)
+  end
+
   it "emboldens the current site, links other sites" do
     index_html = Nokogiri.parse(@site_index.to_html)
 
