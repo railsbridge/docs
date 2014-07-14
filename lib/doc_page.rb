@@ -5,6 +5,7 @@ require 'erector_scss'
 require 'titleizer'
 require 'html5_page'
 require 'flags'
+require 'erb'
 
 class DocPage < Html5Page
   needs :site_name, :doc_title, :doc_path, :page_name, :src, :locale
@@ -124,8 +125,8 @@ class DocPage < Html5Page
         # Encode page name and fragment name separately so that
         # the fragment indicator '#' won't be escaped.
         page_name, fragment = @back.split('#')
-        url_components = [URI.escape(page_name, URI::PATTERN::RESERVED)]
-        url_components << URI.escape(fragment, URI::PATTERN::RESERVED) if fragment
+        url_components = [ERB::Util.u(page_name)]
+        url_components << ERB::Util.u(fragment) if fragment
         back_url = url_components.join('#')
 
         div.back {

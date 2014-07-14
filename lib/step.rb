@@ -4,6 +4,7 @@ require 'erector_scss'
 require 'markdown_renderer'
 require 'titleizer'
 require 'active_support/core_ext/string/strip'
+require 'erb'
 
 class Step < Erector::Widget
   external :style, <<-CSS
@@ -107,7 +108,7 @@ class Step < Erector::Widget
   end
 
   def _escaped str
-    URI.escape(str, URI::PATTERN::RESERVED)
+    ERB::Util.u(str)
   end
 
   def simple_link name, options={}
