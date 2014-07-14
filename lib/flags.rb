@@ -13,7 +13,7 @@ class Flags < Erector::Widget
 
   def initialize *args
     super
-    @locales = ["us", "es"]
+    @locales = ["us", "es", "zh-tw"]
   end
 
   def content
