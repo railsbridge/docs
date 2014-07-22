@@ -12,7 +12,7 @@ describe "Syntax check all sites" do
     @app ||= InstallFest.new
   end
 
-  ['en', 'es', 'zh-tw'].each do |locale|
+  InstallFest::AVAILABLE_LOCALES.each do |locale|
     describe "in locale '#{locale}'" do
       Site.all(locale).each do |site|
         describe "#{site.name} pages..." do

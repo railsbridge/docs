@@ -24,9 +24,11 @@ require "site"
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
+  DEFAULT_SITES = {en: "docs", es: "hola", :"zh-tw" => "nihao" }
+
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
-  AVAILABLE_LOCALES = %w(en es zh-tw)
+  AVAILABLE_LOCALES = DEFAULT_SITES.keys.map(&:to_s)
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
@@ -41,7 +43,6 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def initialize
     super
     @here = File.expand_path(File.dirname(__FILE__))
-    @default_sites = {en: "docs", es: "hola", :"zh-tw" => "nihao" }
   end
 
   attr_reader :here
@@ -57,7 +58,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     if host && sites.include?(site = subdomain)
       site
     else
-      @default_sites[I18n.locale.to_sym] # no symbol DoS because it's whitelisted
+      DEFAULT_SITES[I18n.locale.to_sym] # no symbol DoS because it's whitelisted
     end
   end
 
