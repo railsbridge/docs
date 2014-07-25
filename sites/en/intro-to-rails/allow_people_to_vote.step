@@ -80,12 +80,6 @@ steps {
   end
 }
 
-tip {
-  message "<h2>Pair teach again with sticky notes and paper</h2>"
-  message "It's talking time again! Describe what you've just done, and the steps you took, with a partner."
-  message "If there are things you're unsure about, write them down too, then ask a teacher to explain."
-}
-
 insert 'consider_deploying'
 
 next_step "redirect_to_the_topics_list_after_creating_a_new_topic"

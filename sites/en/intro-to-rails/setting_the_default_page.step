@@ -103,19 +103,6 @@ explanation {
 
 }
 
-tip {
-  message <<-MARKDOWN
-
-  ## Short recap
-
-  Find a partner and pair to describe the steps and what you've just done. Use sticky notes and paper.
-
-  Write down things that you're unsure about too, then get a teacher to help you understand.
-
-  MARKDOWN
-}
-
-
 insert 'consider_deploying'
 
 next_step "voting_on_topics"
