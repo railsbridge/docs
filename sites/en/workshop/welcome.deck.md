@@ -6,9 +6,9 @@
 
  * **09:00**-09:30: Breakfast
  * **09:30**-11:00: Opening presentation, introductions, **Workshop**
- * **11:00**-11:30: Break, Lightning Talk, Exercise
+ * **11:00**-11:30: Break, Lightning Talk
  * **11:30**-13:00: **Workshop**
- * **13:00**-14:00: Lunch
+ * **13:00**-14:00: Lunch, Lightning Talk
  * **14:00**-15:00: **Workshop**
  * **15:00**-15:30: Break
  * **15:30**-18:00: **Workshop**, Survey
