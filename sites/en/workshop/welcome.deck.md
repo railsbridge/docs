@@ -16,20 +16,17 @@
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
 
-![Siyelo](img/siyelo-logo.png)
+![iXperience](img/ixperience-logo.png)
 ![Hetzner](img/hetzner-logo.png)
 ![Unboxed](img/unboxed-logo.png)
-
-### goodies
-
-![Pragmatic Bookshelf](img/pragprog-logo.png)
-![Pluralsight](img/pluralsight-fullcolor-175x39-v3.png)
+![Pearson](img/pearson-logo.jpg)
 
 <!SLIDE bullets>
 # Open source workshop
 
 ### Community project
 ### Documentation and slides can be edited by anyone
+### https://github.com/RailsBridge-CapeTown
 
 <!SLIDE bullets>
 # Survey
