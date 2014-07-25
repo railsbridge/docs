@@ -94,5 +94,6 @@
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: [rbcpt.org/code](http://rbcpt.org/code/)
 ### Resources: [rbcpt.org/resources](http://rbcpt.org/resources/)
+### RailsBridgeBridge next month
 
 # [rbcpt.org/start](http://rbcpt.org/start/)
