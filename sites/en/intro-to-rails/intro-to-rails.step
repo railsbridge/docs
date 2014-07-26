@@ -52,26 +52,13 @@ Everything should be set up the night before during our
 install-fest. Please ensure you have everything working _before_ you
 show up for RailsBridge on Saturday.
 
-You can verify that you have everything working by trying this out in an IRB session:
-
-<div class="console"><pre>
->> 1 + 2
-=> 3
->> require "active_support"
-=> true
->> exit
-</pre>
-</div>
-
-If you can do that, you are probably good to go. Exit IRB by typing `quit` and then continue.
-
 ### Working Effectively and Efficiently
 
 I highly recommend you do the following:
 
 * Bring up your terminal and open 2 tabs:
-  * One is for regular terminal stuffs
-  * One will be for irb (aka rails console). We'll explain later
+  * One is for regular terminal stuffs.
+  * One will be for irb (aka rails console). We'll explain later.
 * Open your browser fresh or hide any windows you already have open.
   * Bring up one window with two tabs
     * One for this content
