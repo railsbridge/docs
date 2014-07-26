@@ -75,7 +75,7 @@ steps {
   end
 
   step "Confirm your changes in the browser" do
-    message "Go back to <http://localhost:3000/topics> and play."
+    message "Go back to <http://localhost:3000> and play."
     message "Revel in the fact that you didn't have to restart the server to see these changes. Awesome, no?"
   end
 }
