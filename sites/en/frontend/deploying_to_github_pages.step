@@ -62,7 +62,7 @@ situation "First-time setup" do
       message "Now, push the new file you just committed to Github."
       console 'git push -u origin master'
       message "You'll probably be prompted to type your Github password at this point. After you do, you'll have just pushed your project to Github's servers!"
-      important "If you have existing content in your Github pages repo, this command will fail, and you will have to do a `git push -uf origin master instead`. Verify with a TA first that you're doing the right thing."
+      important "If you have existing content in your Github pages repo, this command will fail, and you will have to do a `git push -uf origin master` instead. Verify with a TA first that you're doing the right thing."
     end
 
     step do
