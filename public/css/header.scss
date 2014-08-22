@@ -2,6 +2,8 @@ $railsbridge_purple: #6c266f;
 $railsbridge_blue: #2493b8;
 $railsbridge_darkerblue: #428bca;
 
+$header-height: 50px;
+
 nav *, nav *:before, nav *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -31,7 +33,6 @@ nav *, nav *:before, nav *:after {
   background-color: #fff;
   border: 1px solid #ccc;
   border-color: rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
   color: #333;
@@ -43,7 +44,7 @@ nav *, nav *:before, nav *:after {
     height: 0;
     width: 0;
     top: -19px;
-    left: 148px;
+    right: 20px;
     border: 10px solid transparent;
     border-bottom-color: white;
   }
@@ -112,10 +113,16 @@ nav *, nav *:before, nav *:after {
     float: left;
 
     > a {
+      height: $header-height;
+      line-height: $header-height;
       position: relative;
       display: block;
-      padding: 15px;
-      line-height: 20px;
+      padding: 0 15px;
+
+      img {
+        display: inline;
+        vertical-align: middle;
+      }
     }
 
     > a:hover,
@@ -146,7 +153,7 @@ nav *, nav *:before, nav *:after {
 .top {
   position: relative;
   z-index: 1000;
-  min-height: 50px;
+  min-height: $header-height;
   margin-bottom: 20px;
   border: 0;
   background-color: $railsbridge_purple;
@@ -156,7 +163,7 @@ nav *, nav *:before, nav *:after {
   border-bottom-style: solid;
 
   .navbar-header {
-    min-height: 50px;
+    min-height: $header-height;
   }
 
   .title {

@@ -182,7 +182,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         doc_title: doc_path.split('/').last,
         doc_path: doc_path,
         src: src,
-        locale: locale,
+        locale: I18n.locale,
       ).to_html
     rescue Errno::ENOENT => e
       p e

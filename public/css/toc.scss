@@ -81,6 +81,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
 .show-when-small {
   display: none !important;
 }
