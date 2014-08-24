@@ -10,17 +10,34 @@ overview do
 CSS stands for __C__ascading __S__tyle__s__heets. It's a language for creating **rules** that
 can **select** various elements on the page and change their **visual properties**.
 
-* __C__ascading - The 'cascade' is one of the trickier elements of CSS to master, but it
-  basically means you can define a bunch of styling rules of different strengths, and CSS
-  will apply them all, resolving any conflicting rules by allowing stronger rules overwrite
-  (or _cascade_ over) weaker rules.
+* __C__ascading - this is how the browser determines the correct style rules to apply to
+  each element on the page. As we'll see, CSS has many ways to match rules to elements, and
+  some of those ways count for more than others. The browser allows more important rules to
+  _cascade_ over less important ones.
 
-* __S__tyle__s__heets - CSS files are called 'stylesheets' because they allow you to put your
-  styling rules into a separate document (a 'sheet') of file type .css, and then choose to
-  include one or more in a given HTML page. This is a _very_ important feature for sites with many pages,
-  because it allows you to write your rules once and then include them everywhere on your site with
-  a single link on each page.
+* __S__tyle__s__heets - CSS files are called 'stylesheets' because they are separate documents - their
+  file type is .css - that only deal with styling information. We add special tags in our HTML files to
+  link them to our stylesheets.
 
+Unlike HTML, which is concerned with the _meaning_ of the content, CSS is **presentational**:
+it's concerned with how that content should look.
+
+
+MARKDOWN
+
+  tip do
+    message "## Why are HTML and CSS separate?"
+    message <<-MARKDOWN
+There are many good reasons to keep HTML and CSS separate. A typical website will reuse styles
+- like the color of links or the sizes of buttons - over and over again; by keeping them separate from the markup, we can
+use the same styles across a site.
+
+This makes our code more efficient and easier to maintain, and keeps the site visually consistent. It also makes it easier to use
+different styles for different devices, so a site can have different looks for desktop and mobile browsers.
+MARKDOWN
+  end
+
+  message <<-MARKDOWN
 ## CSS Rules Are Made of a Selector and Attributes
 
 *This section includes vocabulary you'll probably just want to memorize after class.*
@@ -34,12 +51,6 @@ All together, the selector and properties together are called a **rule**.
 <img src='img/css.png'>
 
 (You will forget the semicolon at some point, and your CSS will break, but it's an easy fix.)
-
-## Why are HTML and CSS separate?
-
-HTML tells the browser what your content _means_, whereas CSS tells the browser how it should _look_. 
-
-HTML is semantic: it's concerned with the meaning of the content, whereas CSS is presentational&mdash;CSS is all about style.
 
 MARKDOWN
 end
