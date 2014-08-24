@@ -113,11 +113,7 @@ Here are two screen shots of the same HTML page, but on the right side, we've tu
 
 <img src='img/css_bundler.png'>
 
-For some great examples of the power of CSS, check out the [CSS Zen Garden](http://www.csszengarden.com/). It takes
-the same HTML, but shows it with stylesheets from a bunch of different designers applied to
-it. Here are two different designers' interpretations of the same HTML:
 
-<img src='img/css_zen.png'>
   MARKDOWN
 
 end

@@ -30,10 +30,11 @@ explanation do
 
 ## More CSS!
 
-It takes a long time to master CSS, but there are lots of great-looking resources out there 
-to help. One cool resource is the [CSS Zen Garden](http://www.csszengarden.com/), a site with dozens of examples of
-the _same_ HTML page styled with different user-submitted stylesheets. It's a great place
-to get a sense of how limitless the possibilities are with CSS.
+For some great examples of the power of CSS, check out the [CSS Zen Garden](http://www.csszengarden.com/). It takes
+the same HTML, but shows it with stylesheets from a bunch of different designers applied to
+it. Here are two different designers' interpretations of the same HTML:
+
+<img src='img/css_zen.png'>
 
 ### CSS Reference Sites
 
