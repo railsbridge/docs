@@ -9,8 +9,8 @@ overview do
 
 ## What are attributes?
 
-HTML tags give the browser information about their content, like whether it's a header, or a paragraph, or a list.
-**Attributes** are extra information that is included with to the tag, such as the URL for a link tag, or the location of a file
+HTML tags give the browser information about their content, like whether it's header text, or a paragraph, or a list.
+**Attributes** are extra information included with the tag, such as the URL for a link tag, or the location of a file
 for an image tag.
 
 Form elements use an attribute to tell the browser what type of input they are,
@@ -43,7 +43,7 @@ MARKDOWN
 
   message <<-MARKDOWN
 In our CSS, we use special syntax to tell the browser if we're talking about an ID or a class name. IDs are indicated with a
-hashtag, like this: `#intro`. Classes are indicated with a dot: `.special`
+hash, like this: `#intro`. Classes are indicated with a dot: `.special`
   MARKDOWN
 
   tip do  message <<-MARKDOWN
