@@ -10,36 +10,50 @@ overview do
 CSS stands for __C__ascading __S__tyle__s__heets. It's a language for creating **rules** that
 can **select** various elements on the page and change their **visual properties**.
 
-* __C__ascading - The 'cascade' is one of the trickier elements of CSS to master, but it
-  basically means you can define a bunch of styling rules of different strengths, and CSS
-  will apply them all, resolving any conflicting rules by allowing stronger rules overwrite
-  (or _cascade_ over) weaker rules.
+* __C__ascading - this is how the browser determines the correct style rules to apply to
+  each element on the page. As we'll see, CSS has many ways to match rules to elements, and
+  some of those ways count for more than others. The browser allows more important rules to
+  _cascade_ over less important ones.
 
-* __S__tyle__s__heets - CSS files are called 'stylesheets' because they allow you to put your
-  styling rules into a separate document (a 'sheet') of file type .css, and then choose to
-  include one or more in a given HTML page. This is a _very_ important feature for sites with many pages,
-  because it allows you to write your rules once and then include them everywhere on your site with
-  a single link on each page.
+* __S__tyle__s__heets - CSS files are called 'stylesheets' because they are separate documents - their
+  file type is .css - that only deal with styling information. We add special tags in our HTML files to
+  link them to our stylesheets.
 
+Unlike HTML, which is concerned with the _meaning_ of the content, CSS is **presentational**:
+it's concerned with how that content should look.
+
+
+MARKDOWN
+
+  tip do
+    message "## Why are HTML and CSS separate?"
+    message <<-MARKDOWN
+There are many good reasons to keep HTML and CSS separate. A typical website will reuse styles
+- like the color of links or the sizes of buttons - over and over again; by keeping them separate from the markup, we can
+use the same styles across a site.
+
+This makes our code more efficient and easier to maintain, and keeps the site visually consistent. It also makes it easier to use
+different styles for different devices, so a site can have different looks for desktop and mobile browsers.
+MARKDOWN
+  end
+
+  message <<-MARKDOWN
 ## CSS Rules Are Made of a Selector and Attributes
 
-*This section includes vocabulary you'll probably just want to memorize after class.*
-
-The **selector** tells the browser what elements to add that style to. On this page we'll only use existing tags, like `<h1>` and `<p>`, as our selectors.
-
-The **attributes** tell the browser how to style the elements you selected. The first part, `padding:` is a **property**, and the part after the colon `20px` is the **value**. The line is finished with a semicolon.
-
-All together, the selector and properties together are called a **rule**.
+The **selector** is the first part of a CSS rule - it tells the browser how to find, or _select_, the element we want to style.
+On this page, we'll use `h1` and `p` as our selectors, which match the `h1` and `p` elements in our HTML.
 
 <img src='img/css.png'>
 
-(You will forget the semicolon at some point, and your CSS will break, but it's an easy fix.)
+The **attributes** are the parts of the rule inside the curly braces - they tell the browser how the elements
+we've selected should appear.
 
-## Why are HTML and CSS separate?
+Take a look at the attributes for the `h1` rule above. The part before the colon &mdash; `font-size` &mdash; is the **property**,
+and the part after it &mdash; `20px` &mdash; is the **value**. This attribute tells the browser that all `h1` elements
+should have a `font-size` of 20 pixels.
 
-HTML tells the browser what your content _means_, whereas CSS tells the browser how it should _look_. 
+The semicolons at the end of each attribute are important - if we forget them, the CSS won't work.
 
-HTML is semantic: it's concerned with the meaning of the content, whereas CSS is presentational&mdash;CSS is all about style.
 
 MARKDOWN
 end
@@ -99,11 +113,7 @@ Here are two screen shots of the same HTML page, but on the right side, we've tu
 
 <img src='img/css_bundler.png'>
 
-For some great examples of the power of CSS, check out the [CSS Zen Garden](http://www.csszengarden.com/). It takes
-the same HTML, but shows it with stylesheets from a bunch of different designers applied to
-it. Here are two different designers' interpretations of the same HTML:
 
-<img src='img/css_zen.png'>
   MARKDOWN
 
 end
