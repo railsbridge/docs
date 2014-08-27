@@ -52,10 +52,10 @@ hash, like this: `#intro`. Classes are indicated with a dot: `.special`
 **ID** attributes are unique labels, for identifying things you'll only ever have one
 of. For example, if you ran a news website, you might have an masthead element
 that only appears once, so you could give it an id
-like `"handsome-header"`.
+like `handsome-header`.
 
 **Class** attributes should be used to group together similar elements; for example, you might give certain
-paragraphs a class of `"special"` and use that class to highlight them.
+paragraphs a class of `special` and use that class to highlight them.
 
 In general, only use `id` if you're certain that it will only appear on a single element. For everything else,
 use `class`.
