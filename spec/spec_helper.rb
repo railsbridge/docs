@@ -14,5 +14,13 @@ end
 
 RSpec.configure do |c|
   c.include Files
+
+  c.expect_with :rspec do |expectations|
+    expectations.syntax = [:expect, :should]
+  end
+
+  c.mock_with :rspec do |mocks|
+    mocks.syntax = [:should, :expect]
+  end
 end
 
