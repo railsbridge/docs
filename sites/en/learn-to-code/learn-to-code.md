@@ -57,7 +57,7 @@ Follow along at http://docs.railsbridge.org/learn-to-code
 * Let us know!
 * Start working on Ruby For Programmers lessons
   * http://testfirst.org
-  * http://codelikethis.com/lessons/
+  * http://codelikethis.com/lessons
 * Build a Rails website
   * http://docs.railsbridge.org/
 
