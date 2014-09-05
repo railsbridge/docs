@@ -19,7 +19,7 @@ steps do
     message "Since you're using jQuery to interact with your document, you'll want to wait until your document is ready and loaded before you run your code. jQuery has a built-in method called 'ready' that checks for this, and runs your code after. Let's add this to your 'javascript.js' file, so you can write some jQuery."
     source_code :js, <<-JS
 $(document).ready(function() {
-  /* Add code from the next steps here */.
+  /* Add code from the next steps here */
 });
     JS
   end
