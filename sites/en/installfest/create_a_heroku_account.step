@@ -7,7 +7,7 @@ end
 step "Create an account" do
   message "Click the big **Sign Up** button (it's about halfway down the page)"
   message "Enter your email address."
-  important "Use the same email address for heroku, git, github, and ssh."
+  important "Use the same email address for heroku, git, github, and ssh. Be sure to use an email account you can log into immediately."
 end
 
 step "Activate your account" do
