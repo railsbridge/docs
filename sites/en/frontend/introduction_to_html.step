@@ -41,7 +41,7 @@ You'll need to fire up your text editor (like Sublime Text, Komodo Edit, or Text
 
 Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)
 
-<img src='img/hello_html.png'>
+<img src='img/hello_html.png' alt="text editor with empty file named hello.html">
 
 Notice the extension .html.  It indicates to the browser that it should render this content as HTML.
 
@@ -56,7 +56,7 @@ MARKDOWN
     message <<MARKDOWN
 Open Chrome and go to File, Open File, then select the file from your Desktop or wherever you put it.
 
-<img src='img/hello_world.png'>
+<img src='img/hello_world.png' alt="hello.html file rendered in browser displaying: Hello World">
 
 Even though your file does not include any HTML tags yet, browsers are great at showing text on screen, so your browser will just show you your text.
 MARKDOWN
@@ -66,7 +66,7 @@ MARKDOWN
     message "Kind of boring, right? To make it look a little less plain, let's drop in an HTML tag. Update the contents of your hello.html file to look like this:"
     source_code :html, "Hello <em>World</em>!"
     message "The `em` HTML tag tells your browser to add <em>em</em>phasis to that string of text. Refresh your browser and you'll see the effect:"
-    message "<img src='img/hello_world_jazzy.png'>"
+    message "<img src='img/hello_world_jazzy.png' alt='hello.html file rendered in browser displaying: Hello World with world emphasized'>"
   end
 
 message <<-MARKDOWN
