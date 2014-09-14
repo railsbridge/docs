@@ -22,7 +22,7 @@ class DocPage < Html5Page
     script :src => "/jquery.min.js"
     script :src => "/js/bootstrap.min.js"
     script :src => "/js/doc_page.js"
-    link   :href => "/font-awesome/css/font-awesome.min.css", :rel => "stylesheet"
+    link   :href => "/font-awesome.css", :rel => "stylesheet"
   end
 
   def site_title
@@ -33,9 +33,9 @@ class DocPage < Html5Page
     "#{doc_title} - #{site_title}"
   end
 
-  external :style, scss(File.read("#{css_path}/header.scss"))
-  external :style, scss(File.read("#{css_path}/toc.scss"))
-  external :style, scss(File.read("#{css_path}/doc_page.scss"))
+  external :style, file_scss("#{css_path}/header.scss")
+  external :style, file_scss("#{css_path}/toc.scss")
+  external :style, file_scss("#{css_path}/doc_page.scss")
 
   # this is how to load the Open Sans font when we know we're online
   # external :style,  <<-CSS

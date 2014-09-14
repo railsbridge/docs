@@ -14,6 +14,7 @@ gem "deckrb", "~> 0.5.2"
 gem "sass"
 gem "redcarpet"
 gem "i18n", "~> 0.6.9"
+gem 'font-awesome-sass'
 
 group :development do
   gem "wrong", "~> 0.7.0"

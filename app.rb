@@ -3,6 +3,7 @@ require 'digest/md5'
 require 'erector'
 require 'i18n'
 require 'i18n/backend/fallbacks'
+require 'font-awesome-sass'
 
 #require 'wrong'
 #include Wrong::D
@@ -19,6 +20,7 @@ require "raw_page"
 require "deck"
 require "deck/rack_app"
 require "titleizer"
+require "asset_compiler"
 require "site"
 
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
@@ -168,6 +170,16 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   get '/favicon.ico' do
     halt 404
+  end
+
+  get '/font-awesome.css' do
+    content_type 'text/css'
+    AssetCompiler.instance.font_awesome
+  end
+
+  get '/fonts/font-awesome/:file' do
+    font_path = File.join(FontAwesome::Sass.gem_path, 'assets', 'fonts', 'font-awesome', params[:file])
+    send_file font_path
   end
 
   get "/" do
