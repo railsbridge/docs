@@ -7,10 +7,6 @@ require 'active_support/core_ext/string/strip'
 require 'erb'
 
 class Step < Erector::Widget
-  external :style, <<-CSS
-    @import url(/css/step.css);
-  CSS
-
   needs :src
   needs :doc_path
   needs :container_page_name => false

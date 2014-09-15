@@ -2,14 +2,6 @@
 # Flag icons borrowed from https://www.gosquared.com/resources/flag-icons/
 # Put them in public/flags
 class Flags < Erector::Widget
-
-  # swiped from DocPage -- todo: unify
-  def self.css_path
-    here = File.expand_path File.dirname(__FILE__)
-    File.expand_path "#{here}/../public/css"
-  end
-
-  external :style, scss(File.read("#{css_path}/flags.scss"))
   needs :locale
 
   def initialize *args

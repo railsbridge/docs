@@ -12,17 +12,13 @@ class DocPage < Html5Page
   needs :back => nil
   attr_reader :site_name, :doc_title, :page_name, :src
 
-  def self.css_path
-    here = File.expand_path File.dirname(__FILE__)
-    File.expand_path "#{here}/../public/css"
-  end
-
   def head_content
     title page_title
     script :src => "/jquery.min.js"
     script :src => "/js/bootstrap.min.js"
     script :src => "/js/doc_page.js"
     link   :href => "/font-awesome.css", :rel => "stylesheet"
+    link   :href => "/assets/application.css", :rel => "stylesheet"
   end
 
   def site_title
@@ -32,10 +28,6 @@ class DocPage < Html5Page
   def page_title
     "#{doc_title} - #{site_title}"
   end
-
-  external :style, file_scss("#{css_path}/header.scss")
-  external :style, file_scss("#{css_path}/toc.scss")
-  external :style, file_scss("#{css_path}/doc_page.scss")
 
   # this is how to load the Open Sans font when we know we're online
   # external :style,  <<-CSS

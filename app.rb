@@ -22,6 +22,7 @@ require "deck/rack_app"
 require "titleizer"
 require "asset_compiler"
 require "site"
+require 'sprockets'
 
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
@@ -31,6 +32,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
   AVAILABLE_LOCALES = DEFAULT_SITES.keys.map(&:to_s)
+
+  set :assets, Sprockets::Environment.new
+  settings.assets.append_path "assets/stylesheets"
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
@@ -170,6 +174,11 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   get '/favicon.ico' do
     halt 404
+  end
+
+  get "/assets/:file.css" do
+    content_type "text/css"
+    settings.assets["#{params[:file]}.css"]
   end
 
   get '/font-awesome.css' do
