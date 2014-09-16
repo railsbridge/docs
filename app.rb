@@ -20,7 +20,6 @@ require "raw_page"
 require "deck"
 require "deck/rack_app"
 require "titleizer"
-require "asset_compiler"
 require "site"
 require 'sprockets'
 
@@ -35,6 +34,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   set :assets, Sprockets::Environment.new
   settings.assets.append_path "assets/stylesheets"
+  settings.assets.append_path "assets/javascripts"
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
@@ -176,14 +176,13 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     halt 404
   end
 
-  get "/assets/:file.css" do
-    content_type "text/css"
-    settings.assets["#{params[:file]}.css"]
-  end
-
-  get '/font-awesome.css' do
-    content_type 'text/css'
-    AssetCompiler.instance.font_awesome
+  get "/assets/:file.:ext" do
+    mime_type = {
+      'js' => 'application/javascript',
+      'css' => 'text/css'
+    }[params[:ext]]
+    content_type mime_type if mime_type
+    settings.assets["#{params[:file]}.#{params[:ext]}"]
   end
 
   get '/fonts/font-awesome/:file' do

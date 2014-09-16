@@ -16,8 +16,7 @@ class DocPage < Html5Page
     title page_title
     script :src => "/jquery.min.js"
     script :src => "/js/bootstrap.min.js"
-    script :src => "/js/doc_page.js"
-    link   :href => "/font-awesome.css", :rel => "stylesheet"
+    script :src => "/assets/application.js"
     link   :href => "/assets/application.css", :rel => "stylesheet"
   end
 
@@ -38,7 +37,6 @@ class DocPage < Html5Page
   external :style,  <<-CSS
   @import url(/fonts/opensans.css);
   @import url(/fonts/aleo.css);
-  @import url(/css/coderay.css);
   CSS
 
   class TopLink < Erector::Widget

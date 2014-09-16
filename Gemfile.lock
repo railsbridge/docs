@@ -76,7 +76,7 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.6.2)
       sexp_processor (~> 4.1)
-    sass (3.4.3)
+    sass (3.4.4)
     sexp_processor (4.4.4)
     sinatra (1.4.5)
       rack (~> 1.4)
