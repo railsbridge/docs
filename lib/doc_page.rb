@@ -14,9 +14,8 @@ class DocPage < Html5Page
 
   def head_content
     title page_title
-    script :src => "/jquery.min.js"
-    script :src => "/js/bootstrap.min.js"
     script :src => "/assets/application.js"
+    script :src => "/js/bootstrap.min.js"
     link   :href => "/assets/application.css", :rel => "stylesheet"
   end
 

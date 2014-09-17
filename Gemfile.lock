@@ -32,6 +32,8 @@ GEM
     hike (1.2.3)
     hitimes (1.2.2)
     i18n (0.6.11)
+    jquery-cdn (2.1.1)
+      sprockets (>= 2)
     json (1.8.1)
     listen (2.7.9)
       celluloid (>= 0.15.2)
@@ -119,6 +121,7 @@ DEPENDENCIES
   files (~> 0.3.0)
   font-awesome-sass
   i18n (~> 0.6.9)
+  jquery-cdn
   nokogiri
   rack-codehighlighter
   rack-test

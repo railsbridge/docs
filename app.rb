@@ -22,6 +22,7 @@ require "deck/rack_app"
 require "titleizer"
 require "site"
 require 'sprockets'
+require 'jquery-cdn'
 
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
@@ -35,6 +36,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   set :assets, Sprockets::Environment.new
   settings.assets.append_path "assets/stylesheets"
   settings.assets.append_path "assets/javascripts"
+  JqueryCdn.install(settings.assets)
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
