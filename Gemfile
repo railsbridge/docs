@@ -15,6 +15,7 @@ gem "sass"
 gem "redcarpet"
 gem "i18n", "~> 0.6.9"
 gem 'font-awesome-sass'
+gem 'bootstrap-sass'
 gem 'jquery-cdn'
 gem 'sprockets'
 

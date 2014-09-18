@@ -4,6 +4,7 @@ require 'erector'
 require 'i18n'
 require 'i18n/backend/fallbacks'
 require 'font-awesome-sass'
+require 'bootstrap-sass'
 
 #require 'wrong'
 #include Wrong::D
@@ -36,6 +37,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   set :assets, Sprockets::Environment.new
   settings.assets.append_path "assets/stylesheets"
   settings.assets.append_path "assets/javascripts"
+  settings.assets.append_path Bootstrap.javascripts_path
   JqueryCdn.install(settings.assets)
 
   configure do
