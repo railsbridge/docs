@@ -26,17 +26,6 @@ class DocPage < Html5Page
     "#{doc_title} - #{site_title}"
   end
 
-  # this is how to load the Open Sans font when we know we're online
-  # external :style,  <<-CSS
-  # @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
-  # CSS
-
-  # but this is to load the Open Sans font when we might be offline
-  external :style,  <<-CSS
-  @import url(/fonts/opensans.css);
-  @import url(/fonts/aleo.css);
-  CSS
-
   class TopLink < Erector::Widget
     needs :name, :href, :toggle_selector => nil, :extraclass => nil
     def content

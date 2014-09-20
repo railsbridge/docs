@@ -119,10 +119,5 @@ describe InstallFest do
     it "should contain the html5 doctype" do
       @body.should match(/<!doctype html>/i)
     end
-
-    it "should render style tags without any attributes" do
-      @body.should match(/<style>/i)
-    end
   end
-
 end

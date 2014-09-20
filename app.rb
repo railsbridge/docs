@@ -37,6 +37,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   set :assets, Sprockets::Environment.new
   settings.assets.append_path "assets/stylesheets"
   settings.assets.append_path "assets/javascripts"
+  settings.assets.append_path "public/fonts"
   settings.assets.append_path Bootstrap.javascripts_path
   JqueryCdn.install(settings.assets)
 
@@ -183,7 +184,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   get "/assets/:file.:ext" do
     mime_type = {
       'js' => 'application/javascript',
-      'css' => 'text/css'
+      'css' => 'text/css',
+      'ttf' => 'application/font-ttf',
+      'woff' => 'application/font-woff'
     }[params[:ext]]
     content_type mime_type if mime_type
     settings.assets["#{params[:file]}.#{params[:ext]}"]
