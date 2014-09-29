@@ -62,10 +62,10 @@ verify "successful installation" do
   fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
 
   console "which ruby"
-  fuzzy_result "/Users/alex/.rvm/rubies/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/ruby"
+  fuzzy_result "/Users/{FUZZY}alex{/FUZZY}/.rvm/rubies/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/ruby"
 
   console "which rails"
-  fuzzy_result "/Users/alex/.rvm/gems/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/rails"
+  fuzzy_result "/Users/{FUZZY}alex{/FUZZY}/.rvm/gems/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/rails"
 end
 
 next_step "configure_git"
