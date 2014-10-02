@@ -1,5 +1,5 @@
 
-console %q{ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"}
+console %q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
 
 message "You may have to press 'ENTER' when prompted and type in your password."
 
