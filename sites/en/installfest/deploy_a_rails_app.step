@@ -83,7 +83,7 @@ step "Deploy your app to Heroku" do
       message 'When you saved the file, your text editor may have added colors to the code, much like the example above.  It recognizes the file contains Ruby, and will mark up different kinds of words with different colors. This is called "syntax highlighting", which makes it easier to read code.'
     end
     tip "Why Sqlite (sqlite3) and PostgreSQL (pg)?" do
-      message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have seperate test, development and production databases by default in Rails."
+      message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have separate test, development and production databases by default in Rails."
     end
 
     console <<-BASH
