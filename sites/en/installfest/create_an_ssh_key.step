@@ -36,7 +36,7 @@ option "Generate an SSH key" do
     option_half "No passphrase" do
       message "Hit enter to accept blank passphrase, then hit enter again."
     end
-    option_half "Keyphrase" do
+    option_half "Passphrase" do
       message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
     end
   end
