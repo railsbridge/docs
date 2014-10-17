@@ -29,11 +29,11 @@ option "Generate an SSH key" do
 
   message "Press enter to accept the default key save location."
 
-  message "Next, you'll be asked for a keyphrase."
+  message "Next, you'll be asked for a passphrase."
 
-  h1 "Choose whether to use a keyphrase"
+  h1 "Choose whether to use a passphrase"
   blockquote do
-    option_half "No keyphrase" do
+    option_half "No passphrase" do
       message "Hit enter to accept blank passphrase, then hit enter again."
     end
     option_half "Keyphrase" do
