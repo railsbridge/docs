@@ -79,14 +79,24 @@
 |Write Code|Issue Commands|See the Results|
 | <img src="img/set-up-text-editor.png" alt="Sublime Text" width="250"> | <img src="img/set-up-terminal.png" alt="Terminal" width="250"> | <img src="img/set-up-browser.png" alt="Browser" width="250"> |
 
-<!SLIDE bullets>
+<!SLIDE>
 # The Rails Philosophy
 
 ### Opinionated
 ### Convention over configuration
 ### Minimal code - maximal effect
 
-<!SLIDE bullets>
+<!SLIDE>
+# After today?
+
+### Learn more about coding
+### Learn more Ruby
+### Learn more Rails
+### Learn another programming language
+### Think about becoming a developer
+### [rbcpt.org/resources](http://rbcpt.org/resources/)
+
+<!SLIDE>
 # Last but not least
 ### Type it out: don't Copy, Paste
 ### Check the Glossary
@@ -94,6 +104,6 @@
 ### Ask questions: Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: [rbcpt.org/code](http://rbcpt.org/code/)
-### Resources: [rbcpt.org/resources](http://rbcpt.org/resources/)
+
 
 # [rbcpt.org/start](http://rbcpt.org/start/)

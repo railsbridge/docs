@@ -78,6 +78,16 @@
 ### Convention over configuration
 ### Minimal code - maximal effect
 
+<!SLIDE>
+# After today?
+
+### Learn more about coding
+### Learn more Ruby
+### Learn more Rails
+### Learn another programming language
+### Think about becoming a developer
+### [rbcpt.org/resources](http://rbcpt.org/resources/)
+
 <!SLIDE bullets>
 # Last but not least
 ### Type it out: don't Copy, Paste
