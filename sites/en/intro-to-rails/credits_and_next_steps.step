@@ -77,9 +77,6 @@ ol do
   li "Bugs that cause unwanted behaviour, but don\'t cause the app to crash "
 end
 
-message <<MARKDOWN
-
-MARKDOWN
 
 h1 "Authors"
 
@@ -94,11 +91,10 @@ end
 
 h1 "What next?"
 
-ul do
-  li "Probably time for the closing presentation."
-  li "After that, start a project, tutorial, and come back again!"
-  li do
-    span "All our favorite resources can be found on the RailsBridge site: "
-    a "http://docs.railsbridgecapetown.org/workshop/resources", href: "http://docs.railsbridgecapetown.org/workshop/resources"
-  end
-end
+message <<MARKDOWN
+
+Whatever you want! You could learn some more Ruby, or some more Rails. You could learn a new language (like JavaScript or Python). You could job shadow or intern somewhere.
+
+We've collected a bunch of useful links on the [Resources page](http://docs.railsbridgecapetown.org/workshop/resources).
+
+MARKDOWN
