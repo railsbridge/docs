@@ -60,7 +60,7 @@ is the same as `rails server`.
   tip "If it doesn't work, ask a TA for help."
 
   message <<-MARKDOWN
-    * In your browser, go to <http://localhost:3000>
+    * In your browser, go to <http://localhost:3000>. If you see something like the picture below: yay! It means that you have a web server running.
 
     ![Successful Rails Install](img/successful_rails_install.png)
 
@@ -68,6 +68,10 @@ is the same as `rails server`.
   MARKDOWN
 
   important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
+
+  message <<-MARKDOWN
+    * If you go back to <http://localhost:3000> now, you'll see an error. That's because you stopped the rails server when you typed **Control-C**.
+  MARKDOWN
 end
 
 step "Generate a database model" do
