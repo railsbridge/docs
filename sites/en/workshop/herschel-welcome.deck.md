@@ -14,14 +14,6 @@
  * **15:30**-18:00: **Workshop**, Survey
 
 <!SLIDE bullets>
-# Please thank our awesome sponsors!
-
-![iXperience](img/ixperience-logo.png)
-![Hetzner](img/hetzner-logo.png)
-![Unboxed](img/unboxed-logo.png)
-![Pearson](img/pearson-logo.jpg)
-
-<!SLIDE bullets>
 # Open source workshop
 
 ### Community project
@@ -33,7 +25,7 @@
 
 ### We want to make it more betterer
 ### Make notes as you go along
-#### Some things we've added: extra credit; diagrams; sponsors; breaks; overview; glossary; resources page; lightning talks; railsbridgebridge
+#### Some things we've added: extra credit; diagrams; sponsors; breaks; overview; glossary; resources page; lightning talks
 
 
 <!SLIDE bullets>
@@ -90,7 +82,7 @@
 # Last but not least
 ### Type it out: don't Copy, Paste
 ### Check the Glossary
-### Help us improve the docs
+### Help us improve the docs: stickies!
 ### Ask questions: Teachers are here to help
 ### Tweet using @RailsBridgeCPT, #RBCPT, or #railsbridge
 ### Code of Conduct: [rbcpt.org/code](http://rbcpt.org/code/)

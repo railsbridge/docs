@@ -45,7 +45,7 @@
 <!SLIDE bullets>
 # And finally...
 
-### Who, Where, Why?
+### Who are we?
 ### Type it out: don't Copy, Paste
 ### Help us improve the docs: stickies!
 ### Ask questions: Teachers are here to help
