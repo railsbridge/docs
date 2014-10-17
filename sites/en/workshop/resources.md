@@ -23,6 +23,15 @@ Learning more about Rails
 * [RailsCasts](http://www.railscasts.com) (screencasts)
 * [Peepcode: Ruby on Rails](https://peepcode.com/screencasts/ruby-on-rails) (screencasts)
 
+Learning to code
+----------------
+
+* [Code.org](http://code.org/learn)
+* [Codecademy](http://www.codecademy.com/)
+* [Code School](https://www.codeschool.com/)
+* [Teach yourself to code](http://teachyourselftocode.com/)
+* [Tuts+](http://code.tutsplus.com/courses)
+
 More on Open Source
 -------------------
 
