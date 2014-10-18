@@ -46,16 +46,32 @@ steps do
 
   step do
     message <<-MARKDOWN
-Open the suggestotron folder as a project in your text editor.
+    Open the suggestotron folder as a project in your text editor.
 
-In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+    In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
 
-<img src='img/sublime_add_folder_to_project.png' />
+    <img src='img/sublime_add_folder_to_project.png' />
 
-Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should look something like this:
+    Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should look something like this:
 
-<img src='img/sublime_project_as_folder.png' />
+    <img src='img/sublime_project_as_folder.png' />
     MARKDOWN
+  end
+
+  message <<-MARKDOWN
+  If you're not using Sublime, have a look at the folder that your suggestotron is in.
+  MARKDOWN
+
+  message do
+
+    option_half "Windows" do
+    message "Open `c:\\Sites\\railsbridge\\suggestotron`"
+    end
+    option_half "Mac or Linux" do
+      message "Open `~\\railsbridge\\suggestotron`"
+      message "`~` is your home directory."
+    end
+
   end
 
   message <<-MARKDOWN

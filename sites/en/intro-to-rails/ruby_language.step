@@ -9,6 +9,9 @@ end
 
 steps do
   step do
+
+    tip "If you're using Windows, make sure that you have the **Command Prompt with Ruby and Rails** open, not just the usual Windows Terminal. To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**."
+
     message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets you try out Ruby code:"
 
     console_without_message "irb"
