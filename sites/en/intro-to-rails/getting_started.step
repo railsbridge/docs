@@ -59,7 +59,7 @@ steps do
   end
 
   message <<-MARKDOWN
-  If you're not using Sublime, have a look at the folder that your suggestotron is in.
+  If you're not using Sublime, have a look at the folder that your suggestotron Rails app is in.
   MARKDOWN
 
   message do
