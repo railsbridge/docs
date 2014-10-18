@@ -72,7 +72,9 @@ explanation {
 
   <img src='img/rails4_rails_info_routing.png'>
 
-  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
+  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>). You'll see something like the picture below. Look at how the error page tries to be helpful: it tells you that the problem was with **routing** specifically, and it shows you the routes it *does* know about.
+
+  <img src='img/rails4_rails_info_routing_error.png'>
 
 ### Exploring Routes (optional)
 
