@@ -47,7 +47,11 @@ steps do
   step do
     message <<-MARKDOWN
     Open the suggestotron folder as a project in your text editor.
+    MARKDOWN
 
+    tip "Close any files that are already open. They might be from yesterday's `test_app`, and we want to make sure that we're editing files in today's `suggestotron` app."
+
+    message <<-MARKDOWN
     In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
 
     <img src='img/sublime_add_folder_to_project.png' />
