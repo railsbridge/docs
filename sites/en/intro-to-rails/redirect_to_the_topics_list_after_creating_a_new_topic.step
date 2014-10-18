@@ -56,6 +56,9 @@ message "In the same file, locate the update method. "
   end
 
   step "Add the flash message to your application view" do
+
+      tip "A flash message is a short bit of information that usually appears at the top of a page, telling the user something like: 'Your account was created' or 'Your draft was saved.'"
+
       message "Open `app/views/layouts/application.html.erb`."
 
       message "Find the `<body>` HTML tag and immediately after add the following code:"
