@@ -95,7 +95,7 @@ end
     end
 
     message <<-TEXT
-      An exhaustive list of things you can do to models and associations can be found in the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface RailsGuide</a>.
+      An exhaustive (and exhausting) list of things you can do to models and associations can be found in the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface RailsGuide</a>.
     TEXT
   end
 }
