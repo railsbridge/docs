@@ -25,7 +25,9 @@ message <<MARKDOWN
 
 # Extra Credit
 
-If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try. Don't hesitate to ask a teacher for hints or explanations
+If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try. Don't hesitate to ask a teacher for hints or explanations.
+
+To get some ideas have a look at the stuff you did this morning with `irb`, and try Googling things like 'Rails sort order'.
 
 ### Downvote button
 
