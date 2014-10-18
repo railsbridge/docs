@@ -14,7 +14,7 @@ tip "Help us make RailsBridge better" do
 
   message "Please take five minutes to [complete our (anonymous) survey](http://rbcpt.org/exitsurvey/)."
 
-  message "It's only four questions! We use your answers to do cool things. So far we've improved the documentation, got better coffee, added an overview, and lots more."
+  message "It's only four questions! We use your answers to do cool things. So far we've improved the documentation, got better coffee, added an overview, and lots more. **You will get another sticker :)**."
 
   message "Thank you!"
 end
