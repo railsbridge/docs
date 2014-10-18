@@ -89,12 +89,12 @@
 <!SLIDE>
 # After today?
 
+### [rbcpt.org/resources](http://rbcpt.org/resources/)
 ### Learn more about coding
 ### Learn more Ruby
 ### Learn more Rails
 ### Learn another programming language
 ### Think about becoming a developer
-### [rbcpt.org/resources](http://rbcpt.org/resources/)
 
 <!SLIDE>
 # Last but not least
