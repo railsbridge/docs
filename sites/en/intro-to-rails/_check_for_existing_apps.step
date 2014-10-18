@@ -3,7 +3,7 @@ div do
   option_half "Windows" do
     console "dir"
     message "That command will list the files in your railsbridge directory. If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
-    console "delete suggestotron"
+    console "rm -rf suggestotron"
   end
   option_half "Mac or Linux" do
     console "ls"
