@@ -1,6 +1,6 @@
-message "`cd` stands for change directory."
+tip "If you are still in IRB, type `quit` to exit."
 
-message "If you are still in IRB, type `quit` to exit."
+message "`cd` stands for change directory."
 
 option_half "Windows" do
   console "cd c:\\Sites"
