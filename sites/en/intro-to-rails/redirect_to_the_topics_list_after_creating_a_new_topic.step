@@ -71,7 +71,9 @@ message "In the same file, locate the update method. "
   end
 
   step "Confirm your changes" do
-    message "Look at <http://localhost:3000>."
+    message "Go to <http://localhost:3000> in your browser."
+
+    message "Create a new topic and comfirm that your app takes you back to the Topics list, and displays the 'Topic was successfully created' flash message at the top of the page."
   end
 }
 
