@@ -16,10 +16,9 @@
 <!SLIDE bullets>
 # Please thank our awesome sponsors!
 
-![iXperience](img/ixperience-logo.png)
+![Siyelo](img/siyelo-logo.png)
 ![Hetzner](img/hetzner-logo.png)
-![Unboxed](img/unboxed-logo.png)
-![Pearson](img/pearson-logo.jpg)
+![Pluralsight](img/pluralsight-fullcolor-175x39-v3.png)
 
 <!SLIDE bullets>
 # Open source workshop
