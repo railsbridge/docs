@@ -6,7 +6,30 @@ end
 
 
 steps do
+
   step do
+
+    message "Make sure that you're in the suggestotron folder. In the terminal, type:"
+
+    console "pwd"
+
+    result <<-PWD
+      suggestotron
+    PWD
+
+    message "`pwd` means *print working directory*: tell me what folder I'm in. If it's not suggestotron, here's how to change back to it."
+
+    message do
+
+      option "Windows" do
+        console "cd c:\\Sites\\railsbridge\\suggestotron"
+      end
+      option "Mac or Linux" do
+        console "cd ~\\railsbridge\\suggestotron"
+      end
+
+    end
+
     tip do
       message "On Linux, you may have to enable this line in your Gemfile:"
       pre "gem 'therubyracer', :platforms => :ruby"
@@ -16,6 +39,7 @@ steps do
 
     console "rails server"
   end
+
   step do
     text "Point your web browser to "
     url "http://localhost:3000" 
