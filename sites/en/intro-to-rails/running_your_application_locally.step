@@ -1,5 +1,7 @@
 goals do
   goal "Let's fire up the application locally"
+
+  message "When we talk about files on your computer, we say **local**. When we talk about files on the internet (in our case, on Heroku), we say **remote**."
 end
 
 
