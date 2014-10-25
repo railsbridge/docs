@@ -36,10 +36,18 @@ group :production do
   gem 'rails_12factor'
 end
     RUBY
+
+    message "This tells Rails to use the gem `sqlite3` for the `development` and `test` groups and use the gems `pg` and `rails_12factor` for the `production` group."
+
+    message "We use groups with the `bundle install` command to decide which gems to install when: we often want to install different groups of gems on our local machine (your computer) and on the remote machine (in our case Heroku)."
+
   end
+
+
 
   step "Apply the Gemfile changes" do
     console "bundle install --without production"
+    message "This tells Rails to install all the gems in the Gemfile except any in the `production` group."
     message "Every time the Gemfile changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
   end
 
