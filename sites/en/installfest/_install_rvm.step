@@ -12,7 +12,7 @@ step "Configure your shell" do
   message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
 
   verify do
-    console "type rvm | head -1"
+    console "rvm | head -1"
     result "rvm is a function"
 
     console "rvm -v"
