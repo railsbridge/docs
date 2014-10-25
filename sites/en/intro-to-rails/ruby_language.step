@@ -84,9 +84,9 @@ fruits.first
 fruits.methods
     RUBY
 
-    message "And **chain** methods together:"
+    message "You can also **chain** methods together. To make the first item in the fruits array uppercase, type this:"
     console_without_message <<-RUBY
-fruits.methods.sort
+fruits.first.upcase
     RUBY
   end
 
