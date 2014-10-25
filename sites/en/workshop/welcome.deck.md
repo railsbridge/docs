@@ -14,7 +14,7 @@
  * **15:30**-18:00: **Workshop**, Survey
 
 <!SLIDE bullets>
-# Please thank our awesome sponsors!
+# Our awesome sponsors
 
 ![Siyelo](img/siyelo-logo.png)
 ![Hetzner](img/hetzner-logo.png)
@@ -32,7 +32,7 @@
 
 ### We want to make it more betterer
 ### Make notes as you go along
-#### Some things we've added: extra credit; diagrams; sponsors; breaks; overview; glossary; resources page; lightning talks; railsbridgebridge
+#### Some things we've added: extra credit; diagrams; sponsors; breaks; overview; glossary; resources page; lightning talks	
 
 
 <!SLIDE bullets>
@@ -48,7 +48,6 @@
 
 <!SLIDE bullets>
 # Goal of the day
-### &nbsp;
 ### Build and publish a web application
 #### &nbsp; (In our case, a voting system)
 ### On the internetz!
@@ -92,6 +91,7 @@
 ### Learn more about coding
 ### Learn more Ruby
 ### Learn more Rails
+### Do another RailsBridge
 ### Learn another programming language
 ### Think about becoming a developer
 
