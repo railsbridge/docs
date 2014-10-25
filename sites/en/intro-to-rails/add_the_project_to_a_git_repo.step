@@ -18,8 +18,8 @@ steps do
     console "git status"
 
     message "`git status` tells you everything git sees as modified, new, or missing."
-  message "The first time you run this, you should see a ton of stuff."
-  message "The second time you run this, you shouldn't see much of anything."
+  message "The first time you run this, you should see a ton of stuff. That's because you've just started this app: every file is new!"
+  message "When you run this later on, you shouldn't see much of anything. That's because only a few files will be new (or have changed)."
   end
 
   step do
