@@ -14,9 +14,11 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open the file `config/routes.rb` in an editor."
+    message "Open the file `config/routes.rb` in an editor (in the InstallFest yesterday, we recommended that you install and use the **Sublime Text** editor)."
 
-    message "Search the file for **root**, it should be near the top if you are using Rails 4."
+    message "<img src='img/app-config-routes.png'>"
+
+    message "Search the file for `root`. You can scroll through the file (`root` should be near the top if you are using Rails 4), or you can use Sublime Text's search: look for **Find...** in the **Find** menu."
 
     message "Uncomment the line that contains the example command by removing the `#` sign in front of it, and change it to read `root 'topics#index'`. When you are done the line should look like this:"
 
