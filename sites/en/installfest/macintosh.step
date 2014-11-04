@@ -29,21 +29,10 @@ Below is an example.
 end
 
 step "Choose your instructions" do
-  
-  option "Yosemite/Mavericks" do
+
+  option "Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
     link "osx_rvm"
   end
-  option "Mountain Lion/Lion/Snow Leopard" do
-    option_half "RailsInstaller" do
-      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
-      link "osx_railsinstaller"
-    end
-    option_half "Manually" do
-      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
-      link "osx_rvm"
-    end
-  end
-
   option "Leopard/Tiger/Panther" do
     important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
     message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
