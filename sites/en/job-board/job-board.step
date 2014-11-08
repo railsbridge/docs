@@ -24,5 +24,26 @@ message <<-MARKDOWN
   * When adding code, it's awesome for students to walk through the code line by line and say out loud what is happening. (i.e., "The string is being stored in the instance variable" or "The method `snorgle` is being defined"). If you do it every time, you'll get really comfortable with the vocabulary of Rails!
   * Error messages are your friend! Read them carefully, and practice understanding what Rails is telling you. Seeing an error and just diving back into your code is a natural reaction, but stop! Then read, think, and talk about what the error means before fixing it.
 MARKDOWN
+message <<-MARKDOWN
+# Working Effectively and Efficiently
+
+I highly recommend you do the following:
+
+* Bring up your terminal and open 2 tabs:
+  * One is for regular terminal stuffs
+  * One will be for irb (a.k.a. Rails console). We'll explain later.
+* Open your browser fresh or hide any windows you already have open.
+  * Bring up one window with two tabs
+    * One for this content
+    * One for interacting with your app.
+* Open your text editor and _do not ever close it_. We're not quitters.
+* Hide all extra applications. Turn off Twitter, IM, and all other distractions.
+
+By minimizing the number of things you interact with, you reduce the
+amount of time spent switching between them and the context lost as
+you work through the lessons. Having 50 tabs open in your web
+browser gets confusing and wastes time.
+
+MARKDOWN
 
 next_step "create_a_rails_app"
