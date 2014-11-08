@@ -1,0 +1,10 @@
+message "You can install these tools by trying to run a command that requires them."
+
+step "Run the xcode-select command" do
+  console "xcode-select --install"
+end
+
+step "Install the tools" do
+  message "Click on the \"Install\" button. When the download finishes, go back and run the test to make sure it works."
+  img src: 'img/xcode-tools-install.png', alt: "install dialog"
+end
