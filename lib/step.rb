@@ -44,18 +44,23 @@ class Step < Erector::Widget
 
     # todo: other file types
 
-    if File.exist?(path = File.join(dir, "_#{file}.step"))
-      src = File.read(path)
-      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-      widget step
-    elsif File.exist?(path = File.join(dir, "#{file}.step"))
-      src = File.read(path)
-      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-      widget step
-    elsif File.exist?(path = File.join(dir, "#{file}.md"))
-      src = File.read(path)
-      message src
+    possible_paths = ["_#{file}.step", "#{file}.step", "#{file}.md"].map do |path|
+      File.join(dir, path)
     end
+
+    possible_paths.each do |path|
+      if File.exist?(path)
+        src = File.read(path)
+        if path.end_with?('.step')
+          step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+          return widget step
+        else
+          return message src
+        end
+      end
+    end
+
+    raise "Couldn't find a partial for #{file}!"
   end
 
   ## steps
