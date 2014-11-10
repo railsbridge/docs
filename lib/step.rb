@@ -42,10 +42,10 @@ class Step < Erector::Widget
     # todo: unify into common 'find & process a document file' unit
     dir = File.dirname(@doc_path)
 
-    # todo: other file types
-
-    possible_paths = ["_#{file}.step", "#{file}.step", "#{file}.md"].map do |path|
-      File.join(dir, path)
+    possible_paths = ['step', 'md'].each_with_object([]) do |ext, paths|
+      paths << File.join(dir, "#{file}.#{ext}")
+      path_dir, path_file = file.match(%r{(.*/)?(.*)}).captures
+      paths << File.join(dir, "#{path_dir}_#{path_file}.#{ext}")
     end
 
     possible_paths.each do |path|
@@ -60,7 +60,7 @@ class Step < Erector::Widget
       end
     end
 
-    raise "Couldn't find a partial for #{file}!"
+    raise "Couldn't find a partial for #{file}! Searched in #{possible_paths}"
   end
 
   ## steps
