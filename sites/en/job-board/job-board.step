@@ -25,4 +25,6 @@ message <<-MARKDOWN
   * Error messages are your friend! Read them carefully, and practice understanding what Rails is telling you. Seeing an error and just diving back into your code is a natural reaction, but stop! Then read, think, and talk about what the error means before fixing it.
 MARKDOWN
 
+insert '../intro-to-rails/working_effectively_and_efficiently'
+
 next_step "create_a_rails_app"

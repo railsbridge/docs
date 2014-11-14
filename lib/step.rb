@@ -42,20 +42,25 @@ class Step < Erector::Widget
     # todo: unify into common 'find & process a document file' unit
     dir = File.dirname(@doc_path)
 
-    # todo: other file types
-
-    if File.exist?(path = File.join(dir, "_#{file}.step"))
-      src = File.read(path)
-      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-      widget step
-    elsif File.exist?(path = File.join(dir, "#{file}.step"))
-      src = File.read(path)
-      step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-      widget step
-    elsif File.exist?(path = File.join(dir, "#{file}.md"))
-      src = File.read(path)
-      message src
+    possible_paths = ['step', 'md'].each_with_object([]) do |ext, paths|
+      paths << File.join(dir, "#{file}.#{ext}")
+      path_dir, path_file = file.match(%r{(.*/)?(.*)}).captures
+      paths << File.join(dir, "#{path_dir}_#{path_file}.#{ext}")
     end
+
+    possible_paths.each do |path|
+      if File.exist?(path)
+        src = File.read(path)
+        if path.end_with?('.step')
+          step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+          return widget step
+        else
+          return message src
+        end
+      end
+    end
+
+    raise "Couldn't find a partial for #{file}! Searched in #{possible_paths}"
   end
 
   ## steps
