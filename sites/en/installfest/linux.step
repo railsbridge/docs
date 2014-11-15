@@ -42,6 +42,15 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
 
   console "sudo apt-get install #{apts.join(' ')}"
 
+  important <<-MARKDOWN
+    If you get an error during `apt-get` resembling
+
+    `Failed to fetch cdrom://Ubuntu`...
+
+    it is because `apt-get` is trying to install packages from your Ubuntu install CD. If you don't have that CD on hand, you can try disabling it as a package source by following this Stack Overflow post:
+
+    http://askubuntu.com/questions/125111/failed-to-download-repository-information-due-to-missing-cdrom
+  MARKDOWN
 end
 
 step "Install git" do
