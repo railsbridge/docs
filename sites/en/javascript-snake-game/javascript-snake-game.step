@@ -20,20 +20,20 @@ markdown <<-MARKDOWN
   
   ### Launch your programming environment
 
-  When programming, there's generally four tools you'll want on hand:
+  When programming, you'll generally want these tools on hand:
 
   * Your browser to see the code running (I recommend Chrome)
   * A text editor to change the code (I recommend <a
     href="http://www.sublimetext.com/">Sublime</a>)
   * A javascript console so you can experiment and print out debugging
-  messages. These are built into your browser.
+  messages. This is built into your browser.
   
   Once you have these tools available, we need to open the files we'll be working with:
   
   * Open game/snake.js in your text editor
   * Open game/index.html in your browser
-  * Open your browsers javascript console
-  * type `alert("hello world");` in your browsers javascript console and
+  * Open your browser's javascript console
+  * type `alert("hello world");` in your browser's javascript console and
   dismiss the window that pops up
 
   <img src='img/helloworld.png' height="300" width="600">
@@ -41,7 +41,7 @@ markdown <<-MARKDOWN
   ### Stop and reflect
   
   * The javascript console is one of the fastest ways to get feedback on
-  whether the code does what you expect. How else can you get feedback about if
+  whether the code does what you expect. How else can you get feedback about whether
   your code does what you expect?
   * Why shouldn't you use Word or Google Docs to edit code?
 
