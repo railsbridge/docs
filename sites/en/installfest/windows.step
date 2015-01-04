@@ -68,7 +68,7 @@ step "Sanity Check" do
   fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
 
   console "rails -v"
-  fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+  fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
 
 end
 

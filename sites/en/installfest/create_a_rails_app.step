@@ -1,6 +1,6 @@
 tip do
-  console_with_message "From here on, this guide assumes you have Rails 4.1.x. To check your Rails version, type this in the terminal:", "rails -v"
-  fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+  console_with_message "From here on, this guide assumes you have Rails 4.2.x. To check your Rails version, type this in the terminal:", "rails -v"
+  fuzzy_result "Rails 4.{FUZZY}2.x{/FUZZY}"
   message "If your computer reports a Rails version less than 4.0, ask a TA help get you back on track."
 end
 

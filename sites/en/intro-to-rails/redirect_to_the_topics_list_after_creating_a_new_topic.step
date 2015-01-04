@@ -34,9 +34,9 @@ def create
   respond_to do |format|
     if @topic.save
       format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
-      format.json { render action: 'show', status: :created, location: @topic }
+      format.json { render :show, status: :created, location: @topic }
     else
-      format.html { render action: 'new' }
+      format.html { render :new }
       format.json { render json: @topic.errors, status: :unprocessable_entity }
     end
   end
@@ -53,18 +53,6 @@ message "In the same file, locate the update method. "
     message 'and change `@topic` to `topics_path` like before:'
 
     source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
-  end
-
-  step "Add the flash message to your application view" do
-      message "Open `app/views/layouts/application.html.erb`."
-
-      message "Find the `<body>` HTML tag and immediately after add the following code:"
-
-      source_code :ruby, <<-RUBY
-<% flash.each do |name, msg| %>
-    <div><%= msg %></div>
-<% end %>
-      RUBY
   end
 
   step "Confirm your changes" do
