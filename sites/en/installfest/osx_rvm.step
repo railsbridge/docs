@@ -18,7 +18,7 @@ step "Install Git" do
   message "Next we'll install Git, the most popular version control system in the Ruby world:"
 
   console "git --version"
-  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+  fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
 
   message <<-MARKDOWN
 If you see that output, you have Git. <a href='#install-rvm'>Move on to the next step.</a>
@@ -28,7 +28,7 @@ If you see that output, you have Git. <a href='#install-rvm'>Move on to the next
 
   verify do
     console "git --version"
-    fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+    fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
   end
 end
 
@@ -59,7 +59,7 @@ end
 
 verify "successful installation" do
   console "git --version"
-  fuzzy_result "git version 1.{FUZZY}x.x{/FUZZY}"
+  fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
 
   console "which ruby"
   fuzzy_result "/Users/{FUZZY}alex{/FUZZY}/.rvm/rubies/ruby-{FUZZY}2.0.0-p247{/FUZZY}/bin/ruby"
