@@ -1,21 +1,21 @@
 console <<-BASH
-  rvm install 2.1.5
+  rvm install 2.2
 BASH
 
 message "This downloads and compiles Ruby, which takes a while."
 console <<-BASH
-  rvm use 2.1.5
-  rvm --default use 2.1.5
+  rvm use 2.2
+  rvm --default use 2.2
 BASH
 
 verify do
   console "ruby -v"
-  fuzzy_result "ruby 2.1.5{FUZZY}p273 (2014-11-13 revision 48405) [x86_64-darwin13.0]{/FUZZY}"
+  fuzzy_result "ruby 2.2.0p0{FUZZY}p0 (2014-12-25 revision 49005) [x86_64-darwin13]{/FUZZY}"
 end
 
 div do
   h1 "Troubleshooting"
-  important "If `rvm install 2.1.5` says `autoreconf was not found in the PATH`" do
+  important "If `rvm install 2.2` says `autoreconf was not found in the PATH`" do
     div do
       option_half "Mac OS" do
         console "brew install automake"
@@ -26,7 +26,7 @@ div do
       end
     end
 
-    message "Once that completes, retry `rvm install 2.1.5`"
+    message "Once that completes, retry `rvm install 2.2`"
   end
 end
 
