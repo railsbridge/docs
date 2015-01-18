@@ -33,9 +33,8 @@ step "Choose your instructions" do
   option "Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
     link "osx_rvm"
   end
-  option "Leopard/Tiger/Panther" do
-    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
-    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
-    link "osx_panther"
+  option "Earlier than Snow Leopard" do
+    important "You should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
+    message "It may be possible to get Ruby and Rails installed if your OS is older than Snow Leopard, but you're likely to encounter a lot of tough roadblocks that will require some intense googling."
   end
 end

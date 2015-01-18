@@ -110,7 +110,7 @@ Special elements do *not* format their text as Markdown.
 
 ## erector elements
 
-StepFile is an [Erector](http://erector.rubyforge.org)-based DSL, so if you want to insert HTML tags or other stuff, use the appropriate Erector methods, e.g.
+StepFile is an [Erector](https://github.com/erector/erector)-based DSL, so if you want to insert HTML tags or other stuff, use the appropriate Erector methods, e.g.
 
     step "figure out your OS version" do
       message "Mac OS has code names, including:"
