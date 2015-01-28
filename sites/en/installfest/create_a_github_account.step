@@ -19,9 +19,9 @@ step "Select a plan" do
 end
 
 
-step "Authenticate GitHub from Git" do
+step "Set up SSH authentication with GitHub" do
 
-  message "Authenticating GitHub from Git will allow you to connect to GitHub to interact with repositories. You might interact with repositories by cloning remote repositories to your machine or pushing your own code up to GitHub. First we'll copy the key we generated in the **Create an SSH Key** step and add it to your GitHub account"
+  message "Adding an SSH key to GitHub allows you to pull and push data without typing in your password all the time. First we'll copy the key we generated in the **Create an SSH Key** step and add it to your GitHub account"
 
     message "Mac users,"
     console "pbcopy < ~/.ssh/id_rsa.pub"
@@ -69,5 +69,7 @@ step "Confirm SSH Authentification" do
     provide shell access.
   OUTPUT
 
-  message "If the username is your username, you've successfully authenticated GitHub with SSH. Find a volunteer and show them this message to get a sticker. Happy collaborating!"
+  message "If the username is your username, you've successfully authenticated GitHub with SSH!"
+
+  next_step 'create_a_rails_app'
 end

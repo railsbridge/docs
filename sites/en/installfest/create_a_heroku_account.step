@@ -33,4 +33,8 @@ step "Add your SSH key to your Heroku account" do
   message "hit enter to accept the default key file to use"
 end
 
+section 'GitHub' do
+  message "Since by now you sould have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+end
+
 next_step "create_a_rails_app"

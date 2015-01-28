@@ -28,5 +28,3 @@ end
 
 next_step "create_an_ssh_key"
 
-"Now that you have Git configured properly, you can optionally [Create a Github account](create_a_github_account) to share code with your friends"
-
