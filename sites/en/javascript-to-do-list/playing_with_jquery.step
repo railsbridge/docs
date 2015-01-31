@@ -1,19 +1,18 @@
 goals do
-  goal "play around with basic JavaScript functions."
-  goal "write a function that takes advantage of jQuery"
+  goal "write JavaScript code in a .js file."
+  goal "write a function that takes advantage of jQuery."
 end
 
 overview do
   message <<-MARKDOWN
-Javascript allows you to make your pages interactive. You can use it to build
-anything from a simple animation to a giant web application like Twitter
-or Github. It gives you total control to add, remove, or modify content you've
-made with HTML. You can also use it to change styles and add or remove
-classes.
+In addition to being a powerful programming language, Javascript allows you to make your web site interactive.
+You can use it to build anything from a simple animation to a giant web application like Twitter
+or Github. It gives you total control to add, remove, or modify content you've made with HTML.
+You can also use it to change styles and add or remove classes.
 
-In this tutorial, we'll also be using jQuery to make interacting with the page easier.
+In this lesson, we'll also be using jQuery to make interacting with the page easier.
 jQuery is a JavaScript library that is widely used in the industry to alter pages,
-make requests, and create animations. In this lesson, we're going to create a function
+make requests, and create animations. We're going to create a function
 that adds a new item to our list.
   MARKDOWN
 end
@@ -21,45 +20,8 @@ end
 steps do
   step do
     message <<-MARKDOWN
-Open index.html in your browser. Now open up your browser's developer tools, and click the console tab. Let's write some javascript! Try these following commands out one at at time:
-    MARKDOWN
-
-    source_code :javascript, <<-JAVASCRIPT
-      if (4 < 5) {
-        console.log('only run this code if 4 is less than 5.')
-      } else {
-        console.log('otherwise print this!')
-      }
-
-      alert('the website is trying to tell you something!')
-
-      var coolObject = { awesomeness: "this is how you create an object" }
-      console.log(coolObject.awesomeness)
-
-      var print = function(input) {
-        console.log(input)
-      }
-
-      print("And now we're using a function!")
-
-      fruitList = ['apple', 'orange', 'banana']
-
-      fruitList.forEach(function(fruit) {
-        console.log('looping')
-        print(fruit)
-      })
-    JAVASCRIPT
-
-    message <<-MARKDOWN
-Keep playing around with JavaScript – you use variables, conditionals, objects, functions,
-loops, alerts, and console.logs every day as a JavaScript developer! See what other cool
-things you can do in the console!
-    MARKDOWN
-  end
-
-  step do
-    message <<-MARKDOWN
-  You can also write javascript in app.js, which will run whenever your page loads.
+  In addition to writing JavaScript in the browser's console, you can also write javascript in .js files.
+  We're going to write our code in app.js, which will run whenever the page loads.
   In this step, we're going to assign a variable in app.js using the jQuery selector.
   Open app.js in your text editor, and add the following code.
     MARKDOWN
@@ -121,12 +83,18 @@ the user experience interactive and seamless. You used a couple of handy jQuery 
 
 * __The jQuery Selector $()__ is an easy way to fetch an item from the page. All you need to do
 is specify the class, id, or tag of the element or elements you want.
+
 * __.clone()__ creates a copy of a selected element. It's helpful for creating elements from a template.
+
 * __.find()__ helps you find elements nested inside other elements.
+
 * __.text()__ allows you to get and alter the text of an element.
+
 * __.attr()__ allows you to get and alter attributes stored in your HTML. In this case, we used it store
 the id of an item in a data-id attribute, that is not used for styling, just for data storage.
+
 * __.addClass()__ allows you to add a class to an element.
+
 * __.append()__ takes an element, and attaches it to the end of another element! That way, your element
 will actually show up on the page.
 
