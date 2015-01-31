@@ -1,0 +1,138 @@
+goals do
+  goal "play around with basic JavaScript functions."
+  goal "write a function that takes advantage of jQuery"
+end
+
+overview do
+  message <<-MARKDOWN
+Javascript allows you to make your pages interactive. You can use it to build
+anything from a simple animation to a giant web application like Twitter
+or Github. It gives you total control to add, remove, or modify content you've
+made with HTML. You can also use it to change styles and add or remove
+classes.
+
+In this tutorial, we'll also be using jQuery to make interacting with the page easier.
+jQuery is a JavaScript library that is widely used in the industry to alter pages,
+make requests, and create animations. In this lesson, we're going to create a function
+that adds a new item to our list.
+  MARKDOWN
+end
+
+steps do
+  step do
+    message <<-MARKDOWN
+Open index.html in your browser. Now open up your browser's developer tools, and click the console tab. Let's write some javascript! Try these following commands out one at at time:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      if (4 < 5) {
+        console.log('only run this code if 4 is less than 5.')
+      } else {
+        console.log('otherwise print this!')
+      }
+
+      alert('the website is trying to tell you something!')
+
+      var coolObject = { awesomeness: "this is how you create an object" }
+      console.log(coolObject.awesomeness)
+
+      var print = function(input) {
+        console.log(input)
+      }
+
+      print("And now we're using a function!")
+
+      fruitList = ['apple', 'orange', 'banana']
+
+      fruitList.forEach(function(fruit) {
+        console.log('looping')
+        print(fruit)
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Keep playing around with JavaScript – you use variables, conditionals, objects, functions,
+loops, alerts, and console.logs every day as a JavaScript developer! See what other cool
+things you can do in the console!
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+  You can also write javascript in app.js, which will run whenever your page loads.
+  In this step, we're going to assign a variable in app.js using the jQuery selector.
+  Open app.js in your text editor, and add the following code.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+     var itemTemplate = $('#templates .item')
+     var list         = $('#list')
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+  Refresh the page in your browser. Open the console and write 'itemTemplate' and 'list'. What do you see?
+  What other functions can you call on list and itemTemplate?
+    MARKDOWN
+  end
+
+
+  step do
+    message <<-MARKDOWN
+    In this step, we're going to write a function to create items. It's going to create a copy of the
+    itemTemplate, add data to the new item, and append the new item to the list element. Add the
+    following code to the bottom of app.js.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var addItemToPage = function(itemData) {
+        var item = itemTemplate.clone()
+        item.attr('data-id',itemData.id)
+        item.find('.description').text(itemData.description)
+        if(itemData.completed) {
+          item.addClass('completed')
+        }
+        list.append(item)
+      }
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+  Refresh the page and go back to the developer console. Lets use our new function! Type this into the console:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      item = { description: 'a new item', id: 9000, completed: false}
+      addItemToPage(item)
+    JAVASCRIPT
+
+      message <<-MARKDOWN
+  Your list should now have a new item!
+    MARKDOWN
+  end
+
+end
+
+
+
+explanation do
+  message <<-MARKDOWN
+
+You just used JavaScript to update a page! Websites do this all time, in order to make
+the user experience interactive and seamless. You used a couple of handy jQuery functions:
+
+* __The jQuery Selector $()__ is an easy way to fetch an item from the page. All you need to do
+is specify the class, id, or tag of the element or elements you want.
+* __.clone()__ creates a copy of a selected element. It's helpful for creating elements from a template.
+* __.find()__ helps you find elements nested inside other elements.
+* __.text()__ allows you to get and alter the text of an element.
+* __.attr()__ allows you to get and alter attributes stored in your HTML. In this case, we used it store
+the id of an item in a data-id attribute, that is not used for styling, just for data storage.
+* __.addClass()__ allows you to add a class to an element.
+* __.append()__ takes an element, and attaches it to the end of another element! That way, your element
+will actually show up on the page.
+
+There are many other  jQuery functions that are helpful – we'll use more as we go along. In the meantime,
+play around with in developer console and see what you can change on the page using JavaScript and jQuery!
+  MARKDOWN
+end
+
+next_step "creating_a_list"
