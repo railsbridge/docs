@@ -15,7 +15,7 @@ steps do
 
     message "Yours might look different, but it should look something like this:"
 
-    console_without_message "1.9.3p362 :001 > "
+    console_without_message "irb(main):001:0>"
   end
 
   step do
