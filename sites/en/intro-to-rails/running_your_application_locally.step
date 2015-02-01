@@ -12,7 +12,7 @@ every time you visit a page in your app."
   step do
     text "Point your web browser to "
     url "http://localhost:3000" 
-    p "See your web app actually running!"
+    message "See your web app actually running!"
   end
 
   step do
