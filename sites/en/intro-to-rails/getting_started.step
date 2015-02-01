@@ -39,7 +39,6 @@ steps do
 
   step do
     console "cd suggestotron"
-    message "'cd' stands for change directory."
     message "'cd suggestotron' makes suggestotron our current directory."
   end
 
