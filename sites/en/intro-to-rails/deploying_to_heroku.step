@@ -46,10 +46,9 @@ end
   step "Commit the Gemfile changes" do
     message "There are now changes to Gemfile and Gemfile.lock that need to be committed before we can push to heroku."
     console <<-SHELL
-git add .
+git add -A
 git commit -m "Changed Gemfile for heroku"
     SHELL
-    tip "There is a period after the word add in the first line."
   end
 end
 
@@ -61,7 +60,7 @@ situation "Every time" do
     message "`git status` shows you any pending changes you've created. If it has no output, you're already ready to deploy! Otherwise..."
 
     console <<-SHELL
-git add .
+git add -A
 git commit -m "Some helpful message for your future self"
     SHELL
     message "Your commit message should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
