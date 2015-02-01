@@ -1,5 +1,7 @@
 message "`cd` stands for change directory."
 
+message "A directory is the same thing as a folder."
+
 option "Windows" do
   console "cd c:\\Sites"
   message "`cd c:\\Sites` sets our Sites directory to our current directory."
