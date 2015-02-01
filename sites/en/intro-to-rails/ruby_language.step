@@ -134,6 +134,24 @@ pluralize("kiwi")
 
     message "Methods can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In Ruby, methods return whatever the last line of the method evaluates to."
   end
+
+  step do
+    message "Putting it all together, let's make a method that says your opinion of some fruits:"
+    console_without_message <<-RUBY
+def my_opinion(fruits)
+  fruits.each do |fruit|
+    if fruit == "pizza"
+      puts "pizza is the best!!!"
+    else
+      puts pluralize(fruit) + " are pretty good, I guess..."
+    end
+  end
+end
+my_opinion(["apple", "pizza", "orange"])
+    RUBY
+
+    message "Try changing this method to say what your favorite fruit is."
+  end
 end
 
 next_step "getting_started"
