@@ -109,6 +109,16 @@ end
     message "This prints `YAY!` if the value stored in `my_variable` is greater than 1."
 
     message "Try changing the `>` in the conditional to a `<`."
+
+    message "If you want to do something else when the statement evaluates to false, you can use an `else`:"
+
+    console_without_message <<-RUBY
+if my_variable > 1
+  puts "YAY!"
+else
+  puts "BOO!"
+end
+    RUBY
   end
 
   step do
