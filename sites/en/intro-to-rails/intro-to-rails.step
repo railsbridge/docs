@@ -20,15 +20,15 @@ When you have completed today's goal of getting the basic
 application online you should understand:
 
 * Basic Ruby syntax
-* How to try your Ruby code (irb)
+* How to try your Ruby code (IRB)
 * How to go from requirements to a new working Rails application
 * How to get your application online
 * The basic tools a RoR developer uses (source control, editor, console, local server)
 
 ### Schedule
 
-* 1-ish hour of ruby
-* 4-ish hours of rails, broken up in 1-ish hour steps
+* 1-ish hour of Ruby
+* 4-ish hours of Rails, broken up in 1-ish hour steps
 
 This is just a rough guideline, not a mandate. Some steps you'll go
 over and some you'll go under. It'll all work out by the end of the
@@ -38,11 +38,11 @@ day... unless I really screwed something up. :D
 
 We're going to be working with:
 
-* ruby 1.9.3, 2.0, 2.1 or 2.2 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)
-* rails 4.2.x
-* bundler
-* sqlite
-* the text editor of your choice
+* Ruby 1.9.3, 2.0, 2.1 or 2.2 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)
+* Rails 4.2.x
+* Bundler
+* SQLite
+* The text editor of your choice
 
 Everything should be set up the night before during our
 install-fest. Please ensure you have everything working _before_ you

@@ -1,4 +1,4 @@
-message "`cd` stands for change directory."
+message "`cd` stands for **c**hange **d**irectory."
 
 option "Windows" do
   console "cd c:\\Sites"
