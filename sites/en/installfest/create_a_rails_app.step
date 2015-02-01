@@ -8,7 +8,7 @@ step "Change to your home directory" do
   insert 'switch_to_home_directory'
 end
 
-step "Create a railbridge directory" do
+step "Create a railsbridge directory" do
   console "mkdir railsbridge"
   message "`mkdir` stands for make directory (folder)."
   message "We've made a folder called `railsbridge`."
