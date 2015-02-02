@@ -105,7 +105,7 @@ slice returned an array with everything after the first element in the array.
 
     message "Functions take **parameters**, which are the variables they work on. In this case, we made a function called pluralize that takes one parameter, a word."
 
-    message "functions can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In order for a function to return something, you have to use the __return__ keyword."
+    message "Functions can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In order for a function to return something, you have to use the __return__ keyword."
   end
 
 

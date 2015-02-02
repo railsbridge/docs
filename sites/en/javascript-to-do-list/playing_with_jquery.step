@@ -1,6 +1,6 @@
 goals do
-  goal "write JavaScript code in a .js file."
-  goal "write a function that takes advantage of jQuery."
+  goal "Write JavaScript code in a .js file."
+  goal "Write a function that takes advantage of jQuery."
 end
 
 overview do

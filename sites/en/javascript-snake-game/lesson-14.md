@@ -15,9 +15,9 @@ for:
 If you are brand new to hosting websites, you may want to use a static site
 hosting service. These allow you to upload a zip file of html, css and
 javascript and have a working website. An easy one is
-[GetForge](https://getforge.com/).
+[Forge](https://getforge.com/).
 
-1. Sign up for Get Forge
+1. Sign up for Forge
 2. Zip your `js-snake-game-tutorial` directory
 3. Drag it into the get forge website
 
