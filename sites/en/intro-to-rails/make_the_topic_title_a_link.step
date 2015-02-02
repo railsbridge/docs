@@ -36,7 +36,7 @@ explanation {
 
   source_code :erb, "<td><%= topic.description %></td>"
 
-  message "This line was getting the description using .description and just printing it out."
+  message "This line was getting the description using `.description` and just printing it out."
 
   source_code :erb, "<th>Description</th>"
 
@@ -53,7 +53,7 @@ explanation {
   message "
   Here's another use of `link_to` to create a link on the page. This
   `link_to` creates a link using the text from the topic title and goes
-  to the topic#show page."
+  to the topic show page."
 }
 
 next_step "clean_up_links_on_the_topics_list"

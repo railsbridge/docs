@@ -106,7 +106,7 @@ explanation {
 
 `has_many` and `belongs_to`:
 
-* In rails, relationships between models are called associations.
+* In Rails, relationships between models are called associations.
 * Associations (usually) come in pairs.
 * A topic will have many votes so we put `has_many :votes` in the
   topic model.

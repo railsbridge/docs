@@ -4,7 +4,7 @@ We highly recommend you do the following:
 
 * Bring up your terminal and open 2 tabs:
   * One is for regular terminal stuffs
-  * One will be for irb (a.k.a. Rails console). We'll explain later.
+  * One will be for IRB (a.k.a. Rails console). We'll explain later.
 * Open your browser fresh or hide any windows you already have open.
   * Bring up one window with two tabs
     * One for this content

@@ -35,7 +35,7 @@ explanation {
   message <<-MARKDOWN
   * The two links we removed were show and edit.  We did this because the title now links to the show page and from the show page you can reach the edit page.
 
-  * The second change we made was to make the link text 'Delete' instead of destroy.
+  * The second change we made was to make the link text 'Delete' instead of 'Destroy'.
   MARKDOWN
 }
 

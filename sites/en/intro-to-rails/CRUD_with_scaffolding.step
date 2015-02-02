@@ -9,7 +9,7 @@ goals {
     * **U**pdate existing records
     * **D**estroy or delete records
 
-    Because these 4 actions (CRUD) are so common, rails includes the scaffold command to make creating them easier.
+    Because these 4 actions (CRUD) are so common, Rails includes the scaffold command to make creating them easier.
   MARKDOWN
 }
 
@@ -21,14 +21,14 @@ steps {
 
   step {
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "You should see the 'Listing Topics' page with headers for title and description, and a link to add a new topic:"
+    message "You should see the \"Listing topics\" page with headers for title and description, and a link to add a new topic:"
 
     img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
   }
 
   step {
     message <<-MARKDOWN
-  * Click on "New Topic"
+  * Click "New Topic"
   * Fill in the form and click "Create Topic"
   * You should see a page showing your new topic with a message that your topic was successfully created:
     MARKDOWN
@@ -38,12 +38,12 @@ steps {
 
   step {
     message <<-MARKDOWN
-      * Click on "back"
+      * Click "Back"
       * You should see the topic list again, this time with your new topic listed:
 
       ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
 
-      * Try the 'show', 'edit', and 'destroy' links to see what they do
+      * Try the "Show", "Edit", and "Destroy" links to see what they do
       * You've created a basic database driven web site, congrats!
     MARKDOWN
   }
@@ -52,14 +52,14 @@ steps {
 explanation {
 
   message <<-MARKDOWN
-  How did all those pages get created and hooked together? The rails scaffold did it for you.
+  How did all those pages get created and hooked together? The Rails scaffold did it for you.
 
-  Let's take a closer look at some of the files rails created:
+  Let's take a closer look at some of the files Rails created:
 
   * `app/models/topic.rb`
     * This file contains code for our topic model. If you look at it,
       it's nearly blank. Creating, reading, updating, and deleting
-      records are built into rails.
+      records are built into Rails.
 
   * `app/views/topics`
     * This folder contains all the views for our topics model. This is
@@ -77,14 +77,14 @@ explanation {
       sent to your computer.
 
   * `app/views/topics/show.html.erb`
-    * This is the page you get when you click the "show" link on the
+    * This is the page you get when you click the "Show" link on the
       "Listing topics" page.
 
   * `app/views/topics/new.html.erb`
-    * This is the page you get when you click on "New Topic".
+    * This is the page you get when you click "New Topic".
 
   * `app/views/topics/edit.html.erb`
-    * This is the page you get when you click on "Edit"
+    * This is the page you get when you click "Edit".
 
   * `app/views/topics/_form.html.erb`
     * You may have noticed that the page for new topics and the page
@@ -93,14 +93,14 @@ explanation {
       partial since it only contains code for part of a page. Partials
       always have filenames starting with an underscore character.
 
-  * Challenge question: Can you find the line of code in new.html.erb
-    and edit.html.erb that makes the form partial appear?
+    * Challenge question: Can you find the line of code in new.html.erb
+      and edit.html.erb that makes the form partial appear?
 
   * `app/controllers/topics_controller.rb`
-    * This is the controller file that rails created as part of the scaffold
+    * This is the controller file that Rails created as part of the scaffold
     * If you look you'll see a method (a line beginning with
       <code>def</code>) for each of the views listed above (except
-      _form.html.erb)
+      `_form.html.erb`)
     MARKDOWN
 }
 

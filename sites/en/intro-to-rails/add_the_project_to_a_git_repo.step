@@ -11,7 +11,9 @@ steps do
   step do
     console "git init"
 
-    message "It doesn't look like anything really happened, but 'git init' initialized its repository (repo) in a hidden directory called `.git`. You can see this by typing `ls -a` (list all files)."
+    message "It doesn't look like anything really happened, but `git init`
+initialized a new repository in a hidden directory called `.git`."
+    message "You can see this by typing `ls -a` (**l**i**s**t **a**ll files)."
   end
 
   step do

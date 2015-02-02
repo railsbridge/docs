@@ -37,7 +37,7 @@ root 'topics#index'
 explanation {
 
  message <<-MARKDOWN
-  * `root 'topics#index'` is a rails route that says the default
+  * `root 'topics#index'` is a Rails route that says the default
     address for your site is `topics#index`. `topics#index` is the topics
     list page (the topics controller with the index action).
   * Rails routes control how URLs (web addresses) get matched with
@@ -78,7 +78,7 @@ explanation {
 
   Now you can have a look at the paths that are available in your app.
   Let's try looking at one of the topics routes we just generated.
-  Open up your rails console and play:
+  Open up your Rails console and play:
 
     $ rails console
     >> app.topics_path

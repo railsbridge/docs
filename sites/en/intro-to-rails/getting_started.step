@@ -2,7 +2,7 @@ img src: "img/Start_page.png", alt: "Screenshot of a Ruby on Rails default home 
 
 goals do
   goal "Create Your New Application"
-message "Let's get started! By the end of this step, we'll have a brand-spankin'-new (empty) rails app."
+message "Let's get started! By the end of this step, we'll have a brand-spankin'-new (empty) Rails app."
 end
 
 steps do
@@ -31,14 +31,14 @@ steps do
 
   step do
     console "rails new suggestotron"
-    message "'rails new' creates a new rails project with the name you give."
+    message "`rails new` creates a new Rails project with the name you give."
     message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
   end
 
   step do
     console "cd suggestotron"
     message "'cd' stands for change directory."
-    message "'cd suggestotron' makes suggestotron our current directory."
+    message "`cd suggestotron` makes suggestotron our current directory."
   end
 
   step do
@@ -89,7 +89,7 @@ Select your `suggestotron` folder from the file picker that opens. If everything
     }
     tr {
       td "app/assets/"
-      td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Modern rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
+      td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Modern Rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
     }
   end
 
