@@ -15,7 +15,7 @@ steps do
 
     message "Yours might look different, but it should look something like this:"
 
-    console_without_message "1.9.3p362 :001 > "
+    console_without_message "irb(main):001:0>"
   end
 
   step do
@@ -109,6 +109,16 @@ end
     message "This prints `YAY!` if the value stored in `my_variable` is greater than 1."
 
     message "Try changing the `>` in the conditional to a `<`."
+
+    message "If you want to do something else when the statement evaluates to false, you can use an `else`:"
+
+    console_without_message <<-RUBY
+if my_variable > 1
+  puts "YAY!"
+else
+  puts "BOO!"
+end
+    RUBY
   end
 
   step do
@@ -123,6 +133,24 @@ pluralize("kiwi")
     message "Methods take **parameters**, which are the variables they work on. In this case, we made a method called pluralize that takes one parameter, a word."
 
     message "Methods can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In Ruby, methods return whatever the last line of the method evaluates to."
+  end
+
+  step do
+    message "Putting it all together, let's make a method that says your opinion of some fruits:"
+    console_without_message <<-RUBY
+def my_opinion(fruits)
+  fruits.each do |fruit|
+    if fruit == "pizza"
+      puts "pizza is the best!!!"
+    else
+      puts pluralize(fruit) + " are pretty good, I guess..."
+    end
+  end
+end
+my_opinion(["apple", "pizza", "orange"])
+    RUBY
+
+    message "Try changing this method to say what your favorite fruit is."
   end
 end
 
