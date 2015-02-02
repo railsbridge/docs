@@ -78,9 +78,7 @@ Now, let's remove the alert, and instead tell the ListStore to add an item. Your
       }
     JAVASCRIPT
   end
-end
 
-steps do
   step do
     message <<-MARKDOWN
 Now, let's write the logic for the addItem function. We're going to ask the server to save
