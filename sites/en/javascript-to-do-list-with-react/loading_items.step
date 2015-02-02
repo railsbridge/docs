@@ -36,6 +36,7 @@ of the script tag:
         </script>
       </body>
     HTML
+  end
 
   step do
     message <<-MARKDOWN
@@ -79,9 +80,6 @@ succeeds. Add the following lines of code to the bottom of the LoadItems functio
       debug the problem.
     MARKDOWN
   end
-
-  end
-
 
 end
 
