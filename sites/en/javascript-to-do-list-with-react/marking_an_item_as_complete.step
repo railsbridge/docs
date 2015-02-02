@@ -21,14 +21,12 @@ end
 
 steps do
   step do
-    message "Let's add a click listener to our Item component's complete button. Your code should look like this."
+    message "Let's add a click listener to our Item component's complete button. Find the line of code
+    that creating ths completion button, and add an onClick attribute to make React listen for your users'
+    clicks. Your code should look like this:"
 
     source_code :javascript, <<-JAVASCRIPT
-      <li className={itemClass}>
         <span className='complete-button' onClick={this.handleComplete}>{'\\u2714'}</span>
-        <div className='description'>{this.props.description}</div>
-        <span className='delete-button'>{'\\u2718'}</span>
-      </li>
     JAVASCRIPT
 
     message "Now, let's write the handleComplete function."
