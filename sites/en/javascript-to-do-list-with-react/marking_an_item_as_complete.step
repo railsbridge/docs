@@ -1,0 +1,187 @@
+goals do
+  goal "Allow a user to mark an item as complete or incomplete."
+  goal "Understand how to listen for user events with React."
+end
+
+overview do
+  message <<-MARKDOWN
+In this lesson, we'll allow our users to mark items as complete and incomplete. As they
+do, we will ask the server to update the item's status in its database. This process will look
+a lot like the process for adding an item, with some additional complexity.
+
+First off, We'll have to write the event listener ourselves in the Item component. Don't worry,
+we'll walk you through every step!
+
+Secondly, we need to pass the appropriate information to ListStore, so it can make the correct AJAX request.
+To do so, we'll have to use __props__ to fetch the item's id value.
+
+Let's get started!
+  MARKDOWN
+end
+
+steps do
+  step do
+    message "Let's add a click listener to our Item component's complete button. Find the line of code
+    that creating ths completion button, and add an onClick attribute to make React listen for your users'
+    clicks. Your code should look like this:"
+
+    source_code :javascript, <<-JAVASCRIPT
+        <span className='complete-button' onClick={this.handleComplete}>{'\\u2714'}</span>
+    JAVASCRIPT
+
+    message "Now, let's write the handleComplete function."
+
+    source_code :javascript, <<-JAVASCRIPT
+      handleComplete: function() {
+        alert('trying to complete item with an id of ' + this.props.id)
+      }
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Refresh the page, and try completing an item. What happens? How does the page know the item's id?
+
+Your Item component should now look like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var Item = React.createClass({
+        render: function() {
+          var itemClass = this.props.completed ? 'item completed' : 'item'
+          return (
+            <li className={itemClass}>
+              <span className='complete-button' onClick={this.handleComplete}>{'\\u2714'}</span>
+              <div className='description'>{this.props.description}</div>
+              <span className='delete-button'>{'\\u2718'}</span>
+            </li>
+          )
+        },
+
+        handleComplete: function() {
+          alert('trying to update item with an id of ' + this.props.id)
+        }
+      })
+    JAVASCRIPT
+  end
+
+  step do
+    message "Now, we're going to tell ListStore to mark this item as complete/incomplete. Remove the alert from last step, and add the following code."
+
+    source_code :javascript, <<-JAVASCRIPT
+      handleComplete: function() {
+        ListStore.toggleCompleteness(this.props.id)
+      }
+    JAVASCRIPT
+  end
+
+  step do
+    message <<-MARKDOWN
+Now, let's write the logic for updating an item! Open up store.js, and add the following code to
+the toggleCompleteness function. replace 'YOUR-LIST-NAME-HERE' with your list's name.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var item = findItemById(itemId)
+      var currentCompletedValue = item.completed
+
+      var updateRequest = $.ajax({
+        type: 'PUT',
+        url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items/" + itemId,
+        data: { completed: !currentCompletedValue }
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+We're using the pre-written findItemById method to fetch the correct item, and then checking
+its current completed value. We then tell the server to toggle its completeness from true to false,
+or false to true. Refresh the page and try marking an item as complete. Check the network tab to see if
+a new request was made!
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Finally, we'll update the specified item's completeness value in the items array, and
+tell the components to re-render themselves. Add this code to the bottom of the toggleCompleteness
+function:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      updateRequest.done(function(itemData) {
+        item.completed = itemData.completed
+        notifyComponents()
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Mark an item as complete, and see it turn gray! If you mark a completed item as incomplete,
+it should change colors, too.
+    MARKDOWN
+  end
+end
+
+
+
+explanation do
+
+  message "Here's what store.js should now look like:"
+
+  source_code :javascript, <<-JAVASCRIPT
+    ListStore = {
+
+      getItems: function() {
+        return items
+      },
+
+      loadItems: function() {
+        var loadRequest = $.ajax({
+          type: 'GET',
+          url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/"
+        })
+
+        loadRequest.done(function(dataFromServer) {
+          items = dataFromServer.items
+          notifyComponents()
+        })
+      },
+
+      addItem: function(itemDescription) {
+        var creationRequest = $.ajax({
+          type: 'POST',
+          url: "http://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items",
+          data: { description: itemDescription, completed: false }
+        })
+
+        creationRequest.done(function(itemDataFromServer) {
+          items.push(itemDataFromServer)
+          notifyComponents()
+        })
+      },
+
+      toggleCompleteness: function(itemId) {
+        var item = findItemById(itemId)
+        var currentCompletedValue = item.completed
+
+        var updateRequest = $.ajax({
+          type: 'PUT',
+          url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items/" + itemId,
+          data: { completed: !currentCompletedValue }
+        })
+
+        updateRequest.done(function(itemData) {
+          item.completed = itemData.completed
+          notifyComponents()
+        })
+      }
+    }
+  JAVASCRIPT
+
+  message <<-MARKDOWN
+You've now written three ajax requests, making a modern, dynamic web page. Don't worry if you
+didn't understand every line of code – JavaScript is complex stuff!
+
+There are many more features you could add (deleting items, sorting items, etc.) but in our next
+lesson, we'll add the most important feature: the ability of users to actually use your site!
+  MARKDOWN
+end
+
+next_step "deploying_your_site"

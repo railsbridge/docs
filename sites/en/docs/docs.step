@@ -36,6 +36,11 @@ site_desc 'javascript-to-do-list', <<-MARKDOWN
 An all JavaScript curriculum that builds a simple to do list application using AJAX and jQuery.
 MARKDOWN
 
+site_desc 'javascript-to-do-list-with-react', <<-MARKDOWN
+An all JavaScript curriculum that builds a simple to do list application using AJAX, jQuery, and React. Meant for
+students with some exposure to JavaScript.
+MARKDOWN
+
 h1 'Ruby'
 
 site_desc 'learn-to-code', <<-MARKDOWN

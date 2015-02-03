@@ -1,0 +1,183 @@
+goals do
+  goal "Allow a user to create a new item."
+  goal "Understand how to make an AJAX request when prompted by a user's action."
+end
+
+overview do
+  message <<-MARKDOWN
+JavaScript allows us to make our web page dynamic, and responsive to
+the actions of our users. In this lesson, we'll allow our users to create
+a new item for our list, and ask the server to save it to the database.
+
+To do so, we're going to use JavaScript's ability to perform a task when a
+user has taken an action on the page. JavaScript refers to these actions as
+__events__. React makes it easy to listen to these events, and cause the page
+to change when nevessary.
+
+Our code will take the following steps.
+
+1. When the user loads the page, our CreationForm component will start
+  listening for when the user submits the form at the top of the page.
+
+2. When a user submits the form (by pressing enter), we will prevent the page
+  from refreshing, which is the normal behavior for a form.
+
+3. The CreationForm component will then tell ListStore to add a new item.
+
+4. ListStore will make an AJAX request to our server, creating an item with the
+  description our user just provided.
+
+5. Once the request succeeds, we will update the items variable with our new item.
+
+6. Finally, we will tell the components to re-render themselves!
+
+We've already written the first two steps for you. Let's finish the rest!
+  MARKDOWN
+end
+
+
+steps do
+  step do
+    message <<-MARKDOWN
+In the browser, try creating a new item. You should see an alert pop up with your item's value. Let's take
+a look at the CreationForm component to see how that works. Open up index.html in your browser, and find the
+component. It looks like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      render: function() {
+        return (
+          <form id="add-form" onSubmit={this.handleSubmit}>
+            <input id='create' ref="description" type='text' placeholder='Add Something to the list!' />
+          </form>
+        )
+      },
+
+      handleSubmit: function(event) {
+        event.preventDefault()
+        var description = this.refs.description.getDOMNode().value
+        this.refs.description.getDOMNode().value = ''
+        alert('trying to create an item with description ' + description)
+      }
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+When the form submits, the handleSubmit function runs! This function is preventing the page from refreshing
+(using the preventDefault function) and using React to get the new description the user just wrote. See if you
+can follow the code – how does the form know to run the handleSubmit function?
+
+Now, let's remove the alert, and instead tell the ListStore to add an item. Your code should look like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      handleSubmit: function(event) {
+        event.preventDefault()
+        var description = this.refs.description.getDOMNode().value
+        this.refs.description.getDOMNode().value = ''
+        ListStore.addItem(description)
+      }
+    JAVASCRIPT
+  end
+
+  step do
+    message <<-MARKDOWN
+Now, let's write the logic for the addItem function. We're going to ask the server to save
+this item into the database. Open up store.js, and add the following code to the addItem
+function. Replace 'YOUR-LIST-NAME-HERE' with your list's name.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      addItem: function(itemDescription) {
+        var creationRequest = $.ajax({
+          type: 'POST',
+          url: "http://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items",
+          data: { description: itemDescription, completed: false }
+        })
+      },
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Try creating an item again. After you submit the form, look at the network tab. A
+new request should have occurred to http://listalous.herokuapp.com/ !
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Finally, we need to tell the components to re-render themselves. After the creationRequest,
+add the following code:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      creationRequest.done(function(itemDataFromServer) {
+        items.push(itemDataFromServer)
+        notifyComponents()
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Try creating an item one more time. Once you hit enter, a new item should appear
+on the page! If not, flag an instructor down to help you debug the problem.
+    MARKDOWN
+  end
+end
+
+explanation do
+
+  message "Here's what the bottom of store.js should now look like:"
+
+  source_code :javascript, <<-JAVASCRIPT
+    ListStore = {
+
+      getItems: function() {
+        return items
+      },
+
+      loadItems: function() {
+        var loadRequest = $.ajax({
+          type: 'GET',
+          url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/"
+        })
+
+        loadRequest.done(function(dataFromServer) {
+          items = dataFromServer.items
+          notifyComponents()
+        })
+      },
+
+      addItem: function(itemDescription) {
+        var creationRequest = $.ajax({
+          type: 'POST',
+          url: "http://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items",
+          data: { description: itemDescription, completed: false }
+        })
+
+        creationRequest.done(function(itemDataFromServer) {
+          items.push(itemDataFromServer)
+          notifyComponents()
+        })
+      },
+      toggleCompleteness: function(itemId) {}
+    }
+  JAVASCRIPT
+
+  message <<-MARKDOWN
+
+### The AJAX process
+
+You've just done something that many JavaScript developers do daily: Use JavaScript
+to make a request to a server, and then update the page with the data with which
+the server responds. This abstract process is repeated over and over again:
+
+1. Listen for a user action on the page.
+2. Parse out the information the user is submitting.
+3. Prevent the default action from occuring, if necessary.
+4. Make a request to the server using AJAX.
+5. When the request succeeds, parse the data the server sends back.
+6. Update the page with the newly received data.
+
+This process is the basis of most modern web pages!
+  MARKDOWN
+end
+
+next_step "marking_an_item_as_complete"

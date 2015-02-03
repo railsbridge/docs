@@ -1,0 +1,22 @@
+message <<MARKDOWN
+Congrats, you just wrote your first JavaScript application! Woohoo!
+
+There is so, so much more to do. If you still have time, here's some other stuff you can try:
+
+* Allow users to delete items forever! The logic for doing so will look a lot like the logic for completing items.
+* Allow users to edit descriptions of items that have already been created. You might look into HTML's
+contenteditable attribute to help you out!
+* Allow users to sort their items by when they were created. This one's tough, but I'm sure you'll figure it out!
+* Allow users to create their own lists. You'll have to write lots of HTML, CSS, and JavaScript to make this work!
+MARKDOWN
+
+h1 "What next?"
+
+ul do
+  li "Probably time for the closing presentation."
+  li "After that, start a project, tutorial, and come back again!"
+  li do
+    span "All our favorite resources can be found on the RailsBridge site: "
+    a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
+  end
+end
