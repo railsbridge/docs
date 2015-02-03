@@ -1,6 +1,6 @@
 goals do
   goal "Get oriented with your browser's developer tools. They're a great jumping-off point for continuing to build your HTML, CSS, and JavaScript knowledge."
-  tip "The screenshots below are specific to the Chrome web browser, which is available for Mac, PC, and Linux and has great developer tools. But if you're partial to another browser, there's usually a similar set of tools you can use, either built in (Internet Explorer, Safari, Firefox)."
+  tip "The screenshots below are specific to the Chrome web browser, which is available for Mac, PC, and Linux and has great developer tools. But if you're partial to another browser, there's usually a similar set of tools you can use."
 end
 
 steps do
