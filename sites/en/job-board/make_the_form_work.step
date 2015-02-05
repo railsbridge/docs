@@ -114,7 +114,7 @@ message <<-MARKDOWN
   * Read the error message out loud. Even if you already think you know what it means.
   * Check every assumption you can think of. You think that something is getting stored in a variable? WHO KNOWS?
     * A good way to check your assumptions is to print out anything you can to the Rails server log. Add puts statements to your code!
-    * For example: If the jobs count isn't changing when we make jobs, make the jobs controller look like this. Now, it'll will print to the console the line "In the create method!!!!" and whatever is being returned from `Job.create(job_params)`
+    * For example: If the jobs count isn't changing when we make jobs, make the jobs controller look like this. Now, it will print to the console the line "In the create method!!!!" and whatever is being returned from `Job.create(job_params)`
 MARKDOWN
 
 source_code :ruby,
