@@ -9,7 +9,7 @@ step "Run RailsInstaller" do
   message <<-MARKDOWN
   RailsInstaller includes Rails, Ruby, Git, and SQLite.
 
-  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 2.1.
 
   Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
 
@@ -65,7 +65,7 @@ end
 step "Sanity Check" do
 
   console "ruby -v"
-  fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
+  fuzzy_result "ruby 2.1.5{FUZZY}p125{/FUZZY}"
 
   console "rails -v"
   fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
