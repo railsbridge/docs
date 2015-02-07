@@ -120,7 +120,7 @@ Let's walk through what just happened:
   5. The components heard the message, and updated! The List component used ListStore's getItems
   function to get all the items data we had stored in the items variable.
 
-You're web page has made its first successful AJAX request! Now, your page will
+Your web page has made its first successful AJAX request! Now, your page will
 load your list's items whenever you visit it. Once we host this page on the internet,
 you will be able to see your list on any computer, tablet, or phone!
   MARKDOWN
