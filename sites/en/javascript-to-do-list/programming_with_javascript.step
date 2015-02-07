@@ -89,7 +89,7 @@ Functions are __invoked__ with parentheses, which causes them to run.
     message <<-MARKDOWN
 The __push__ function allows us to add new items to an array. the slice function returns a new array with
 with everything to the right of the __index__ we provided. Here, we passed the function the number 1, so
-slice returned an array with everything after the second element in the array. (Note that the first element is assigned 0 as its index rather than 1).)
+slice returned an array with everything after the first element in the array. (Note that the first element is assigned 0 as its index rather than 1).)
     MARKDOWN
   end
 
