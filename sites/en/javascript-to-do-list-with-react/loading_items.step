@@ -68,9 +68,8 @@ succeeds. Add the following lines of code to the bottom of the LoadItems functio
 
     source_code :javascript, <<-JAVASCRIPT
       loadRequest.done(function(dataFromServer) {
-         items = dataFromServer.items
-         notifyComponents()
-        })
+        items = dataFromServer.items
+        notifyComponents()
       })
     JAVASCRIPT
 
