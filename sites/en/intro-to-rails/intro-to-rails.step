@@ -38,7 +38,7 @@ day. Probably.
 
 We're going to be working with:
 
-* Ruby 1.9.3, 2.0, 2.1 or 2.2 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)
+* Ruby 2.1 or 2.2 installed via RVM (Mac or Linux) or RailsInstaller (Windows)
 * Rails 4.2.x
 * Bundler
 * SQLite

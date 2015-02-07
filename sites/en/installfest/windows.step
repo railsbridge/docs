@@ -55,7 +55,7 @@ step "Windows 8 Only — Install Node.js" do
 end
 
 step "Update Rails" do
-  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
+  message "Currently, RailsInstaller installs Rails 4.1.x, but we want the latest. Upgrading Rails is pretty easy:"
 
   console "gem install rails"
 
