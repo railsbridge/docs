@@ -45,7 +45,7 @@ Refresh the page and try completing an item. An alert should pop up!
 
     source_code :javascript, <<-JAVASCRIPT
       var item = $(event.target).parent()
-      isItemCompleted = item.hasClass('completed')
+      var isItemCompleted = item.hasClass('completed')
       var itemId = item.attr('data-id')
       alert('clicked item ' + itemId + ', which has completed currently set to ' + isItemCompleted)
     JAVASCRIPT
@@ -112,7 +112,7 @@ explanation do
   source_code :javascript, <<-JAVASCRIPT
     $('#list').on('click', '.complete-button', function(event) {
       var item = $(event.target).parent()
-      isItemCompleted = item.hasClass('completed')
+      var isItemCompleted = item.hasClass('completed')
       var itemId = item.attr('data-id')
 
       var updateRequest = $.ajax({

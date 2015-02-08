@@ -36,7 +36,7 @@ steps do
 
     source_code :javascript, <<-JAVASCRIPT
       $('#add-form').on('submit', function(event) {
-        itemDescription = event.target.itemDescription.value
+        var itemDescription = event.target.itemDescription.value
         alert('trying to create a new item with a description ' + itemDescription)
       })
     JAVASCRIPT
@@ -107,7 +107,7 @@ explanation do
   source_code :javascript, <<-JAVASCRIPT
     $('#add-form').on('submit', function(event) {
       event.preventDefault()
-      itemDescription = event.target.itemDescription.value
+      var itemDescription = event.target.itemDescription.value
       var creationRequest = $.ajax({
          type: 'POST',
          url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items",
