@@ -34,7 +34,7 @@ cd .
 1. Turn it into a git repository by running `git init`
 1. Checkout a branch called `gh-pages`
 1. Commit all the files
-1. Create a remote repository on github for the game.
+1. Create a remote repository on github for the To Do List.
 1. Follow their instructions for adding the github remote to your existing repo
 1. Follow the instructions on [Github Pages](http://pages.github.com) for
    setting up a project site from scratch.

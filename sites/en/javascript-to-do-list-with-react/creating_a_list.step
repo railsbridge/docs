@@ -93,7 +93,7 @@ your list's name, and 'DESCRIPTION-OF-YOUR-ITEM' with your item's description.
     JAVASCRIPT
 
     message <<-MARKDOWN
-Check the network tab again. Was your request successful? If it was, take a look at what
+Check the network tab again. Was your request successful? If it was, take a look at
 the server's response. You'll notice that the item has an id attribute now. This is how
 the server will uniquely identify your item in the future.
     MARKDOWN
