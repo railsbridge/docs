@@ -8,7 +8,7 @@ steps do
   
   step do
     message "CHALLENGE: Find the div with the id 'main' in your HTML. See if you can give it a one-pixel border on its left hand side by modifying the existing stylesheet, 'layout.css'."
-    message "If you get hung up on what CSS property to use, see if you can look it up on [dochub](http://dochub.io/#css/)."
+    message "If you get hung up on what CSS property to use, see if you can look it up on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)."
   end
   
   step do
@@ -40,7 +40,6 @@ it. Here are two different designers' interpretations of the same HTML:
 
 * [Sitepoint](http://reference.sitepoint.com/css/elements-structural)
 * [Mozilla Developer Network](https://developer.mozilla.org/en/CSS)
-* [DocHub](http://dochub.io/#css/)
 
   MARKDOWN
 end
