@@ -6,8 +6,7 @@
 * [Diagrams (Git, MVC, REST)  ](diagrams)
 
 ### Teacher Training
-* [Original Teacher Training](teacher_training)
-* [Newer Teacher Training (1/16/13)](more_teacher_training)
+* [Teacher Training Deck](more_teacher_training)
 
 # Materials for Organizers
 

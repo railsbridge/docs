@@ -26,7 +26,7 @@ We're making tech more diverse and more welcoming!
 * What do you do for a living? Care to share who you work for?
 * What's your favorite structure in the Bay Area?
 * Alternate silly questions:
- * What's your spirit animal?
+ * What's your favorite animal?
  * If you could only eat one food for the rest of your life, what would it be?
 
 # What's a RailsBridge?
@@ -42,18 +42,19 @@ Raise your hand if you've been to a workshop before!
 There are a few different RailsBridge curricula:
 
 * Intro to Rails (a.k.a. "Suggestotron")
-* Intermediate Rails
+* Job Board (no scaffolds)
+* Message Board (doesn't tell you what to type)
 * Intro to Ruby
 * Front End (HTML, CSS, and a tiny bit of JavaScript).
 
-First, we get all the necessary technologies onto the students' computers (the installfest).
+First, we get all the necessary technologies onto the students' computers (the Installfest).
 
 The next day we break into small groups and work through the curriculum.
 
 # Typical RailsBridge Schedule
-* Friday, 6-10pm-ish: installfest -- installing things over pizza & beer (no formal presentations)
+* Friday, 6-10pm-ish: Installfest: installing software over pizza & beer (no formal presentations)
 
-	_n.b.: the Front End workshop doesn't have an installfest._
+	_n.b.: the Front End workshop doesn't usually have an Installfest._
 
 * Saturday's schedule, often:
  * 9-9:30am: Check-in, coffee, bagels
@@ -86,8 +87,7 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 
 #### Imagine:
 * You're trying to do something difficult
-* You're in a group of strangers
-   * many of whom know how to do it better than you
+* You're in a group of strangers, many of whom know how to do it better than you
 * You've tried before but got lost or bored or confused
 * You don't feel like you can articulate your thoughts and questions
 * You don't know the right names for anything
@@ -112,11 +112,10 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 # Social Comfort (More Ideas)
 #### Try to suppress your (understandable) culturally-influenced sexism
 * Don't hit on people. No sexual advances. None. Even at the after-party.
-* Don't make sexist jokes. Or racist, classist, or ableist jokes. Call people out if they do.
+* Don't make sexist jokes. Or racist, classist, or ableist jokes. Call people out if they do. A simple "That's not funny" and moving on quickly with the conversation will often suffice.
 * Don't make gender-based generalizations ("Women are better at X, because ...")
 * Don't make references to people's bodies or state your opinion of them.
 * Don't use slurs.
-* Don't treat women as delicate flowers; do treat them like normal people.
 
 # Discussion: Technical Capability
 ### How can you help people feel technically capable?
@@ -145,7 +144,7 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 * Students have diverse backgrounds. Appreciate this fact.
 * If they aren't getting a concept, avoid anything that might shame them.
 * Don't be surprised when someone hasn't heard of something before.
-* Don't grab anyone's keyboard. Avoid taking over unless you think it's *really* necessary. Ask before you do. "Mind if I drive for a sec?"
+* Don't grab anyone's keyboard. Avoid taking over unless you think it's *really* necessary. Ask before you do. "Mind if I drive for a sec?" But really, don't.
 
 # Technical Capability (Even More Ideas)
 #### Walk the Middle Path
