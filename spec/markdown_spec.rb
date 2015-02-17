@@ -1,8 +1,11 @@
 require "spec_helper"
-
+require "site"
 require "markdown_page"
 
 describe MarkdownPage do
+  before do
+    setup_test_translations
+  end
 
   it "renders markdown into html" do
     src = <<-MARKDOWN.strip_heredoc

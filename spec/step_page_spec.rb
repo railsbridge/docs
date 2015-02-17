@@ -1,9 +1,11 @@
 require "spec_helper"
-
+require "site"
 require "step_page"
 
 describe StepPage do
-  before { I18n.locale = :en }
+  before do
+    setup_test_translations
+  end
 
   # functional test -- brittle
   it "renders a step file" do
