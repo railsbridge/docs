@@ -15,8 +15,8 @@ end
 
 discussion do
 message <<-MARKDOWN
-* What is devise?
-* What files did devise add to your rails app?
+* What is Devise?
+* What files did Devise add to your rails app?
 * Someone Who Knows: explain how to read the output of the command `rake routes`. What does it give you? How is it helpful?
 * How will you add the log out link? What's the syntax for a DELETE action?
 * You're going to be editing your application layout to add error messaging. If you haven't already, discuss the relationship between the application layout and all the other views you'll be creating. 
@@ -27,7 +27,7 @@ tools_and_references do
 message <<-MARKDOWN
 * Devise: authentication magic! Learn more about it here: https://github.com/plataformatec/devise
  * In the readme, scroll down to "Getting Started." You'll need to add it to your gem file. If you don't remember how, ask your neighbor! 
- * You probably don't want to just start typing commands from the devise readme. You probably want to read through that whole section first. (i.e., don't skip bundle!)
+ * You probably don't want to just start typing commands from the Devise readme. You probably want to read through that whole section first. (i.e., don't skip bundle!)
 MARKDOWN
 end
 
