@@ -112,18 +112,12 @@ class Step < Erector::Widget
     ERB::Util.u(str)
   end
 
-  def simple_link name, options={}
-    require 'uri'
-    href = "#{_escaped(name)}?back=#{_escaped(page_name)}"
-    if @step_stack.length > 1
-      href += URI.escape('#') + "step#{current_anchor_num}"
-    end
+  def simple_link name, options={}, &blk
+    link_options = {href: _escaped(name)}.merge(options)
     if block_given?
-      a({:href => href}.merge(options)) do
-        yield
-      end
+      a link_options, &blk
     else
-      a Titleizer.title_for_page(name), {:href => href}.merge(options)
+      a Titleizer.title_for_page(name), link_options
     end
   end
 

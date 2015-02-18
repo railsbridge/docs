@@ -83,7 +83,7 @@ describe Step do
   end
 
   describe 'link' do
-    it "passes in a back parameter, so the following page can come back here" do
+    it "creates a link" do
       html_doc(<<-RUBY)
         step "breakfast" do
           link "choose_breakfast"
@@ -94,8 +94,7 @@ describe Step do
         end
       RUBY
       a = html_doc.css(".step[title=breakfast] a.link").first
-      hash = URI.escape '#'
-      assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
+      assert { a["href"] == "choose_breakfast" }
     end
 
     it "has an optional parameter for the caption" do
@@ -195,25 +194,6 @@ describe Step do
         <div>yum</div>
         <div>goodbye</div>
       HTML
-    end
-
-    it "crafts 'back' links that go back to the containing page rather than the partial itself" do
-      path = dir 'testing-insert-links' do
-        file "outer.step", <<-RUBY.strip_heredoc
-          div 'this is the outer page'
-          insert 'inner'
-        RUBY
-        file "_inner.step", <<-RUBY.strip_heredoc
-          div 'this is the inner page'
-          link 'somewhere_else'
-        RUBY
-      end
-
-      outer_path = File.join(path, 'outer.step')
-
-      page = Nokogiri.parse("<html>#{step_obj_for(outer_path).to_html}</html>")
-
-      assert { page.css('a').first[:href] == "somewhere_else?back=outer" }
     end
   end
 end

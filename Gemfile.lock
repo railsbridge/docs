@@ -10,6 +10,7 @@ GEM
     autoprefixer-rails (5.1.5)
       execjs
       json
+    backports (3.6.4)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -93,6 +94,13 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.2)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -143,6 +151,7 @@ DEPENDENCIES
   rubyzip
   sass
   sinatra (~> 1.4.0)
+  sinatra-contrib (~> 1.4.0)
   sprockets
   thin
   wrong (~> 0.7.0)
