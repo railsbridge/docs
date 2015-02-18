@@ -5,7 +5,7 @@ There are a number of different editors designed for programming. You may alread
 * <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> is popular with many Ruby and Rails users. You can use it free for evaluation, then must pay to continue using it.
 * <a href="http://komodoide.com/download/" target="_blank">Komodo</a> is a very good free programming editor, that is not used as widely as in the past. It is relatively easy to use.
 * <a href="http://macromates.com/" target="_blank">TextMate</a> is very popular in the Ruby and Rails community. It is not free.
-* <a href="https://atom.io/" target="_blank">Atom</a> is a free, open-source editor that can be customized with HTML, CSS, and JavaScript. A download is available for OSX 10.8+, but you'll have to build from source on other platforms.
+* <a href="https://atom.io/" target="_blank">Atom</a> is a free, open-source editor that can be customized with HTML, CSS, and JavaScript. A download is available for OSX 10.8+, Windows 7/8, and Ubuntu/RedHat linux.
 * <a href="http://aptana.com/products/studio3" target="_blank">Aptana Studio</a> is a free, full-featured, development IDE (Integrated Development Environment) for Ruby and Rails. It has many powerful features to assist you while you develop your code. You can install Aptana as either a stand-along program or as an <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a> plugin.
 * <a href="http://www.jetbrains.com/ruby/" target="_blank">RubyMine</a> is used by many companies for their Ruby and Rails software development. Is is also a full-featured IDE, very similar to Aptana. RubyMine is not free, but has a 30-day evaluation period.
 
