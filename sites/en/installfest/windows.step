@@ -40,7 +40,39 @@ step "Configure your git and ssh environment" do
 
 end
 
-step "Windows Only — Install Node.js" do
+step "Update RubyGems" do
+  message "The version of RubyGems that comes with Railsinstaller has some problems. Follow these steps to upgrade it!"
+
+  step "Check to see if you need to update" do
+    console "gem -v"
+
+    message "If the output is **2.2.2** or earlier, keep following the instructions."
+
+    message "If the output is **2.2.3** or later, <a href='#install-node'>skip to the next step!</a>"
+  end
+
+  step "Download the update" do
+    message "Visit https://github.com/rubygems/rubygems/releases/tag/v2.2.3"
+
+    message "**Right click -> Save as...** the file **rubygems-update-2.2.3.gem** to your **C:\\Sites** directory"
+  end
+
+  step "Install the update" do
+    message "Back at the command prompt, run the following commands:"
+
+    console_without_message "gem install --local rubygems-update-2.2.3.gem"
+
+    console_without_message "update_rubygems --no-ri --no-rdoc"
+
+    message "**Close and reopen your command prompt**, then verify you have the upgraded RubyGems by typing this in the terminal:"
+
+    console_without_message "gem -v"
+    result "2.2.3"
+  end
+end
+
+a name: 'install-node'
+step "Install Node.js" do
 
   message "Go to <http://nodejs.org> and download the installer"
 
@@ -57,7 +89,7 @@ end
 step "Update Rails" do
   message "Currently, RailsInstaller installs Rails 4.1.x, but we want the latest. Upgrading Rails is pretty easy:"
 
-  console "gem install rails"
+  console "gem install rails --no-ri --no-rdoc"
 
   message "...and you're done. New Rails! Woo."
 end
