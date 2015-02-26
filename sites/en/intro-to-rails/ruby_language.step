@@ -8,22 +8,30 @@ goals do
 end
 
 steps do
+tip "When entering commands in the terminal, you don't have to retype the '$'"
+
   step do
     message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets you try out Ruby code:"
 
-    console_without_message "irb"
+    console_without_message "$ irb"
 
     message "Yours might look different, but it should look something like this:"
 
-    console_without_message "irb(main):001:0>"
+    console_without_message "$ irb(main):001:0>"
+
+    message "You can type 'exit' in irb to get back to the command line"
   end
 
   step do
-    console_with_message "Next try some simple math that's built into Ruby. Type these lines into IRB:", "3 + 3\n7 * 6"
+    console_with_message "Next try some simple math that's built into Ruby. Type this line into IRB and hit 'Enter':", "3 + 3"
+
+    console_with_message "Hopefully irb responded with something like this", "=> 6"
+
+    message "The '=>' shows you how irb evaluated the statement you entered (In this case, 3 + 3 = 6)"
   end
 
   step do
-    message "**Variables** are names with values assigned to them."
+    message "**Variables** are names with values assigned to them. Type the following into irb:"
 
     console_without_message "my_variable = 5"
 
@@ -43,7 +51,7 @@ my_variable * 3
 
     console_without_message 'fruits = ["kiwi", "strawberry", "plum"]'
 
-    message "Here we're using the variable `fruits` to hold a collection of fruit names."
+    message "Here we're using the variable `fruits` to hold a collection of fruit names. Each item in an array is called an **element** of the array."
   end
 
   step do
@@ -52,7 +60,7 @@ fruits = fruits + ["orange"]
 fruits = fruits - ["kiwi"]
     RUBY
 
-    message "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
+    message "`+` and `-` are called **operators**. We can use them with the array of fruits just like we can use them with numbers."
 
   end
 
@@ -65,7 +73,7 @@ fruits = fruits - ["kiwi"]
 fruits.class
 RUBY
 
-    message "These are the three data types introduced so far: **Fixnum** (numbers), **String** (text), and **Array** (lists)."
+    message "irb will return the three data types introduced so far: **Fixnum** (numbers), **String** (text), and **Array** (lists)."
   end
 
   step do
