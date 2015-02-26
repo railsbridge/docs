@@ -7,7 +7,7 @@ step "Open Terminal" do
 end
 
 step "Install A Compiler (XCode or GCC)" do
-  link "install_xcode"
+  link "install_xcode_command_line_tools"
 end
 
 step "Install Homebrew" do
