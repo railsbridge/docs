@@ -8,15 +8,15 @@
  * **09:30**-11:00: Opening presentation, introductions, **Workshop**
  * **11:00**-11:30: Break, Lightning Talk
  * **11:30**-13:00: **Workshop**
- * **13:00**-14:00: Lunch, Lightning Talk
+ * **13:00**-14:00: Lunch
  * **14:00**-15:00: **Workshop**
  * **15:00**-15:30: Break
- * **15:30**-18:00: **Workshop**, Survey
+ * **15:30**-18:00: **Workshop**
 
 <!SLIDE bullets>
 # Our awesome sponsors
-
-![Siyelo](img/siyelo-logo.png)
+![Platform45](img/platform45-logo.png)
+![PragmaticProgrammer](img/pragprog-logo.png)
 ![Hetzner](img/hetzner-logo.png)
 ![Pluralsight](img/pluralsight-fullcolor-175x39-v3.png)
 
@@ -88,6 +88,8 @@
 # After today?
 
 ### [rbcpt.org/resources](http://rbcpt.org/resources/)
+### [Learn Rails] http://learn-rails.com/railsbridge
+### Form study groups
 ### Learn more about coding
 ### Learn more Ruby
 ### Learn more Rails

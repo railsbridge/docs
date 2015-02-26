@@ -17,6 +17,7 @@ Learning more about Rails
 -------------------------
 
 * [Pragmatic's Agile Development with Rails 4](http://pragprog.com/book/rails4/agile-web-development-with-rails-4) (book)
+* [Learn Rails](http://learn-rails.com/railsbridge) 
 * [Rails Guides: Getting Started](http://guides.rubyonrails.org/getting_started.html)
 * [Learn Ruby and Rails](http://www.learnrubyandrails.com/)
 * [Rails For Zombies](http://railsforzombies.org/) (tutorials)
