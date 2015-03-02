@@ -9,11 +9,9 @@ step "Run RailsInstaller" do
   message <<-MARKDOWN
   RailsInstaller includes Rails, Ruby, Git, and SQLite.
 
-  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 1.9.
+  Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 2.1.
 
-  Alternatively, ask a volunteer for a flash drive with the file on.
-
-  Click on the RailsInstaller file to run the install wizard.  Click Next at each step to accept the defaults.
+  Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults.
 
   Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*
 
@@ -29,10 +27,10 @@ step "Configure your git and ssh environment" do
   important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
 
   message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
-  message "Type your full name into the console and press **[enter]**"
+  message "Type *your actual full name* into the console and press **[enter]**"
 
   message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
-  message "Type your email address into the console and press **[enter]**"
+  message "Type *your actual email address* into the console and press **[enter]**"
 
   important "Use the **same email address** for heroku, git, github, and ssh."
 
@@ -40,38 +38,9 @@ step "Configure your git and ssh environment" do
     message "After this step you will have some **git config settings** and you will also have an **ssh key**."
   end
 
-end
+  message "Here is a summary of your settings after this process:"
 
-step "Windows 8 Only - Install Node.js" do
-
-  message "Go to <http://nodejs.org> and download the installer"
-
-  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
-
-  message "**Reboot your computer.**"
-
-  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** (see below) and..."
-
-  console "node -v"
-  fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
-end
-
-step "Update Rails" do
-  message "Currently, RailsInstaller installs Rails 3.2.x, but we want 4.x. Upgrading Rails is pretty easy:"
-
-  console "gem install rails"
-
-  message "...and you're done. New Rails! Woo."
-end
-
-step "Sanity Check" do
-
-  console "ruby -v"
-  fuzzy_result "ruby 1.9.3{FUZZY}p125{/FUZZY}"
-
-  console "rails -v"
-  fuzzy_result "Rails 4.0{FUZZY}.x{/FUZZY}"
-
+  img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.png'
 end
 
 step "Open a Terminal" do
@@ -81,17 +50,88 @@ step "Open a Terminal" do
 
   message "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
 
-  message "To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**. You should do all your Rails work in this RailsInstaller DOS window."
+  message "To open the special Terminal, search for **Command Prompt with Ruby and Rails**."
 
-  img src: 'img/railsbridge_findingCommandPrompt.png'
+  div do
+    option_half "Windows 7" do
+      img src: 'img/railsbridge_windows_findingCommandPrompt_win7.png'
+    end
 
-  tip "Pin It to Win It" do
-    img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
+    option_half "Windows 8" do
+      img src: 'img/railsbridge_windows_findingCommandPrompt_win8.png'
+    end
   end
 
-  message "Here is a summary of your settings after this process:"
+  message "You should do all your Rails work in this RailsInstaller DOS window."
 
-  img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.jpg'
+  tip "Pin It to Win It" do
+    message 'Pinning the Command Prompt to the taskbar is a handy shortcut.'
+
+    img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
+  end
+end
+
+step "Update RubyGems" do
+  message "The version of RubyGems that comes with Railsinstaller has some problems. Follow these steps to upgrade it!"
+
+  step "Check to see if you need to update" do
+    console "gem -v"
+
+    message "If the output is **2.2.2** or earlier, keep following the instructions."
+
+    message "If the output is **2.2.3** or later, <a href='#install-node'>skip to the next step!</a>"
+  end
+
+  step "Download the update" do
+    message "Visit https://github.com/rubygems/rubygems/releases/tag/v2.2.3"
+
+    message "**Right click -> Save as...** the file **rubygems-update-2.2.3.gem** to your **C:\\Sites** directory"
+  end
+
+  step "Install the update" do
+    message "Back at the command prompt, run the following commands:"
+
+    console_without_message "gem install --local rubygems-update-2.2.3.gem"
+
+    console_without_message "update_rubygems --no-ri --no-rdoc"
+
+    message "**Close and reopen your command prompt**, then verify you have the upgraded RubyGems by typing this in the terminal:"
+
+    console_without_message "gem -v"
+    result "2.2.3"
+  end
+end
+
+a name: 'install-node'
+step "Install Node.js" do
+
+  message "Go to <http://nodejs.org> and download the installer"
+
+  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+
+  message "**Reboot your computer.**"
+
+  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** and..."
+
+  console "node -v"
+  fuzzy_result "v0{FUZZY}.8.x{/FUZZY}"
+end
+
+step "Update Rails" do
+  message "Currently, RailsInstaller installs Rails 4.1.x, but we want the latest. Upgrading Rails is pretty easy:"
+
+  console "gem install rails --no-ri --no-rdoc"
+
+  message "...and you're done. New Rails! Woo."
+end
+
+step "Sanity Check" do
+
+  console "ruby -v"
+  fuzzy_result "ruby 2.1.5{FUZZY}p125{/FUZZY}"
+
+  console "rails -v"
+  fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
 
 end
 
