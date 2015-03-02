@@ -17,11 +17,11 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
     bison
     build-essential
     curl
-	git-core
-	libapr1
-	libaprutil1
-	libc6-dev
-	libltdl-dev
+    git-core
+    libapr1
+    libaprutil1
+    libc6-dev
+    libltdl-dev
     libreadline6
     libreadline6-dev
     libsqlite3-0
@@ -33,6 +33,7 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
     libxslt1-dev
     libyaml-dev
     ncurses-dev
+    nodejs
     openssl
     sqlite3
     zlib1g
@@ -41,6 +42,15 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
 
   console "sudo apt-get install #{apts.join(' ')}"
 
+  important <<-MARKDOWN
+    If you get an error during `apt-get` resembling
+
+    `Failed to fetch cdrom://Ubuntu`...
+
+    it is because `apt-get` is trying to install packages from your Ubuntu install CD. If you don't have that CD on hand, you can try disabling it as a package source by following this Stack Overflow post:
+
+    http://askubuntu.com/questions/125111/failed-to-download-repository-information-due-to-missing-cdrom
+  MARKDOWN
 end
 
 step "Install git" do
@@ -51,7 +61,7 @@ end
 
 step "Install RVM" do
   important do
-    message "If you're using Ubuntu 12.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take affect."
+    message "If you're using Ubuntu 12.04, Ubuntu 14.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take effect."
     img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
   end
   insert "install_rvm"
