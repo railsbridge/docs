@@ -37,7 +37,7 @@
 <!SLIDE center>
 # Your development set up
 
-|Text Editor|Terminal|Browser|
+|Text Editor|Command Prompt / Terminal|Browser|
 |---|---|---|
 |Write Code|Issue Commands|See the Results|
 | <img src="img/set-up-text-editor.png" alt="Sublime Text" width="250"> | <img src="img/set-up-terminal.png" alt="Terminal" width="250"> | <img src="img/set-up-browser.png" alt="Browser" width="250"> |
