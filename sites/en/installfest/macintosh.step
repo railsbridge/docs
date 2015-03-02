@@ -4,6 +4,7 @@ step "Learn your Mac OS X Version" do
 * Click on the Apple icon in the top left of your screen.
 * Select "About This Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
+  * If it starts with 10.10, you have **Yosemite**.
   * If it starts with 10.9, you have **Mavericks**.
   * If it starts with 10.8, you have **Mountain Lion**.
   * If it starts with 10.7, you have **Lion**.
@@ -28,24 +29,12 @@ Below is an example.
 end
 
 step "Choose your instructions" do
-  
-  option "Mavericks" do
+
+  option "Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
     link "osx_rvm"
   end
-  option "Mountain Lion/Lion/Snow Leopard" do
-    option_half "RailsInstaller" do
-      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
-      link "osx_railsinstaller"
-    end
-    option_half "Manually" do
-      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
-      link "osx_rvm"
-    end
-  end
-
-  option "Leopard/Tiger/Panther" do
-    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
-    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
-    link "osx_panther"
+  option "Earlier than Snow Leopard" do
+    important "You should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
+    message "It may be possible to get Ruby and Rails installed if your OS is older than Snow Leopard, but you're likely to encounter a lot of tough roadblocks that will require some intense googling."
   end
 end
