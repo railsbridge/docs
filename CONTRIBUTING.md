@@ -76,7 +76,7 @@ maintainers to love you. :heart:*
 
 Relax, you came to the right place. In order to contribute you'll need to be
 able to familiarize yourself with some concepts from git and GitHub. It's going
-to be a lot of information, but you're :sparkles:awesome:sparkles:! So you it'll
+to be a lot of information, but you're :sparkles:awesome:sparkles:! So it'll
 be fine.
 
 First, you'll need a GitHub account, which is totally free. You can sign up
