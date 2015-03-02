@@ -41,6 +41,28 @@ step "Configure your git and ssh environment" do
   message "Here is a summary of your settings after this process:"
 
   img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.png'
+
+  message "Close the command prompt window."
+end
+
+step "Update Git" do
+
+  message "The version of Git that comes with RailsInstaller is old, so we will be updating that next."
+
+  message "Go to <http://git-scm.com> and download the installer. You want version 1.9.5 or newer."
+
+  message "Run the installer, and it will ask you where you want to install it. Change it FROM C:\\Program Files\\Git  TO, C:\\RailsInstaller\\Git like the picture below."
+
+  img src: 'img/directory.png'
+
+  message "It will warn you that the directory already exists. Click yes to install to that folder anyway."
+
+  message "Click next twice, and select, Use Git from the Windows Command Prompt."
+
+  img src: 'img/command.png'
+
+  message "Keep going and you'll have the latest version of Git installed!"
+
 end
 
 step "Open a Terminal" do
@@ -85,7 +107,7 @@ step "Update RubyGems" do
   step "Download the update" do
     message "Visit https://github.com/rubygems/rubygems/releases/tag/v2.2.3"
 
-    message "**Right click -> Save as...** the file **rubygems-update-2.2.3.gem** to your **C:\\Sites** directory"
+    message "**Right click -> Save target as...** the file **rubygems-update-2.2.3.gem** to your **C:\\Sites** directory"
   end
 
   step "Install the update" do
@@ -133,6 +155,8 @@ step "Sanity Check" do
   console "rails -v"
   fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
 
+  console "git --version"
+  fuzzy_result "git version 1.9.5{FUZZY}.msysgit.0{/FUZZY}"
 end
 
 step "Configure the Windows Terminal" do
