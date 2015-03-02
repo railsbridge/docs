@@ -33,9 +33,9 @@ step "Set up SSH authentication with GitHub" do
     BASH
 
     message "Windows users,"
-    console "clip < ~/.ssh/id_rsa.pub"
+    console "clip < \"%userprofile%\\.ssh\\id_rsa.pub\""
 
-  message "Now that you have copied the key you can add it to the GitHub account you created earlier."
+  message "Now that you have copied the key to your clipboard, you can add it to the GitHub account you created earlier."
 
   h1 "Add your SSH key to GitHub"
 
@@ -53,6 +53,8 @@ end
 step "Confirm SSH Authentification" do
 
   message "Confirm that you have successfully set up SSH Authentication for GitHub"
+
+  message "Windows users cannot perform this step."
 
   console "ssh -T git@github.com"
 
