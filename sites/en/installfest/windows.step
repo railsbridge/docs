@@ -94,7 +94,7 @@ step "Open a Terminal" do
 end
 
 step "Update RubyGems" do
-  message "The version of RubyGems that comes with Railsinstaller has some problems. Follow these steps to upgrade it!"
+  message "The version of RubyGems that comes with RailsInstaller has some problems. Follow these steps to upgrade it!"
 
   step "Check to see if you need to update" do
     console "gem -v"

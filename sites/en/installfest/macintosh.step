@@ -35,6 +35,6 @@ step "Choose your instructions" do
   end
   option "Earlier than Snow Leopard" do
     important "You should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
-    message "It may be possible to get Ruby and Rails installed if your OS is older than Snow Leopard, but you're likely to encounter a lot of tough roadblocks that will require some intense googling."
+    message "It may be possible to get Ruby and Rails installed if your OS is older than Snow Leopard, but you're likely to encounter a lot of tough roadblocks that will require some intense Googling."
   end
 end

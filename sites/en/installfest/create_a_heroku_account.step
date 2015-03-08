@@ -34,7 +34,7 @@ step "Add your SSH key to your Heroku account" do
 end
 
 section 'GitHub' do
-  message "Since by now you sould have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+  message "Since by now you should have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
 end
 
 next_step "create_a_rails_app"

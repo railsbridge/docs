@@ -43,14 +43,14 @@ step "Set up SSH authentication with GitHub" do
 
   message "On the account setting page, select **SSH Keys** from the column on the left."
 
-  message "At the top right of this page, clik the button that says **Add SSH key**. In the title field, give a name for your SSH key, you might call it **My PC** or **Personal MacBook**. In the key field, paste the key you copied."
+  message "At the top right of this page, click the button that says **Add SSH key**. In the title field, give a name for your SSH key, you might call it **My PC** or **Personal MacBook**. In the key field, paste the key you copied."
 
   message "Click **Add Key**"
 
   message "Confirm the action by providing your GitHub Password"
 end
 
-step "Confirm SSH Authentification" do
+step "Confirm SSH Authentication" do
 
   message "Confirm that you have successfully set up SSH Authentication for GitHub"
 

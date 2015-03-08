@@ -27,7 +27,7 @@ step "Create a new Rails app" do
   console "cd test_app"
   console "rails server"
 
-  tip "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes to the popup."
+  tip "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes to the pop up."
 
   tip "Shortcut: Just type 'rails s'" do
     message <<-MARKDOWN

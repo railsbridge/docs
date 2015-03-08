@@ -11,13 +11,13 @@ end
 step "Keep on clicking..." do
  li 'Click "Continue" at the Introduction screen.'
  li 'Click "Continue" at the License screen.'
- li 'Click "Agree" in the popup to agree to the license.'
+ li 'Click "Agree" in the pop up to agree to the license.'
  li 'Click "Continue" at the Destination Select screen.'
  li "Click \"Continue\" at the Installation Type screen. (Don't change the checkboxes.)"
 end
 
 step 'Click "Install".' do
- message "Enter your user password in the popup to REALLY start installing. It takes a while."
+ message "Enter your user password in the pop up to REALLY start installing. It takes a while."
 end
 
 step 'Click "Close"' do
