@@ -5,9 +5,9 @@ step "Visit the Heroku web site" do
 end
 
 step "Create an account" do
-  message "Click the big **Sign Up** button."
+  message "Click the big **Sign Up** button (it's about halfway down the page)"
   message "Enter your email address."
-  important "Use the same email address for heroku, git, github, and ssh."
+  important "Use the same email address for heroku, git, github, and ssh. Be sure to use an email account you can log into immediately."
 end
 
 step "Activate your account" do
@@ -20,8 +20,6 @@ step "Install the Heroku toolbelt" do
 
   message "Visit https://toolbelt.heroku.com/, click the download link, and install."
 
-  message "Alternatively, ask a volunteer for a flash drive with the file on."
-
   verify do
     console "heroku version"
     result "2.26.7 or higher"
@@ -31,8 +29,12 @@ end
 
 step "Add your SSH key to your Heroku account" do
   console "heroku keys:add"
-  
+
   message "hit enter to accept the default key file to use"
 end
 
-next_step "create_and_deploy_a_rails_app"
+section 'GitHub' do
+  message "Since by now you sould have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+end
+
+next_step "create_a_rails_app"
