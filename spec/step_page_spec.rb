@@ -32,7 +32,7 @@ describe StepPage do
         <h1 class="doc_title">Hello</h1>
         <div class="doc">
           <a name="step1"></a>
-          <div class="step" title="hello">
+          <div class="step">
             <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
           </div>
         </div>

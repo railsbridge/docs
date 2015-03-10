@@ -31,17 +31,11 @@ describe Step do
     html = to_html(steps.first)
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
     expected = <<-HTML.strip_heredoc.gsub("\n", '')
-      <div class="step" title="hello">
+      <div class="step">
       <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
       </div>
     HTML
     assert { html == expected }
-  end
-
-  it "puts titles in based on step names" do
-    steps = html_doc.css(".step")
-    assert { steps.first["title"] == "hello" }
-    assert { steps[1]["title"] == "goodbye" }
   end
 
   it "puts anchors in based on step numbers" do
@@ -74,9 +68,6 @@ describe Step do
       end
     RUBY
 
-    titles = html_doc.css('.step').map{|div| div["title"]}
-    assert { titles == %w(breakfast cereal eggs lunch salad sandwich) }
-
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
     assert { names == %w(step1 step1-1 step1-2 step2 step2-1 step2-2) }
@@ -93,7 +84,7 @@ describe Step do
           step "sandwich"
         end
       RUBY
-      a = html_doc.css(".step[title=breakfast] a.link").first
+      a = html_doc.css(".step a.link").first
       assert { a["href"] == "choose_breakfast" }
     end
 
