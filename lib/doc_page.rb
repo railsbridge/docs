@@ -130,9 +130,9 @@ class DocPage < Html5Page
       end
     }
 
-    div(class: 'bottom') {
+    footer(class: 'bottom') {
       p do
-        text "If you find something that could be improved, please make a "
+        text "If you have a suggestion for improving the docs, please make a "
         a "pull request ", href: "https://github.com/railsbridge/docs"
         text "or "
         a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
