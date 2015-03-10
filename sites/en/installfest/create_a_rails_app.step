@@ -56,11 +56,9 @@ step "Create a new Rails app" do
   message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
 
   tip "If it doesn't work, ask a TA for help."
-
+  message "* In your browser, go to <http://localhost:3000>"
+  img src: "img/successful_rails_install.png", alt: "Screenshot of the browser on localhost 3000 showing the rails intro page"
   message <<-MARKDOWN
-    * In your browser, go to <http://localhost:3000>
-
-    ![Successful Rails Install](img/successful_rails_install.png)
 
     * Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
   MARKDOWN
@@ -95,7 +93,7 @@ step "Generate a database model" do
 
     (The window where you ran `rails server` will display debugging information as you do this.)
 
-    You should see: ![Drink was successfully created](img/get_a_sticker_you_should_see.png)
+    You should see: ![Screenshot of the drink detail page](img/get_a_sticker_you_should_see.png)
 
     In your terminal, Hold Control and hit C (or on Windows, Control-Break, Y) to stop the rails server.
   MARKDOWN
