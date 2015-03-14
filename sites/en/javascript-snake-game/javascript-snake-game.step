@@ -1,8 +1,12 @@
-# Lesson 1 - Building Snake in JavaScript
-
 markdown <<-MARKDOWN
-  Today, we're going to recreate the classic game snake in the Javascript
-  programming language.  
+
+  ### Goal
+
+  Today, we're going to recreate the classic game ~SNAKE!~ in the Javascript programming language.
+  By the end of this session, you should understand the basics of the JavaScript language and how you can use it in a web browser.
+
+  The game you are going to create is going to work quite a bit like this:
+
 MARKDOWN
 
 canvas id: 'chunk-game', height: 600, width: 800
@@ -12,45 +16,30 @@ script src: 'js/chunk.js'
 script src: 'js/snake.js'
 
 markdown <<-MARKDOWN
-  ### Download the tutorial
 
-  Before you can start the tutorial, you'll need to <a
-    href="js-snake-game-tutorial.zip">download the tutorial</a> to your computer
-  to edit the source code.
-  
-  ### Launch your programming environment
+  ### Meta-Goal
 
-  When programming, you'll generally want these tools on hand:
+  When you have completed today's goal of creating a browser based game you should understand:
 
-  * Your browser to see the code running (I recommend Chrome)
-  * A text editor to change the code (I recommend <a
-    href="http://www.sublimetext.com/">Sublime</a>)
-  * A javascript console so you can experiment and print out debugging
-  messages. This is built into your browser.
-  
-  Once you have these tools available, we need to open the files we'll be working with:
-  
-  * Open game/snake.js in your text editor
-  * Open game/index.html in your browser
-  * Open your browser's javascript console
-  * type `alert("hello world");` in your browser's javascript console and
-  dismiss the window that pops up
+  * The basic syntax of JavaScript
+  * How to create, view and debug JavaScript
+  * How to use JavaScript with external libraries.
+  * How to incrementally build out a JavaScript application.
 
-  <img src='img/helloworld.png' height="300" width="600">
-  
-  ### Stop and reflect
-  
-  * The javascript console is one of the fastest ways to get feedback on
-  whether the code does what you expect. How else can you get feedback about whether
-  your code does what you expect?
-  * Why shouldn't you use Word or Google Docs to edit code?
+  ### Schedule
 
-  ### Helpful Links
+  * 2-ish hours of basic JavaScript syntax.
+  * 3-ish hours of creating and playing with a Javascript game and animations.
 
-  * <a href="https://developers.google.com/chrome-developer-tools/">How to launch dev tools in chrome.</a>
-  * <a href="http://www.microsoft.com/en-us/download/details.aspx?id=18359">How to launch dev tools in internet explorer.</a>
-  * <a href="https://developer.mozilla.org/en-US/Firefox_OS/Debugging/Setting_up">How to launch dev tools in firefox.</a>
-  * <a href="https://developer.apple.com/library/safari/documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html">How to launch dev tools in safari.</a>
+  This is just a rough guideline, not a mandate. Some steps you'll go
+  over and some you'll go under. It'll all work out by the end of the
+  day. Probably.
+
+  Before you can start the tutorial, you'll need to <a href="js-snake-game-tutorial.zip">download the tutorial</a>
+  to your computer to edit the source code.
+
+  Once you've downloaded the zip archive file, you will need to extract the contents and open index.html with your browser. If you have trouble extracting the files or opening them, get an instructor to help you out.
+
 MARKDOWN
 
-next_step 'lesson-2'
+next_step 'lesson-1'

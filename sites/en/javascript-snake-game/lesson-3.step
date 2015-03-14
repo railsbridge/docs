@@ -56,6 +56,27 @@ markdown <<-MARKDOWN
   know what variables a function or piece of code has access too.
   Understanding scope is hugely important when reading and writing code.
   
+  ### A bit more about Functions
+
+  Functions are where we'll be storing most of the logic as we develop our snake game. Let's take apart the function created above just to fully understand what is happening.
+
+  ```js
+  var drawSnake = function(snakeToDraw) {
+    var drawableSnake = { color: "green", pixels: snakeToDraw };
+    var drawableObjects = [drawableSnake];
+    CHUNK.draw(drawableObjects);
+  }
+  var snake = [{ top: 0, left: 0}];
+  drawSnake(snake);
+  ```
+
+  A function declaration is always going to be the word `function`, then parens `( )` then curly braces `{ }`. The parens are where you declare the arguments the function expects, and the curly braces are where you write out all of the logic that the function will perform. The simplest way to call a function is to write its name followed by parentheses: `drawSnake()`. But we have a function that expects an argument, `snakeToDraw`, so when we call the function in the code we do it by `drawSnake(snake)`. 
+
+  You may have noticed that the function `drawSnake` expects an argument of `snakeToDraw`, but when we call the function we're passing in the variable `snake`. The names are different - but the code works fine. What is actually happening is we're passing around the data that the variable `snake` represents (in this case, `[{ top: 0, left: 0}]`), which the function receives and names according to the argument inside its parens, `snakeToDraw`. Inside the function, the data is now available as the variable `snakeToDraw`, which we assign to the `pixels` key inside the `drawableSnake` variable. 
+
+  The function then takes `drawableSnake`, puts it inside an array named `drawableObjects`, and calls a function in the CHUNK library called `draw`, that expects the array we just created.
+
+
   ### Syntax Breakdown
   
   `function() { }` says "Hey, between the curly braces is some
