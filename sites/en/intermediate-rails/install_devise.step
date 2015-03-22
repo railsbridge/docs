@@ -4,7 +4,6 @@ message <<-MARKDOWN
 * The user should see a prompt to log in if they aren't logged in.
 * Once logged in, the user should see a static page with some kind of greeting.
 * The page should display the logged-in user's email address and a link to log out.
-* You, the developer, should explain to a teacher, TA, or fellow student how Rails knows to render the home view.
 MARKDOWN
 end
 
