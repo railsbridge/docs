@@ -38,10 +38,11 @@ end
 
 tools_and_references do
 message <<-MARKDOWN
-* RailsGuides - Active Record Associations: <http://guides.rubyonrails.org/association_basics.html#the-belongs_to-association>.
-* RailsGuides - Form Helpers, section 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>
+* RailsGuides - Active Record Associations: <http://guides.rubyonrails.org/association_basics.html#the-belongs-to-association>.
+* RailsGuides - Form Helpers, section 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>.
 * RailsGuides - Routes - CRUD, Verbs, and Actions: <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>.
-* RailsGuides - Active Record Validations and Callbacks: <http://guides.rubyonrails.org/active_record_validations_callbacks.html>
+* RailsGuides - Active Record Validations: <http://guides.rubyonrails.org/active_record_validations.html>.
+* RailsGuides - Active Record Callbacks: <http://guides.rubyonrails.org/active_record_callbacks.html>.
 MARKDOWN
 end
 
