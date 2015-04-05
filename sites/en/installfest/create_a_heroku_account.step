@@ -22,7 +22,10 @@ step "Install the Heroku toolbelt" do
 
   verify do
     console "heroku version"
-    result "2.26.7 or higher"
+    fuzzy_result <<-TEXT
+      heroku-toolbelt/{FUZZY}3.30.6 (x86_64-darwin10.8.0) ruby/1.9.3{/FUZZY}
+      {FUZZY}You have no installed plugins.{/FUZZY}
+    TEXT
   end
   message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
 end
