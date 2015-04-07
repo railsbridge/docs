@@ -17,3 +17,5 @@ step "Install the Command Line Tools" do
   img src: 'img/xcode-prefs.jpg', alt: 'XCode Preferences showing the location of the install button for command line tools'
 end
 
+next_step 'osx_rvm'
+

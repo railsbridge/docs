@@ -7,13 +7,7 @@ step "Open Terminal" do
 end
 
 step "Install A Compiler (XCode or GCC)" do
-  option "OSX 10.9 or above" do
-    link "install_xcode_command_line_tools"
-  end
-
-  option "OSX 10.8 or below" do
-    link "install_xcode"
-  end
+  link "install_xcode"
 end
 
 step "Install Homebrew" do

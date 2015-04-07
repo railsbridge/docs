@@ -1,10 +1,12 @@
-message "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+option "OSX 10.9 Mavericks - OSX 10.10 Yosemite" do
+  link "install_xcode_command_line_tools"
+end
 
-option "Install XCode from the Apple App Store (OSX 10.7 Lion or greater)" do
+option "OSX 10.7 Lion - OSX 10.8 Mountain Lion" do
   link "install_xcode_from_app_store"
 end
 
-option "Install XCode from a thumb drive or DVD (OSX 10.6 Snow Leopard)" do
+option "OSX 10.6 Snow Leopard" do
   link "install_xcode_from_dvd"
 end
 
@@ -20,3 +22,4 @@ verify "your compiler was installed" do
   message "Your results might differ somewhat. Basically, as long as it doesn't say something like 'command not found', you're probably cool."
 end
 
+next_step 'osx_rvm'

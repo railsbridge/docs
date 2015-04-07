@@ -1,3 +1,5 @@
+message "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+
 step "Insert your OS X DVD or Thumb Drive"
 
 step "Locate Xcode.mpkg" do
@@ -23,3 +25,5 @@ end
 step 'Click "Close"' do
  message 'once you get "The installation was successful" on the Summary screen.'
 end
+
+next_step 'osx_rvm'
