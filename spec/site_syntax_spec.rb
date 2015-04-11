@@ -5,6 +5,8 @@ require "site"
 
 require "rack/test"
 
+here = File.expand_path File.dirname(__FILE__)
+
 describe "Syntax check all sites" do
   include Rack::Test::Methods
 
@@ -16,6 +18,15 @@ describe "Syntax check all sites" do
     describe "in locale '#{locale}'" do
       Site.all(locale).each do |site|
         describe "#{site.name} pages..." do
+          it 'uses all images in the /img folder' do
+            site_folder = File.expand_path(File.join(here, '..', 'sites', locale, site.name))
+            unused_images = Dir[File.join(site_folder, 'img', '*')].select do |image_path|
+              image_file = File.basename(image_path)
+              system("grep -R #{image_file} #{site_folder} > /dev/null") ? nil : image_file
+            end
+            expect(unused_images).to eq([])
+          end
+
           site.docs.each do |doc|
             it "renders #{doc.filename}" do
               path = URI.escape "/#{site.name}/#{doc.name}"
