@@ -6,11 +6,17 @@ require 'titleizer'
 require 'active_support/core_ext/string/strip'
 require 'erb'
 
+Dir[File.join(__dir__, 'site_extensions', '*.rb')].each { |f| require f }
+
 class Step < Erector::Widget
   needs :src
   needs :doc_path
   needs :container_page_name => false
   needs :step_stack => false
+
+  include DocsExtensions
+  include IntroToRailsExtensions
+  include JavascriptSnakeGameExtensions
 
   def initialize options
     super
@@ -94,7 +100,6 @@ class Step < Erector::Widget
     end
   end
 
-
   def link name, options = {}
     options = {caption: I18n.t("captions.link")}.merge(options)
     p :class => "link" do
@@ -103,14 +108,7 @@ class Step < Erector::Widget
       simple_link(name, class: :link)
     end
   end
-
-  def link_without_toc name
-    link name
-  end
-
-  def _escaped str
-    ERB::Util.u(str)
-  end
+  alias_method :link_without_toc, :link
 
   def simple_link name, options={}, &blk
     link_options = {href: _escaped(name)}.merge(options)
@@ -184,17 +182,6 @@ class Step < Erector::Widget
   def goal *args
     li do
       message *args
-    end
-  end
-
-  def site_desc site_name, description
-    div class: 'site-desc' do
-      h2 do
-        a href: "/#{site_name}" do
-          text Titleizer.title_for_page(site_name)
-        end
-      end
-      div raw(md2html description)
     end
   end
 
@@ -328,44 +315,11 @@ class Step < Erector::Widget
     MarkdownRenderer.render(text)
   end
 
-  def model_diagram options
-    header = options.delete(:header)
-    fields = options.delete(:fields)
-    table(options.merge(class: 'model-diagram')) do
-      thead do
-        tr do
-          th header
-        end
-      end
-      tbody do
-        fields.each do |field|
-          tr do
-            td field
-          end
-        end
-      end
-    end
-  end
-
-  def js_expected_results(lesson)
-    h3 'Expected Results'
-
-    h4 'What your snake.js file should look like:'
-
-    src_path = File.join(File.dirname(@doc_path), 'js', "#{lesson}.js")
-
-    source_code :js, File.read(src_path)
-
-    h4 'How the game should work:'
-
-    canvas id: 'chunk-game', height: '600', width: '800'
-
-    script src: 'js/chunk.js'
-
-    script src: "js/#{lesson}.js"
-  end
-
   private
+
+  def _escaped str
+    ERB::Util.u(str)
+  end
 
   def _render_inner_content
     blockquote do
