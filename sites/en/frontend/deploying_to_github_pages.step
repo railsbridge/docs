@@ -22,12 +22,12 @@ situation "First-time setup" do
 
     step "Make a special new directory" do
       message "To get started on the project, you'll need to open up your command line. If you have a Mac, open up the Terminal app. If you're on a PC, look for a program called Command Prompt. You'll also need to know your Github user name and password, so go ahead and double-check it if you don't remember. Wherever you see `[your-github-user-name]`, you'll replace that with your user name (and delete the braces)."
-      console "mkdir [your-github-user-name].github.com"
+      console "mkdir [your-github-user-name].github.io"
       message "`mkdir` stands for 'make directory.' You just made a new directory that you'll put your project files in."
     end
 
     step "Initialize a new local git repository" do
-      console "cd [your-github-user-name].github.com"
+      console "cd [your-github-user-name].github.io"
       message "You just changed directories and moved into the folder you just created."
       console "git init"
       message "You just initialized an empty repository, i.e. told git, 'I want to start a new project here.'"
@@ -42,17 +42,17 @@ situation "First-time setup" do
 
     step "Add Github as a remote" do
       message "You really do have to type your user name three times in the next command. Get ready for it."
-      console "git remote add origin https://[your-github-user-name]@github.com/[your-github-user-name]/[your-github-user-name].github.com.git"
+      console "git remote add origin https://[your-github-user-name]@github.com/[your-github-user-name]/[your-github-user-name].github.io.git"
 
       message "You just set up a 'remote' &mdash; a git repository somewhere else (in this case, on Github) that also holds your project files."
     end
 
     step "Create a new repo via the Github UI" do
-      tip "You can skip this step if you've created a ***[your-github-user-name].github.com*** page previously."
+      tip "You can skip this step if you've created a ***[your-github-user-name].github.io*** page previously."
       message "Navigate to https://github.com/[your-github-user-name]/"
       message "Click 'Create a new repo' in the upper right"
       img :src => "img/github_create_repo.png"
-      message "Type **[your-github-user-name].github.com** into the 'Repository name' box"
+      message "Type **[your-github-user-name].github.io** into the 'Repository name' box"
       img :src => "img/github_name_your_repo.png"
 
       important "DO NOT choose 'Initialize this repository with a README' when creating the repo."
@@ -62,13 +62,13 @@ situation "First-time setup" do
       message "Now, push the new file you just committed to Github."
       console 'git push -u origin master'
       message "You'll probably be prompted to type your Github password at this point. After you do, you'll have just pushed your project to Github's servers!"
-      important "If you have existing content in your Github pages repo, this command will fail, and you will have to do a `git push -uf origin master instead`. Verify with a TA first that you're doing the right thing."
+      important "If you have existing content in your Github pages repo, this command will fail, and you will have to do a `git push -uf origin master` instead. Verify with a TA first that you're doing the right thing."
     end
 
     step do
       message "Woohoo!!! Take a breath and wait 15 minutes."
-      message "Because you gave your Github repository a special name (in the format [your-github-user-name].github.com), Github will automatically take the contents of this one repository and make them your personal web page on Github. But there's a small lag between the first push and being able to see your content on the web."
-      message "In 15 minutes, when you visit [your-github-user-name].github.com in a browser, you should see a blank white page. This is great! You're looking at the index.html file you just created, now live on the web!"
+      message "Because you gave your Github repository a special name (in the format [your-github-user-name].github.io), Github will automatically take the contents of this one repository and make them your personal web page on Github. But there's a small lag between the first push and being able to see your content on the web."
+      message "In 15 minutes, when you visit [your-github-user-name].github.io in a browser, you should see a blank white page. This is great! You're looking at the index.html file you just created, now live on the web!"
     end
   end
 end
@@ -98,7 +98,7 @@ git commit -m "Some helpful message for your future self"
   end
 
   step "Visit your site" do
-    message "Go to your browser and navigate to **[your-github-user-name].github.com**"
+    message "Go to your browser and navigate to **[your-github-user-name].github.io**"
     message "You should see the changes you made, but ON THE INTERNET!"
   end
 end

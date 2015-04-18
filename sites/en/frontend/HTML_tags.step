@@ -199,10 +199,8 @@ are a ton of other tags you might use:
 
 Don't try to memorize all the tags! You can always look them up on sites like:
 
+* [Sitepoint](http://reference.sitepoint.com/html)
 * [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
-* [DocHub](http://dochub.io/#html/)
-
-
 
 ## Try This
 What happens if you change the `<ul>` to `<ol>`? (Don't forget to change the closing tag, too.)

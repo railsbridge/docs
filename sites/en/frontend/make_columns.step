@@ -8,7 +8,7 @@ steps do
   
   step do
     message "CHALLENGE: Find the div with the id 'main' in your HTML. See if you can give it a one-pixel border on its left hand side by modifying the existing stylesheet, 'layout.css'."
-    message "If you get hung up on what CSS property to use, see if you can look it up on [dochub](http://dochub.io/#css/)."
+    message "If you get hung up on what CSS property to use, see if you can look it up on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)."
   end
   
   step do
@@ -30,16 +30,16 @@ explanation do
 
 ## More CSS!
 
-It takes a long time to master CSS, but there are lots of great-looking resources out there 
-to help. One cool resource is the [CSS Zen Garden](http://www.csszengarden.com/), a site with dozens of examples of
-the _same_ HTML page styled with different user-submitted stylesheets. It's a great place
-to get a sense of how limitless the possibilities are with CSS.
+For some great examples of the power of CSS, check out the [CSS Zen Garden](http://www.csszengarden.com/). It takes
+the same HTML, but shows it with stylesheets from a bunch of different designers applied to
+it. Here are two different designers' interpretations of the same HTML:
+
+<img src='img/css_zen.png'>
 
 ### CSS Reference Sites
 
 * [Sitepoint](http://reference.sitepoint.com/css/elements-structural)
 * [Mozilla Developer Network](https://developer.mozilla.org/en/CSS)
-* [DocHub](http://dochub.io/#css/)
 
   MARKDOWN
 end

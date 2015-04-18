@@ -21,7 +21,7 @@ steps do
         message "If you've been to a RailsBridge before, you might have git installed. Try the following"
         console "git --version"
         message "If you see something like the git version below, then you can return to the mini-installfest"
-        fuzzy_result "git version 1{FUZZY}.x.x{/FUZZY}"
+        fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
         message "If you see something like `git: command not found` then proceed"
       end
 
@@ -48,8 +48,8 @@ steps do
       step "Install a text editor" do
         a "Download and install Sublime Text 2", :href => "http://www.sublimetext.com/2"
         message "Install Sublime Text 2 by double clicking the file you downloaded, then dragging the Sublime Text 2 icon into the Applications folder. Finish up by clicking the eject icon for Sublime Text 2 in your finder window."
-        a "or Install Komodo Edit for Mac OS X", :href => "/installfest/install_komodo_edit_for_mac"
-        message "FYI: Komodo Edit is open source, whereas Sublime Text 2 is a paid program that you can download and try out for free. If you keep using Sublime Text 2 after the workshop, you'll need to buy a license."
+        a "or install a different editor", :href => "/installfest/editors"
+        message "FYI: Sublime Text 2 is a paid program that you can download and try out for free. If you keep using Sublime Text 2 after the workshop, you'll need to buy a license. There are other editors available you can find on [our editors page](/installfest/editors)."
       end
     end
   end
