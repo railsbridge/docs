@@ -14,13 +14,15 @@ class Step < Erector::Widget
   needs :container_page_name => false
   needs :step_stack => false
 
-  include DocsExtensions
-  include IntroToRailsExtensions
-  include JavascriptSnakeGameExtensions
-
   def initialize options
     super
     @step_stack = options[:step_stack] || []
+
+    site = File.basename(File.dirname(@doc_path))
+    module_name = site.split('-').map(&:capitalize).join
+    if StepExtensions.const_defined?(module_name)
+      extend StepExtensions.const_get(module_name)
+    end
   end
 
   def next_step_number
@@ -55,14 +57,14 @@ class Step < Erector::Widget
     end
 
     possible_paths.each do |path|
-      if File.exist?(path)
-        src = File.read(path)
-        if path.end_with?('.step')
-          step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-          return widget step
-        else
-          return message src
-        end
+      next unless File.exist?(path)
+
+      src = File.read(path)
+      if path.end_with?('.step')
+        step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+        return widget step
+      else
+        return message src
       end
     end
 
