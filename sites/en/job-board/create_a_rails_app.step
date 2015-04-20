@@ -67,7 +67,7 @@ console_with_message "Start the Rails server by running this command in the term
 message <<-MARKDOWN
   Now, let's check out our default home page
 
-  In the broswer, visit <http://localhost:3000>
+  In the browser, visit <http://localhost:3000>
 
   Yup, that's the default Rails home page!
 MARKDOWN
