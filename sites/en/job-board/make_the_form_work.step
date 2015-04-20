@@ -39,7 +39,7 @@ MARKDOWN
 source_code :ruby,
 <<-RUBY
   def create
-    render :index
+    redirect_to jobs_path
   end
 RUBY
 
