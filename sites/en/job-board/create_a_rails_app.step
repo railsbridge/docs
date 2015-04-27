@@ -20,7 +20,7 @@ message <<-MARKDOWN
   # Rails New!!!
 MARKDOWN
 
-console "rails new job_board -T"
+console "rails new job_board -T --skip-turbolinks"
 
 message <<-MARKDOWN
   The `-T` in that command means that when you make new files using Rails generators, it doesn't automatically create test files using Test::Unit (the default Rails testing framework).
@@ -47,8 +47,6 @@ message "# Fix Up Those Defaults"
 
 source_code_with_message "We're going to be looking at the Rails server output, which includes a lot of noise by default. Find the file called 'Gemfile' by searching for it, and add the following line:", :ruby, "gem 'quiet_assets'"
 
-source_code_with_message "And delete the following line:", :ruby, "gem 'turbolinks'"
-
 console_with_message "Save the file, and then in the command line, run the following command:", "bundle install"
 
 discussion_box "What does 'bundle' do?", <<-MARKDOWN
@@ -60,25 +58,7 @@ discussion_box "What does 'bundle' do?", <<-MARKDOWN
  * Is there a shorter method to use for `bundle install`? (Hint: yes!)
 MARKDOWN
 
-message <<-MARKDOWN
-# Really clear out TurboLinks
-
-Turbolinks is a Rails thing that we don't want. We got rid of part of it above, but let's finish the job.
-MARKDOWN
-
-source_code_with_message "Within app/assets/javascripts, open up application.js and delete this line:", :ruby, "//= require turbolinks"
-
-source_code_with_message "Within app/views/layouts, open up application.html.erb and delete the following from lines five AND six: ", :ruby, "'data-turbolinks-track' => true"
-
-message "Lines five and six should end up looking like this: "
-
-source_code :erb, <<-ERB
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-ERB
-
 message "# Look at your empty app"
-
 
 tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
 
@@ -87,7 +67,7 @@ console_with_message "Start the Rails server by running this command in the term
 message <<-MARKDOWN
   Now, let's check out our default home page
 
-  In the broswer, visit <http://localhost:3000>
+  In the browser, visit <http://localhost:3000>
 
   Yup, that's the default Rails home page!
 MARKDOWN

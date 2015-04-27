@@ -14,6 +14,8 @@ step "Launch XCode"
 step "Install the Command Line Tools" do
   message "Open the Preferences menu and select the Downloads tab."
   message "Then click the 'Install' button next to 'Command Line Tools'."
-  img src: 'img/xcode-prefs.jpg', alt: 'XCode Preferences'
+  img src: 'img/xcode-prefs.jpg', alt: 'XCode Preferences showing the location of the install button for command line tools'
 end
+
+next_step 'osx_rvm'
 

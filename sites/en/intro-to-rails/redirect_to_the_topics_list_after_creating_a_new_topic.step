@@ -55,6 +55,19 @@ message "In the same file, locate the update method. "
     source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
   end
 
+  step "Change the topics index view" do
+    message "Open `app/views/topics/index.html.erb` and add the following line:"
+
+    source_code :ruby, "<p id='notice'><%= notice %></p>"
+
+    message <<-MARKDOWN
+    Adding this line will ensure that the `notice` message we included
+    in the `TopicsController` will show up in your `index` view.
+    You can add this line wherever you want the messages to show up on the
+    page. Experiment with adding it in different places in your `index` view.
+    MARKDOWN
+  end
+
   step "Confirm your changes" do
     message "Look at <http://localhost:3000>."
   end

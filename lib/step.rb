@@ -6,6 +6,8 @@ require 'titleizer'
 require 'active_support/core_ext/string/strip'
 require 'erb'
 
+Dir[File.join(__dir__, 'site_extensions', '*.rb')].each { |f| require f }
+
 class Step < Erector::Widget
   needs :src
   needs :doc_path
@@ -15,6 +17,12 @@ class Step < Erector::Widget
   def initialize options
     super
     @step_stack = options[:step_stack] || []
+
+    site = File.basename(File.dirname(@doc_path))
+    module_name = site.split('-').map(&:capitalize).join
+    if StepExtensions.const_defined?(module_name)
+      extend StepExtensions.const_get(module_name)
+    end
   end
 
   def next_step_number
@@ -49,14 +57,14 @@ class Step < Erector::Widget
     end
 
     possible_paths.each do |path|
-      if File.exist?(path)
-        src = File.read(path)
-        if path.end_with?('.step')
-          step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
-          return widget step
-        else
-          return message src
-        end
+      next unless File.exist?(path)
+
+      src = File.read(path)
+      if path.end_with?('.step')
+        step = Step.new(src: src, doc_path: path, container_page_name: page_name, step_stack: @step_stack)
+        return widget step
+      else
+        return message src
       end
     end
 
@@ -81,9 +89,9 @@ class Step < Erector::Widget
 
   def step name = nil, options = {}
     num = next_step_number
-    a(:name => "step#{current_anchor_num}")
-    a(:name => options[:anchor_name]) if options[:anchor_name]
-    div :class => "step", :title => name do
+    a(name: "step#{current_anchor_num}")
+    a(name: options[:anchor_name]) if options[:anchor_name]
+    div class: "step" do
       h1 do
         widget BigCheckbox
         prefix I18n.t("general.step_title", :num => num) +
@@ -94,7 +102,6 @@ class Step < Erector::Widget
     end
   end
 
-
   def link name, options = {}
     options = {caption: I18n.t("captions.link")}.merge(options)
     p :class => "link" do
@@ -103,27 +110,14 @@ class Step < Erector::Widget
       simple_link(name, class: :link)
     end
   end
+  alias_method :link_without_toc, :link
 
-  def link_without_toc name
-    link name
-  end
-
-  def _escaped str
-    ERB::Util.u(str)
-  end
-
-  def simple_link name, options={}
-    require 'uri'
-    href = "#{_escaped(name)}?back=#{_escaped(page_name)}"
-    if @step_stack.length > 1
-      href += URI.escape('#') + "step#{current_anchor_num}"
-    end
+  def simple_link name, options={}, &blk
+    link_options = {href: _escaped(name)}.merge(options)
     if block_given?
-      a({:href => href}.merge(options)) do
-        yield
-      end
+      a link_options, &blk
     else
-      a Titleizer.title_for_page(name), {:href => href}.merge(options)
+      a Titleizer.title_for_page(name), link_options
     end
   end
 
@@ -190,17 +184,6 @@ class Step < Erector::Widget
   def goal *args
     li do
       message *args
-    end
-  end
-
-  def site_desc site_name, description
-    div class: 'site-desc' do
-      h2 do
-        a href: "/#{site_name}" do
-          text Titleizer.title_for_page(site_name)
-        end
-      end
-      div raw(md2html description)
     end
   end
 
@@ -334,44 +317,11 @@ class Step < Erector::Widget
     MarkdownRenderer.render(text)
   end
 
-  def model_diagram options
-    header = options.delete(:header)
-    fields = options.delete(:fields)
-    table(options.merge(class: 'model-diagram')) do
-      thead do
-        tr do
-          th header
-        end
-      end
-      tbody do
-        fields.each do |field|
-          tr do
-            td field
-          end
-        end
-      end
-    end
-  end
-
-  def js_expected_results(lesson)
-    h3 'Expected Results'
-
-    h4 'What your snake.js file should look like:'
-
-    src_path = File.join(File.dirname(@doc_path), 'js', "#{lesson}.js")
-
-    source_code :js, File.read(src_path)
-
-    h4 'How the game should work:'
-
-    canvas id: 'chunk-game', height: '600', width: '800'
-
-    script src: 'js/chunk.js'
-
-    script src: "js/#{lesson}.js"
-  end
-
   private
+
+  def _escaped str
+    ERB::Util.u(str)
+  end
 
   def _render_inner_content
     blockquote do

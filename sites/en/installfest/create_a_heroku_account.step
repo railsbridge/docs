@@ -22,7 +22,10 @@ step "Install the Heroku toolbelt" do
 
   verify do
     console "heroku version"
-    result "2.26.7 or higher"
+    fuzzy_result <<-TEXT
+      heroku-toolbelt/{FUZZY}3.30.6 (x86_64-darwin10.8.0) ruby/1.9.3{/FUZZY}
+      {FUZZY}You have no installed plugins.{/FUZZY}
+    TEXT
   end
   message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
 end
@@ -34,7 +37,7 @@ step "Add your SSH key to your Heroku account" do
 end
 
 section 'GitHub' do
-  message "Since by now you sould have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+  message "Since by now you should have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
 end
 
 next_step "create_a_rails_app"

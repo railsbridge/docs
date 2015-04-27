@@ -29,14 +29,14 @@ option "Generate an SSH key" do
 
   message "Press enter to accept the default key save location."
 
-  message "Next, you'll be asked for a keyphrase."
+  message "Next, you'll be asked for a passphrase."
 
-  h1 "Choose whether to use a keyphrase"
+  h1 "Choose whether to use a passphrase"
   blockquote do
-    option_half "No keyphrase" do
+    option_half "No passphrase" do
       message "Hit enter to accept blank passphrase, then hit enter again."
     end
-    option_half "Keyphrase" do
+    option_half "Passphrase" do
       message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
     end
   end
@@ -45,10 +45,10 @@ option "Generate an SSH key" do
 
   result <<-OUTPUT
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/student/.ssh/id_rsa): 
+Enter file in which to save the key (/Users/student/.ssh/id_rsa):
 Created directory '/Users/student/.ssh'.
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /Users/student/.ssh/id_rsa.
 Your public key has been saved in /Users/student/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -70,9 +70,9 @@ The key fingerprint is:
   console "ssh-add ~/.ssh/id_rsa"
 
   result <<-OUTPUT
-  Enter passphrase for /Users/student/.ssh/id_rsa:
-  Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
-    OUTPUT
+Enter passphrase for /Users/student/.ssh/id_rsa:
+Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
+  OUTPUT
 end
 
 next_step 'create_a_heroku_account'

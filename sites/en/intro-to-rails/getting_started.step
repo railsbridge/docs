@@ -24,11 +24,20 @@ steps do
 
   step do
     message "Check to see if you have any existing suggestotron apps from a previous workshop."
-    console "ls"
-    message "`ls` stands for **l**i**s**t."
-    message "It lists the contents of the current directory."
-    message "If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
-    console "rm -rf suggestotron"
+    option_half "OSX/Linux" do
+      console "ls"
+      message "`ls` stands for **l**i**s**t."
+      message "It lists the contents of the current directory."
+      message "If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+      console "rm -rf suggestotron"
+    end
+    option_half "Windows" do
+      console "dir"
+      message "`dir` stands for **dir**ectory."
+      message "It lists the contents of the current directory."
+      message "If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+      console "rmdir /s /q suggestotron"
+    end
   end
 
   step do

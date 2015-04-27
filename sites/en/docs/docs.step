@@ -28,16 +28,18 @@ site_desc 'frontend', <<-MARKDOWN
 HTML + CSS for beginners. Make a website, no server required!
 MARKDOWN
 
+h1 'Javascript'
+
 site_desc 'javascript-snake-game', <<-MARKDOWN
-A Javascript specific curriculum that walks you through building a simple game.
+A beginner Javascript specific curriculum that walks you through building a simple game.
 MARKDOWN
 
 site_desc 'javascript-to-do-list', <<-MARKDOWN
-An all JavaScript curriculum that builds a simple to do list application using AJAX and jQuery.
+An intermediate all JavaScript curriculum that builds a simple to do list application using AJAX and jQuery.
 MARKDOWN
 
 site_desc 'javascript-to-do-list-with-react', <<-MARKDOWN
-An all JavaScript curriculum that builds a simple to do list application using AJAX, jQuery, and React. Meant for
+An advanced all JavaScript curriculum that builds a simple to do list application using AJAX, jQuery, and React. Meant for
 students with some exposure to JavaScript.
 MARKDOWN
 

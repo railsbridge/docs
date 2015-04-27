@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/cookies'
 require 'digest/md5'
 require 'erector'
 require 'i18n'
@@ -42,6 +43,10 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   settings.assets.append_path "public/fonts"
   settings.assets.append_path Bootstrap.javascripts_path
   JqueryCdn.install(settings.assets)
+
+  if settings.environment == :development
+    set :cookie_options, domain: nil
+  end
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
@@ -105,6 +110,14 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
+  after '/:site/*' do
+    # Any real page (starts with a site and doesn't end with an extension)
+    # gets saved as the 'back' for the next pageload.
+    if sites.include?(params[:site]) && !request.fullpath.match(/\..+\z/)
+      cookies[:docs_back_path] = request.fullpath
+    end
+  end
+
   def dynamic_locale
     (params && (params[:locale] or params[:l])) or
       (host && AVAILABLE_LOCALES.include?(subdomain) && subdomain) or
@@ -130,6 +143,20 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
+  def back_path
+    path_parts = cookies[:docs_back_path].try(:split, '/')
+    return unless path_parts && path_parts.length > 2
+
+    current_path_parts = request.fullpath.split('/')
+    prev_site, prev_page = path_parts[1..2]
+    this_site, this_page = current_path_parts[1..2]
+
+    return unless prev_site == this_site
+    return if prev_page == this_page
+
+    prev_page
+  end
+
   def render_page
     begin
       options = {
@@ -137,7 +164,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         page_name: params[:name],
         doc_title: Titleizer.title_for_page(params[:name]),
         doc_path: doc_path,
-        back: params[:back],
+        back: back_path,
         src: src,
         locale: I18n.locale,
       }

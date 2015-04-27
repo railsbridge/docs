@@ -8,7 +8,7 @@ MARKDOWN
 
 step "Install packaged software and libraries" do
   message <<-MARKDOWN
-Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and firefox icons in the top panel.
+Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and Firefox icons in the top panel.
   MARKDOWN
 
   apts = %w{

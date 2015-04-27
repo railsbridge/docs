@@ -1,9 +1,11 @@
 require 'spec_helper'
-
+require "site"
 require "step_page"
 
 describe Step do
-  before { I18n.locale = :en }
+  before do
+    setup_test_translations
+  end
 
   def to_html nokogiri_node
     nokogiri_node.serialize(:save_with => 0).chomp
@@ -29,17 +31,11 @@ describe Step do
     html = to_html(steps.first)
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
     expected = <<-HTML.strip_heredoc.gsub("\n", '')
-      <div class="step" title="hello">
+      <div class="step">
       <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
       </div>
     HTML
     assert { html == expected }
-  end
-
-  it "puts titles in based on step names" do
-    steps = html_doc.css(".step")
-    assert { steps.first["title"] == "hello" }
-    assert { steps[1]["title"] == "goodbye" }
   end
 
   it "puts anchors in based on step numbers" do
@@ -72,16 +68,13 @@ describe Step do
       end
     RUBY
 
-    titles = html_doc.css('.step').map{|div| div["title"]}
-    assert { titles == %w(breakfast cereal eggs lunch salad sandwich) }
-
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
     assert { names == %w(step1 step1-1 step1-2 step2 step2-1 step2-2) }
   end
 
   describe 'link' do
-    it "passes in a back parameter, so the following page can come back here" do
+    it "creates a link" do
       html_doc(<<-RUBY)
         step "breakfast" do
           link "choose_breakfast"
@@ -91,9 +84,8 @@ describe Step do
           step "sandwich"
         end
       RUBY
-      a = html_doc.css(".step[title=breakfast] a.link").first
-      hash = URI.escape '#'
-      assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
+      a = html_doc.css(".step a.link").first
+      assert { a["href"] == "choose_breakfast" }
     end
 
     it "has an optional parameter for the caption" do
@@ -193,25 +185,6 @@ describe Step do
         <div>yum</div>
         <div>goodbye</div>
       HTML
-    end
-
-    it "crafts 'back' links that go back to the containing page rather than the partial itself" do
-      path = dir 'testing-insert-links' do
-        file "outer.step", <<-RUBY.strip_heredoc
-          div 'this is the outer page'
-          insert 'inner'
-        RUBY
-        file "_inner.step", <<-RUBY.strip_heredoc
-          div 'this is the inner page'
-          link 'somewhere_else'
-        RUBY
-      end
-
-      outer_path = File.join(path, 'outer.step')
-
-      page = Nokogiri.parse("<html>#{step_obj_for(outer_path).to_html}</html>")
-
-      assert { page.css('a').first[:href] == "somewhere_else?back=outer" }
     end
   end
 end

@@ -1,3 +1,5 @@
+message "Installing XCode is straightforward with one caveat. When it asks you about the components to install you need to make sure \"Unix Tools\" is selected. Other than that just click Continue/Okay/Yes/etc."
+
 step "Insert your OS X DVD or Thumb Drive"
 
 step "Locate Xcode.mpkg" do
@@ -11,15 +13,17 @@ end
 step "Keep on clicking..." do
  li 'Click "Continue" at the Introduction screen.'
  li 'Click "Continue" at the License screen.'
- li 'Click "Agree" in the popup to agree to the license.'
+ li 'Click "Agree" in the pop up to agree to the license.'
  li 'Click "Continue" at the Destination Select screen.'
  li "Click \"Continue\" at the Installation Type screen. (Don't change the checkboxes.)"
 end
 
 step 'Click "Install".' do
- message "Enter your user password in the popup to REALLY start installing. It takes a while."
+ message "Enter your user password in the pop up to REALLY start installing. It takes a while."
 end
 
 step 'Click "Close"' do
  message 'once you get "The installation was successful" on the Summary screen.'
 end
+
+next_step 'osx_rvm'

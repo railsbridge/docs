@@ -7,7 +7,7 @@ important <<-MARKDOWN
   MARKDOWN
 
 step "Download Sublime Text 2" do
-  message "Download the [Sublime Text 2 installer](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.dmg)."
+  message "Download the [Sublime Text 2 installer](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.dmg)."
 end
 
 step 'Select "Open with DiskImageMounter" in the file save dialog' do
@@ -15,7 +15,7 @@ step 'Select "Open with DiskImageMounter" in the file save dialog' do
 
   message "It will open an installer with a Sublime Text 2 icon and a picture of your Applications folder. Something like this:"
 
-  img src: 'img/install_sublime_text.png'
+  img src: 'img/install_sublime_text.png', alt: 'Contents of the sublime text package showing a sublime text icon and a shortcut to applications'
 
 end
 
