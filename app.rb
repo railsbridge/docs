@@ -98,7 +98,8 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   def redirect_sites
     {
-      'curriculum' => 'intro-to-rails'
+      'curriculum' => 'intro-to-rails',
+      'intermediate-rails' => 'message-board'
     }
   end
 
