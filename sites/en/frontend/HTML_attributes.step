@@ -50,7 +50,7 @@ hash, like this: `#intro`. Classes are indicated with a dot: `.special`
 ## When should I use a class, and when should I use an ID?
 
 **ID** attributes are unique labels, for identifying things you'll only ever have one
-of. For example, if you ran a news website, you might have an masthead element
+of. For example, if you ran a news website, you might have a masthead element
 that only appears once, so you could give it an id
 like `handsome-header`.
 
