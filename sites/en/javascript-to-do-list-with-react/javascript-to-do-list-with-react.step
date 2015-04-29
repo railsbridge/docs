@@ -45,7 +45,7 @@ When programming, you'll generally want these tools on hand:
   * A javascript console so you can experiment and print out debugging
   messages. This is built into your browser.
 
-Before you can start the tutorial, you'll need to <a href="https://github.com/raorao/AdvancedTodoList/archive/master.zip">download the tutorial</a>
+Before you can start the tutorial, you'll need to <a href="AdvancedTodoList.zip">download the tutorial</a>
 to your computer to edit the source code.
 
 Once you've downloaded it, open index.html with your browser. You should see a mock up of your list. If you do not, get an instructor to help you out.

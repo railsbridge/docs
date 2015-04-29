@@ -1,0 +1,38 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <h1>Your List App</h1>
+    <div id="app">
+      <form id='add-form'>
+        <input id="create" name="itemDescription" type="text" placeholder="Add something to the list!">
+      </form>
+      <ul id='list'>
+        <li class='item' data-id="1">
+          <span class='complete-button'>&#10004;</span>
+          <div class="description">A gallon of milk</div>
+          <span class="delete-button">&#10008;</span>
+        </li>
+        <li class='item completed' data-id="2">
+          <span class='complete-button'>&#10004;</span>
+          <div class="description">A stick of butter</div>
+          <span class="delete-button">&#10008;</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id='templates'>
+    <li class='item' data-id="some id">
+      <span class='complete-button'>&#10004;</span>
+      <div class="description">A stick of butter</div>
+      <span class="delete-button">&#10008;</span>
+    </li>
+  </div>
+
+  <script src="app.js"></script>
+</body>
