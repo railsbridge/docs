@@ -137,6 +137,7 @@ pluralize("kiwi")
 
   step do
     message "Putting it all together, let's make a method that says your opinion of some fruits:"
+    message "**Don't try to type this all in!** Just paste it into irb and see what happens."
     console_without_message <<-RUBY
 def my_opinion(fruits)
   fruits.each do |fruit|

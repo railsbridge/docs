@@ -166,20 +166,19 @@ bundle install --without production
 
   step "Visit your new application" do
 
-    message "In the browser, go to your application's URL. You'll need your Heroku application name."
-
-    tip "To find your Heroku application name" do
-      console "heroku info"
-    end
+    message "Now that the app is deployed, you can visit it in a browser."
 
     tip "To quickly open your heroku application in a browser" do
       console "heroku open"
     end
 
-    message "The URL for your app is <code>*application-name*.heroku.com</code> -- so with the example output in the previous step, it would be <code>floating-winter-18.heroku.com</code>. Verify you see the welcome page. Leave this browser window open."
+    message "The URL for your app is <code>*application-name*.heroku.com</code> -- something like <code>floating-winter-18.heroku.com</code>."
+
+    message "Verify you see the welcome page. Leave this browser window open."
 
     message "Create and save a new drink to verify you can write to the database on Heroku."
 
+    message "If you want to see a little more info about your app, you can run `heroku info`."
   end
 end
 

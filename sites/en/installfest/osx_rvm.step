@@ -49,7 +49,7 @@ step "Install Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
-    fuzzy_result "Rails 4.{FUZZY}1.x{/FUZZY}"
+    fuzzy_result "Rails 4.{FUZZY}2.x{/FUZZY}"
   end
 end
 

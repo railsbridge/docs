@@ -45,7 +45,7 @@ step "Create a new Rails app" do
 
   fuzzy_result <<-TEXT
     => Booting WEBrick
-    => Rails 4.{FUZZY}1.x{/FUZZY} application starting in development on http://0.0.0.0:3000
+    => Rails 4.{FUZZY}2.x{/FUZZY} application starting in development on http://0.0.0.0:3000
     => Call with -d to detach
     => Ctrl-C to shutdown server
     [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
