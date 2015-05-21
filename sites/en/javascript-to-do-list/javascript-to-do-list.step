@@ -40,7 +40,7 @@ When programming, you'll generally want these tools on hand:
   * Your browser to see the code running (I recommend Chrome, but any will do!)
   * A text editor to change the code (I recommend <a
     href="http://www.sublimetext.com/">Sublime</a>)
-  * A javascript console so you can experiment and print out debugging
+  * A Javascript console so you can experiment and print out debugging
   messages. This is built into your browser.
 
 Before you can start the tutorial, you'll need to <a href="IntermediateTodoList.zip">download the tutorial</a>
