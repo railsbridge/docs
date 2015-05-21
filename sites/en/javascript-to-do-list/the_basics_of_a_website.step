@@ -43,7 +43,7 @@ MARKDOWN
 
   step do
     message <<MARKDOWN
-Next, we'll be editing out site's look by modifying our CSS. open up styles.css in your text editor.
+Next, we'll be editing our site's look by modifying our CSS. Open up styles.css in your text editor.
 Each set of curly braces is a __rule__. It's preceded by a __selector__ that identifies certain HTML
 elements on the page. Inside the braces are the rule's __attributes__. Your web browser uses these
 attributes to determine how to display your html.
