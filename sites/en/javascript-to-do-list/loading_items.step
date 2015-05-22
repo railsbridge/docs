@@ -6,7 +6,7 @@ end
 overview do
   message <<-MARKDOWN
     Last lesson, we made AJAX requests in the browser's console to load all of
-    our list's items. Now, we'll tie that AJAX request to our web site! Here's what will happen.
+    our lists items. Now, we'll tie that AJAX request to our web site! Here's what will happen.
 
       1. Every time a user visits our site, the browser will run the JavaScript in app.js.
       2. It will use jQuery's AJAX method to make a request to http://listalous.herokuapp.com/ and
@@ -93,8 +93,8 @@ explanation do
   JAVASCRIPT
 
   message <<-MARKDOWN
-You've web page has made its first successful AJAX request! Now, your page will
-load your list's items whenever you visit it. Once we host this page on the internet,
+Your web page has made its first successful AJAX request! Now your page will
+load your lists items whenever you visit it. Once we host this page on the internet,
 you will be able to see your list on any computer, tablet, or phone!
   MARKDOWN
 end
