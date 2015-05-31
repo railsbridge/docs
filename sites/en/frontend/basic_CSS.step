@@ -94,12 +94,12 @@ When you save and refresh your browser, you should see the styles you added:
 
 <img src='img/hello_style.png'>
 
-The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed.
+The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is HTML/CSS, and that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed).
 
 To visualize the relations between elements of **Content**, **Padding**, **Border**, and **Margin**, otherwise known as the CSS Box Model, here is an example of how this fits in:
 
 <img src='img/boxmodel.png'>
- 
+
     MARKDOWN
   end
 
@@ -124,4 +124,3 @@ Here are two screen shots of the same HTML page, but on the right side, we've tu
 end
 
 next_step "HTML_attributes"
-
