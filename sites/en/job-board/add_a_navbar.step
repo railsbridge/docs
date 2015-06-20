@@ -51,11 +51,11 @@ message <<-MARKDOWN
 
   # Add the styles
 
-  Open up the assets directory, and you should have a file here: app/assets/stylesheets/jobs.css.scss. This is a Rails-default created stylesheet, and isn't the best. [Smart CSS people](http://www.stubbornella.org/content/2013/09/12/rails-is-mucking-up-my-css-already/) have taught us that CSS should be organized into [reusable components](https://github.com/stubbornella/oocss/wiki), not organized based on where it is used.
+  Open up the assets directory, and you should have a file here: app/assets/stylesheets/jobs.scss. This is a Rails-default created stylesheet, and isn't the best. [Smart CSS people](http://www.stubbornella.org/content/2013/09/12/rails-is-mucking-up-my-css-already/) have taught us that CSS should be organized into [reusable components](https://github.com/stubbornella/oocss/wiki), not organized based on where it is used.
 
   So let's delete that file and make a new one.
 
-  Actually, we're going to make two new ones. Under `app/assets/stylesheets`, add `global.css.scss`:
+  Actually, we're going to make two new ones. Under `app/assets/stylesheets`, add `global.scss`:
 MARKDOWN
 
 source_code :CSS,
@@ -77,7 +77,7 @@ CSS
 message <<-MARKDOWN
   This is where we put styles that affect the whole app.
 
-  Now, under `app/assets/stylesheets`, add `nav.css.scss`:
+  Now, under `app/assets/stylesheets`, add `nav.scss`:
 MARKDOWN
 
 source_code :CSS,
