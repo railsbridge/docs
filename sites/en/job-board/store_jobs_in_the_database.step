@@ -39,7 +39,7 @@ source_code :ruby, <<-RUBY
     def change
       create_table :jobs do |t|
 
-        t.timestamps
+        t.timestamps null: false
       end
     end
   end
@@ -55,7 +55,7 @@ source_code :ruby, <<-RUBY
   create_table :jobs do |t|
     t.text :title
     t.text :description
-    t.timestamps
+    t.timestamps null: false
   end
 RUBY
 
