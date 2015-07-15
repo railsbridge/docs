@@ -7,6 +7,8 @@
 
 ### Teacher Training
 * [Teacher Training Deck](more_teacher_training)
+* [Teacher Cheat Sheet](teacher_cheat_sheet) - A TL;DR version of the deck
+* [TA Cheat Sheet](ta_cheat_sheet) - A doc geared especially for first-time TAs
 
 # Materials for Organizers
 
