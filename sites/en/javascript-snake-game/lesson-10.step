@@ -2,7 +2,7 @@
 
 markdown <<-MARKDOWN
   To make the tail follow the head, we're going to assign the direction of the
-  segment furher forward in snake to the current segment when it moves. This way
+  segment further forward in snake to the current segment when it moves. This way
   all segments follow the same path!
 
   Let's define a new function called `segmentFurtherDown` which takes a

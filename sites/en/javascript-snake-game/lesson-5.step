@@ -14,7 +14,7 @@ markdown <<-MARKDOWN
   }
   ```
 
-  To get this function running we'll use our CHUNK game engine to CALL the `executeNTimesPerSecond` function. It does exactly that, to do this `executeNTimesPerSecond` takes in two arguments. The first arugement advances the game, and the second tells it how many times to move per-second.
+  To get this function running we'll use our CHUNK game engine to CALL the `executeNTimesPerSecond` function. It does exactly that, to do this `executeNTimesPerSecond` takes in two arguments. The first argument advances the game, and the second tells it how many times to move per-second.
 
   ```js
   CHUNK.executeNTimesPerSecond(advanceGame, 1);

@@ -20,7 +20,7 @@ markdown <<-MARKDOWN
 
     if (ate(newSnake, snake)) {
       CHUNK.endGame();
-      CHUNK.flashMessage("Woops! You ate yourself!");
+      CHUNK.flashMessage("Whoops! You ate yourself!");
     }
 
     if (ate(newSnake, [apple])) {
@@ -30,7 +30,7 @@ markdown <<-MARKDOWN
 
     if (ate(newSnake, CHUNK.gameBoundaries())) {
       CHUNK.endGame();
-      CHUNK.flashMessage("Woops! you hit a wall!");
+      CHUNK.flashMessage("Whoops! you hit a wall!");
     }
 
     snake = newSnake;
@@ -38,7 +38,7 @@ markdown <<-MARKDOWN
   }
   ```
 
-  Notice, we've abstracted out the `ate` function by resuing it. It can now determine if the snake ate itself, an apple or the wall.
+  Notice, we've abstracted out the `ate` function by reusing it. It can now determine if the snake ate itself, an apple or the wall.
   
   If your snake no longer moves after this step, make sure that you assigned `snake = newSnake` in the `advanceGame` function.
 MARKDOWN

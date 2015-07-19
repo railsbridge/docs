@@ -51,7 +51,7 @@ var advanceGame = function() {
 
   if (ate(newSnake, snake)) {
     CHUNK.endGame();
-    return CHUNK.flashMessage("Woops! You ate yourself!");
+    return CHUNK.flashMessage("Whoops! You ate yourself!");
   }
   // Now we just have to check if the newSnake ate it's previous self to see if
   // there was a collision!
@@ -63,7 +63,7 @@ var advanceGame = function() {
 
   if (ate(newSnake, CHUNK.gameBoundaries())) {
     CHUNK.endGame();
-    return CHUNK.flashMessage("Woops! you hit a wall!");
+    return CHUNK.flashMessage("Whoops! you hit a wall!");
   }
 
   snake = newSnake;
