@@ -34,7 +34,7 @@ var moveSnake = function(snake) {
 
 var growSnake = function(snake) {
   var indexOfLastSegment = snake.length - 1;
-  var lastSegment = snake[snake.length - 1];
+  var lastSegment = snake[indexOfLastSegment];
   snake.push({ top: lastSegment.top, left: lastSegment.left });
   return snake;
 }
