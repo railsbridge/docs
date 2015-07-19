@@ -39,6 +39,8 @@ markdown <<-MARKDOWN
   ```
 
   Notice, we've abstracted out the `ate` function by resuing it. It can now determine if the snake ate itself, an apple or the wall.
+  
+  If your snake no longer moves after this step, make sure that you assigned `snake = newSnake` in the `advanceGame` function.
 MARKDOWN
 
 js_expected_results 'lesson-13'
