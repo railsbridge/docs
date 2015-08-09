@@ -46,4 +46,4 @@ end
 
 insert 'consider_deploying_to_github'
 
-next_step "basic_javascript"
+next_step "programming_with_javascript"
