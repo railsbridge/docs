@@ -21,7 +21,7 @@ steps do
     message "Open up your browser's developer tools, and click over to the console tab. Type the following code:"
 
     source_code :javascript, <<-JAVASCRIPT
-      console.log('programming!')
+      console.log('programming!');
     JAVASCRIPT
 
     message <<-MARKDOWN
@@ -38,8 +38,8 @@ use the __alert__ function to make a message pop up in the browser. Try it out!
     message "Next try some simple math that's built into JavaScript. Type these lines into console:"
 
     source_code :javascript, <<-JAVASCRIPT
-      3 + 3
-      7 * 6
+      3 + 3;
+      7 * 6;
     JAVASCRIPT
   end
 
@@ -47,7 +47,7 @@ use the __alert__ function to make a message pop up in the browser. Try it out!
     message "**Variables** are names with values assigned to them."
 
     source_code :javascript, <<-JAVASCRIPT
-      var myVariable = 5
+      var myVariable = 5;
     JAVASCRIPT
 
     message "This assigns the value `5` to the name `myVariable`."
@@ -56,15 +56,15 @@ use the __alert__ function to make a message pop up in the browser. Try it out!
   step do
     message "You can also do math with variables:"
     source_code :javascript, <<-JAVASCRIPT
-      myVariable + 2
-      myVariable * 3
+      myVariable + 2;
+      myVariable * 3;
     JAVASCRIPT
   end
 
   step do
     message "Variables can also hold more than one value. This is called an **array**."
 
-    source_code :javascript, 'var fruits = ["kiwi", "strawberry", "plum"]'
+    source_code :javascript, 'var fruits = ["kiwi", "strawberry", "plum"];'
 
     message "Here we're using the variable `fruits` to hold a collection of fruit names."
   end
@@ -73,7 +73,7 @@ use the __alert__ function to make a message pop up in the browser. Try it out!
     message "Arrays are a type of __object__ in JavaScript. Objects often include helpful attributes!"
 
     source_code :javascript, <<-JAVASCRIPT
-      fruits.length
+      fruits.length;
     JAVASCRIPT
 
     message <<-MARKDOWN
@@ -82,8 +82,8 @@ Functions are __invoked__ with parentheses, which causes them to run.
     MARKDOWN
 
     source_code :javascript, <<-JAVASCRIPT
-      fruits.push("orange")
-      fruits.slice(1)
+      fruits.push("orange");
+      fruits.slice(1);
     JAVASCRIPT
 
     message <<-MARKDOWN
@@ -98,9 +98,9 @@ slice returned an array with everything after the first element in the array. (N
 
     source_code :javascript, <<-JAVASCRIPT
       var pluralize = function(word) {
-        return word + "s"
+        return word + "s";
       }
-      pluralize("kiwi")
+      pluralize("kiwi");
     JAVASCRIPT
 
     message "Functions take **parameters**, which are the variables they work on. In this case, we made a function called pluralize that takes one parameter, a word."
@@ -113,7 +113,7 @@ slice returned an array with everything after the first element in the array. (N
     message "Arrays have a function called **forEach** which iterates through the list running code on each item. It takes another function as a parameter."
     source_code :javascript, <<-JAVASCRIPT
       fruits.forEach(function(fruit) {
-        console.log(fruit)
+        console.log(fruit);
       })
     JAVASCRIPT
     message "This takes the first item from the `fruits` array (`\"strawberry\"`), assigns it to the variable `fruit`, and runs the code between curly brackets. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
@@ -124,7 +124,7 @@ slice returned an array with everything after the first element in the array. (N
 
     source_code :javascript, <<-JAVASCRIPT
       if(myVariable > 1) {
-        console.log('YAY')
+        console.log('YAY');
       }
     JAVASCRIPT
 
