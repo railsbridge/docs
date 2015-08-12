@@ -67,7 +67,7 @@ with your name of choice. Note: it has to be unique! I'd suggest using your gith
     JAVASCRIPT
 
     message <<-MARKDOWN
-Now click over to your browser's network tab. It should look something like this.
+Now click over to your browser's network tab. Next to the 'filter' box, click on either the 'All' tab or 'XHR'. Below that, click on the 'Response' tab. It should look something like this:
 
 <img src='img/network_tab.png' alt="image of chrome's network tab.">
 
