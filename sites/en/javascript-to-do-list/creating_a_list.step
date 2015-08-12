@@ -71,7 +71,7 @@ Now click over to your browser's network tab. Next to the 'filter' box, click on
 
 <img src='img/network_tab.png' alt="image of chrome's network tab.">
 
-Find the request to listalous.herokuapp.com. Was it successful? If not, why
+Find the request to listalous.herokuapp.com and click on it. Was it successful? If not, look in the console and read the error message. Why
 do you think it failed? Once you've successfully created a list, move on to the next step.
     MARKDOWN
   end
