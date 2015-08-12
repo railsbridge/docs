@@ -67,11 +67,11 @@ with your name of choice. Note: it has to be unique! I'd suggest using your gith
     JAVASCRIPT
 
     message <<-MARKDOWN
-Now click over to your browser's network tab. It should look something like this.
+Now click over to your browser's network tab. Next to the 'filter' box, click on either the 'All' tab or 'XHR'. Below that, click on the 'Response' tab. It should look something like this:
 
 <img src='img/network_tab.png' alt="image of chrome's network tab.">
 
-Find the request to listalous.herokuapp.com. Was it successful? If not, why
+Find the request to listalous.herokuapp.com and click on it. Was it successful? If not, look in the console and read the error message. Why
 do you think it failed? Once you've successfully created a list, move on to the next step.
     MARKDOWN
   end
