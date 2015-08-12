@@ -62,12 +62,12 @@ steps do
     MARKDOWN
 
     source_code :javascript, <<-JAVASCRIPT
-      item = { description: 'a new item', id: 9000, completed: false}
-      addItemToPage(item)
+      var orange = { description: 'Orange', id: 9000, completed: false }
+      addItemToPage(orange)
     JAVASCRIPT
 
       message <<-MARKDOWN
-  Your list should now have a new item!
+  Your list should now have an orange!
     MARKDOWN
   end
 
