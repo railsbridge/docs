@@ -27,8 +27,8 @@ steps do
     MARKDOWN
 
     source_code :javascript, <<-JAVASCRIPT
-     var itemTemplate = $('#templates .item')
-     var list         = $('#list')
+     var itemTemplate = $('#templates .item');
+     var list         = $('#list');
     JAVASCRIPT
 
     message <<-MARKDOWN
