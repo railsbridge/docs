@@ -95,11 +95,11 @@ the id of an item in a data-id attribute, that is not used for styling, just for
 
 * __.addClass()__ allows you to add a class to an element.
 
-* __.append()__ takes an element, and attaches it to the end of another element! That way, your element
+* __.append()__ takes an element and attaches it to the end of another element! That way, your element
 will actually show up on the page.
 
-There are many other  jQuery functions that are helpful – we'll use more as we go along. In the meantime,
-play around with in developer console and see what you can change on the page using JavaScript and jQuery!
+There are many other jQuery functions that are helpful – we'll use more as we go along. In the meantime,
+play around in the developer console and see what you can change on the page using JavaScript and jQuery!
   MARKDOWN
 end
 
