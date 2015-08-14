@@ -35,14 +35,14 @@ describe Step do
       <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
       </div>
     HTML
-    assert { html == expected }
+    expect(html).to eq(expected)
   end
 
   it "puts anchors in based on step numbers" do
     steps = html_doc.css(".step")
     steps.each_with_index do |step, i|
-      assert { step.previous }
-      assert { to_html(step.previous) == "<a name=\"step#{i+1}\"></a>" }
+      expect(step.previous).to be_truthy
+      expect(to_html(step.previous)).to eq("<a name=\"step#{i+1}\"></a>")
     end
   end
 
@@ -53,7 +53,7 @@ describe Step do
 
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
-    assert { names == %w(step1 happy_step) }
+    expect(names).to eq(%w(step1 happy_step))
   end
 
   it "nests anchor numbers" do
@@ -70,7 +70,7 @@ describe Step do
 
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
-    assert { names == %w(step1 step1-1 step1-2 step2 step2-1 step2-2) }
+    expect(names).to eq(%w(step1 step1-1 step1-2 step2 step2-1 step2-2))
   end
 
   describe 'link' do
@@ -85,7 +85,7 @@ describe Step do
         end
       RUBY
       a = html_doc.css(".step a.link").first
-      assert { a["href"] == "choose_breakfast" }
+      expect(a["href"]).to eq("choose_breakfast")
     end
 
     it "has an optional parameter for the caption" do
@@ -94,7 +94,7 @@ describe Step do
         link "breakfast", caption: "Eat some"
       end
       RUBY
-      assert { html_doc.css("p.link").text == "Eat some Breakfast" }
+      expect(html_doc.css("p.link").text).to eq("Eat some Breakfast")
     end
   end
 
@@ -103,14 +103,14 @@ describe Step do
       html_doc(<<-RUBY)
         source_code "x = 2"
       RUBY
-      assert { @html == "<pre class=\"code\">x = 2</pre>" }
+      expect(@html).to eq("<pre class=\"code\">x = 2</pre>")
     end
 
     it "emits a block of code with a language directive" do
       html_doc(<<-RUBY)
         source_code :ruby, "x = 2"
       RUBY
-      assert { @html == "<pre class=\"code\">\n:::ruby\nx = 2</pre>" }
+      expect(@html).to eq("<pre class=\"code\">\n:::ruby\nx = 2</pre>")
     end
   end
 

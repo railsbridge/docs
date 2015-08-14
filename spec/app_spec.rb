@@ -32,32 +32,32 @@ describe InstallFest do
   def get! *args
     get *args
     follow_redirect! while last_response.redirect?
-    assert { last_response.status == 200 }
+    expect(last_response.status).to eq(200)
   end
 
   it "is a sinatra app" do
     get '/'
-    assert { true_app.is_a? InstallFest }
-    assert { true_app.class.ancestors.include? Sinatra::Application }
+    expect(true_app).to be_a(InstallFest)
+    expect(true_app.class.ancestors).to include(Sinatra::Application)
   end
 
   it "redirects / to the default site" do
     get! "/"
-    assert { last_request.path == "/docs/" }
+    expect(last_request.path).to eq("/docs/")
   end
 
   it "redirects /site to /site/" do
     get! "/installfest"
-    assert { last_request.path == "/installfest/" }
+    expect(last_request.path).to eq("/installfest/")
   end
 
   it "redirects /site/page/ to /site/page" do
     get! "/installfest/linux/"
-    assert { last_request.path == "/installfest/linux" }
+    expect(last_request.path).to eq("/installfest/linux")
   end
 
   it "has a default site" do
-    assert { true_app.default_site == "docs" }
+    expect(true_app.default_site).to eq("docs")
   end
 
   describe "settings" do
@@ -68,23 +68,23 @@ describe InstallFest do
     describe "learns the locale from" do
       it "the locale parameter" do
         true_app.params = {locale: 'es'}
-        assert { true_app.dynamic_locale == 'es' }
+        expect(true_app.dynamic_locale).to eq('es')
       end
 
       it "the l parameter" do
         true_app.params = {l: 'es'}
-        assert { true_app.dynamic_locale == 'es' }
+        expect(true_app.dynamic_locale).to eq('es')
       end
 
       it "the subdomain" do
         true_app.request = Rack::Request.new({"HTTP_HOST" => "es.example.com"})
-        assert { true_app.dynamic_locale == 'es' }
+        expect(true_app.dynamic_locale).to eq('es')
       end
 
       it "the SITE_LOCALE environment var" do
         begin
           ENV["SITE_LOCALE"] = "es"
-          assert { true_app.dynamic_locale == 'es' }
+          expect(true_app.dynamic_locale).to eq('es')
         ensure
           ENV["SITE_LOCALE"] = nil
         end
@@ -94,9 +94,9 @@ describe InstallFest do
 
   it "looks for a site named the same as the host" do
     get "/", {}, {"HTTP_HOST" => "docs.example.com"}
-    assert { last_response.redirect? }
+    expect(last_response).to be_redirect
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/docs/" }
+    expect(last_request.path).to eq("/docs/")
   end
 
   describe "in the 'es' locale" do
@@ -104,7 +104,7 @@ describe InstallFest do
       get "/", locale: "es"
 
       es_dir = File.expand_path(File.join(__FILE__, "..", "..", "sites", "es"))
-      assert { true_app.sites_dir == es_dir }
+      expect(true_app.sites_dir).to eq(es_dir)
     end
 
   end

@@ -5,9 +5,7 @@ include MediaWiki
 
 describe "mw2md" do
   it "converts [[]]" do
-    assert {
-      mw2md("[[OS X 10.7 (Lion)]]") == "[OS X 10.7 Lion](os_x_10_7_lion)"
-    }
+    expect(mw2md("[[OS X 10.7 (Lion)]]")).to eq("[OS X 10.7 Lion](os_x_10_7_lion)")
   end
 end
 

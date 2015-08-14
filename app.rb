@@ -9,9 +9,6 @@ require 'bootstrap-sass'
 require 'zip'
 require 'tmpdir'
 
-#require 'wrong'
-#include Wrong::D
-
 here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
 $: << lib

@@ -41,10 +41,10 @@ describe "Syntax check all sites" do
               end
 
               last_response_status = last_response.status
-              assert { last_response_status == 200 }
+              expect(last_response_status).to eq(200)
 
               if doc.filename.end_with?('.step')
-                assert { last_response.body !~ /FUZZY/ }
+                expect(last_response.body).not_to match(/FUZZY/)
               end
             end
           end

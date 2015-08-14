@@ -52,7 +52,6 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     polyglot (0.3.5)
-    predicated (0.2.6)
     rack (1.6.0)
     rack-codehighlighter (0.5.0)
       nokogiri (>= 1.4.1)
@@ -81,14 +80,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    ruby2ruby (2.1.4)
-      ruby_parser (~> 3.1)
-      sexp_processor (~> 4.0)
-    ruby_parser (3.6.6)
-      sexp_processor (~> 4.1)
     rubyzip (1.1.7)
     sass (3.4.13)
-    sexp_processor (4.5.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -115,12 +108,6 @@ GEM
     trollop (2.1.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    wrong (0.7.1)
-      diff-lcs (~> 1.2.5)
-      predicated (~> 0.2.6)
-      ruby2ruby (>= 2.0.1)
-      ruby_parser (>= 3.0.1)
-      sexp_processor (>= 4.0)
 
 PLATFORMS
   ruby
@@ -150,4 +137,3 @@ DEPENDENCIES
   sinatra-contrib (~> 1.4.0)
   sprockets
   thin
-  wrong (~> 0.7.0)

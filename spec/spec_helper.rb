@@ -3,7 +3,6 @@ top = File.expand_path "#{here}/.."
 $: << "#{top}/lib"
 
 require "rspec"
-require "wrong/adapters/rspec"
 require "nokogiri"
 require "files"
 require 'active_support/core_ext/string/strip'
@@ -11,7 +10,7 @@ require 'active_support/core_ext/string/strip'
 Dir[File.join(top, "spec/support/**/*.rb")].each {|f| require f}
 
 def assert_loosely_equal lhs, rhs
-  assert { lhs.gsub(/\n\s*/, '') == rhs.gsub(/\n\s*/, '') }
+  expect(lhs.gsub(/\n\s*/, '')).to eq(rhs.gsub(/\n\s*/, ''))
 end
 
 RSpec.configure do |c|
