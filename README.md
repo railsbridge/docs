@@ -20,7 +20,7 @@ These files can be in any of these formats:
 ## Usage
 
     bundle install
-    rake run
+    bundle exec rake run
 
 If the above fails (say, because `rerun` doesn't work on your system), try
 
@@ -30,13 +30,13 @@ Then open <http://localhost:9292> in a web browser, and verify that you can navi
 
 ## Locales
 
-To serve sites from "sites/en", use `rake run` or a vanilla deploy.
+To serve sites from "sites/en", use `bundle exec rake run` or a vanilla deploy.
 
 To server sites from another locale (say, "es" or Spanish)...
 
 ### Run Localized Site Locally
 
-    $ SITE_LOCALE=es rake run
+    $ SITE_LOCALE=es bundle exec rake run
 
 The server listens on `0.0.0.0:9292`.
 

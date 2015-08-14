@@ -27,7 +27,7 @@ maintainers to love you. :heart:*
 
 ## Before Submitting
 
-- Please, please, *please* run `rake` from the terminal before you submit. It
+- Please, please, *please* run `bundle exec rake` from the terminal before you submit. It
   not only runs our test suite but also checks the docs for syntax errors.
 
 - Push to a branch on GitHub. Just like you developed in a local branch, you
