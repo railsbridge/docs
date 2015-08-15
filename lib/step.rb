@@ -314,7 +314,7 @@ class Step < Erector::Widget
   end
 
   def md2html text
-    MarkdownRenderer.render(text)
+    MARKDOWN_RENDERER.render(text)
   end
 
   private

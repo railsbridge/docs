@@ -91,9 +91,9 @@ step do
 end
 
 step do
-  message "The problem with our program currently is that it is too clunky. Whenever you write code, think about how you want it to be used - either by you, a user, or even another programmer that might want to adapt your work further down the line. We should strive to write code that is readable, and mainainable."
+  message "The problem with our program currently is that it is too clunky. Whenever you write code, think about how you want it to be used - either by you, a user, or even another programmer that might want to adapt your work further down the line. We should strive to write code that is readable, and maintainable."
 
-  message "Right now, our program is one big method, and that is not very good for readability or maintability. Lets organize this a little more thoughtfully, and make a class that contains this behavior."
+  message "Right now, our program is one big method, and that is not very good for readability or maintainability. Lets organize this a little more thoughtfully, and make a class that contains this behavior."
 
   type_in_file 'roller.rb', <<-'CONTENTS'
   class Die

@@ -64,7 +64,7 @@ puts 'This code is in a file!'
 some_variable = 19
 puts "I stored a variable with the value #\{some_variable\}!"
 CONTENTS
-  message "**my_program.rb** was saved in plain text - you see exactlty what you
+  message "**my_program.rb** was saved in plain text - you see exactly what you
     typed.  If this were a Word document, you would see a screenful of weird
     characters and formatting, and you would get errors when you ran it."
 end

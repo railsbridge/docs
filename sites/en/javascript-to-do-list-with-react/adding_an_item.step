@@ -12,7 +12,7 @@ a new item for our list, and ask the server to save it to the database.
 To do so, we're going to use JavaScript's ability to perform a task when a
 user has taken an action on the page. JavaScript refers to these actions as
 __events__. React makes it easy to listen to these events, and cause the page
-to change when nevessary.
+to change when necessary.
 
 Our code will take the following steps.
 

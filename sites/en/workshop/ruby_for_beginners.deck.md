@@ -649,7 +649,7 @@ Topics:
 
 * Commandline program. Practice in Ruby syntax and OOP concepts, and creating commandline programs.
 
-* Explore strings: concatenation, manipulation, interpolation, coersion.
+* Explore strings: concatenation, manipulation, interpolation, coercion.
 
 * Symbols, nil, basic math operators, blocks, method chaining, passing parameters to methods, iteration, branching, conditionals & conditional looping.
 

@@ -14,7 +14,7 @@ TRYME
   message "You'll notice that `1.class` and `1.0.class` are actually 2 different
     kinds of objects."
   message "With that in mind, let's see how that plays into performing
-    arithmetic opertions."
+    arithmetic operations."
 end
 
 step do

@@ -9,6 +9,6 @@ class MarkdownPage < DocPage
   end
 
   def doc_content
-    rawtext MarkdownRenderer.render(src)
+    rawtext MARKDOWN_RENDERER.render(src)
   end
 end

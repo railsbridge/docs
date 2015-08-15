@@ -12,7 +12,7 @@ MARKDOWN
 
 source_code :html, "job_path   DELETE   /jobs/:id(.:format)   jobs#destroy"
 
-message "So we need to send the DELETE http verb to the server, so we can get to the destory method on the jobs controller (that we will make soon). It turns out rails link_to helpers accept specific verbs as an argument, so we can add this line below the edit posting link that we just added:"
+message "So we need to send the DELETE http verb to the server, so we can get to the destroy method on the jobs controller (that we will make soon). It turns out rails link_to helpers accept specific verbs as an argument, so we can add this line below the edit posting link that we just added:"
 
 source_code :erb, "<h5><%= link_to 'Delete Posting', job, method: :delete %></h5>"
 
