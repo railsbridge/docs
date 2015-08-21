@@ -55,7 +55,7 @@ IRB
     message "What happened?"
     irb "word.class"
     message "`word` was set to nil. Let's look at the alphabetized list of methods the Nil class has."
-    irb "word.method.sort"
+    irb "word.methods.sort"
     message "The error message told us Nil doesn't have a method called upcase."
 
 end
