@@ -186,4 +186,4 @@ step "Install a Text Editor" do
   message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
 end
 
-next_step "configure_git"
+next_step "create_a_heroku_account"
