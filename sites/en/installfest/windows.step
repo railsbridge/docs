@@ -149,7 +149,7 @@ step "Sanity Check" do
   fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
 
   console "git --version"
-  fuzzy_result "git version 1.9.5{FUZZY}.msysgit.0{/FUZZY}"
+  fuzzy_result "git version 2{FUZZY}.5.0.windows.1{/FUZZY}"
 end
 
 step "Configure the Windows Terminal" do
