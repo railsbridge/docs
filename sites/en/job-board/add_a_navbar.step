@@ -24,9 +24,8 @@ message <<-MARKDOWN
   Add the following code **above** the line `<%= yield %>`
 MARKDOWN
 
-source_code :erb,
-  <<-ERB
-  <header>
+source_code :erb, <<-ERB
+  <header class='clearfix'>
     <div class="left-nav">
       <ul>
         <li><%= link_to "Home", jobs_path %></li>
@@ -37,9 +36,18 @@ source_code :erb,
         <li><%= link_to "Add Job", new_job_path %></li>
       </ul>
     </div>
-    <div class="clearfix"></div>
   </header>
   ERB
+
+message <<-MARKDOWN
+  Additionally, wrap the `<%= yield %>` in a containing wrapper div so it looks like this:
+MARKDOWN
+
+source_code :erb, <<-ERB
+  <div class='content'>
+    <%= yield %>
+  </div>
+ERB
 
 message <<-MARKDOWN
   Things to note:
@@ -70,7 +78,7 @@ source_code :CSS,
   }
 
   .clearfix {
-    clear: both;
+    overflow: hidden;
   }
 CSS
 
