@@ -83,7 +83,7 @@ ERB
 message "Refresh the page."
 
 error_box "First argument in form cannot contain nil or be empty"
-source_code_with_message "It looks like we don't have a job ... because we haven't gotten our job out of the database! Let's go to the jobs_controller and fix that. In jobs_controller.rb, add the following", :ruby,
+source_code_with_message "It looks like we don't have a job ... because we haven't gotten our job out of the database! Let's go to the jobs\\_controller and fix that. In jobs\\_controller.rb, add the following", :ruby,
 <<-RUBY
   def edit
     @job = Job.find(params[:id])
