@@ -76,7 +76,7 @@ Each lesson will look like this:
   <div class="goals">
     <h1>Goal:</h1>
     <p>Description of the current step.
-    <p>Red because big goals are scary.
+    <p>Red because big goals it's important.
   </div>
   <div class="steps">
     <h1>Steps:</h1>
@@ -87,11 +87,11 @@ def code_to_write
   1 + 1
 end</pre>
     </div>
-    <p>Yellow because we've gotten it done, but we have no clue what's going on.
+    <p>Yellow because we've gotten it done, but we're not sure yet what's going on.
   </div>
   <div class="explanation">
     <h1>Explanation</h1>
-    <p>Details of what the steps actually did... spell out the cause and effect.
+    <p>Details of what the steps actually did, explaining the cause and effect.
     <p>Green because we can tie everything together now.
   </div>
 </div>
