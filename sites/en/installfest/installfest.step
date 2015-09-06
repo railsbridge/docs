@@ -38,13 +38,13 @@ step "Read This Overview" do
 
 You will be installing the following tools:
 
-* Ruby
-* Rails
-* Git
-* GitHub (optional)
-* Heroku
-* Sublime Text 2 (or [some editor](editors))
-* Various useful "ruby gems", including...
+* **Ruby**. A programming language.
+* **Rails**. A framework for making web applications with Ruby. It does a lot of the setting up work for you and creates a model-view-controller structure for your web application. We'll go into more detail about that later.
+* **Git**. A revision or source control system. It creates a repository, which is a complete history of your programming changes, so you can undo changes and roll back to previous versions of your work if something has gone wrong.
+* **GitHub**. (optional)
+* **Heroku**. An application server, which hosts your application during development. This allows you to get your application online and interact with it from any browser, instead of just on your local machine.
+* **Sublime Text 2** (or [some other editor](editors)). To write programs in Ruby, you need a text editor to create, edit and save Ruby files.
+* Various useful "**Ruby gems**". Ruby gems are useful bits of Ruby code that someone has created for reuse, so you don't have to write it yourself. Including...
   * bundler
   * sqlite
 
