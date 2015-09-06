@@ -1,5 +1,7 @@
 message "`cd` stands for change directory."
 
+message "If you are still in `irb`, type `quit` to exit."
+
 div do
   option_half "Windows" do
     console "cd c:\\Sites"
