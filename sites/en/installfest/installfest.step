@@ -1,5 +1,7 @@
 message "This is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
 
+message  "**You'll repeat all these steps tomorrow, but more slowly so you can better understand what's going on under the hood.** Today we just want to check that everything's set up and ready for tomorrow."
+
 step "Prepare for the Installfest" do
   message <<-MARKDOWN
 
