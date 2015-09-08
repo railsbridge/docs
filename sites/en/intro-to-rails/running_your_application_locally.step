@@ -5,13 +5,15 @@ end
 
 steps do
   step do
+    message "Make sure that you're in the `suggestotron` folder. You can type `pwd` (**p**rint **w**orking **d**irectory) in the terminal to see what folder you are in."
+
     console "rails server"
     message "This will print some stuff and stay running forever, printing more stuff
 every time you visit a page in your app."
   end
   step do
     text "Point your web browser to "
-    url "http://localhost:3000" 
+    url "http://localhost:3000"
     message "See your web app actually running!"
   end
 
