@@ -19,12 +19,13 @@ MARKDOWN
 h1 "Authors"
 
 ul do
-  li "Sarah Allen"
-  li "Sarah Mei"
-  li "Alex Chaffee"
-  li "Ryan Davis"
-  li "Steven! Ragnarok"
-  li "...and many, many others"
+  li do
+    a "The RailsBridge community", href: "https://github.com/railsbridge/docs/graphs/contributors"
+  end
+  li do
+    span "...and maybe you? Pull requests welcome "
+    a "on GitHub", href: "https://github.com/railsbridge/docs"
+  end
 end
 
 h1 "What next?"
