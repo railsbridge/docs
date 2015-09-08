@@ -1,6 +1,6 @@
 **~**  Called 'tilde'. On OS X or Linux, this is a shortcut to the **home directory** for your user.
 
-**/**  When you use an 'escape sequence' in front of a character, the normal interpretation of that character is not applied.
+**\**  When you use an 'escape sequence' in front of a character, the normal interpretation of that character is not applied.
 
 **=**  Assignment to make whatever follows, to be treated as true (_Name="Veronica"_).
 
