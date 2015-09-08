@@ -36,7 +36,7 @@ end
 step "Read This Overview" do
   message <<-MARKDOWN
 
-You will be installing the following tools:
+Here's a list of tools you'll be installing. As you go through the workshop, we'll explain what each one is for and how to use it.
 
 * **Ruby**. A programming language.
 * **Rails**. A framework for making web applications with Ruby. It does a lot of the setting up work for you and creates a model-view-controller structure for your web application. We'll go into more detail about that later.
