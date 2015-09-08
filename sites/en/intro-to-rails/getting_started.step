@@ -7,12 +7,12 @@ end
 
 steps do
 
-  tip "If you have _any_ problems, contact a TA immediately."
+  tip "If you have any problems, call over a TA."
 
   step do
     insert 'switch_to_home_directory'
   end
-  
+
   step do
     console "mkdir railsbridge"
     message "This command creates a new directory for us to store our project in."
