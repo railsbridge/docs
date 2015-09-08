@@ -1,4 +1,8 @@
 step "Configure the Windows Terminal" do
+  tip do
+    message "Make sure that you have the **Command Prompt with Ruby and Rails** open, not just the usual Windows Terminal. To open the special Terminal, choose **All Programs** on the Start menu, then choose **RailsInstaller** and then **Command Prompt with Ruby and Rails**."
+  end
+
   message "Right-click on the menu bar and select **Properties**"
 
   message "Under the *Options* tab, check the box for **QuickEdit Mode**. This will let you visually cut and paste."
