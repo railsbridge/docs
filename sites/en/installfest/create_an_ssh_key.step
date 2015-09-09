@@ -73,7 +73,16 @@ The key fingerprint is:
 Enter passphrase for /Users/student/.ssh/id_rsa:
 Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
   OUTPUT
+
+  tip "Could not open a connection to your authentication agent" do
+    message "If the ssh-agent is not running, you will come across this error.  Here are a few commands that you can try to use to start the ssh-agent:"
+    console_with_message "For some Windows machines:", "eval `ssh-agent -s`"
+    console_with_message "For others (confirmed on some Windows 7, 8, 8.1, and 10 setups):", "eval $(ssh-agent)"
+    console_with_message "For Linux:", "eval `ssh-agent`"
+    message <<-MARKDOWN
+    <p>For additional options, this StackOverflow thread has been helpful: <a href="    http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">    http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent</a></p>
+     MARKDOWN
+  end
 end
 
 next_step 'create_a_heroku_account'
-
