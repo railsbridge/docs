@@ -22,7 +22,7 @@ end
 steps do
   step do
     message "Let's add a click listener to our Item component's complete button. Find the line of code
-    that creating ths completion button, and add an onClick attribute to make React listen for your users'
+    that is creating the completion button, and add an onClick attribute to make React listen for your users'
     clicks. Your code should look like this:"
 
     source_code :javascript, <<-JAVASCRIPT

@@ -171,7 +171,7 @@ the server responds. This abstract process is repeated over and over again:
 
 1. Listen for a user action on the page.
 2. Parse out the information the user is submitting.
-3. Prevent the default action from occuring, if necessary.
+3. Prevent the default action from occurring, if necessary.
 4. Make a request to the server using AJAX.
 5. When the request succeeds, parse the data the server sends back.
 6. Update the page with the newly received data.
