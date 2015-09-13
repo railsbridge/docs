@@ -10,6 +10,7 @@ You get another sticker! :)
 If you got all the way through Suggestotron with some time to spare, here's some extra stuff you can try:
 
 * Add a downvote button that does the opposite of what the upvote button does
+* Create upvote and downvote methods in the Topic model and use those in the topics controller instead directly modifying the topics votes
 * Sort topics by their number of votes
 * Add an 'about' page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don't get stranded.
 * If your class has a **lot** of time left over:
