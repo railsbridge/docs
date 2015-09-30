@@ -2,15 +2,32 @@ message <<MARKDOWN
 
 ## THE END
 
-Good job! This is the last page. (For now!) We hope you had some fun learning today. To continue your learningsment, check out some of these resources.
+Good job! This is the last page. (For now!) We hope you had some fun learning today. To continue your learning, check out some of these resources.
+
 
 ## Resources for you to check out
 
+* If you have a San Francisco public library card, Team Treehouse will give you their online tutorials for free. Go [here](https://teamtreehouse.com/gateways/san_francisco_public_library/signup) to log in to the site with your library credentials. Treehouse has extensie tutorials for all aspects and languages of web development as well as many server-side languages.
 * [Mozilla Developer Network](https://developer.mozilla.org) is probably the largest, most comprehensive source of front end documentation.
 * [A List Apart](http://www.alistapart.com/) is an online magazine with great content on front end best practices.
 * [Smashing Magazine](http://www.smashingmagazine.com/) is oriented toward web designers, but they frequently have good, short how-to articles on CSS and JavaScript coding.
 * [HTML5 Rocks](http://www.html5rocks.com/) is a great site for keeping up on the latest advancements in front end techniques and technology.
 * Some Railsbridge folks maintain a [Pinterest board on Front End resources](http://pinterest.com/eanakashima/learn-the-front-end/)
 * For more tips on working with Chrome dev tools, check out this [video intro from Paul Irish](http://paulirish.com/2011/a-re-introduction-to-the-chrome-developer-tools/)
+
+## HTML & CSS
+
+* [Codecademy Track for HTML & CSS](https://www.codecademy.com/tracks/web)
+* [CSS Cheatsheet](http://www.lesliefranke.com/files/reference/csscheatsheet.html)
+
+## Javascript
+
+* [Codecademy Track for Javascript](https://www.codecademy.com/tracks/Javascript)
+* [Javascript Cheatsheet](http://overapi.com/javascript/)
+
+## jQuery
+
+* [Codecademy Track for jQuery](https://www.codecademy.com/tracks/jquery)
+* [jQuery Cheatsheet](http://overapi.com/jquery/)
 
 MARKDOWN
