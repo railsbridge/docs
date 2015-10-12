@@ -9,7 +9,9 @@ end
 
 step "Delete the test_app from your computer" do
   option "Windows" do
-    message "From the Explorer, right click on the test_app folder (inside C:\\Sites) and choose Delete."
+    message "From the Explorer, right click on the test_app folder (inside C:\\Sites\\railsbridge) and choose Delete."
+    message " - or - "
+    console_with_message "From the command prompt, run the following command:", "rmdir /s /q c:\\Sites\\railsbridge\\test_app"
   end
   option "Mac" do
     message "Open your home directory and drag the test_app folder to the trash."
@@ -17,5 +19,4 @@ step "Delete the test_app from your computer" do
   option "Linux" do
     console "rm -rf ~/railsbridge/test_app"
   end
-end 
-
+end
