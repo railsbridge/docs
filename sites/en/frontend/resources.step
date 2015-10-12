@@ -2,7 +2,8 @@ message <<MARKDOWN
 
 ## THE END
 
-Good job! This is the last page. (For now!) We hope you had some fun learning today. To continue your learningsment, check out some of these resources.
+Good job! This is the last page. (For now!) We hope you had some fun learning today. To continue your learning, check out some of these resources.
+
 
 ## Resources for you to check out
 
@@ -12,5 +13,20 @@ Good job! This is the last page. (For now!) We hope you had some fun learning to
 * [HTML5 Rocks](http://www.html5rocks.com/) is a great site for keeping up on the latest advancements in front end techniques and technology.
 * Some Railsbridge folks maintain a [Pinterest board on Front End resources](http://pinterest.com/eanakashima/learn-the-front-end/)
 * For more tips on working with Chrome dev tools, check out this [video intro from Paul Irish](http://paulirish.com/2011/a-re-introduction-to-the-chrome-developer-tools/)
+
+## HTML & CSS
+
+* [Codecademy Track for HTML & CSS](https://www.codecademy.com/tracks/web)
+* [CSS Cheatsheet](http://www.lesliefranke.com/files/reference/csscheatsheet.html)
+
+## Javascript
+
+* [Codecademy Track for Javascript](https://www.codecademy.com/tracks/Javascript)
+* [Javascript Cheatsheet](http://overapi.com/javascript/)
+
+## jQuery
+
+* [Codecademy Track for jQuery](https://www.codecademy.com/tracks/jquery)
+* [jQuery Cheatsheet](http://overapi.com/jquery/)
 
 MARKDOWN
