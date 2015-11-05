@@ -16,7 +16,13 @@ ul do
   li "Probably time for the closing presentation."
   li "After that, start a project, tutorial, and come back again!"
   li do
+    text "Finally, checkout the "
+    a "Flux architecture lesson", href: "http://railsbridge.org/javascript-to-do-list-with-react/flux"
+    text " to learn how to scale your to-do list app!"
+  end
+  li do
     span "All our favorite resources can be found on the RailsBridge site: "
     a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
   end
 end
+
