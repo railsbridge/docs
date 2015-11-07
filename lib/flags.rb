@@ -20,7 +20,7 @@ class Flags < Erector::Widget
 
   def content
     li class: 'dropdown' do
-      a class: 'dropdown-toggle', 'data-toggle' => 'dropdown'  do
+      a class: 'dropdown-toggle', 'data-toggle' => 'dropdown', href: '#'  do
         img src: image_for_locale(@locale)
       end
       ul class: 'flags dropdown-menu' do
