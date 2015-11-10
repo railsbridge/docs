@@ -89,8 +89,10 @@ MARKDOWN
 
 source_code_with_message "Add the index method to the controller:", :ruby,
 <<-RUBY
+class JobsController < ApplicationController
   def index
   end
+end
 RUBY
 
 message "And refresh <http://localhost:3000/jobs>"
