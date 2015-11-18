@@ -1,4 +1,4 @@
-option "OSX 10.9 Mavericks - OSX 10.10 Yosemite" do
+option "OSX 10.9 Mavericks - OSX 10.11 El Capitan" do
   link "install_xcode_command_line_tools"
 end
 

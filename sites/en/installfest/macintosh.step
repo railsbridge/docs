@@ -4,6 +4,7 @@ step "Learn your Mac OS X Version" do
 * Click on the Apple icon in the top left of your screen.
 * Select "About This Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
+  * If it starts with 10.11, you have **El Capitan**.
   * If it starts with 10.10, you have **Yosemite**.
   * If it starts with 10.9, you have **Mavericks**.
   * If it starts with 10.8, you have **Mountain Lion**.
@@ -30,7 +31,7 @@ end
 
 step "Choose your instructions" do
 
-  option "Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
+  option "El Capitan/Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
     link "osx_rvm"
   end
   option "Earlier than Snow Leopard" do
