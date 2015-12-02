@@ -5,7 +5,11 @@ MARKDOWN
 h1 'Setup'
 
 site_desc 'installfest', <<-MARKDOWN
-Instructions for installing Ruby and Rails on your computer. You are required to do this before going to a Rails workshop!
+Instructions for installing Ruby and Rails on your computer.  Prepare for a Rails workshop that requires your own laptop!
+MARKDOWN
+
+site_desc 'browser-setup', <<-MARKDOWN
+Instructions for setting up to code in Ruby and Rails in a browser.
 MARKDOWN
 
 h1 'Rails'

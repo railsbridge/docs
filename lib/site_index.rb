@@ -4,7 +4,7 @@ class SiteIndex < Erector::Widget
 
   def categorized_sites
     {
-      'setup' => ['installfest'],
+      'setup' => ['installfest', 'browser-setup'],
       'rails' => ['intro-to-rails', 'job-board', 'message-board'],
       'frontend' => ['frontend', 'javascript-snake-game', 'javascript-to-do-list', 'javascript-to-do-list-with-react'],
       'ruby' => ['learn-to-code', 'ruby']
