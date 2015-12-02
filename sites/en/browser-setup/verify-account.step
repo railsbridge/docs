@@ -1,0 +1,19 @@
+step "Confirm your email" do
+  message <<-MARKDOWN
+
+  After signing up, you will see a confirmation screen.
+
+  ![Confirmation screen](img/3-confirm.png)
+
+  Go to your email and you should see a new message:
+
+  ![email message](img/4-email-list.png)
+
+  Open it and click the link:
+
+  ![text of email message](img/4b-email-confirm.png)
+
+  MARKDOWN
+end
+
+next_step "all-set"

@@ -1,0 +1,11 @@
+step "Are All Set To Go?" do
+  message <<-MARKDOWN
+
+  If you see a page like this one, you are all set up.
+
+  ![option to create a workspace](img/5-workspace.png)
+
+  If you need help, ask a TA!
+
+  MARKDOWN
+end

@@ -2,3 +2,33 @@ message "This is a set of step-by-step instructions for getting set up to
 code in Ruby on Railsin your browser with Cloud9.  This is a community-supported
 open-source documentation project. If you want to contribute, click the [git]
 link at the top-right corner of any page and submit your change on GitHub."
+
+step "Go to Cloud9 home page" do
+  message <<-MARKDOWN
+
+  Open your browser and go to: https://c9.io/ and click "Sign Up"
+
+  ![The Cloud9 Home Page with Sign Up button](img/1-C9.png)
+
+  MARKDOWN
+end
+
+step "Sign up for an account" do
+message <<-MARKDOWN
+
+  Fill in:
+
+  * a username -- any words with no spaces, could have numbers in it
+  * your email address -- make sure it is one you can access from the web
+  * choose a password -- this can be anything, but it is a good idea to include words, symbols and numbers
+
+  Click the checkbox to prove you are not a robot.
+
+  Click "Create your free account."
+
+  ![Fields to fill in](img/2-sign-up.png)
+
+  MARKDOWN
+end
+
+next_step "verify-account"
