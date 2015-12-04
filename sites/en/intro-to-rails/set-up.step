@@ -1,0 +1,28 @@
+goals do
+  goal "Be familiar with what is on your screen."
+  goal "Arrange windows if needed."
+end
+
+steps do
+
+message <<-MARKDOWN
+
+We're going to be working with:
+
+* Ruby (the programming language)
+* Ruby on Rails (a web framework)
+
+MARKDOWN
+
+step "What's Your Environment?" do
+
+message "If you have your own computer that you set up at an install-fest then please choose 'Working On Desktop.' Otherwise, please choose 'Coding In The Browser.'"
+
+link 'working-on-desktop'
+message 'OR'
+link 'coding-in-the-browser'
+end
+
+end
+
+next_step "ruby_language"

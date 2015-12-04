@@ -1,0 +1,57 @@
+goals do
+  goal "Get started with a new Rails application."
+  goal "Check out some of the stuff that Rails creates for you."
+end
+
+steps do
+
+message <<-MARKDOWN
+
+If you are coding in a browser, you will have already created a Rails app with your new workspace.
+When you are working on your own computer, you will need to follow a few steps to get started.
+
+MARKDOWN
+
+link "create-your-app"
+
+step "Look At Your App Files" do
+
+message <<-MARKDOWN
+ When you create a new rails application, you start with a lot of files.
+ Even expert developers don't always know what's in every file.
+ Today we will focus on what's in a few directories.  Here's an outline:
+MARKDOWN
+
+table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+  tr {
+    th "File/Folder"
+    th "Purpose"
+  }
+  tr {
+    td "app/"
+    td "Contains the controllers, models, and views for your application.  You will do most of your work here."
+  }
+  tr {
+    td "config/"
+    td "Configure your application's runtime rules, routes, database, and more."
+  }
+  tr {
+    td "db/"
+    td "Shows your current database schema, as well as the database migrations."
+  }
+  tr {
+    td "public/"
+    td "The only folder seen to the world as-is. If you put files in here, they will be served directly without any processing by Rails."
+  }
+  tr {
+    td "app/assets/"
+    td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Modern Rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
+  }
+end
+
+message "Explore the folders and get comfortable with opening different files and looking at them. Dom't worry yet about what all the words mean -- we'll be figuring that out together."
+end
+
+end
+
+next_step "add_the_project_to_a_git_repo"

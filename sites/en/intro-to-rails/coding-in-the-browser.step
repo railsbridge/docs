@@ -1,0 +1,39 @@
+step "Create A New Workspace" do
+  message <<-MARKDOWN
+
+  Your screen should look like the picture below.  If not, go to "Browser Setup" under "Sites" in the top-right or ask a TA for help.
+
+  Click 'Create a new workspace'
+
+  ![option to create a workspace](../browser-setup/img/5-workspace.png)
+
+  Fill in form with information about your project:
+
+  * Workspace name: suggestotron
+  * Description: RailsBridge workshop project
+  * Choose a Template: Rails
+
+  ![workspace information](../browser-setup/img/6a-create-workspace.png)
+
+  Click 'Create workspace' and you should see a new screen with a progress bar like this:
+
+  ![progress bar](../browser-setup/img/6b-creating-workspace.png)
+
+  MARKDOWN
+end
+
+step "Explore The Workspace" do
+  message <<-MARKDOWN
+  In your browser, you now have a complete workspace with a new rails application already
+  created for you.  Your screen should look like this:
+
+  ![workspace with a new rails project](../browser-setup/img/7-new-workspace.png)
+
+  With your mouse, you can drag the dividers between panels to resize them.  Try it now!
+
+
+  ![workspace with bottom panel made larger](../browser-setup/img/8-resize-panel.png)
+
+MARKDOWN
+
+end
