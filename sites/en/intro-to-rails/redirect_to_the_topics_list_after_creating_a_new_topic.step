@@ -58,7 +58,7 @@ message "In the same file, locate the update method. "
   step "Change the topics index view" do
     message "Open `app/views/topics/index.html.erb` and add the following line:"
 
-    source_code :ruby, "<p id='notice'><%= notice %></p>"
+    source_code :ruby, '<p id="notice"><%= notice %></p>'
 
     message <<-MARKDOWN
     Adding this line will ensure that the `notice` message we included
