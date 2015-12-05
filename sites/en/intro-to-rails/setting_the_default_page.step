@@ -94,6 +94,4 @@ explanation {
   MARKDOWN
 }
 
-insert 'consider_deploying'
-
-next_step "voting_on_topics"
+next_step "committing_your_changes_with_git"
