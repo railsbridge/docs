@@ -1,7 +1,10 @@
 div :class => "deploying" do
   h1 "Deploying"
+  message "Before the next step, consider deploying your app to the Web."
   blockquote do
-    message "Before the next step, you could try deploying your app to Heroku!"
-    link 'deploying_to_heroku'
+    text "If you are running locally, you could try "
+    url 'deploying_to_heroku'
+    message "OR"
+    message "If you are working in Cloud9, click 'Run Project!' to make your app go live!"
   end
 end
