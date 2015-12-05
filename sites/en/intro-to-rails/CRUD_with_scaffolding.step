@@ -30,6 +30,7 @@ steps do
 
   step "Make A New Topic" do
     message <<-MARKDOWN
+  * type `/topics` at the end of your url and hit enter
   * Click "New Topic"
   * Fill in the form and click "Create Topic"
   * You should see a page showing your new topic with a message that your topic was successfully created:
