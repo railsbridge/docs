@@ -56,15 +56,15 @@ message "In the same file, locate the update method. "
   end
 
   step "Change the topics index view" do
-    message "Open `app/views/topics/index.html.erb` and add the following line:"
+    message "Open `app/views/topics/index.html.erb` and check out the following line:"
 
     source_code :ruby, "<p id='notice'><%= notice %></p>"
 
     message <<-MARKDOWN
-    Adding this line will ensure that the `notice` message we included
-    in the `TopicsController` will show up in your `index` view.
-    You can add this line wherever you want the messages to show up on the
-    page. Experiment with adding it in different places in your `index` view.
+    This line displays the `notice` message we included
+    in the `TopicsController` in your `index` view.
+    You can move this line wherever you want the messages to show up on the
+    page. Experiment with putting it in different places in your `index` view.
     MARKDOWN
   end
 
