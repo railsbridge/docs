@@ -61,7 +61,7 @@ MARKDOWN
 message <<-MARKDOWN
   # Saving form data!
 
-  Head back to <http://localhost:3000/jobs/new>, and get your Rails console and your browser next to eachother again. Submit the form again, this time looking for the section that looks something like:
+  Head back to <http://localhost:3000/jobs/new>, and get your Rails server logs and your browser next to each other again. Submit the form again, this time looking for the section that looks something like:
 MARKDOWN
 
 source_code :http,
