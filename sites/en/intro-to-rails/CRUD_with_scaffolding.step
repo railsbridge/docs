@@ -1,5 +1,8 @@
 ---
 goals {
+  goal "Get a feel for the web pages that are automatically created with the rails scaffold command."
+  goal "See how submitting form data and clicking links takes you from one page to another."
+  goal "Experience how the pages are updated with data that you add or remove."
 
   message <<-MARKDOWN
     At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
@@ -10,23 +13,22 @@ goals {
     * **D**estroy or delete records
 
     Because these 4 actions (CRUD) are so common, Rails includes the scaffold command to make creating them easier.
+    In this section, you will explore the web application that you generated with the scaffold command from the
+    previous section.
   MARKDOWN
+
 }
 
-steps {
+steps do
 
-  step {
-    console "rails server"
-  }
 
-  step {
-    message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "You should see the \"Listing topics\" page with headers for title and description, and a link to add a new topic:"
+  step "Run Your App" do
+    link 'explore-your-app-locally'
+    message "OR"
+    link 'explore-your-app-in-c9'
+  end
 
-    img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
-  }
-
-  step {
+  step "Make A New Topic" do
     message <<-MARKDOWN
   * Click "New Topic"
   * Fill in the form and click "Create Topic"
@@ -34,22 +36,23 @@ steps {
     MARKDOWN
 
     img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
-  }
+  end
 
-  step {
+  step "Explore All The Options" do
     message <<-MARKDOWN
       * Click "Back"
       * You should see the topic list again, this time with your new topic listed:
 
       ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
 
-      * Try the "Show", "Edit", and "Destroy" links to see what they do
+      * Try the "Show", "Edit", and "Destroy" links to see what they do.
+      * Add a few topics, so you will have some data to experiment with.
       * You've created a basic database driven web site, congrats!
     MARKDOWN
-  }
-}
+  end
+end
 
-explanation {
+explanation do
 
   message <<-MARKDOWN
   How did all those pages get created and hooked together? The Rails scaffold did it for you.
@@ -102,6 +105,6 @@ explanation {
       <code>def</code>) for each of the views listed above (except
       `_form.html.erb`)
     MARKDOWN
-}
+end
 
 next_step "setting_the_default_page"

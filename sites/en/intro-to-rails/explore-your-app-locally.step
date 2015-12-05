@@ -1,0 +1,13 @@
+steps do
+  step "Run Your App" do
+      console "rails server"
+  end
+
+  step "Open Your App In The Browser" do
+    message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
+
+    message "You should see the \"Listing topics\" page with headers for title and description, and a link to add a new topic:"
+
+    img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
+  end
+end
