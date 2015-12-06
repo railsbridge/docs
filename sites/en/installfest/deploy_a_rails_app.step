@@ -115,6 +115,8 @@ bundle install --without production
 
   step "Add the changes to git" do
 
+    message "Before running the following command \(to add to your local git repository\), make sure that you are in the correct directory: `~/.railsbridge/test_app`"
+
     console <<-BASH
       git add .
       git commit -m "Updates for heroku deployment"
