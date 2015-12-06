@@ -1,9 +1,11 @@
+message "When we develop software, we want to keep track of the changes we make over time to a \"revision control system\". This helps us when we're debugging, since we all make mistakes.  Those of you who have programmed before know that much our our time spent 'programming' is actually finding and fixing errors in code."
+message "We're going to use *git* because it is (relatively) easy to get started, and a powerful tool when you are an expert."
+message "Also, in order to publish our application when we are working on our own computer, we will run our app on *Heroku*, which like many cloud services uses git."
 
 goals do
   goal "Create a local git repository"
   goal "Add all our files to the git repository"
 
-  message "In order to publish our application, we need to add our application and any changes we make over time to a \"revision control system\". In our case we're going to use *git* because it is (relatively) easy and it is what our app server, *Heroku*, uses."
 end
 
 steps do
@@ -67,4 +69,4 @@ By checking your application into git now, you're creating a record of your star
   MARKDOWN
 end
 
-next_step "running_your_application_locally"
+next_step "running-your-application"

@@ -1,0 +1,12 @@
+steps do
+  step "Run Your App" do
+    message <<-MARKDOWN
+      Click 'Run Project'
+      ![green arrow in a circle with Run Project](img/run-project-button.png)
+    MARKDOWN
+  end
+
+  step "Open Your App In The Browser" do
+      message "Open the URL and then add /topics to the URL"
+  end
+end

@@ -1,0 +1,56 @@
+message "We want to keep track of the changes we've made thus far."
+goals do
+  goal "Commit our changes"
+  goal "Learn about the git log command"
+
+end
+
+steps do
+
+  message "Let's see all the files we have changed so far."
+  step do
+    console "git status"
+
+
+    img alt: "Screenshot of git status after adding default page", src: "img/git_status_default_page.png"
+
+    message "You should see a ton of stuff under `Untracked files`."
+    message "Also notice that we modified our `routes.rb` file."
+  end
+
+  step do
+    message "Let's add and commit our changes."
+    console "git add ."
+    message "`git add .` tells git that you want to add the current directory (aka `.`) and everything under it to the repo."
+  end
+
+  step do
+    console "git status"
+    img alt: "Committed changes example", src: "img/committed_changes_example.png"
+    message "Now you should see a bunch of files listed under `Changes to be committed`."
+  end
+
+  step do
+    console "git commit -m \"Add new files and route for default page\""
+    message "`git commit` tells git to actually keep track of all of the changes you have made."
+    message "`-m \"Add new files and route for default page\"` is just a shortcut to say what your commit message is."
+  end
+
+  step do
+    console "git log"
+    img alt: "Git log output", src: "img/git_log_output.png"
+
+    message "`Git log` shows you all of the commits that you have on your current branch. This allows you to see what changes have been made to your code and the commit messages associated with the changes."
+    message "Also you can see who made the changes and when they were made."
+  end
+end
+
+explanation do
+  message <<-MARKDOWN
+You are checking your changes into git. This way, if anything ever breaks, or you make a change you don't like, you can use git as an all-powerful "undo" technique. `Git log` allows you to see information about changes made to your code. This makes it easy to keep track of changes!
+  MARKDOWN
+end
+
+insert 'consider_deploying'
+
+next_step "voting_on_topics"

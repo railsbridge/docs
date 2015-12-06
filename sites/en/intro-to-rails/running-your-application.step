@@ -1,0 +1,14 @@
+goals do
+  goal "See your web application run in a web browser!"
+end
+
+steps do
+
+message "If you have your own computer that you set up at an install-fest then please choose 'Running your application locally.' Otherwise, please choose 'Running your app from C9.'"
+
+link 'running-your-app-locally'
+message 'OR'
+link 'running-your-app-from-c9'
+end
+
+next_step "creating_a_migration"

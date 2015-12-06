@@ -1,0 +1,32 @@
+message <<-MARKDOWN
+
+Everything should be set up the night before during our
+install-fest. Please ensure you have everything working _before_ you
+show up for RailsBridge on Saturday.
+
+We will be working with:
+
+* Ruby 2.1 or 2.2 installed via RVM (Mac or Linux) or RailsInstaller (Windows)
+* Rails 4.2.x
+* Bundler
+* SQLite
+* A text editor
+
+
+You can verify that you have everything working by trying this out in your terminal:
+
+<div class="console"><pre>
+$ irb
+>> 1 + 2
+=> 3
+>> require "active_support"
+=> true
+>> exit
+$
+</pre>
+</div>
+
+If you can do that, you are probably good to go.
+MARKDOWN
+
+insert 'working_effectively_and_efficiently'

@@ -157,4 +157,4 @@ end
 
 important "Before you move on to the next step you must exit IRB by typing 'exit'"
 
-next_step "getting_started"
+next_step "your-new-app"

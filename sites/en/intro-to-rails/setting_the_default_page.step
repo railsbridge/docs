@@ -3,9 +3,19 @@ goals {
   message <<-MARKDOWN
   Now that the structure is complete, let's make the flow work smoothly.
 
-  Currently when you go to <http://localhost:3000> you see the "Welcome aboard" message.
+  **IF you are working on C9.io** --
 
-  It would be easier to use our app if <http://localhost:3000> went directly to the topics list.
+    When you go to <https://suggestotron-your-name.c9users.io/> you see the "Welcome aboard" message.
+
+    It would be easier to use our app if - <https://suggestotron-your-name.c9users.io/> went directly to the topics list.
+
+    In this step we'll make that happen and learn a bit about routes in Rails.
+
+    **If you are working on your machine** --
+
+    When you go <http://localhost:3000> you see the "Welcome aboard" message.
+
+    It would be easier to use our app if <http://localhost:3000> went directly to the topics list.
 
   In this step we'll make that happen and learn a bit about routes in Rails.
   MARKDOWN
@@ -14,7 +24,9 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open the file `config/routes.rb` in an editor (In the InstallFest yesterday, we suggested that you install and use **Sublime Text** as your editor)."
+    message "**If you are using C9.io**  - Open the file `config/routes.rb` in your app"
+
+    message "Otherwise open the file `config/routes.rb` in an editor (In the InstallFest yesterday, we suggested that you install and use **Sublime Text** as your editor)."
 
     message "Search the file for **root**, it should be near the top if you are using Rails 4. You can use Sublime Text's search: look for **Find...** in the **Find** menu."
 
@@ -94,6 +106,4 @@ explanation {
   MARKDOWN
 }
 
-insert 'consider_deploying'
-
-next_step "voting_on_topics"
+next_step "committing_your_changes_with_git"

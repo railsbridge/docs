@@ -13,7 +13,7 @@ gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", "~> 0.5.2"
 gem "sass"
-gem "redcarpet"
+gem "redcarpet", "~>2"
 gem "rubyzip"
 gem "i18n", "~> 0.7"
 gem 'font-awesome-sass'

@@ -124,7 +124,7 @@ DEPENDENCIES
   rack-test
   rake
   rb-fsevent
-  redcarpet
+  redcarpet (~> 2)
   rerun
   rspec
   rubyzip

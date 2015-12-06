@@ -1,0 +1,39 @@
+goals do
+  goal "See your app run in a web browser."
+end
+
+steps do
+  step "Run Your App" do
+    message <<-MARKDOWN
+      To run your application, click 'Run Project' at the top of the screen.
+
+      ![Run Project button is the last button on the right at the top of the screen](img/10a-run-project-button.png)
+MARKDOWN
+
+  end
+
+  step "Open Your App URL" do
+  message <<-MARKDOWN
+    The green arrow changes to a red square, and the URL for your app will be displayed in the bottom panel
+
+    ![workspace when project is running](img/11-running.png)
+
+    Click on the URL and choose 'Open' from the menu that pops up.
+
+    ![workspace when project is running](img/12-open-url.png)
+MARKDOWN
+  end
+
+  step "See It Run" do
+  message <<-MARKDOWN
+    Your new app is now running on the C9 server with its own custom URL.
+
+  ![workspace when project is running](img/13-new-app.png)
+MARKDOWN
+  end
+end
+
+explanation do
+message "Your application can now be accessed from any computer connected to the Internet."
+message "If you change your code, it won't automatically change the application until you run it again."
+end

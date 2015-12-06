@@ -70,39 +70,7 @@ Select your `suggestotron` folder from the file picker that opens. If everything
     MARKDOWN
   end
 
-  message <<-MARKDOWN
-  You can see that <code>rails new</code> created a lot directories and
-  files. The ones we want to focus on today are:
-  MARKDOWN
+message "You can see that <code>rails new</code> created a lot directories and
+files."
 
-  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
-    tr {
-      th "File/Folder"
-      th "Purpose"
-    }
-    tr {
-      td "app/"
-      td "Contains the controllers, models, and views for your application.  You will do most of your work here."
-    }
-    tr {
-      td "config/"
-      td "Configure your application's runtime rules, routes, database, and more."
-    }
-    tr {
-      td "db/"
-      td "Shows your current database schema, as well as the database migrations."
-    }
-    tr {
-      td "public/"
-      td "The only folder seen to the world as-is. If you put files in here, they will be served directly without any processing by Rails."
-    }
-    tr {
-      td "app/assets/"
-      td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Modern Rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
-    }
-  end
-
-  message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
 end
-
-next_step "add_the_project_to_a_git_repo"
