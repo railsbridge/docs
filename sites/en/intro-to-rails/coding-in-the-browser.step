@@ -13,11 +13,11 @@ step "Create A New Workspace" do
   * Description: RailsBridge workshop project
   * Choose a Template: Rails
 
-  ![workspace information](../browser-setup/img/6a-create-workspace.png)
+  ![workspace information](img/6a-create-workspace.png)
 
   Click 'Create workspace' and you should see a new screen with a progress bar like this:
 
-  ![progress bar](../browser-setup/img/6b-creating-workspace.png)
+  ![progress bar](img/6b-creating-workspace.png)
 
   MARKDOWN
 end
@@ -27,12 +27,12 @@ step "Explore The Workspace" do
   In your browser, you now have a complete workspace with a new rails application already
   created for you.  Your screen should look like this:
 
-  ![workspace with a new rails project](../browser-setup/img/7-new-workspace.png)
+  ![workspace with a new rails project](img/7-new-workspace.png)
 
   With your mouse, you can drag the dividers between panels to resize them.  Try it now!
 
 
-  ![workspace with bottom panel made larger](../browser-setup/img/8-resize-panel.png)
+  ![workspace with bottom panel made larger](img/8-resize-panel.png)
 
 MARKDOWN
 
