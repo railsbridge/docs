@@ -36,7 +36,7 @@ Lab: use "rant" to rant about something really important!!!
 # Capitalize Just The First Character
 
     def initial_cap s
-      s[0] + s[1,s.length]
+      s[0].upcase + s[1,s.length]
     end
 
     puts initial_cap("smith")
