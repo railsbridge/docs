@@ -2,3 +2,5 @@
 //= require 'doc_page'
 //= require 'bootstrap/dropdown'
 //= require 'analytics'
+//= require 'md5'
+//= require 'checkboxes'
