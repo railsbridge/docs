@@ -33,7 +33,7 @@ it.
 <strong>where</strong> to run them. Beginner students often get don't know
 the difference between bash, IRB, the Rails console, etc.
 * If you want, you can try
-[https://github.com/keycastr/keycastr](KeyCastr) which will display shortcuts as you
+[KeyCastr](https://github.com/keycastr/keycastr) which will display shortcuts as you
 type but be careful if you type passwords ;-)
 * Be explicit: "Let's go back to our <strong>text editor</strong> and find
 the <strong>topics.css</strong> file in the app/assets/stylesheets folder so we
