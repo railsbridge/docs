@@ -69,7 +69,7 @@ markdown <<-MARKDOWN
 
   ### Helpful Links
 
-  1. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FStatements%2Fswitch">switch statements</a>
+  1. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">switch statements</a>
   1. <a href="http://www.impressivewebs.com/why-use-triple-equals-javascipt/">=== vs ==</a>
 MARKDOWN
 

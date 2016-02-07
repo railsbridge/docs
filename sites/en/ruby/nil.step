@@ -89,7 +89,7 @@ explanation do
 end
 
 further_reading do
-    message "[Nil Class documentation](http://www.ruby-doc.org/core-2.1.0/NilClass.html)"
+    message "[Nil Class documentation](http://ruby-doc.org/core-2.2.0/NilClass.html)"
 end
 
 

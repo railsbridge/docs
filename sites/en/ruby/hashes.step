@@ -44,7 +44,7 @@ explanation do
 end
 
 further_reading do
-  a "Ruby's documentation for Hash", href: 'http://www.ruby-doc.org/core-1.9.3/Hash.html'
+  a "Ruby's documentation for Hash", href: 'http://ruby-doc.org/core-2.2.0/Hash.html'
 end
 
 next_step 'loops'

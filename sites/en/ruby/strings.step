@@ -91,7 +91,7 @@ explanation do
 end
 
 further_reading do
-  a "Ruby's documentation for String", href: 'http://www.ruby-doc.org/core-1.9.3/String.html'
+  a "Ruby's documentation for String", href: 'http://ruby-doc.org/core-2.2.0/String.html'
 end
 
 next_step 'input_and_output'
