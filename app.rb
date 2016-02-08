@@ -90,7 +90,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def sites
-    Dir["#{sites_dir}/*"].map { |path| path.split('/').last }
+    Dir["#{sites_dir}/*"].map { |path| File.basename(path) }
   end
 
   def redirect_sites
@@ -158,7 +158,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def render_page
     begin
       options = {
-        site_name: params[:site],
+        site: Site.named(params[:site], I18n.locale),
         page_name: params[:name],
         doc_title: Titleizer.title_for_page(params[:name]),
         doc_path: doc_path,
@@ -231,9 +231,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   get "/:site/:name/src" do
     begin
       RawPage.new(
-        site_name: params[:site],
+        site: Site.named(params[:site], I18n.locale),
         page_name: params[:name],
-        doc_title: doc_path.split('/').last,
+        doc_title: File.basename(doc_path),
         doc_path: doc_path,
         src: src,
         locale: I18n.locale,

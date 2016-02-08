@@ -10,11 +10,13 @@ class Site
   end
 
   def self.all locale = "en"
-    Dir["#{sites_dir(locale)}/*"].map{|dir| Site.new(dir)}
+    Dir[File.join(sites_dir(locale), '*')].map{|dir| Site.new(dir)}
   end
 
   def self.named name, locale = "en"
-    all(locale).detect{|site| site.name == name }
+    site = all(locale).detect { |site| site.name == name }
+    raise "No site found with the name '#{name}' in locale '#{locale}'" unless site
+    site
   end
 
   attr_reader :dir
@@ -28,7 +30,8 @@ class Site
   end
 
   def docs
-    Dir["#{@dir}/*.{#{DOC_TYPES.join(',')}}"].map{|path| Doc.new(path)}
+    file_path_glob = File.join(@dir, "*.{#{DOC_TYPES.join(',')}}")
+    Dir[file_path_glob].map{|path| Doc.new(path)}
   end
 
   class Doc
@@ -39,7 +42,7 @@ class Site
     end
 
     def filename
-      @path.split('/').last
+      File.basename(@path)
     end
 
     def name

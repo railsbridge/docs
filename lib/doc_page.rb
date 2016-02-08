@@ -8,9 +8,9 @@ require 'flags'
 require 'erb'
 
 class DocPage < Html5Page
-  needs :site_name, :doc_title, :doc_path, :page_name, :src, :locale
+  needs :site, :doc_title, :doc_path, :page_name, :src, :locale
   needs :back => nil
-  attr_reader :site_name, :doc_title, :page_name, :src
+  attr_reader :site, :doc_title, :page_name, :src
 
   def head_content
     title page_title
@@ -19,7 +19,7 @@ class DocPage < Html5Page
   end
 
   def site_title
-    Titleizer.title_for_page(site_name)
+    Titleizer.title_for_page(site.name)
   end
 
   def page_title
@@ -37,11 +37,11 @@ class DocPage < Html5Page
   end
 
   def file_name
-    @doc_path.split('/').last
+    File.basename(@doc_path)
   end
 
   def git_url
-    "https://github.com/railsbridge/docs/blob/master/sites/#{@locale}/#{@site_name}/#{file_name}"
+    "https://github.com/railsbridge/docs/blob/master/sites/#{@locale}/#{site.name}/#{file_name}"
   end
 
   def src_url
@@ -57,7 +57,7 @@ class DocPage < Html5Page
   end
 
   def body_attributes
-    if site_name == 'docs'
+    if site.name == 'docs'
       {class: 'no-toc'}
     else
       {}
@@ -68,7 +68,7 @@ class DocPage < Html5Page
     nav(class: "top cf", role: "navigation") {
 
       div(class: "navbar-header cf title") {
-        a(href: "/#{site_name}") {
+        a(href: "/#{site.name}") {
           span("RailsBridge ", class: "brand")
           text site_title
         }
@@ -78,7 +78,7 @@ class DocPage < Html5Page
 
         li(class: "dropdown") {
           a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_name, locale: @locale
+          widget SiteIndex, site_name: site.name, locale: @locale
         }
 
         top_links.each do |top_link|
@@ -87,7 +87,7 @@ class DocPage < Html5Page
       }
     }
 
-    widget Contents, locale: @locale, site_name: site_name, page_name: page_name
+    widget Contents, site: site, page_name: page_name
 
     main {
       before_title

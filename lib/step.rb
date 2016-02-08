@@ -43,7 +43,7 @@ class Step < Erector::Widget
 
   # todo: move into proper Doc class
   def page_name
-    @container_page_name || @doc_path.split('/').last.split('.').first
+    @container_page_name || File.basename(@doc_path, ".*")
   end
 
   def insert file

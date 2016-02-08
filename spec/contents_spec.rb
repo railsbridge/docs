@@ -8,10 +8,10 @@ real_sites_dir = File.expand_path "#{here}/../sites"
 
 describe Contents do
   let(:site_name) { 'meals' }
-  let(:site_dir) { "#{here}/sites/#{site_name}" }  # note: locale is not currently in spec/sites
+  let(:site_dir) { File.join(here, 'sites', site_name) }  # note: locale is not currently in spec/sites
   let(:page_name) { 'prepare_a_meal' }
   before do
-    @toc = Contents.new(site_name: site_name, site_dir: site_dir, page_name: page_name)
+    @toc = Contents.new(site: Site.new(site_dir), page_name: page_name)
   end
 
   describe "absolute links" do

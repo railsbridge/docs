@@ -19,27 +19,8 @@ describe InstallFest do
   describe "an app with slides" do
     require "deck"
     before do
-      breakfast = <<-MARKDOWN
-# Eggs
-
-* scrambled
-* fried
-
-# Cereal
-
-* Frosted Mini-Wheats
-* Corn Flakes
-* Raisin Bran
-      MARKDOWN
-
-      sites_dir = dir "sites"  do
-          dir "meals" do
-            file "breakfast.deck.md", breakfast
-          end
-      end
-      Site.stub(:sites_dir) { sites_dir }
-
-      @breakfast = breakfast
+      here = File.expand_path(File.dirname(__FILE__))
+      allow(Site).to receive(:sites_dir).and_return(File.join(here, 'sites'))
     end
 
     it "renders a deck" do
