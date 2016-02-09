@@ -4,6 +4,7 @@
 * [Ruby for Beginners](ruby_for_beginners)
 * [Ruby for Programmers](ruby_for_programmers)
 * [Diagrams (Git, MVC, REST)  ](diagrams)
+* [Activities](activities)
 
 ### Teacher Training
 * [Teacher Training Deck](more_teacher_training)
