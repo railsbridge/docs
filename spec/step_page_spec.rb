@@ -25,7 +25,7 @@ describe StepPage do
     main_html = html_doc.css("main").first.serialize(:save_with => 0).chomp
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
 
-    blarg = <<-HTML.strip_heredoc.gsub('\n', '').gsub(/$\s*/, '')
+    expect(main_html).to loosely_equal(<<-HTML.strip_heredoc)
       <main>
         <h1 class="doc_title">Hello</h1>
         <div class="doc">
@@ -36,7 +36,6 @@ describe StepPage do
         </div>
       </main>
     HTML
-    assert_loosely_equal(main_html, blarg)
   end
 
 end

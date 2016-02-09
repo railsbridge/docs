@@ -119,7 +119,7 @@ describe Step do
       html_doc(<<-RUBY)
         console "echo hi"
       RUBY
-      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
+      expect(@html).to loosely_equal(<<-HTML.strip_heredoc)
         <div class="console">
           <span>#{I18n.t('captions.terminal')}</span>
           <pre>echo hi</pre>
@@ -134,7 +134,7 @@ describe Step do
       result "hi"
       RUBY
 
-      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
+      expect(@html).to loosely_equal(<<-HTML.strip_heredoc)
         <div class="result">
           <span>#{I18n.t("captions.result")}</span>
           <pre>hi</pre>
@@ -149,7 +149,7 @@ describe Step do
       fuzzy_result "hello {FUZZY}fuzz{/FUZZY} face! nice {FUZZY}banana{/FUZZY}\ni am more text!"
       RUBY
 
-      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
+      expect(@html).to loosely_equal(<<-HTML.strip_heredoc)
         <div class="result fuzzy-result">
           <span>#{I18n.t("captions.fuzzy_result")}</span>
           <pre>
@@ -179,7 +179,7 @@ describe Step do
       outer_path = File.join(path, 'outer.step')
       html = step_obj_for(outer_path).to_html
 
-      assert_loosely_equal html, <<-HTML.strip_heredoc
+      expect(html).to loosely_equal(<<-HTML.strip_heredoc)
         <div>hello</div>
         <div>yum</div>
         <div>yum</div>

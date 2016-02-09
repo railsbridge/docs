@@ -31,7 +31,7 @@ describe MarkdownPage do
     html_doc = Nokogiri.parse(page.to_html)
     main_html = html_doc.css("main").first.serialize(:save_with => 0).chomp
 
-    assert_loosely_equal(main_html, <<-HTML.strip_heredoc)
+    expect(main_html).to loosely_equal(<<-HTML.strip_heredoc)
       <main>
         <a href="hello.step.deck" style="float: right">Slides</a>
         <h1 class="doc_title">Hello</h1>
