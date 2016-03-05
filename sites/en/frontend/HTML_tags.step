@@ -208,7 +208,7 @@ What happens if you change the `<ul>` in your **hello.html** to `<ol>`? (Don't f
 
 Can you link your favorite things to their respective Wikipedia pages? Here's an example link for you: `<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>`
 
-CLASS DISCUSSION: What are all the individual parts of the code to add a link?
+What are all the individual parts of the code to add a link?
 
   MARKDOWN
 

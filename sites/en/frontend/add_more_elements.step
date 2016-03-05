@@ -1,5 +1,5 @@
 goals do
-  message "WOOHOO, you made it to page 10! Now that we're here, we'll switch from simple steps to doing **challenges**. There will still be something to do at each step, but it will take some figuring out to do correctly. (If you get stuck, you can still ask a TA or instructor for hints. : ) You will:"
+  message "Now we'll switch from simple steps to doing **challenges**. There will still be something to do at each step, but it will take some figuring out to do correctly. (If you get stuck, you can still ask a TA or instructor for hints.) You will:"
   goal "Fill in more content"
   goal "Add an image tag"
   goal "Use two different kinds of anchor tags"
@@ -23,7 +23,7 @@ Two hints: images are usually included with an `img` tag, and the tag's `src` at
 
 <img src='img/page_img.png'>
 
-Don't forget that, because it doesn't wrap text content, the `img` tag is self-closing, meaning it doesn't need an ending tag. You should never code `</img>`.
+Don't forget that, because it doesn't wrap text content, the `img` tag is self-closing, meaning it doesn't need an ending tag. You don't need to write `</img>`.
     MARKDOWN
   end
   
@@ -47,13 +47,10 @@ See if you can turn the list items under the word 'Contents' into links that jum
 end
 
 explanation do
-  
+
   message <<-MARKDOWN
 
-## Woohoo HTML
-
-Now that you know the basics of working with HTML, the trickiest part is remembering
-what tags are available. Here are some good sites you can use for reference:
+Now that you know the basics of working with HTML, the trickiest part is remembering what tags are available. Here are some good sites you can use for reference:
 
 * [Sitepoint](http://reference.sitepoint.com/css)
 * [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)

@@ -100,7 +100,7 @@ HTML
 </ul>
 <p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
 HTML
-    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes."
+    message "Refresh the page in the browser. You should see the new paragraphs you added, but no styling changes."
     message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
   end
 
@@ -144,7 +144,7 @@ CSS
     message <<-MARKDOWN
 (Note: The span is just an element that lets you apply a class, id, or other attribute to a string of text without adding any line breaks. Browsers won't give it any styling by default.)
 
-Once you add your style rule and refresh the page in the browser, you'll see something rather ugly like this:
+Once you add your style rule and refresh the page in the browser, you'll see something like this:
     MARKDOWN
     img src: 'img/css_id.png'
   end

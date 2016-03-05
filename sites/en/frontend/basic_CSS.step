@@ -33,7 +33,7 @@ There are many good reasons to keep HTML and CSS separate. A typical website wil
 use the same styles across a site.
 
 This makes our code more efficient and easier to maintain, and keeps the site visually consistent. It also makes it easier to use
-different styles for different devices, so a site can have different looks for desktop and mobile browsers.
+different styles for different devices, so a site can have different looks for different browsers.
 MARKDOWN
   end
 

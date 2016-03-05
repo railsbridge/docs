@@ -51,8 +51,8 @@ What CSS and JavaScript files to include (and where they are):
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HTML: Head</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <title>HTML!</title>
+    <link rel="stylesheet" href="style.css">
 
     <meta charset="utf-8">
     <meta name="keywords" content="HTML, CSS, JavaScript, Meta">
