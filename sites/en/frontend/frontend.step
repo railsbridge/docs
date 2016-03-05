@@ -3,7 +3,7 @@ message <<-MARKDOWN
 ### Goal
 
 Our aim is to get you acquainted with HTML, CSS, and JavaScript, the most essential building blocks
-of web experiences. You'll create a basic static web page about yourself and possibly deploy
+of web experiences. You'll create a basic static web page about yourself and (optionally) deploy
 it to the web. You'll:
 
 * Write some content and give it some structure with **HTML**,
