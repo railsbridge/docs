@@ -30,8 +30,8 @@ We're going to be working with:
 * [Chrome](https://www.google.com/chrome)
   (If you're experienced with the developer tools in another browser, that may work too.);
 * The code editor of your choice.
-  [Sublime Text 2](http://www.sublimetext.com/2) is popular and free to download, but you should buy a license if you keep using it after the workshop.
-  [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
+    * [Sublime Text](http://www.sublimetext.com/) is popular with many Ruby and Rails users. You can use it free for evaluation, then must pay to continue using it.
+    * [Atom](https://atom.io/) is a free, open-source editor that can be customized with HTML, CSS, and JavaScript. A download is available for OS X 10.8+, Windows 7/8, and Ubuntu/RedHat linux.
 
 Optional tools if you're deploying to GitHub: 
 

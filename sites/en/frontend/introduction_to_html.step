@@ -37,7 +37,7 @@ steps do
 
   step do
     message <<MARKDOWN
-You'll need to fire up your text editor (like Sublime Text, Komodo Edit, or Text Wrangler) for these steps. We're going to make an html document!
+You'll need to fire up your text editor (like Sublime Text or Atom) for these steps. We're going to make an HTML document!
 
 Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)
 
