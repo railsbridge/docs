@@ -1,5 +1,5 @@
 goals do
-  message "These challenges will have you diving into the CSS side of things. Open up that layout.css file and take a look."
+  message "These challenges will have you diving into the CSS side of things. Open up that **layout.css** file and take a look."
   goal "Give your main content a border"
   goal "Make two columns and line them up side by side"
 end

@@ -6,8 +6,8 @@ end
 steps do
 
   step do
-    message "Now that we have completed the challenges for your index.html and related CSS files, we will be looking back at your hello.html file."
-    message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive.  Pull up your hello.html file again. Add a script tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
+    message "Now that we have completed the challenges for your **index.html** and related CSS files, we will be looking back at your **hello.html** file."
+    message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive.  Pull up your **hello.html** file again. Add a `script` tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
 
     source_code :html, <<HTML
 <script type="text/javascript">
@@ -67,7 +67,7 @@ how to get to them with JavaScript so you can manipulate them.
 
 We'll go through it line by line:
 
-The first line declares a 'function', a bit a of reusable code you can refer
+The first line declares a `function`, a bit a of reusable code you can refer
 to later by calling its name:
 
   MARKDOWN
@@ -75,9 +75,9 @@ to later by calling its name:
   message <<-MARKDOWN
 
 The next two lines are the steps the function will do. The first one creates
-a variable called 'myNewName' and sets it equal to a value. The browser window
+a variable called `myNewName` and sets it equal to a value. The browser window
 will try to get this value using its `prompt` method, a built-in function it
-knows how to do that involves popping up a text box for you to fill in.
+knows how to do, that involves popping up a text box for you to fill in.
 
   MARKDOWN
   source_code :js, "var myNewName = window.prompt('Pick a new name!');"

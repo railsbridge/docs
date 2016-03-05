@@ -17,16 +17,16 @@ Form elements use an attribute to tell the browser what type of input they are,
 so the results will be easy to tell apart. This input:
 
   MARKDOWN
-  source_code :html, "<input type='radio' name='rando-radio'>"
+  source_code :html, "<input type=\"radio\" name=\"rando-radio\">"
   message <<-MARKDOWN
 
-looks like a radio button: <input type='radio' name='rando-radio'>, but
+looks like a radio button: <input type="radio" name="rando-radio">, but
 
   MARKDOWN
-  source_code :html, "<input type='password' name='fake-password' value='ick'>"
+  source_code :html, "<input type=\"password\" name=\"fake-password\" value=\"ick\">"
   message <<-MARKDOWN
 
-looks like a password text input: <input type='password' name='rando-radio' value='ick'> even though they use the same **tag**.
+looks like a password text input: <input type="password" name="rando-radio" value="ick"> even though they use the same **tag**.
 
 ## IDs and Classes
 
@@ -36,7 +36,7 @@ we can assign names to elements and groups of elements, then apply CSS styles us
 MARKDOWN
 
   source_code :html, <<-MARKDOWN
-  <p id='intro' class='special'>
+  <p id="intro" class="special">
     This is my intro paragraph!
   </p>
 MARKDOWN

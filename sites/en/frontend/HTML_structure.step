@@ -8,7 +8,7 @@ overview do
 
   message <<-MARKDOWN
 
-## The HTML tag and Doctype
+## The HTML tag and DOCTYPE
 
 The line `<!DOCTYPE html>` is called the doctype, and it tells the browser which flavor of HTML you're using. `<!DOCTYPE html>` tells your browser you're using HTML5, the latest version of HTML.
 

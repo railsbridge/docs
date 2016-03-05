@@ -12,7 +12,7 @@ steps do
   
   step do
     message <<-MARKDOWN
-      The zip file should contain a file called index.html and a directory of resources."
+      The zip file should contain a file called index.html and a directory of resources.
 
       <img src='img/zip.png'>
 

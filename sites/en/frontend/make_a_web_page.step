@@ -7,7 +7,7 @@ steps do
 
   step do
     message <<-MARKDOWN
-Drag the 'index.html' page from your project onto the icon of your web browser. Your browser should look like this:
+Open the **index.html** page in your web browser. It should look something like this:
 
 <img src='img/page.png'>
 
@@ -16,7 +16,7 @@ Drag the 'index.html' page from your project onto the icon of your web browser. 
 
   step do
     message <<-MARKDOWN
-Drag the 'index.html' page from your project onto the icon of your text editor. The text editor should look like this:
+Open the **index.html** page in your text editor. It should look something like this:
 
 <img src='img/page_html.png'>
 
@@ -44,13 +44,9 @@ explanation do
 
 ## Inline vs. Linked 
 
-Javascript and CSS can both be put directly into the HTML page, but on bigger projects,
-you'll usually want to place your js and CSS in separate files and include those files
-in your HTML with a link.
+Javascript and CSS can both be put directly into the HTML page, but on bigger projects, you'll usually want to place your JS and CSS in separate files and include those files in your HTML with a link.
 
-Linking files will help you keep your code organized and easier to maintain. It means,
-for example, that if you change the style of buttons on your website, you'll be able to
-change it in just one place, instead of having to update every page.
+Linking files will help you keep your code organized and easier to maintain. It means, for example, that if you change the style of buttons on your website, you'll be able to change it in just one place, instead of having to update every page.
 
 ### Javascript
 

@@ -118,7 +118,7 @@ are a ton of other tags you might use:
     }
     tr {
       td "a"
-      td "A link (the 'a' stands for Anchor)"
+      td "A link (the 'a' stands for Anchor)."
     }
     tr {
       td "h1-h6"
@@ -126,27 +126,27 @@ are a ton of other tags you might use:
     }
     tr {
       td "ul"
-      td "Start a bulleted list (an 'unordered list')"
+      td "Start a bulleted list (an 'unordered list')."
     }
     tr {
       td "ol"
-      td "Start a numbered list (an 'ordered list')"
+      td "Start a numbered list (an 'ordered list')."
     }
     tr {
       td "li"
-      td "A single thing within a list (a 'list item')"
+      td "A single thing within a list (a 'list item')."
     }
     tr {
       td "table, tr, td"
-      td "You can make tables (like this one) with table rows and data cells"
+      td "You can make tables (like this one) with table rows and data cells."
     }
     tr {
       td "form"
-      td "A form that can collect data from user input"
+      td "A form that can collect data from user input."
     }
     tr {
       td "input"
-      td "A text input, a button, or a checkbox in a form"
+      td "A text input, a button, or a checkbox in a form."
     }
     tr {
       td "div"
@@ -171,27 +171,27 @@ are a ton of other tags you might use:
     }
     tr {
       td "section"
-      td "A section of a document"
+      td "A section of a document."
     }
     tr {
       td "nav"
-      td "A navigation section"
+      td "A navigation section."
     }
     tr {
       td "header"
-      td "The header for a page. (This is different from the head element, which contains metadata about the page!)"
+      td "The header for a page. (This is different from the head element, which contains metadata about the page!)."
     }
     tr {
       td "footer"
-      td "The footer for a page"
+      td "The footer for a page."
     }
     tr {
       td "main"
-      td "The important content on a page"
+      td "The important content on a page."
     }
     tr{
       td "aside"
-      td "Content not essential to the main content"
+      td "Content not essential to the main content."
     }
   end
 
