@@ -15,8 +15,11 @@ steps do
   end
 
   step do
-    message "jQuery is a JavaScript library that is designed to make it easy to interact with the contents of your HTML document. When you're writing jQuery, you're writing JavaScript &mdash; you're just interacting with objects and functions that jQuery has already defined."
-    message "Since you're using jQuery to interact with your document, you'll want to wait until your document is ready and loaded before you run your code. jQuery has a built-in method called 'ready' that checks for this, and runs your code after. Let's add this to your 'javascript.js' file, so you can write some jQuery."
+    message "jQuery is a JavaScript library that is designed to make it easy to interact with the contents of your HTML document. When you're writing jQuery, you're writing JavaScript &mdash; you're just using objects and functions that jQuery has already defined."
+
+    message "When you're interacting with your document, you'll want to wait to run your code it's until safe to do so: when your document is ready and loaded. If you don't wait for that you might get errors. For example: your code may try and interact with things that aren't there yet."
+
+    message "jQuery has a built-in method called `ready` that checks for this, and runs your code after. Let's add this to your `javascript.js` file."
     source_code :js, <<-JS
 $(document).ready(function() {
   /* Add code from the next steps here */
@@ -31,8 +34,8 @@ $("selector").click(function(){ /* do something */ });
     JS
     message "Let's put in a real selector and have our function do something:"
     source_code :js, <<-JS
-$("#copyright").click(function(){ 
-  $(this).css('color','purple'); 
+$("#copyright").click(function(){
+  $(this).css('color','purple');
 });
     JS
     message "When you click on the copyright line at the bottom of the page, you should see a result like this:"
