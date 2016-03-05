@@ -5,27 +5,27 @@ goals do
 end
 
 steps do
-  
+
   step do
-    message "CHALLENGE: Find the div with the id 'main' in your HTML. See if you can give it a one-pixel border on its left hand side by modifying the existing stylesheet, 'layout.css'."
-    message "If you get hung up on what CSS property to use, see if you can look it up on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)."
+    message "**Challenge:** Find the div with the id `main` in your HTML. See if you can give it a one-pixel border on its left hand side by modifying the existing stylesheet, **layout.css**."
+    message "**Hint**: If you get hung up on what CSS property to use, see if you can look it up on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)."
   end
-  
+
   step do
-    message "CHALLENGE: If you styled the #main div in the previous step by using a style rule like `#main { property: value; }`, see if you can come up with a second rule that could also apply the same style, but use a different selector."
-    message "Hint: You can select an element that's _inside_ of another element by listing one selector after another. The selector `.content div {}` would apply to any divs inside of an element with class `content`"
+    message "**Challenge:** If you styled the `#main` div in the previous step by using a style rule like `#main { property: value; }`, see if you can come up with a second rule that could also apply the same style, but use a different selector."
+    message "**Hint**: You can select an element that's _inside_ of another element by listing one selector after another. The selector `.content div {}` would apply to any `div`s inside of an element with class `content`."
   end
-  
-  step do  
-    message "CHALLENGE: See if you can turn the page into a two-column layout. Make the 'nav' div the left column, and the 'main' div the right column." 
-    message "Two hints: it may be helpful to give these divs a fixed width, and you may need the `float` property."
+
+  step do
+    message "**Challenge:** See if you can turn the page into a two-column layout. Make the `#nav` `div` the left column, and the `#main` div the right column."
+    message "**Hints**: it may be helpful to give these divs a fixed width; you may need the `float` property."
   end
 
   message "<img src='img/page_sample.jpg'>"
 end
 
 explanation do
-  
+
   message <<-MARKDOWN
 
 ## More CSS!

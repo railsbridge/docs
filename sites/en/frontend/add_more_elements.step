@@ -9,7 +9,7 @@ steps do
   
   step do
     message <<-MARKDOWN
-CHALLENGE: The index.html page you downloaded is a simple profile page. Do a quick read through of the HTML and see if you can guess from the context what any unfamiliar tags might do.
+**Challenge:** The **index.html** page you downloaded is a simple profile page. Do a quick read through of the HTML and see if you can guess from the context what any unfamiliar tags might do.
 
 Take 5 or 10 minutes to replace some of the existing text with some info about yourself. You don't have to write a novella, but filling in some tags is a good way to get oriented in the file. Then, save the page and refresh the browser.
     MARKDOWN
@@ -17,9 +17,11 @@ Take 5 or 10 minutes to replace some of the existing text with some info about y
   
   step do
     message <<-MARKDOWN
-CHALLENGE: Add an image tag to the page, right above the word 'Contents'. There's a sample image in the resources folder that you can use called 'picture.jpg', but if you want to personalize your page, copy a picture of yourself into the resources folder and add that to the page instead.
+**Challenge:** Add an image tag to the page, right above the word 'Contents'. There's a sample image in the resources folder that you can use called 'picture.jpg', but if you want to personalize your page, copy a picture of yourself into the resources folder and add that to the page instead.
 
-Two hints: images are usually included with an `img` tag, and the tag's `src` attribute provides the path to the actual file. When you're done, you'll have something like this:
+**Hints**: images are usually included with an `img` tag; the tag's `src` attribute provides the path to the file.
+
+When you're done, you'll have something like this:
 
 <img src='img/page_img.png'>
 
@@ -29,7 +31,7 @@ Don't forget that, because it doesn't wrap text content, the `img` tag is self-c
   
   step do
     message <<-MARKDOWN
-CHALLENGE: Add two kinds of anchor links.
+**Challenge:** Add two kinds of anchor links.
 
 Links in html are created by the `a` tag. Add an `a` tag somewhere in the document that creates a link to another page on the web.
 
