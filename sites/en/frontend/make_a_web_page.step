@@ -26,14 +26,20 @@ Opening the same file in a browser and in a text editor lets you see the effects
 
   step do
     message <<-MARKDOWN
-You'll remember when we were working on our hello.html file, we put JavaScript and CSS directly into the HTML document. But you can also include js and css in external files, with a link.
 
-This file, 'index.html', includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!').
-
-HTML comment tags begin with `<!--` and end with `-->`. Here's an example:
+When writing code, you'll often want to leave a comment: a message for yourself or other people looking at your code. HTML comment tags begin with `<!--` and end with `-->`. Here's an example:
     MARKDOWN
-    source_code :html, "<!-- this is a comment. the browser ignores it -->"
-    message "Look through index.html and find the links to the CSS and JavaScript files. Delete the comment tags from around them, so the browser will read them."
+
+source_code :html, "<!-- This is a comment. The browser ignores it. -->"
+
+    message <<-MARKDOWN
+We can also use this technique to temporarily stop a piece of code from running. We call that "commenting the code out."
+
+You'll remember when we were working on our **hello.html** file, we put JavaScript and CSS directly into the HTML document. You can also include JS and CSS in external files, with a link. This **index.html** file includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!').
+
+Look through **index.html** and find the links to the CSS and JavaScript files. Delete the comment tags from around them so that the browser will read them.
+    MARKDOWN
+
   end
 
 end
@@ -42,7 +48,7 @@ explanation do
 
   message <<-MARKDOWN
 
-## Inline vs. Linked 
+## Inline vs. Linked
 
 Javascript and CSS can both be put directly into the HTML page, but on bigger projects,
 you'll usually want to place your js and CSS in separate files and include those files
@@ -59,7 +65,7 @@ change it in just one place, instead of having to update every page.
   MARKDOWN
   source_code :html, <<-HTML
 <script type="text/javascript">
-  // Your code goes here! 
+  // Your code goes here!
 </script>
   HTML
   message <<-MARKDOWN
@@ -79,7 +85,7 @@ change it in just one place, instead of having to update every page.
   MARKDOWN
   source_code :html, <<-HTML
 <style type="text/css" media="all">
-  /* Your styles go here! */ 
+  /* Your styles go here! */
 </style>
   HTML
   message <<-MARKDOWN
