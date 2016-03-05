@@ -1,6 +1,6 @@
 goals do
   goal "Add a JavaScript tag to the document"
-  goal "Write a simple script to interact with"
+  goal "Write a simple script to interact with the page"
 end
 
 steps do
@@ -18,7 +18,7 @@ HTML
   end
 
   step do
-    message "Type in this short script. Javascript is case-specific and picky about syntax, so if your script doesn't run, check carefully for typos."
+    message "Type in this short script. Javascript is case-specific (it treats `mynewname` and `myNewName` as two different things) and picky about syntax, so if your script doesn't run, check carefully for typos."
 
     source_code :html, <<HTML
 <script type="text/javascript">
@@ -83,18 +83,21 @@ knows how to do, that involves popping up a text box for you to fill in.
   source_code :js, "var myNewName = window.prompt('Pick a new name!');"
   message <<-MARKDOWN
 
-In the next line, it goes into your HTML document, and, using a built-in
-function the document knows that can find an element by its ID, it locates
-your 'user-name' span. It then sets the span's HTML contents to the value of
-the variable 'myNewName'
+In the next line it goes into your HTML document and uses `getElementById`, a built-in function it knows to do, to locate your `user-name` span. It then sets the span's HTML contents to the value of the variable `myNewName`.
 
   MARKDOWN
   source_code :js, "document.getElementById('user-name').innerHTML = myNewName;"
   message <<-MARKDOWN
 
-The `}` closes the function you started defining in the first line.
+The
 
-The final line tells the browser, 'When I click the document, run that function I defined called replaceName'
+  MARKDOWN
+  source_code :js, "}"
+  message <<-MARKDOWN
+
+closes the `replaceName` function you started defining in the first line.
+
+The final line tells the browser, 'When I click the document, run the function called `replaceName`.
 
 MARKDOWN
 source_code :js, "document.onclick = replaceName;"

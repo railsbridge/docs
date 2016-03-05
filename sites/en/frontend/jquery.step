@@ -1,6 +1,6 @@
 goals do
-  goal "Include jQuery in your page."
-  goal "Write a few lines of jQuery code."
+  goal "Include jQuery in your page"
+  goal "Write a few lines of jQuery code"
 end
 
 steps do

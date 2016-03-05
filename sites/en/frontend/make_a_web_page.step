@@ -60,6 +60,8 @@ Linking files will help you keep your code organized and easier to maintain. It 
   HTML
   message <<-MARKDOWN
 
+In JavaScript you write comments by starting a line with `//`.
+
 * A JavaScript tag looks like this when it's a link:
 
   MARKDOWN
@@ -79,6 +81,8 @@ Linking files will help you keep your code organized and easier to maintain. It 
 </style>
   HTML
   message <<-MARKDOWN
+
+In CSS you write comments by wrapping the comment in inside a `/*` (start a comment) and `*/` (finish a comment).
 
 * A CSS tag looks like this when it's a link:
 

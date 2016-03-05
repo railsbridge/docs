@@ -26,7 +26,7 @@ Let's go through each of those words in reverse order and explain them.
   files.  Computer users as early as the 1960s wanted to enrich this text and make it easier to work with.
   Thus, hypertext was born.  It is text because the file is stored as plain text, yet hyper because the text
   has a special meaning beyond the plain text when interpreted by a special program.  For HTML, that special
-  program is your web browser.
+  program is your web browser (like Chrome).
   MARKDOWN
 
 
@@ -75,7 +75,7 @@ message <<-MARKDOWN
 
 The browser needs more information than just the file extension to display your website's content. The way we provide that information is by *marking up* your text with content clues in the form of HTML tags. Which you just did, by adding the `<em>` tag to your page!
 
-An HTML tag is encased within angle brackets, which look like this: `<`, `>`. Most every tag has a matching closing tag with a forward slash. The tags describe the content they surround, in our example, emphasizing the word "world".
+An HTML tag is encased within angle brackets, which look like this: `<`, `>`. Most tags have a matching closing tag with a forward slash. The tags describe the content they surround, in our example, emphasizing the word "world".
 
 __Opening tag__: `<em>`
 

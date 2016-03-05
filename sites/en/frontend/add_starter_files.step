@@ -1,5 +1,5 @@
 goals do
-  goal "Add some starter files to your project"
+  goal "Add some starter files"
 end
 
 steps do
