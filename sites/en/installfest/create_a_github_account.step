@@ -21,7 +21,7 @@ end
 
 step "Set up SSH authentication with GitHub" do
 
-  message "Adding an SSH key to GitHub allows you to pull and push data without typing in your password all the time. First we'll copy the key we generated in the **Create an SSH Key** step and add it to your GitHub account"
+  message "Adding an SSH key to GitHub allows you to pull and push data without typing in your password all the time. First we'll copy the key we generated in the **Create an SSH Key** step and add it to your GitHub account. We'll use a terminal command to do that, so that we don't add any newlines or whitespace that could cause an error."
 
     message "Mac users,"
     console "pbcopy < ~/.ssh/id_rsa.pub"
