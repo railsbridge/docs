@@ -80,6 +80,6 @@ steps {
   end
 }
 
-insert 'consider_deploying'
+insert 'consider_deploying_again'
 
 next_step "redirect_to_the_topics_list_after_creating_a_new_topic"
