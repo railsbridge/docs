@@ -33,6 +33,8 @@ step "Set up SSH authentication with GitHub" do
     BASH
 
     message "Windows users,"
+    message "`sudo apt-get install xclip` installs a tiny application, xclip, that lets us copy the contents of a file without opening it. Mac and Windows users have similar things already installed (`pbcopy` and `clip`)."
+
     console "clip < \"%userprofile%\\.ssh\\id_rsa.pub\""
 
   message "Now that you have copied the key to your clipboard, you can add it to the GitHub account you created earlier."
