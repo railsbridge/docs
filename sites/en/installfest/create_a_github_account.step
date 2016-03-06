@@ -23,18 +23,18 @@ step "Set up SSH authentication with GitHub" do
 
   message "Adding an SSH key to GitHub allows you to pull and push data without typing in your password all the time. First we'll copy the key we generated in the **Create an SSH Key** step and add it to your GitHub account. We'll use a terminal command to do that, so that we don't add any newlines or whitespace that could cause an error."
 
-    message "Mac users,"
+    h2 "Mac users"
     console "pbcopy < ~/.ssh/id_rsa.pub"
 
-    message "Linux users,"
+    h2 "Linux users"
     console <<-BASH
     sudo apt-get install xclip
     xclip -sel clip < ~/.ssh/id_rsa.pub
     BASH
 
-    message "Windows users,"
     message "`sudo apt-get install xclip` installs a tiny application, xclip, that lets us copy the contents of a file without opening it. Mac and Windows users have similar things already installed (`pbcopy` and `clip`)."
 
+    h2 "Windows users"
     console "clip < \"%userprofile%\\.ssh\\id_rsa.pub\""
 
   message "Now that you have copied the key to your clipboard, you can add it to the GitHub account you created earlier."
