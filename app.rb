@@ -252,7 +252,10 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
       FileUtils.rm_rf(zip_path)
       Zip::File.open(zip_path, Zip::File::CREATE) do |zipfile|
         manifest_files.each do |filename|
-          zipfile.add(File.join(params[:name], File.basename(filename)), File.join(site_dir, filename))
+          filename_without_first_directory = filename.split(File::SEPARATOR)[1..-1].join(File::SEPARATOR)
+          location_in_zip = File.join(params[:name], filename_without_first_directory)
+          location_on_disk = File.join(site_dir, filename)
+          zipfile.add(location_in_zip, location_on_disk)
         end
       end
       send_file zip_path
