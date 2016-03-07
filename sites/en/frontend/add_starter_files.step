@@ -35,7 +35,8 @@ to get the hang of it, and then try starting with some other people's HTML boile
 that they've shared:
 
 * [HTML5 Boilerplate](http://html5boilerplate.com/), a blank template with lots of tips for high-performance best practices.
-* [Bootstrap](http://getbootstrap.com/), an HTML / CSS base with a big library of styles to test out.
+* [Bootstrap](http://getbootstrap.com/), an HTML / CSS / JS base with a big library of styles to test out.
+* [Foundation](http://foundation.zurb.com/), another HTML / CSS / JS framework you can test out.
 
   MARKDOWN
 end

@@ -10,7 +10,7 @@ steps do
     message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive.  Pull up your **hello.html** file again. Add a `script` tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
 
     source_code :html, <<HTML
-<script type="text/javascript">
+<script>
 </script>
 HTML
 
@@ -21,7 +21,7 @@ HTML
     message "Type in this short script. Javascript is case-specific (it treats `mynewname` and `myNewName` as two different things) and picky about syntax, so if your script doesn't run, check carefully for typos."
 
     source_code :html, <<HTML
-<script type="text/javascript">
+<script>
   function replaceName() {
     var myNewName = window.prompt('Pick a new name!');
     document.getElementById('user-name').innerHTML = myNewName;

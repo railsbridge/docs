@@ -54,8 +54,8 @@ explanation do
 
 Now that you know the basics of working with HTML, the trickiest part is remembering what tags are available. Here are some good sites you can use for reference:
 
-* [Sitepoint](http://reference.sitepoint.com/css)
-* [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
+* [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element);
+* [HTML5 Doctor's Element Index](http://html5doctor.com/element-index/).
 
   MARKDOWN
 end
