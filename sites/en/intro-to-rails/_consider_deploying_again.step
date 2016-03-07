@@ -1,0 +1,13 @@
+div :class => "deploying" do
+  h1 "Deploying"
+  blockquote do
+
+    message <<-MARKDOWN
+    Before the next step, you could try deploying your app to Heroku!
+
+    * If you have already deployed your app to Heroku, go on to [Deploying to Heroku again](deploying_to_heroku_again).
+    * If this is your first time deploying your app, start at [Deploying to Heroku](deploying_to_heroku)
+    MARKDOWN
+
+  end
+end

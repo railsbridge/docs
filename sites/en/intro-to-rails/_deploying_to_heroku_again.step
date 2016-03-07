@@ -1,0 +1,61 @@
+step "Commit any pending changes to git" do
+  message "Heroku will only receive the files we've committed into our local git repository. So we need to make sure all changed files have been committed."
+  console "git status"
+  message "`git status` shows you any pending changes you've created. If it has no output, you're already ready to deploy! Otherwise..."
+
+  console <<-SHELL
+git add .
+git commit -m "Some helpful message for your future self"
+  SHELL
+  message "Your commit message should reference whatever your outstanding
+changes are: something like \"Added votes to the topics index\"."
+end
+
+step "Push changes to Heroku" do
+  console "git push heroku master"
+  message "This takes all changes you've committed locally and pushes them to Heroku."
+end
+
+step "Run database migrations on Heroku" do
+  console "heroku run rake db:migrate"
+  message "This tells Heroku to run your migrations on its database, like
+running `rake db:migrate` locally."
+  message "Heroku's database is separate from the one on your computer, which
+means it needs to be updated every time you make changes to the structure of
+your database."
+  message "It also means that you'll not see any of the data you entered into
+the `sqlite3` database on your computer."
+end
+
+step "Visit your application" do
+  console "heroku open"
+  message "This opens the new application in your browser."
+end
+
+explanation do
+  message <<-MARKDOWN
+  First, we had to do some work to make Heroku happy with our application. This
+required updating the `Gemfile` and bundling.
+
+  * The `Gemfile` is a list of all the Ruby libraries your application needs.
+    What we've declared here is that we want to use the `sqlite3` library
+    while we're developing on our computer (the development group) but when
+    deploying to Heroku (the production group) we want to use the `pg` library,
+    which is made for the type of database that Heroku uses.
+
+  * Bundler is how Ruby projects keep track of the gems that they use. We told
+    Bundler what we wanted to use in the `Gemfile`, now we need to make sure those
+    gems are installed. Since we don't have the type of database Heroku does, we
+    skip the production gems. Don't worry though! Bundler still logs them so
+    Heroku will install them when they get your code.
+  MARKDOWN
+
+  message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
+  img src: "img/workflow.png", alt: "Diagram showing git workflow of making changes, committing them, and pushing to Heroku.", style: "border: none"
+  ol do
+    li { message "Add or change some code" }
+    li { message "Commit your changes (`git commit`)" }
+    li { message "(repeat)" }
+  end
+  message "Any time your changes are committed, you should feel free to `git push heroku master` and boom! Your changes are live!"
+end
