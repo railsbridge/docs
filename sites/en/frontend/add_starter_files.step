@@ -5,7 +5,7 @@ end
 steps do
   step do
     message <<-MARKDOWN
-      Download the .zip file from [this link](front-end-lesson.zip)
+      Download the .zip file from <a href="front-end-lesson.zip">this link</a>
       When the file download finishes, find it on your computer and unzip it.
     MARKDOWN
   end
