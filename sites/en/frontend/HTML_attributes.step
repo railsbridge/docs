@@ -17,16 +17,16 @@ Form elements use an attribute to tell the browser what type of input they are,
 so the results will be easy to tell apart. This input:
 
   MARKDOWN
-  source_code :html, "<input type='radio' name='rando-radio'>"
+  source_code :html, "<input type=\"radio\" name=\"rando-radio\">"
   message <<-MARKDOWN
 
-looks like a radio button: <input type='radio' name='rando-radio'>, but
+looks like a radio button: <input type="radio" name="rando-radio">, but
 
   MARKDOWN
-  source_code :html, "<input type='password' name='fake-password' value='ick'>"
+  source_code :html, "<input type=\"password\" name=\"fake-password\" value=\"ick\">"
   message <<-MARKDOWN
 
-looks like a password text input: <input type='password' name='rando-radio' value='ick'> even though they use the same **tag**.
+looks like a password text input: <input type="password" name="rando-radio" value="ick"> even though they use the same **tag**.
 
 ## IDs and Classes
 
@@ -36,7 +36,7 @@ we can assign names to elements and groups of elements, then apply CSS styles us
 MARKDOWN
 
   source_code :html, <<-MARKDOWN
-  <p id='intro' class='special'>
+  <p id="intro" class="special">
     This is my intro paragraph!
   </p>
 MARKDOWN
@@ -100,7 +100,7 @@ HTML
 </ul>
 <p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
 HTML
-    message "Refresh the page in the browser. You should see any new paragraphs you added, but no styling changes."
+    message "Refresh the page in the browser. You should see the new paragraphs you added, but no styling changes."
     message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
   end
 
@@ -144,7 +144,7 @@ CSS
     message <<-MARKDOWN
 (Note: The span is just an element that lets you apply a class, id, or other attribute to a string of text without adding any line breaks. Browsers won't give it any styling by default.)
 
-Once you add your style rule and refresh the page in the browser, you'll see something rather ugly like this:
+Once you add your style rule and refresh the page in the browser, you'll see something like this:
     MARKDOWN
     img src: 'img/css_id.png'
   end

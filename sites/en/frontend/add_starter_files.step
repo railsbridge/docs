@@ -1,5 +1,5 @@
 goals do
-  goal "Add some starter files to your project"
+  goal "Add some starter files"
 end
 
 steps do
@@ -12,7 +12,7 @@ steps do
   
   step do
     message <<-MARKDOWN
-      The zip file should contain a file called index.html and a directory of resources."
+      The zip file should contain a file called index.html and a directory of resources.
 
       <img src='img/zip.png'>
 

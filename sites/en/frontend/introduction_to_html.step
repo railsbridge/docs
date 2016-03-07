@@ -11,7 +11,7 @@ overview do
 
 HTML stands for __H__yper-__t__ext __M__arkup __L__anguage.
 
-Let's go through each of those words in reverse order and explain them...
+Let's go through each of those words in reverse order and explain them.
 
 * __L__anguage - People use different languages for different types of communication.
   We use languages such as English or Mandarin for human communication or languages such as
@@ -26,7 +26,7 @@ Let's go through each of those words in reverse order and explain them...
   files.  Computer users as early as the 1960s wanted to enrich this text and make it easier to work with.
   Thus, hypertext was born.  It is text because the file is stored as plain text, yet hyper because the text
   has a special meaning beyond the plain text when interpreted by a special program.  For HTML, that special
-  program is your web browser.
+  program is your web browser (like Chrome).
   MARKDOWN
 
 
@@ -37,7 +37,7 @@ steps do
 
   step do
     message <<MARKDOWN
-You'll need to fire up your text editor (like Sublime Text, Komodo Edit, or Text Wrangler) for these steps. We're going to make an html document!
+You'll need to fire up your text editor (like Sublime Text or Atom) for these steps. We're going to make an HTML document!
 
 Make a new file and call it <b>hello.html</b>. (In some editors, you may need to set the file type to 'HTML'; but usually, just using the .html extension will be enough.)
 
@@ -75,7 +75,7 @@ message <<-MARKDOWN
 
 The browser needs more information than just the file extension to display your website's content. The way we provide that information is by *marking up* your text with content clues in the form of HTML tags. Which you just did, by adding the `<em>` tag to your page!
 
-An HTML tag is encased within angle brackets, which look like this: `<`, `>`. Most every tag has a matching closing tag with a forward slash. The tags describe the content they surround, in our example, emphasizing the word "world".
+An HTML tag is encased within angle brackets, which look like this: `<`, `>`. Most tags have a matching closing tag with a forward slash. The tags describe the content they surround, in our example, emphasizing the word "world".
 
 __Opening tag__: `<em>`
 

@@ -6,10 +6,10 @@ Our aim is to get you acquainted with HTML, CSS, and JavaScript, the most essent
 of web experiences. You'll create a basic static web page about yourself and possibly deploy
 it to the web. You'll:
 
-* Write some content and give it some structure with **HTML**,
-* Use **CSS** to adjust the layout and style of that content,
-* Use **JavaScript** to add interactive components.
-* And optionally, push your website to GitHub with **git**.
+* write some content and give it some structure with **HTML**;
+* use **CSS** to adjust the layout and style of that content;
+* use **JavaScript** to add interactive components;
+* optionally, push your website to GitHub with **git**.
 
 Here's a sample sketch of what your page could look like:
 
@@ -17,10 +17,9 @@ Here's a sample sketch of what your page could look like:
 
 ### Schedule
 
-* 1-2 hours of playing with basic HTML, CSS and Javascript
-* 4-ish hours of building our page 
-
-* Optional: if you've worked with GitHub before and want to put your website online using Git and GitHub, we have instructions for that! (The curriculum has you keeping your site local by default.)
+* 1-2 hours of playing with basic HTML, CSS and Javascript.
+* 4-ish hours of building our page.
+* Optional: if you've worked with GitHub before and want to put your website online using Git and GitHub, we have instructions for that! (The curriculum has you keeping your site on your machine by default.)
 
 This is just a rough guideline, not a mandate. Some steps you'll go over and some you'll go under. It'll all work out by the end of the day. :D
 
@@ -29,15 +28,15 @@ This is just a rough guideline, not a mandate. Some steps you'll go over and som
 We're going to be working with:
 
 * [Chrome](https://www.google.com/chrome)
-  (If you're experienced with the developer tools in another browser, that may work too.)
+  (If you're experienced with the developer tools in another browser, that may work too.);
 * The code editor of your choice.
-  [Sublime Text 2](http://www.sublimetext.com/2) is popular and free to download, but you should buy a license if you keep using it after the workshop.
-  [Komodo Edit](http://www.activestate.com/komodo-edit) is a good open source option, if you don't have one yet.
+    * [Sublime Text](http://www.sublimetext.com/) is popular with many Ruby and Rails users. You can use it free for evaluation, then must pay to continue using it.
+    * [Atom](https://atom.io/) is a free, open-source editor that can be customized with HTML, CSS, and JavaScript. A download is available for OS X 10.8+, Windows 7/8, and Ubuntu/RedHat linux.
 
 Optional tools if you're deploying to GitHub: 
 
-* Git
-* Your [GitHub](http://github.com) account
+* Git;
+* Your [GitHub](http://github.com) account.
 MARKDOWN
 
 insert 'working_effectively_and_efficiently'
