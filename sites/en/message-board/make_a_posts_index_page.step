@@ -15,7 +15,7 @@ end
 
 tools_and_references do
 message <<-MARKDOWN
-* RailsGuides - Listing All Posts: http://guides.rubyonrails.org/getting_started.html#listing-all-posts
+* RailsGuides - Listing All Posts: http://guides.rubyonrails.org/v4.0/getting_started.html#listing-all-posts
   * Feel free to disregard the JSON stuff on this page, if you're so inclined.
 * Bootstrap - Style that table! http://getbootstrap.com/css/#tables
 MARKDOWN
