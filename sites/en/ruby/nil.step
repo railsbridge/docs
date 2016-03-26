@@ -69,7 +69,7 @@ word.nil?
 word = nil
 word.nil?
 # Remember, two equals signs asks if something is equal
-word == nil?
+word == nil
 IRB
 
     message "What's going on here?"
