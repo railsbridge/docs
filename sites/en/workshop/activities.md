@@ -105,6 +105,25 @@ This can be for the InstallFest or the workshop in general.
 * Write down one thing you're still unsure about.
 * Write down one thing you'd like to learn.
 
+# <a name="timesponges"></a> Time Sponges
+
+Activites to use during the workshop so that people aren't sitting around twiddling their thumbs
+
+## <a name="three-things-to-learn"></a>Three things to learn
+
+* Write down 3 things you want to learn today.
+* Share your list with 3 people.
+
+## <a name="three-most-important-things"></a> Three most important things
+
+* Write down the 3 most important things you learned so far.
+* Discuss your list with 3 people.
+
+## <a name="how-youll-use"></a> How you'll use
+
+* Write down how you'll use what you've learned so far.
+* Share you list with 3 people.
+
 # <a name="endingtheworkshop"></a> Ending the workshop
 
 ## <a name="heybuddy"></a> Hey, buddy
