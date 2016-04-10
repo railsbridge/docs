@@ -105,6 +105,11 @@ This can be for the InstallFest or the workshop in general.
 * Write down one thing you're still unsure about.
 * Write down one thing you'd like to learn.
 
+## <a name="three-most-important-things"></a> Three most important things
+
+* Write down the 3 most important things you learned so far.
+* Discuss your list with 3 people.
+
 # <a name="endingtheworkshop"></a> Ending the workshop
 
 ## <a name="heybuddy"></a> Hey, buddy
