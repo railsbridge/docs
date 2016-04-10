@@ -29,9 +29,9 @@ The cards are clues to finding developers (e.g. who wrote "Designing for Perform
 ## <a name="whatdoesanengineerlooklike"></a> What does an engineer look like?
 
 * Grab a pen and sticky notes.
-* Write down answers to: "What does an a engineer look like?"
+* Write down answers to: "What does an engineer look like?"
 * Look up #ILookLikeAnEngineer and find an awesome person there.
-* Introduce them (and yourself!) to someone else in the room.
+* Introduce them (and yourself!) to someone in the room.
 
 ## <a name="whatmakesagoodwebapp"></a> What makes a good Web App?
 
