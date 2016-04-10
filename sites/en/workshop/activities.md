@@ -14,8 +14,11 @@ Send students an email, asking
 ## <a name="shareyouranswers"></a> Share your answers
 
 * Grab a pen and sticky notes.
-* Find three other people and ask them about their answers to the warm-up questions.
-* Write them down and stick them up on the wall.
+* Write down your answers to the warm-up questions.
+* Swap your answers with someone else.
+* Swap again with someone new.
+
+# Put the sticky notes<br>up on the wall
 
 ## <a name="whatdoesadeveloperlooklike"></a> What does a developer look like?
 
