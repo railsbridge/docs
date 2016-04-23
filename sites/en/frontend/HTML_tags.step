@@ -121,7 +121,7 @@ are a ton of other tags you might use:
       td "A link (the 'a' stands for Anchor)."
     }
     tr {
-      td "h1-h6"
+      td "h1 to h6"
       td "Various headers, h1 is the most important, h6 the least."
     }
     tr {
@@ -138,7 +138,7 @@ are a ton of other tags you might use:
     }
     tr {
       td "table, tr, td"
-      td "You can make tables (like this one) with table rows and data cells."
+      td "Tables (like this one) with table rows and data cells."
     }
     tr {
       td "form"
@@ -150,7 +150,7 @@ are a ton of other tags you might use:
     }
     tr {
       td "div"
-      td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (More on this later.)"
+      td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (a 'division'. More on this later)"
     }
     tr {
       td "span"
@@ -160,7 +160,7 @@ are a ton of other tags you might use:
 
   message <<-MARKDOWN
 
-  And HTML5 introduced lots of new HTML tags to make the HTML more *semantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
+  HTML5 introduced lots of new tags to make the HTML more *semantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
 
   MARKDOWN
 
@@ -171,27 +171,27 @@ are a ton of other tags you might use:
     }
     tr {
       td "section"
-      td "A section of a document."
+      td "A section of a document: a thematic grouping of content."
     }
     tr {
       td "nav"
-      td "A navigation section."
+      td "A navigation section, containing links to other pages or to parts within the current page."
     }
     tr {
       td "header"
-      td "The header for a page. (This is different from the head element, which contains metadata about the page!)."
+      td "The header for a page or section of a page. (This is different from the head element, which contains metadata about the page!)."
     }
     tr {
       td "footer"
-      td "The footer for a page."
+      td "The footer for a page or section of a page."
     }
     tr {
       td "main"
-      td "The important content on a page."
+      td "The main content of a page."
     }
     tr{
       td "aside"
-      td "Content not essential to the main content."
+      td "Content that's related to the main content, but could be considered separate from it."
     }
   end
 
@@ -207,7 +207,7 @@ You don't need to memorize all the tags! You can always look them up on sites li
 
 What happens if you change the `<ul>` in your **hello.html** to `<ol>`? (Don't forget to change the closing tag, too.)
 
-Can you link your favorite things to their respective Wikipedia pages? Here's an example link for you: `<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>`
+Can you link your favorite things to their Wikipedia pages? Here's an example link for you: `<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>`
 
 What are all the individual parts of the code to add a link?
 
