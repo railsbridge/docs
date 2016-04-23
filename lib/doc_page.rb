@@ -114,8 +114,8 @@ class DocPage < Html5Page
 
     footer {
       p do
-        text "Going through this curriculum on your own? Get help at "
-        a "Code Newbie", href: "http://discourse.codenewbie.org/t/railsbridge-curriculum-questions/594/4"
+        text "Going through this curriculum on your own? Get help on "
+        a "our Discourse forum", href: "http://discourse.bridgefoundry.org/c/railsbridge-help", target: "_blank"
         text ", where RailsBridge volunteers can answer your questions."
       end
       p do

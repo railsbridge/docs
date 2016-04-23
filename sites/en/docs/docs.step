@@ -1,5 +1,7 @@
 message <<MARKDOWN
 This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
+
+Going through this curriculum on your own? You can get help on <a href="http://discourse.bridgefoundry.org/c/railsbridge-help" target="_blank">our Discourse forum</a>. (Volunteers to answer questions always needed, too!)
 MARKDOWN
 
 h1 'Setup'
