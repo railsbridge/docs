@@ -112,9 +112,9 @@ explanation do
 
 ## CSS is super powerful
 
-Here are two screen shots of the same HTML page, but on the right side, we've turned off all the CSS. Almost all of the color and formatting disappear, and the code snippets and buttons that were obvious with CSS styles now just look like text.
+Here are two screen shots of the same HTML page. On the left is just the HTML. On the right side, we've added lots of CSS. Almost all of the color and formatting are applied using CSS, and the code snippets and buttons now look great.
 
-### Bundler: With and Without CSS (the horror!)
+### Bundler: Before and After CSS
 
 <img src='img/css_bundler.png'>
 
