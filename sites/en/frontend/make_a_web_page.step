@@ -35,9 +35,9 @@ source_code :html, "<!-- This is a comment. The browser ignores it. -->"
     message <<-MARKDOWN
 We can also use this technique to temporarily stop a piece of code from running. We call that "commenting the code out."
 
-You'll remember when we were working on our **hello.html** file, we put JavaScript and CSS directly into the HTML document. You can also include JS and CSS in external files, with a link. This **index.html** file includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!').
+You'll remember when we were working on our **hello.html** file, we put JavaScript and CSS directly into the HTML document. You can also include JS and CSS from external files, with a link. This **index.html** file includes a link to a JavaScript file and a CSS file, but they're commented out (i.e. wrapped in an HTML tag that tells the browser, 'ignore this!').
 
-Look through **index.html** and find the links to the CSS and JavaScript files. Delete the comment tags from around them so that the browser will read them.
+Look through **index.html** and find the links to the CSS and JavaScript files. Delete the comment tags from around them so that the browser will read them. The lines should change color in your text editor: comments are usually displayed in a dull color in text editors to show that it's code that will be ignored.
     MARKDOWN
 
   end
@@ -88,7 +88,7 @@ In JavaScript you write comments by starting a line with `//`.
   HTML
   message <<-MARKDOWN
 
-In CSS you write comments by wrapping the comment in inside a `/*` (start a comment) and `*/` (finish a comment).
+In CSS you write comments by wrapping the comment in inside a `/*` (start a comment) and `*/` (finish a comment). A comment can go over several lines.
 
 * A CSS tag looks like this when it's a link:
 
