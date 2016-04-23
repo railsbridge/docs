@@ -7,15 +7,15 @@ overview do
   message <<-MARKDOWN
 ## What is CSS?
 
-CSS stands for __C__ascading __S__tyle__s__heets. It's a language for creating **rules** that
+CSS stands for *C*ascading *S*tyle*s*heets. It's a language for creating **rules** that
 can **select** various elements on the page and change their **visual properties**.
 
-* __C__ascading - this is how the browser determines the correct style rules to apply to
+* *C*ascading - this is how the browser determines the correct style rules to apply to
   each element on the page. As we'll see, CSS has many ways to match rules to elements, and
   some of those ways count for more than others. The browser allows more important rules to
   _cascade_ over less important ones.
 
-* __S__tyle__s__heets - CSS files are called 'stylesheets' because they are separate documents - their
+* *S*tyle*s*heets - CSS files are called 'stylesheets' because they are separate documents - their
   file type is .css - that only deal with styling information. We add special tags in our HTML files to
   link them to our stylesheets.
 
@@ -40,7 +40,7 @@ MARKDOWN
   message <<-MARKDOWN
 ## CSS Rules Are Made of a Selector and Attributes
 
-The **selector** is the first part of a CSS rule - it tells the browser how to find, or _select_, the element we want to style.
+The **selector** is the first part of a CSS rule - it tells the browser how to find, or *select*, the element we want to style.
 On this page, we'll use `h1` and `p` as our selectors, which match the `h1` and `p` elements in our HTML.
 
 <img src='img/css.png'>
