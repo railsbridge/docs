@@ -27,8 +27,7 @@ explanation do
 ## What Are These Files?
 
 Just to save you some time, we've supplied a bare bones HTML document, a CSS stylesheet,
-a JavaScript file, and a placeholder image. But you could have typed up these files yourself
-with your text editor, if you'd wanted to.
+a JavaScript file, and a placeholder image.
 
 If you are starting a new project in the future, try typing it all out by hand a few times
 to get the hang of it, and then try starting with some other people's HTML boilerplate code
