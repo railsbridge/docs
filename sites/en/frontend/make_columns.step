@@ -44,6 +44,6 @@ it. Here are two different designers' interpretations of the same HTML:
   MARKDOWN
 end
 
-insert 'consider_deploying_to_github'
+insert 'consider_deploying_to_github_again'
 
 next_step "basic_javascript"

@@ -60,6 +60,6 @@ Now that you know the basics of working with HTML, the trickiest part is remembe
   MARKDOWN
 end
 
-insert 'consider_deploying_to_github'
+insert 'consider_deploying_to_github_again'
 
 next_step 'make_columns'

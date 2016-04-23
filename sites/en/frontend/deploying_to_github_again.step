@@ -1,0 +1,11 @@
+h2 do
+  span "If you haven't deployed your app to GitHub yet, start at "
+  a 'Deploying to GitHub', href: 'deploying_to_github_pages'
+  span "."
+end
+
+important "If you have any problems with these steps, ask a volunteer for help. If you don't know if you have Git installed or have a GitHub account, it's okay to do these steps later instead."
+
+insert '_deploying_to_github'
+
+insert '_deploying_to_github_again'

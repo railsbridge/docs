@@ -1,0 +1,13 @@
+div :class => "deploying" do
+  h1 "Optional Step: Deploying to GitHub again"
+  blockquote do
+
+    message <<-MARKDOWN
+    Before the next step, you could try deploying your page to GitHub!
+
+    * If you have already deployed to GitHub, go on to [Deploying to GitHub again](deploying_to_github_again).
+    * If this is your first time deploying, start at [Deploying to GitHub](deploying_to_github)
+    MARKDOWN
+
+  end
+end
