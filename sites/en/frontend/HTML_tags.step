@@ -12,7 +12,7 @@ overview do
 
 Tags convey meaning. And in order to display your content well, everything should be inside of a tag, not just words you want emphasized. So let's use the paragraph tag `<p>` and the header 1 tag `<h1>`.
 
-You'll notice that even if you put in extra lines and spaces, HTML will treat any number of
+You'll notice that even if you put in extra lines and spaces, browsers will treat any number of
 new line or space characters like there's just one space there. When you're getting started
 with HTML, this can seem like a pain, because you have to type
   MARKDOWN
@@ -60,7 +60,7 @@ My name is Rachel.
   end
 
   step do
-    message "Even though we put in some blank lines, the browser ignored them. So we'll have to use tags to break up our content."
+    message "The browser ignored the new lines and the blank line because we didn't use any tags. Let's use some to break up our content."
     message "Update your HTML with an `h1` tag and a `p` tag:"
 
     source_code :html, <<-HTML
