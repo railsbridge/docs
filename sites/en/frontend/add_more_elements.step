@@ -1,5 +1,5 @@
 goals do
-  message "Now we'll switch from simple steps to doing **challenges**. There will still be something to do at each step, but it will take some figuring out to do correctly. (If you get stuck, you can still ask a TA or instructor for hints.) You will:"
+  message "Now we'll switch from simple steps to doing **challenges**. There will still be something to do at each step, but it will take some figuring out to do correctly. If you get stuck, ask a volunteer for hints. You will:"
   goal "Fill in more content"
   goal "Add an image tag"
   goal "Use two different kinds of anchor tags"
