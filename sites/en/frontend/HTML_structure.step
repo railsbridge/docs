@@ -28,7 +28,7 @@ The `<html>` encloses all the rest of your page and states "Here is my HTML!"
     <!-- Important invisible details will go here! -->
   </head>
   <body>
-    Actual Visible Content
+    Visible Content
   </body>
 </html>
 HTML
@@ -36,15 +36,11 @@ HTML
 
 ### The Head
 
-The `head` contains information that is not displayed in your browser. It has metadata tags that can tell a search engine or another program more about the file, like who wrote it or what keywords are relevant, such as:
+The `head` contains information that is not displayed in your browser. It has metadata (data about data) tags that can tell a search engine or another program more about the file, like who wrote it or what keywords are relevant, such as:
 
-What language or character set you're using: `<meta charset="utf-8">`
-
-What the page title should be: `<title>HTML!</title>`
-
-What CSS and JavaScript files to include (and where they are):
-
-`<link rel="stylesheet" href="style.css">`
+ * What language or character set you're using: `<meta charset="utf-8">`
+ * What the page title should be: `<title>HTML!</title>`
+ * What CSS and JavaScript files to include (and where they are): `<link rel="stylesheet" href="style.css">`
 
   MARKDOWN
   source_code :html, <<HTML
@@ -65,7 +61,7 @@ HTML
 
 ### The Body
 
-The Body contains the actual content of your file, the things you'll want your users
+The body contains the actual content of your file, the things you'll want your users
 to be able to see, read, or interact with!
 
   MARKDOWN
@@ -76,7 +72,7 @@ steps do
 
   step do
     message <<-MARKDOWN
-Let's add the doctype, HTML, head, and body tags to your file. It should look something like this:
+Let's add the doctype, HTML, head, and body tags to your hello.html file. It should look something like this:
 
 <img src='img/hello_structure.png'>
 
