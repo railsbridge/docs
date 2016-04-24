@@ -14,8 +14,11 @@ Send students an email, asking
 ## <a name="shareyouranswers"></a> Share your answers
 
 * Grab a pen and sticky notes.
-* Find three other people and ask them about their answers to the warm-up questions.
-* Write them down and stick them up on the wall.
+* Write down your answers to the warm-up questions.
+* Swap your answers with someone else.
+* Swap again with someone new.
+
+# Put the sticky notes<br>up on the wall
 
 ## <a name="whatdoesadeveloperlooklike"></a> What does a developer look like?
 
@@ -29,9 +32,9 @@ The cards are clues to finding developers (e.g. who wrote "Designing for Perform
 ## <a name="whatdoesanengineerlooklike"></a> What does an engineer look like?
 
 * Grab a pen and sticky notes.
-* Write down answers to: "What does an a engineer look like?"
+* Write down answers to: "What does an engineer look like?"
 * Look up #ILookLikeAnEngineer and find an awesome person there.
-* Introduce them (and yourself!) to someone else in the room.
+* Introduce them (and yourself!) to someone in the room.
 
 ## <a name="whatmakesagoodwebapp"></a> What makes a good Web App?
 
@@ -104,6 +107,11 @@ This can be for the InstallFest or the workshop in general.
 * Write down one thing that you can do now.
 * Write down one thing you're still unsure about.
 * Write down one thing you'd like to learn.
+
+## <a name="three-most-important-things"></a> Three most important things
+
+* Write down the 3 most important things you learned so far.
+* Discuss your list with 3 people.
 
 # <a name="endingtheworkshop"></a> Ending the workshop
 
