@@ -66,3 +66,45 @@ steps do
     message "In a few minutes time, when you visit [your-github-user-name].github.io in a browser, you should see a blank white page: this is great! You're looking at the index.html file you just created, now live on the web!"
   end
 end
+
+explanation do
+  message <<-MARKDOWN
+
+## What is Git?
+
+Git is an open-source tool for tracking and managing changes to source code. If you've
+used tools like SVN or CVS, you can use Git to do the same things.
+
+Git is not required for front end development at all &mdash; some people use other source
+control tools like SVN, and there are wild and crazy coders who don't use source control
+at all.
+
+### But here are some good reasons to use a source control system:
+
+* You can commit different/earlier versions of a project, and get them back
+  later if you change your mind.
+* It's easy to also copy these versions to another server or computer, so you
+  have a backup if your laptop is stolen or your hard drive gets damaged.
+* Other coders can more easily work on a project with you. Source control
+  systems have an automated way to 'merge' or combine changed files together.
+
+### And there are some neat things about Git specifically:
+
+* Git is distributed. Each person or computer working on the project has a full
+  copy of it. There isn't a remote server you have to connect to that has the
+  'official' copy somewhere.
+* Git makes it easy to 'branch' or work separately for a while on an alternate
+  version of the project, and then 'merge' those changes back in if you want to.
+* Git is ultra-powerful, and even many experienced developers are mystified
+  by its wily ways.
+
+## What is GitHub?
+
+GitHub is a web application that will store copies of your git repositories for you.
+It's a convenient place to keep a backup of your projects, and it has a nice-looking
+web interface that makes it easy to see your files and changes.
+
+Projects that you make public (i.e. open source) can be stored on GitHub for free.
+
+  MARKDOWN
+end
