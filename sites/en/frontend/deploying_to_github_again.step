@@ -6,6 +6,4 @@ end
 
 important "If you have any problems with these steps, ask a volunteer for help. If you don't know if you have Git installed or have a GitHub account, it's okay to do these steps later instead."
 
-insert '_deploying_to_github'
-
 insert '_deploying_to_github_again'
