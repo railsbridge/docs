@@ -1,6 +1,6 @@
 h2 do
   span "If you have already deployed your app to GitHub, go on to "
-  a 'Deploying to GitHub again', href: "deploying_to_github_pages_again"
+  a 'Deploying to GitHub again', href: "deploying_to_github_again"
   span "."
 end
 

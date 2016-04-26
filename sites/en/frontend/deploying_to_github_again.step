@@ -1,6 +1,6 @@
 h2 do
   span "If you haven't deployed your app to GitHub yet, start at "
-  a 'Deploying to GitHub', href: 'deploying_to_github_pages'
+  a 'Deploying to GitHub', href: 'deploying_to_github'
   span "."
 end
 
