@@ -18,7 +18,7 @@ HTML
   end
 
   step do
-    message "Type in this short script. Javascript is case-specific (it treats `mynewname` and `myNewName` as two different things) and picky about syntax, so if your script doesn't run, check carefully for typos."
+    message "Type in this short script. Javascript is case-specific (it treats `mynewname` and `myNewName` as two different things) and picky about syntax. If your script doesn't run, check carefully for typos."
 
     source_code :html, <<HTML
 <script>
@@ -50,11 +50,11 @@ explanation do
   
   message <<-MARKDOWN
 
-## Wherefore JavaScript?
+## Why JavaScript?
 
 Javascript allows you to make your pages interactive. You can use it to build
 anything from a simple animation to a giant web application like Twitter
-or Github. It gives you total control to add, remove, or modify content you've
+or GitHub. It gives you total control to add, remove, or modify content you've
 made with HTML. You can also use it to change styles and add or remove
 classes.
 

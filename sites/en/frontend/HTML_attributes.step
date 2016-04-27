@@ -83,7 +83,7 @@ steps do
   <li>Soccer</li>
   <li>Programming</li>
 </ul>
-<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+<p>I hear RailsBridge needs volunteers, should I volunteer? :)</p>
 HTML
   end
 
@@ -98,10 +98,10 @@ HTML
   <li>Soccer</li>
   <li>Programming</li>
 </ul>
-<p>I hear RailsBridge needs volunteers, should I volunteer!?!</p>
+<p>I hear RailsBridge needs volunteers, should I volunteer? :)</p>
 HTML
     message "Refresh the page in the browser. You should see the new paragraphs you added, but no styling changes."
-    message "Many HTML attributes, like classes and ids, don't directly convey visual information. Your site will look the exact same until we use the class to add CSS styling."
+    message "Many HTML attributes, like classes and ids, don't convey visual information. Your site will look the exact same until we use the class to add CSS styling."
   end
 
   step do
@@ -164,4 +164,3 @@ MARKDOWN
 end
 
 next_step "developer_tools"
-

@@ -12,7 +12,7 @@ overview do
 
 Tags convey meaning. And in order to display your content well, everything should be inside of a tag, not just words you want emphasized. So let's use the paragraph tag `<p>` and the header 1 tag `<h1>`.
 
-You'll notice that even if you put in extra lines and spaces, HTML will treat any number of
+You'll notice that even if you put in extra lines and spaces, browsers will treat any number of
 new line or space characters like there's just one space there. When you're getting started
 with HTML, this can seem like a pain, because you have to type
   MARKDOWN
@@ -60,7 +60,7 @@ My name is Rachel.
   end
 
   step do
-    message "Even though we put in some blank lines, the browser ignored them. So we'll have to use tags to break up our content."
+    message "The browser ignored the new lines and the blank line because we didn't use any tags. Let's use some to break up our content."
     message "Update your HTML with an `h1` tag and a `p` tag:"
 
     source_code :html, <<-HTML
@@ -121,7 +121,7 @@ are a ton of other tags you might use:
       td "A link (the 'a' stands for Anchor)."
     }
     tr {
-      td "h1-h6"
+      td "h1 to h6"
       td "Various headers, h1 is the most important, h6 the least."
     }
     tr {
@@ -138,7 +138,7 @@ are a ton of other tags you might use:
     }
     tr {
       td "table, tr, td"
-      td "You can make tables (like this one) with table rows and data cells."
+      td "Tables (like this one) with table rows and data cells."
     }
     tr {
       td "form"
@@ -150,7 +150,7 @@ are a ton of other tags you might use:
     }
     tr {
       td "div"
-      td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (More on this later.)"
+      td "A section marker that doesn't do anything specific to the contents itself, but does make a new line after. (a 'division'. More on this later)"
     }
     tr {
       td "span"
@@ -160,7 +160,7 @@ are a ton of other tags you might use:
 
   message <<-MARKDOWN
 
-  And HTML5 introduced lots of new HTML tags to make the HTML more *semantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
+  HTML5 introduced lots of new tags to make the HTML more *semantic*, meaning the tags should describe the content they describe. Some of the new elements introduced by HTML5 include:
 
   MARKDOWN
 
@@ -171,43 +171,43 @@ are a ton of other tags you might use:
     }
     tr {
       td "section"
-      td "A section of a document."
+      td "A section of a document: a thematic grouping of content."
     }
     tr {
       td "nav"
-      td "A navigation section."
+      td "A navigation section, containing links to other pages or to parts within the current page."
     }
     tr {
       td "header"
-      td "The header for a page. (This is different from the head element, which contains metadata about the page!)."
+      td "The header for a page or section of a page. (This is different from the head element, which contains metadata about the page!)."
     }
     tr {
       td "footer"
-      td "The footer for a page."
+      td "The footer for a page or section of a page."
     }
     tr {
       td "main"
-      td "The important content on a page."
+      td "The main content of a page."
     }
     tr{
       td "aside"
-      td "Content not essential to the main content."
+      td "Content that's related to the main content, but could be considered separate from it."
     }
   end
 
   message <<-MARKDOWN
 
-Don't try to memorize all the tags! You can always look them up on sites like:
+You don't need to memorize all the tags! You can always look them up on sites like:
 
-* [Sitepoint](http://reference.sitepoint.com/html)
-* [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
 * [WebPlatform.org](http://webplatform.org/)
+* [Mozilla Developer Network](https://developer.mozilla.org/en/HTML/Element)
+* [Sitepoint](http://reference.sitepoint.com/html)
 
 ## Try This
 
 What happens if you change the `<ul>` in your **hello.html** to `<ol>`? (Don't forget to change the closing tag, too.)
 
-Can you link your favorite things to their respective Wikipedia pages? Here's an example link for you: `<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>`
+Can you link your favorite things to their Wikipedia pages? Here's an example link for you: `<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>`
 
 What are all the individual parts of the code to add a link?
 

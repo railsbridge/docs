@@ -31,13 +31,9 @@ explanation do
 
   message <<-MARKDOWN
 
-## So Should I Use JavaScript or jQuery?
+## So Should I Use regular JavaScript or jQuery?
 
-Don't forget that everything you can do with jQuery, you can do with straight JavaScript.
-If you want to start building cool user interface features right away, jQuery will probably
-help you do that the fastest. But, long-term, to be great at jQuery, you really need to
-understand the language it's written in: JavaScript. It's worthwhile to learn about both.
-
+Don't forget that everything you can do with jQuery you can do with regular JavaScript. If you want to start building cool user interfaces that use JavaScript right away, jQuery will probably help you do that the fastest. It's worth learning how to do things with regular JavaScript too, because you won't always want or need to use jQuery.
 
   MARKDOWN
   
