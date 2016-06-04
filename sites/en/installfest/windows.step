@@ -17,7 +17,7 @@ end
 
 step "Configure your git and ssh environment" do
 
-  important "At the end of the installer there will be a checkbox asking 'configure your git and ssh environment'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+  important "At the end of the installer there will be a checkbox asking 'Configure git and ssh when installation has completed'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
 
   message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
   message "Type *your actual full name* into the console and press **[enter]**"
