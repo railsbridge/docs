@@ -42,13 +42,15 @@ step "Create a new Rails app" do
   MARKDOWN
 
   fuzzy_result <<-TEXT
-    => Booting WEBrick
-    => Rails 4.{FUZZY}2.x{/FUZZY} application starting in development on http://0.0.0.0:3000
-    => Call with -d to detach
-    => Ctrl-C to shutdown server
-    [2010-09-30 21:04:12] INFO  WEBrick 1.3.1
-    [2010-09-30 21:04:12] INFO  ruby 1.9{FUZZY}.3 (2012-11-10) [x86_64-darwin10.4.2]{/FUZZY}
-    [2010-09-30 21:04:12] INFO  WEBrick::HTTPServer#start: pid={FUZZY}24805{/FUZZY} port=3000
+    => Booting Puma
+    => Rails 5.0{FUZZY}.0{/FUZZY} application starting in development on http://localhost:3000
+    => Run `rails server -h` for more startup options
+    Puma starting in single mode...
+    * Version {FUZZY}3.4.0{/FUZZY} (ruby 2.{FUZZY}2.2-p95{/FUZZY}), codename: {FUZZY}Owl Bowl Brawl{/FUZZY}
+    * Min threads: 5, max threads: 5
+    * Environment: development
+    * Listening on tcp://localhost:3000
+    Use Ctrl-C to stop
   TEXT
 
   message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
@@ -82,7 +84,7 @@ step "Generate a database model" do
   message <<-MARKDOWN
     **Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command.
 
-    Wait until your console shows that the Webrick server has started (just like before).  Then, in the browser, visit <http://localhost:3000/drinks>
+    Wait until your console shows that the Puma server has started (just like before).  Then, in the browser, visit <http://localhost:3000/drinks>
 
     1. Click on "New drink"
     2. Enter Cappuccino for the name
