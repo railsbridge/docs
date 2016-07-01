@@ -24,7 +24,7 @@ step "Have a volunteer check your tool versions" do
     console "rails -v"
     fuzzy_result "Rails 4.2{FUZZY}.x{/FUZZY}"
 
-    tip 'The RailsBridge curriculum is written for Rails 4, so if you still have Rails 3.x, you need to install Rails 4 with `gem install rails`.'
+    tip 'The RailsBridge curriculum is written for Rails 4, so if you still have Rails 3.x, you need to install Rails 4 with `gem install rails -v 4.2.6`.'
   end
 end
 

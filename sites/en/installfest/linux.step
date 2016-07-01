@@ -74,7 +74,7 @@ end
 step "Install Rails" do
   message "Using a terminal again, execute the following command to install rails."
 
-  console "gem install rails"
+  console "gem install rails -v 4.2.6"
 end
 
 step "Sublime Text 2" do
