@@ -156,7 +156,10 @@ message <<-MARKDOWN
 
   ### Add a Link
 
-  Our users probably aren't going to know they can hit `/jobs/:id/edit` to visit the edit form, so let's add a link to it on the jobs index so we end up with this (we're just adding the line with the `<h5>` header in it ... don't copy and paste the whole thing!):
+  Our users probably aren't going to know they can hit `/jobs/:id/edit` to visit the edit form, so let's add a link so it's easy to find! 
+  
+  In `app/views/jobs/index.html.erb`, just add this line with the `<h5>` header in it ... don't copy and paste the whole thing!
+
 MARKDOWN
 
 source_code :erb,
