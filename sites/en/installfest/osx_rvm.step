@@ -46,7 +46,7 @@ step "Install Ruby" do
 end
 
 step "Install Rails" do
-  console "gem install rails"
+  console "gem install rails -v 4.2.6"
   verify do
     console "rails -v"
     fuzzy_result "Rails 4.{FUZZY}2.x{/FUZZY}"
