@@ -97,20 +97,16 @@ bundle install --without production
     message "Use your editor to open the file routes.rb  (`C:\\sites\\railsbridge\\test_app\\config\\routes.rb` or `~/railsbridge/test_app/config/routes.rb`) and find the line containing:"
 
     source_code :ruby, <<-RUBY
-      # root 'welcome#index'
+      Rails.application.routes.draw do
     RUBY
 
-    message "Remove this line and replace it with:"
+    message "After this line, add a new line with the following:"
 
     source_code :ruby, <<-RUBY
       root 'drinks#index'
     RUBY
 
     message "Save the file."
-
-    message "Note that you must remove the leading '#', as lines that start with a # are
-    comments and will not have any effect."
-
   end
 
   step "Add the changes to git" do
