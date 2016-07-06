@@ -67,7 +67,7 @@ Follow along at http://docs.railsbridge.org/learn-to-code
   * Ask for SSID and password
 * a live Ruby installation
   * e.g. http://railsinstaller.org -- click on the *BIG GREEN BUTTON*
-  * Ruby version 2.1 preferred, but 1.9 is fine too
+  * Ruby version 2.3 preferred, but 1.9+ is fine too
     * run `ruby -v` to check
 * a text editor
   * e.g. Sublime Text 2

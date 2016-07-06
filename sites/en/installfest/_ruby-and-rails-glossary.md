@@ -2,7 +2,7 @@
 
 **rails new** _NameApp_  Creates a new Rails application with the entire Rails directory structure to run your application.
 
-**rails server (or rails s)**  Launches a small web server named WEBrick that you will use any time you want to access your application through a web browser.
+**rails server (or rails s)**  Launches a web server named Puma that you will use any time you want to access your application through a web browser.
 
 **rails generate (or rails g)**  Uses templates to create a bunch of directories and files in your application.
 

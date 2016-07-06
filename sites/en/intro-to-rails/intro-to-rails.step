@@ -38,8 +38,8 @@ day. Probably.
 
 We're going to be working with:
 
-* Ruby 2.1 or 2.2 installed via RVM (Mac or Linux) or RailsInstaller (Windows)
-* Rails 4.2.x
+* Ruby 2.2 or 2.3 installed via RVM (Mac or Linux) or RailsInstaller (Windows)
+* Rails 5.0.x
 * Bundler
 * SQLite
 * The text editor of your choice

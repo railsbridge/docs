@@ -152,11 +152,11 @@ bundle install --without production
     console "heroku run rake db:migrate"
 
     result <<-OUTPUT
-      Migrating to CreateDrinks (20120428044153)
-      ==  CreateDrinks: migrating ===================================================
+      Migrating to CreateDrinks (20160706063236)
+      ==  20160706063236 CreateDrinks: migrating =====================================
       -- create_table(:drinks)
          -> 0.0084s
-      ==  CreateDrinks: migrated (0.0085s) ==========================================
+      ==  20160706063236 CreateDrinks: migrated (0.0085s) ============================
     OUTPUT
 
     message "The long number after CreateDrinks is a timestamp. Yours will be different!"
