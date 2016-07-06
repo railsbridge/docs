@@ -23,9 +23,7 @@ will be ignored."
     message "To get back to the terminal, you can stop the server by typing
 `Control-c`."
     result <<-STOPPING_RAILS_SERVER
-^C[#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}] INFO  going to shutdown ...
-[#{Time.now.strftime("%Y-%m-%d %H:%M:%S")}] INFO  WEBrick::HTTPServer#start done.
-Exiting
+^CExiting
     STOPPING_RAILS_SERVER
   end
 end

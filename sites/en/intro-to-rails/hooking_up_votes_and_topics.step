@@ -22,7 +22,7 @@ steps {
     message "Edit `app/models/topic.rb` so that it looks like this:"
 
     source_code :ruby, <<-RUBY
-class Topic < ActiveRecord::Base
+class Topic < ApplicationRecord
   has_many :votes, dependent: :destroy
 end
     RUBY
@@ -31,7 +31,7 @@ end
   step "Teach the Vote model about Topics" do
     message "Edit `app/models/vote.rb` so that it looks like this:"
     source_code :ruby, <<-RUBY
-class Vote < ActiveRecord::Base
+class Vote < ApplicationRecord
   belongs_to :topic
 end
     RUBY

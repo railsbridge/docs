@@ -77,7 +77,7 @@ MARKDOWN
 message <<-MARKDOWN
   # Check out the model
 
-  The migration we just ran updated the database, but that doesn't mean that we can talk to the database using Ruby yet. Look at the file `app/models/job.rb`. The `Job` class inherits from ActiveRecord::Base, so that we can talk to the database with Ruby instead of SQL!
+  The migration we just ran updated the database, but that doesn't mean that we can talk to the database using Ruby yet. Look at the file `app/models/job.rb`. The `Job` class inherits from ApplicationRecord, so that we can talk to the database with Ruby instead of SQL!
 
   Okay, so we've got some place to store our jobs. But how can we make any? THROUGH THE MAGIC OF FORMS!!!
 MARKDOWN

@@ -18,10 +18,11 @@ steps {
 
     message "Search the file for **root**, it should be near the top if you are using Rails 4. You can use Sublime Text's search: look for **Find...** in the **Find** menu."
 
-    message "Uncomment the line that contains the example command by removing the `#` sign in front of it, and change it to read `root 'topics#index'`. When you are done the line should look like this:"
+    message "Look for the line `Rails.application.routes.draw` at the beginning of the file, and add the line `root 'topics#index'` after it. When you are done the start of the file should look like this:"
 
     source_code :ruby, <<-RUBY
-root 'topics#index'
+Rails.application.routes.draw do
+  root 'topics#index'
     RUBY
 
     em do
@@ -68,11 +69,11 @@ explanation {
   ````
   This shows all the URLs your application responds to. The code that starts with colons are variables so :id means the id number of the record. The code in parenthesis is optional.
 
-  In Rails 4, you can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
+  You can also get this information on your site in development. Go to <a href="http://localhost:3000/rails/info">http://localhost:3000/rails/info</a> and you'll see something like this:
 
   <img src='img/rails4_rails_info_routing.png' alt='Screenshot of browser-based Rails routing info page'>
 
-  You'll also see that table in Rails 4 whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
+  You'll also see that table in whenever you try to access an invalid route (try <a href="http://localhost:3000/sandwich">http://localhost:3000/sandwich</a>)
 
 ### Exploring Routes (optional)
 
