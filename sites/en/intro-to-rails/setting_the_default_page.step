@@ -16,8 +16,6 @@ steps {
   step "Add a root route" do
     message "Open the file `config/routes.rb` in an editor (In the InstallFest yesterday, we suggested that you install and use **Sublime Text** as your editor)."
 
-    message "Search the file for **root**, it should be near the top if you are using Rails 4. You can use Sublime Text's search: look for **Find...** in the **Find** menu."
-
     message "Look for the line `Rails.application.routes.draw` at the beginning of the file, and add the line `root 'topics#index'` after it. When you are done the start of the file should look like this:"
 
     source_code :ruby, <<-RUBY
