@@ -8,3 +8,7 @@
 //= require 'step'
 //= require 'font_awesome'
 //= require 'coderay'
+
+.line.delete { background: hsla(0,100%,50%,0.12);   color: #595959; }
+
+.line.insert { background: hsla(120,100%,50%,0.12);   color: #595959 }
