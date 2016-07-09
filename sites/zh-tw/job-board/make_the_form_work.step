@@ -1,0 +1,132 @@
+message <<-MARKDOWN
+  # What we're going to do
+
+  * Make the form actually work
+  * Learn how to read server output
+  * Review happy debugging techniques
+
+  # Partytime: Use the form to Create Objects
+MARKDOWN
+
+message "Now, try to submit your form."
+
+error_box "The action 'create' could not be found for JobsController"
+
+message <<-MARKDOWN
+  So, let's add it:
+
+  (Don't forget to navigate to the jobs controller by using the search shortcut, cmd+p or ctl+p)
+MARKDOWN
+
+source_code :ruby,
+<<-RUBY
+  def create
+  end
+RUBY
+
+message "Try to use your form again. Unfortunately, there won't be any output, not even an error page. But if you look closely at the output from your Rails server, you might find this:"
+
+error_box "No template found for JobsController#create, rendering head :no_content"
+
+<<-MARKDOWN
+  Familiar error, right? We don't have a template called create.html.erb.
+
+  BUT!!! This time we're not going to make one.
+
+  We actually want to go somewhere useful, right? Let's go back to the main jobs page (where we will eventually be listing our jobs). We need to tell the create method where to go, instead of letting it decide based on method name.
+MARKDOWN
+
+source_code :ruby,
+<<-RUBY
+  def create
+    redirect_to jobs_path
+  end
+RUBY
+
+message <<-MARKDOWN
+  Okay, now go to <http://localhost:3000/jobs/new> again, and submit a new job.
+
+  Hopefully it went to the right place! But did it do anything?
+
+  Sadly, no. We just took our form contents and dropped them on the ground.
+MARKDOWN
+
+discussion_box "Logging & Server Output",
+<<-MARKDOWN
+  Arrange your screens so that you can see your server logs (in the terminal window) at the same time as your browser. Now, refresh the form page, and look at what happens in the server. You should see output like `Started GET "/jobs/new"`.
+
+  As a group or in pairs, go over the output of the server, talking through the various pieces of information you see.
+MARKDOWN
+
+message <<-MARKDOWN
+  # Saving form data!
+
+  Head back to <http://localhost:3000/jobs/new>, and get your Rails server logs and your browser next to each other again. Submit the form again, this time looking for the section that looks something like:
+MARKDOWN
+
+source_code :http,
+<<-JSON
+  Parameters: {
+    "utf8"=>"✓",
+    "authenticity_token"=>"f48rtxanK9/MHu7TPvd6QzygGnrwv0P2/bxLllozw5U=",
+    "job"=>{
+      "title"=>"Meta-organizer",
+      "description"=>"We need an somene to organize the organizers."
+    },
+    "commit"=>"Create Job"
+  }
+JSON
+
+message <<-MARKDOWN
+  This is the precious data that our form is sending, and right now we're just throwing it away. Let's not do that! Since we're using Rails 5 and all its great conventions, we're going to use Strong Parameters to limit what kind of data our form can submit to our app.
+MARKDOWN
+
+source_code_with_message "Add this code to your jobs controller. (Notice that we're expanding the create method. Don't just copy and paste and end up with two create methods, folks.)", :ruby,
+<<-RUBY
+  def create
+    Job.create(job_params)
+    redirect_to jobs_path
+  end
+
+  private
+
+  def job_params
+    params.require(:job).permit(:title, :description)
+  end
+RUBY
+
+message <<-MARKDOWN
+  Walk through this code line by line with the class! (But don't get too hung up on how strong params works — suffice it to say that it limits the parameters that we'll allow in to the ones listed here.)
+MARKDOWN
+
+console_with_message "Rails console time! Open up another tab or window in your terminal and type this:", "rails c"
+
+console_with_message "After that's loaded, let's see how many jobs we've saved to the database:", "Job.count"
+
+message <<-MARKDOWN
+  Now, submit a new job using the form. What's the count now?
+
+  If the count is going up, yay!!! You got it! If not, time to debug!
+
+  # Tips for Effective Debugging
+
+  * Take a deep breath. Most of your time programming will be looking for bugs.
+  * Read the error message out loud. Even if you already think you know what it means.
+  * Check every assumption you can think of. You think that something is getting stored in a variable? WHO KNOWS?
+    * A good way to check your assumptions is to print out anything you can to the Rails server log. Add puts statements to your code!
+    * For example: If the jobs count isn't changing when we make jobs, make the jobs controller look like this. Now, it will print to the console the line "In the create method!!!!" and whatever is being returned from `Job.create(job_params)`
+MARKDOWN
+
+source_code :ruby,
+<<-RUBY
+  def create
+    p "In the create method!!!!!!"
+    job = Job.create(job_params)
+    p job
+    redirect_to jobs_path
+  end
+RUBY
+
+message "* Think about how you would explain the problem to someone else, or, actually explain the problem to another student or a TA!"
+
+next_step "crud_and_resourceful_routing"

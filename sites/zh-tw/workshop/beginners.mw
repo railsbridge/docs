@@ -1,0 +1,22 @@
+* What's a program? Operating system?
+* What's a framework? 
+** something that makes it faster to build an application because it contains most of the things you would commonly write
+* Workflow - how do you write a program?
+** Learn about customer's requirements -> translate to "stories"
+** Pick a story that seems doable and start writing code that does it
+** Show your work to the customer, get feedback
+** Based on feedback, adjust stories (customer's "up front" requirements vs. changes once they see something working)
+** Once story is finished, go back to "pick a story"...keep going until you're done! (This is an example of looping!)
+* alternate [[programming intro]]
+* Basic programming structures - or, how to do the "start writing code" step
+** variables - words that hold information
+** types of information - text, numbers, collections
+** operators - doing stuff with variables
+** loops - doing the same action a bunch of times
+** printing - to the screen, or to a file
+* Writing a simple program
+** opening the editor
+** opening the command line
+** adding two numbers together, storing in a variable
+** printing variable to the screen
+** save and run

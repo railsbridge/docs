@@ -1,0 +1,75 @@
+message <<-MARKDOWN
+  # What we're going to do:
+
+  * Make a new Rails app
+  * Add a few gems to make life easier
+  * Start the Rails server and see the default Rails page
+  * Learn a little about Bundler and dependency management
+
+  # Get Set Up
+
+  First, let's get into a directory for RailsBridge projects (either by finding your existing one & moving there or making a new folder).
+
+  If you don't already have a RailsBridge folder, use the commands `mkdir` and `cd` to create one and move into it:
+MARKDOWN
+
+console_without_message "mkdir railsbridge"
+console_without_message "cd railsbridge"
+
+message <<-MARKDOWN
+  # Rails New!!!
+MARKDOWN
+
+console "rails new job_board -T --skip-turbolinks"
+
+message <<-MARKDOWN
+  The `-T` in that command means that when you make new files using Rails generators, it doesn't automatically create test files using Test::Unit (the default Rails testing framework).
+
+  Watch all the files that are created! Wow!
+
+  # Open the project in Sublime Text
+MARKDOWN
+
+console_with_message "Move into the directory for your new Rails app:", "cd job_board"
+
+message <<-MARKDOWN
+  And open the project in Sublime:
+
+  * Open Sublime
+  * Under Project, choose "Add Folder to Project"
+
+  (You must have at least one window open, so if that option is greyed out, open a window with cmd+n (Mac) or ctl+n (PC))
+MARKDOWN
+
+discussion_box "Text Editor vs Command Line", "Review the differences between the the command line and your text editor, even if everyone already knows!"
+
+message "# Let's Talk About Dependencies"
+
+message "When we created a new Rails app, it installed a bunch of stuff by default. The list of things Rails installed is in a file called `Gemfile`. If you want to add any additional third party code (aka **gems**), you can add more lines to the `Gemfile` and install them with `bundle`."
+
+console_with_message "Rails has already installed all the stuff we need, but you can always run bundle again to re-install gems, or install gems newly added to the Gemfile. In the command line, run the following command:", "bundle install"
+
+discussion_box "What does 'bundle' do?", <<-MARKDOWN
+ Bundler is the tool the Ruby community uses for dependency management.
+
+ * What's dependency management?
+ * Why do we need it?
+ * Why do we even need gems?
+ * Is there a shorter method to use for `bundle install`? (Hint: yes!)
+MARKDOWN
+
+message "# Look at your empty app"
+
+tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
+
+console_with_message "Start the Rails server by running this command in the terminal:", "rails server"
+
+message <<-MARKDOWN
+  Now, let's check out our default home page
+
+  In the browser, visit <http://localhost:3000>
+
+  Yup, that's the default Rails home page!
+MARKDOWN
+
+next_step "the_request_cycle"

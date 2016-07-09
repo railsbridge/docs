@@ -1,0 +1,120 @@
+message <<-MARKDOWN
+  # What we're going to do:
+
+  * Play follow-the-error to guide our development
+  * Add routes, a controller, and a view to make a home page
+  * Learn how to read the routing info at <http://localhost:3000/rails/info>
+
+  # Getting Started
+
+  That Rails default page is boring. Let's add a page to list the open jobs at RailsBridgeCorp!
+
+  To start, let's visit the page that we want to put our jobs on: <http://localhost:3000/jobs>.
+MARKDOWN
+
+error_box "No route matches [GET] '/jobs'"
+
+message <<-MARKDOWN
+  That's pretty reasonable, since we currently don't have any routes at all right now.
+
+  # Adding Routes
+
+  So it's looking for a route, but can't find one. Let's add one!
+
+  Open up the routes file. It's in the config directory, called `routes.rb`. If you're using Sublime Text 2, you can open it using keyboard shortcuts:
+
+   * Hitting cmd + p (on Mac) or ctl + p (on PC)
+   * typing in `route`
+   * hitting enter
+
+  Magic! (Sublime is using fuzzy search, so you can use the entire file path, or just part of the filename to go to files.)
+MARKDOWN
+
+source_code_with_message "We're going to need a resource route, which will create EIGHT different routes for us. Add this to line two:", :ruby, "resources :jobs"
+
+message <<-MARKDOWN
+  Now, lets go look at what that made, by using the excellently helpful routes page: <http://localhost:3000/rails/info>.
+MARKDOWN
+
+discussion_box "How to read the routes page.", <<-MARKDOWN
+  In your browser, visit <http://localhost:3000/rails/info>. Go over each of the columns and how to read it.
+
+  * Helper
+  * HTTP Verb (don't worry about going to in-depth with these yet)
+  * Path
+  * Controller#Action
+
+  Why does the Helper column sometimes not have anything?
+
+  Can you find the line that will make `/jobs` a route?
+MARKDOWN
+
+message <<-MARKDOWN
+  Since adding the line `resources :jobs` made a route matching `/jobs`, let's go visit that page again: <http://localhost:3000/jobs>
+MARKDOWN
+
+error_box "uninitialized constant JobsController"
+
+message <<-MARKDOWN
+  Why does Rails now think it needs a JobsController?
+
+  # Add a controller
+
+  Time for a shortcut!!! Unlike the scaffold that we make in Suggestotron that makes about a million different files, we're just going to use a Rails generator to make the files we need.
+MARKDOWN
+
+console "rails generate controller jobs"
+
+discussion_box "What did that command do?", <<-MARKDOWN
+  What files were made by that last command? Are they awesome?
+
+  How will this change what error we see when we go to the jobs page?
+MARKDOWN
+
+message "Now: refresh <http://localhost:3000/jobs>"
+
+error_box "The action 'index' could not be found for JobsController"
+
+message <<-MARKDOWN
+  What is telling Rails to look in JobsController?
+
+  Let's go back to <http://localhost:3000/rails/info> again and look at what controller and method (AKA action) the route /jobs is pointing to.
+
+  It's looking for a method called index on the jobs controller! Since there isn't a controller method for this route, we'll need to add it.
+
+  Open up your jobs controller (again, try to use keyboard shortcuts: cmd+p on Mac or ctl+p on PC to find the file at app/controllers/jobs_controller.rb).
+MARKDOWN
+
+source_code_with_message "Add the index method to the controller:", :ruby,
+<<-RUBY
+class JobsController < ApplicationController
+  def index
+  end
+end
+RUBY
+
+message "And refresh <http://localhost:3000/jobs>"
+
+error_box "JobsController#index is missing a template for this request format and variant."
+
+message <<-MARKDOWN
+  What's a template? How does Rails decide to look for the template associated with JobsController's `index` action?
+
+  Talk through what Rails is trying, and failing, to do, and how file names and method names are important here.
+
+  # Add a view
+
+  Within app/views/jobs, add a file called index.html.erb.
+
+  Save that file, and refresh <http://localhost:3000/jobs>
+
+  NO ERROR!?!?! How boring. Let's add some content so we can be more confident that this really a thing.
+MARKDOWN
+
+source_code_with_message "Within index.html.erb, add this (or the name of your fictional megacorp):", :html, "<h1>RailsBridgeCorp Open Jobs</h1>"
+
+message <<-MARKDOWN
+  DONE! Well, except that we don't have any jobs. And even though we could hand-code a table of job titles here, that would be awfully tedious and we'd probably get sick of adding job postings every time someone came up with a new volunteer position. Let's empower people to add their own postings!
+MARKDOWN
+
+next_step "store_jobs_in_the_database"

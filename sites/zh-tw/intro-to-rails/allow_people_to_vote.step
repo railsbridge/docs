@@ -1,0 +1,85 @@
+goals {
+  message "Now we're going to add a button people can click to cast a vote."
+}
+
+steps {
+
+  step "Add a new controller action for voting" do
+    message "Edit `app/controllers/topics_controller.rb` and add this method at the end of the controller, above the `private` keyword:"
+
+    source_code :ruby, <<-RUBY
+      def upvote
+        @topic = Topic.find(params[:id])
+        @topic.votes.create
+        redirect_to(topics_path)
+      end
+    RUBY
+
+    message <<-MARKDOWN
+      * `@topic = Topic.find(params[:id])` finds the topic in the database with that id and stores it in the variable `@topic`.
+      * `@topic.votes.create` creates a new vote for the current topic and saves it in the database.
+      * `redirect_to(topics_path)` tells the browser to go back to `topics_path` (the topics list).
+    MARKDOWN
+  end
+
+  step "Add a new route for voting" do
+    message "Open `config/routes.rb` and find the section that looks like this:"
+    source_code :ruby, <<-RUBY
+      resources :topics
+    RUBY
+
+    message "Replace that line so it looks like this:"
+    source_code :ruby, <<-RUBY
+      resources :topics do
+        member do
+          post 'upvote'
+        end
+      end
+    RUBY
+
+    message <<-MARKDOWN
+      Verify that upvote route was added successfully by checking the output of `rake routes` or [http://localhost:3000/rails/info](http://localhost:3000/rails/info). You should see a line that looks like this:
+
+      ```
+            Prefix Verb   URI Pattern                  Controller#Action
+      upvote_topic POST   /topics/:id/upvote(.:format) topics#upvote
+      ```
+    MARKDOWN
+  end
+
+  step "Add the button to the view" do
+
+    message "Edit `app/views/topics/index.html.erb` so that the bottom loop looks like this:"
+
+    source_code :erb, <<-HTML
+      <% @topics.each do |topic| %>
+        <tr>
+          <td><%= topic.title %></td>
+          <td><%= topic.description %></td>
+          <td><%= pluralize(topic.votes.count, "vote") %></td>
+          <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
+          <td><%= link_to 'Show', topic %></td>
+          <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+          <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    HTML
+
+    message <<-MARKDOWN
+      * `pluralize(topic.votes.count, "vote")` displays the number of votes the topic has, plus the word "vote" or "votes" accordingly.
+      * `button_to '+1'` creates an HTML button with the text "+1".
+      * `upvote_topic_path(topic)` creates the appropriate URL for the action we want to invoke. In this case, we want to upvote the current topic.
+        * `upvote_topic_path(topic)` would return `/topics/42/upvote` (if topic.id was 42)
+      * `method: :post` ensures we do the create action of CRUD, not the read action.
+    MARKDOWN
+  end
+
+  step "Confirm your changes in the browser" do
+    message "Go back to <http://localhost:3000/topics> and play."
+    message "Revel in the fact that you didn't have to restart the server to see these changes. Hawt, no?"
+  end
+}
+
+insert 'consider_deploying_again'
+
+next_step "redirect_to_the_topics_list_after_creating_a_new_topic"

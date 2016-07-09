@@ -1,0 +1,23 @@
+The right example or diagram can go a long way toward helping a beginner grasp an abstract concept. Add examples, metaphors, similies, diagram, or approach to teaching concepts or terms here. 
+
+= Classes and Methods =
+
+== Verbing a noun. ==
+<pre>> "word".upcase
+ => "WORD" 
+</pre>
+This follows the format "object.method". 
+Method is a verb, and object is our direct object (the thing the method is acting on).
+So in this case, we are saying "please take 'word' and make it uppercase"
+
+== You can also use classes to retrieve characteristics of an object. ==
+<pre>> 1.class
+ => Fixnum </pre>
+So in this case, we are saying "hey 1, what is your class?" 
+To which it replies, "I'm a FixNum, of course!"
+
+= MVC = 
+
+This image was really, really helpful to me as I was learning it: 
+
+[[File:http://php-html.net/tutorials/wp-content/uploads/2009/08/mvc-collaboration.png]]

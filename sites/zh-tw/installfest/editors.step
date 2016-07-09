@@ -1,0 +1,23 @@
+message <<-MARKDOWN
+
+There are a number of different editors designed for programming. You may already have a favorite editor; if so you can continue using that editor. If you have never used a programming editor, there are a number of good editors available, several of them free of charge. Most Railsbridge instructors use the Sublime editor, so you may want to install Sublime; if you end up asking for help during your class it may be easier for an instructor or TA to help you if you are using Sublime. Here is a list of some of the more widely used editors:
+
+* <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> is popular with many Ruby and Rails users. You can use it free for evaluation, then must pay to continue using it.
+* <a href="http://komodoide.com/download/" target="_blank">Komodo</a> is a very good free programming editor, that is not used as widely as in the past. It is relatively easy to use.
+* <a href="http://macromates.com/" target="_blank">TextMate</a> is very popular in the Ruby and Rails community. It is not free.
+* <a href="https://atom.io/" target="_blank">Atom</a> is a free, open-source editor that can be customized with HTML, CSS, and JavaScript. A download is available for OS X 10.8+, Windows 7/8, and Ubuntu/RedHat linux.
+* <a href="http://aptana.com/products/studio3/download.html" target="_blank">Aptana Studio</a> is a free, full-featured, development IDE (Integrated Development Environment) for Ruby and Rails. It has many powerful features to assist you while you develop your code. You can install Aptana as either a stand-along program or as an <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a> plugin.
+* <a href="http://www.jetbrains.com/ruby/" target="_blank">RubyMine</a> is used by many companies for their Ruby and Rails software development. Is is also a full-featured IDE, very similar to Aptana. RubyMine is not free, but has a 30-day evaluation period.
+
+There are other programming editors available, but these are among the most popular. Some people use simple non-programming editors, such as NotePad (or WordPad or TextEdit in "plain text" mode). It is fine to use a simple editor, though at some point you should look into using an editor designed for programming as using a programming editor or IDE will improve your programming productivity.
+
+MARKDOWN
+
+important do
+  message "Microsoft Word is **not** a text editor. It is a *word processor*."
+  message "(Word Processors add lots of weird invisible formatting stuff to the files they edit. You must use a text editor to write code.)"
+end
+
+message "Some programmers use command-line text editors like `emacs` or `vim`. These have a steep learning curve, so we recommend you use a graphical editor like those listed above."
+
+next_step "installfest"

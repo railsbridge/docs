@@ -1,0 +1,105 @@
+goals do
+  goal "Make an AJAX request and update the page based on the server's response."
+  goal "Load your list's items every time a user visits the page."
+end
+
+overview do
+  message <<-MARKDOWN
+    Last lesson, we made AJAX requests in the browser's console to load all of
+    our list's items. Now, we'll tie that AJAX request to our web site! Here's what will happen.
+
+      1. Every time a user visits our site, the browser will run the JavaScript in app.js.
+      2. It will use jQuery's AJAX method to make a request to http://listalous.herokuapp.com/ and
+    get all the data about our list's items.
+      3. We will then use JavaScript to turn those items into HTML elements, and attach them to our list.
+  MARKDOWN
+end
+
+steps do
+  step do
+    message <<-MARKDOWN
+Open app.js in your text editor. Add the following code to the bottom of the file.
+Replace 'YOUR-LIST-NAME-HERE' with the name of the list you created last lesson.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var loadRequest = $.ajax({
+        type: 'GET',
+        url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/"
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Refresh the page, and click over to your browser's network tab. You should see
+a new request there, that visits our server at https://listalous.herokuapp.com/.
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+      Now that we've made the request, we need to update the page whenever the request
+      succeeds. Add the following lines of code to the bottom of app.js.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      loadRequest.done(function(dataFromServer) {
+        var itemsData = dataFromServer.items
+
+        itemsData.forEach(function(itemData) {
+          addItemToPage(itemData)
+        })
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+      Now refresh the page. Once the AJAX request succeeds, your site should now display
+      all the items you created last lesson! If not, flag an instructor down to help you
+      debug the problem.
+    MARKDOWN
+  end
+
+end
+
+
+explanation do
+  message "App.js should now look like this."
+  source_code :javascript, <<-JAVASCRIPT
+    var itemTemplate = $('#templates .item')
+    var list         = $('#list')
+
+    var addItemToPage = function(itemData) {
+      var item = itemTemplate.clone()
+      item.attr('data-id',itemData.id)
+      item.find('.description').text(itemData.description)
+      if(itemData.completed) {
+        item.addClass('completed')
+      }
+      list.append(item)
+    }
+
+    var loadRequest = $.ajax({
+      type: 'GET',
+      url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/"
+    })
+
+    loadRequest.done(function(dataFromServer) {
+      var itemsData = dataFromServer.items
+
+      itemsData.forEach(function(itemData) {
+        addItemToPage(itemData)
+      })
+    })
+
+  JAVASCRIPT
+
+  message <<-MARKDOWN
+Your web page has made its first successful AJAX request! Now your page will
+load your list's items whenever you visit it. Once we host this page on the internet,
+you will be able to see your list on any computer, tablet, or phone!
+  MARKDOWN
+end
+
+
+
+
+next_step "adding_an_item"

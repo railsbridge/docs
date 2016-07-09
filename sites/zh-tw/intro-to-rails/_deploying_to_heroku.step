@@ -1,0 +1,43 @@
+step "Create a Heroku application" do
+  console "heroku create"
+  message "`heroku create` registers a new application on Heroku's system. You should see some output including your new app's URL."
+end
+
+step "Edit the Gemfile" do
+  important "Each application has its own `Gemfile`. Be sure you're opening the one inside your app's folder."
+
+  message "Heroku will run our application slightly differently than our development computer does, which requires us to make a small change to our `Gemfile`."
+
+  message "Open the file called `Gemfile` in Sublime Text, or your preferred editor, and find the line containing:"
+
+  source_code :ruby, <<-RUBY
+gem 'sqlite3'
+  RUBY
+
+  message "**Remove that line** and replace it with:"
+
+  source_code :ruby, <<-RUBY
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+  RUBY
+end
+
+step "Apply the Gemfile changes" do
+  console "bundle install --without production"
+  message "Every time the `Gemfile` changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
+end
+
+step "Commit the Gemfile changes" do
+  message "There are now changes to `Gemfile` and `Gemfile.lock` that need to be committed before we can push to Heroku."
+  console <<-SHELL
+git add .
+git commit -m "Changed Gemfile for Heroku"
+  SHELL
+  tip "There is a period after the word add in the first line."
+end

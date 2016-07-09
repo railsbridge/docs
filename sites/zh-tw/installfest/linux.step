@@ -1,0 +1,93 @@
+important <<-MARKDOWN
+  These steps apply to **Ubuntu Linux** only. If you are using some other flavor of Linux, get help from a TA.
+MARKDOWN
+
+message <<-MARKDOWN
+You will need sudo access in order to complete these directions (The first user account has this by default).
+MARKDOWN
+
+step "Install packaged software and libraries" do
+  message <<-MARKDOWN
+Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and Firefox icons in the top panel.
+  MARKDOWN
+
+  apts = %w{
+    autoconf
+    automake
+    bison
+    build-essential
+    curl
+    git-core
+    libapr1
+    libaprutil1
+    libc6-dev
+    libltdl-dev
+    libreadline6
+    libreadline6-dev
+    libsqlite3-0
+    libsqlite3-dev
+    libssl-dev
+    libtool
+    libxml2-dev
+    libxslt-dev
+    libxslt1-dev
+    libyaml-dev
+    ncurses-dev
+    nodejs
+    openssl
+    sqlite3
+    zlib1g
+    zlib1g-dev
+  }
+
+  console "sudo apt-get install #{apts.join(' ')}"
+
+  important <<-MARKDOWN
+    If you get an error during `apt-get` resembling
+
+    `Failed to fetch cdrom://Ubuntu`...
+
+    it is because `apt-get` is trying to install packages from your Ubuntu install CD. If you don't have that CD on hand, you can try disabling it as a package source by following this Stack Overflow post:
+
+    http://askubuntu.com/questions/125111/failed-to-download-repository-information-due-to-missing-cdrom
+  MARKDOWN
+end
+
+step "Install git" do
+  console "sudo apt-get install git"
+
+  message "If this results in an error, you should be ok, as the prior step should have installed `git-core`"
+end
+
+step "Install RVM" do
+  important do
+    message "If you're using Ubuntu 12.04, Ubuntu 14.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take effect."
+    img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
+  end
+  insert "install_rvm"
+end
+
+step "Install Ruby" do
+  insert "install_ruby"
+end
+
+step "Install Rails" do
+  message "Using a terminal again, execute the following command to install rails."
+
+  console "gem install rails"
+end
+
+step "Sublime Text 2" do
+  message <<-MARKDOWN
+
+If you don't have a preferred code editor, you can install Sublime Text 2. It's available for [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
+
+Check <http://www.sublimetext.com/2> for the latest version.
+MARKDOWN
+
+  tip "How many bits?" do
+    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
+  end
+end
+
+next_step "configure_git"

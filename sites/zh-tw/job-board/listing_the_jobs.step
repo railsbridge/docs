@@ -1,0 +1,51 @@
+message <<-MARKDOWN
+  # What we're going to do
+
+  * Show the jobs!
+  * Learn about ERB
+
+  Going back to the jobs index (<http://localhost:3000/jobs>), we expect to see the new jobs. Let's actually build the job board part of this job board now!
+
+  # Get all the jobs out of the database
+
+  If we're going to show our jobs in view, first we have to get them out of the database and store them in an instance variable. Update the index method to look like this:
+MARKDOWN
+
+source_code :ruby,
+<<-RUBY
+  def index
+    @jobs = Job.all
+  end
+RUBY
+
+message <<-MARKDOWN
+  Before we show the jobs, let's actually look at what that is doing. Go back to your Rails console and run `Job.all`.
+MARKDOWN
+
+discussion_box "Rails Console", <<-MARKDOWN
+  The Rails console is super fun! It's giving us direct access to our local database.
+
+  * Try running `Job.all.to_sql`. What does that do?
+  * Try selecting an individual Job record.
+  * Try updating an that individual record from the console!
+MARKDOWN
+
+message "# Show those jobs!"
+
+source_code_with_message "Add this to app/views/jobs/index.html.erb:", :erb,
+<<-RUBY
+  <% @jobs.each do |job| %>
+    <h3><%= job.title %></h3>
+    <p><%= job.description %></p>
+  <% end %>
+RUBY
+
+discussion_box "ERB", <<-MARKDOWN
+  What is this doing? Go through this line by line, having one person explain each line.
+
+  Compare the ERB to the HTML that shows up on the page. ("Inspect Element" is your friend!)
+
+  What's the difference between a line with `<% %>` brackets and `<%= %>` brackets?
+MARKDOWN
+
+next_step "add_a_navbar"

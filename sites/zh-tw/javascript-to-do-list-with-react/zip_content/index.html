@@ -1,0 +1,85 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
+  <script src="console-polyfill.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react-with-addons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+  <script src="store.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <h1>Your List App</h1>
+    <div id="app">
+      <div id='form-container'></div>
+      <div id='list-container'></div>
+    </div>
+  </div>
+
+  <script type="text/jsx">
+    var CreationForm = React.createClass({
+      render: function() {
+        return (
+          <form id="add-form" onSubmit={this.handleSubmit}>
+            <input id='create' ref="description" type='text' placeholder='Add Something to the list!' />
+          </form>
+        )
+      },
+
+      handleSubmit: function(event) {
+        event.preventDefault()
+        var description = this.refs.description.getDOMNode().value
+        this.refs.description.getDOMNode().value = ''
+        alert('trying to create an item with description ' + description)
+      }
+    })
+
+    var Item = React.createClass({
+      render: function() {
+        var itemClass = this.props.completed ? 'item completed' : 'item'
+        return (
+          <li className={itemClass}>
+            <span className='complete-button'>{'\u2714'}</span>
+            <div className='description'>{this.props.description}</div>
+            <span className='delete-button'>{'\u2718'}</span>
+          </li>
+        )
+      }
+    })
+
+    var List = React.createClass({
+      getInitialState: function() {
+        return (
+          {items: [
+            {description: 'a gallon of milk',  completed: true, id: 1},
+            {description: 'a stick of butter', completed: false, id: 2}
+          ]}
+        )
+      },
+
+      componentWillMount: function() {
+        $(ListStore).on('storeHasChanged', function() {
+          this.setState({ items: ListStore.getItems() })
+        }.bind(this))
+      },
+
+      render: function() {
+        var itemComponents = this.state.items.map(function(itemData) {
+          return <Item key={'item-' + itemData.id} {...itemData}/>
+        })
+
+        return (
+          <ul id='list'>
+            {itemComponents}
+          </ul>
+        )
+      }
+    })
+
+    React.render(<CreationForm />, document.getElementById('form-container') )
+    React.render(<List />, document.getElementById('list-container') )
+  </script>
+</body>

@@ -1,0 +1,91 @@
+message <<MARKDOWN
+This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
+
+Going through this curriculum on your own? You can get help on <a href="http://discourse.bridgefoundry.org/c/railsbridge-help" target="_blank">our Discourse forum</a>. (Volunteers to answer questions always needed, too!)
+MARKDOWN
+
+h1 'Setup'
+
+site_desc 'installfest', <<-MARKDOWN
+Instructions for installing Ruby and Rails on your computer. You need to complete these steps before starting a Rails workshop!
+MARKDOWN
+
+h1 'Rails'
+
+site_desc 'intro-to-rails', <<-MARKDOWN
+The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`, and deploying that app to the Internet.
+MARKDOWN
+
+site_desc 'job-board', <<-MARKDOWN
+Build a simple job board from scratch with a little less of the magic of Rails scaffolding. This curriculum is great for a second or third RailsBridge attendee or for students who want to focus on how the app is wired together. (This curriculum doesn't include deploying to the Internet.)
+MARKDOWN
+
+site_desc 'message-board', <<-MARKDOWN
+Build a message board! This curriculum is for students who have completed the Suggestotron and the Job Board curricula. This curriculum is a challenge because it won't tell you what to type in!
+MARKDOWN
+
+h1 'Frontend'
+
+site_desc 'frontend', <<-MARKDOWN
+HTML + CSS for beginners. Make a website, no server required!
+MARKDOWN
+
+h1 'Javascript'
+
+site_desc 'javascript-snake-game', <<-MARKDOWN
+A beginner Javascript specific curriculum that walks you through building a simple game.
+MARKDOWN
+
+site_desc 'javascript-to-do-list', <<-MARKDOWN
+An intermediate all JavaScript curriculum that builds a simple to do list application using AJAX and jQuery.
+MARKDOWN
+
+site_desc 'javascript-to-do-list-with-react', <<-MARKDOWN
+An advanced all JavaScript curriculum that builds a simple to do list application using AJAX, jQuery, and React. Meant for
+students with some exposure to JavaScript.
+MARKDOWN
+
+h1 'Ruby'
+
+site_desc 'learn-to-code', <<-MARKDOWN
+A course which teaches how to code from the ground up, using Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum. It's geared towards people who may never have written code before and teaches just enough Ruby to get across basic principles like variables, objects, and the command line.
+MARKDOWN
+
+site_desc 'ruby', <<-MARKDOWN
+A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
+MARKDOWN
+
+h1 'Other'
+
+site_desc 'workshop', <<-MARKDOWN
+The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
+MARKDOWN
+
+message <<MARKDOWN
+# RailsBridge curriculum-related FAQ
+
+### Can I use the RailsBridge curricula at my event?
+
+Anyone can use this site! It's under a Creative Commons license ([CC-BY,  specifically](http://creativecommons.org/licenses/by/3.0/)), which means you're welcome to share, remix, or use our content commercially. We just ask for attribution.
+
+Slightly different: if you're organizing an event and wonder if it could be considered a RailsBridge Workshop, we have two requirements:
+
+* The event should be free of charge.
+* The event should target a group of people that is underrepresented in tech, such as LGBTQ folks, women, black or latin@ people, or others.
+
+If you're not doing those two things, you can totally still use the site, we just ask that you not call your event a RailsBridge workshop.
+(Charity workshops have used "Rails Workshop featuring the RailsBridge curriculum" in the past, which is neat.)
+
+
+### I want to help, but I don't know how.
+
+First, [make a GitHub account](https://github.com). Then, [create an issue](https://github.com/railsbridge/docs/issues) with the idea you have. We'll help you turn it into reality (assuming it's in line with our lofty goals :D).
+
+Don't know what you could work on? Browse the [issues list](https://github.com/railsbridge/docs/issues) and the [Volunteer Opportunities List](https://github.com/railsbridge/docs/wiki/RailsBridge-Volunteer-Opportunities). Those have lots of ideas.
+
+
+### I have a different question about RailsBridge.
+
+The [RailsBridge website](http://www.railsbridge.org) probably has an answer!
+
+MARKDOWN

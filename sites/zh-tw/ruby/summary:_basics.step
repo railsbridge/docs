@@ -1,0 +1,18 @@
+message "We\'ve seen built in data types, input and output, making decisions with conditionals as well as some looping. We've also identified two interesting data structures: the **array** and the **hash**."
+
+message "Challenge yourself to create programs for the following situations."
+
+message <<-CONTENT
+<UL>
+<LI>Write a program that verifies whether someone can vote based on their supplied age.</LI>
+<LI>Write a program that plays back the message a user supplied.</LI>
+<LI>Write a program that adds up five user-supplied numbers.</LI>
+<LI>Make a hash for the people at your table, where the key is their name and the value is their favorite color.</LI>
+<LI>Make an array of the months in the year.</LI>
+</UL>
+CONTENT
+
+
+message "When programs get big, they get disorganized and hard to read.  Next we'll look at how to keep things tidy with functions and classes."
+next_step "overview:_organizing"
+

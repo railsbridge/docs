@@ -1,0 +1,166 @@
+goals do
+  goal "Setup your programming environment"
+  goal "Be able to use the basic building blocks of JavaScript code"
+  goal "Do simple calculations"
+  goal "Use and understand variables"
+  goal "Use and understand arrays"
+  goal "Use loops and conditional statements"
+end
+
+overview do
+  message <<-MARKDOWN
+    JavaScript is a fully featured programming language with variables, loops,
+    and conditionals. Just like Ruby, Java, Python, and PHP, you can use JavaScript
+    to do math, model large systems, and perform complex calculations – all in your browser!
+    In this lesson, we'll learn about the fundamentals of the JavaScript programming language.
+  MARKDOWN
+end
+
+steps do
+  step "Launch your programming environment" do
+    message <<-MARKDOWN
+
+      When programming, you'll generally want these tools on hand:
+
+      * Your browser to see the code running (I recommend Chrome)
+      * A text editor to change the code (I recommend <a
+      href="http://www.sublimetext.com/">Sublime</a>)
+      * A javascript console so you can experiment and print out debugging
+      messages. This is built into your browser.
+
+      Some helpful links for browser consoles:
+
+      * <a href="https://developer.chrome.com/devtools">How to launch dev tools in chrome.</a>
+      * <a href="https://msdn.microsoft.com/en-us/library/ie/bg182326.aspx">How to launch dev tools in internet explorer.</a>
+      * <a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console">How to launch dev tools in firefox.</a>
+      * <a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">How to launch dev tools in safari.</a>
+
+      Once you have these tools available, we need to open the files we'll be working with:
+
+      * Open game/snake.js in your text editor
+      * Open game/index.html in your browser
+
+
+      Now open up your browser's developer tools, and click over to the console tab. Type the following code:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      console.log('programming!');
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+      Press enter. Your browser should now look like this:
+      <img src="img/browser_console.png" alt="image of browser console with console.log"></img>
+
+      Congrats, you just wrote your first lines of JavaScript code! __console.log__ is an important function –
+      it allows you to print information to the browser's console. It's very helpful in debugging! You can also
+      use the __alert__ function to make a message pop up in the browser. Try it out!
+    MARKDOWN
+  end
+
+  step do
+    message "Next try some simple math that's built into JavaScript. Type these lines into console:"
+
+    source_code :javascript, <<-JAVASCRIPT
+      3 + 3
+      7 * 6
+    JAVASCRIPT
+  end
+
+  step do
+    message "**Variables** are names with values assigned to them."
+
+    source_code :javascript, <<-JAVASCRIPT
+      var myVariable = 5
+    JAVASCRIPT
+
+    message "This assigns the value `5` to the name `myVariable`."
+  end
+
+  step do
+    message "You can also do math with variables:"
+    source_code :javascript, <<-JAVASCRIPT
+      myVariable + 2
+      myVariable * 3
+    JAVASCRIPT
+  end
+
+  step do
+    message "Variables can also hold more than just numbers and text. Another type of data in Javascript is called an **array**."
+
+    source_code :javascript, 'var fruits = ["kiwi", "strawberry", "plum"]'
+    message <<-MARKDOWN
+      Here we're using the variable `fruits` to hold a collection of fruit names.
+      An array, designated by the `[ ]` (square-brackets), is a list of data that can be referenced by its index.
+      The index is the position inside the array, each separated by a comma. Arrays use 0-based indices, so the first element in an array is at Index 0, the second is at index 1, and so on.
+      For example, in the array above, to get the string 'strawberry' in Javascript, you would type 'fruits[1]', which Javascript understands as: get the value at index 1 in the array fruits.
+    MARKDOWN
+  end
+
+  step do
+    message "Arrays are a type of __object__ in JavaScript that are designated by the use of square brackets. Objects of all types in javascript often include helpful attributes!"
+
+    source_code :javascript, <<-JAVASCRIPT
+      fruits.length
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Objects can also have __functions__, which can be helpful for altering objects and learning more about them.
+Functions are __invoked__ with parentheses, which causes them to run.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      fruits.push("orange")
+      fruits.slice(1)
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+The __push__ function allows us to add new items to an array. the slice function returns a new array with
+with everything to the right of the __index__ we provided. Here, we passed the function the number 1, so
+slice returned an array with everything after the first element in the array. (Note that the first element is assigned 0 as its index rather than 1.)
+    MARKDOWN
+  end
+
+  step do
+    message "You can also make your own functions:"
+
+    source_code :javascript, <<-JAVASCRIPT
+      var pluralize = function(word) {
+        return word + "s"
+      }
+      pluralize("kiwi")
+    JAVASCRIPT
+
+    message "Functions take **parameters**, which are the variables they work on. In this case, we made a function called pluralize that takes one parameter, a word."
+
+    message "Functions can also return data. In this case, pluralize returns the word with an 's' added to the end of it. In order for a function to return something, you have to use the __return__ keyword."
+  end
+
+
+  step do
+    message "Arrays have a function called **forEach** which iterates through the list running code on each item. It takes another function as a parameter."
+    source_code :javascript, <<-JAVASCRIPT
+      fruits.forEach(function(fruit) {
+        console.log(fruit)
+      })
+    JAVASCRIPT
+    message "This takes the first item from the `fruits` array (`\"strawberry\"`), assigns it to the variable `fruit`, and runs the code between curly brackets. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
+  end
+
+  step do
+    message "A **conditional** runs code only when a statement evaluates to true."
+
+    source_code :javascript, <<-JAVASCRIPT
+      if(myVariable > 1) {
+        console.log('YAY')
+      }
+    JAVASCRIPT
+
+    message "This prints `YAY!` if the value stored in `myVariable` is greater than 1."
+
+    message "Try changing the `>` in the conditional to a `<`."
+  end
+
+end
+
+next_step "lesson-2"

@@ -1,0 +1,35 @@
+requirements do
+message <<-MARKDOWN
+* You should have a new rails app with with a static home page that's under your control. Make sure the controller for this page is called **HomeController**.
+* You, the developer, should explain to a teacher, TA, or fellow student how Rails knows to render the home view.
+MARKDOWN
+  img class: 'noborder', src: 'img/static_home_page.png'
+end
+
+discussion do
+message <<-MARKDOWN
+* In order to have a static home page, you will need a route, a controller, a view. Discuss!
+  * Seriously. If you don't discuss this stuff, things will be SO much harder.
+* Generators! Rails has lots of them. Try exploring the output of `rails generate`.
+* We’re not using `rails generate scaffold` in this curriculum. Because you will generate all your Models, Views and Controllers yourself, this will force you, to do more understanding-building brain work. The teacher/TAs can perhaps comment on what they would do in the real world and their thoughts on the excellence of this choice for learning-purposes.
+* What do you need to add to your home controller (after you've made it) to have a static home page?  
+* How does the home/index.html.erb view file relate to the layouts/application.html.erb view file?
+* What’s the significance of yield in the application view?
+* What does the home controller do?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Setting the Application Home Page: <http://guides.rubyonrails.org/getting_started.html#setting-the-application-home-page>.
+* RailsGuides - controllers overview: <http://guides.rubyonrails.org/action_controller_overview.html>.
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* If you have no idea what to put in your home controller, maybe try looking back at a past-Railsbridge app? Or another rails app you have lying about? 
+MARKDOWN
+end
+
+next_step "install_devise"

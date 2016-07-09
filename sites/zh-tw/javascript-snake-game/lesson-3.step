@@ -1,0 +1,97 @@
+# Lesson 3 - Drawing a Snake Multiple Times
+
+markdown <<-MARKDOWN
+  Now that we have a snake being drawn on the screen, We're going
+  to want to be able to draw it many times, for instance every time
+  it moves.
+  
+  To do this, we'll define a function which draws the snake
+  it's given. Add the following line to the beginning of
+  game/snake.js:
+
+  ```js
+  var drawSnake = function(snakeToDraw) {
+    var drawableSnake = { color: "green", pixels: snakeToDraw };
+    var drawableObjects = [drawableSnake];
+    CHUNK.draw(drawableObjects);
+  }
+  ```
+  
+  Functions are a way to group instructions so they're easy for humans to
+  understand or so the computer can use them over and over without us writing
+  the code out multiple times.
+  
+  Functions exist somewhat independently from the code around them; this means
+  that if the function needs variables from the rest of the code base they should
+  be passed in as arguments. The `drawSnake` function takes a single argument,
+  `snakeToDraw` which it then uses to create the `drawableSnake`.
+  
+  Now all we have to do is call drawSnake with a snake and it will be drawn on
+  the screen! Write the following under the drawSnake function.
+  
+  ```js
+  var snake = [{ top: 0, left: 0}];
+  drawSnake(snake);
+  ```
+  
+  Because Javascript interprets code from top to bottom we can't call
+  functions until after we've defined them. Make sure you put this code at the
+  end of the `snake.js` file.
+MARKDOWN
+
+js_expected_results 'lesson-3'
+
+markdown <<-MARKDOWN
+  ### Play Time!
+  
+  * Open up the console and play around with making the
+  snake move by calling `drawSnake` with snakes that have
+  different `top` and `left` values for their segment.
+  * Try to access `drawableSnake` from outside of the `drawSnake` function.
+  Check the javascript console.
+  * Try to access `snake` inside of the `drawSnake` function. Check the
+  javascript console.
+  * Why do you suppose you could access one but not the other? <a
+    href="http://javascript.about.com/library/bltut07.htm">Scope</a> is how you
+  know what variables a function or piece of code has access too.
+  Understanding scope is hugely important when reading and writing code.
+  
+  ### A bit more about Functions
+
+  Functions are where we'll be storing most of the logic as we develop our snake game. Let's take apart the function created above just to fully understand what is happening.
+
+  ```js
+  var drawSnake = function(snakeToDraw) {
+    var drawableSnake = { color: "green", pixels: snakeToDraw };
+    var drawableObjects = [drawableSnake];
+    CHUNK.draw(drawableObjects);
+  }
+  var snake = [{ top: 0, left: 0}];
+  drawSnake(snake);
+  ```
+
+  A function declaration is always going to be the word `function`, then parens `( )` then curly braces `{ }`. The parens are where you declare the arguments the function expects, and the curly braces are where you write out all of the logic that the function will perform. The simplest way to call a function is to write its name followed by parentheses: `drawSnake()`. But we have a function that expects an argument, `snakeToDraw`, so when we call the function in the code we do it by `drawSnake(snake)`. 
+
+  You may have noticed that the function `drawSnake` expects an argument of `snakeToDraw`, but when we call the function we're passing in the variable `snake`. The names are different - but the code works fine. What is actually happening is we're passing around the data that the variable `snake` represents (in this case, `[{ top: 0, left: 0}]`), which the function receives and names according to the argument inside its parens, `snakeToDraw`. Inside the function, the data is now available as the variable `snakeToDraw`, which we assign to the `pixels` key inside the `drawableSnake` variable. 
+
+  The function then takes `drawableSnake`, puts it inside an array named `drawableObjects`, and calls a function in the CHUNK library called `draw`, that expects the array we just created.
+
+
+  ### Syntax Breakdown
+  
+  `function() { }` says "Hey, between the curly braces is some
+  code we want to be able to execute." Functions can be stored inside
+  variables just like words and numbers and objects and lists.
+  
+  `(` and `)` in this case are a way to say that this function expects
+  a value to be given to it when it is called. These values are called
+  `arguments`, and can be used inside of the function body (the code between
+  the curly braces).
+
+  ### Helpful Links
+
+  1. <a href="http://www.quirksmode.org/js/function.html">An article explaining functions</a>
+  1. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Information on Objects</a>
+MARKDOWN
+
+next_step "lesson-4"

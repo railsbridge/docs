@@ -1,0 +1,56 @@
+# Lesson 12 - Growing the snake when it eats an apple!
+
+markdown <<-MARKDOWN
+  Now that an apple appears on the screen, we can make eating it grow
+  the snake.
+
+  To do that, we'll create a stationary copy of the snakes last segment. When
+  the snake moves next the copied segment will stay in place, causing it to
+  "grow" on the screen.
+
+  ```js
+  var growSnake = function(snake) {
+    var indexOfLastSegment = snake.length - 1;
+    var lastSegment = snake[indexOfLastSegment];
+    snake.push({ top: lastSegment.top, left: lastSegment.left });
+    return snake;
+  }
+  ```
+
+  Now that we have a function to grow the snake, let's check for a collision
+  between the apple and the snake whenever the game advances. Let's change the
+  `advanceGame` function so it looks like this:
+
+  ```js
+  var advanceGame = function() {
+    snake = moveSnake(snake);
+    if (CHUNK.detectCollisionBetween([apple], snake)) {
+      snake = growSnake(snake);
+      apple = CHUNK.randomLocation();
+    }
+    if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
+      CHUNK.endGame();
+      CHUNK.flashMessage("Whoops! you hit a wall!");
+    }
+    draw(snake, apple);
+  }
+  ```
+MARKDOWN
+
+js_expected_results 'lesson-12'
+
+markdown <<-MARKDOWN
+  ### Syntax Breakdown
+
+  `array.length` tells us how many elements are in a list. Arrays are zero
+  indexed, so we subtract one to get the index of the last element in the
+  list.
+
+  ### Play Time!
+
+  * When is the newly added segment given a direction to move in?
+  * Why do we put the `apple` variable inside of `[]` when we call
+  `detectCollision`
+MARKDOWN
+
+next_step 'lesson-13'

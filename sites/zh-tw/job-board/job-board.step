@@ -1,0 +1,30 @@
+message <<-MARKDOWN
+  We're going to build a job board in Rails using the tried-and-true method of following the errors that we make!
+
+  Rails generators will help us avoid some tedious file creation, but provide a lot less magic than scaffolding (which is what is used in the Suggestotron to create *everything* for a Topic all at once).
+
+  This means we'll a get a little less done today than we did when we built Suggestotron. But we're going to build an app in little pieces, so you can focus on understanding how the pieces fit together.
+MARKDOWN
+
+tip "This is not a self-paced curriculum. You should use the discussion sections on each page to make sure everyone is together!"
+
+message <<-MARKDOWN
+  # Notable Things
+
+  As you might have noticed, we're assuming you've already been to a RailsBridge workshop before or have otherwise already explored a Rails app, and are ready for deeper knowledge.
+
+  We're also going to skip deploying to Heroku this time around, but you can definitely use the instructions from the Suggestotron curriculum to deploy your app to the internet!
+MARKDOWN
+
+important "This curriculum is written for Rails 5. Things will get awkward / broken if you're using an earlier version of Rails, so if you skipped the Installfest, you need to upgrade to Rails 5 now."
+
+message <<-MARKDOWN
+  # Tips for everyone:
+
+  * When adding code, it's awesome for students to walk through the code line by line and say out loud what is happening. (i.e., "The string is being stored in the instance variable" or "The method `snorgle` is being defined"). If you do it every time, you'll get really comfortable with the vocabulary of Rails!
+  * Error messages are your friend! Read them carefully, and practice understanding what Rails is telling you. Seeing an error and just diving back into your code is a natural reaction, but stop! Then read, think, and talk about what the error means before fixing it.
+MARKDOWN
+
+insert '../intro-to-rails/working_effectively_and_efficiently'
+
+next_step "create_a_rails_app"

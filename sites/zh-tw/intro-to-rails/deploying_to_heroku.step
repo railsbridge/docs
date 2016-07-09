@@ -1,0 +1,9 @@
+h2 do
+  span "If you have already deployed your app to Heroku, go on to "
+  a 'Deploying to Heroku again', href: "deploying_to_heroku_again"
+  span "."
+end
+
+insert '_deploying_to_heroku'
+
+insert '_deploying_to_heroku_again'

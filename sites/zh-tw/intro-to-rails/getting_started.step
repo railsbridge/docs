@@ -1,0 +1,108 @@
+img src: "img/Start_page.png", alt: "Screenshot of a Ruby on Rails default home page"
+
+goals do
+  goal "Create Your New Application"
+message "Let's get started! By the end of this step, we'll have a brand-spankin'-new (empty) Rails app."
+end
+
+steps do
+
+  tip "If you have any problems, call over a TA."
+
+  step do
+    insert 'switch_to_home_directory'
+  end
+
+  step do
+    console "mkdir railsbridge"
+    message "This command creates a new directory for us to store our project in."
+  end
+
+  step do
+    console "cd railsbridge"
+  end
+
+  step do
+    message "Check to see if you have any existing suggestotron apps from a previous workshop."
+    option_half "OSX/Linux" do
+      console "ls"
+      message "`ls` stands for **l**i**s**t."
+      message "It lists the contents of the current directory."
+      message "If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+      console "rm -rf suggestotron"
+    end
+    option_half "Windows" do
+      console "dir"
+      message "`dir` stands for **dir**ectory."
+      message "It lists the contents of the current directory."
+      message "If you have any old suggestotron apps in that list, you can remove them to prevent hiccups:"
+      console "rmdir /s /q suggestotron"
+    end
+  end
+
+  step do
+    console "rails new suggestotron"
+    message "`rails new` creates a new Rails project with the name you give."
+    message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
+    message "This will print a lot of stuff to the screen and can take a while to finish."
+  end
+
+  step do
+    console "cd suggestotron"
+    message "`cd suggestotron` makes suggestotron our current directory."
+  end
+
+  step do
+    message <<-MARKDOWN
+Open the suggestotron folder as a project in your text editor.
+  MARKDOWN
+
+  tip "Close any files that are already open. They might be from yesterday's `test_app`, and we want to make sure that we're editing files in today's `suggestotron` app."
+
+  message <<-MARKDOWN
+In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+
+![Sublime Text Project menu screenshot](img/sublime_add_folder_to_project.png)
+
+Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should show the directories of your app in a tree structure on the left:
+
+![Screenshot of Suggestotron project folder tree in Sublime Text](img/sublime_project_as_folder.png)
+    MARKDOWN
+  end
+
+  message <<-MARKDOWN
+  You can see that <code>rails new</code> created a lot directories and
+  files. The ones we want to focus on today are:
+  MARKDOWN
+
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+    tr {
+      th "File/Folder"
+      th "Purpose"
+    }
+    tr {
+      td "app/"
+      td "Contains the controllers, models, and views for your application.  You will do most of your work here."
+    }
+    tr {
+      td "config/"
+      td "Configure your application's runtime rules, routes, database, and more."
+    }
+    tr {
+      td "db/"
+      td "Shows your current database schema, as well as the database migrations."
+    }
+    tr {
+      td "public/"
+      td "The only folder seen to the world as-is. If you put files in here, they will be served directly without any processing by Rails."
+    }
+    tr {
+      td "app/assets/"
+      td "This is where your images, JavaScript, stylesheets (CSS), and other static files should go. Modern Rails apps use something called the Assets Pipeline, which combines all the JavaScript and CSS files in this directory into a single file for speediness."
+    }
+  end
+
+  message "There is a lot more that `rails new` created. Probably enough to fill a book, so we're going to ignore them for now."
+end
+
+next_step "add_the_project_to_a_git_repo"

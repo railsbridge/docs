@@ -1,0 +1,40 @@
+step "Have a volunteer check your tool versions" do
+
+  message "Find a volunteer and have them watch the next steps."
+
+  verify "tool installation" do
+
+    tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+
+    h3 "If you're on OSX or Linux:"
+
+    console "rvm -v"
+    fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.io/]{/FUZZY}"
+
+    h3 "On all operating systems:"
+
+    console "ruby -v"
+    fuzzy_result "ruby 2.2.{FUZZY}4p230 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
+
+    tip "Depending on your environment, your Ruby version might be **2.2** or **2.3**. As long as it's 2.2.2 or above, you're good to go."
+
+    console "bundle -v"
+    fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
+
+    console "rails -v"
+    fuzzy_result "Rails 5.0{FUZZY}.x{/FUZZY}"
+
+    tip 'The RailsBridge curriculum is written for Rails 5, so if you still have Rails 4.x or earlier, you need to install Rails 5 with `gem install rails`.'
+  end
+end
+
+step "Show your Heroku app to a volunteer" do
+  message "Visit the heroku site you made on the previous page and create a new drink."
+end
+
+step "Congratulations!" do
+  message "You get a sticker! (Or a high-five if there aren't any stickers)."
+end
+
+next_step "clean_up"
+

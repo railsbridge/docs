@@ -1,0 +1,16 @@
+message <<-CONTENTS
+We usually work with multiple things - print a list of groceries, add several numbers, etc.
+
+We often repeat the same action on each thing in a group - frost a dozen cupcakes.
+
+Ruby provides a couple of containers, plus ways to perform an action on each item in a collection.
+
+CONTENTS
+
+goals do
+   goal "Hold multiple things with arrays and hashes"
+   goal "Loop over all the members of a group"
+   goal "Do a function to each member of a group"
+end
+
+next_step 'arrays'

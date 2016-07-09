@@ -1,0 +1,240 @@
+goals do
+  goal "Break down problem statements into code"
+  goal "Design and arrange our code to serve a purpose"
+end
+
+
+explanation do
+  message "Every time we write a program, we translate abstract thoughts in our minds into workable, actual code. It helps to think out those thoughts and put them in a clear, plain, problem statement."
+  message "if we think out all the functionality of our program, we can write a description that we can *refactor* into a program, piece by piece, until it does what we want it to do."
+  message "Here, we're going to break down a problem statement into workable goals that we can then translate into our first program."
+end
+
+step do
+  message "Today, we're going to write a Dice rolling simulator. It's a simple app, with three goals: **Simulate the rolling of a die**, **Roll a die with any number of sides**, and **Roll any number of dice.**"
+
+  message "Lets start by making a file named **'roller.rb'**"
+end
+step do
+  message "lets start with the first goal, **Simulate the rolling of a die.**"
+  message "Ruby comes with the 'rand' method, which can give you a random number. It takes an integer as an argument, and will give you a random number."
+
+  message "Note: rand is 0-indexed, like an array. Open up irb and type:"
+
+  irb 'rand 2'
+
+  message "Now, repeat that a few more times. You'll notice the numbers you get in response are either a 0 or a 1, never a 2. This is what 0-indexing means: the first number is always zero."
+
+  message "The problem is, dice don't start at zero, they start at one. So we can just add one to the rand method to make it more dice-like."
+
+  message "Open up 'roller.rb' and write this method into the file."
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  def roll
+    rand(6) + 1
+  end
+  puts roll
+  CONTENTS
+
+  message "Run that file a few times, and you'll see that we have successfully simulated rolling a die."
+end
+step do
+  message 'Now on to the second goal, **Roll a die with any number of sides**.'
+  message 'We can take our existing roll method and add to it with a simple argument.'
+
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  def roll(sides)
+    rand(sides) + 1
+  end
+
+  puts roll(6)
+  CONTENTS
+
+  message 'Now, our program can roll any number of die, so long as we pass in the number of sides to the roll method.'
+end
+
+step do
+  message "We've got one more goal to knock down: **Roll any number of dice**."
+  message 'We can pass in another argument, but we still have to consider how to show this information to the user. For now, lets add the numbers together.'
+  message "We're going to need to increase the method somewhat. Make the changes to the method that you see below."
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  def roll(sides, number=1)
+    roll_array = []
+    number.times do
+      roll_value = rand(sides) + 1
+      roll_array << roll_value
+    end
+    total = 0
+    roll_array.each do |roll|
+      new_total = total + roll
+      total = new_total
+    end
+    total
+  end
+
+  puts "We're rolling a six sided die!"
+  puts roll(6)
+
+  puts "Now we're rolling two 20 sided die!"
+  puts roll(20, 2)
+  CONTENTS
+
+  message "A lot is happening in this function, now!  Here's a walkthrough of the changes we made: "
+  message "* We added an argument, 'number'. It has a default argument of '1', so that way if we don't pass it anything, it just uses the default. "
+  message "* We create an empty array to hold the dice we're about to roll, called 'roll_array'."
+  message "* We call the 'times' method on the number. This is like the 'each' method, which allows us to run the code inside of it as many times as the number. So, if it is 1, it will do it once. If it is 2, it will do it twice, and so on."
+  message "* every time we loop over this code, we make the roll (using the sides argument value) and then insert the result into the roll_array."
+  message "We assign 0 to the variable 'totals'. This is what we're going to use to hold the value of the combined rolls."
+  message "* We loop through each item in the roll_array, and add it to the 'totals' variable. The totals variable is saved outside of the loop, so you will effectively add each of the members together."
+  message "* We add the totals variable at the end so that the method knows what to return."
+
+  message "And so, we have a program that works they way we want it to work... but how useful is it?"
+end
+
+step do
+  message "The problem with our program currently is that it is too clunky. Whenever you write code, think about how you want it to be used - either by you, a user, or even another programmer that might want to adapt your work further down the line. We should strive to write code that is readable, and maintainable."
+
+  message "Right now, our program is one big method, and that is not very good for readability or maintainability. Lets organize this a little more thoughtfully, and make a class that contains this behavior."
+
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  class Die
+
+    def initialize(sides)
+      @sides = sides
+    end
+
+    def roll(number=1)
+      roll_array = []
+      number.times do
+        roll_value = rand(@sides) + 1
+        roll_array << roll_value
+      end
+      total = 0
+      roll_array.each do |roll|
+        new_total = total + roll
+        total = new_total
+      end
+      total
+    end
+  end
+
+  puts "We're rolling a six sided die!"
+  puts Die.new(6).roll
+
+  puts "Now we're rolling two 20 sided die!"
+  puts Die.new(20).roll(2)
+  CONTENTS
+
+  message "Now, we can instantiate a Die object (passing in the number of sides as an argument) and then roll as a method called in it. This makes things a little easier to organize and break up this big method into smaller bits."
+
+  message "Think for a moment about how we could break up that big method into smaller ones. What parts can we seperate now that we have the stability of a class?"
+end
+step do
+  message "One option for breaking it up would be to seperate out the method of rolling a single die. Right now, 'rand(sides) + 1' doesn't necessarily make sense in context. If someone was reading this code, it might not be obvious that it is actually generating a number for a rolled die. lets break that up into its own method:"
+
+  type_in_file 'roller.rb', <<-'CONTENTS'
+    def generate_die_roll
+      rand(@sides) + 1
+    end
+  end
+  CONTENTS
+    message "And now, our entire class looks like this:"
+
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  class Die
+    def initialize(sides)
+      @sides = sides
+    end
+
+    def generate_die_roll
+      rand(@sides) + 1
+    end
+
+    def roll(number=1)
+      roll_array = []
+      number.times do
+        roll_array << generate_die_roll
+      end
+      total = 0
+      roll_array.each do |roll|
+        new_total = total + roll
+        total = new_total
+      end
+      total
+    end
+  end
+
+  puts "We're rolling a six sided die!"
+  puts Die.new(6).roll
+
+  puts "Now we're rolling two 20 sided die twice!"
+  puts Die.new(20).roll(2)
+  CONTENTS
+
+  message "It is a small change, but now that line makes a little more sense when reviewing it. Making changes like this can be a big help to others, but an even bigger help to yourself.  Programming is hard, so be sure to be kind to your memory while you do it!"
+end
+
+step do
+  message "We're almost done. Why don't we make things easy for our soon-to-be users? We can imagine that there are certain dice that are popular in many games. Why not define some ready-made dice that people can use moving forward?"
+
+  message "We're going to instantiate some dice in our class, and assign them to something called a 'Constant'. Constants are like variables, except they are unchanging - once they are assigned, they are assigned to that value - forever! They can't ever be changed. Note: You may have noticed that class names start with an uppercase - that is because class names are, in fact, constants!"
+
+  message "We're going to assign some of these dice to constants to make it easier to use later."
+
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  SIX_SIDED_DIE = Die.new(6)
+  EIGHT_SIDED_DIE = Die.new(8)
+  TEN_SIDED_DIE = Die.new(10)
+  TWENTY_SIDED_DIE = Die.new(20)
+  CONTENTS
+
+  message "So now, our file looks like this:"
+  type_in_file 'roller.rb', <<-'CONTENTS'
+  class Die
+    def initialize(sides)
+      @sides = sides
+    end
+
+    def generate_die_roll
+      rand(@sides) + 1
+    end
+
+    def roll(number=1)
+      roll_array = []
+      number.times do
+        roll_array << generate_die_roll
+      end
+      total = 0
+      roll_array.each do |roll|
+        new_total = total + roll
+        total = new_total
+      end
+      total
+    end
+  end
+
+  SIX_SIDED_DIE = Die.new(6)
+  EIGHT_SIDED_DIE = Die.new(8)
+  TEN_SIDED_DIE = Die.new(10)
+  TWENTY_SIDED_DIE = Die.new(20)
+
+  puts "We're rolling a six sided die!"
+  puts SIX_SIDED_DIE.roll
+
+  puts "Now we're rolling two 20 sided die twice!"
+  puts TWENTY_SIDED_DIE.roll(2)
+  CONTENTS
+
+  message 'And now you have a program that works, is readable, and easy to use. Congratulations!'
+
+  message 'Lets have some fun. launch irb and type the following:'
+  irb "require './roller.rb'"
+
+  message "This loads the file into irb, which lets us play with it. Try using the dice. Roll a few! Use the constants to roll dice that you have already defined, or create some new dice and test the bounds of the system."
+end
+
+explanation do
+  message "Consider the differences in the code between steps 4 and step 8. Coding is like being an architect, in that what you create is, at once, creative and load-bearing. The code at the end of step 4 worked perfectly, but it was hard to read, and a little bit of a pain to change. Imagine if we wanted to keep log of how the die rolled, or add other aspects or descriptions to the roll."
+
+  message "The final version of the code gives us room to breathe, is easy to read and easy to modify. Consider what other changes might be made to make it even simpler - when it comes to writing code, it's generally better to split big methods into lots of smaller ones."
+end
+

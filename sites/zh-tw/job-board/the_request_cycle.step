@@ -1,0 +1,9 @@
+message "<img src='img/request-cycle.jpg'>"
+
+discussion_box "What is this diagram?", <<-MARKDOWN
+  Talk through this diagram of the request cycle!
+
+  If there's room, act out a request being made as a tiny play, in which a small object is the request and the students are the various pieces of code that the request travels through.
+MARKDOWN
+
+next_step "make_a_jobs_home_page"

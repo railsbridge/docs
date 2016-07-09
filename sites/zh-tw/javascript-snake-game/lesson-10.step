@@ -1,0 +1,73 @@
+# Lesson 10 - Making the Tail Follow the Head
+
+markdown <<-MARKDOWN
+  To make the tail follow the head, we're going to assign the direction of the
+  segment further forward in snake to the current segment when it moves. This way
+  all segments follow the same path!
+
+  Let's define a new function called `segmentFurtherDown` which takes a
+  segment index and a snake and returns the segment closer to the head. Let's
+  start with:
+
+  ```js
+  var segmentFurtherForwardThan = function(index, snake) {
+    return snake[index - 1]
+  }
+  ```
+
+  While this <em>seems</em> OK, in reality it has a nefarious bug! Open your console and type:
+
+  ```js
+  segmentFurtherForwardThan(1, snake);
+  ```
+
+  This returns a segment object, which looks great! But what happens if we try
+  a index of 0?
+
+  ```js
+  segmentFurtherForwardThan(0, snake);
+  ```
+
+  Instead of a segment, we get `undefined`! This means we can't get a
+  direction! Let's use an `if` statement to return the segment at the index if
+  there isn't a segment further forward. Change `segmentFurtherForwardThan` to:
+
+
+  ```js
+  var segmentFurtherForwardThan = function(index, snake) {
+    if (snake[index - 1] === undefined) {
+      return snake[index];
+    } else {
+      return snake[index - 1];
+    }
+  }
+  ```
+
+  Now when you run `segmentFurtherForwardThan(0, snake)` it will return the
+  snakes head instead of undefined. Excellent! Now we get to change moveSnake to
+  use `segmentFurtherForwardThan` when it assigns the segments direction. Change `moveSnake` to:
+
+  ```js
+  var moveSnake = function(snake) {
+    return snake.map(function(oldSegment, segmentIndex) {
+      var newSegment = moveSegment(oldSegment);
+      newSegment.direction = segmentFurtherForwardThan(segmentIndex, snake).direction;
+      return newSegment;
+    });
+  }
+  ```
+
+  Great! Now each segment will follow the segment ahead of it!
+MARKDOWN
+
+js_expected_results 'lesson-10'
+
+markdown <<-MARKDOWN
+  ### Syntax Breakdown
+
+  `array.map` and `array.forEach` pass 3 arguments to the function it is given: the
+  first is the element in the collection, the second is its index  (or location in the collection) and
+  the third is the collection itself.
+MARKDOWN
+
+next_step 'lesson-11'

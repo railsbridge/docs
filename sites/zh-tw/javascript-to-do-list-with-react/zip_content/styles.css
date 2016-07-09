@@ -1,0 +1,108 @@
+body {
+  background: url('debut_light.png')
+}
+
+#container {
+  width: 600px;
+  font-family: 'Titillium Web', 'Arial', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+h1 {
+  margin: 20px;
+  color: #7d82b0;
+}
+
+#app {
+  box-shadow: 0 0 5px #684F91;
+  font-size: 35px;
+  color: #080D3B;
+  background-color: white;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+#create {
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px 30px;
+  border-left:    1px  solid #7d82b0;
+  border-right:   1px  solid #7d82b0;
+  border-bottom:  2px  solid #7d82b0;
+  border-top:     15px solid #477187;
+  text-align: center;
+}
+
+
+#create::-webkit-input-placeholder {
+  color: #C3C3C4;
+  text-align: center;
+}
+
+#create::-moz-placeholder {  /* Firefox 19+ */
+   color: #C3C3C4;
+   text-align: center;
+}
+
+#create:focus::-webkit-input-placeholder {
+  color: transparent;
+  text-align: center;
+}
+
+#create:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: transparent;
+   text-align: center;
+}
+
+#list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+  list-style-type: none;
+  width: 100%;
+  border-left:    1px  solid #7d82b0;
+  border-right:   1px  solid #7d82b0;
+  border-bottom:  2px  solid #7d82b0;
+  border-top:     0px  solid #7d82b0;
+
+}
+
+.item .complete-button {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.item .value {
+  margin: 0 50px;
+  padding: 0 15px;
+}
+
+.item .delete-button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.item.completed {
+  color: #C3C3C4;
+}
+
+#templates {
+  display: none
+}

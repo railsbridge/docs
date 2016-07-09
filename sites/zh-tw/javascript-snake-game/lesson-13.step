@@ -1,0 +1,60 @@
+# Lesson 13 - Make the snake die when it eats itself!
+
+markdown <<-MARKDOWN
+  The last thing we need to do is check to see if the snake ran into itself.
+
+  ```js
+  var ate = function(snake, otherThing) {
+    var head = snake[0];
+    return CHUNK.detectCollisionBetween([head], otherThing);
+  }
+  ```
+
+  We've created an `ate` function that accepts a snake and the previous version of the snake. We can also think about passing the `ate` function other things, which we'll get into in a bit. In `ate` we also reuse the `detectCollisionBetween` to find out if there's a collision.
+
+  Now we just have to check if the `newSnake` ate it's previous self to see if there was a collision! We do this by calling the `ate` function inside of `advanceGame`.
+
+  ```js
+  var advanceGame = function() {
+    var newSnake = moveSnake(snake);
+
+    if (ate(newSnake, snake)) {
+      CHUNK.endGame();
+      CHUNK.flashMessage("Whoops! You ate yourself!");
+    }
+
+    if (ate(newSnake, [apple])) {
+      newSnake = growSnake(newSnake);
+      apple = CHUNK.randomLocation();
+    }
+
+    if (ate(newSnake, CHUNK.gameBoundaries())) {
+      CHUNK.endGame();
+      CHUNK.flashMessage("Whoops! you hit a wall!");
+    }
+
+    snake = newSnake;
+    draw(snake, apple);
+  }
+  ```
+
+  Notice, we've abstracted out the `ate` function by reusing it. It can now determine if the snake ate itself, an apple or the wall.
+  
+  If your snake no longer moves after this step, make sure that you assigned `snake = newSnake` in the `advanceGame` function.
+MARKDOWN
+
+js_expected_results 'lesson-13'
+
+markdown <<-MARKDOWN
+  ### Congratulations! You've built the snake game!
+
+  If you want your friends and family to be able to play your game, you'll need
+  to put it online. Lesson 14 includes instructions on <a
+  href="lesson-14">putting your game online</a>.
+
+  ### Helpful Links
+
+  1. <a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Abstraction_(computer_science).html">Article on Abstraction from Princeton</a>
+MARKDOWN
+
+next_step 'lesson-14'

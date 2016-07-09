@@ -1,0 +1,69 @@
+
+steps do
+  step "Install Google Chrome" do
+    message "In order to provide consistent instructions for the workshop, we are all going to use the same browser, Google Chrome. Download and install it from <http://google.com/chrome>"
+  end
+
+  step "Choose your operating system" do
+    option "Windows" do
+      message "On Windows, the easiest way to install git and set everything up is with the Rails Installer. "
+      span "Head over to our "
+      a "Rails Installer instructions", :href => "/installfest/windows", :class => 'link'
+      span " (courtesy the Rails workshop Installfest instructions). Come back at the end of the page. Do not make a Heroku account!"
+      important "For real: come back at the bottom of the page, after step 9!"
+      span "After getting done with RailsInstaller, come back here and "
+      a 'create a GitHub account', :href => "#github-account"
+      span "."
+    end
+
+    option "Mac OS X" do
+      step "Check if Git is already installed" do
+        message "If you've been to a RailsBridge before, you might have git installed. Try the following"
+        console "git --version"
+        message "If you see something like the git version below, then you can return to the mini-installfest"
+        fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
+        message "If you see something like `git: command not found` then proceed"
+      end
+
+      step "Check if XCode is installed" do
+        message "Look in your Applications folder for an application called XCode."
+        message "If you see XCode, choose __Installing Homebrew__."
+        message "If you do __not__ see XCode, choose __Installing binary Git__."
+
+        option_half "Installing Homebrew" do
+          div do
+            a "Instructions for Installing Homebrew", :href => "http://brew.sh", :class => "link"
+          end
+
+          message "After installing homebrew, use it to install git"
+          console "brew install git"
+        end
+
+        option_half "Installing binary git" do
+          message "In another browser tab open the link below and download the latest (topmost) release of Git for OS X."
+          a "Git OS X Installer Downloads", :href => "http://code.google.com/p/git-osx-installer/downloads/list?can=3"
+        end
+      end
+
+      step "Install a text editor" do
+        a "Download and install Sublime Text 2", :href => "http://www.sublimetext.com/2"
+        message "Install Sublime Text 2 by double clicking the file you downloaded, then dragging the Sublime Text 2 icon into the Applications folder. Finish up by clicking the eject icon for Sublime Text 2 in your finder window."
+        a "or install a different editor", :href => "/installfest/editors"
+        message "FYI: Sublime Text 2 is a paid program that you can download and try out for free. If you keep using Sublime Text 2 after the workshop, you'll need to buy a license. There are other editors available you can find on [our editors page](/installfest/editors)."
+      end
+    end
+  end
+
+  a :name => "github-account"
+  step "Create a GitHub account" do
+    message "In your web browser open <https://github.com>."
+    message "GitHub is is a service for hosting and sharing source code with others. They also host static web pages for free! We'll be using them to put our web page up later today."
+
+    message "Click the big blue signup button in the middle of the page. On the next page select a Free account. Make a note of your username, you'll be using it a lot."
+
+    tip "A note about your password. In order to push to GitHub, you'll need to type your password in at the terminal. So make it something easy to remember and type but hard to guess."
+  end
+
+  next_step "get_a_sticker"
+end
+

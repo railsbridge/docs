@@ -1,0 +1,66 @@
+# Lesson 9 - Moving a Multiple Segment Snake
+
+markdown <<-MARKDOWN
+  Now that we can crash into a wall, lets have a snake longer than a single
+  segment!
+  
+  Currently, the `moveSnake` function only moves the first segment in the
+  snake. Let's make it to move every segment! Change `moveSnake` to the
+  following:
+  
+  ```js
+  var moveSnake = function(snake) {
+    var newSnake = [];
+    snake.forEach(function(oldSegment) {
+      var newSegment = moveSegment(oldSegment);
+      newSegment.direction = oldSegment.direction;
+      newSnake.push(newSegment);
+    });
+  
+    return newSnake;
+  }
+  ```
+  
+  `forEach` introduces `looping`. Looping allows us to do something multiple
+  times. Looping (for, while, forEach, etc) and conditionals (if, switch)` both
+  allow you to control the flow of the program.
+  
+  Now that we can move many segments across the screen, let's add a second
+  segment to our snake. Change the line that starts with `var snake = ...` to the
+  following:
+  
+  ```js
+  var snake = [{ top: 1, left: 0, direction: "down" }, { top: 0, left: 0, direction: "down" }];
+  ```
+MARKDOWN
+
+js_expected_results 'lesson-9'
+
+markdown <<-MARKDOWN
+  You'll notice that if you play the game, the second segment always just
+  moves down. This is OK for now!
+
+  ### Syntax Breakdown
+
+  `array.forEach` allows us to call a function with each item in a collection.
+  This is a very common kind of loop and is very powerful.
+
+  `array.push` adds the element it is given to the array it is called in.
+
+  ### Play Time!
+
+  * <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">`array.map`</a>
+    is another kind of loop that makes it easy to build a new collection from an
+    existing collection. Rewrite the `moveSnake` function to use `array.map`
+    instead of `array.forEach`</li>
+  * The
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">`for`</a>
+    and
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">`while`</a>
+    loops are also quite common. They are more generally useful but harder to use
+    than the collection based `forEach` and `map` functions. How could you write
+    moveSnake with either `for` or `while`?</li>
+MARKDOWN
+
+next_step 'lesson-10'
+

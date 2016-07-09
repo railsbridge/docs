@@ -1,0 +1,111 @@
+goals do
+  goal "Add a JavaScript tag to the document"
+  goal "Write a simple script to interact with the page"
+end
+
+steps do
+
+  step do
+    message "Now that we have completed the challenges for your **index.html** and related CSS files, we will be looking back at your **hello.html** file."
+    message "CSS lets you make your pages look good, but it's **JavaScript** that makes most web pages interactive.  Pull up your **hello.html** file again. Add a `script` tag to your page so you can get started writing some JavaScript. At the very bottom of your document, under your paragraphs, add this:"
+
+    source_code :html, <<HTML
+<script>
+</script>
+HTML
+
+    message "Save and refresh the page in the browser. It should look unchanged."
+  end
+
+  step do
+    message "Type in this short script. Javascript is case-specific (it treats `mynewname` and `myNewName` as two different things) and picky about syntax. If your script doesn't run, check carefully for typos."
+
+    source_code :html, <<HTML
+<script>
+  function replaceName() {
+    var myNewName = window.prompt('Pick a new name!');
+    document.getElementById('user-name').innerHTML = myNewName;
+  }
+
+  document.onclick = replaceName;
+</script>
+HTML
+
+    message <<-MARKDOWN
+Refresh the page, and click on one of your paragraphs. You should see a browser prompt like this:
+
+<img src='img/prompt.png'>
+
+Once you answer the prompt, you should see the bold text that was your name change to whatever you entered.
+
+<img src='img/hello_omg.png'>
+    MARKDOWN
+
+    important "It takes years to become a Javascript expert. Don't worry if you found the last step confusing or had trouble getting your script to run. The most important thing to note is that you can put Javascript **directly** into your document if you want to, by wrapping it in a `script` tag, and use this script to add interactivity to the page."
+  end
+end
+
+
+explanation do
+  
+  message <<-MARKDOWN
+
+## Why JavaScript?
+
+Javascript allows you to make your pages interactive. You can use it to build
+anything from a simple animation to a giant web application like Twitter
+or GitHub. It gives you total control to add, remove, or modify content you've
+made with HTML. You can also use it to change styles and add or remove
+classes.
+
+Writing JavaScript in a web page can be tricky, because you don't start with a
+blank slate. All of the contents of the web browser, including built-in browser
+objects and your own HTML elements, are there too. You just have to figure out
+how to get to them with JavaScript so you can manipulate them. 
+
+## What Did That Script Do?
+
+We'll go through it line by line:
+
+The first line declares a `function`, a bit a of reusable code you can refer
+to later by calling its name:
+
+  MARKDOWN
+  source_code :js, "function replaceName() {"
+  message <<-MARKDOWN
+
+The next two lines are the steps the function will do. The first one creates
+a variable called `myNewName` and sets it equal to a value. The browser window
+will try to get this value using its `prompt` method, a built-in function it
+knows how to do, that involves popping up a text box for you to fill in.
+
+  MARKDOWN
+  source_code :js, "var myNewName = window.prompt('Pick a new name!');"
+  message <<-MARKDOWN
+
+In the next line it goes into your HTML document and uses `getElementById`, a built-in function it knows to do, to locate your `user-name` span. It then sets the span's HTML contents to the value of the variable `myNewName`.
+
+  MARKDOWN
+  source_code :js, "document.getElementById('user-name').innerHTML = myNewName;"
+  message <<-MARKDOWN
+
+The
+
+  MARKDOWN
+  source_code :js, "}"
+  message <<-MARKDOWN
+
+closes the `replaceName` function you started defining in the first line.
+
+The final line tells the browser, 'When I click the document, run the function called `replaceName`.
+
+MARKDOWN
+source_code :js, "document.onclick = replaceName;"
+
+
+tip "Some elements of this script, like 'document.onclick' or the '.innerHTML' property, are a little out of date. They're great ways to start playing with Javascript, but when you write your own pro Javascript, you may want to use more contemporary techniques or a library like jQuery that will do these things for you in a less clunky way."
+
+end
+
+next_step 'jquery'
+
