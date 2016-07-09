@@ -35,11 +35,11 @@ message <<-MARKDOWN
 MARKDOWN
 
 source_code :ruby, <<-RUBY
-  class CreateJobs < ActiveRecord::Migration
+  class CreateJobs < ActiveRecord::Migration[5.0]
     def change
       create_table :jobs do |t|
 
-        t.timestamps null: false
+        t.timestamps
       end
     end
   end
@@ -55,7 +55,7 @@ source_code :ruby, <<-RUBY
   create_table :jobs do |t|
     t.text :title
     t.text :description
-    t.timestamps null: false
+    t.timestamps
   end
 RUBY
 

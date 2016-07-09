@@ -33,7 +33,7 @@ MARKDOWN
 source_code_with_message "We're going to need a resource route, which will create EIGHT different routes for us. Add this to line two:", :ruby, "resources :jobs"
 
 message <<-MARKDOWN
-  Now, lets go look at what that made, by using the excellently helpful page available on any Rails 4 app: <http://localhost:3000/rails/info>.
+  Now, lets go look at what that made, by using the excellently helpful routes page: <http://localhost:3000/rails/info>.
 MARKDOWN
 
 discussion_box "How to read the routes page.", <<-MARKDOWN
@@ -48,8 +48,6 @@ discussion_box "How to read the routes page.", <<-MARKDOWN
 
   Can you find the line that will make `/jobs` a route?
 MARKDOWN
-
-tip "If you are on Rails 3, going to /rails/info will **fail**! Stop right now and upgrade to Rails 4."
 
 message <<-MARKDOWN
   Since adding the line `resources :jobs` made a route matching `/jobs`, let's go visit that page again: <http://localhost:3000/jobs>
@@ -97,10 +95,10 @@ RUBY
 
 message "And refresh <http://localhost:3000/jobs>"
 
-error_box "Missing template jobs/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/probablyyou/railsbridge/job_board/app/views'"
+error_box "JobsController#index is missing a template for this request format and variant."
 
 message <<-MARKDOWN
-  What's the important part of the this error? How does Rails decide to look for something called jobs/index? How did it decide to look in the views directory?
+  What's a template? How does Rails decide to look for the template associated with JobsController's `index` action?
 
   Talk through what Rails is trying, and failing, to do, and how file names and method names are important here.
 

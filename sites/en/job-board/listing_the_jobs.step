@@ -32,7 +32,7 @@ MARKDOWN
 
 message "# Show those jobs!"
 
-source_code_with_message "Add this to app/views/jobs/index.html.erb:", :ruby,
+source_code_with_message "Add this to app/views/jobs/index.html.erb:", :erb,
 <<-RUBY
   <% @jobs.each do |job| %>
     <h3><%= job.title %></h3>

@@ -43,11 +43,11 @@ MARKDOWN
 
 discussion_box "Text Editor vs Command Line", "Review the differences between the the command line and your text editor, even if everyone already knows!"
 
-message "# Fix Up Those Defaults"
+message "# Let's Talk About Dependencies"
 
-source_code_with_message "We're going to be looking at the Rails server output, which includes a lot of noise by default. Find the file called 'Gemfile' by searching for it, and add the following line:", :ruby, "gem 'quiet_assets'"
+message "When we created a new Rails app, it installed a bunch of stuff by default. The list of things Rails installed is in a file called `Gemfile`. If you want to add any additional third party code (aka **gems**), you can add more lines to the `Gemfile` and install them with `bundle`."
 
-console_with_message "Save the file, and then in the command line, run the following command:", "bundle install"
+console_with_message "Rails has already installed all the stuff we need, but you can always run bundle again to re-install gems, or install gems newly added to the Gemfile. In the command line, run the following command:", "bundle install"
 
 discussion_box "What does 'bundle' do?", <<-MARKDOWN
  Bundler is the tool the Ruby community uses for dependency management.

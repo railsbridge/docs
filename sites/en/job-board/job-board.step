@@ -16,7 +16,7 @@ message <<-MARKDOWN
   We're also going to skip deploying to Heroku this time around, but you can definitely use the instructions from the Suggestotron curriculum to deploy your app to the internet!
 MARKDOWN
 
-important "This curriculum is written for Rails 4. Things will get awkward / broken if you're using Rails 3, so if you skipped the Installfest, you need to upgrade to Rails 4 now."
+important "This curriculum is written for Rails 5. Things will get awkward / broken if you're using an earlier version of Rails, so if you skipped the Installfest, you need to upgrade to Rails 5 now."
 
 message <<-MARKDOWN
   # Tips for everyone:

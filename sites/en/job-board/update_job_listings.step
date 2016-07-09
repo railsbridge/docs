@@ -12,6 +12,8 @@ source_code_with_message "Say we want to edit the first job posting. If we look 
 
 message "So, it looks like if we want to edit the job description, we should visit this URL: <http://localhost:3000/jobs/1/edit>."
 
+error_box "The action 'edit' could not be found for JobsController"
+
 source_code_with_message "We've seen this before, right? Let's add the controller action:",
 <<-RUBY
   def edit

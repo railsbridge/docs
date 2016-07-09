@@ -24,9 +24,9 @@ source_code :ruby,
   end
 RUBY
 
-message "Reload the page!"
+message "Try to use your form again. Unfortunately, there won't be any output, not even an error page. But if you look closely at the output from your Rails server, you might find this:"
 
-error_box "Missing template jobs/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in: * '/Users/lillie/railsbridge/job_board/app/views'"
+error_box "No template found for JobsController#create, rendering head :no_content"
 
 <<-MARKDOWN
   Familiar error, right? We don't have a template called create.html.erb.
@@ -78,7 +78,7 @@ source_code :http,
 JSON
 
 message <<-MARKDOWN
-  This is the precious data that our form is sending, and right now we're just throwing it away. Let's not do that! Since we're using Rails 4 and all its great conventions, we're going to use Strong Parameters to limit what kind of data our form can submit to our app.
+  This is the precious data that our form is sending, and right now we're just throwing it away. Let's not do that! Since we're using Rails 5 and all its great conventions, we're going to use Strong Parameters to limit what kind of data our form can submit to our app.
 MARKDOWN
 
 source_code_with_message "Add this code to your jobs controller. (Notice that we're expanding the create method. Don't just copy and paste and end up with two create methods, folks.)", :ruby,
