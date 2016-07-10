@@ -1,91 +1,104 @@
 message <<MARKDOWN
-This site is maintained by RailsBridge volunteers. If you find something that could be improved, please make a [pull request](https://github.com/railsbridge/docs) or [drop us a note](https://github.com/railsbridge/docs/issues/new) via GitHub Issues (no technical knowledge required).
+這個網站由 RailsBridge 的志工們維護，如果您發現可以改善的地方，請到 Github 發 [pull request](https://github.com/railsbridge/docs) 或是 [issue](https://github.com/railsbridge/docs/issues/new) 給我們 (不需要任何技術知識)
 
-Going through this curriculum on your own? You can get help on <a href="http://discourse.bridgefoundry.org/c/railsbridge-help" target="_blank">our Discourse forum</a>. (Volunteers to answer questions always needed, too!)
+**中文版備註：** <br>
+有翻譯或是其他相關問題，請至 [https://github.com/sdlong/railsbridge-docs](https://github.com/sdlong/railsbridge-docs) <br>
+發送 [pull requst](https://github.com/sdlong/railsbridge-docs/pulls) 給技術上的建議 <br>
+或到 [issue](https://github.com/sdlong/railsbridge-docs/issues) 做詢問及 bug 回報 (不需要任何技術知識)
 MARKDOWN
 
-h1 'Setup'
+h1 '開發環境安裝'
 
 site_desc 'installfest', <<-MARKDOWN
-Instructions for installing Ruby and Rails on your computer. You need to complete these steps before starting a Rails workshop!
+一步步地將 Ruby 跟 Rails 安裝至您的電腦上。在下面教程開始前，必須先完成 installfest 裡的步驟
 MARKDOWN
 
 h1 'Rails'
 
 site_desc 'intro-to-rails', <<-MARKDOWN
-The "classic" RailsBridge curriculum (Suggestotron). Takes you step-by-step through making a Rails app, one command at a time, using helpers like `rails generate scaffold`, and deploying that app to the Internet.
+Railsbridge 經典的教程 ( 稱之為 Suggestotron )。
+帶您一步步地建立出 Rails 應用程式，使用像 `rails generate scaffold` 的指令一鍵完成基礎架構，並將您寫好的 Rails 應用程式部署至網路上
 MARKDOWN
 
 site_desc 'job-board', <<-MARKDOWN
-Build a simple job board from scratch with a little less of the magic of Rails scaffolding. This curriculum is great for a second or third RailsBridge attendee or for students who want to focus on how the app is wired together. (This curriculum doesn't include deploying to the Internet.)
+不用 `rails generate scaffold` 功能來寫出一個簡單的求職版功能。
+這個教材建議給已做過二三次初探 Rails 或是想對 Rails 有更深入了解的學生
+(並不包含部署至網路上的教學)
 MARKDOWN
 
 site_desc 'message-board', <<-MARKDOWN
-Build a message board! This curriculum is for students who have completed the Suggestotron and the Job Board curricula. This curriculum is a challenge because it won't tell you what to type in!
+建立一個留言板！這個教材適合給已完成初探 Rails 跟留言板的學生練習。這是一個很有挑戰性的教材，因為不會提供解答帶著您手把手做出來
 MARKDOWN
 
 h1 'Frontend'
 
 site_desc 'frontend', <<-MARKDOWN
-HTML + CSS for beginners. Make a website, no server required!
+給新手的 HTML + CSS 教材。建一個頁面，不用 Server 等後端需求
 MARKDOWN
 
 h1 'Javascript'
 
 site_desc 'javascript-snake-game', <<-MARKDOWN
-A beginner Javascript specific curriculum that walks you through building a simple game.
+初階的 Javascript 教材，帶著您一步步建立出簡單的貪食蛇遊戲
 MARKDOWN
 
 site_desc 'javascript-to-do-list', <<-MARKDOWN
-An intermediate all JavaScript curriculum that builds a simple to do list application using AJAX and jQuery.
+中等的 Javascript 教材，帶著您一步步建立出 TODO list 的應用程式 ( 使用 AJAX 跟 jQuery )
 MARKDOWN
 
 site_desc 'javascript-to-do-list-with-react', <<-MARKDOWN
-An advanced all JavaScript curriculum that builds a simple to do list application using AJAX, jQuery, and React. Meant for
-students with some exposure to JavaScript.
+進階的 Javascript 教材，帶著您一步步建立出 TODO list 的應用程式 ( 使用 AJAX 、 jQuery 跟 React )，這意味著您需要點基礎 Javascript 經驗
 MARKDOWN
 
 h1 'Ruby'
 
 site_desc 'learn-to-code', <<-MARKDOWN
-A course which teaches how to code from the ground up, using Alex's [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) curriculum. It's geared towards people who may never have written code before and teaches just enough Ruby to get across basic principles like variables, objects, and the command line.
+使用 Alex 的 [Learn To Code In Ruby](http://codelikethis.com/lessons/learn_to_code) 課程教您如何從零開始寫程式的課程。
+適合給未寫過任何程式的人，幫助他們學會用 Ruby 寫出基本的變數、物件跟 Command line (指令)
 MARKDOWN
 
 site_desc 'ruby', <<-MARKDOWN
-A ruby-specific curriculum, expanded from the "Ruby for Beginners" slide deck. Still new, with room for your contributions.
+進階點的 Ruby 課程, 幫助 Ruby 新手更精進。這門課還很新，需要您的幫助
 MARKDOWN
 
-h1 'Other'
+h1 '其它'
 
 site_desc 'workshop', <<-MARKDOWN
-The Railsbridge junkyard! Slide decks for opening/closing presentations, teacher training.
+如何辦場 workshop 的資料，包括：開場、結尾的投影片與助教訓練材料
 MARKDOWN
 
-message <<MARKDOWN
-# RailsBridge curriculum-related FAQ
+message <<-MARKDOWN
+# RailsBridge 課程相關的 FAQ
 
-### Can I use the RailsBridge curricula at my event?
+### 我可以把 RailsBridge 課程用在我的活動上嗎？
 
-Anyone can use this site! It's under a Creative Commons license ([CC-BY,  specifically](http://creativecommons.org/licenses/by/3.0/)), which means you're welcome to share, remix, or use our content commercially. We just ask for attribution.
+歡迎任何人使用！本網站採用 Creative Commons ([CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/tw/)) 授權分享，意味著歡迎您分享、引用(Remix)、甚至包含商業用途。只要您標注原作者
 
-Slightly different: if you're organizing an event and wonder if it could be considered a RailsBridge Workshop, we have two requirements:
+稍微不同的地方是： 如果您的活動想使用『RailsBridge Workshop』這個名稱, 我們只有二個要求：
 
-* The event should be free of charge.
-* The event should target a group of people that is underrepresented in tech, such as LGBTQ folks, women, black or latin@ people, or others.
+* 該活動應該是免費的
+* 該活動為了幫助在技術領域上仍弱勢的群體，像是： LGBT、女性、黑人裔、拉丁裔或其它
 
-If you're not doing those two things, you can totally still use the site, we just ask that you not call your event a RailsBridge workshop.
-(Charity workshops have used "Rails Workshop featuring the RailsBridge curriculum" in the past, which is neat.)
-
-
-### I want to help, but I don't know how.
-
-First, [make a GitHub account](https://github.com). Then, [create an issue](https://github.com/railsbridge/docs/issues) with the idea you have. We'll help you turn it into reality (assuming it's in line with our lofty goals :D).
-
-Don't know what you could work on? Browse the [issues list](https://github.com/railsbridge/docs/issues) and the [Volunteer Opportunities List](https://github.com/railsbridge/docs/wiki/RailsBridge-Volunteer-Opportunities). Those have lots of ideas.
+如果您的活動達到這二項要求，您依然可以使用這個網站，只要不使用『RailsBridge Workshop』即可。
+(曾有個公益活動使用『使用 Railsbridge 教材的 Rails Workshop』，這是可以的)
 
 
-### I have a different question about RailsBridge.
+### 我想幫忙，該怎麼做？
 
-The [RailsBridge website](http://www.railsbridge.org) probably has an answer!
+**(英文版)** <br>
+
+首先，建一個 [GitHub 帳號](https://github.com)。如果您有任何想法或建議請給我們 [issue](https://github.com/railsbridge/docs/issues)。我們會盡努力讓它實現 (如果符合我們的目標的話 :D)
+
+不知道自己能做什麼？ 歡迎到 [issues list](https://github.com/railsbridge/docs/issues) 以及 [Volunteer Opportunities List](https://github.com/railsbridge/docs/wiki/RailsBridge-Volunteer-Opportunities)。 有很多點子可以幫助您
+
+**(中文版)** <br>
+
+請到中文版的 Github 裡的 [issue](https://github.com/sdlong/railsbridge-docs/issues) 給我們建議、Bug 或翻譯錯誤回報、或是詢問任何問題。
+
+或是 Email 給中文版維護者 <a href="mailto:sdlong.jeng@gmail.com">sdlong</a>
+
+### 我有關於 RailsBridge 的問題
+
+[RailsBridge website](http://www.railsbridge.org) 上可能會有您的答案！
 
 MARKDOWN
