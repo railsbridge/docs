@@ -75,3 +75,14 @@ The code is licensed under an [MIT license](http://opensource.org/licenses/MIT),
 - [StepFile Reference](step_file_reference.md)
 - Workshop organizers: See http://docs.railsbridge.org/workshop for example slide decks you can use in your opening/closing presentations.
 
+## 中文版備註
+
+安裝流程：
+
+- fork this github
+- git clone xxx ( 你的 github )
+- `install ruby 2.2.4`
+- `gem install bundle`
+- `bundle install`
+- 執行 `SITE_LOCALE=zh-tw bundle exec rake run`
+- 前往 http://localhost:9292/
