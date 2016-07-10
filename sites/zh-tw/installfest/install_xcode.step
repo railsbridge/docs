@@ -10,16 +10,16 @@ option "OSX 10.6 Snow Leopard" do
   link "install_xcode_from_dvd"
 end
 
-option "Install Command Line Tools for XCode" do
-  message "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
-  message "Download and install the latest **Command Line Tools for Xcode** package"
+option "從 Xcode 上安裝 Command Line Tools" do
+  message "請前往 [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
+  message "下載並安裝最後一個版本的 **Command Line Tools for Xcode**"
 end
 
-verify "your compiler was installed" do
+verify "已將 Command Line Tools 安裝" do
   console "gcc --version"
   result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
 
-  message "Your results might differ somewhat. Basically, as long as it doesn't say something like 'command not found', you're probably cool."
+  message "上述的訊息可能會有一點點不一樣，只要不要顯示 'command not found' 就代表成功了！"
 end
 
 next_step 'osx_rvm'

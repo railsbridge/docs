@@ -1,15 +1,15 @@
 message <<-MARKDOWN
-RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](https://rvm.io/rvm/install) are available here, but this should work for you:
+RVM 是個 Ruby 版本的管理工具，而且非常容易安裝並使用，可以到 [RVM 官方安裝指南](https://rvm.io/rvm/install) 了解完整的資訊，也許底下的步驟就夠用了：
 MARKDOWN
 
-step "Install RVM" do
+step "安裝 RVM" do
   console "curl -L get.rvm.io | bash -s stable"
-  message "This will do some stuff and print a long message which you can ignore."
+  message "過程中可能會出現很多很長的訊息，可以忽略它"
 end
 
-step "Configure your shell" do
+step "重開你的 Terminal" do
 
-  message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
+  message "安裝完後每當你新開一個 Terminal 視窗， RVM 會主動啟用，需要將你現在的 Terminal 關掉並重開"
 
   verify do
     console "type rvm | head -1"

@@ -1,14 +1,14 @@
 important <<-MARKDOWN
-  These steps apply to **Ubuntu Linux** only. If you are using some other flavor of Linux, get help from a TA.
+  這些步驟只適合 **Ubuntu Linux** 系統。如果你是使用其他基於 linux 開發的作業系統，請找助教協助
 MARKDOWN
 
 message <<-MARKDOWN
-You will need sudo access in order to complete these directions (The first user account has this by default).
+  在操作以下步驟輸入指令時，可能會需要 sudo 權限(只需要輸入第一次)
 MARKDOWN
 
-step "Install packaged software and libraries" do
+step "安裝需要的軟體套件" do
   message <<-MARKDOWN
-Open a terminal (Applications > Accessories > Terminal).  You may want to right-click on the terminal icon and select "Add to panel" so the icon will appear next to the default help and Firefox icons in the top panel.
+  打開 Terminal(終端機) (從 Applications > Accessories > Terminal)。你可以對 Terminal 圖示按右鍵選擇 "Add to panel"，並將它放在網站瀏覽器旁邊
   MARKDOWN
 
   apts = %w{
@@ -43,36 +43,35 @@ Open a terminal (Applications > Accessories > Terminal).  You may want to right-
   console "sudo apt-get install #{apts.join(' ')}"
 
   important <<-MARKDOWN
-    If you get an error during `apt-get` resembling
+    當你在輸入 `apt-get` 時發生下面錯誤
 
     `Failed to fetch cdrom://Ubuntu`...
 
-    it is because `apt-get` is trying to install packages from your Ubuntu install CD. If you don't have that CD on hand, you can try disabling it as a package source by following this Stack Overflow post:
-
+    是因為 `apt-get` 嘗試從 Ubuntu 安裝光碟上安裝套件。如果你沒有光碟，可以調整套件資源設定來解決此問題，請參考 Stack Overflow 底下的連結：
     http://askubuntu.com/questions/125111/failed-to-download-repository-information-due-to-missing-cdrom
   MARKDOWN
 end
 
-step "Install git" do
+step "安裝 git" do
   console "sudo apt-get install git"
 
-  message "If this results in an error, you should be ok, as the prior step should have installed `git-core`"
+  message "假使出現錯誤訊息，也不會有問題，因為在上一個步驟有安裝到 `git-core` "
 end
 
-step "Install RVM" do
+step "安裝 RVM" do
   important do
-    message "If you're using Ubuntu 12.04, Ubuntu 14.04 or the latest version of Mint, ensure that the Run command as login shell option is checked under the Title and Command tab in Profile Preferences (located in Terminal's Edit menu). After changing this setting, you may need to exit your console session and start a new one before the changes take effect."
+    message "如果你的 Ubuntu 是 12.04 / 14.04 或是最新的版本，請確認 'Run command as a login shell' 有設定到，位於 Terminal 的編輯選單，在 'Title and Command' 的分頁下(請參考下圖)。在修改設定之後，會需要你關閉現在的 Terminal 並重開一個新的，讓新的設定運作"
     img src: 'img/railsbridge_ubuntu12-checkbox.png', alt: "Ubuntu 12.04 terminal settings"
   end
   insert "install_rvm"
 end
 
-step "Install Ruby" do
+step "安裝 Ruby" do
   insert "install_ruby"
 end
 
-step "Install Rails" do
-  message "Using a terminal again, execute the following command to install rails."
+step "安裝 Rails" do
+  message "一樣使用 Terminal ，輸入以下的指令來執行安裝 Rails"
 
   console "gem install rails"
 end
@@ -80,13 +79,13 @@ end
 step "Sublime Text 2" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install Sublime Text 2. It's available for [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
+如果你沒有慣用的程式編輯器，可以安裝 Sublime Text 2。它同時支援 [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) 以及 [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
 
-Check <http://www.sublimetext.com/2> for the latest version.
+前往 <http://www.sublimetext.com/2> 來確認最新的版本
 MARKDOWN
 
-  tip "How many bits?" do
-    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
+  tip "我的電腦是幾 bits ？" do
+    message %q{如果你不確定你的電腦屬於哪一種，可以輸入 `uname -i` 來確認。 "x86" 代表是 32-bit ； "x86_64" 代表 64-bit}
   end
 end
 

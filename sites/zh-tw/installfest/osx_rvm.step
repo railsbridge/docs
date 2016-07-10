@@ -1,30 +1,30 @@
-step "Open Terminal" do
-  message "Look for **Terminal.app** inside Applications -> Utilities, or use Spotlight search (Command + Space Bar) to find it."
+step "打開 Terminal(終端機) 軟體" do
+  message "從資料夾 Applications(應用程式) -> Utilities(工具程式) -> 找到 Terminal(終端機)；或是用 Spotlight(點擊畫面右上角的放大鏡) 輸入 'terminal' 來找"
 
-  message "Add it to your dock; you'll be using it a lot. (To add it to the dock, click and hold the dock icon once Terminal is open. Select options -> keep in dock.)"
+  message "執行後在 Dock 上對該程式的圖示按右鍵 -> 選項 -> 保留在 dock 上, 你會常常使用它"
 
-  tip "Arrange your windows so that Terminal and your web browser are next to each other. You will want to *read* from your browser and *type into* your terminal *at the same time*."
+  tip "可以把 Terminal 和網頁瀏覽器的視窗並排。你會想要邊看瀏覽器邊同時打字進終端機。"
 end
 
-step "Install A Compiler (XCode or GCC)" do
+step "安裝編譯器 (XCode or GCC)" do
   link "install_xcode"
 end
 
-step "Install Homebrew" do
+step "安裝 Homebrew" do
   insert "install_homebrew"
 end
 
-step "Install Git" do
-  message "Next we'll install Git, the most popular version control system in the Ruby world:"
+step "安裝 Git" do
+  message "接下來我們要安裝 Git ，在 Ruby 的世界最熱門的版本控制軟體:"
 
   console "git --version"
   fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
 
   message <<-MARKDOWN
-If you see that output, you have Git. <a href='#install-rvm'>Move on to the next step.</a>
+如果你看到這個訊息，已經安裝好 git ，可以 <a href='#install-rvm'>跳到步驟 5</a>
   MARKDOWN
 
-  console_with_message "Otherwise, type this in the terminal:", "brew install git"
+  console_with_message "如果是其它的訊息，請在終端機輸入", "brew install git"
 
   verify do
     console "git --version"
@@ -33,19 +33,19 @@ If you see that output, you have Git. <a href='#install-rvm'>Move on to the next
 end
 
 a name: "install-rvm"
-step "Install RVM, the Ruby Version Manager ", {:anchor_name => 'install_rvm_and_ruby'} do
+step "安裝 RVM", {:anchor_name => 'install_rvm_and_ruby'} do
   insert "install_rvm"
 end
 
-step "Configure RVM to use Homebrew" do
+step "設定 RVM 來運作 Homebrew" do
   console "rvm autolibs homebrew"
 end
 
-step "Install Ruby" do
+step "安裝 Ruby" do
   insert "install_ruby"
 end
 
-step "Install Rails" do
+step "安裝 Rails" do
   console "gem install rails"
   verify do
     console "rails -v"
@@ -53,11 +53,11 @@ step "Install Rails" do
   end
 end
 
-step "Install Sublime Text 2" do
+step "安裝 Sublime Text 2" do
   insert "install_sublime_text_2_for_mac"
 end
 
-verify "successful installation" do
+verify "是否已全部成功安裝" do
   console "git --version"
   fuzzy_result "git version {FUZZY}2.x.x{/FUZZY}"
 

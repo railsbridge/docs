@@ -1,19 +1,19 @@
-message "The Apple App Store is an application that installs other applications."
+message "Apple App Store 是個可以讓你安裝不同應用程式的軟體"
 
-step "Open the App Store application" do
-  message "You can find App Store in the Applications folder"
+step "打開 App Store" do
+  message "你可以在 Mac 的 Applications(應用程式) 資料夾找到 App Store"
 end
 
 step "Install XCode" do
-  message "Search for 'XCode' and click the 'Install' button"
+  message "搜尋 'XCode' 並點擊 'Install' 按鈕"
   img src: 'img/appstore.jpg', alt: 'XCode in the App Store'
 end
 
-step "Launch XCode"
+step "打開 XCode"
 
-step "Install the Command Line Tools" do
-  message "Open the Preferences menu and select the Downloads tab."
-  message "Then click the 'Install' button next to 'Command Line Tools'."
+step "安裝 Command Line Tools" do
+  message "打開 Preferences menu 選擇 Downloads 的分頁"
+  message "然後點擊 'Command Line Tools' 文字右邊的 'Install' 按鈕"
   img src: 'img/xcode-prefs.jpg', alt: 'XCode Preferences showing the location of the install button for command line tools'
 end
 

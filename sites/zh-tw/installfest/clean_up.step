@@ -1,20 +1,20 @@
 message <<-MARKDOWN
 
-Ok, there is one more step. You won't be using the test applications in the workshop; we just created them to make sure everything was working. **You should delete them now to reduce confusion during the workshop.** Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
+來，還有最後一步。我們 Workshop 之後不會再用這個測試應用程式；做這些只是為了確定所有東西都沒問題。你應該要立刻刪掉它，以防之後工作坊的過程中被它干擾。別擔心忘記這些步驟，你明天會繼續重覆這些，但會做得比較慢，讓你知道它裡面是怎麼運作的
 MARKDOWN
 
-step "Delete the apps from Heroku" do
-  message "Go to <https://heroku.com/myapps>, login if needed, and then click on your first (lyrical) app name. Click on settings. Scroll to the bottom of the page and click Delete App. Enter app name, confirm, and then repeat for the second app."
+step "將 Heroku 的程式刪掉" do
+  message "前往 <https://dashboard.heroku.com/apps> 並登入(如果需要)。點擊你的第一個 app ，並進入 'Setting' 裡面。往下拉到最下面點擊 'Delete app' 的按鈕，會需要你輸入此 app 的名稱作確認，這樣就完成刪除的動作，如果你建立了多個以上的 app，重複上述流程即可"
 end
 
-step "Delete the test_app from your computer" do
+step "將電腦裡的 test_app 程式刪掉" do
   option "Windows" do
-    message "From the Explorer, right click on the test_app folder (inside C:\\Sites\\railsbridge) and choose Delete."
-    message "**- or -**"
-    console_with_message "From the command prompt, run the following command:", "rmdir /s /q c:\\Sites\\railsbridge\\test_app"
+    message "打開資料夾，右鍵點擊 test_app 並選擇刪除 (位於 C:\\Sites\\railsbridge 裡)"
+    message "**- 或是 -**"
+    console_with_message "在 Terminal(終端機) 裡輸入：", "rmdir /s /q c:\\Sites\\railsbridge\\test_app"
   end
   option "Mac" do
-    message "Open your home directory and drag the test_app folder to the trash."
+    message "從 Finder 打開你的家目錄，並將 test_app 拖到垃圾桶去"
   end
   option "Linux" do
     console "rm -rf ~/railsbridge/test_app"

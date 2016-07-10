@@ -1,44 +1,42 @@
 tip do
-  console_with_message "From here on, this guide assumes you have Rails 5.0.x. To check your Rails version, type this in the terminal:", "rails -v"
+  console_with_message "到本節為止，我們已經預期你已經安裝好 Rails 5.0.x。請檢查你的 Rails 版本，在 Terminal(終端機) 下輸入：", "rails -v"
   fuzzy_result "Rails 5.0{FUZZY}.x{/FUZZY}"
-  message "If your computer reports a Rails version less than 5.0, ask a TA help get you back on track."
+  message "如果顯示的版本低於 5.0 ，請找助教或志工求助"
 end
 
-step "Change to your home directory" do
+step "切換到你的家目錄" do
   insert 'switch_to_home_directory'
 end
 
 step "Create a railsbridge directory" do
   console "mkdir railsbridge"
-  message "`mkdir` stands for make directory (folder)."
-  message "We've made a folder called `railsbridge`."
+  message "`mkdir` 的意思是開新目錄（資料夾）"
+  message "我們剛剛已經開了一個叫做 'railsbridge' 的資料夾"
 end
 
-step "Change to your new railsbridge directory" do
+step "切到你新開的 railsbridge 資料夾" do
   console "cd railsbridge"
 end
 
-step "Create a new Rails app" do
+step "開一個新的 Rails 應用程式" do
 
   console "rails new test_app"
 
-  message "The command's output is voluminous, and will take some time to complete, with a long pause in the middle, after all the 'create...' statements ending in 'bundle install'.  When it fully completes, it will return you to your home prompt.  Look for the 'Your bundle is complete!' message just above."
+  message "這個指令會輸出很多東西，而且會花一點時間，途中會有一堆 'create...' ，後面會出現 'bundle install' ，這裡會停頓很很久。全部完成之後，指令的控制權會還給你。你會看到指令游標上方的 'Your bundle is complete!'"
 
   console "cd test_app"
   console "rails server"
 
-  tip "In Windows, you may need to let Ruby and Rails communicate through your firewall.  Say yes to the pop up."
+  tip "在 Windows 裡面，你或許會需要允許 Ruby 和 Rails 通過防火牆，如果系統提問，請允許"
 
-  tip "Shortcut: Just type 'rails s'" do
+  tip "小撇步：可以只打 'rails s'" do
     message <<-MARKDOWN
-      Throughout your Rails programming career you're going to type `rails server` a
-      lot.  Simply typing `rails s` is the same as `rails server`.
+      在你的 Rails 程式設計職涯裡面，會打很多次 rails server。只要打 rails s 就跟 rails server 是一樣的
     MARKDOWN
   end
 
   message <<-MARKDOWN
-    The first command should produce no output.
-    If `rails server` starts up with no errors, you're golden! It'll look something like this:
+    第一個指令不會有任何輸出。 如果 `rails server` 啟動的時候沒有錯誤，你就成功了！它會長得像這樣：
   MARKDOWN
 
   fuzzy_result <<-TEXT
@@ -53,21 +51,21 @@ step "Create a new Rails app" do
     Use Ctrl-C to stop
   TEXT
 
-  message "If it does, congratulations! You've successfully installed Ruby AND Rails and started your server."
+  message "是這樣的話就恭喜你啦！你已經成功安裝 Ruby 和 Rails 並且啟動了 server"
 
-  tip "If it doesn't work, ask a TA for help."
-  message "* In your browser, go to <http://localhost:3000>"
+  tip "如果不會動，請找助教。"
+  message "* 打開你的網站瀏覽器，前往 <http://localhost:3000>"
   img src: "img/successful_rails_install.png", alt: "Screenshot of the browser on localhost 3000 showing the rails intro page"
   message <<-MARKDOWN
 
     * Back in the Terminal window where you ran <code>rails server</code>, type **Control-C** (don't type this into the console, but hold the Control and C keys at the same time) to kill(stop) the server. Windows will ask "Terminate batch job (Y/N)?".  Type "Y".
   MARKDOWN
 
-  important "On Windows, sometimes Control-C doesn't work. In that case, look for the key called 'Break' or 'Pause' and press Control-Break, then answer Y at the prompt. If there is no Pause/Break key on your keyboard, you can run `ruby script/rails server` instead of `rails server` which should allow Control-C to stop the server."
+  important "在 Windows，有時候 Ctrl+C 不會動。這時候，請看鍵盤上的 'Break' 或 'Pause' 鍵，然後按下 Ctrl+Break ，在接下來的提問裡回答 Y 。如果鍵盤上沒有 Pause/Break 鍵，可以跑 ruby script/rails server 來代替 rails server ，這樣子應該就可以用 Ctrl-C 來關掉 server"
 end
 
-step "Generate a database model" do
-  tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
+step "產生資料庫的 model" do
+  tip "如果終端機沒有顯示你（還）在 test_app 資料夾，請打：" do
     console "cd test_app"
   end
 
@@ -82,20 +80,20 @@ step "Generate a database model" do
   BASH
 
   message <<-MARKDOWN
-    **Note:** the above are three separate commands. Type each line into the terminal separately, not as one single command.
+    **註**： 以上是分別三個指令。請分別打進終端機裡面，不是一個指令。
 
-    Wait until your console shows that the Puma server has started (just like before).  Then, in the browser, visit <http://localhost:3000/drinks>
+    請等到終端機顯示 Webrick server 已經啟動（跟之前一樣）。然後，在瀏覽器裡面，打開 <http://localhost:3000/drinks>
 
-    1. Click on "New drink"
-    2. Enter Cappuccino for the name
-    3. Enter 135 for the temperature.
-    4. Click on "Create Drink".
+    1. 按一下 "New drink"
+    2. 在 name 輸入 Cappuccino
+    3. 在 temperature 輸入 135
+    4. 按一下 "Create Drink".
 
-    (The window where you ran `rails server` will display debugging information as you do this.)
+    (你剛跑 `rails server` 的視窗會顯示做這件事時的除錯資訊)
 
     You should see: ![Screenshot of the drink detail page](img/get_a_sticker_you_should_see.png)
 
-    In your terminal, Hold Control and hit C (or on Windows, Control-Break, Y) to stop the rails server.
+    然後在終端機裡面，按 Ctrl+C （Windows 也可以試 Ctrl+Break 再選 Y）來關掉 server
   MARKDOWN
 end
 

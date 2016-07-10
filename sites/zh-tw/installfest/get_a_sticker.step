@@ -1,22 +1,22 @@
-step "Have a volunteer check your tool versions" do
+step "讓助教檢查你的工具的版本" do
 
-  message "Find a volunteer and have them watch the next steps."
+  message "請找一個助教來讓他看以下的幾個步驟"
 
-  verify "tool installation" do
+  verify "工具的安裝" do
 
-    tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+    tip "大部份的情況下，版號不會完全一致。通常，如果「**前兩個**」版號一致，或是整個版號都比下述的還要**大**，那就沒問題。"
 
-    h3 "If you're on OSX or Linux:"
+    h3 "如果你是 MacOS X 或 Linux："
 
     console "rvm -v"
     fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.io/]{/FUZZY}"
 
-    h3 "On all operating systems:"
+    h3 "所有的作業系統："
 
     console "ruby -v"
-    fuzzy_result "ruby 2.2.{FUZZY}4p230 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
+    fuzzy_result "ruby 2.3.{FUZZY}0 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
 
-    tip "Depending on your environment, your Ruby version might be **2.2** or **2.3**. As long as it's 2.2.2 or above, you're good to go."
+    tip "依據環境不同，你的 Ruby 版本可能會是 **2.2** 或是 **2.3**。 只要比 2.2.2 高就可以了"
 
     console "bundle -v"
     fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
@@ -24,16 +24,16 @@ step "Have a volunteer check your tool versions" do
     console "rails -v"
     fuzzy_result "Rails 5.0{FUZZY}.x{/FUZZY}"
 
-    tip 'The RailsBridge curriculum is written for Rails 5, so if you still have Rails 4.x or earlier, you need to install Rails 5 with `gem install rails`.'
+    tip "RailsBridge 的課程教學使用 Rails 5 ，所以如果還在 Rails 4.X 或是更早的版本，請務必安裝輸入 `gem install rails` 來安裝 rails 5"
   end
 end
 
-step "Show your Heroku app to a volunteer" do
-  message "Visit the heroku site you made on the previous page and create a new drink."
+step "將你的 Heroku 程式給助教看" do
+  message "前往 Heroku 頁面，並試著新增一筆 drink 看看"
 end
 
-step "Congratulations!" do
-  message "You get a sticker! (Or a high-five if there aren't any stickers)."
+step "恭喜啦！" do
+  message "你獲得了一張貼紙！ (或是一個鼓掌 ... 如果沒有準備貼紙的話)"
 end
 
 next_step "clean_up"

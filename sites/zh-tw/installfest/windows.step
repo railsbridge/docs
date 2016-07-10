@@ -1,71 +1,71 @@
 message <<-MARKDOWN
-These instructions should work for all versions of Windows from XP to Windows 8.
+以下教學適用於 Windows XP ~ Windows 8 的版本
 
-You may need to login as Administrator, or give the Administrator password when installing some programs, depending on your Windows version and user settings.
+你會需要 Administrator(系統管理員) 的權限，用 Administrator 帳號登入或是有 Administrator 的密碼，在安裝一些軟體跟設定時會用到
 MARKDOWN
 
-step "Run RailsInstaller" do
-  message "RailsInstaller includes Rails, Ruby, Git and SQLite."
-  message "Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby 2.2."
-  message "Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults."
-  message "Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*"
+step "下載並執行 RailsInstaller" do
+  message "RailsInstaller 包含了 Rails, Ruby, Git and SQLite 等套件的安裝"
+  message "前往 <http://railsinstaller.org/>，往下滑找到 'Downloads' 的選項，然後點擊下載 RailsInstaller for Windows/Ruby 2.2"
+  message "打開並執行下載後的安裝程式，只要一直點擊 Next 到下一步，使用預設值即可"
+  message "安裝選項時，確認 *Install git (recommended)* 跟 *Add executables for Ruby, DevKit Git (if checked above) to the PATH* 有選擇到"
 
   img src: "img/WinRailsInstaller.jpg", alt: "Screenshot showing location of checkboxes for ensuring that Git is installed"
 
-  message "Rails will be installed in C:\\RailsInstaller and the directory for your Rails projects will be C:\\Sites"
+  message "Rails 將會被安裝在 C:\\RailsInstaller 的位置，你的 Rails 專案會在 C:\\Sites 的位置"
 end
 
-step "Configure your git and ssh environment" do
+step "設定你的 git 與 ssh 環境" do
 
-  important "At the end of the installer there will be a checkbox asking 'Configure git and ssh when installation has completed'. **Leave this box checked.** It will open a terminal window that you need to **type into**."
+  important "在安裝結束後，會有一個框框問你 'Configure git and ssh when installation has completed'。 **選擇這個框框** 它會打開一個 Terminal(終端機) 然後需要你 **輸入資訊**"
 
-  message "When it asks *Please enter your name, for example mine is: Wayne E. Seguin*"
-  message "Type *your actual full name* into the console and press **[enter]**"
+  message "當它詢問 *Please enter your name, for example mine is: Wayne E. Seguin*"
+  message "輸入 *你的英文名字* ，並按下 **[enter]**"
 
-  message "When it asks *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
-  message "Type *your actual email address* into the console and press **[enter]**"
+  message "當它詢問 *Please enter your email address, for example mine is: wayneeseguin@gmail.com*"
+  message "輸入 *你的 email* ，並按下 **[enter]**"
 
-  important "Use the **same email address** for heroku, git, github, and ssh."
+  important "請在 heroku, git, github, 以及 ssh 上使用 **相同的 Email**"
 
   tip do
-    message "After this step you will have some **git config settings** and you will also have an **ssh key**."
+    message "這個步驟之後，你就會有 **git config settings** 跟 **ssh key**"
   end
 
-  message "Here is a summary of your settings after this process:"
+  message "下面是當設定完成後出現的畫面"
 
   img src: 'img/railsbridge_windowsScreenshot-commandprompt_ror.png', alt: "Screenshot showing correct git, ruby, rails and ssh settings"
 
-  message "Close the command prompt window."
+  message "最後，關掉這個程式"
 end
 
-step "Update Git" do
+step "更新 Git" do
 
-  message "The version of Git that comes with RailsInstaller is old, so we will be updating that next."
+  message "在 RailsInstaller 的版本是舊的，所以我們會需要在下面步驟更新它"
 
-  message "Go to <http://git-scm.com> and download the installer. You want version 1.9.5 or newer."
+  message "前往 <http://git-scm.com> 下載安裝檔。你會需要 1.9.5 以上的版本"
 
-  message "Run the installer, and it will ask you where you want to install it. Change it FROM C:\\Program Files\\Git  TO, C:\\RailsInstaller\\Git like the picture below."
+  message "執行安裝檔，然後會問你要安裝在哪裡，請選擇從 C:\\Program Files\\Git 改成 C:\\RailsInstaller\\Git 像下面的示意圖"
 
   img src: 'img/directory.png', alt: "Screenshot showing the step of installation where the location to install git is set"
 
-  message "It will warn you that the directory already exists. Click yes to install to that folder anyway."
+  message "它會跑出一個訊息說該資料夾位置已存在，點擊 yes 來安裝並覆蓋掉舊版本"
 
-  message "Click next twice, and select, Use Git from the Windows Command Prompt."
+  message "點擊二次 Next ，然後選擇 Use Git from the Windows Command Prompt."
 
   img src: 'img/command.png', alt: "Screenshot showing location choice to use git from Windows Command Prompt"
 
-  message "Keep going and you'll have the latest version of Git installed!"
+  message "等待一段安裝時間，就會將 Git 更新了！"
 
 end
 
-step "Open a Terminal" do
-  message "Much of using Rails is typing commands and hitting **[enter]**.  Your experience using Rails on Windows greatly depends on your making friends with the terminal window.  Normally you will work in a terminal window and keep it open along with your browser."
+step "開啟 Terminal(終端機)" do
+  message "我們大多數都是靠輸入指令來開發 Rails。在 Windows 上開發 Rails 的經驗好壞，取決於你使用 Terminal 的熟悉度。你將會使用 Terminal 以及網頁瀏覽器來開發 Rails"
 
-  tip "The Terminal is also called the Command Prompt, Command Line, DOS Prompt, or DOS Window."
+  tip "Terminal(終端機) 又稱為 Command Prompt, Command Line, DOS Prompt, 或是 DOS Window."
 
-  message "RailsInstaller made a special Terminal for you to use when you're working on Ruby, Rails, or Git."
+  message "RailsInstaller 已經幫你裝了一個特別的 Terminal ，讓你方便用在 Ruby, Rails, or Git 上面"
 
-  message "To open the special Terminal, search for **Command Prompt with Ruby and Rails**."
+  message "打開方法，尋找 **Command Prompt with Ruby and Rails**"
 
   div do
     option_half "Windows 7" do
@@ -77,40 +77,40 @@ step "Open a Terminal" do
     end
   end
 
-  message "You should do all your Rails work in this RailsInstaller DOS window."
+  message "你應該將使用 RailsInstaller DOS Windows 來完成所有 Rails 上的開發"
 
-  tip "Pin It to Win It" do
-    message 'Pinning the Command Prompt to the taskbar is a handy shortcut.'
+  tip "將它固定在導覽列上" do
+    message '將這個 Terminal 固定在導覽列上面'
 
     img src: 'img/railsbridge_windowsScreenshot-commandprompt-pinnedtotaskbar.png', alt: 'Pin the Command Prompt to the Task Bar'
   end
 end
 
-step "Update RubyGems" do
-  message "The version of RubyGems that comes with RailsInstaller has some problems. Follow these steps to upgrade it!"
+step "更新 RubyGems" do
+  message "用 RailsInstaller 安裝後的 RubyGems 有些小問題，請參考下面做法來更新"
 
-  step "Check to see if you need to update" do
+  step "檢查是否需要更新" do
     console "gem -v"
 
-    message "If the output is **2.2.2** or earlier, keep following the instructions."
+    message "如果出現 **2.2.2** 或更早版本，請照下面步驟繼續"
 
-    message "If the output is **2.2.3** or later, <a href='#install-node'>skip to the next step!</a>"
+    message "如果出現 **2.2.3** 或更新版本，前往 <a href='#install-node'>安裝 Node.js</a>"
   end
 
-  step "Download the update" do
-    message "Visit https://github.com/rubygems/rubygems/releases/tag/v2.2.3"
+  step "下載更新檔" do
+    message "前往 https://github.com/rubygems/rubygems/releases/tag/v2.2.3"
 
-    message "**Right click -> Save target as...** the file **rubygems-update-2.2.3.gem** to your **C:\\Sites** directory"
+    message "將 **rubygems-update-2.2.3.gem** 這個檔案連結 **點右鍵 -> 另存到...** 你的  **C:\\Sites** 位置"
   end
 
-  step "Install the update" do
-    message "Back at the command prompt, run the following commands:"
+  step "安裝更新檔" do
+    message "回到 Terminal 輸入以下指令"
 
     console_without_message "gem install --local rubygems-update-2.2.3.gem"
 
     console_without_message "update_rubygems --no-ri --no-rdoc"
 
-    message "**Close and reopen your command prompt**, then verify you have the upgraded RubyGems by typing this in the terminal:"
+    message "**關掉並重開你的 Terminal(Command Prompt with Ruby and Rails)** 確認已經將 RubyGems 更新的指令："
 
     console_without_message "gem -v"
     result "2.2.3"
@@ -118,29 +118,29 @@ step "Update RubyGems" do
 end
 
 a name: 'install-node'
-step "Install Node.js" do
+step "安裝 Node.js" do
 
-  message "Go to <http://nodejs.org> and download the installer"
+  message "前往 <http://nodejs.org> 並下載安裝檔"
 
-  message "Click on the downloaded file to run the install wizard. Click Next at each step to accept the defaults."
+  message "打開並執行下載後的安裝程式，只要一直點擊 Next 到下一步，使用預設值即可"
 
-  message "**Reboot your computer.**"
+  message "**重開你的電腦**"
 
-  message "Once your computer is back up, load **Command Prompt with Ruby and Rails** and..."
+  message "重開後，打開 **Command Prompt with Ruby and Rails** 然後"
 
   console "node -v"
   fuzzy_result "v4{FUZZY}.x.x{/FUZZY}"
 end
 
-step "Update Rails" do
-  message "Currently, RailsInstaller installs Rails 4.1.x, but we want the latest. Upgrading Rails is pretty easy:"
+step "更新 Rails" do
+  message "目前 RailsInstaller 只安裝 Rails 4.1.x 。我們需要最新的版本，要更新 Rails 非常的簡單，只要"
 
   console "gem install rails --no-ri --no-rdoc"
 
-  message "...and you're done. New Rails! Woo."
+  message "然後就完成了。最新的 Rails! Woo~~~"
 end
 
-step "Sanity Check" do
+step "完整檢查" do
 
   console "ruby -v"
   fuzzy_result "ruby 2.2{FUZZY}.4{/FUZZY}"
@@ -152,38 +152,38 @@ step "Sanity Check" do
   fuzzy_result "git version 2{FUZZY}.5.0.windows.1{/FUZZY}"
 end
 
-step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+step "設定 Windows Terminal" do
+  message "花點時間來設定 *Command Prompt with Ruby and Rails* ，把尺寸和字型調整好。 講個秘訣──設定方式寫在下面這個連結裡面，按一下可以看設定方式，設定完成之後，按瀏覽器的上一頁按鈕可以回到這裡來"
 
   link "configure_the_windows_terminal"
 
-  tip "Clearing the Terminal" do
-    message "If you ever want to clear the terminal of all its cluttered output"
+  tip "清空 Terminal" do
+    message "如果你想要將 Terminal 的畫面清空，只需要"
     console "cls"
   end
 
-  tip "Command History" do
-    message "The terminal window stores a \"command history.\" To view and re-run previous commands, use the &lt;up arrow&gt; and &lt;down arrow&gt; keys.  You can also edit a previous command and run it -- this is handy for long commands, or fixing mistakes, or for cycles (series of commands) that you repeat."
+  tip "指令紀錄" do
+    message "Terminal 會記錄你輸入過哪些指令。要觀看跟重新輸入之前的指令，請使用方向鍵 &#8593; 與 &#8595; 切換。你也可以修改之前的指令再輸入 —— 方便讓你執行超長的指令，或是修正之前指令的錯誤、或是重複執行指令"
   end
 
-  tip "Copy and Paste" do
+  tip "複製與貼上" do
 
-    message "It's usually better to type commands in yourself. It takes a little longer but you learn more."
+    message "通常來說自己打指令會比較好，雖然費時費力，但比較會學到東西"
 
-    message "But if you must... in these instructions, where it says: \"Type this in the terminal:\", you can usually copy the command from this page, and right click in the menu bar or terminal window, then click on \"Paste\", then hit the **[enter]** key."
+    message "但如果你真的要……好啦，在課程裡面，如果說要「在終端機打這些字：」，你可以把指令複製起來，然後在終端機裡面或標題列按右鍵，然後選「貼上」，再按 **[enter]** 鍵就行了"
   end
 end
 
-step "Install a Text Editor" do
-  message "You need a text editor to do Ruby. If you already have a preferred text editor, such as vi, emacs, jedit, etc., you can skip this step. It must be a plain text editor and not something with styling like Microsoft Word or WordPad."
+step "安裝程式編輯器" do
+  message "你需要一個程式編輯器來開發 Ruby 。如果你已經有慣用的，像是 vi, emacs, jedit ..等等，可以直接跳過此步驟。必須是純文字編輯器，不可以用那種可以上色改字體像是 Microsoft Word 或 WordPad 等軟體"
 
-  message "Notepad is not a good programming editor, but it will work in a pinch."
+  message "Notepad(記事本) 不是好用的程式用編輯器，但基本上可以用"
 
-  important "**When in doubt, use Sublime Text 2.**"
+  important "**不知道要用什麼，就選 Sublime Text 2 吧！**"
 
-  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
+  message "[Sublime Text 2](http://www.sublimetext.com/2) 是個非常好的選擇"
 
-  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
+  message "前往 <http://www.sublimetext.com/2> 下載"
 end
 
 next_step "create_a_heroku_account"

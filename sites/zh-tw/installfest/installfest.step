@@ -1,60 +1,59 @@
-message "This is a set of step-by-step instructions for installing Ruby, Rails, and other important tools on Mac, Windows, or Linux computers. Originally developed for the [Railsbridge Workshops](http://railsbridge.org), it is a community-supported open-source documentation project. If you want to contribute, click the [git] link at the top-right corner of any page and submit your change on GitHub."
+message "這是一步步地協助完成安裝 Ruby, Rails 跟其他重要工具到 Mac, Windows 或 Linux 的教學。最初是為了 [Railsbridge Workshops](http://railsbridge.org) 而開發。如果您想要提供程式碼上的貢獻，請點擊右上角 navbar 上的 [git] 的連結，會導向到 github ，並請在上面編寫您的變更"
 
-message  "**You'll repeat all these steps tomorrow, but more slowly so you can better understand what's going on under the hood.** Today we just want to check that everything's set up and ready for tomorrow."
+message  "**我們會在明天的活動上再執行並解說這個教程，可以幫助你了解在安裝的過程中的變化。** 今天只希望所有的環境與設定能夠先一一確認完成，讓明天的其他教材的進行可以更順利"
 
-step "Prepare for the Installfest" do
+step "準備開始 Installfest" do
   message <<-MARKDOWN
 
 
-## You must bring:
+## 你需要攜帶:
 
-* **Your laptop.** You need to have a working wifi connection, a browser and an email account you can readily access.
-  * If you have a choice between a Mac and a Windows laptop, please bring the Mac.
-  * Linux is an acceptable alternative, but the Installfest is only tested on Ubuntu.
-* **Power cord for your laptop**
-* If you already have accounts on Heroku or GitHub, make sure you know your username and password.
+* **你的電腦** 可以跟 Wifi 連線，有網站瀏覽器並且有個可以收信的 Email
+  * 如果你有 Mac 或是 Windows 可以選擇，請攜帶 Mac
+  * Lindex 是個可以接受的選擇，但是 Installfest 的教程只支援 Ubuntu 系統
+* **你電腦的電源線**
+* 如果你已經註冊了 Heroku 跟 Github 帳號，請確保不要忘了帳號密碼
 
-## Possibly also helpful to bring:
+## 其他帶來會有幫助的東西:
 
-* Extension cord
-* Power strip
-* Camera
-* Snacks
+* 延長線
+* 分接插頭
+* 相機
+* 零食
 
   MARKDOWN
 end
 
-step "Don't Panic!" do
+step "別緊張！" do
   message <<-MARKDOWN
 
+如果你卡住了，，也請繼續往下做剩下的步驟，下載所有你需要的東西。工作坊現場的網路通常會滿載，所以如果事先下載回來會非常好。
 
-Even if you get stuck, please go through the rest of the instructions and download all the things you'll need. Bandwidth will be at a premium during the workshop, so it will help immensely to have everything on your laptop already.
-
-There are a lot of steps, and the instructions may seem like they're in a foreign language, but: **don't panic!** By the end of the workshop, you'll know what everything is and how to use it.
+這裡面會有很多步驟，有的可能會長得火星文，但是：**免緊張！** 在工作坊的最後，你會知道哪個是幹嘛的以及怎麼用。
 
   MARKDOWN
 end
 
-step "Read This Overview" do
+step "閱讀以下摘要" do
   message <<-MARKDOWN
 
-Here's a list of tools you'll be installing. As you go through the workshop, we'll explain what each one is for and how to use it.
+這是整份教程裡將會安裝到的清單，我們會一一解釋這些工具的功能並且教你怎麼使用它
 
-* **Ruby**. A programming language.
-* **Rails**. A framework for making web applications with Ruby. It does a lot of the setting up work for you and creates a model-view-controller structure for your web application. We'll go into more detail about that later.
-* **Git**. A revision or source control system. It creates a repository, which is a complete history of your programming changes, so you can undo changes and roll back to previous versions of your work if something has gone wrong.
-* **GitHub**. (optional)
-* **Heroku**. An application server, which hosts your application during development. This allows you to get your application online and interact with it from any browser, instead of just on your local machine.
-* **Sublime Text 2** (or [some other editor](editors)). To write programs in Ruby, you need a text editor to create, edit and save Ruby files.
-* Various useful "**Ruby gems**". Ruby gems are useful bits of Ruby code that someone has created for reuse, so you don't have to write it yourself. Including...
+* **Ruby**. 程式語言
+* **Rails**. 一個用 Ruby 撰寫，幫助你建立出網站的框架 (framework)。它有很多的功能與設定協助建立出 MVC (model-view-controller) 架構的網站。後面會有更多 Rails 的介紹
+* **Git**. 一個版本控制的系統。當你建立程式庫 (repository) 之後，會記錄所有程式庫的變化記錄，所以當初有 bug 時可以隨時檢視、回溯或異動整個程式碼
+* **GitHub**. 全世界最大的 git 交流中心，您可以在 github 上探索、分享、協作各種不同的 repo
+* **Heroku**. 將你開發的專案部署後變成真正網站的服務
+* **Sublime Text 2** (or [some other editor](editors)). 好用的程式編輯器
+* 各種不同的 "**Ruby gems**". Ruby gems 是把常用的程式封裝成函式庫，讓你可以輕鬆安裝並使用，不用自己重構。常用的包括...
   * bundler
   * sqlite
 
-You will also create an account on Heroku, an application hosting platform.
+你也會開一個 Heroku 帳號，讓你的專案上線運作的服務
 
-If you already have an account on Heroku, make sure you know your username and password.
+如果你已經有 Heroku 的帳號，請務必確認你的帳號密碼
 
-If you've already installed the above tools and are confident they are setup correctly, skip ahead to the <a href="get_a_sticker">Get a Sticker</a> step.
+如果你已經安裝過這些工具，並且有信心確保可以正常運作，那麼請直接跳到 <a href="get_a_sticker">Get a Sticker</a> 這節
 
   MARKDOWN
 end

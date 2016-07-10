@@ -1,18 +1,19 @@
-message "An SSH key uniquely identifies you (and your computer) when your computer is communicating with other computers. Think of an SSH key as a fancy password."
+message "SSH key 是一個唯一的識別證，當你跟別的電腦通信的時候，用來認證你（和你的電腦）。你可以把 SSH key 當做一個假想的密碼"
 
-message "You'll need one of these to create your Heroku and Github accounts."
+message "你需要用以下其中一個方式來開你的 Heroku 和 GitHub 帳號。"
 
-option "Did you use RailsInstaller on Windows?" do
-  message "Congratulations, you already have an ssh key!"
+option "你是用 Windows 系統並用 RailsInstaller 安裝嗎？" do
+  message "恭喜！你已經有 ssh key！"
   link_without_toc 'create_a_heroku_account'
 end
 
-option "Do you have a preexisting SSH key for some other reason?" do
-  message "Maybe you went to a previous RailsBridge workshop, or generated an SSH key to push some code to GitHub? You can check with the following command:"
+option "你已經有一個用在其他用途的 SSH key 了嗎？" do
+  message "也許你之前參加過 RailsBridge workshop ，或是已經建立過 SSH key 並 push 一些程式碼到 github 上？你可以用以下指令來確認"
+
   console "ls ~/.ssh/id_rsa"
-  message "If you see the message **No such file or directory**, you don't have an SSH key yet."
+  message "如果看到的訊息是 **No such file or directory** ，代表還沒有 SSH key"
   option_half "'No such file or directory'" do
-    message "Go on to <a href='#generate-key'>Generate an SSH key"
+    message "前往 <a href='#generate-key'>建立一個 SSH key"
   end
   option_half "'/Users/[something]/.ssh/id_rsa'" do
     link_without_toc 'create_a_heroku_account'
@@ -20,28 +21,28 @@ option "Do you have a preexisting SSH key for some other reason?" do
 end
 
 a name: "generate-key"
-option "Generate an SSH key" do
-  important "Use the same email address for heroku, git, github, and ssh."
+option "建立一個 SSH key" do
+  important "請確保在 heroku, git, github, 以及 ssh 上的 Email 都是相同的"
 
-  important "**REPLACE** `student@example.com` with your **actual email address** below."
+  important "請 **修改** `student@example.com` 換成你 **真正的 Email**"
 
   console "ssh-keygen -C student@example.com -t rsa"
 
-  message "Press enter to accept the default key save location."
+  message "請直接按 Enter 確認將 key 存在預設的位置"
 
   message "Next, you'll be asked for a passphrase."
 
-  h1 "Choose whether to use a passphrase"
+  h1 "決定要不要使用通關密碼"
   blockquote do
-    option_half "No passphrase" do
-      message "Hit enter to accept blank passphrase, then hit enter again."
+    option_half "不使用" do
+      message "按 Enter 來使用空的通關密碼，再按一次 Enter 來確認"
     end
-    option_half "Passphrase" do
-      message "If your computer is shared with other people, as in a work laptop, you should choose and enter a real passphrase. Twice."
+    option_half "使用" do
+      message "如果你跟別人共用電腦，像是工作用筆電，那你應該設通關密碼，輸入兩次"
     end
   end
 
-  message "After key generation is complete, you'll have output that looks like this."
+  message "在 SSH key 生完之後，你會看到像這樣的輸出"
 
   result <<-OUTPUT
 Generating public/private rsa key pair.
@@ -56,8 +57,8 @@ The key fingerprint is:
   OUTPUT
 
   verify do
-    message "Your brand-new public key is now stored at `~/.ssh/id_rsa.pub`"
-    tip "Public vs. Private Keys" do
+    message "你新的 public key 現在會放在 `~/.ssh/id_rsa.pub`"
+    tip "Public vs. Private Keys（公鑰與私鑰）" do
       message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
       message "`id_rsa.pub` is your **public key** and can be shared freely."
       message "`id_rsa` is your **private key** and must be kept secret."
@@ -74,13 +75,13 @@ Enter passphrase for /Users/student/.ssh/id_rsa:
 Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
   OUTPUT
 
-  tip "Could not open a connection to your authentication agent" do
-    message "If the ssh-agent is not running, you will come across this error.  Here are a few commands that you can try to use to start the ssh-agent:"
-    console_with_message "For some Windows machines:", "eval `ssh-agent -s`"
-    console_with_message "For others (confirmed on some Windows 7, 8, 8.1, and 10 setups):", "eval $(ssh-agent)"
-    console_with_message "For Linux:", "eval `ssh-agent`"
+  tip "可能出現無法使用 ssh 連線的問題" do
+    message "如果 ssh-agent 尚未啟動, 會發生連線錯誤的問題。底下的指令可以幫助你啟動 ssh-agent："
+    console_with_message "一些 Windows 系統：", "eval `ssh-agent -s`"
+    console_with_message "其他 windows 系統 (已確認可以在 Windows 7, 8, 8.1, and 10 運作):", "eval $(ssh-agent)"
+    console_with_message "Linux系統：", "eval `ssh-agent`"
     message <<-MARKDOWN
-    <p>For additional options, this StackOverflow thread has been helpful: <a href="    http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">    http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent</a></p>
+    <p>關於其他的狀況，StackOverflow 的這個連結也許可以幫助你： <a href="    http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent">    http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent</a></p>
      MARKDOWN
   end
 end

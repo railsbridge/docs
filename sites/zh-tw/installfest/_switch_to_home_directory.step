@@ -1,14 +1,14 @@
-message "`cd` stands for change directory."
+message "`cd` 是切換路徑(change directory) 的意思"
 
-message "If you are still in `irb`, type `quit` to exit."
+message "如果你在 `irb` 的狀態，請輸入 `quit` 離開它"
 
 div do
   option_half "Windows" do
     console "cd c:\\Sites"
-    message "`cd c:\\Sites` sets our Sites directory to our current directory."
+    message "`cd c:\\Sites` 會將目前路徑切換到 Sites directory"
   end
   option_half "Mac or Linux" do
     console "cd ~"
-    message "`cd ~` sets our home directory to our current directory."
+    message "`cd ~` 會將目前路徑切換到 home directory"
   end
 end

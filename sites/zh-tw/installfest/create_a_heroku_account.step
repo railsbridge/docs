@@ -1,24 +1,24 @@
-message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing."
+message "我們會使用 Heroku 來將我們寫好的專案部署上線，因為它是個簡單又免費的服務"
 
-step "Visit the Heroku web site" do
+step "前往 Heroku 網站" do
   url "http://heroku.com"
 end
 
-step "Create an account" do
-  message "Click the big **Sign Up** button (it's about halfway down the page)"
-  message "Enter your email address."
-  important "Use the same email address for heroku, git, github, and ssh. Be sure to use an email account you can log into immediately."
+step "建立一個網站" do
+  message "點擊 **Sign Up** 這個大按鈕 (大約位於網站頁面中間)"
+  message "然後輸入你的 email"
+  important "請使用跟 github, ssh, git 設定一樣的 email，因為可以方便讓你在各個服務上的訊息取得統一個資訊"
 end
 
-step "Activate your account" do
+step "啟動你的帳號" do
 
-  message "Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save."
+  message "Heroku 會寄一封啟動你帳號的 Email ，打開並點擊裡面的連結。它會導向到你的 heroku 頁面，輸入密碼後確認即可完成帳號的註冊"
 
 end
 
-step "Install the Heroku toolbelt" do
+step "安裝 Heroku toolbelt" do
 
-  message "Visit https://toolbelt.heroku.com/, click the download link, and install."
+  message "前往 https://toolbelt.heroku.com/, 點擊 download 連結，並安裝"
 
   verify do
     console "heroku version"
@@ -27,19 +27,19 @@ step "Install the Heroku toolbelt" do
       {FUZZY}You have no installed plugins.{/FUZZY}
     TEXT
   end
-  message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
+  message "使用 Windows 系統的人，如果 `heroku version` 輸入後沒有效果，在確認已安裝完 Heroku toolbelt 之後重新開一個終端機程式即可"
 end
 
-step "Add your SSH key to your Heroku account" do
+step "將你的 SSH key 放入到 Heroku 帳號裡" do
   console "heroku keys:add"
 
-  message "hit enter to accept the default key file to use"
+  message "會顯示預設的 SSH key 的路徑名稱，直接按 Enter 繼續即可"
 end
 
-section 'Optional Step: Create a GitHub account' do
-  message "Since by now you should have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+section '選修： 建立一個 GitHub 帳號' do
+  message "從最前面的步驟做到現在，你已經有 git 跟 SSH key。你可以自由選擇是否要 [Create a Github account](create_a_github_account) 來跟你的朋友分享你寫好的程式"
 
-  message "You don't need a GitHub account to complete the InstallFest, or the Intro To Rails, Job Board, or Message Board courses."
+  message "就算沒有 Github 帳號，依然可以做後面的課程"
 end
 
 next_step "create_a_rails_app"
