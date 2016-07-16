@@ -1,54 +1,50 @@
 message <<-MARKDOWN
-### Goal
+### 目標
 
-To teach you Ruby on Rails we are going to use a "Real World"
-example. You've decided to create a voting system for you and your
-friends to play with. You've decided at a minimum, you'd like to
-allow users to:
 
-* view the topics sorted by number of votes
-* vote on topics
-* create, edit, and destroy topics
+我們會用實際的例子來教你 Ruby on Rails。你將會建立一個投票系統來讓你的朋友可以投票。
+讓使用者可以使用這些基本的功能：
 
-You've sketched up an initial screenshot of what you want it to look like:
+
+* 檢視主題並依照投票數量來排序
+* 對主題投票
+* 可以建立，編輯和刪除主題
+
+貼張圖讓你看看它會長怎樣:
 
 ![Browser window with topic titles that can be voted on, ordered by number of votes](img/finished_app.png)
 
-### Meta-Goal
+### 練功目標
 
-When you have completed today's goal of getting the basic
-application online you should understand:
+當你把今天的目標，製作一個基礎應用程式並上線完成了之後，你應該會學會：
 
-* Basic Ruby syntax
-* How to try your Ruby code (IRB)
-* How to go from requirements to a new working Rails application
-* How to get your application online
-* The basic tools a RoR (Ruby on Rails) developer uses (source control, editor, console, local server)
+* 基本的 Ruby 語法
+* 如何嘗試你的 Ruby 程式碼 (IRB)
+* 如何把需求變成一個可以動的 Rails 應用程式
+* 如何把你的應用程式放到網路上
+* Rails 工程師會使用的基礎工具 (版本控管，編輯器，console，本地 server)
 
-### Schedule
+### 時程
 
-* 1-ish hour of Ruby
-* 4-ish hours of Rails, broken up in 1-ish hour steps
+* 約一小時的 Ruby
+* 約四小時的 Rails, 每一個步驟大概一小時左右
 
-This is just a rough guideline, not a mandate. Some steps you'll go
-over and some you'll go under. It'll all work out by the end of the
-day. Probably.
+這只是個簡略的教學指南，並不是規定。有些地方你會很輕鬆地走過，有些地方你會遭遇到一些困難。
+這些都會在今天結束前被解決。大概吧！
 
-### Requirements
+### 需求
 
-We're going to be working with:
+我們將會用下面這些環境來操作：
 
-* Ruby 2.2 or 2.3 installed via RVM (Mac or Linux) or RailsInstaller (Windows)
+* Ruby 2.2 or 2.3 用 RVM 安裝 (Mac or Linux) 或用 RailsInstaller 安裝 (Windows)
 * Rails 5.0.x
 * Bundler
 * SQLite
-* The text editor of your choice
+* 一個自選的文字編輯器。例如：Sublime, atom
 
-Everything should be set up the night before during our
-install-fest. Please ensure you have everything working _before_ you
-show up for RailsBridge on Saturday.
+這些東西都應該在前一晚的install-fest都安裝好。請在禮拜六的RailsBridge _之前_ 確定這些一切都正常。
 
-You can verify that you have everything working by trying this out in your terminal:
+你可以利用終端機輸入這些指令來確認一切都是正常的：
 
 <div class="console"><pre>
 $ irb
@@ -61,38 +57,38 @@ $
 </pre>
 </div>
 
-If you can do that, you are probably good to go.
+如果上面的指令都可以跑的話，那就大概沒問題了！
 MARKDOWN
 
 insert 'working_effectively_and_efficiently'
 
 message <<-MARKDOWN
-### Format
+### 格式
 
-Each lesson will look like this:
+每一課看起來大概都會是這個樣子：
 
 <div style="background: white; border: 1px solid black; padding-left: 4em;">
   <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
   <div class="goals">
-    <h1>Goal:</h1>
-    <p>Description of the current step.
-    <p>Red because big goals it's important.
+    <h1>目標：</h1>
+    <p>描述我們現在要做什麼。
+    <p>紅色代表大目標很重要。
   </div>
   <div class="steps">
-    <h1>Steps:</h1>
-    <pre class="term">steps to take.</pre>
+    <h1>步驟:</h1>
+    <pre class="term">要做的步驟</pre>
     <div class="console">
       <pre>
 def code_to_write
   1 + 1
 end</pre>
     </div>
-    <p>Yellow because we've gotten it done, but we're not sure yet what's going on.
+    <p>黃色是因為我們做完了，但知其然卻不知其所以然。
   </div>
-  <div class="explanation">
-    <h1>Explanation</h1>
-    <p>Details of what the steps actually did, explaining the cause and effect.
-    <p>Green because we can tie everything together now.
+  <div class="解釋">
+    <h1>解釋</h1>
+    <p>詳述這些步驟實際上做了什麼，解釋他們的原因跟效果。
+    <p>綠色是因為我們現在可以把一切串起來了。
   </div>
 </div>
 MARKDOWN
