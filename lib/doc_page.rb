@@ -6,6 +6,7 @@ require 'titleizer'
 require 'html5_page'
 require 'flags'
 require 'erb'
+require 'cgi'
 
 class DocPage < Html5Page
   needs :site, :doc_title, :doc_path, :page_name, :src, :locale
@@ -105,8 +106,8 @@ class DocPage < Html5Page
 
         div.back {
           text I18n.t("general.back_to") + " "
-          a(class: "back", href: back_url) do
-            text Titleizer.title_for_page(page_name)
+          a(class: "back", href: CGI::unescape(back_url)) do
+            text CGI::unescape(Titleizer.title_for_page(page_name))
           end
         }
       end
