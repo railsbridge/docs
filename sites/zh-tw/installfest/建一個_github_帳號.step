@@ -1,0 +1,79 @@
+message "你可以使用 GitHub 儲存你寫的程式，並且在線上存取，這個步驟不影響將程式部署上線的作業"
+
+step "前往 GitHub" do
+  url "https://github.com/"
+end
+
+step "建立一個帳號" do
+
+  message "點擊 **Sign Up** 這個大按鈕 (大約位於網站頁面中間)"
+  message "輸入你的 Username, Email 跟密碼"
+  important "請使用跟 github, ssh, git 設定一樣的 email，因為可以方便讓你在各個服務上的訊息取得統一個資訊"
+
+end
+
+step "選擇收費方案" do
+
+  message "Github 提供了一些收費方案，即使是免費的方案依然可以開無限的公開程式庫(repositories)，你可以任選一種。然後點擊 **Finish sign up**"
+
+end
+
+
+step "將你的 SSH key 放入到 Github 帳號裡" do
+
+  message "將 SSH key 放入到 Github 可以讓你 Pull(取的) 跟 Push(送出) 滋藥時，不需要輸入密碼。複製在前面步驟已經建立好的 **SSH Key** 並將它加入到 Github 裡即可。我們將會使用 Terminal(終端機) 的指令來完成，所以以下的指令不要多任何的空白或是空行，不然可能會出現錯誤"
+
+    h2 "如果你使用 Mac"
+    console "pbcopy < ~/.ssh/id_rsa.pub"
+
+    h2 "如果你使用 Linux"
+    console <<-BASH
+    sudo apt-get install xclip
+    xclip -sel clip < ~/.ssh/id_rsa.pub
+    BASH
+
+    message "`sudo apt-get install xclip` 是一個用來安裝 'xclip' 套件的指令。 Mac 跟 Windows 使用者由於已內建所需的套件 (`pbcopy` and `clip`) ，所以不需要額外再安裝"
+
+    h2 "如果你使用 Windows"
+    console "clip < \"%userprofile%\\.ssh\\id_rsa.pub\""
+
+  message "現在你已經將 SSH key 的內容複製到你的剪貼簿上，接下來到 Github 的設定裡面建立並將內容貼上即可"
+
+  h1 "在 Github 建立 SSH key"
+
+  message "前往 [github.com](github.com) 並確定已經登入。然後點擊右上角的按鈕會出現一個下拉選單，選擇 'Settings'"
+
+  message "在帳戶設定頁面裡面，左側有一個 **SSH and GPG keys** 選項，點擊它"
+
+  message "在右側會看到 'SSH KEYS' 的列表，點擊該列表右上方的 **New SSH key** 按鈕。然後會需要你輸入 'Title'(請隨意輸入) 跟 'Key'(直接將剪貼簿裡的值貼進去即可)"
+
+  message "點擊 **Add Key**"
+
+  message "Github 可能會需要你再輸入一次密碼確認此變更"
+end
+
+step "確認 SSH key 的權限是否可以運作" do
+
+  message "接下來我們可以在 Terminal(終端機) 上確認 SSH 是否可以運作"
+
+  message "如果你是使用 Windows 系統，無法操作這個步驟"
+
+  console "ssh -T git@github.com"
+
+  result <<-OUTPUT
+    The authenticity of host 'github.com (207.97.227.239)' can't be established.
+    RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+    Are you sure you want to continue connecting (yes/no)?
+  OUTPUT
+
+  message "你可能會看到類似這個訊息，直接打 `yes` 即可"
+
+  result <<-OUTPUT
+    Hi username! You've successfully authenticated, but GitHub does not
+    provide shell access.
+  OUTPUT
+
+  message "如果你看到的 username 是你在 Github 上建立的帳戶名稱，恭喜你已經在 Github 上完成 SSH 的設定"
+
+  next_step 'create_a_rails_app'
+end

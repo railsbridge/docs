@@ -1,10 +1,10 @@
-h2 "If you are ever stuck trying to make sense of all this alphabet soup - these glossaries may be helpful!"
+h2 "如果你對這些專有名此感到困惑，這些術語表也許能幫助你"
 
-span "Have a look at the "
+span "請參考  "
 a 'general Glossary', href: '#general-glossary'
-span ", the "
+span ", "
 a 'Command Line Glossary', href: '#command-line-glossary'
-span ", and the "
+span ", 與 "
 a 'Ruby and Rails Glossary', href: '#ruby-and-rails-glossary'
 span "."
 

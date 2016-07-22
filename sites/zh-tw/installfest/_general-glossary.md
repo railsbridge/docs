@@ -1,45 +1,45 @@
-**Classes and Instances:**  Types and objects. If we have a class (type) called _Car_, then _Peugeot 406_ and _Fiat Ritmo_ will be instances (objects) of this class. There may also be other instances unique to _Peugeot 406_, differentiated by, for example, their _Model number_.
+**Classes and Instances:**  類別(types) 跟 物件(objects) 的差異。例如我們有個 class 叫做 _汽車_ ，然後 _Altis_ 跟 _Focus_ 就是屬於這個 class 的 instances。 可以把 class 當作設計圖，而 instance 就是基於這個設計圖所建立出來的物件
 
-**Command Line Interface (or Console / Terminal):**  Allows you to interact with your computer (add, delete, modify files and much more) solely by typing instructions (commands).
+**Command Line Interface (or Console / Terminal):**  一個可以跟你的電腦溝通的介面(中國翻譯為 "接口")，幫助你用特定的指令操作不同的功能，例如： 新增、刪除、修改檔案 ... 等
 
-**Function:**  Code that can be re-used; if a formula has to change, you only need to change it in one place.
+**Function:**  一個寫好後可以重複使用的程式碼，只需要改一個 Function 即可同時更新在所有會用到該 function 的程式
 
-**Git:**  A type of **Version Control Software (VCS)**.
+**Git:**  一種 **版本控制 Version Control Software (VCS)** 的軟體
 
-**Github:**  A site that hosts git repositories. Github also adds a number of tools that aid interaction between developers collaborating on software.
+**Github:**  一個幫你管理與分享 git 程式庫的網站。 Github 也有很多幫助開發者互相協作的工具
 
-**Grouping:**  Indents and whitespaces are used for grouping code together and simplify readability. Ruby also uses do … end to group.
+**Grouping:**  使用縮排或空格的方式將程式組合，讓它更易於閱讀。 在 Ruby 裡面，也會使用像 `do ... end` 的語法來做 grouping
 
-**Heroku:**  A site that allows you to host your Ruby on Rails applications. Heroku also supports other languages and frameworks.
+**Heroku:**  一個幫你管理用 Ruby on Rails 寫出來的應用程式，並部署成一個網站。 Heroku 也同時支援多種程式語言與 框架(frameworks)
 
-**Home directory:**  On a OS X or Linux computer, this is where the files and settings belonging to your user are stored.
+**Home directory:**  在 MacOS X 或是 Linux 作業系統裡，這個名稱代表該系統帳戶下最初的檔案位置
 
-**Loop:**   While _something is true, do this_. When _something becomes not true_ then break the loop / stop.
+**Loop:**   一般稱為迴圈，邏輯架構是： 當 _某變數是 true 做某件事_ , 一直做直到 _該變數變成 not true_ 就中斷此 迴圈(Loop) / 停止
 
-**Markdown:** A lightweight markup language that allows you to write using an easy-to-read, easy-to-write plain text format, and then convert it to structurally valid XHTML (or HTML).
+**Markdown:** 一個輕量的標記語法，設計來幫助你好寫、好讀，又能轉變成 html 的結構來輸出
 
-**Rake:**  A Ruby application that can be used to perform a number of custom tasks. It is often used to carry out maintenance or ad-hoc jobs.
+**Rake:**  一個在 Ruby 的應用程式(Application) 裡常用的指令，用來執行設計好的流程、任務等，你也可以自己寫一個 rake 檔來幫助你自動化的方式執行一些常用又固定的流程
 
-**Repository (or Repo):**  A grouping of files within **Version Control Software**. When using **Git**, you will need to have access to a particular repository before you can start making changes to the source code.
+**Repository (or Repo):**  使用 **Git** 這個 **版本控制(Version Control Software)** 軟體時，第一件事都要先建立一個 程式庫(Repository 或稱為 repo) ，才能開始將你的程式碼放進版本控制裡面
 
-**Ruby:**  A programming language.
+**Ruby:**  一個程式語言
 
-**Ruby on Rails:**  A web framework written in **Ruby**. It has been designed in such a way as to make web development as fast and as easy as possible.
+**Ruby on Rails:**  一個用 **Ruby** 寫出來的 框架(Framework)。設計來幫助你用快速又方便的方式開發網站
 
-**RubyGem:**  A package manager for the Ruby programming language that provides a standard format for distributing Ruby programs and libraries (in a self-contained format called a "gem"), a tool designed to easily manage the installation of gems and a server for distributing them.
+**RubyGem:**  一個將 Ruby 寫成的程式碼打包並建成 函式庫(libraries) - Ruby 圈裡稱為 "gem" - 的工具，可以幫你方便安裝別人寫好的，或是打包並建構出你所設計出來的 gem 
 
-**RVM:**  The Ruby Version Manager. An application that makes it easy to have multiple versions of Ruby on your computer at once.
+**RVM:**  管理 Ruby 版本控制的軟體，可以幫你簡單輕鬆地管理各種不同版本的 Ruby，在同一台電腦裡。
 
-**Script:**  A term often used to describe a text file containing a series of instructions, written in Ruby, that will be used to produce the output visible in a browser.
+**Script:**  通常是用來表示一個由一系列指令與流程所建立出來的檔案，可以幫你自動執行
 
-**Shell:**  The software that interprets your commandline instructions. Often used as a synonym for the **Command Line Interface**.
+**Shell:**  一種讓你可以在 終端機(Terminal) 上操作的軟體，所有的 **指令介面(Command Line Interface)** 都是藉由 Shell 來幫助我們跟電腦溝通並操作
 
-**SSH:**  Secure Shell. A way to securely connect to a remote computer.
+**SSH:**  一個幫助我們安全的跟遠端電腦連線的安全機制
 
-**String:**  Text only, typed between inverted commas.
+**String:**  單純一行文字的結構，通常會用 `'` 或是 `"` 將頭尾包起來讓裡面的值成為 string
 
-**Text editor:**  A program that allows you to create and modify the text files that will be used by **Ruby on Rails** to run your command. Some text editors are optimised for software development and provide tools that increase productivity.
+**Text editor:**  程式編輯器，一個協助你方便開發程式的工具，可以新增或修改檔案。有些編輯器更會提供許多功能幫助你提高生產力與效率
 
-**Variable:**  A storage location and an associated symbolic name (an identifier) which contains some known or unknown quantity or information (a value). The variable name is the usual way to reference the stored value; this separation of name and content allows the name to be used independently of the exact information it represents.
+**Variable:**  是指一個包含部分已知或未知數值或資訊（即一個值）之儲存位址，以及相對應之符號名稱（識別字）。通常使用變數名稱參照儲存值 (請參考 [wiki](https://zh.wikipedia.org/zh-tw/%E5%8F%98%E9%87%8F_(%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1)))
 
-**Version Control Software:**  Software that tracks changes to your source code and also allows you to undo or combine changes.
+**Version Control Software:**  一個幫你紀錄並管理程式碼所有異動的軟體，可以方便你回溯或是合併這些紀錄

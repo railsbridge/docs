@@ -1,4 +1,4 @@
-h2 "What's your operating system?"
+h2 "你使用哪個作業系統？"
 
 div(class: "os-button") do
   simple_link "macintosh" do

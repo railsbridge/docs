@@ -1,19 +1,19 @@
-**puts** _something_  Prints its argument to the console. Can be used in Rails apps to print something in the console where the server is running.
+**puts** _something_  在 console 上印出 _something_ 的值。 可以使用在運作中 Rails 上，並可以在 log 裡顯示
 
-**rails new** _NameApp_  Creates a new Rails application with the entire Rails directory structure to run your application.
+**rails new** _NameApp_  用來建立一個全新的 Rails 專案的指令 (會將專案名稱命名為 _NameApp_ 的值 ) 
 
-**rails server (or rails s)**  Launches a web server named Puma that you will use any time you want to access your application through a web browser.
+**rails server (or rails s)**  將你的 Rails 專案啟動，並變成一個 server 運作，可以使用網頁瀏覽器來操作
 
-**rails generate (or rails g)**  Uses templates to create a bunch of directories and files in your application.
+**rails generate (or rails g)**  用來自動建立 Rails 常用檔案架構的指令
 
-**rails generate scaffold**  Creates a full set of model, database migration for that model, controller to manipulate it, views to view and manipulate the data and a test suite for each of the above.
+**rails generate scaffold**  讓 Rails 自動建立一套完整的包括 Model, View, Controller 等功能架構，讓你可以直接到瀏覽器做功能操作
 
-**rake**  Rake is ‘Ruby Make', used to build up a list of tasks.
+**rake**  Rake 可以稱為 ‘Ruby Make' ，用來組合出不同的任務或執行流程
 
-**rails console (or rails c)** Lets you interact with your Rails application from the command line, useful for testing out quick ideas with code and changing data server-side without touching the website.
+**rails console (or rails c)** 可以讓你直接用 command line 來對 Rails 做操作的 控制台(console)，可以快速測試許多後端與資料庫操作方面的點子，讓你不用寫成頁面到瀏覽器去測試
 
-**rails console --sandbox**  If you wish to test out some code without changing any data.
+**rails console --sandbox**  跟上面一樣，只是當離開的時候，不會讓任何資料被異動
 
-**rails dbconsole (or rails db)**  Used to figure out which database you're using and drops you into whichever command line interface you would use with.  It supports MySQL, PostgreSQL, SQLite and SQLite3.
+**rails dbconsole (or rails db)**  幫你用 command line 來對 Rails 的資料庫做操作，它支援 MySQL, PostgreSQL, SQLite, 跟 SQLite3 等
 
-**rails destroy (or rails d)**  Does the opposite of generate.  It will figure out what generate did and undo it.
+**rails destroy (or rails d)**  rails generate 的相反，將對應到的檔案移除

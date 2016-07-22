@@ -1,0 +1,28 @@
+message <<-MARKDOWN
+
+這裡提供一些不同的程式編輯器幫助你做程式開發。你可以選擇你喜歡的編輯器 —— 如果可以持續使用它的話。如果你從未使用過程式用的程式編輯器，底下提供了許多不錯的選擇，而且是免費的。大部分 RailsBridge 的助教都是使用 Sublime，所以建議使用它；因為使用同樣的編輯器可以幫助你在操作教材的過程中，助教可以快速地幫你找到問題並解決。底下是一些常用的程式編輯器
+
+* <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> 最多寫 Ruby on Rails 的人使用，你可以免費使用，好用再付錢
+
+* <a href="http://komodoide.com/download/" target="_blank">Komodo</a> 是個很棒的免費程式編輯器，從未被廣泛使用過，但容易使用
+
+* <a href="http://macromates.com/" target="_blank">TextMate</a> 在 Ruby 跟 Rails 社群間很火紅。不過不是免費的
+
+* <a href="https://atom.io/" target="_blank">Atom</a> 免費，而且 open-source(開源) 的編輯器，可以自訂任何像是 HTML, CSS, 跟 Javascript 等設定。作業系統要求 OS X 10.8+, Windows 7/8, 以及 Ubuntu/RedHat linux.
+
+* <a href="http://aptana.com/products/studio3/download.html" target="_blank">Aptana Studio</a> 為 Ruby on Rails 設計的免費, 全功能的 IDE(Integrated Development Environment 整合開發環境)。它有許多很棒的特色來幫助你開發你的程式。你可以到官網下載並安裝單機版，或是用 <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a> 的 plugin
+
+* <a href="http://www.jetbrains.com/ruby/" target="_blank">RubyMine</a> 是許多使用 Ruby on Rails 公司使用的開發軟體。它也是一個全功能的 IDE，跟 Aptana 很像。 RubyMine 不是免費的，但是有 30 天的試用期
+
+還有其他可用的程式編輯器，但上述這些是最多人使用的。有些人會使用非程式用的編輯器，像是 NotePad (或是在 "plain text(純文字模式)"下使用 WordPad, TextEdit)。這些工具依然可以運作，但某些時候，你應該使用能提高你程式開發生產力跟效率的程式編輯器或 IDE
+
+MARKDOWN
+
+important do
+  message "Microsoft Word **並不是** 文字編輯器。它是 *文字處理排版軟體*."
+  message "文字處理排版軟體會在編寫過程中加入很多無謂的格式或是參數。必須要使用純文字編輯器來開發"
+end
+
+message "有些開發者會用經由 command-line 來操作的文字編輯器像是 'ecmacs' 或是 'vim'。這些有很陡峭的學習曲線，所以我們建議你使用上述列表的圖形化介面的編輯器"
+
+next_step "installfest"

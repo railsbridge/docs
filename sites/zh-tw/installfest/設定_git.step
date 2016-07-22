@@ -1,0 +1,28 @@
+message "(如果你是用 Windoes 系統並且已用 RailsInstaller 安裝完環境，你已經完成 `user.name` 跟 `user.email` 設定了)"
+
+console <<-BASH
+git config --global user.name "你的英文名字"
+git config --global user.email "你的 Email"
+BASH
+
+important "請確保在 heroku, git, github, 以及 ssh 上的 Email 都是相同的"
+
+verify do
+  console "git config --get user.name"
+  result "你的英文名字"
+  console "git config --get user.email"
+  result "你的 Email"
+end
+
+tip "將 Git 訊息用色彩輸出" do
+  console <<-BASH
+git config --global color.ui auto
+  BASH
+
+  important do
+    message "如果您是用 Windows 系統，這個設定不會有效果"
+  end
+end
+
+next_step "建立_ssh_key"
+

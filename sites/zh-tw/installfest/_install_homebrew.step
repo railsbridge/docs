@@ -1,9 +1,9 @@
 
 console %q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
 
-message "You may have to press 'ENTER' when prompted and type in your password."
+message "你必須要按 'Enter' 輸入進去，然後會有訊息請你輸入此電腦的密碼"
 
-important "If that doesn't work, visit <https://github.com/Homebrew/homebrew/wiki/installation> and follow the instructions there."
+important "如果上述指令沒有效果，可以到 <https://github.com/Homebrew/homebrew/wiki/installation> 了解更多安裝 homebrew 的指南"
 
 verify do
   console "brew -v"
