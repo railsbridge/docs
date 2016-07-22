@@ -1,41 +1,44 @@
 goals {
 
-  message "Our app is nearly done! The main topics listing page is pretty busy. There are a lot of links that aren't necessary."
+  message "我們的網站快要完工了！上一步完工後，我們的文章列表頁面看起來有太多不怎麼需要連結"
 
-  message "Let's clean up the topics list page by doing the following:"
+  message "一起來將它整理一番！目標如下："
 
-  goal "Remove the 'show' link"
-  goal "Remove the 'edit' link"
-  goal "Change 'destroy' to 'delete'"
+  goal "移除 'show' 的連結"
+  goal "移除 'edit' 的連結"
+  goal "將 'destroy' 改成 'delete'"
 }
 
 steps {
-  step "Remove the 'show' and 'edit' links" do
-    message "Open `app/views/topics/index.html.erb` and remove these two lines:"
+  step "移除 'show' 與 'edit' 的連結" do
+    message "打開 `app/views/topics/index.html.erb` 然後移除掉下面二行程式碼："
     source_code :erb, <<-HTML
 <td><%= link_to 'Show', topic %></td>
 <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     HTML
   end
 
-  step "Change 'destroy' to 'delete'" do
+  step "將 'destroy' 改成 'delete'" do
 
-    message "Change the line with the word 'Destroy' to this:"
-    source_code :erb, "<td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>"
+    message "修改程式碼如下："
+    source_code :diff, <<-RUBY
+- <td><%= link_to 'destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
++ <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    RUBY
+
   end
 
-  step "Confirm your changes" do
+  step "確認修改成功" do
 
-    message "Now save your file and try reloading in your browser to see the changes."
+    message "將檔案儲存並重新整理你的瀏覽器看看文章列表頁面吧！"
   end
 }
 
 
 explanation {
   message <<-MARKDOWN
-  * The two links we removed were show and edit.  We did this because the title now links to the show page and from the show page you can reach the edit page.
-
-  * The second change we made was to make the link text 'Delete' instead of 'Destroy'.
+  * 將 'show' 與 'edit 這二個連結移除掉，是因為我們已將 title 設定成連結，並且在連過去後可以點擊 'edit' 做編輯
+  * 我們已成功將 'Destroy' 的連結內文改成了 'Delete'
   MARKDOWN
 }
 

@@ -1,32 +1,32 @@
 goals {
-  message "Your friends recommended two changes for the site:"
-  goal "Don't show the description on the list page"
-  goal "Make the title a link and when it's clicked show the description"
+  message "接下來要做二個修改："
+  goal "在文章列表頁面不要顯示文章的 description 內容"
+  goal "讓 title 變成連結，點擊後可以顯示 description 內容"
 }
 
 steps {
 
 
-  step("Remove the description") {
+  step("移除 description") {
 
-    message "Let's start by removing the description. Open `app/views/topics/index.html.erb` and delete the line that looks like this:"
+    message "打開 `app/views/topics/index.html.erb` 這個檔案，並且移除掉下面這行："
 
     source_code :erb, "<td><%= topic.description %></td>"
 
-    message "Also delete the line that looks like this:"
+    message "也移除掉下面這行："
   source_code :erb, "<th>Description</th>"
 
-    message "If you save and try to load it in the browser you should see that the description no longer appears."
+    message "存檔後，試著重新整理瀏覽器，應該會看到 description 已經消失了"
 
   }
 
-  step("Make the title a link") {
+  step("讓 title 變成連結") {
 
-    message "Now make the title a link by editing `app/views/topics/index.html.erb` (again) and replacing this line:"
+    message "一樣在 `app/views/topics/index.html.erb` 這個檔案，找到下面這行："
 
     source_code :erb, "<td><%= topic.title %></td>"
 
-    message "with this:"
+    message "替換成下面這行："
 
     source_code :erb, "<td><%= link_to topic.title, topic %></td>"
   }
@@ -36,24 +36,18 @@ explanation {
 
   source_code :erb, "<td><%= topic.description %></td>"
 
-  message "This line was getting the description using `.description` and just printing it out."
+  message "這行使用 `.description` 擷取內容，並寫顯示在頁面上"
 
   source_code :erb, "<th>Description</th>"
 
-  message "
-  `<th>` stands for table header and everything between `<th>` and
-  `</th>` was being printed as a table header (bold). We removed it
-  since we removed the description and it would look funny to have the
-  header and the wrong thing below it."
+  message "`<th>` 是 HTML 語法，用來定義表格的標題"
 
   hr
 
   source_code :erb, "<td><%= link_to topic.title, topic %></td>"
 
-  message "
-  Here's another use of `link_to` to create a link on the page. This
-  `link_to` creates a link using the text from the topic title and goes
-  to the topic show page."
+  message "`link_to` 是 Rails 裡面建立連結功能的語法。
+  此行放了二個變數，前者是顯示連結的內容，後者是導向的網址"
 }
 
 next_step "clean_up_links_on_the_topics_list"

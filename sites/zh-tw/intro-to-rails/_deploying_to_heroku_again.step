@@ -1,61 +1,52 @@
-step "Commit any pending changes to git" do
-  message "Heroku will only receive the files we've committed into our local git repository. So we need to make sure all changed files have been committed."
+step "將所有異動全部 commit 到 git 上" do
+  message "Heroku 只會接收從我們本地端的 git 程式庫(repository) 發送過來的程式。所以我們需要確保所有的寫好的程式碼有被 commit 到 git 上"
   console "git status"
-  message "`git status` shows you any pending changes you've created. If it has no output, you're already ready to deploy! Otherwise..."
+  message "`git status` 會顯示出所有已異動並尚未 commit 的檔案。如果沒輸出任何訊息，你已經做好部署前準備了！除此之外，請"
 
   console <<-SHELL
 git add .
-git commit -m "Some helpful message for your future self"
+git commit -m "一些用來記錄這次異動內容的訊息"
   SHELL
-  message "Your commit message should reference whatever your outstanding
-changes are: something like \"Added votes to the topics index\"."
+  message "你的 commit 訊息應該寫跟這次異動有關的資訊，像是：\"在文章列表頁加入投票按鈕\""
 end
 
-step "Push changes to Heroku" do
+step "將程式碼 推送(Push) 到 Heroku 上" do
   console "git push heroku master"
-  message "This takes all changes you've committed locally and pushes them to Heroku."
+  message "這個指令會將你已 commit 過後的程式碼推送到 Heroku 上 (譯者註： 這步驟會花一點時間，請耐心等候 )"
 end
 
-step "Run database migrations on Heroku" do
+step "在 Heroku 上執行 資料庫遷移(database migrations) 的指令" do
   console "heroku run rake db:migrate"
-  message "This tells Heroku to run your migrations on its database, like
-running `rake db:migrate` locally."
-  message "Heroku's database is separate from the one on your computer, which
-means it needs to be updated every time you make changes to the structure of
-your database."
-  message "It also means that you'll not see any of the data you entered into
-the `sqlite3` database on your computer."
+  message "這個指令會告訴 Heroku 執行你的資料庫遷移，就像在我們開發端裡面執行 `rake db:migrate` 一樣"
+  message "Heroku 上的資料庫跟我們電腦裡的資料庫是分開的，這代表我們每當在開發端上改變了資料庫結構，部署之後都要再執行這個指令一次"
+  message "這也代表你不會在 Heroku 上看到任何你開發端裡面的任何資料"
 end
 
-step "Visit your application" do
+step "前往你部署好的網站" do
   console "heroku open"
-  message "This opens the new application in your browser."
+  message "它會幫你打開瀏覽器，並且自動輸入該網站的網址"
 end
 
 explanation do
   message <<-MARKDOWN
-  First, we had to do some work to make Heroku happy with our application. This
-required updating the `Gemfile` and bundling.
+  首先，我們需要做幾件事才能讓 Heroku 執行我們寫出來的應用程式。這需要將 Gemfile 做異動並且執行安裝
 
-  * The `Gemfile` is a list of all the Ruby libraries your application needs.
-    What we've declared here is that we want to use the `sqlite3` library
-    while we're developing on our computer (the development group) but when
-    deploying to Heroku (the production group) we want to use the `pg` library,
-    which is made for the type of database that Heroku uses.
+  * `Gemfile` 是一個記錄所有我們應用程式裡面所需要的 Ruby 函式庫(libraries, 也可以稱為 gem)。
+    在本機開發端，我們使用 `sqlite3` 這個函式庫來做資料庫方面的應用，
+    但在 Heroku 上，它只接受用 `pg` 這個函式庫來做資料庫方面的應用。
 
-  * Bundler is how Ruby projects keep track of the gems that they use. We told
-    Bundler what we wanted to use in the `Gemfile`, now we need to make sure those
-    gems are installed. Since we don't have the type of database Heroku does, we
-    skip the production gems. Don't worry though! Bundler still logs them so
-    Heroku will install them when they get your code.
+  * Bundler 也是一個 gem，它用來幫助我們自動安裝並驗證 Gemfile 上所有列出來的 gem 的項目。
+    執行完 `bundle install` 後就代表我們已確認 Gemfile 上所需的設定全部安裝完畢。
+    在我們執行 `git push heroku master` 的過程， Heroku 也會自動地在遠端執行相同指令
+    前提是有將異動的內容先 commit 到 git 裡面
   MARKDOWN
 
-  message "You should be able to deploy your application any time it's in a good, working state. Your typical workflow will look like:"
+  message "你可以隨時部署你的應用程式，整個工作流程如下圖所示："
   img src: "img/workflow.png", alt: "Diagram showing git workflow of making changes, committing them, and pushing to Heroku.", style: "border: none"
   ol do
-    li { message "Add or change some code" }
-    li { message "Commit your changes (`git commit`)" }
-    li { message "(repeat)" }
+    li { message "新增，或是修改一些程式碼" }
+    li { message "Commit 到 git 裡面 (`git commit`)" }
+    li { message "(重複)" }
   end
-  message "Any time your changes are committed, you should feel free to `git push heroku master` and boom! Your changes are live!"
+  message "在 commit 完之後，隨時都可以執行 `git push heroku master` 然後你的網站就是最新的狀態版本啦！！"
 end

@@ -11,15 +11,13 @@ goals {
     model_diagram header: 'Votes', fields: %w(id topic_id), style: "float: left;"
   end
 
-  message "Because there is an explicit relationship between a topic and its
-  votes, we need to specify that. In this step, we'll explicitly
-  declare the relationship between votes and topics."
+  message "上圖解釋了 topic 與它的 votes 之間的關聯。在本章節，我們將會把這二個 Model 之間的關聯實作出來"
 }
 
 steps {
 
-  step "Teach the Topic model about Votes" do
-    message "Edit `app/models/topic.rb` so that it looks like this:"
+  step "設定 Model Topic 裡與 Vote 的關聯" do
+    message "編輯 `app/models/topic.rb` 讓它看起來像下面程式碼："
 
     source_code :ruby, <<-RUBY
 class Topic < ApplicationRecord
@@ -28,8 +26,8 @@ end
     RUBY
   end
 
-  step "Teach the Vote model about Topics" do
-    message "Edit `app/models/vote.rb` so that it looks like this:"
+  step "設定 Model Vote 裡與 Topic 的關聯" do
+    message "編輯 `app/models/vote.rb`  讓它看起來像下面程式碼："
     source_code :ruby, <<-RUBY
 class Vote < ApplicationRecord
   belongs_to :topic
@@ -37,10 +35,10 @@ end
     RUBY
   end
 
-  step "Play around with Topics and Votes in the Rails console" do
-    message "First, make sure you've made at least one topic on the site."
+  step "在 Rails console 把玩一下 Topics 與 Votes" do
+    message "首先，確認你已經建了至少一筆的 topic 資料"
 
-    console_with_message "Next, open a Rails console in a terminal window:", "rails c"
+    console_with_message "然後在終端機(位於 Rails 專案資料夾位置下) 輸入：", "rails c"
 
     result <<-CONSOLE
       $ rails c
@@ -48,26 +46,26 @@ end
       2.3.0 :001 >
     CONSOLE
 
-    message "At the console, try the following things"
+    message "在 Rails Console 模式下，嘗試下面這些操作"
 
-    console_with_message "See how many topics exist:", "Topic.count"
+    console_with_message "秀出總共有多少 Topic 篇數：", "Topic.count"
 
-    console_with_message "Save the first topic into a variable:", "my_topic = Topic.first"
+    console_with_message "用變數來定義第一篇 Topic", "my_topic = Topic.first"
 
-    tip "`my_topic` here could have been any variable name, but we'll stick with `my_topic` for consistency."
+    tip "可以把 `my_topic` 用其他任何名稱代替，不過我們會用這名稱來讓下面操作更顯得易懂"
 
-    console_with_message "Change the title of that topic to something else:", "my_topic.update_attributes(title: 'Edited in the console')"
+    console_with_message "修改 title 的內容：", "my_topic.update_attributes(title: 'Edited in the console')"
 
-    console_with_message "Add a vote to that topic:", "my_topic.votes.create"
+    console_with_message "增加一張投票數：", "my_topic.votes.create"
 
-    console_with_message "See how many votes that topic has:", "my_topic.votes.count"
+    console_with_message "秀出總共有多少投票數", "my_topic.votes.count"
 
-    console_with_message "Remove a vote from that topic:", "my_topic.votes.first.destroy"
+    console_with_message "移除一個投票數", "my_topic.votes.first.destroy"
 
-    message "Note that the things you can do to **Model classes** (like **Topic** and **Vote**), differ from the things you can do to **Model instances** (like my\\_topic, here). **my\\_topic.votes** is an **association**, and here behaves mostly like a model class."
+    message "下面的附表列出你可以使用的 **Model classes** 方法 (像是 **Topic** and **Vote**)，以及跟前者有些不同的 **Model instances** 方法 (像是剛剛操作的 my\\_topic 等指令)。 `my_topic.votes` 這個指令是屬於 **association** 分類，其方法跟 **Model classes** 雷同"
 
     div do
-      half_width "Model class / association methods" do
+      half_width "Model class / association 的方法" do
         ul class: 'no-style-type' do
           li "Topic.first"
           li "Topic.last"
@@ -81,7 +79,7 @@ end
         end
       end
 
-      half_width "Model instance methods" do
+      half_width "Model instance 的方法" do
         ul class: 'no-style-type' do
           li "my_topic.title"
           li "my_topic.title = 'New title'"
@@ -95,8 +93,15 @@ end
     end
 
     message <<-TEXT
-      An exhaustive list of things you can do to models and associations can be found in the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface RailsGuide</a>.
+      想要更多關於 Model 與 Associations 的 method 指令，請參閱 <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface RailsGuide (英文)</a>. <a href="http://rails.ruby.tw/active_record_querying.html">Active Record 查詢指南 (中文)</a>
     TEXT
+
+    message <<-MARKDOWN
+_譯注: Class 跟 Instance 的關係可以參考術語表上的解釋_
+    MARKDOWN
+
+    link_without_toc 'glossary'
+
   end
 }
 
@@ -104,23 +109,19 @@ explanation {
 
   message <<-MARKDOWN
 
-`has_many` and `belongs_to`:
+`has_many` 與 `belongs_to`:
 
-* In Rails, relationships between models are called associations.
-* Associations (usually) come in pairs.
-* A topic will have many votes so we put `has_many :votes` in the
-  topic model.
-  * When you ask a topic for its votes, you get an array of votes
-    for that topic.
-* A vote is for a particular topic, so we put `belongs_to :topic`
-  in the vote model.
-  * When you ask a vote for its topic, you get the topic for that
-    vote.
+* 在 Rails 裡, 二個 Model 設定之間的關係稱之為『Associations』(關聯)
+* Associations (通常) 都是成對的，意思是有 has , 就有 belongs
+* Topic 會有很多的 votes ，所以我們在 topic model 裡面放入 `has_many :votes`
+  * 當你跟 topic instance 呼叫它所擁有的 votes，會得到所有該 topic 的 votes (用 array 包起來的)
+* 某一個 vote 是屬於特定 topic 的一部份，所以我們在 vote model 放入 `belongs_to :topic`
+  * 當你跟 vote instance 呼叫它所屬於的 topic，就會得到該 topic instance 的資料
 
-It can still be important to clean up after yourself! `dependent: :destroy`
-  on `has_many :votes` means when a **Topic** gets destroyed, all
-  the **votes** that correspond to it will be destroyed, too. Without
-  `dependent :destroy`, those votes would live on the database forever.
+`has_many :votes` 後面接出來的 `dependent: :destroy` 很重要！
+代表該 **topic instance** 被刪除時，它所擁有的 **votes** 也會一併刪掉。
+如果沒有 `dependent :destroy` 這個設定，那些 votes 的資料將永遠存在資料庫裡面，
+變成孤兒資料(因為找不到它所屬於的 topic)
   MARKDOWN
 }
 

@@ -2,14 +2,14 @@
 goals {
 
   message <<-MARKDOWN
-    At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
+    基本上，動態網站裡的 Database(資料庫) 都是做同樣的事情。需要儲存與提供紀錄，大都依據以下四種行為：
 
-    * **C**reate new records in the database
-    * **R**ead or show the records in the database
-    * **U**pdate existing records
-    * **D**estroy or delete records
+    * **C** (Create, 建立) 新的紀錄到 Database
+    * **R** (Read, 讀取) 或是顯示 Database 上的某筆紀錄
+    * **U** (Update, 更新) 目前已有的紀錄
+    * **D** (Destroy, 刪除) 某筆紀錄
 
-    Because these 4 actions (CRUD) are so common, Rails includes the scaffold command to make creating them easier.
+    因為這四種動作 (簡稱 CRUD) 是如此的常見，Rails 的 Scaffold(鷹架) 指令自動幫我們將這四個功能做出來了
   MARKDOWN
 }
 
@@ -20,17 +20,17 @@ steps {
   }
 
   step {
-    message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "You should see the \"Listing topics\" page with headers for title and description, and a link to add a new topic:"
+    message "打開瀏覽器前往 [http://localhost:3000/topics](http://localhost:3000/topics)"
+    message "應該會看到標題為 \"Listing topics\" 的頁面，底下有 title 與 description，還有一個 `new topic` 的連結 (如下圖)："
 
     img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
   }
 
   step {
     message <<-MARKDOWN
-  * Click "New Topic"
-  * Fill in the form and click "Create Topic"
-  * You should see a page showing your new topic with a message that your topic was successfully created:
+  * 點擊 "New Topic"
+  * 在表單上寫入一些東西，並按下 "Create Topic"
+  * 應該會看到你新建的的 topic 與訊息： "Topic was successfully created.":
     MARKDOWN
 
     img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
@@ -38,13 +38,13 @@ steps {
 
   step {
     message <<-MARKDOWN
-      * Click "Back"
-      * You should see the topic list again, this time with your new topic listed:
+      * 點擊 "Back"
+      * 應該會回到標題為 \"Listing topics\" 的頁面，這時底下 title 跟 description 會列出剛剛建的新資料：
 
       ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
 
-      * Try the "Show", "Edit", and "Destroy" links to see what they do
-      * You've created a basic database driven web site, congrats!
+      * 試試看點擊 "Show", "Edit", 與 "Destroy" 連結會發生什麼事
+      * 恭喜你成功建出一個基本的動態網站！
     MARKDOWN
   }
 }
@@ -52,55 +52,37 @@ steps {
 explanation {
 
   message <<-MARKDOWN
-  How did all those pages get created and hooked together? The Rails scaffold did it for you.
+  這些頁面是如何跟資料庫的 CRUD 做結合？ Rails 的 Scaffold(鷹架) 幫你做了一些事情。
 
-  Let's take a closer look at some of the files Rails created:
+  讓我們仔細看看這過程中 Rails 建了什麼檔案
 
   * `app/models/topic.rb`
-    * This file contains code for our topic model. If you look at it,
-      it's nearly blank. Creating, reading, updating, and deleting
-      records are built into Rails.
+    * 這個檔案包含了我們的 Model Topic。 如果打開此檔案，會發現幾乎空空如也，跟 Database 做 CRUD 方面的溝通功能都內建在 Rails 裡了 (譯注：可以看該檔案的第一行，就是讓它去繼承 Rails Model 的基本功能)
 
   * `app/views/topics`
-    * This folder contains all the views for our topics model. This is
-      where the code for the forms you used above is stored. Rails
-      created all of these pages as part of the scaffold.
-    * If you've written HTML before, many lines in the views should
-      look familiar. Rails views are HTML with some extra code added
-      to display data from the database.
+    * 這個 View 資料夾包括了所有 topics 的前端視覺檔案。包括剛剛在建立資料時所用的表單。這些都由 Rails 的 Scaffold(鷹架) 自動建立出來的。
+    * 如果你寫過 HTML，有許多內容看起來會很熟雞。 Rails Views 其實就是在 HTML 裡嵌入物件(來自於 database 的資料)，來讓頁面可以在不同資料內容下動態顯示
 
   * `app/views/topics/index.html.erb`
-    * This is the code for the page that lists all the topics.
-    * Index is the name given to the "default" page for a web site or a
-      section of a web site. When you navigate to
-      http://localhost:3000/topics the topics index page is what is
-      sent to your computer.
+    * 此檔案是列出全部 topic 資料的頁面
+    * Index 是一個 "預設" 的網站頁面名稱，當你前往 http://localhost:3000/topics 時，實際上會呼叫到 topics/index.html.erb 這個檔案並變成實際的頁面
 
   * `app/views/topics/show.html.erb`
-    * This is the page you get when you click the "Show" link on the
-      "Listing topics" page.
+    * 當你在 Index 上點擊 "Show" 連結時出現的頁面
 
   * `app/views/topics/new.html.erb`
-    * This is the page you get when you click "New Topic".
+    * 當你點擊 "New Topic" 連結時出現的頁面
 
   * `app/views/topics/edit.html.erb`
-    * This is the page you get when you click "Edit".
+    * 當你點擊 "Edit" 連結時出現的頁面
 
   * `app/views/topics/_form.html.erb`
-    * You may have noticed that the page for new topics and the page
-      to edit topics looked similar. That's because they both use the
-      code from this file to show a form. This file is called a
-      partial since it only contains code for part of a page. Partials
-      always have filenames starting with an underscore character.
-
-    * Challenge question: Can you find the line of code in new.html.erb
-      and edit.html.erb that makes the form partial appear?
+    * 你也許會發現 Edit 跟 New 這二個頁面看起來都很像，因為它們都有相同的 form(表單)。來自於這個檔案被稱為 "Partial" 的檔案。只要在檔名前面加上 _(下底線) ，就會變成 Partial ，而它只會用於某頁面的一部份，不會變成獨立的頁面
+    * 小小挑戰：你可以找出是在 new.html.erb 跟 edit.html.erb 中，是哪一行呼叫了 form 這個 Partial 嗎?
 
   * `app/controllers/topics_controller.rb`
-    * This is the controller file that Rails created as part of the scaffold
-    * If you look you'll see a method (a line beginning with
-      <code>def</code>) for each of the views listed above (except
-      `_form.html.erb`)
+    * 這個檔案是由 Rails 的 Scaffold(鷹架) 自動建立出來的
+    * 你會看到裡面有各種與 View 對應的 method (`def` 開頭)，但除了 _form.html.erb
     MARKDOWN
 }
 

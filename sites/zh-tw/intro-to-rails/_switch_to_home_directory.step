@@ -1,12 +1,12 @@
-message "`cd` stands for **c**hange **d**irectory."
+message "`cd` 是用來切換目前路徑的指令"
 
-message "A directory is the same thing as a folder."
+message "路徑等同於檔案資料夾"
 
-option "Windows" do
+option_half "Windows 系統" do
   console "cd c:\\Sites"
-  message "`cd c:\\Sites` sets our Sites directory to our current directory."
+  message "`cd c:\\Sites` 將路徑改成 Sites 資料夾的位置"
 end
-option "Mac or Linux" do
+option_half "Mac or Linux 系統" do
   console "cd ~"
-  message "`cd ~` sets our home directory to our current directory."
+  message "`cd ~` 將路徑改成家目錄的位置"
 end

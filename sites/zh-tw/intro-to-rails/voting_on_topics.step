@@ -1,10 +1,9 @@
-
 goals {
-  goal "Create a model for votes"
+  goal "建一個叫 Vote 的 Model"
 
   model_diagram header: 'Votes', fields: %w(id topic_id)
 
-  message "Every topic in suggestotron can be voted on. In order to count votes, we need to record votes. We'll add that table now."
+  message "在專案中，期望每一個 topic 都可以被投票。為了計算投票數，我們需要記錄它。所以會將這個 Database Table 加進去"
 }
 
 steps {
@@ -16,12 +15,10 @@ rake db:migrate
 
 explanation {
   message <<-MARKDOWN
-  * Just like before, we're creating a new model named "vote"
-  * The only thing really different is the integer we added called `topic_id`.
-    * `topic_id` is the data we need to draw the line between votes and topics.
-  * We didn't generate a full scaffold this time because we aren't
-    going to do the full CRUD for votes; they're just going to be
-    considered part of topics as-is.
+  * 跟前面一樣，我們建了一個叫 "vote" 的 Model
+  * 唯一不同的地方在欄位的資料結構是 integer(整數) ，並命名為 'topic_id'
+    * `topic_id` 是用來連結 votes 跟 topics 的資料
+  * 這次不需要使用 Scaffold(鷹架)，是因為我們不需要在 votes 上做完整的 CRUD；它只用來成為 topics 的一部份
   MARKDOWN
 }
 

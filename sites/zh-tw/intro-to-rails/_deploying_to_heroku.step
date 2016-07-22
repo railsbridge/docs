@@ -1,20 +1,20 @@
-step "Create a Heroku application" do
+step "建立 Heroku 的應用程式" do
   console "heroku create"
-  message "`heroku create` registers a new application on Heroku's system. You should see some output including your new app's URL."
+  message "`heroku create` 會在 Heroku 的系統上新建一個應用程式，你會在出來的訊息中看到用來當你應用程式的網站的網址"
 end
 
-step "Edit the Gemfile" do
-  important "Each application has its own `Gemfile`. Be sure you're opening the one inside your app's folder."
+step "編輯 Gemfile" do
+  important "每一個 Rails 應用程式都有它專屬的 `Gemfile`。確保你打開的是你要部署的那個資料夾的 Gemfile 檔案"
 
-  message "Heroku will run our application slightly differently than our development computer does, which requires us to make a small change to our `Gemfile`."
+  message "Heroku 與我們電腦開發上的設定系統略有不同，需要在 `Gemfile` 上做點修改才可以"
 
-  message "Open the file called `Gemfile` in Sublime Text, or your preferred editor, and find the line containing:"
+  message "打開 `Gemfile` 這個檔案，並且找到這一行"
 
   source_code :ruby, <<-RUBY
 gem 'sqlite3'
   RUBY
 
-  message "**Remove that line** and replace it with:"
+  message "**把上面這行刪掉** 並替換成下面的程式碼"
 
   source_code :ruby, <<-RUBY
 group :development, :test do
@@ -28,16 +28,16 @@ end
   RUBY
 end
 
-step "Apply the Gemfile changes" do
+step "讓改好的 Gemfile 運作" do
   console "bundle install --without production"
-  message "Every time the `Gemfile` changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
+  message "每次當 `Gemfile` 異動，你必須要執行 `bundle install` 來讓 Rails 運作新的設定。執行完後會建一個叫 `Gemfile.lock` 的檔案來紀錄所有安裝在裡面的資料"
 end
 
-step "Commit the Gemfile changes" do
-  message "There are now changes to `Gemfile` and `Gemfile.lock` that need to be committed before we can push to Heroku."
+step "將安裝好的 Gemfile 異動 提交(commit) 到 git 裡面" do
+  message "`Gemfile` 與 `Gemfile.lock` 已經改變了，需要提交到 git 裡面才能讓 Heroku 收到最新版的應用程式"
   console <<-SHELL
 git add .
 git commit -m "Changed Gemfile for Heroku"
   SHELL
-  tip "There is a period after the word add in the first line."
+  tip "第一行指令最後面有一個句點，不要漏掉了"
 end

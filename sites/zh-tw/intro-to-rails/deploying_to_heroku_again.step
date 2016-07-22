@@ -1,7 +1,7 @@
 h2 do
-  span "If you haven't deployed your app to Heroku yet, start at "
+  span "如果你的應用程式還沒部署到 Heroku 上，請先從 "
   a 'Deploying to Heroku', href: 'deploying_to_heroku'
-  span "."
+  span " 開始"
 end
 
 insert '_deploying_to_heroku_again'

@@ -1,7 +1,6 @@
 h2 do
-  span "If you have already deployed your app to Heroku, go on to "
+  span "如果你已經部署你的應用程式到 Heroku 上了，前往"
   a 'Deploying to Heroku again', href: "deploying_to_heroku_again"
-  span "."
 end
 
 insert '_deploying_to_heroku'
