@@ -89,4 +89,4 @@ MARKDOWN
   end
 end
 
-next_step "configure_git"
+next_step "設定_git"

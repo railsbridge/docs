@@ -36,5 +36,5 @@ step "恭喜啦！" do
   message "你獲得了一張貼紙！ (或是一個鼓掌 ... 如果沒有準備貼紙的話)"
 end
 
-next_step "clean_up"
+next_step "收尾"
 

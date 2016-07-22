@@ -44,7 +44,7 @@ step "閱讀以下摘要" do
 * **Git**. 一個版本控制的系統。當你建立程式庫 (repository) 之後，會記錄所有程式庫的變化記錄，所以當初有 bug 時可以隨時檢視、回溯或異動整個程式碼
 * **GitHub**. 全世界最大的 git 交流中心，您可以在 github 上探索、分享、協作各種不同的 repo
 * **Heroku**. 將你開發的專案部署後變成真正網站的服務
-* **Sublime Text 2** (or [some other editor](editors)). 好用的程式編輯器
+* **Sublime Text 2** (or [或其他的程式編輯器](程式編輯器)). 好用的程式編輯器
 * 各種不同的 "**Ruby gems**". Ruby gems 是把常用的程式封裝成函式庫，讓你可以輕鬆安裝並使用，不用自己重構。常用的包括...
   * bundler
   * sqlite
@@ -58,4 +58,4 @@ step "閱讀以下摘要" do
   MARKDOWN
 end
 
-next_step "choose_your_operating_system"
+next_step "選擇你的作業系統"

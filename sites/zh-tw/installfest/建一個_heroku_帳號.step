@@ -37,9 +37,9 @@ step "將你的 SSH key 放入到 Heroku 帳號裡" do
 end
 
 section '選修： 建立一個 GitHub 帳號' do
-  message "從最前面的步驟做到現在，你已經有 git 跟 SSH key。你可以自由選擇是否要 [Create a Github account](create_a_github_account) 來跟你的朋友分享你寫好的程式"
+  message "從最前面的步驟做到現在，你已經有 git 跟 SSH key。你可以自由選擇是否要 [建一個 Github 帳號](建一個_github_帳號) 來跟你的朋友分享你寫好的程式"
 
   message "就算沒有 Github 帳號，依然可以做後面的課程"
 end
 
-next_step "create_a_rails_app"
+next_step "建一個_rails_應用程式"

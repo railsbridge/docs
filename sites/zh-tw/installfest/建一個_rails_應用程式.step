@@ -97,5 +97,5 @@ step "產生資料庫的 model" do
   MARKDOWN
 end
 
-next_step "deploy_a_rails_app"
+next_step "部署_rails_應用程式"
 

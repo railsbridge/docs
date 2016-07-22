@@ -199,5 +199,5 @@ bundle install --without production
   end
 end
 
-next_step "get_a_sticker"
+next_step "拿貼紙"
 

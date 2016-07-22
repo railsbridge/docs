@@ -86,4 +86,4 @@ Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
   end
 end
 
-next_step 'create_a_heroku_account'
+next_step '建一個_heroku_帳號'
