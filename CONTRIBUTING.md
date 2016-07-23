@@ -16,7 +16,7 @@ maintainers to love you. :heart:*
 - If you have an existing fork, please make sure it's up to date.
   It just makes your life easier! If not, make sure you fork *before* cloning,
   otherwise you'll need to spend some time juggling remotes.
-  Look at the section "Pull in upstream changes" in GitHub's
+  Look at the section "Keep your fork synced" in GitHub's
   [Fork A Repo](https://help.github.com/articles/fork-a-repo) article.
 
 - Create a local topic branch before you start working. This branch is going to
@@ -75,7 +75,7 @@ to be a lot of information, but you're :sparkles:awesome:sparkles:! So you'll
 be fine.
 
 First, you'll need a GitHub account, which is totally free. You can sign up
-[here](https://github.com/signup/free).
+[here](https://github.com/join).
 
 Next, browse the [GitHub Help site](https://help.github.com) and the
 [GitHub Guides](https://guides.github.com/). The Help Site is more technical, and the
