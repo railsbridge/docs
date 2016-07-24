@@ -30,7 +30,7 @@ option "建立一個 SSH key" do
 
   message "請直接按 Enter 確認將 key 存在預設的位置"
 
-  message "Next, you'll be asked for a passphrase."
+  message "下一步，會問你要不要使用通關密碼"
 
   h1 "決定要不要使用通關密碼"
   blockquote do
@@ -59,14 +59,14 @@ The key fingerprint is:
   verify do
     message "你新的 public key 現在會放在 `~/.ssh/id_rsa.pub`"
     tip "Public vs. Private Keys（公鑰與私鑰）" do
-      message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
-      message "`id_rsa.pub` is your **public key** and can be shared freely."
-      message "`id_rsa` is your **private key** and must be kept secret."
-      message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+      message "如果你檢查 `~/.ssh/` 這個資料夾，會發現有二個名稱一樣，但略有不同的檔案： `id_rsa` and `id_rsa.pub`"
+      message "`id_rsa.pub` 是你的 **public key(公鑰)** 可以分享公開出去"
+      message "`id_rsa` 是你的 **private key(私鑰)** 必須要保密別讓人知道"
+      message "如果有人取得了你的私鑰與通關密碼，他們可以登入到你的 Heroku 或 Github 帳號上做任何事情！請小心！"
     end
   end
 
-  message "Add your generated public key to the authentication agent using the following command:"
+  message "將你建好的公鑰放進權限管理裡面"
 
   console "ssh-add ~/.ssh/id_rsa"
 
