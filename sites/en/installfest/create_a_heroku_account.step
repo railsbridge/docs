@@ -33,7 +33,7 @@ end
 step "Add your SSH key to your Heroku account" do
   console "heroku keys:add"
 
-  message "hit enter to accept the default key file to use"
+  message "Enter your Heroku email and password, if prompted, and accept the defaults."
 end
 
 section 'Optional Step: Create a GitHub account' do
