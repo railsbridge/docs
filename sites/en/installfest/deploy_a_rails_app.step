@@ -90,7 +90,7 @@ step "Deploy your app to Heroku" do
 bundle install --without production
     BASH
 
-    message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
+    message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If you are on Windows and you get the message 'The system cannot find the path specified.', then you need to first install Bundler. You can do this by typing `gem install bundler`. Once this finishes, then redo the `bundle install --without production` command.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
   end
 
   step "Set the root route" do
