@@ -22,7 +22,7 @@ step "Create a new Rails app" do
 
   console "rails new test_app"
 
-  message "The command's output is voluminous, and will take some time to complete, with a long pause in the middle, after all the 'create...' statements ending in 'bundle install'.  When it fully completes, it will return you to your home prompt.  Look for the 'Your bundle is complete!' message just above."
+  message "The command's output is voluminous, and will take some time to complete, with a long pause in the middle, after all the 'create...' statements ending in 'bundle install'.  When it fully completes, it will return you to your home prompt.  Look for the 'Bundle complete!' message just above."
 
   console "cd test_app"
   console "rails server"

@@ -90,7 +90,7 @@ step "Deploy your app to Heroku" do
 bundle install --without production
     BASH
 
-    message "Again, wait for the console prompt, and look for the 'Your bundle is complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
+    message "Again, wait for the console prompt, and look for the 'Bundle complete!' message just above.  If this fails, get a volunteer to help you edit `config/environments/production.rb` "
   end
 
   step "Set the root route" do
