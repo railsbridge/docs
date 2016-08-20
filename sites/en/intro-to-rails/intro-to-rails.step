@@ -76,7 +76,7 @@ Each lesson will look like this:
   <div class="goals">
     <h1>Goal:</h1>
     <p>Description of the current step.
-    <p>Red because big goals it's important.
+    <p>Red because big goals are important.
   </div>
   <div class="steps">
     <h1>Steps:</h1>
