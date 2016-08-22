@@ -4,7 +4,23 @@ MARKDOWN
 
 step "Install RVM" do
   console "curl -L get.rvm.io | bash -s stable"
-  message "This will do some stuff and print a long message which you can ignore."
+  message "This will download and install RVM."
+
+  important do
+    message <<-EOT
+      You might see an error like "**GPG signature verification failed**"
+
+      If so, run the suggested command to add RVM's GPG keys:
+
+      `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`"
+
+      (the command may start with `gpg` or `gpg2` -- use whichever was provided in the RVM error message)
+
+      Afterward, try installing RVM again:
+
+      `curl -L get.rvm.io | bash -s stable`
+    EOT
+  end
 end
 
 step "Configure your shell" do
