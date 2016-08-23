@@ -87,6 +87,7 @@ step "Deploy your app to Heroku" do
     end
 
     console <<-BASH
+gem install bundler
 bundle install --without production
     BASH
 
