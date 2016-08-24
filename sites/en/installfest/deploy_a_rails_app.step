@@ -73,7 +73,6 @@ step "Deploy your app to Heroku" do
 
       group :production do
         gem 'pg'
-        gem 'rails_12factor'
       end
     RUBY
 
