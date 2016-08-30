@@ -19,8 +19,8 @@ steps {
 * `title:string` 告訴 Rails 這個 topics 的資料庫 Table 裡會有個欄位叫做 title ，資料格式是 "string(字串)"
 * `description:text` 告訴 Rails 這個 topics 的資料庫 Table 裡會有個欄位叫做 description ，資料格式是 "text(文字)" ("string" 跟 "text"的差別在哪呢？基本上 "text" 代表可以儲存比 "string" 還多非常多的字數)
     MARKDOWN
-    message "如果想瞭解更多關於 Rails 架構上的解說，可以找時間看看 [Rails Architecture](rails_architecture) 這個章節"
-    link "rails_architecture"
+    message "如果想瞭解更多關於 Rails 架構上的解說，可以找時間看看 『Rails 架構』 這個章節"
+    link "rails_架構"
   }
 
   step {
@@ -33,7 +33,7 @@ explanation {
 
   h2 "Rake"
   message <<-MARKDOWN
-`rake` (**r**uby m**ake**) 是一個簡單的 Ruby 程序工具(也可稱為 **tasks**)，你會在你的專案下常常使用這個指令 
+`rake` (**r**uby m**ake**) 是一個簡單的 Ruby 程序工具(也可稱為 **tasks**)，你會在你的專案下常常使用這個指令
 
 在這裡， `rake db:migrate` 是一個由 Rails 所內建提供的程序工具，它會將我們剛剛建的 migration(遷移) 檔案設定來將 database 架構更新。Database migration files(資料庫遷移檔) 是在 Rails 協作開發中，至關重要的一環
 
@@ -43,4 +43,4 @@ explanation {
 }
 
 
-next_step "CRUD_with_scaffolding"
+next_step "使用鷹架來完成_CRUD_功能"

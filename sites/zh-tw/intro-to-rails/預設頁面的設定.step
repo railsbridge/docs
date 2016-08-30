@@ -88,4 +88,4 @@ explanation {
 
 insert 'consider_deploying'
 
-next_step "voting_on_topics"
+next_step "對文章做投票"

@@ -163,4 +163,4 @@ end
 
 important "在前往下一章之前，你必須輸入 `exit` 來離開 IRB 模式"
 
-next_step "getting_started"
+next_step "開始吧"

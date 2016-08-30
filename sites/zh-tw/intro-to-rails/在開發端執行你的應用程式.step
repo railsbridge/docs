@@ -30,4 +30,4 @@ explanation do
   message "`Control + C` 是一個關掉或是取消所有運作在 Terminal 上的程式的指令。當你運作 `rails server` 時，會一直運作著，直到你使用 `Control + C` 來中斷掉"
 end
 
-next_step "creating_a_migration"
+next_step "建立資料庫遷移"

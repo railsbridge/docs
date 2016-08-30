@@ -2,6 +2,6 @@ div class: "deploying" do
   h1 "網站部署"
   blockquote do
     message "在下一個章節前，你可以嘗試將你寫好的網站部署到 Heroku 上！"
-    link 'deploying_to_heroku'
+    link '第一次部署到_heroku'
   end
 end

@@ -5,8 +5,8 @@ div :class => "deploying" do
     message <<-MARKDOWN
     在下一步之前，你可以嘗試將你寫好的應用程式 部署(deploy) 到 Heroku 上了！
 
-    * 如果你已經部署過，前往 [再次部署網站到 Heroku](deploying_to_heroku_again)
-    * 如果這是你第一次部署，前往 [部署網站到 Heroku](deploying_to_heroku) 開始
+    * 如果你已經部署過，前往 [第二次以後部署到 Heroku](第二次以後部署到_heroku)
+    * 如果這是你第一次部署，前往 [第一次部署到 Heroku](第一次部署到_heroku) 開始
     MARKDOWN
 
   end

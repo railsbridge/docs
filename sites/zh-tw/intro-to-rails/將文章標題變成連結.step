@@ -50,4 +50,4 @@ explanation {
   此行放了二個變數，前者是顯示連結的內容，後者是導向的網址"
 }
 
-next_step "clean_up_links_on_the_topics_list"
+next_step "整理文章列表上的連結"

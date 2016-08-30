@@ -104,4 +104,4 @@ steps do
   message "還有更多在 `rails new` 指令上建立的檔案。可能需要花一整本書解釋，所以我們暫時先略過它，專心在初探 Rails 的教學上"
 end
 
-next_step "add_the_project_to_a_git_repo"
+next_step "在專案裡建立_git_程式庫"
