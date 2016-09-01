@@ -14,7 +14,7 @@ message "So, it looks like if we want to edit the job description, we should vis
 
 error_box "The action 'edit' could not be found for JobsController"
 
-source_code_with_message "We've seen this before, right? Let's add the controller action:",
+source_code_with_message "We've seen this before, right? Let's add the controller action above the word `private`:",
 <<-RUBY
   def edit
   end
@@ -102,7 +102,7 @@ MARKDOWN
 
 error_box "The action 'update' could not be found for JobsController"
 
-source_code_with_message "So it looks like the form is finding the right route, but the method is missing from the controller. Let's add the update method to the file jobs_controller.rb", :ruby,
+source_code_with_message "So it looks like the form is finding the right route, but the method is missing from the controller. Let's add the update method--again, above the word `private`--to the file jobs_controller.rb", :ruby,
 <<-RUBY
   def update
   end
