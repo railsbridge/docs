@@ -30,6 +30,7 @@ end
 step "Apply the Gemfile changes" do
   console "bundle install --without production"
   message "Every time the `Gemfile` changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
+  message "Here we are bundling without the gems in the group ``production``."
 end
 
 step "Commit the Gemfile changes" do
