@@ -17,6 +17,8 @@ steps {
 
   step {
     console "rails server"
+
+    tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
   }
 
   step {
