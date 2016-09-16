@@ -20,6 +20,13 @@ Send students an email, asking them two of these questions.
 * Swap again with someone new.
 * Put the sticky notes up on the wall.
 
+## <a name="whatsinitforme"></a> What's in it for me?
+
+* Grab a pen and sticky notes.
+* Write down what you want to learn today.
+* Find someone new and share your answer with them.
+* Put the sticky notes up on the wall.
+* Come back to them at the end of the day.
 
 ## <a name="whatdoesadeveloperlooklike"></a> What does a developer look like?
 
