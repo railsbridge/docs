@@ -33,7 +33,12 @@ end
 step "Add your SSH key to your Heroku account" do
   console "heroku keys:add"
 
-  message "Enter your Heroku email and password, if prompted, and accept the defaults."
+  message "Enter your Heroku email and password."
+  
+  console "Found an SSH public key at /Users/[your_name]/.ssh/id_rsa.pub
+    Would you like to upload it to Heroku?"
+    
+  message "Enter `Y` for Yes"
 end
 
 section 'Optional Step: Create a GitHub account' do
