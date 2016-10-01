@@ -8,7 +8,6 @@ gem "sinatra", "~> 1.4.0"
 gem "sinatra-contrib", "~> 1.4.0"
 gem "nokogiri"
 gem "thin"
-gem "eventmachine", "~>1.0.3"
 gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", "~> 0.5.2"
@@ -20,6 +19,9 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 gem 'jquery-cdn'
 gem 'sprockets'
+
+# Relax this restriction if RailsInstaller starts packaging something after 2.2.4
+gem 'ruby_dep', '1.3.1'
 
 group :development do
   gem "rspec"
