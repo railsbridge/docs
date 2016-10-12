@@ -5,6 +5,7 @@
 * Get to know each other and RailsBridge
 * Know what will happen during a typical RailsBridge workshop
 * Be empowered as teachers and TAs
+* Practice teaching techniques (checks for understanding, scaffolding)
 
 ### RailsBridge Teacher and TA Training
 
@@ -198,10 +199,6 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 
 #### Don't be afraid to:
 * Call on people! By name!
-* Correct people if they're wrong. Be polite and encouraging. For instance:
-  * "Well, this might work better and this is why."
-  * "Can you explain how you came to that conclusion?"
-  * "Does anyone have a different answer?"
 * Ask yourself questions and answer them.
 * Be vulnerable yourself, discuss your learning process
 
@@ -309,14 +306,64 @@ If you don't know how to make one, we'll help!
 We need your help! Thank you!!!
 
 
-
 # Very Important, Very Practical Things
 #### Where to find the curriculum: http://docs.railsbridge.org
 
 You need to read the curriculum through, beginning to end, before teaching it.
 
+# Teaching Techniques
+### Answering questions
+* Correct people if they're wrong. Be polite and encouraging. For instance:
+  * "Well, this might work better and this is why."
+  * "Can you explain how you came to that conclusion?"
+  * "Does anyone have a different answer?"
+* Don't be afraid to tell someone that you don't know
+* Don't be afraid to not answer a question if it is out of scope
+  * Talk with the student during a break
 
+# Teaching Techniques
+#### Checks for understanding
+A tool for assessing how well the class understands a topic before moving on
 
+#### Reasons to check for understanding
+* Helps guide your teaching pace
+* You get more feedback about which students are more challenged with the material
+* Feedback loop during the lesson
+
+# Avoid These Checks For Understanding
+* Do you understand?
+* Can I move on?
+* Any questions?
+
+#### These checks tend to have a luke warm response
+#### People may think they understand, but don't actually understand
+
+# Suggested Checks For Understanding
+* Fist of five
+* Calling on a person by name
+* Have students pair on a problem, then explain it to the group
+* Checking in with each student individually as they work on a problem
+* Teach a concept to your neighbor
+
+# Discussion: Teach!
+#### Incorporate at least one check for understanding and teach the following
+* Arrays
+* Hashes
+* Scrum process
+* OOP
+* Anything you are passionate about
+
+# Scaffolding
+* A lesson should build upon itself
+* Teacher describes or illustrates a concept multiple ways
+* Teacher gives a specific example that helps students complete an assignment
+* I do, we do, you do
+
+### Not `rails g scaffold`
+
+# Discussion: Great learning experience
+### Describe a great learning experience you have had
+### Why do you think it was so successful?
 
 # General curriculum levels - detailed
 
