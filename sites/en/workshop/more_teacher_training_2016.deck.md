@@ -199,10 +199,6 @@ We've made three quasi-arbitrary categories of ways to make your class awesome:
 
 #### Don't be afraid to:
 * Call on people! By name!
-* Correct people if they're wrong. Be polite and encouraging. For instance:
-  * "Well, this might work better and this is why."
-  * "Can you explain how you came to that conclusion?"
-  * "Does anyone have a different answer?"
 * Ask yourself questions and answer them.
 * Be vulnerable yourself, discuss your learning process
 
@@ -316,6 +312,16 @@ We need your help! Thank you!!!
 You need to read the curriculum through, beginning to end, before teaching it.
 
 # Teaching Techniques
+### Answering questions
+* Correct people if they're wrong. Be polite and encouraging. For instance:
+  * "Well, this might work better and this is why."
+  * "Can you explain how you came to that conclusion?"
+  * "Does anyone have a different answer?"
+* Don't be afraid to tell someone that you don't know
+* Don't be afraid to not answer a question if it is out of scope
+  * Talk with the student during a break
+
+# Teaching Techniques
 #### Checks for understanding
 A tool for assessing how well the class understands a topic before moving on
 
@@ -324,7 +330,7 @@ A tool for assessing how well the class understands a topic before moving on
 * You get more feedback about which students are more challenged with the material
 * Feedback loop during the lesson
 
-# Avoid these checks for understanding
+# Avoid These Checks For Understanding
 * Do you understand?
 * Can I move on?
 * Any questions?
