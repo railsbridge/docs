@@ -65,7 +65,7 @@ The key fingerprint is:
     end
   end
 
-  message "Add your generated public key to the authentication agent using the following command:"
+  message "Add your generated key to the authentication agent using the following command:"
 
   console "ssh-add ~/.ssh/id_rsa"
 
