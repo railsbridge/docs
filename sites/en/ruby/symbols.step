@@ -95,7 +95,7 @@ explanation do
 end
 
 further_reading  do
-    message "[The Difference Between Ruby Symbols and Strings ](http://www.reactive.io/tips/2009/01/11/the-difference-between-ruby-symbols-and-strings/)"
+    message "[The Difference Between Ruby Symbols and Strings ](http://www.reactive.io/tips/2009/01/11/the-difference-between-ruby-symbols-and-strings)"
     message "[The Ruby_Newbie Guide to Symbols](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)"
     message "[The Ruby documentation says](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages):  *If you\’re in doubt whether to use a Symbol or a String, consider what\’s more important: the identity of an object (i.e. a Hash key), or the contents.*"
 end
