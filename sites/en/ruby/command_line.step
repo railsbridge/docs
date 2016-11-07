@@ -103,6 +103,7 @@ step do
     console <<-LINES
 cd ~
 ls
+cd workspace
 cd rai
     LINES
     message '... and hit `TAB`.'
