@@ -4,9 +4,10 @@ These activities are mostly taken from [Sharon Bowman](http://bowperson.com/)'s 
 
 ## <a name="whatyouknowandwhatsyourplan"></a> What you know, and what’s your plan
 
-Send students an email, asking
+Send students an email, asking them two of these questions.
 
 * What are three things you already know about programming? (Small things or big things! Who does it? What can you make? Why do people write software?)
+* What do you want to learn?
 * What do you plan to do with what you learn?
 
 # <a name="justbeforetheworkshopbegins"></a> Just before the workshop begins
@@ -17,8 +18,15 @@ Send students an email, asking
 * Write down your answers to the warm-up questions.
 * Swap your answers with someone else.
 * Swap again with someone new.
+* Put the sticky notes up on the wall.
 
-# Put the sticky notes<br>up on the wall
+## <a name="whatsinitforme"></a> What's in it for me?
+
+* Grab a pen and sticky notes.
+* Write down what you want to learn today.
+* Find someone new and share your answer with them.
+* Put the sticky notes up on the wall.
+* Come back to them at the end of the day.
 
 ## <a name="whatdoesadeveloperlooklike"></a> What does a developer look like?
 
