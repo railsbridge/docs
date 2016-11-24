@@ -128,7 +128,7 @@ step "Install Node.js" do
   message "Once your computer is back up, load **Command Prompt with Ruby and Rails** and..."
 
   console "node -v"
-  fuzzy_result "v4{FUZZY}.x.x{/FUZZY}"
+  fuzzy_result "v6{FUZZY}.x.x{/FUZZY}"
 end
 
 step "Update Rails" do
