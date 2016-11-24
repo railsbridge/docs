@@ -90,26 +90,26 @@ step "Update RubyGems" do
 
     message "If the output is **2.6.6** or earlier, keep following the instructions."
 
-    message "If the output is **2.6.7** or later, <a href='#install-node'>skip to the next step!</a>"
+    message "If the output is **#{version_string(:windows_rubygems)}** or later, <a href='#install-node'>skip to the next step!</a>"
   end
 
   step "Download the update" do
-    message "Visit https://rubygems.org/downloads/rubygems-update-2.6.7.gem"
+    message "Visit https://rubygems.org/downloads/rubygems-update-#{version_string(:windows_rubygems)}.gem"
 
-    message "**Right click -> Save target as...** the file **rubygems-update-2.6.7.gem** to your **C:\\Sites** directory"
+    message "**Right click -> Save target as...** the file **rubygems-update-#{version_string(:windows_rubygems)}.gem** to your **C:\\Sites** directory"
   end
 
   step "Install the update" do
     message "Back at the command prompt, run the following commands:"
 
-    console_without_message "gem install --local C:\\Sites\\rubygems-update-2.6.7.gem"
+    console_without_message "gem install --local C:\\Sites\\rubygems-update-#{version_string(:windows_rubygems)}.gem"
 
     console_without_message "update_rubygems --no-document"
 
     message "**Close and reopen your command prompt**, then verify you have the upgraded RubyGems by typing this in the terminal:"
 
     console_without_message "gem -v"
-    result "2.6.7"
+    result version_string(:windows_rubygems)
 
     message "Finally, you can clean up by running the following command:"
     console_without_message "gem uninstall rubygems-update -x"
