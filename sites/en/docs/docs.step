@@ -24,6 +24,10 @@ site_desc 'message-board', <<-MARKDOWN
 Build a message board! This curriculum is for students who have completed the Suggestotron and the Job Board curricula. This curriculum is a challenge because it won't tell you what to type in!
 MARKDOWN
 
+site_desc 'testing', <<-MARKDOWN
+Increase the stability of your Rails app by learning about tests: what they are, why they're used, and how to use them! This curriculum is for students who have completed the Suggestotron and the Job Board curricula. This curriculum is open to everyone but there is a challenge at the end!
+MARKDOWN
+
 h1 'Frontend'
 
 site_desc 'frontend', <<-MARKDOWN

@@ -1,0 +1,7 @@
+message <<-MARKDOWN
+  What are tests?
+
+  Bla bla bla.
+MARKDOWN
+
+next_step "types_of_tests"
