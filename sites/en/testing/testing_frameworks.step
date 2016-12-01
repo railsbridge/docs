@@ -4,4 +4,4 @@ message <<-MARKDOWN
   Bla bla bla.
 MARKDOWN
 
-next_step "advanced_concepts"
+next_step "types_of_tests"
