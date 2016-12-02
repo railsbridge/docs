@@ -1,7 +1,146 @@
 message <<-MARKDOWN
-  Types of tests.
+  Now, that you know what tests are, let's discuss the different types of tests!
 
-  Bla bla bla.
+  In your Rails app, you have models, views, and controllers -> is MVC ringing a bell? :) Well, it should be no surprise that tests can be written for models, views, and controllers.
+
+  Take a look at the following Post model in your app:
+
+  <div class="console"><pre>
+  class Post < ActiveRecord::Base
+    belongs_to :user
+    has_many :replies
+    validates :title, :user_id, :content, presence: true
+  end
+  </pre>
+  </div>
+
+  As you learned in the previous section, tests are used to verify that your code is working as expected. So, a couple things we can test right off the bat are that a post should have certain associations and validations. Let's start by writing some model tests also known as unit tests!
 MARKDOWN
 
-next_step "testing_frameworks"
+steps do
+  step do
+    message "First, create a post model spec file in the models folder of the spec folder. Type this in the terminal:"
+
+    console_without_message "cd app/spec/models"
+    console_without_message "touch post_spec.rb"
+  end
+  step do
+    message "Then, run rspec."
+
+    console_without_message "bundle exec rpsec"
+
+    message "You should see some report but no tests exist yet. So, let's add one! Copy the below test, paste it into the post model spec file and then run 'bundle exec rspec' on the terminal again."
+
+    console_without_message <<-RUBY
+    describe 'ActiveRecord associations' do
+      it 'Post belongs to users' do
+        expect(Post.reflect_on_association(:user).macro).to be (:belongs_to)
+      end
+    end
+    RUBY
+
+    message "Great, now you should see one passing test! That's an example of an association test. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Cool! Let's revert back to the passing test. And, write another association test for the relationship between the Post model and the Reply model!"
+
+  end
+end
+
+
+message <<-MARKDOWN
+  On to controller tests! Just like the Post model, assume we have the following controller in our app (the other methods are omitted for brevity):
+
+  <div class="console"><pre>
+  class PostsController < ApplicationController
+    include PostsHelper
+
+    def index
+      @posts = Post.all
+      render :index
+    end
+
+    def new
+      @post = Post.new
+      render :new
+    end
+  end
+  </pre>
+  </div>
+MARKDOWN
+
+steps do
+  step do
+    message "First, create a posts controller spec file in the controllers folder of the spec folder. Type this in the terminal:"
+
+    console_without_message "cd app/spec/controllers"
+    console_without_message "touch posts_controller_spec.rb"
+  end
+  step do
+    message "Then, run rspec."
+
+    console_without_message "bundle exec rpsec"
+
+    message "You should see a report with some passing tests but those are just the model tests you wrote. So, let's add some controller tests! Copy the below test, paste it into the posts controller spec file and then run 'bundle exec rspec' on the terminal again."
+
+    console_without_message <<-RUBY
+    describe '#index' do
+      it "renders the index view" do
+        get :index
+        expect(response).to render_template("index")
+      end
+
+      it "renders html" do
+        process :index, method: :get
+        expect(response.content_type).to eq "text/html"
+      end
+    end
+    RUBY
+
+    message "Great, that test should be passing! That's an example of a controller test on the index action. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Awesome! Let's revert back to the passing test. Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
+
+  end
+end
+
+message <<-MARKDOWN
+  Last but not least: view tests! Below is an short snippet of the Post show HTML page in your app:
+MARKDOWN
+console_without_message <<-HTML
+<br>
+Post title: <%= @post.title %>
+<br>
+<br>
+Post content: <%= @post.content %>
+<br>
+HTML
+
+message <<-MARKDOWN
+  So, based on the post you create, the show page should render HTML with the post's title and content. Let's verify that with a few tests.
+MARKDOWN
+
+steps do
+  step do
+    message "First, create a posts view spec file in the views folder of the spec folder. Type this in the terminal:"
+
+    console_without_message "cd app/spec/views/posts"
+    console_without_message "touch show.html.erb_spec.rb"
+  end
+  step do
+    message "Then, run rspec."
+
+    console_without_message "bundle exec rpsec"
+
+    message "You should see a report with some passing tests but those are just the model and controller tests you wrote. So, let's add some view tests!"
+    message "We're going to up the ante a bit here and NOT show you an example :) Google and StackOverflow are your friends here!"
+  end
+end
+
+message <<-MARKDOWN
+  Once, you have written some passing view tests, take a deep breath and pat yourself on the back! Testing is hard. But, it's critical in making sure software is stable and functional.
+
+  So, I fibbed a little bit. There are more types of tests than just MVC tests. But, they're for another time. Just know about one more type of test called an integration test. As the name indicates, it tries to assess how well multiple components in an app interact and is written in Rails as a feature spec test. Typically, these tests simulate a user and a user's actions to test end-to-end functionality.
+
+  Here's a diagram that may help with understanding how integration tests fit in:
+
+MARKDOWN
+
+img src: "img/rails-test-types.png", alt: "Thoughtbot's diagram of types of Rails tests"
+
+next_step "advanced_concepts"
