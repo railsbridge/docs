@@ -25,7 +25,7 @@ Build a message board! This curriculum is for students who have completed the Su
 MARKDOWN
 
 site_desc 'testing', <<-MARKDOWN
-Increase the stability of your Rails app by learning about tests: what they are, why they're used, and how to use them! This curriculum is for students who have completed the Suggestotron and the Job Board curricula. This curriculum is open to everyone but there is a challenge at the end!
+Increase the stability of your Rails app by learning about tests: what they are, why they're used, and how to use them! This curriculum is for students who have completed the Suggestotron, the Job Board, and the Message Board curricula. There will be challenges!
 MARKDOWN
 
 h1 'Frontend'
