@@ -1,0 +1,57 @@
+message <<-MARKDOWN
+  All right, you're almost at the end! Below are a few additional concepts of testing that may helpful in your future testing adventures.
+
+  ### Doubles and stubs
+  Doubles are simpler objects that represent objects from your application.
+  <div class="console"><pre>
+  post = double(:post)
+  </pre>
+  </div>
+  If you instantiate that double in your test file, you have access to post in your tests to test with. This is instead of creating an entire Post model in ActiveRecord. If you need to create many different test objects with different properties, FactoryGirl is a great gem for that purpose and will allow persistence or in-memory object creation, depending on your testing situation.
+
+  Stubs can be used to dictate what is returned when a method is called on a double.
+  <div class="console"><pre>
+  post.stub(:title).and_return("Jelly")
+  </pre>
+  </div>
+  So, when you write a test that calls the title attribute of the post double, you'll always get back the string Jelly. Got it? Good!
+
+  ### Spies
+  With spies, we are not talking about espionage... at least, not in relation to testing :) Spies can be used to verify whether a method was called on an object.
+  For instance (assume you already have the post double from above):
+  <div class="console"><pre>
+  post = spy('post')
+  post.content
+  expect(post).to have_received(:content)
+  </pre>
+  </div>
+  Obviously, this is a simplified case. Instead of post.content, you might have a complicated method that executes many functions internally and that's where spies can come in handy; they can check easily whether one specific method was called. Capiche? Ok, let's keep on trucking!
+
+  ### Webmock
+  What if your app relies on third-party services or applications, known amongst friends as application programming interfaces or APIs? Well, it seems like APIs should also be tested but should our test suite really be dependent on someone else? NOPE! What if the API goes down? Or is slow? Welcome to the stage: Webmock!
+  Webmock is a gem that stubs out external HTTP requests. Once you include the gem, bundle install, and include the below code snippet in your spec helper file (which is included in every test file), you're good to go.
+MARKDOWN
+console_without_message <<-RUBY
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
+RUBY
+
+message <<-MARKDOWN
+  Then, you can start stubbing out API requests in your spec helper file. Let's write an example for Bitly, a service that shortens long URLs.
+MARKDOWN
+
+console_without_message <<-RUBY
+RSpec.configure do |config|
+  config.before(:each) do
+    stub_request(:get, /api.bitly.com.v3.shorten/).
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: "stubbed response", headers: {})
+  end
+end
+RUBY
+
+message <<-MARKDOWN
+  So, if you write any tests in your test files that call the Bitly API, then the response will be whatever you defined above. The test will prevent the actual API request from being made. Pretty cool, huh?
+
+  Awesome, you are now equipped with a license to TEST! Go forth and create doubles, stubs, and spies in your app (at least one of each and have a TA verify).
+MARKDOWN
