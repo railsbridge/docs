@@ -143,4 +143,4 @@ MARKDOWN
 
 img src: "img/rails-test-types.png", alt: "Thoughtbot's diagram of types of Rails tests"
 
-next_step "advanced_concepts"
+next_step "additional_concepts"
