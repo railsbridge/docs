@@ -1,6 +1,6 @@
 message <<-MARKDOWN
 # What's a testing framework?
-A Testing framework is an execution environment for automated tests. Think of it as the set of assumptions that reminds you when you veer away from those assumptions. In short Test frameworks helps teams organize their test suites and in turn
+A testing framework is an execution environment for automated tests. Think of it as the set of assumptions that reminds you when you veer away from those assumptions. In short Test frameworks helps teams organize their test suites and in turn
 help improve the efficiency of testing. 
 
 # Types of testing frameworks
@@ -64,7 +64,7 @@ bundle exec rspec spec/controllers/post_controller_spec.rb
 ## RSpec Basics
 
 <div class="console"><pre>
-1 RSpec.describe Tree do
+1 describe Tree do
 2  it "is able to age by 1 year increments" do
 3    orange_tree = Tree.new
 4    orange_tree.age   
@@ -91,6 +91,46 @@ Remember in our example on line 5? 'to eq' is a matcher. RSpec has many built-in
 Check out the other built-in matchers!
 https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
 
+# Mini Test
+In case you were curious to see how tests are written in Mini Test.  Although Mini Test allows you in 'expectation style' which is very similar to how RSpec tests are written. 
+
+<div class="console">
+<pre>
+class TestTree < Minitest::Test
+
+  def setup
+    @orange_tree = Tree.new
+    @orange_tree.age
+  end
+
+  def test_age_by_one_year_increments
+    assert_equal 1, @orange_tree.age
+  end
+end
+</pre>
+</div>
+
+To run the test enter the following in Terminal/Command Prompt:
+
+<div class="console">
+<pre>
+ruby tree_test.rb
+</pre>
+</div>
+
+Once you run the test this is how the test looks like:
+<div class="console">
+<pre>
+$ ruby tree_test.rb
+Run options: --seed 30102
+
+#Running:
+
+.
+Finished in 0.000980s, 1020.4082 runs/s, 1020.4082 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+</pre>
+</div>
 
 MARKDOWN
 
