@@ -1,5 +1,4 @@
 message <<-MARKDOWN
-# What Are Tests?
 Tests are ways of testing our code to see if they are performing the way we have intended it behave.
 
 # Example
