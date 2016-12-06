@@ -92,7 +92,7 @@ Check out the other built-in matchers!
 https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
 
 # Mini Test
-In case you were curious to see how tests are written in Mini Test.  Although Mini Test allows you in 'expectation style' which is very similar to how RSpec tests are written. 
+In case you were curious to see how tests are written in Mini Test. Mini Test also allows you to write tests in 'expectation style' which is very similar to how RSpec tests are written. 
 
 <div class="console">
 <pre>
