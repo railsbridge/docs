@@ -1,6 +1,6 @@
 message <<-MARKDOWN
 # What's a testing framework?
-A Testing framework is an execution environment for automated tests. Think of it as the set of assumptions that reminds you when you veer away from those assumptions. In short Test frameworks helps teams organize their test suites and in turn
+A testing framework is an execution environment for automated tests. Think of it as the set of assumptions that reminds you when you veer away from those assumptions. In short Test frameworks helps teams organize their test suites and in turn
 help improve the efficiency of testing. 
 
 # Types of testing frameworks
