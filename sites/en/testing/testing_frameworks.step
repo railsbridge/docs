@@ -1,16 +1,16 @@
 message <<-MARKDOWN
 # What's a testing framework?
-A testing framework is an execution environment for automated tests. Think of it as the set of assumptions that reminds you when you veer away from those assumptions. In short Test frameworks helps teams organize their test suites and in turn
-help improve the efficiency of testing. 
+A testing framework is an execution environment for automated tests. Testing frameworks help teams organize their test suites and in turn
+help improve the efficiency of testing.
 
 # Types of testing frameworks
-There are many testing frameworks that work great.  Mini Test is the default testing framework in Rails 5. However, we will be using the RSpec testing framework instead.   
+There are many testing frameworks that work great.  Mini Test is the default testing framework in Rails 5. However, we will be using the RSpec testing framework instead.
 
 
 # RSpec
 ## How to set up RSpec in Rails
 
-Add rspec-rails to both the :development and :test groups in the Gemfile:
+First, create a new Rails app. Then, add rspec-rails to both the :development and :test groups in the Gemfile:
 
 <div class="console"><pre>
 group :development, :test do
@@ -48,7 +48,7 @@ bundle exec rspec
 </pre>
 </div>
 
-By default the above will run all spec files in the spec directory. 
+By default, the above code will run all spec files in the spec directory.
 
 To run only a subset of these specs use the following command:
 
@@ -67,8 +67,8 @@ bundle exec rspec spec/controllers/post_controller_spec.rb
 1 describe Tree do
 2  it "is able to age by 1 year increments" do
 3    orange_tree = Tree.new
-4    orange_tree.age   
-5   expect(orange_tree.age).to eq(1)
+4    orange_tree.age
+5    expect(orange_tree.age).to eq(1)
 6  end
 7 end
 </pre>
@@ -92,7 +92,7 @@ Check out the other built-in matchers!
 https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
 
 # Mini Test
-In case you were curious to see how tests are written in Mini Test. Mini Test also allows you to write tests in 'expectation style' which is very similar to how RSpec tests are written. 
+In case you were curious to see how tests are written in Mini Test. Mini Test also allows you to write tests in 'expectation style' which is very similar to how RSpec tests are written.
 
 <div class="console">
 <pre>
