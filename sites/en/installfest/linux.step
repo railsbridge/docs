@@ -77,12 +77,12 @@ step "Install Rails" do
   console "gem install rails"
 end
 
-step "Sublime Text 2" do
+step "Atom" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install Sublime Text 2. It's available for [32-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2) and [64-bit machines](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2)
+If you don't have a preferred code editor, you can install Atom. It's available for 32-bit and 64-bit machines.
 
-Check <http://www.sublimetext.com/2> for the latest version.
+Checkout this section of the [Atom manual](http://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux) for the latest instructions.
 MARKDOWN
 
   tip "How many bits?" do
