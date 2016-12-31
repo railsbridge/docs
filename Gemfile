@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.2.4'
+ruby '2.3.3'
 
 gem 'activesupport'
 gem "erector", "~> 0.10.0"
@@ -19,9 +19,6 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 gem 'jquery-cdn'
 gem 'sprockets'
-
-# Relax this restriction if RailsInstaller starts packaging something after 2.2.4
-gem 'ruby_dep', '1.3.1'
 
 group :development do
   gem "rspec"
