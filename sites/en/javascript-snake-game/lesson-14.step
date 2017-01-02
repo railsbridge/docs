@@ -1,1 +1,10 @@
 insert '../javascript-to-do-list/_deploying_your_site'
+
+message <<-MARKDOWN
+# Credits
+
+This curriculum was originally written by
+[Zassmin Montes de Oca](http://zassmin.com/) and
+[Zee Spencer](http://www.zeespencer.com/),
+and has been improved by all sorts of [lovely RailsBridge volunteers](https://github.com/railsbridge/docs/commits/master/sites/en/javascript-snake-game).
+MARKDOWN
