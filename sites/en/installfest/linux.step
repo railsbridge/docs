@@ -80,14 +80,10 @@ end
 step "Atom" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install Atom. It's available for 32-bit and 64-bit machines.
+If you don't have a preferred code editor, you can install Atom.
 
 Checkout this section of the [Atom manual](http://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux) for the latest instructions.
 MARKDOWN
-
-  tip "How many bits?" do
-    message %q{If you're not sure, you're probably 32-bit. Run `uname -i` and see. "x86" in the filename means 32-bit, and "x86_64" means 64-bit.}
-  end
 end
 
 next_step "configure_git"
