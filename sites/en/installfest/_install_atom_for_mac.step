@@ -1,0 +1,21 @@
+message "We'll be using the Atom text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate."
+
+important <<-MARKDOWN
+  Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work.
+
+  When in doubt, use Atom.
+  MARKDOWN
+
+step "Download Atom" do
+  message "Download the [Atom installer](https://atom.io/download/mac)."
+end
+
+step 'Save the file to your desktop, if prompted, or go to the Downloads folder' do
+  message "Auto-saved, without a prompt, to downloads should be the default."
+end
+
+step "Drag Atom into your Applications folder." do
+  message "From your save location (default is Downloads). Drag Atom into your Applications folder."
+
+  img src: 'img/install_atom_mac.gif', alt: 'Contents of the downloaded file'
+end
