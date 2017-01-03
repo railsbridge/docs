@@ -1,0 +1,208 @@
+goals do
+  goal "Understand how Flux architecture works with React"
+  goal "Familiarize with Actions, Dispatchers, and Utils, and other features of a Flux pattern."
+end
+
+overview do
+  message <<-MARKDOWN
+    Flux is a way to organize your code such that data is unidirectional and predictable. This diagram shows you the way the data flows.
+
+    ![Browser window with list application running](../javascript-to-do-list-with-react/img/flux-diagram.png)
+
+    Let's talk about it at high level. Are you ready for this?! Ok, here goes... An interaction by a user, such as a click of a button, creates an action that triggers an API Util to request some data from some source, a database or an API. Then, the Util passes the results of the request to the Action. The Action then passes the data, also known as a payload, to the dispatcher. The dispatcher registers itself with a store. Once the store receives the payload, it updates itself and emits a change event. The React View, known to us as a component, is listening in for a change event and AUTOMAGICALLY rerenders to update its views.
+
+    So, how does all this relate to our To Do List app? Well, let's dive right into that- read on, brave one!
+  MARKDOWN
+end
+
+
+
+
+steps do
+  step do
+    message <<-MARKDOWN
+Open up store.js in your text editor. There's a lot happening in this file. First, there's a notify_components function that is telling the components that something in the store has changed. Second, there are two AJAX requests to get the items and create new ones.
+
+With Flux, the notify_components function would no longer be necessary. Instead, you'd have the following in a file called dispatcher.js. This is your dispatcher:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+    var AppDispatcher = new FluxDispatcher();
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+
+Then, the AJAX requests would be placed in a separate file called todo_list_util.js.
+This is where all the requests will reside:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+    (function(root) {
+      'use strict';
+      root.ToDoListUtil = {
+        fetch: function () {
+          $.ajax({
+            type: 'GET',
+            url: 'https://listalous.herokuapp.com/lists/jaaaaade!',
+            success: function(list) {
+              items = list.items;
+              //call some action here
+            }
+          });
+        },
+        post: function (itemDescription) {
+          var newItem = { description: itemDescription, completed: false };
+          $.ajax({
+            type: 'POST',
+            url: 'https://listalous.herokuapp.com/lists/jaaaaade!/items',
+            data: newItem
+          });
+        },
+        update: function(completionState, itemId)
+        $.ajax({
+          type: 'PUT',
+          url: 'https://listalous.herokuapp.com/lists/jaaaaade!/items/' + itemId,
+          data: { completed: !completionState },
+          success: function (updatedItem) {
+            item.completed = updatedItem.completed;
+            //call some action here
+          }
+        });
+      };
+    }(this));
+    JAVASCRIPT
+  end
+
+  step do
+
+    message <<-MARKDOWN
+Now, your store will look different- see below. It will have a dispatcher that registers itself with the store. As you can see, the ListStore has the ability to emit events now through the Event Emitter. All the AJAX requests that were here before are in the todo_list_util.js file. These requests will get called by the component now, not the store. The addChangeListener and removeChangeListener functions will be utilized by the component so that the components can rerender whenever this store changes.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+    var items = [];
+    var CHANGE_EVENT = "change";
+    var resetItems = function (data) {
+      items = data;
+    };
+
+    var findItemById = function(id) {
+      return items.filter(function(item) {
+        return item.id === id;
+      })[0];
+    },
+
+    ListStore = $.extend({}, EventEmitter.prototype, {
+      getItems: function() {
+        return items.slice();
+      },
+      addChangeListener: function (callback) {
+        this.on(CHANGE_EVENT, callback);
+      },
+      removeChangeListener: function(callback){
+        this.removeListener(CHANGE_EVENT, callback);
+      },
+      dispatcherID: root.AppDispatcher.register(function(payload){
+       switch(payload.actionType){
+         case window.ToDoListConstants.ITEMS_RECEIVED:
+           resetToDoList(payload.items);
+           ToDoListStore.emit(CHANGE_EVENT);
+           break;
+       }
+      })
+    });
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Phew! Mind boggled just yet? We're almost there! Next is the component/view. Notice how the addItem, createItem, and toggleCompleteness functions now refer to the Util instead of the Store? Also, see that you are "listening" to the store by invoking the
+addChangeListener function. If the store changes, this callback will be executed and cause onChange to run, which rerenders the state and ultimately the view:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+    var CreationForm = React.createClass({
+      render: function() {
+        return (
+          <form id="add-form" onSubmit={this.handleSubmit}>
+            <input id='create' ref="description" type='text' placeholder='Add Something to the list!' />
+          </form>
+        )
+      },
+
+      handleSubmit: function(event) {
+        event.preventDefault()
+        var description = this.refs.description.getDOMNode().value
+        this.refs.description.getDOMNode().value = ''
+        ToDoListUtil.post(description);
+      }
+    })
+
+    var Item = React.createClass({
+      handleCompletion: function () {
+        ToDoListUtil.update(this.props.id.completed, this.props.id);
+      },
+
+      render: function() {
+        var itemClass = this.props.completed ? 'item completed' : 'item'
+        return (
+          <li className={itemClass}>
+            <span className='complete-button' onClick={this.handleCompletion}>{'\u2714'}</span>
+            <div className='description'>{this.props.description}</div>
+            <span className='delete-button'>{'\u2718'}</span>
+          </li>
+        )
+      }
+    })
+
+    var List = React.createClass({
+      getInitialState: function() {
+        return (
+          {items: [
+            {description: 'a gallon of milk',  completed: true, id: 1},
+            {description: 'a stick of butter', completed: false, id: 2}
+          ]}
+        )
+      },
+      onChange: function() {
+        this.setState({ items: ListStore.getItems() });
+      },
+      componentWillMount: function() {
+        ListStore.addChangeListener(this.onChange);
+      },
+      componentWillUnmount: function() {
+        ListStore.removeChangeListener(this.onChange);
+      },
+      render: function() {
+        var itemComponents = this.state.items.map(function(itemData) {
+          return <Item key={'item-' + itemData.id} {...itemData}/>
+        })
+
+        return (
+          <ul id='list'>
+            {itemComponents}
+          </ul>
+        )
+      }
+    })
+    JAVASCRIPT
+  end
+end
+explanation do
+
+  message <<-MARKDOWN
+
+### Getting familiar with Flux.
+
+You've just witnessed  your first Flux architecture! It might be a little overwhelming, but stick with it and you'll get it! Don't worry if you don't understand how everything works just yet – as you keep doing more Flux iterations, this stuff will be muscle memory. In summary, we have a:
+
+* An interaction on the view by a user that triggers a Util
+* A Util that performs AJAX to fetch data
+* A Action to relay that data to the Dispatcher
+* A Dispatcher that registers with a specific Store and transmits the data
+* A Component/view that listens to a Store and rerenders its state whenever the store changes
+
+That's it for now! I hope you enjoyed this intro to Flux and stay tuned- there is more to come in the near future!
+  MARKDOWN
+end
+
+
+next_step 'loading_items'
