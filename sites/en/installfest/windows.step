@@ -141,9 +141,15 @@ step "Sanity Check" do
 end
 
 step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font."
 
-  link "configure_the_windows_terminal"
+  message "Right-click on the menu bar and select **Properties**"
+
+  message "Under the *Font* tab, select Lucida Console from the font chooser box. This lets you view non-ascii characters."
+
+  message "In the *Layout* tab, adjust *Window Size* so the window is about half as wide as your screen, and is as tall as possible without covering the task bar (this may require some trial and error)."
+
+  message "Click OK."
 
   tip "Clearing the Terminal" do
     message "If you ever want to clear the terminal of all its cluttered output"
