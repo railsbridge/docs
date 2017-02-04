@@ -85,10 +85,14 @@ step "Deploy your app to Heroku" do
       message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have separate test, development and production databases by default in Rails."
     end
 
-    console <<-BASH
-gem install bundler
-bundle install --without production
-    BASH
+    console "gem install bundler"
+
+    fuzzy_result <<-OUTPUT
+      Successfully installed bundler-{FUZZY}1.14.3{/FUZZY}
+      1 gem installed
+    OUTPUT
+
+    console "bundle install --without production"
 
     message "Again, wait for the console prompt, and look for the 'Bundle complete!' message just above."
   end
