@@ -60,13 +60,13 @@ Open the suggestotron folder as a project in your text editor.
   tip "Close any files that are already open. They might be from yesterday's `test_app`, and we want to make sure that we're editing files in today's `suggestotron` app."
 
   message <<-MARKDOWN
-In **Sublime Text 2**, you can use the `Project > Add Folder to Project...` menu option:
+In **Atom**, you can use the `Project > Add Project Folder...` menu option:
 
-![Sublime Text Project menu screenshot](img/sublime_add_folder_to_project.png)
+![Atom Project menu screenshot](img/atom_add_folder_to_project.png)
 
-Select your `suggestotron` folder from the file picker that opens. If everything works out Sublime should show the directories of your app in a tree structure on the left:
+Select your `suggestotron` folder from the file picker that opens. If everything works out Atom should show the directories of your app in a tree structure on the left:
 
-![Screenshot of Suggestotron project folder tree in Sublime Text](img/sublime_project_as_folder.png)
+![Screenshot of Suggestotron project folder tree in Atom](img/atom_project_as_folder.png)
     MARKDOWN
   end
 
