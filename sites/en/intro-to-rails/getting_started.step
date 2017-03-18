@@ -60,7 +60,7 @@ Open the suggestotron folder as a project in your text editor.
   tip "Close any files that are already open. They might be from yesterday's `test_app`, and we want to make sure that we're editing files in today's `suggestotron` app."
 
   message <<-MARKDOWN
-In **Atom**, you can use the `Project > Add Project Folder...` menu option:
+In **Atom**, you can use the `File > Add Project Folder...` menu option:
 
 ![Atom Project menu screenshot](img/atom_add_folder_to_project.png)
 
