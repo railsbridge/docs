@@ -23,7 +23,7 @@ steps do
       When programming, you'll generally want these tools on hand:
 
       * Your browser to see the code running (I recommend Chrome)
-      * A text editor to change the code (Railsbridge recommends <a href="https://atom.io/"> Atom, but you can <a href="/installfest/editors">try a different editor</a>)
+      * A text editor to change the code (Railsbridge recommends <a href="https://atom.io/">Atom</a>, but you can <a href="/installfest/editors">try a different editor</a>)
       * A javascript console so you can experiment and print out debugging
       messages. This is built into your browser.
 
