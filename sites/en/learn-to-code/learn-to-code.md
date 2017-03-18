@@ -70,8 +70,7 @@ Follow along at http://docs.railsbridge.org/learn-to-code
   * Ruby version 2.3 preferred, but 1.9+ is fine too
     * run `ruby -v` to check
 * a text editor
-  * e.g. Sublime Text 2
-  * http://www.sublimetext.com/2
+  * we recommend [Atom](https://atom.io/), but you can try a [different editor](/installfest/editors)
 
 * If you do not have both of these things, RAISE YOUR HAND
   * visit http://installfest.railsbridge.org for more instructions
