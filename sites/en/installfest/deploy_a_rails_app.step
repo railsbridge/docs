@@ -153,7 +153,7 @@ step "Deploy your app to Heroku" do
 
     message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, talk to a TA."
 
-    console "heroku run rake db:migrate"
+    console "heroku run rails db:migrate"
 
     result <<-OUTPUT
       Migrating to CreateDrinks (20160706063236)
