@@ -1,0 +1,47 @@
+step "Learn your Mac OS X Version" do
+  message <<-MARKDOWN
+
+* Click on the Apple icon in the top left of your screen.
+* Select "About This Mac"
+* In the window that comes up, under the title "Mac OS X" there will be a version number.
+  * If it starts with 10.8, you have **Mountain Lion**.
+  * If it starts with 10.7, you have **Lion**.
+  * If it starts with 10.6, you have **Snow Leopard**.
+  * If it starts with 10.5, you have **Leopard**.
+  * If it starts with 10.4, you have **Tiger**.
+  * If it starts with 10.3, you have **Panther**.
+
+* Write down the Mac OS X version you have.
+* In addition, to the right of the "Processor", there will be the a processor type.
+  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
+  * If it ends with **Intel Core 2 Duo**, you are good to go.
+  * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
+
+* Once complete, you may close the "About This Mac" window.
+
+Below is an example.
+
+![OS X Snow Leopard](img/AboutThisMac.png)
+
+  MARKDOWN
+end
+
+step "Choose your instructions" do
+  
+  option "Mountain Lion/Lion/Snow Leopard" do
+    option "RailsInstaller" do
+      message "RailsInstaller is an easy way to get up and running with Ruby and Rails on OSX. Try it first."
+      link "osx_railsinstaller"
+    end
+    option "Manually" do
+      message "If something went wrong with RailsInstaller, or you want to do things the 'long way', use these instructions."
+      link "osx_lion"
+    end
+  end
+
+  option "Leopard/Tiger/Panther" do
+    important "If at all possible, you should try upgrading to at least **Snow Leopard**. Apple doesn't sell it the Apple store anymore, so you'll have to [buy it from them online](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) or find a copy from a friend."
+    message "Otherwise, you can try following the Panther instructions, but be prepared for some things to be difficult."
+    link "osx_panther"
+  end
+end
