@@ -3,10 +3,8 @@ console <<-BASH
 BASH
 
 message "This downloads and compiles Ruby, which takes a while."
-console <<-BASH
-  rvm use #{version_string(:ruby_short)}
-  rvm --default use #{version_string(:ruby_short)}
-BASH
+console "rvm use #{version_string(:ruby_short)}"
+console "rvm --default use #{version_string(:ruby_short)}"
 
 verify do
   console "ruby -v"
@@ -29,4 +27,3 @@ div do
     message "Once that completes, retry `rvm install #{version_string(:ruby_short)}`"
   end
 end
-

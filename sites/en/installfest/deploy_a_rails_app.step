@@ -117,10 +117,8 @@ step "Deploy your app to Heroku" do
 
     message "Before running the following command (to add to your local git repository), make sure that you are in the `test_app` directory."
 
-    console <<-BASH
-      git add .
-      git commit -m "Updates for heroku deployment"
-    BASH
+    console 'git add .'
+    console 'git commit -m "Updates for heroku deployment"'
   end
 
   step "Deploy (push) to heroku" do
@@ -185,4 +183,3 @@ step "Deploy your app to Heroku" do
 end
 
 next_step "get_a_sticker"
-
