@@ -1,9 +1,9 @@
 message "(If you used RailsInstaller on Windows then you should already have `user.name` and `user.email` configured.)"
 
-console <<-BASH
-git config --global user.name "Your Actual Name"
-git config --global user.email "Your Actual Email"
-BASH
+message "In the next commands, don't copy-paste the whole thing. Use the name and email address you usually use. Don't use a username (like your github username)."
+
+console 'git config --global user.name "Your Actual Name, In Quotes"'
+console 'git config --global user.email "Your Actual Email, In Quotes"'
 
 important "Use the same email address for heroku, git, github, and ssh."
 
@@ -25,4 +25,3 @@ git config --global color.ui auto
 end
 
 next_step "create_an_ssh_key"
-
