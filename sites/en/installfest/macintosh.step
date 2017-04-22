@@ -17,7 +17,7 @@ step "Learn your Mac OS X Version" do
 
 * Write down the Mac OS X version you have.
 * In addition, to the right of the "Processor", there will be the a processor type.
-  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
+  * If it ends with **Intel Core i7**, **Intel Core i5**, **Intel Core i3**, or **Intel Core m3** you are good to go.
   * If it ends with **Intel Core 2 Duo**, you are good to go.
   * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
 
