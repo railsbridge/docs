@@ -27,7 +27,7 @@ discussion_box "Rails Console", <<-MARKDOWN
 
   * Try running `Job.all.to_sql`. What does that do?
   * Try selecting an individual Job record.
-  * Try updating an that individual record from the console!
+  * Try updating that individual record from the console!
 MARKDOWN
 
 message "# Show those jobs!"
