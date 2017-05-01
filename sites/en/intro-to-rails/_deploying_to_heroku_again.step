@@ -17,9 +17,9 @@ step "Push changes to Heroku" do
 end
 
 step "Run database migrations on Heroku" do
-  console "heroku run rake db:migrate"
+  console "heroku run rails db:migrate"
   message "This tells Heroku to run your migrations on its database, like
-running `rake db:migrate` locally."
+running `rails db:migrate` locally."
   message "Heroku's database is separate from the one on your computer, which
 means it needs to be updated every time you make changes to the structure of
 your database."

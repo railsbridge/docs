@@ -6,7 +6,7 @@ MARKDOWN
 
 step "Run RailsInstaller" do
   message "RailsInstaller includes Rails, Ruby, Git and SQLite."
-  message "Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby #{version_string(:windows_ruby_short)}."
+  message "Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby #{version_string(:ruby_short)}."
   message "Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults."
   message "Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*"
 
@@ -82,6 +82,29 @@ step "Open a Terminal" do
   end
 end
 
+step "Update RubyGems" do
+  message "The version of RubyGems that comes with RailsInstaller may be outdated. Follow these steps to upgrade it!"
+
+  step "Check to see if you need to update" do
+    console "gem -v"
+
+    message "If the output is **#{version_string(:windows_rubygems_min)}** or later, <a href='#install-node'>skip to the next step!</a>"
+  end
+
+  step "Install the latest version of RubyGems" do
+    message "Otherwise, run the following command:"
+
+    console_without_message "gem update --system --no-document"
+
+    message "**Close and reopen your command prompt**, then verify you have the upgraded RubyGems by typing this in the terminal:"
+
+    console_without_message "gem -v"
+    fuzzy_result "#{version_string(:windows_rubygems_min_short)}{FUZZY}.9{/FUZZY}"
+
+    message "As long as the version is at least **#{version_string(:windows_rubygems_min)}**, you should be fine!"
+  end
+end
+
 a name: 'install-node'
 step "Install Node.js" do
 
@@ -94,7 +117,7 @@ step "Install Node.js" do
   message "Once your computer is back up, load **Command Prompt with Ruby and Rails** and..."
 
   console "node -v"
-  fuzzy_result "v4{FUZZY}.x.x{/FUZZY}"
+  fuzzy_result "v6{FUZZY}.x.x{/FUZZY}"
 end
 
 step "Update Rails" do
@@ -108,7 +131,7 @@ end
 step "Sanity Check" do
 
   console "ruby -v"
-  fuzzy_result "ruby #{version_string(:windows_ruby_short)}{FUZZY}.4{/FUZZY}"
+  fuzzy_result "ruby #{version_string(:ruby_short)}{FUZZY}.4{/FUZZY}"
 
   console "rails -v"
   fuzzy_result "Rails 5.0{FUZZY}.x{/FUZZY}"
@@ -118,9 +141,15 @@ step "Sanity Check" do
 end
 
 step "Configure the Windows Terminal" do
-  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font.  Hint -- click to open the link below, and when you finish those steps, hit the **back** button in your browser to resume this procedure."
+  message "Take a moment to configure the *Command Prompt with Ruby and Rails* so that it is a good height and width and has a nice font."
 
-  link "configure_the_windows_terminal"
+  message "Right-click on the menu bar and select **Properties**"
+
+  message "Under the *Font* tab, select Lucida Console from the font chooser box. This lets you view non-ascii characters."
+
+  message "In the *Layout* tab, adjust *Window Size* so the window is about half as wide as your screen, and is as tall as possible without covering the task bar (this may require some trial and error)."
+
+  message "Click OK."
 
   tip "Clearing the Terminal" do
     message "If you ever want to clear the terminal of all its cluttered output"
@@ -144,11 +173,11 @@ step "Install a Text Editor" do
 
   message "Notepad is not a good programming editor, but it will work in a pinch."
 
-  important "**When in doubt, use Sublime Text 2.**"
+  important "**When in doubt, use Atom.**"
 
-  message "[Sublime Text 2](http://www.sublimetext.com/2) is a good option, if you don't have one yet."
+  message "[Atom](https://atom.io) is a good option, if you don't have one yet."
 
-  message "Download Sublime Text 2 here: <http://www.sublimetext.com/2>"
+  message "Download Atom here: <https://atom.io/download/windows>"
 end
 
 next_step "create_a_heroku_account"

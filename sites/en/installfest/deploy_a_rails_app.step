@@ -85,10 +85,14 @@ step "Deploy your app to Heroku" do
       message "SQLite and PostgreSQL are different kinds of databases.  We're using SQLite for our development and test environments because it's simple to install.  We're using PostgreSQL in our production environment because Heroku has done the hard work of installing it for us and it's more powerful than SQLite. We have separate test, development and production databases by default in Rails."
     end
 
-    console <<-BASH
-gem install bundler
-bundle install --without production
-    BASH
+    console "gem install bundler"
+
+    fuzzy_result <<-OUTPUT
+      Successfully installed bundler-{FUZZY}1.14.3{/FUZZY}
+      1 gem installed
+    OUTPUT
+
+    console "bundle install --without production"
 
     message "Again, wait for the console prompt, and look for the 'Bundle complete!' message just above."
   end
@@ -113,10 +117,8 @@ bundle install --without production
 
     message "Before running the following command (to add to your local git repository), make sure that you are in the `test_app` directory."
 
-    console <<-BASH
-      git add .
-      git commit -m "Updates for heroku deployment"
-    BASH
+    console 'git add .'
+    console 'git commit -m "Updates for heroku deployment"'
   end
 
   step "Deploy (push) to heroku" do
@@ -149,7 +151,7 @@ bundle install --without production
 
     message "This process will probably take about twice as long as your 'bundle install' and then will return you to your console prompt.  If it takes longer than that, talk to a TA."
 
-    console "heroku run rake db:migrate"
+    console "heroku run rails db:migrate"
 
     result <<-OUTPUT
       Migrating to CreateDrinks (20160706063236)
@@ -181,4 +183,3 @@ bundle install --without production
 end
 
 next_step "get_a_sticker"
-

@@ -1,4 +1,4 @@
-message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing."
+message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing. If you know you already have a Heroku account, you can jump to step 4 on this page."
 
 step "Visit the Heroku web site" do
   url "http://heroku.com"
@@ -16,18 +16,20 @@ step "Activate your account" do
 
 end
 
-step "Install the Heroku toolbelt" do
+step "Install the Heroku CLI" do
 
-  message "Visit https://toolbelt.heroku.com/, click the download link, and install."
+  message "Visit https://devcenter.heroku.com/articles/heroku-cli and follow the instructions relevant to your operating system. Afterwards:"
 
   verify do
     console "heroku version"
     fuzzy_result <<-TEXT
-      heroku-toolbelt/{FUZZY}3.30.6 (x86_64-darwin10.8.0) ruby/1.9.3{/FUZZY}
+      {FUZZY}heroku-toolbelt/3.30.6 (x86_64-darwin10.8.0) ruby/1.9.3{/FUZZY}
+      heroku-cli{FUZZY}/5.6.8-9647e01 (darwin-amd64) go1.7.4{/FUZZY}
       {FUZZY}You have no installed plugins.{/FUZZY}
     TEXT
   end
-  message "Windows users, if `heroku version` doesn't work, open a new terminal window after the heroku installer has finished."
+  message "The output could be different, depending on whether this is the first time you've installed the Heroku CLI, but it should always have `heroku-cli` in it."
+  message "If `heroku version` doesn't work, try the command again in a new terminal window."
 end
 
 step "Add your SSH key to your Heroku account" do

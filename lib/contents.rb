@@ -36,6 +36,7 @@ class Contents < Erector::Widget
     # but NOT images of the form ![alt text](image_link.jpg)
     content.scan /[^!]\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
+      next if (link =~ %r(^.+/)) # cross-links to other sites, e.g. /installfest/editors
       next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
       links.push(link)
     end

@@ -76,8 +76,8 @@
 * a text editor is a program that edits a text file
 * a text editor is *like* a word processor
 * but a text editor is **not** a word processor
-* You probably have *Sublime Text* 
-  * others include *TextMate*, *Notepad++*
+* You probably have *Atom* 
+  * or [another text editor](/installfest/editors)
   * but **NOT** *TextEdit* or *Notepad* or *Microsoft Word*
 
 # Source File

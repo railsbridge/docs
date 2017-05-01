@@ -14,9 +14,9 @@ step "Have a volunteer check your tool versions" do
     h3 "On all operating systems:"
 
     console "ruby -v"
-    fuzzy_result "ruby 2.2{FUZZY}.4p230 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
+    fuzzy_result "ruby 2.3{FUZZY}.3p222 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
 
-    tip "Depending on your environment, your Ruby version might be **2.2** or **2.3**. As long as it's #{version_string(:minimum_ruby)} or above, you're good to go."
+    tip "As long as your Ruby version is #{version_string(:ruby_short)} or above, you're good to go."
 
     console "bundle -v"
     fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"

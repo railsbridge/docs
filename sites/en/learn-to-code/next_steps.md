@@ -14,6 +14,8 @@
 
 # Thanks
 
-* to all the TAs
+* to all the TAs!
 * to all the students!
+* to [Alex Chaffee](http://alexchaffee.com/), the original author of this curriculum, and
+* to all the [RailsBridge volunteers](https://github.com/railsbridge/docs/commits/master/sites/en/learn-to-code) who have helped make it better!
 

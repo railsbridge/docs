@@ -20,3 +20,11 @@ ul do
     a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
   end
 end
+
+message <<-MARKDOWN
+# Credits
+
+This curriculum was originally written by
+[Srinivas Rao](https://twitter.com/raorao_)
+and has been improved by all sorts of [lovely RailsBridge volunteers](https://github.com/railsbridge/docs/commits/master/sites/en/javascript-to-do-list).
+MARKDOWN
