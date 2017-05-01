@@ -10,7 +10,7 @@ Remember that we need to model an orange and a tree. So, we know that there are 
 
 We could say that the tree will not bear fruit until it matures at one year of age and then it will bear X number of oranges. We would need a test to test if the tree ages and a test to see if the tree has created X number of oranges once it has matured.
 
-How do we determine if an orange is ripe? Well, we can have an orange age and if it is at least 30 days old, then it will fall from the tree. We would need to write a test to check for ripeness and a test to check if it falls at ripeness.
+How do we determine if an orange is ripe? Well, we can have an orange age and if it is at least 30 days old, then it is ripe and will fall from the tree. We would need to write a test to check for ripeness and a test to check if it falls at ripeness.
 
 # Why Is It Important That We Test?
 You could think of tests as a requirement list.  Every time a change is made we want to test to see if our code still meets those requirements. For example, as our program becomes increasingly complex and we want to have our tree to have a certain lifespan, would it make sense for our tree to continue to create oranges after exceeding that lifespan?
