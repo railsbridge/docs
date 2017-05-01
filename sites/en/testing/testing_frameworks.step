@@ -10,7 +10,14 @@ There are many testing frameworks that work great.  Mini Test is the default tes
 # RSpec
 ## How to set up RSpec in Rails
 
-First, create a new Rails app. Then, add rspec-rails to both the :development and :test groups in the Gemfile:
+First, create a new Rails app. 
+
+<div class="console"><pre>
+rails new testapp
+</pre>
+</div>
+
+Then, add rspec-rails to both the :development and :test groups in the Gemfile:
 
 <div class="console"><pre>
 group :development, :test do
@@ -64,7 +71,7 @@ bundle exec rspec spec/controllers/post_controller_spec.rb
 ## RSpec Basics
 
 <div class="console"><pre>
-1 describe Tree do
+1 Rspec.describe Tree do
 2  it "is able to age by 1 year increments" do
 3    orange_tree = Tree.new
 4    orange_tree.age
@@ -74,7 +81,7 @@ bundle exec rspec spec/controllers/post_controller_spec.rb
 </pre>
 </div>
 
-The 'describe' and 'it' methods come from rspec-core. The Tree class would be from your code. You can think of 'describe' as a header to describe which class you are testing and 'it' as a string/subheader that states what specifically you are testing in the Tree class.
+The 'describe' and 'it' methods come from rspec-core. The Tree class would be from your code. You can think of 'describe' as a header to describe which class you are testing and 'it' as a string/subheader that states what specifically you are testing in the Tree class. Note: you may or may not need the Rspec in front of the describe depending on your Rspec version.
 
 The last line of the example expresses an expected outcome. If orange_tree.age == 1, then the example passes. If not, it fails with a message like:
 

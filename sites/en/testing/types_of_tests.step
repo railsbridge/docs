@@ -3,101 +3,87 @@ message <<-MARKDOWN
 
   In your Rails app, you have models, views, and controllers -> is MVC ringing a bell? :) Well, it should be no surprise that tests can be written for models, views, and controllers.
 
-  Create the Orange and Tree models in your app so that the model files are something like this:
+  Below, you will create the Orange model in your app so that the model file looks something like this:
 
-  <div class="console"><pre>
-  class Orange < ActiveRecord::Base
-    belongs_to :tree
-    validates :name, :tree_id, presence: true
-  end
+<div class="console"><pre>
+class Orange < ActiveRecord::Base
+  belongs_to :tree
+end
+</pre>
+</div>
 
-  class Tree < ActiveRecord::Base
-    has_many :oranges
-    validates :name, presence: true
-  end
-  </pre>
-  </div>
-
-  As you learned in the previous section, tests are used to verify that your code is working as expected. So, a couple things we can test right off the bat are that a tree should have certain associations and validations. Let's start by writing some model tests also known as unit tests!
+  As you learned in the previous section, tests are used to verify that your code is working as expected. So, a couple things we can test right off the bat are that a tree should have certain associations and validations. Let's start by writing some model tests also known as unit tests! This link might come in handy to remember singular vs. plural Rails conventions: https://alexander-clark.com/blog/rails-conventions-singular-or-plural/
 MARKDOWN
 
 steps do
   step do
-    message "First, create a orange model spec file in the models folder of the spec folder. Type this in the terminal:"
+    message "First, create a orange model. By creating the model, a spec file will also be added to the models folder of the spec folder. Type this in the terminal:"
 
-    console_without_message "cd app/spec/models"
-    console_without_message "touch orange_spec.rb"
+    console_without_message "rails g model Orange"
+    
+    message "Then, run the migration to actually create the oranges table."
+
+    console_without_message "bundle exec rake db:migrate"
   end
   step do
     message "Then, run rspec."
 
-    console_without_message "bundle exec rpsec"
+    console_without_message "bundle exec rspec"
 
     message "You should see some report but no tests exist yet. So, let's add one! Copy the below test, paste it into the orange model spec file and then run 'bundle exec rspec' on the terminal again."
 
     console_without_message <<-RUBY
-    describe 'ActiveRecord associations' do
-      it 'Orange belongs to tree' do
-        expect(Orange.reflect_on_association(:tree).macro).to be (:belongs_to)
-      end
+    Rspec.describe Orange, :type => :model do
+      context 'ActiveRecord associations' do
+        it 'Orange belongs to tree' do
+          expect(Orange.reflect_on_association(:tree).macro).to be (:belongs_to)
+        end
+      end  
     end
     RUBY
 
-    message "Great, now you should see one passing test! That's an example of an association test. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Cool! Let's revert back to the passing test. And, write a has many association test for the relationship between the Tree model and the Orange model!"
+    message "Great, now you should see one passing test! That's an example of an association test. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Cool! Let's revert back to the passing test. And, write a has many association test for the relationship between the Tree model (hint: this doesn't exist yet so you'll have to create the model and migrate!) and the Orange model!"
 
   end
 end
 
 
 message <<-MARKDOWN
-  On to controller tests! Just like the Orange model, create the following controller in your app (the other methods are omitted for brevity):
-
-  <div class="console"><pre>
-  class OrangesController < ApplicationController
-    def index
-      @oranges = Orange.all
-      render :index
-    end
-
-    def new
-      @orange = Orange.new
-      render :new
-    end
-  end
-  </pre>
-  </div>
+  On to controller tests! Just like the Orange model, you will create the OrangesController, which will also create the spec files in the controller folder of the spec folder, in your app.
 MARKDOWN
 
 steps do
   step do
-    message "First, create an orange controller spec file in the controllers folder of the spec folder. Type this in the terminal:"
+    message "First, create the oranges controller and relevant spec files by typing this in the terminal:"
 
-    console_without_message "cd app/spec/controllers"
-    console_without_message "touch oranges_controller_spec.rb"
+    console_without_message "rails g controller Oranges"
   end
   step do
     message "Then, run rspec."
 
-    console_without_message "bundle exec rpsec"
+    console_without_message "bundle exec rspec"
 
-    message "You should see a report with some passing tests but those are just the model tests you wrote. So, let's add some controller tests! Copy the below test, paste it into the oranges controller spec file and then run 'bundle exec rspec' on the terminal again."
+    message "You should see a report with some passing tests but those are just the model tests you wrote. So, let's add some controller tests! Copy the below test, paste it into the oranges controller spec file, create the relevant view files and then run 'bundle exec rspec' on the terminal again."
 
     console_without_message <<-RUBY
-    describe '#index' do
-      it "renders the index view" do
-        get :index
-        expect(response).to render_template("index")
-      end
-
-      it "renders html" do
-        process :index, method: :get
-        expect(response.content_type).to eq "text/html"
+    Rspec.describe OrangesController do
+      context '#index' do
+        it "renders the index view" do
+          get :index
+          expect(response).to render_template("index")
+        end
+        
+        it "renders html" do
+          process :index, method: :get
+          expect(response.content_type).to eq "text/html"
+        end
       end
     end
     RUBY
 
     message "Great, that test should be passing! That's an example of a controller test on the index action. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Awesome! Let's revert back to the passing test. Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
-
+    
+    message "Note: as you write the controller tests, you may be prompted to install a missing gem called 'rails-controller-testing' to use the assert_template method. If prompted, please add it and do a bundle install!"
   end
 end
 
@@ -119,15 +105,17 @@ MARKDOWN
 
 steps do
   step do
-    message "First, create an oranges view spec file in the views folder of the spec folder. Type this in the terminal:"
+    message "First, create a views folder in the spec folder. Then, create an oranges folder in the views folder. Lastly, create an oranges view spec file in the oranges folder. Type these commands in the terminal:"
 
+    console_without_message "mkdir app/spec/views"
+    console_without_message "mkdir app/spec/views/oranges"
     console_without_message "cd app/spec/views/oranges"
     console_without_message "touch show.html.erb_spec.rb"
   end
   step do
     message "Then, run rspec."
 
-    console_without_message "bundle exec rpsec"
+    console_without_message "bundle exec rspec"
 
     message "You should see a report with some passing tests but those are just the model and controller tests you wrote. So, let's add some view tests!"
     message "We're going to up the ante a bit here and NOT show you an example :) Google and StackOverflow are your friends here!"
@@ -137,12 +125,21 @@ end
 message <<-MARKDOWN
   Once, you have written some passing view tests, take a deep breath and pat yourself on the back! Testing is hard. But, it's critical in making sure software is stable and functional.
 
-  So, I fibbed a little bit. There are more types of tests than just MVC tests. But, they're for another time. Just know about one more type of test called an integration test. As the name indicates, it tries to assess how well multiple components in an app interact and is written in Rails as a feature spec test. Typically, these tests simulate a user and a user's actions to test end-to-end functionality.
+  So, I fibbed a little bit. There are more types of tests than just MVC tests. One of these other important tests is called an integration test. As the name indicates, it tries to assess how well multiple components in an app interact and is written in Rails as a feature spec test. Typically, these tests simulate a user and a user's actions to test end-to-end functionality.
 
-  Here's a diagram that may help with understanding how integration tests fit in:
+  Here's a diagram from Thoughtbot that may help with understanding how integration tests fit in:
 
 MARKDOWN
 
 img src: "img/rails-test-types.png", alt: "Thoughtbot's diagram of types of Rails tests"
+
+message <<-MARKDOWN
+  Capybara is a common framework used to write integration tests in Rails. It integrates nicely with RSpec such that you can use the same kind of test language to write integration tests. 
+  
+  As an added bonus for this section, write an integration test :)
+  
+  Use the following link to get started: https://www.sitepoint.com/basics-capybara-improving-tests/
+
+MARKDOWN
 
 next_step "additional_concepts"
