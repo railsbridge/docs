@@ -3,15 +3,6 @@ message <<-MARKDOWN
 
   In your Rails app, you have models, views, and controllers -> is MVC ringing a bell? :) Well, it should be no surprise that tests can be written for models, views, and controllers.
 
-  Below, you will create the Orange model in your app so that the model file looks something like this:
-
-<div class="console"><pre>
-class Orange < ActiveRecord::Base
-  belongs_to :tree
-end
-</pre>
-</div>
-
   As you learned in the previous section, tests are used to verify that your code is working as expected. So, a couple things we can test right off the bat are that a tree should have certain associations and validations. Let's start by writing some model tests also known as unit tests! This link might come in handy to remember singular vs. plural Rails conventions: https://alexander-clark.com/blog/rails-conventions-singular-or-plural/
 MARKDOWN
 
@@ -19,7 +10,7 @@ steps do
   step do
     message "First, create a orange model. By creating the model, a spec file will also be added to the models folder of the spec folder. Type this in the terminal:"
 
-    console_without_message "rails g model Orange"
+    console_without_message "rails generate model Orange"
 
     message "Then, run the migration to actually create the oranges table."
 
@@ -30,7 +21,8 @@ steps do
 
     console_without_message "bundle exec rspec"
 
-    message "You should see some report but no tests exist yet. So, let's add one! Copy the below test, paste it into the orange model spec file and then run 'bundle exec rspec' on the terminal again."
+    message "You will see a report with one pending test. When you generated your Orange model, RSpec also generated a matching spec file. Copy the test below into spec/models/orange_spec.rb and run 'bundle exec rspec' on the terminal again."
+
 
     console_without_message <<-RUBY
     RSpec.describe Orange, :type => :model do
@@ -42,15 +34,24 @@ steps do
     end
     RUBY
 
-    message "Great, now you should see one passing test! That's an example of an association test. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Cool! Let's revert back to the passing test. And, write a has many association test for the relationship between the Tree model (hint: this doesn't exist yet so you'll have to create the model and migrate!) and the Orange model!"
+    message "Run 'bundle exec rspec'. This test fails! Let's add an associaton to our model. Add a belongs_to association to orange.rb:"
 
+    console_without_message <<-RUBY
+    class Orange < ActiveRecord::Base
+      belongs_to :tree
+    end
+    RUBY
+
+    message "Run 'bundle exec rspec' and now you should see one passing test! That's an example of an association test. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Cool! Let's revert back to the passing test."
+  end
+
+  step do
+
+    message "Now let's write a has_many association test for the relationship between the Tree model and the Orange model! (hint: this doesn't exist yet so you'll have to create the model and migrate!)"
+
+    message "On to controller tests! Just like the Orange model, you will create the OrangesController, which will also create spec files in the /spec/controllers folder of your app."
   end
 end
-
-
-message <<-MARKDOWN
-  On to controller tests! Just like the Orange model, you will create the OrangesController, which will also create the spec files in the controller folder of the spec folder, in your app.
-MARKDOWN
 
 steps do
   step do
