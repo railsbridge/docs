@@ -20,7 +20,7 @@ steps do
     message "First, create a orange model. By creating the model, a spec file will also be added to the models folder of the spec folder. Type this in the terminal:"
 
     console_without_message "rails g model Orange"
-    
+
     message "Then, run the migration to actually create the oranges table."
 
     console_without_message "bundle exec rake db:migrate"
@@ -33,12 +33,12 @@ steps do
     message "You should see some report but no tests exist yet. So, let's add one! Copy the below test, paste it into the orange model spec file and then run 'bundle exec rspec' on the terminal again."
 
     console_without_message <<-RUBY
-    Rspec.describe Orange, :type => :model do
+    RSpec.describe Orange, :type => :model do
       context 'ActiveRecord associations' do
         it 'Orange belongs to tree' do
           expect(Orange.reflect_on_association(:tree).macro).to be (:belongs_to)
         end
-      end  
+      end
     end
     RUBY
 
@@ -66,13 +66,13 @@ steps do
     message "You should see a report with some passing tests but those are just the model tests you wrote. So, let's add some controller tests! Copy the below test, paste it into the oranges controller spec file, create the relevant view files and then run 'bundle exec rspec' on the terminal again."
 
     console_without_message <<-RUBY
-    Rspec.describe OrangesController do
+    RSpec.describe OrangesController do
       context '#index' do
         it "renders the index view" do
           get :index
           expect(response).to render_template("index")
         end
-        
+
         it "renders html" do
           process :index, method: :get
           expect(response.content_type).to eq "text/html"
@@ -82,7 +82,7 @@ steps do
     RUBY
 
     message "Great, that test should be passing! That's an example of a controller test on the index action. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Awesome! Let's revert back to the passing test. Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
-    
+
     message "Note: as you write the controller tests, you may be prompted to install a missing gem called 'rails-controller-testing' to use the assert_template method. If prompted, please add it and do a bundle install!"
   end
 end
@@ -134,10 +134,10 @@ MARKDOWN
 img src: "img/rails-test-types.png", alt: "Thoughtbot's diagram of types of Rails tests"
 
 message <<-MARKDOWN
-  Capybara is a common framework used to write integration tests in Rails. It integrates nicely with RSpec such that you can use the same kind of test language to write integration tests. 
-  
+  Capybara is a common framework used to write integration tests in Rails. It integrates nicely with RSpec such that you can use the same kind of test language to write integration tests.
+
   As an added bonus for this section, write an integration test :)
-  
+
   Use the following link to get started: https://www.sitepoint.com/basics-capybara-improving-tests/
 
 MARKDOWN
