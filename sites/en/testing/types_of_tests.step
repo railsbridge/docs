@@ -60,7 +60,7 @@ steps do
     console_without_message "rails g controller Oranges"
   end
   step do
-    message "Then, run rspec."
+    message "Then, run RSpec."
 
     console_without_message "bundle exec rspec"
 
@@ -82,9 +82,13 @@ steps do
     end
     RUBY
 
-    message "Great, that test should be passing! That's an example of a controller test on the index action. Let's modify that test to fail. Then, run 'bundle exec rspec' and see what happens. Awesome! Let's revert back to the passing test. Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
+    message "You should see two failing tests. You'll need to add a route, index action, and a view. Not sure where to start? Read the errors in your failing tests for a hint. Run 'bundle exec rspec' after each change until both tests pass."
 
-    message "Note: as you write the controller tests, you may be prompted to install a missing gem called 'rails-controller-testing' to use the assert_template method. If prompted, please add it and do a bundle install!"
+    message "Note: as you write the controller tests, you may be prompted to install a missing gem called 'rails-controller-testing' to use the assert_template method. If prompted, please add it to your Gemfile and do a bundle install!"
+  end
+
+  step do
+    message "Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
   end
 end
 
