@@ -57,7 +57,7 @@ steps do
   step do
     message "First, create the oranges controller and relevant spec files by typing this in the terminal:"
 
-    console_without_message "rails g controller Oranges"
+    console_without_message "rails generate controller Oranges"
   end
   step do
     message "Then, run RSpec."
