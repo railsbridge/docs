@@ -1,0 +1,144 @@
+message <<-MARKDOWN
+# What's a testing framework?
+A testing framework is an execution environment for automated tests. Testing frameworks help teams organize their test suites and in turn
+help improve the efficiency of testing.
+
+# Types of testing frameworks
+There are many testing frameworks that work great.  Mini Test is the default testing framework in Rails 5. However, we will be using the RSpec testing framework instead.
+
+
+# RSpec
+## How to set up RSpec in Rails
+
+First, create a new Rails app. 
+
+<div class="console"><pre>
+rails new testapp
+</pre>
+</div>
+
+Then, add rspec-rails to both the :development and :test groups in the Gemfile:
+
+<div class="console"><pre>
+group :development, :test do
+  gem 'rspec-rails', '~> 3.4'
+end</pre>
+</div>
+
+Download and install by running:
+
+<div class="console"><pre>
+bundle install
+</pre>
+</div>
+
+Initialize the spec/ directory (where specs will reside) with:
+
+<div class="console"><pre>
+rails generate rspec:install
+</pre>
+</div>
+
+This adds the following files which are used for configuration:
+
+<div class="console"><pre>
+.rspec
+spec/spec_helper.rb
+spec/rails_helper.rb
+</pre>
+</div>
+
+Use the rspec command to run your specs:
+
+<div class="console"><pre>
+bundle exec rspec
+</pre>
+</div>
+
+By default, the above code will run all spec files in the spec directory.
+
+To run only a subset of these specs use the following command:
+
+<div class="console"><pre>
+# Run only a specific folder name
+bundle exec rspec spec/folder_name
+
+# Run only specs for a specific type of test such as the post controller
+bundle exec rspec spec/controllers/post_controller_spec.rb
+</pre>
+</div>
+
+## RSpec Basics
+
+<div class="console"><pre>
+1 Rspec.describe Tree do
+2  it "is able to age by 1 year increments" do
+3    orange_tree = Tree.new
+4    orange_tree.age
+5    expect(orange_tree.age).to eq(1)
+6  end
+7 end
+</pre>
+</div>
+
+The 'describe' and 'it' methods come from rspec-core. The Tree class would be from your code. You can think of 'describe' as a header to describe which class you are testing and 'it' as a string/subheader that states what specifically you are testing in the Tree class. Note: you may or may not need the Rspec in front of the describe depending on your Rspec version.
+
+The last line of the example expresses an expected outcome. If orange_tree.age == 1, then the example passes. If not, it fails with a message like:
+
+<div class="console">
+<pre>
+expected: #< Tree @age=1 >
+     got: #< Tree @age=0 >
+</pre>
+</div>
+
+## Matchers
+Remember in our example on line 5? 'to eq' is a matcher. RSpec has many built-in matchers. Matchers evaluates our expectations. In our example, we are saying that we expect orange_tree's age to equal an integer of 1.
+
+Check out the other built-in matchers!
+https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+
+# Mini Test
+In case you were curious to see how tests are written in Mini Test. Mini Test also allows you to write tests in 'expectation style' which is very similar to how RSpec tests are written.
+
+<div class="console">
+<pre>
+class TestTree < Minitest::Test
+
+  def setup
+    @orange_tree = Tree.new
+    @orange_tree.age
+  end
+
+  def test_age_by_one_year_increments
+    assert_equal 1, @orange_tree.age
+  end
+end
+</pre>
+</div>
+
+To run the test enter the following in Terminal/Command Prompt:
+
+<div class="console">
+<pre>
+ruby tree_test.rb
+</pre>
+</div>
+
+Once you run the test this is how the test looks like:
+<div class="console">
+<pre>
+$ ruby tree_test.rb
+Run options: --seed 30102
+
+#Running:
+
+.
+Finished in 0.000980s, 1020.4082 runs/s, 1020.4082 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+</pre>
+</div>
+
+MARKDOWN
+
+next_step "types_of_tests"
