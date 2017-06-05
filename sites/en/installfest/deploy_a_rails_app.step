@@ -107,7 +107,7 @@ step "Deploy your app to Heroku" do
     message "After this line, add a new line with the following:"
 
     source_code :ruby, <<-RUBY
-      root 'drinks#index'
+      root to: 'drinks#index'
     RUBY
 
     message "Save the file."
