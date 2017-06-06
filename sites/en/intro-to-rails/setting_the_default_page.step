@@ -77,7 +77,7 @@ explanation {
 
   Now you can have a look at the paths that are available in your app.
   Let's try looking at one of the topics routes we just generated.
-  Open up your Rails console and play:
+  Enter 'Ctrl + C' to stop the server. Then open up your Rails console and play:
 
     $ rails console
     >> app.topics_path
