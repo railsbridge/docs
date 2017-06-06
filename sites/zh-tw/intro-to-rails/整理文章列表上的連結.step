@@ -1,0 +1,47 @@
+goals {
+
+  message "我們的網站快要完工了！上一步完工後，我們的文章列表頁面看起來有太多不怎麼需要連結"
+
+  message "一起來將它整理一番！目標如下："
+
+  goal "移除 'show' 的連結"
+  goal "移除 'edit' 的連結"
+  goal "將 'destroy' 改成 'delete'"
+}
+
+steps {
+  step "移除 'show' 與 'edit' 的連結" do
+    message "打開 `app/views/topics/index.html.erb` 然後移除掉下面二行程式碼："
+    source_code :erb, <<-HTML
+<td><%= link_to 'Show', topic %></td>
+<td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+    HTML
+  end
+
+  step "將 'destroy' 改成 'delete'" do
+
+    message "修改程式碼如下："
+    source_code :diff, <<-RUBY
+- <td><%= link_to 'destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
++ <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    RUBY
+
+  end
+
+  step "確認修改成功" do
+
+    message "將檔案儲存並重新整理你的瀏覽器看看文章列表頁面吧！"
+  end
+}
+
+
+explanation {
+  message <<-MARKDOWN
+  * 將 'show' 與 'edit 這二個連結移除掉，是因為我們已將 title 設定成連結，並且在連過去後可以點擊 'edit' 做編輯
+  * 我們已成功將 'Destroy' 的連結內文改成了 'Delete'
+  MARKDOWN
+}
+
+insert 'consider_deploying_again'
+
+next_step "加分題_&_下一步"

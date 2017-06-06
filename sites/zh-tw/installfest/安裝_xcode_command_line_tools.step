@@ -1,0 +1,30 @@
+message "Xcode Command Line Tools 涵括了許多你電腦中需要的軟體工具跟套件"
+
+verify "如果你已經安裝了" do
+  console "gcc --version"
+  result "Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 6.0 (clang-600.0.54) (based on LLVM 3.5svn)
+Target: x86_64-apple-darwin14.0.0
+Thread model: posix"
+  message "如果你看到一些像是 'Darwin' 或 'LLVM' 的字眼，你已經安裝好了。如果沒有，請使用下面的步驟來安裝，並再回到這邊重新輸入指令確認是否安裝並能正常運作"
+end
+
+option "使用 software update 安裝 XCode Command Line Tools" do
+  message "你可以輸入以下指令來安裝它"
+
+  step "執行 xcode-select command" do
+    console "xcode-select --install"
+  end
+
+  step "將工具安裝" do
+    message "點擊 \"Install\" 按鈕。然後當下載結束時，回到最上面檢查結果"
+    img src: 'img/xcode-tools-install.png', alt: "install dialog"
+  end
+end
+
+option "從 Xcode 上 Command Line Tools" do
+  message "前往 [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
+  message "下載並安裝最新版本的 **Command Line Tools for Xcode** 到你的作業系統。會需要你登入你的 Apple Developer 的帳號"
+end
+
+next_step 'osx_rvm'

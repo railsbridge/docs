@@ -1,0 +1,33 @@
+goals do
+  goal "將你的應用程式從自己的電腦上啟動吧！"
+end
+
+steps do
+  step do
+    message "請確認你的 Terminal 的目前位置是在 `suggestotron` 資料夾。你可以藉由輸入 `pwd` (**p**rint **w**orking **d**irectory 秀出當下運作目錄) 來看到你現在的位置"
+
+    console "rails server"
+    message "這個指令會秀出許多訊息並持續運作中，這些訊息會在你每次用網站瀏覽器進入這個網站時不斷更新"
+  end
+  step do
+    text "打開你的瀏覽器，並進入 "
+    url "http://localhost:3000"
+    message "看看你的網站是否確實運作！"
+  end
+
+  step do
+    message "如果 server(伺服器) 在運作中，在這個 Terminal 裡面輸入任何指令都會沒任何反應"
+    message "如果想要關掉 server 並回到可以輸入指令的模式，請使用 `Control + C` 二個按鈕同時按"
+    result <<-STOPPING_RAILS_SERVER
+^CExiting
+    STOPPING_RAILS_SERVER
+  end
+end
+
+explanation do
+  message "在本地端執行 `rails server` ，就像部署在 heroku 變成用真正網址進去操作的網站一樣"
+  message "這代表你開發過程中的任何變更可以簡單直接地在本地端的電腦上就馬上看出變化，而不用每次都要部署到 heroku 上"
+  message "`Control + C` 是一個關掉或是取消所有運作在 Terminal 上的程式的指令。當你運作 `rails server` 時，會一直運作著，直到你使用 `Control + C` 來中斷掉"
+end
+
+next_step "建立資料庫遷移"

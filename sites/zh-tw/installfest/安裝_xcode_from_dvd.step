@@ -1,0 +1,29 @@
+message "從 DVD 安裝 XCode 非常簡單，除了一個警告視窗，需要確認有將 \"Unix Tools\" 的選項打勾。其他部分就是不斷的點擊 Continue/Okay/Yes/etc"
+
+step "放入你的 OS X DVD 或是 Thumb Drive"
+
+step "開啟 Xcode.mpkg" do
+ message "進入 OS X DVD 後, 在 \"Optional Installs\" 資料夾可以看到"
+end
+
+step 'Double-click Xcode.mkpg' do
+ message '將會看到一個 *"Install XCode"* 的視窗'
+end
+
+step "一直點擊" do
+ li '點擊 "Continue" 在介紹頁面'
+ li '點擊 "Continue" 在版權宣告'
+ li '點擊 "Agree" 在出現同意授權的視窗裡'
+ li '點擊 "Continue" 在選擇安裝目的地的頁面'
+ li "點擊 \"Continue\" 在安裝選項的頁面 (不要更動預設好的選項)"
+end
+
+step '點擊 "Install".' do
+ message "在跳出來的 'REALLY start installing' 輸入你的密碼，會需要點時間"
+end
+
+step '點擊 "Close"' do
+ message '當看到 "The installation was successful" 時即可點擊左上角的紅色叉叉'
+end
+
+next_step 'osx_rvm'

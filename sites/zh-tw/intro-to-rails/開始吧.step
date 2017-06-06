@@ -1,0 +1,107 @@
+img src: "img/Start_page.png", alt: "Screenshot of a Ruby on Rails default home page"
+
+goals do
+  goal "建立一個新的 Rails 應用程式專案"
+message "開始吧！到本章結束時，我們會建一個全新(空白)的 Rails app"
+end
+
+steps do
+
+  tip "過程中如果有任何問題，請找助教協助"
+
+  step do
+    insert 'switch_to_home_directory'
+  end
+
+  step do
+    console "mkdir railsbridge"
+    message "這個指令會新建一個叫 `railsbridge` 的資料夾，用來存放我們的專案"
+  end
+
+  step do
+    console "cd railsbridge"
+  end
+
+  step do
+    message "檢查有沒有任何一個叫 `suggestotron` 的資料夾存在，如果曾參加過同樣的 Workshop 的話，我們要從零開始，所以必須將它移除"
+    option_half "OSX/Linux" do
+      console "ls"
+      message "`ls` 意思是 **l**i**s**t(列出) "
+      message "它會列出所有此路徑下所有的檔案與資料夾"
+      message "如果你有舊的 `suggestotron` 出現在裡面，你可以使用以下指令將它移除"
+      console "rm -rf suggestotron"
+    end
+    option_half "Windows" do
+      console "dir"
+      message "`dir` 意思是 **dir**ectory (目錄)"
+      message "它會列出所有此路徑下所有的檔案與資料夾"
+      message "如果你有舊的 `suggestotron` 出現在裡面，你可以使用以下指令將它移除"
+      console "rmdir /s /q suggestotron"
+    end
+  end
+
+  step do
+    console "rails new suggestotron"
+    message "`rails new` 是建立一個新的 Rails 專案的指令，後面的名稱為該新專案的名稱"
+    message "在上述指令，會建立一個新的專案叫做 `suggestotron` 。我們會在它建完時開始深入內部細節"
+    message "Terminal 可能會不斷跑出許多訊息，稍稍等待直到它結束"
+  end
+
+  step do
+    console "cd suggestotron"
+    message "`cd suggestotron` 代表切到 suggestotron 並變成目前位置"
+  end
+
+  step do
+    message <<-MARKDOWN
+用你的程式編輯器來打開 suggestotron 的資料夾
+  MARKDOWN
+
+  tip "將你目前程式編輯器上所有已開的檔案關掉，也許會有裝機趴上的 'test_app' ，我們要確保打開的是今天要做的 `suggestotron` 資料夾"
+
+  message <<-MARKDOWN
+在 **Sublime Text 2** ，你可以使用 `Project > Add Folder to Project...` 來打開(如下圖)
+
+![Sublime Text Project menu screenshot](img/sublime_add_folder_to_project.png)
+
+選擇你的 `suggestotron` 資料夾，並將它打開。如果是使用 Sublime ，應該會看到左側的檔案目錄會呈現出如下圖的檔案樹結構
+
+![Screenshot of Suggestotron project folder tree in Sublime Text](img/sublime_project_as_folder.png)
+    MARKDOWN
+  end
+
+  message <<-MARKDOWN
+  你可以看到 `rails new` 這個指令建出了很多檔案跟資料夾，在今天的教程裡，我們只專心在底下這幾個
+  MARKDOWN
+
+  table border: "1", cellspacing: "0", cellpadding: "3", align: "center" do
+    tr {
+      th "檔案/資料夾"
+      th "目的與解說"
+    }
+    tr {
+      td "app/"
+      td "專案最核心的部分，包括 Controllers, Models, Models 等資料夾，主要會在這裡做功能的開發"
+    }
+    tr {
+      td "config/"
+      td "所有關於這個應用程式的運作規則、routes(路徑設定)、database(資料庫) ... 等的設定集中於此"
+    }
+    tr {
+      td "db/"
+      td "展示目前當下資料庫的結構，以及資料庫 Migrations(遷移檔)"
+    }
+    tr {
+      td "public/"
+      td "唯一會輸出檔案原始內容的資料夾。如果你將檔案放在這，它們會不透過任何 Rails 運作程序直接輸出"
+    }
+    tr {
+      td "app/assets/"
+      td "這裡用放置圖檔、Javascript、stylesheets (CSS)，以及其他靜態檔案的地方。典型 Rails app 會使用一種叫 `Assets Pipeline` 的機制，將資料夾裡所有 Javascript 與 CSS 檔合併成一個單一檔案。來提高網站速度與效率"
+    }
+  end
+
+  message "還有更多在 `rails new` 指令上建立的檔案。可能需要花一整本書解釋，所以我們暫時先略過它，專心在初探 Rails 的教學上"
+end
+
+next_step "在專案裡建立_git_程式庫"

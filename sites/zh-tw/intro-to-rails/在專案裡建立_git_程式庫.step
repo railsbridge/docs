@@ -1,0 +1,67 @@
+
+goals do
+  goal "建立一個本地端的 git repository(程式庫)"
+  goal "將我們的專案檔案存進 git repository"
+
+  message "為了要將我們的應用程式發布出去，需要將應用程式的內容與它的開發過程都記錄到 \"revision control system(版本控管系統)\"。在這裡我們使用 *git* ，因為他 (相對來說) 簡單使用，而且部署到 **heroku** 變成真正的網站時，也會用到"
+end
+
+steps do
+
+  step do
+    console "git init"
+
+    message "看起來似乎沒什麼事情發生，不過 `git init` 會新建一個新的程式庫並將相關設定存在一個隱藏的資料夾叫 `.git` 裡面"
+    message "你可以藉由輸入 `ls -a` 來看到它  (**l**i**s**t **a**ll files)"
+  end
+
+  step do
+    console "git status"
+
+    message "`git status` 會秀出所有 repository(以下簡稱 repo) 裡異動過、新建或是遺失的檔案"
+    message "你應該會看到很多檔案名稱出現在 `Untracked files` 下面"
+  end
+
+  step do
+    console "git add ."
+    message "`git add .` 代表告訴 git 要將目前位置下 (aka `.`) 所有檔案與資料夾(含資料夾裡的所有檔案)都加進這個 repo 的暫存區(staged) 裡面"
+    tip "git add" do
+      message <<-MARKDOWN
+        在 Git 有很多指令可以執行出類似的事情
+
+        * `git add foo.txt` 將名稱為 `foo.txt` 的檔案加進 repo 裡
+        * `git add .` 將所有檔案與異動過的檔案加進 repo 裡，除了記錄中存在但已被刪除掉的檔案
+        * `git add -A` 所有檔案都加入，包括被刪除的檔案
+
+        "加入被刪除的檔案" 聽起來不可思議，不過如果你想版本控制系統儲存了所有 *異動* 的紀錄，當然也包括了 *刪掉檔案* 這個異動也要被記錄。許多人使用 `git add .` 而不用 `git add -A` 或比較安全(尤其當你可能不小心刪掉某個檔案時)。不管如何 `git status` 是你的好朋友，隨時查看現在的狀態
+      MARKDOWN
+    end
+  end
+
+  step do
+    console "git status"
+
+    message "你應該會看到許多檔案被放到 `Changes to be committed` 下面"
+  end
+
+  step do
+    console "git commit -m \"Added all the things\""
+    message "`git commit` 會告訴 git 把已暫存(staged) 裡的檔案真正的提交(commit) 出去並記錄"
+    message "實際上會有二個動作，所以你可以尾端加上後面的參數來一次就完成這個記錄動作"
+    message "`-m \"Added all the things\"` 代表設定這次的 commit 的敘述。你也可以不寫，會在 Terminal 跑出一個編輯畫面讓你編輯較完整的 commit 敘述"
+  end
+
+  step do
+    console "git status"
+
+    message "應該會看到像是 `nothing to commit, working directory clean` 代表你已經將剛剛所有的檔案都記錄進去，沒有新的異動"
+  end
+end
+
+explanation do
+  message <<-MARKDOWN
+通過檢查，你的應用程式的初始剛建好的紀錄已存入到 Git。不管你在今天的 Workshop 裡做了什麼異動，都可以將它加入並存進去。如果卡關，或是寫了什麼不喜歡的東西，你可以使用類似 "上一步" 的方式回溯。不過只在保持隨時 commit 紀錄的好習慣下!
+  MARKDOWN
+end
+
+next_step "在開發端執行你的應用程式"

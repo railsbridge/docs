@@ -1,0 +1,53 @@
+RailsBridge Introductory Curriculum for Non-Programmers 
+
+Target Audience: Students who have not exposure to the command line and/or programming (and may be fuzzy on how the file system works)
+
+Emphasis:
+Hands-on group exercises led by instructor where code is reviewed line-by-line.
+TA’s help trouble-shoot students who get stuck while instructor maintains pace of the sessions.
+Focus on learning over finishing course material and give students the ‘ah-ha’ where they realize programming is not hard.
+Use simple language with metaphors to demonstrate core programming principles.
+Prompt students for feedback and no question is too simple or stupid.
+
+Topics:
+File Directories:
+Use house / rooms / drawers metaphor for how directories store files and keep everything in your ‘house’ organized.
+Review ./ and ~/ references to self and root directories. Explain where home and root are located in relation to all directories.
+Explain difference between absolute paths (starting with a /) and relative paths.
+.. is the relative path the the parent directory.
+Command Line Basics:: pwd, ls, cd, touch, mv, cp, rm, .. (parent directory)
+Text Editing:
+Explain differences between text editor vs. word processor.
+Have group open editor, create and save file with explanation of how and where files are stored.
+Explain file extensions and file types. File types tell the editor how to color the special words in each language. 
+Explain difference between the buffer (in the editor’s memory) and the file (stored on disk).  Emphasize the importance of saving the buffer to a file before trying to run it with ruby.
+Compilers, Interpreters and Programming Languages:
+Use metaphor of programming language as an agreed set of rules about syntax for writing source code that is sent to the interpreter and translated into byte code.
+Explain that byte code is the binary that machines understand and use for executing instructions.
+Use metaphor that CPU is like a guy in a factory executing commands that it is handled, and the source code are those instructions.
+Explain differences between compiled vs. dynamic languages.
+Tie everything together by explaining that source code are instructions that are translated into language that machines understand and can execute.
+Memory, CPU,Hard Disk::
+Very briefly explain how a computer works and all the moving parts (literally) starting with hard drive, memory, and CPU.
+Give the group basic understanding of where the source code is stored and how and where it is executed.
+---
+Hello World
+Write hello world.  Run it.
+Extend it to do “hello what’s your name”, “hello, bob!”  puts and gets.
+Introduce chop (to remove the newline between “bob” and “!”).
+Objects, Methods, Variables and Strings:
+Relate methods and variables to algebra and how methods are like functions that are fed with variables and parameters.
+Review variable assignment.
+Explain what objects are, how they are created and the dot operator that allows methods to be called on them.
+Quickly review garbage collection and how objects are stored in memory.
+Explain ‘method calls’.
+Explain to group the important of strings and review string operations. Have group work with strings in IRB.
+IRB Console:
+Have group open IRB console and create objects, method calls and variable assignments.
+Tie in lecture above on Objects, Methods, Variables with exercises in IRB that allow students to see results line-by-line. 
+Have group query classes for their methods in IRB.
+HTTP:
+Lead group exercise in using telnet to query Wikipedia, make GET request and view response in command line, then compare to view source of same page in browser.
+Sinatra Application
+Lead group exercise in writing Sinatra application and run it locally. “Hello, Web!”  
+Extend to add “the time is Sun Mar 27 09:44:09 PDT 2011” using `date`.

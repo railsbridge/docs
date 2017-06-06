@@ -1,0 +1,70 @@
+goals {
+
+  message <<-MARKDOWN
+  當使用者新增或者編輯某篇文章以後，會回到該篇文章的頁面。
+  為了要讓投票這個功能更流暢一點，我們希望新增或者編輯文章後，要回到文章列表的頁面上
+  MARKDOWN
+}
+
+steps {
+
+  step "修改 topics controller" do
+
+    message "打開 `app/controllers/topics_controller.rb`，並且找到 create 這個 action "
+
+    message "找到這行："
+
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
+
+
+    message '將 `@topic` 改成 `topics_path` 如下面範例：'
+
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
+
+    message '整個 create action 程式碼如下'
+
+    source_code :ruby, <<-RUBY
+def create
+  @topic = Topic.new(topic_params)
+
+  respond_to do |format|
+    if @topic.save
+      format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
+      format.json { render :show, status: :created, location: @topic }
+    else
+      format.html { render :new }
+      format.json { render json: @topic.errors, status: :unprocessable_entity }
+    end
+  end
+end
+    RUBY
+
+message "一樣檔案，找到 update 這個 action"
+
+    message "找到這行："
+
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
+
+
+    message '將 `@topic` 改成 `topics_path` 如下面範例：'
+
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
+  end
+
+  step "確認修改成功" do
+    message "前往 <http://localhost:3000> 操作看看！"
+  end
+}
+
+
+explanation {
+
+  message <<-MARKDOWN
+  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
+    * `format.html` 代表網站會回傳 HTML 內容回去給瀏覽器
+    * `redirect_to topics_path` 代表完成 create 或 update 後導向 **文章列表頁面**
+    * `notice: 'Topic was successfully created/updated.'` 送出通知訊息，並顯示在文章列表上面
+  MARKDOWN
+}
+
+next_step "將文章標題變成連結"

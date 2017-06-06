@@ -1,0 +1,46 @@
+goals {
+
+  model_diagram header: 'Topics', fields: %w(id title description)
+
+  message "在 suggestotron 這個專案裡，期望會有一個文章(topics) 列表來讓人可以投票。我們要讓 Topics 的資料可以存進 database(資料庫) 裡面。在本章你會完成以下目標："
+
+  goal "建出一個簡單的資料庫 *Table(表格)* ，在這個叫做 topics 的表格理會有 title(標題) 與 description(敘述) 的欄位，來儲存對應的資料"
+  goal "用 Rails 的 *Scaffold* (鷹架) 功能來自動建立相對應所需的檔案 (*Model*, *View*, *Controller*)"
+
+}
+
+steps {
+
+  step {
+    console "rails generate scaffold topic title:string description:text"
+    message <<-MARKDOWN
+* `generate scaffold` 告訴 Rails 建立一個操作 topics 功能下所需的所有檔案
+* `topic` 告訴 Rails 這個新 model 的名字
+* `title:string` 告訴 Rails 這個 topics 的資料庫 Table 裡會有個欄位叫做 title ，資料格式是 "string(字串)"
+* `description:text` 告訴 Rails 這個 topics 的資料庫 Table 裡會有個欄位叫做 description ，資料格式是 "text(文字)" ("string" 跟 "text"的差別在哪呢？基本上 "text" 代表可以儲存比 "string" 還多非常多的字數)
+    MARKDOWN
+    message "如果想瞭解更多關於 Rails 架構上的解說，可以找時間看看 『Rails 架構』 這個章節"
+    link "rails_架構"
+  }
+
+  step {
+    console "rake db:migrate"
+    message "告訴 Rails 要將 database 的架構更新，把我們剛剛新建的 model 設定放進去"
+  }
+}
+
+explanation {
+
+  h2 "Rake"
+  message <<-MARKDOWN
+`rake` (**r**uby m**ake**) 是一個簡單的 Ruby 程序工具(也可稱為 **tasks**)，你會在你的專案下常常使用這個指令
+
+在這裡， `rake db:migrate` 是一個由 Rails 所內建提供的程序工具，它會將我們剛剛建的 migration(遷移) 檔案設定來將 database 架構更新。Database migration files(資料庫遷移檔) 是在 Rails 協作開發中，至關重要的一環
+
+  MARKDOWN
+
+  tip "你可以藉由執行 `rake -T` 來列出所有當下專案裡的 `rake` 的指令，並附帶簡短的說明"
+}
+
+
+next_step "使用鷹架來完成_CRUD_功能"

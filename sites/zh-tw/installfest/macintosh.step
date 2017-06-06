@@ -1,0 +1,41 @@
+step "確認你的 Mac 作業系統版本" do
+  message <<-MARKDOWN
+
+* 點擊畫面左上角的蘋果標誌.
+* 選擇 "About This Mac" (關於這台電腦)
+* 當畫面彈出， "Mac OS X" 標題底下就會顯示出版本號碼
+  * 如果顯示 10.11, 代表為 **El Capitan**.
+  * 如果顯示 10.10, 代表為 **Yosemite**.
+  * 如果顯示 10.9, 代表為 **Mavericks**.
+  * 如果顯示 10.8, 代表為 **Mountain Lion**.
+  * 如果顯示 10.7, 代表為 **Lion**.
+  * 如果顯示 10.6, 代表為 **Snow Leopard**.
+  * 如果顯示 10.5, 代表為 **Leopard**.
+  * 如果顯示 10.4, 代表為 **Tiger**.
+  * 如果顯示 10.3, 代表為 **Panther**.
+
+* 記錄你的 Mac 作業系統版本
+* 此外，在版本底下還有個 "Processor" (處理器) 的標題右邊，顯示 CPU 的型號
+  * 如果尾端是 **Intel Core i7**, **Intel Core i5**, 或是 **Intel Core i3**, 沒有問題
+  * 如果尾端是 **Intel Core 2 Duo**, 沒有問題.
+  * 如果尾端是 **Intel Core Duo** 或是其他型號, 可能會 "有點" 問題，請找志工或助教協助
+
+* 以上步驟做完，即可關掉 "About This Mac" (關於這台電腦) 的畫面
+
+以下是範例圖
+
+![OS X Snow Leopard](img/AboutThisMac.png)
+
+  MARKDOWN
+end
+
+step "選擇你的安裝指南" do
+
+  option "El Capitan/Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
+    link "osx_rvm"
+  end
+  option "比 Snow Leopard 還古老的" do
+    important "請務必將作業系統升級至 **Snow Leopard** 。蘋果並沒有在 Apple Store 上銷售此作業系統，所以你可能需要 [線上購買](http://store.apple.com/us/product/MC573Z/A/mac-os-x-106-snow-leopard) 或是跟朋友借光碟來安裝"
+    message "如果無法升級，您依然可以安裝 Ruby on Rails 的環境，但可能會遇到許多無法預期的問題跟狀況"
+  end
+end

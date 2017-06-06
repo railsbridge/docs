@@ -1,0 +1,166 @@
+goals do
+  goal "學會使用 Ruby 語言並體驗基本語言功能"
+  goal "使用 IRB 來跑 Ruby 程式"
+  goal "做出簡單的計算"
+  goal "操作並瞭解何謂 variables(變數)"
+  goal "操作並瞭解何謂 arrays(陣列)"
+  goal "使用 loops(迴圈) 以及 conditional statements(條件語法)"
+end
+
+steps do
+  step do
+    message "輸入下面指令到 Terminal 來開始進入 Ruby 互動介面(Interactive Ruby Shell)，一個幫助你體驗 Ruby 程式的軟體"
+
+    console_without_message "irb"
+
+    message "也許可能或略有差異，大致上會長得像下面的畫面"
+
+    console_without_message "irb(main):001:0>"
+  end
+
+  step do
+    console_with_message "接下來用 Ruby 來測簡單數學。輸入以下內容到 IRB 裡面：", "3 + 3\n7 * 6"
+  end
+
+  step do
+    message "**Variables(變數)** 可以讓我們對某個 values(值) 做定義或命名"
+
+    console_without_message "my_variable = 5"
+
+    message "我們將一個 value(值): `5` 命名成 `my_variable`"
+  end
+
+  step do
+    message "當然也可以對這個 variables(變數) 做數學計算"
+    console_without_message <<-RUBY
+my_variable + 2
+my_variable * 3
+    RUBY
+  end
+
+  step do
+    message "Variables 當然也可以放入一個以上的 value ，被稱為 **array(陣列)**"
+
+    console_without_message 'fruits = ["奇異果", "草莓", "李子"]'
+
+    message "在這裡我們使用 variable `fruits` 來將這些不同水果名稱的 value 涵括在一起"
+  end
+
+  step do
+    console <<-RUBY
+fruits = fruits + ["柳丁"]
+fruits = fruits - ["奇異果"]
+    RUBY
+
+    message "`+` 跟 `-` 被稱為 operators(運算子)。不只是用在數字運算上，在 Array 上也可以使用。使用它們來對 Array(陣列) 裡的水果做增減"
+
+  end
+
+  step do
+    message "在 Ruby 裡，任何物件都有個 **class(類)** 。輸入以下指令到 IRB 上："
+
+    console_without_message <<-RUBY
+7.class
+"kiwi".class
+fruits.class
+RUBY
+
+    message "會顯示出這三個物件的資料結構：**Fixnum(整數)** (numbers, 數字), **String(字串)** (text, 文字), and **Array(陣列)** (lists, 列表)"
+  end
+
+  step do
+    message "每個 Class 都有不同的 **methods(方法)** 可以被使用在該 Class 上的 **instances(實體)**"
+
+    console_without_message <<-RUBY
+fruits.length
+fruits.first
+    RUBY
+
+    message "你可以用 `.methods` 來列出該 instance 上所有的 mehtod"
+
+    console_without_message <<-RUBY
+fruits.methods
+    RUBY
+
+    message "不同的 method 還可以 **合在一起連著用**"
+    console_without_message <<-RUBY
+fruits.methods.sort
+    RUBY
+
+    message <<-MARKDOWN
+_譯注: Class 跟 Instance 的關係可以參考術語表上的解釋_
+    MARKDOWN
+link_without_toc 'glossary'
+  end
+
+  step do
+    message "Arrays 有一個叫做 **each** 的 method，可以做 iterates(迭代)。對 Array 裡面所有的 value 一個接著一個地執行特定的程式"
+    console_without_message <<-RUBY
+fruits.each do |fruit|
+  puts fruit
+end
+    RUBY
+    message "首先， `fruits` 裡有 `['草莓', '李子', '柳丁']`，執行上述的程式後，會將第一筆 value (也就是`'草莓'`) 命名成一個叫做 `fruit` 的 variable，然後執行 `do` 到 `end` 之間的程式碼；完成後再將第二筆 value 帶入到 fruit 、執行；完成後再處理下一筆 ... 以此類推，直到所有的 value 跑完。最後出來的結果應是把 `fruits` 裡所有的 value 一行一行地列出來"
+  end
+
+  step do
+    message "底下是 **conditional(條件式)** 語法，當判斷值是 true 的時候才執行"
+
+    console_without_message <<-RUBY
+if my_variable > 1
+  puts "YAY!"
+end
+    RUBY
+
+    message "當 `my_variable` 的值大於 1 的時候才會觸發 `puts \"YAY!\"`"
+
+    message "你也可以修改條件式，試試看將 `>` 改成 `<` 會怎樣"
+
+    message "如果你希望當不符合條件式的狀態出現時，要執行什麼動作，你可以使用 `else`"
+
+    console_without_message <<-RUBY
+if my_variable > 1
+  puts "YAY!"
+else
+  puts "BOO!"
+end
+    RUBY
+  end
+
+  step do
+    message "你可以任意自創 Methods"
+    console_without_message <<-RUBY
+def pluralize(word)
+  word + "s"
+end
+pluralize("kiwi")
+    RUBY
+
+    message "Methods 會將送入的 variables 變成 **parameters(參數)**，在這個上述的程式碼，我們將 `\"kiwi\"` 送入了 `pluralize` 這個 method 裡面，在裡面執行的時候 `word` 就會是我們送入的值 (也就是 `\"kiwi\"`)"
+
+    message "Methods 一樣會 return(回傳) 資料，在上述的程式碼， pluralize 會回傳 `word + \"s\"` (最後結果就是吐出 `\"kiwis\"`)。在 Ruby 的世界裡， Methods 預設會回傳它程式裡面最後一行的值"
+  end
+
+  step do
+    message "將前面所有步驟做個大整合！來做個表達你對不同水果意見的 Method"
+    message "**請不要用打的！** 只需要複製後貼在 IRB 裡面並看看結果如何"
+    console_without_message <<-RUBY
+def my_opinion(fruits)
+  fruits.each do |fruit|
+    if fruit == "pizza"
+      puts "pizza is the best!!!"
+    else
+      puts pluralize(fruit) + " are pretty good, I guess..."
+    end
+  end
+end
+my_opinion(["apple", "pizza", "orange"])
+    RUBY
+
+    message "嘗試調整 Method 裡的條件式來讓與內文看看有什麼變化吧！"
+  end
+end
+
+important "在前往下一章之前，你必須輸入 `exit` 來離開 IRB 模式"
+
+next_step "開始吧"

@@ -1,0 +1,58 @@
+/*
+ * Add your CSS styles here
+ * 
+ */
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: #f4f4f4;
+}
+
+h1, h2, h3 {
+	color: #222;
+}
+
+p {
+	line-height: 24px;
+	color: #555;
+}
+
+a {
+	color: green;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.content {
+	width: 940px;
+	margin: 0 auto;
+}
+
+#header  {
+	border-bottom: 1px solid #999;
+}
+
+#nav {
+	margin: 0 20px 0 0;
+  /* CHALLENGE 3: how could you get this to float to the left side of the screen? */
+}
+
+#main {
+	margin: 0;
+  /*  CHALLENGE 3: how could you get this to float to the left side of the screen? */
+  /* CHALLENGE 2: how could you give this element a one-pixel border down its left side? */
+}
+
+#copyright {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+/* Ignore this for now, it is special code needed to fix the layout after using the "float" rules */
+.clearfix:before, .clearfix:after { content:""; display:table; }
+.clearfix:after { clear:both; }
+.clearfix { zoom:1; }

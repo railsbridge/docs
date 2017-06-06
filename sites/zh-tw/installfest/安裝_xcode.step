@@ -1,0 +1,25 @@
+option "OSX 10.9 Mavericks - OSX 10.11 El Capitan" do
+  link "安裝_xcode_command_line_tools"
+end
+
+option "OSX 10.7 Lion - OSX 10.8 Mountain Lion" do
+  link "安裝_xcode_from_app_store"
+end
+
+option "OSX 10.6 Snow Leopard" do
+  link "安裝_xcode_from_dvd"
+end
+
+option "從 Xcode 上安裝 Command Line Tools" do
+  message "請前往 [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
+  message "下載並安裝最後一個版本的 **Command Line Tools for Xcode**"
+end
+
+verify "已將 Command Line Tools 安裝" do
+  console "gcc --version"
+  result "i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)"
+
+  message "上述的訊息可能會有一點點不一樣，只要不要顯示 'command not found' 就代表成功了！"
+end
+
+next_step 'osx_rvm'

@@ -1,0 +1,59 @@
+requirements do
+message <<-MARKDOWN
+* The user should be able to create a post with a title, author, date published, and content. The author should be the current user. 
+* The complete post should appear on its own page (aka its show page).
+* If the user doesn't submit all required fields, they should see some error messaging, but shouldn't lose any of their work.
+MARKDOWN
+  table do
+    tr do
+      td do
+        h2 'Create View', class: 'centered'
+      end
+      td do
+        h2 'Show View', class: 'centered'
+      end
+    end
+    tr do
+      td do
+        img class: 'noborder', src: 'img/create_post.png'
+      end
+      td do
+        img class: 'noborder', src: 'img/show_post.png'
+      end
+    end
+  end
+end
+
+discussion do
+message <<-MARKDOWN
+* How do you create a resource? What parameters do you need to pass?
+* Then: what did rails make for you when you used the resource generator? Find all the new files. Maybe even list them out on a whiteboard.
+* How do you associate a user with a post? 
+  * What did you have to put in the migration to create posts?
+  * How is this association communicated to the User and Post models?
+  * How will you associate the current user with a post when you create it? 
+* What's the difference between the `new` and `create` methods in the posts controller and how do these relate to the form to create a new post? 
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Active Record Associations: <http://guides.rubyonrails.org/association_basics.html#the-belongs-to-association>.
+* RailsGuides - Form Helpers, section 2.2: <http://guides.rubyonrails.org/form_helpers.html#binding-a-form-to-an-object>.
+* RailsGuides - Routes - CRUD, Verbs, and Actions: <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>.
+* RailsGuides - Active Record Validations: <http://guides.rubyonrails.org/active_record_validations.html>.
+* RailsGuides - Active Record Callbacks: <http://guides.rubyonrails.org/active_record_callbacks.html>.
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* Rails has some built in ways to associate one model with another. See the RailsGuides link above for hints on how to make a user the owner of a post!
+* Don't hand code the form! You don't have to! Rails will help. See RailsGuide link above! 
+* Rails has a built-in way to note when something was stored in the database. Probably handy for showing the date / time a post was created.
+* For now, we're going to use the user's email address when displaying a post's author. You can add names or other identifiers later! (Also, even though you're going to get the current user's email address from the User model, you'll still need a user parameter for your Post resource.)
+* You need a `create` method to store your post data - scroll down a little bit in this section of the Getting Started guide for very helpful information and to see an example of a create method: <http://guides.rubyonrails.org/getting_started.html#creating-new-posts>.
+MARKDOWN
+end
+
+next_step "make_a_posts_index_page"

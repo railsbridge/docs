@@ -1,0 +1,25 @@
+goals {
+  goal "建一個叫 Vote 的 Model"
+
+  model_diagram header: 'Votes', fields: %w(id topic_id)
+
+  message "在專案中，期望每一個 topic 都可以被投票。為了計算投票數，我們需要記錄它。所以會將這個 Database Table 加進去"
+}
+
+steps {
+  console <<-SHELL
+rails generate model vote topic_id:integer
+rake db:migrate
+  SHELL
+}
+
+explanation {
+  message <<-MARKDOWN
+  * 跟前面一樣，我們建了一個叫 "vote" 的 Model
+  * 唯一不同的地方在欄位的資料結構是 integer(整數) ，並命名為 'topic_id'
+    * `topic_id` 是用來連結 votes 跟 topics 的資料
+  * 這次不需要使用 Scaffold(鷹架)，是因為我們不需要在 votes 上做完整的 CRUD；它只用來成為 topics 的一部份
+  MARKDOWN
+}
+
+next_step "將_topic_與_votes_做關聯"

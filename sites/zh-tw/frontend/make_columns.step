@@ -1,0 +1,49 @@
+goals do
+  message "These challenges will have you diving into the CSS side of things. Open up that **layout.css** file and take a look."
+  goal "Give your main content a border"
+  goal "Make two columns and line them up side by side"
+end
+
+steps do
+
+  step do
+    message "**Challenge:** Find the div with the id `main` in your HTML. See if you can give it a one-pixel border on its left hand side by modifying the existing stylesheet, **layout.css**."
+    message "**Hint**: If you get hung up on what CSS property to use, see if you can look it up on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)."
+  end
+
+  step do
+    message "**Challenge:** If you styled the `#main` div in the previous step by using a style rule like `#main { property: value; }`, see if you can come up with a second rule that could also apply the same style, but use a different selector."
+    message "**Hint**: You can select an element that's _inside_ of another element by listing one selector after another. The selector `.content div {}` would apply to any `div`s inside of an element with class `content`."
+  end
+
+  step do
+    message "**Challenge:** See if you can turn the page into a two-column layout. Make the `#nav` `div` the left column, and the `#main` div the right column."
+    message "**Hints**: it may be helpful to give these divs a fixed width; you may need the `float` property."
+  end
+
+  message "<img src='img/page_sample.jpg'>"
+end
+
+explanation do
+
+  message <<-MARKDOWN
+
+## More CSS!
+
+For some great examples of the power of CSS, check out the [CSS Zen Garden](http://www.csszengarden.com/). It takes
+the same HTML, but shows it with stylesheets from a bunch of different designers applied to
+it. Here are two different designers' interpretations of the same HTML:
+
+<img src='img/css_zen.png'>
+
+### CSS Reference Sites
+
+* [Sitepoint](http://reference.sitepoint.com/css/elements-structural)
+* [Mozilla Developer Network](https://developer.mozilla.org/en/CSS)
+
+  MARKDOWN
+end
+
+insert 'consider_deploying_to_github_again'
+
+next_step "basic_javascript"

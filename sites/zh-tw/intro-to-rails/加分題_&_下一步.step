@@ -1,0 +1,51 @@
+message <<MARKDOWN
+你知道嗎？  _**你已經做完啦！！**_ 恭喜，你 \"暫時完成\" 了你的第一個 Rails 應用程式
+
+(永遠不會 _真的_ 結束 ... 帶著樂趣試著將它改來改去吧)
+
+你得到了另外一張貼紙！ :)
+
+# 加分題
+
+如果還有些空閑時間，這裡有些額外的挑戰可以試試：
+
+* 加一個「扣分」按鈕，做的事跟加分按鈕相反
+* 在 Topic model 建立二個 method: upvote 與 downvote。並在 topics controller 使用它們，而不是直接在 controller 修改 topics 與 votes
+* 根據投票數排序 topics
+* 新增一個 'about' 頁面，並將連結放在文章列表最下面。記得也要在 About 頁面上放置回 Topics 列表的連結，以免使用者迷路。
+* 如果你還有『很多』的時間，可以試試：
+  * 限制一個人只能對一篇 Topic 投票一次：在 Vote model 加一個 user_id 的欄位，然後限制該使用者不得重複對同一篇文章投票。但等一下，在我們的系統裡面，什麼是 'user' ? 請找助教向大家介紹 [Devise](https://github.com/plataformatec/devise)，一個快速方便在 Rails 裡面建造使用者登入系統的套件
+  * 使用者可以對文章設定『扣分』，用來取代『加分』，想想看要如何在這個裡實作？ (譯者註：也就是將加分題第一項的功能也放入限制一個人只能對一篇 Topic 做『扣分』)
+
+MARKDOWN
+
+h1 "Authors"
+
+ul do
+  li do
+    a "RailsBridge 社群", href: "https://github.com/railsbridge/docs/graphs/contributors"
+  end
+  li do
+    span "中文譯者: "
+    a "Sdlong", href: "https://github.com/sdlong"
+  end
+  li do
+    span "中文譯者: "
+    a "Carlos", href: "https://github.com/Carlos7646"
+  end
+  li do
+    span "...也許有你? 歡迎發個 Pull Reuqest "
+    a "到 GitHub 上", href: "https://github.com/sdlong/railsbridge-docs"
+  end
+end
+
+h1 "What next?"
+
+ul do
+  li "大概是這個 workshop 要結束的時候了"
+  li "結束之後，再開一個新專案，挑戰下一個教程或是再做一次初探 Rails!"
+  li do
+    span "所有我們喜歡的學習資源，都可以在 Railsbridge 網站上找到："
+    a "http://railsbridge.org/learn/resources", href: "http://railsbridge.org/learn/resources"
+  end
+end

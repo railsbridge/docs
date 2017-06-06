@@ -1,0 +1,203 @@
+step "使用 git" do
+  tip "如果終端機沒有顯示你（還）在 test_app 資料夾：" do
+    console "cd test_app"
+  end
+
+  console <<-BASH
+    git init
+  BASH
+
+  result "Initialized empty Git repository in c:/Sites/railsbridge/test_app/.git/"
+
+  console "git add -A"
+  tip do
+    message <<-MARKDOWN
+      在 Git 裡，有多個指令可以做到類似的事：
+
+        * `git add foo.txt` 將 `foo.txt` 這個檔案加入 Staged files(暫存檔案) 裡
+        * `git add .` 將除了已刪除以外的所有檔案加入 Staged files(暫存檔案) 裡
+        * `git add -A` 包括已刪除的檔案，全部都加進 Staged files(暫存檔案) 裡
+
+      「把刪掉的檔案加進來」聽起來很奇怪，但如果你把版本控制系統想像成是追蹤「修改」的工具，或許就會懂了
+    MARKDOWN
+  end
+
+  console "git commit -m \"initial commit\""
+  result "a lot of lines like create mode 100644 Gemfile"
+
+  console "git log"
+  result "(Your git name and \"initial commit\" message.)"
+end
+
+step "將你的程式部署(Deploy) 到 Heroku" do
+
+  step "從本地端的 Rails 程式來新增 Heroku 應用程式" do
+
+    message "當你第一次使用 'heroku' 時，需要輸入你的 heroku email 跟密碼。你的密碼不會在輸入的時候顯示在畫面上，不用擔心。如果已經輸入過帳密，就不會再問你了"
+
+    console "heroku create"
+    result <<-OUTPUT
+      Enter your Heroku credentials.
+      Email: myemail@example.com
+      Password:
+      Uploading ssh public key /Users/smei/.ssh/id_rsa.pub
+      Creating floating-winter-18... done, stack is cedar
+      http://floating-winter-18.heroku.com/ | git@heroku.com:floating-winter-18.git
+      Git remote heroku added
+    OUTPUT
+
+    message "Heroku 的應用程式會自動得到抒情風格的名字，看起來像 '[形容詞]-[名詞]-[數字]'。每個名字都不同"
+
+    console "git remote show"
+    result "heroku"
+
+    message "如果它跟你說 public key 有問題，可能是因為你電腦裡其他程式有動到 SSH key。請舉手找助教來處理。不過幸好，這件事只需要在第一次開 Heroku App 的時候處理"
+  end
+
+  step "準備你的將 rails 程式部署到 Heroku" do
+    message <<-MARKDOWN
+      啟動你的編輯器軟體並打開 "Gemfile" 這個檔案 (位於你的 test_app 這個資料夾) (如果是 Windows, 應該會在 `C:\\Sites\\railsbridge\\test_app`；如果是 Linux/MacOS X, 應該會在 `~/railsbridge/test_app`.)
+
+      找到這行，並略做調整
+    MARKDOWN
+
+    source_code :diff, <<-RUBY
+      - gem 'sqlite3'
+      + group :development, :test do
+      +   gem 'sqlite3'
+      + end
+
+      + group :production do
+      +   gem 'pg'
+      +   gem 'rails_12factor'
+      + end
+    RUBY
+
+    message "(方便 copy 的版本)"
+
+    source_code :ruby, <<-RUBY
+      group :development, :test do
+        gem 'sqlite3'
+      end
+
+      group :production do
+        gem 'pg'
+        gem 'rails_12factor'
+      end
+    RUBY
+
+    message "將檔案存檔"
+
+    tip do
+      message "當檔案儲存後，你的編輯器會將程式碼用色彩呈現，就像上面的程式碼的顏色般。編輯器會自動將整份 Ruby 檔案的程式上不同的色彩，依據不同語法種類。這個被稱為 'syntax highlighting'(語法顯示) ，幫助我們易於閱讀程式碼"
+    end
+    tip "為什麼要用 SQLite (sqlite3) 和 PostgreSQL (pg) ？" do
+      message "SQLite 和 PostgreSQL 是兩種不同的資料庫。我們把 SQLite 用在開發環境（Development）及測試環境（Test），因為它比較好安裝。我們把 PostgreSQL 用在生產環境（Production）因為 Heroku 幫我們剛裝好了，而且功能比 SQLite 多。現在我們已經根據開發、測試、生產環境拆分了資料庫，這是 Rails 的預設。"
+    end
+
+    console <<-BASH
+bundle install --without production
+    BASH
+
+    message "一樣等它跑完，直到看到 'Your bundle is complete!'。如果失敗，請舉手問助教，讓他修改 `config/environments/production.rb` "
+  end
+
+  step "設定 Root route (首頁路徑)" do
+    message "使用編輯器打開 routes.rb  這個檔案 (位於 `C:\\sites\\railsbridge\\test_app\\config\\routes.rb` or `~/railsbridge/test_app/config/routes.rb`)："
+
+    source_code :ruby, <<-RUBY
+      Rails.application.routes.draw do
+    RUBY
+
+    message "在這行後面再寫入一行"
+
+    source_code :ruby, <<-RUBY
+      root 'drinks#index'
+    RUBY
+
+    message "就像這樣"
+
+    source_code :diff, <<-RUBY
+      Rails.application.routes.draw do
+      + root 'drinks#index'
+
+      # (下略)
+    RUBY
+
+    message "將檔案存檔"
+  end
+
+  step "將這些變更存入 git" do
+
+    message "先確定 Terminal(終端機) 裡的路徑是在 'test_app'，並輸入前面我們使用過的 git 指令將檔案存進去"
+
+    console <<-BASH
+      git add .
+      git commit -m "Updates for heroku deployment"
+    BASH
+  end
+
+  step "Deploy (push) to heroku" do
+
+    console "git push heroku master"
+
+    message "也會有下面的訊息出現： <br> \"The authenticity of host 'heroku.com (75.101.145.87)' can't be established. RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad. Are you sure you want to continue connecting (yes/no)?\" <br>
+    輸入 `yes` 並按下 **enter** 鍵"
+
+    result <<-OUTPUT
+      The authenticity of host 'heroku.com (75.101.145.87)' can't be established.
+      RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
+      Are you sure you want to continue connecting (yes/no)? yes
+      Warning: Permanently added 'heroku.com,75.101.145.87' (RSA) to the list of known hosts.
+      Counting objects: 60, done.
+      Compressing objects: 100% (54/54), done.
+      Writing objects: 100% (60/60), 79.03 KiB, done.
+      Total 60 (delta 10), reused 0 (delta 0)
+
+      -----> Heroku receiving push
+      -----> Rails app detected
+             Compiled slug size is 080K
+      -----> Launching...... done
+             App deployed to Heroku
+
+      To git@heroku.com:floating-winter-18.git
+       * [new branch]      master -> master
+    OUTPUT
+
+    important "請從輸出的文字裡面找到你的 Heroku 應用程式名字，並記下來"
+
+    message "這個過程大概會花費兩倍於 'bundle install' 的時間，然後會把終端機的控制權還給你。如果它耗去很多時間，請找助教來"
+
+    console "heroku run rake db:migrate"
+
+    result <<-OUTPUT
+      Migrating to CreateDrinks (20160706063236)
+      ==  20160706063236 CreateDrinks: migrating =====================================
+      -- create_table(:drinks)
+         -> 0.0084s
+      ==  20160706063236 CreateDrinks: migrated (0.0085s) ============================
+    OUTPUT
+
+    message "TCreateDrinks 後面的一串數字叫做 timestamp （時間戳記）。你的應該會不一樣！"
+  end
+
+  step "前往你新創好的網站" do
+
+    message "現在程式已經部署完成，你快打開網頁瀏覽器來看看"
+
+    tip "快速打開你的 heroku 程式的指令" do
+      console "heroku open"
+    end
+
+    message "你應用程式的網址會是 `application-name.herokuapp.com` ──以上面的例子來說，它就會是 `floating-winter-18.herokuapp.com`。請確定你有看到應用程式的歡迎頁，然後留著瀏覽器視窗不要關掉"
+
+    message "確認畫面跟在本地端電腦開發的一樣"
+
+    message "新增並儲存比一筆 drink 資料，來確定你可以在 heroku 寫入資料到資料庫"
+
+    message "如果你想要看更多關於這個程式的資訊，可以輸入 `heroku info`"
+  end
+end
+
+next_step "拿貼紙"
+

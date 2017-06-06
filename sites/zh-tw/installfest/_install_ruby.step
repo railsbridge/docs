@@ -1,0 +1,32 @@
+console <<-BASH
+  rvm install 2.3
+BASH
+
+message "會需要花點時間下載跟安裝，請稍等一會兒"
+console <<-BASH
+  rvm use 2.3
+  rvm --default use 2.3
+BASH
+
+verify do
+  console "ruby -v"
+  fuzzy_result "ruby 2.3.0{FUZZY}p0 (2014-12-25 revision 49005) [x86_64-darwin13]{/FUZZY}"
+end
+
+div do
+  h1 "故障排除"
+  important "如果輸入 `rvm install 2.3` 出現 `autoreconf was not found in the PATH` 這個訊息" do
+    div do
+      option_half "Mac OS" do
+        console "brew install automake"
+      end
+
+      option_half "Ubuntu Linux" do
+        console "sudo apt-get install automake"
+      end
+    end
+
+    message "完成後，重新輸入 `rvm install 2.3`"
+  end
+end
+

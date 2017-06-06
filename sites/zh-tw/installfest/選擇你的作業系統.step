@@ -1,0 +1,20 @@
+h2 "你使用哪個作業系統？"
+
+div(class: "os-button") do
+  simple_link "macintosh" do
+    img src: "/img/macface.jpg"
+    h3 "Macintosh"
+  end
+end
+div(class: "os-button") do
+  simple_link "windows" do
+    img src: "/img/windows.png"
+    h3 "Windows"
+  end
+end
+div(class: "os-button") do
+  simple_link "linux" do
+    img src: "/img/tux-trans.png"
+    h3 "Linux"
+  end
+end

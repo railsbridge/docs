@@ -1,0 +1,91 @@
+goals {
+
+  message <<-MARKDOWN
+  已經完成基本架構了，我們來讓整個網站操作更順利些
+
+  目前當你前往 <http://localhost:3000> 會看到預設的 "歡迎頁面"
+
+  我們希望當前往到 <http://localhost:3000> 時，出現的是 Topics 的列表頁面 (index)
+
+  在本章我們會將它實現並且學習一些關於 Rails 上的 routes 概念
+  MARKDOWN
+}
+
+steps {
+
+  step "加入 根(root) 路徑" do
+    message "在程式編輯器上打開 `config/routes.rb` 這個檔案 (在裝機趴上，我們建議你安裝並使用 **Sublime Text**)"
+
+    message "檔案第一行會看到 `Rails.application.routes.draw`，然後在該行底下加入 `root 'topics#index'`。當你完成後，會長的如下面的樣子："
+
+    source_code :ruby, <<-RUBY
+Rails.application.routes.draw do
+  root 'topics#index'
+    RUBY
+
+    em do
+      message "(如果是 Rails 3.x 的版本，要改成寫入 `root to: 'topics#index'`，並移除 `public/index.html` 這個檔案)."
+    end
+  end
+
+  step "確認異動" do
+    message "重回 <http://localhost:3000/>。應該會看到頁面已自動改成 Topics 的列表了"
+  end
+}
+
+explanation {
+
+ message <<-MARKDOWN
+  * `root 'topics#index'` 是跟 Rails 說我的首頁要指向到 `topics#index`。而 `topics#index`
+    是 Topics 的列表頁 (topics_controller.rb 裡的 index action).
+  * Rails routes 控制著 URL(網址) 與對應的 Controller Action ，如同地址對應著房子的位置
+  * `config/routes.rb` 這個檔案就像是個這個網站裡的地址目錄，列出所有可以前往的房子
+  * `routes.rb` 使用簡短的語法，很難全部列出所有可用的 URLs，想要列出所有 routes 的設定，可以使用 Terminal
+
+  在 Terminal 輸入 `rake routes` ，應該會看到類似下面的資料：
+
+  ````
+    $ rake routes
+
+        Prefix Verb   URI Pattern                Controller#Action
+        topics GET    /topics(.:format)          topics#index
+               POST   /topics(.:format)          topics#create
+     new_topic GET    /topics/new(.:format)      topics#new
+    edit_topic GET    /topics/:id/edit(.:format) topics#edit
+         topic GET    /topics/:id(.:format)      topics#show
+               PATCH  /topics/:id(.:format)      topics#update
+               PUT    /topics/:id(.:format)      topics#update
+               DELETE /topics/:id(.:format)      topics#destroy
+          root GET    /                          topics#index
+  ````
+  會秀出所有這個網站上可以用的 URLs 。當中 冒號(:) 代表著是個可以輸入的變數，所以 `:id` 代表著在該 URI Patten 的 `:id` 位置輸入隨意數字，在預設的情況下，會自動幫你找出資料庫對應的第幾筆資料。而在括號中的變數是可有可無的
+
+  你也可以在開發環境下找到這些資訊，前往 <http://localhost:3000/rails/info> 也會看到類似下圖的資訊：
+
+  <img src='img/rails4_rails_info_routing.png' alt='Screenshot of browser-based Rails routing info page'>
+
+  你也會在輸入錯誤網址時也會看到這個表格，試試看 <http://localhost:3000/sandwich>
+
+### 深入探索 Routes (選修)
+
+  可以看到 paths(路徑) 與對應的網址與 Controller Action。
+  我們也可以在 Rails Console(後台) 來做 routes 的測試：
+  (在 Terminal 輸入以下指令)
+
+```ruby
+> rails console
+>> app.topics_path
+# 結果 => "/topics"
+>> app.topics_url
+# 結果 => "http://www.example.com/topics"
+```
+
+  `app` 是你代表整個應用程式的特殊物件
+  你可以用它來呼叫 routes 內容(上面剛做的)，與它的 Database 做聯繫，或是用 'get 或 'post' 做個 仿網站請求(pseudo-web requests) ... 以及更多
+
+  MARKDOWN
+}
+
+insert 'consider_deploying'
+
+next_step "對文章做投票"

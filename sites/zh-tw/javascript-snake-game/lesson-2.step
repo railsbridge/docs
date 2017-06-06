@@ -1,0 +1,102 @@
+goals do
+  goal "Create your first snake"
+  goal "How to use a third party library as an 'engine' to power your game"
+end
+
+steps do
+
+  step "Now back to our snakes" do
+
+    message "To get started, we want to create a variable that represents the snake. Add the following line to the beginning of game/snake.js:"
+
+    source_code :javascript, <<-JAVASCRIPT
+      var snake = [{ top: 0, left: 0}];
+    JAVASCRIPT
+
+    markdown <<-MARKDOWN
+      <p>Now that we have this amazing snake we want to show it off, right?  The
+      CHUNK game engine makes it easy to draw objects on the screen. Let's tell CHUNK
+      to 'draw' our snake!</p>
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var drawableSnake = { color: "green", pixels: snake };
+      var drawableObjects = [drawableSnake];
+      CHUNK.draw(drawableObjects);
+    JAVASCRIPT
+
+    markdown <<-MARKDOWN
+      CHUNK's 'draw' function expects to be given a collection of objects. This
+      means we must create an array and place the drawableSnake inside of it. Then we
+      can pass that array into 'CHUNK.draw'
+
+      To see what your code does you'll need to save your 'snake.js' file and
+      refresh the browser window that has your index.html in it. We recommend doing
+      this early and often!
+
+      Congratulations! You've drawn a (very short!) snake on the screen.
+    MARKDOWN
+  end
+
+js_expected_results 'lesson-2'
+
+  step "What is CHUNK?" do
+    markdown <<-MARKDOWN
+      When programming, you'll frequently need to solve problems that have been
+      solved before. In many cases someone who solved the problem already has
+      packaged their code into a 'library'.
+
+      Good libraries tend to:
+
+      * Help you think about the problem you're solving more clearly
+      * Be well documented
+      * Solve a small set of closely related problems
+
+      We'll be using the CHUNK library throughout this tutorial. CHUNK is an
+      example of a library whose job is to:
+
+      * Draw chunky-pixels on the screen!
+      * Respond to user input
+      * Start and end a game
+      * Check for things running into each other
+      * Be reasonably approachable for novice developers
+    MARKDOWN
+  end
+
+  step "Understanding the Code" do
+    message "The code you wrote used the CHUNK library to draw a 1px snake on the screen. Let's try to understand the code as a whole a bit better."
+
+    source_code :javascript, <<-JAVASCRIPT
+      var snake = [{ top: 0, left: 0}];
+      var drawableSnake = { color: "green", pixels: snake };
+      var drawableObjects = [drawableSnake];
+      CHUNK.draw(drawableObjects);
+    JAVASCRIPT
+
+    markdown <<-MARKDOWN
+      The first line declares the variable 'snake' and assigns an array to it. Within that array is one item which is defined by a set of curly-braces. These curly-braces represent another Javascript data type called an Object which is also referred to as a 'hash map'.
+
+      Data stored in an hash map object involves two parts, a key and a value. In our code, we have two pieces of data in the object, a 'top' value and a 'left' value. The key is used to get the data from the object. So in our example, if we need to know what the current 'left' value of snake is, we type 'snake.left' which will return a value of '0'.
+
+      On the second line, we declare the variable 'drawableSnake' and assign an object to its value. The object has two pieces, the first has the key 'color' and the value '"green"', and the second has the key 'pixels' which has the value 'snake'. 'snake' is the variable we defined on the previous line, which means 'drawableSnake.pixels' will return us the object we created on the first line.
+
+      The third line declares a variable 'drawableObjects', which we assign the value of an array whose only data is the 'drawableSnake' declared on the previous line. We do this because our CHUNK engine is looking for a list (an array) or objects to draw.
+
+      Finally, we call the CHUNK library's built-in function 'draw' and pass it the argument 'drawableObjects' which was declared on the previous line. We'll explore functions and arguments in future lessons.
+    MARKDOWN
+  end
+
+  step "Play Time!" do
+    markdown <<-MARKDOWN
+      * Add comments underneath each line explaining what it does in plain old english.
+      * Change the color of the snake.
+      * Make the snake longer than just 1 segment!
+      * Draw something in addition to the snake. Perhaps an apple or a wall? Make
+      sure it's a different color!
+    MARKDOWN
+  end
+
+end
+
+next_step "lesson-3"
+

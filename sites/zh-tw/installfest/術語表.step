@@ -1,0 +1,24 @@
+h2 "如果你對這些專有名此感到困惑，這些術語表也許能幫助你"
+
+span "請參考  "
+a 'general Glossary', href: '#general-glossary'
+span ", "
+a 'Command Line Glossary', href: '#command-line-glossary'
+span ", 與 "
+a 'Ruby and Rails Glossary', href: '#ruby-and-rails-glossary'
+span "."
+
+a name: 'general-glossary'
+situation "General Glossary" do
+  insert 'general-glossary'
+end
+
+a name: 'command-line-glossary'
+situation "Command Line Glossary" do
+  insert 'command-line-glossary'
+end
+
+a name: 'ruby-and-rails-glossary'
+situation "Ruby and Rails Glossary" do
+  insert 'ruby-and-rails-glossary'
+end

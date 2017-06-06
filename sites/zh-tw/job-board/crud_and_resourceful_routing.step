@@ -1,0 +1,38 @@
+message <<-MARKDOWN
+  # CRUD
+  Why do we talk about building CRUD apps? What are some examples of CRUD apps that you use?
+
+  Each action that CRUD describes maps to a SQL statement and an HTTP verb:
+
+  <img src="img/crud_grid.jpg" width=550 alt="Table mapping CRUD operations to SQL and HTTP verbs">
+
+  *Source: <http://en.wikipedia.org/wiki/Create,_read,_update_and_delete>*
+
+  Compare this to what we see at <http://localhost:3000/rails/info>:
+
+  !["Screenshot of Rails routes page"](img/rails-routes.png)
+MARKDOWN
+
+discussion_box "CRUD", "Talk through the different uses for the HTTP verbs. What is their general purpose, and what are we specifically using them for??"
+
+message <<-MARKDOWN
+  To have a useful app, we need to be able to create job postings, see them all and their details, change them, and delete them. The way that Rails wants us to do this is by following RESTful routing conventions, which are perfectly encapsulated by the output of `resources :jobs` in our routes.rb file.
+
+  In Rails we work with seven main verbs, which map to different CRUD actions and controller actions:
+
+  <img src="img/crud_rails_methods.jpg" alt="Table mapping CRUD operations to REST verbs">
+
+  What does each of these do? Go through each method and review what they do.
+
+  # Resourceful Routing
+
+  You could make your URLs look like anything you wanted, like: `/all_the_jobs` or `/add_a_job` or `show_job`. This would totally work if you set up your controller methods and the route file correctly.
+
+  But we generally avoid this because the RESTful routing is a best practice that Rails makes easy to follow. In RESTful routes, the paths are structured around a specific resource &mdash; in our case, jobs. Check out more about [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) urls.
+
+  Another example: if we were making a puppy app, I would expect that going to `/puppies` would show me an index of all the puppies, and `/puppies/1` would find the puppy with the ID of one and show me their individual page, and `/puppies/1/edit` would show me the form to update a given puppy.
+
+  For more info on resource-based routing, check out the [Rails Guide on routing](http://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default).
+MARKDOWN
+
+next_step "listing_the_jobs"

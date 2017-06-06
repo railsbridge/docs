@@ -1,0 +1,85 @@
+goals {
+  message "我們要做一個按鈕，可以讓使用者點擊後增加該文章(topic) 的投票數(vote)"
+}
+
+steps {
+
+  step "新增一個 controller 的 action，稱之為 upvote" do
+    message "編輯 `app/controllers/topics_controller.rb` 這個檔案，以及將這個底下的 mehtod 設定放在檔案裡 `private` 這行上面："
+
+    source_code :ruby, <<-RUBY
+      def upvote
+        @topic = Topic.find(params[:id])
+        @topic.votes.create
+        redirect_to topics_path
+      end
+    RUBY
+
+    message <<-MARKDOWN
+      * `@topic = Topic.find(params[:id])` 從資料庫中尋找某筆 topic 的資料，並將它設定成 @topic 這個變數的值
+      * `@topic.votes.create` 將該 topic 新增一筆 vote 並存入資料庫
+      * `redirect_to(topics_path)` 告訴瀏覽器回到 `topics_path` 這個位置(所有文章的頁面)
+    MARKDOWN
+  end
+
+  step "幫 upvote 這個 action 設定一個新路徑 (new route)" do
+    message "打開 `config/routes.rb` 這個檔案，並找到下面這行程式："
+    source_code :ruby, <<-RUBY
+      resources :topics
+    RUBY
+
+    message "將這行程式改成如下："
+    source_code :ruby, <<-RUBY
+      resources :topics do
+        member do
+          post 'upvote'
+        end
+      end
+    RUBY
+
+    message <<-MARKDOWN
+      可以使用輸入 `rake routes` 或是前往 [http://localhost:3000/rails/info](http://localhost:3000/rails/info) 來確認 upvote 是否已加入到 route 設定裡面，你應該會看到下面這行的內容：
+
+      ```
+            Prefix Verb   URI Pattern                  Controller#Action
+      upvote_topic POST   /topics/:id/upvote(.:format) topics#upvote
+      ```
+    MARKDOWN
+  end
+
+  step "在 View 上面新增一個按鈕" do
+
+    message "編輯 `app/views/topics/index.html.erb`，加入二行程式碼"
+
+    source_code :diff, <<-HTML
+      <% @topics.each do |topic| %>
+        <tr>
+          <td><%= topic.title %></td>
+          <td><%= topic.description %></td>
+      +   <td><%= pluralize(topic.votes.count, "vote") %></td>
+      +   <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
+          <td><%= link_to 'Show', topic %></td>
+          <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+          <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    HTML
+
+    message <<-MARKDOWN
+      * `pluralize(topic.votes.count, "vote")` 可以藉由判斷前面變數的數量來顯示單數的 "vote" 或是複數的 "votes"
+      * `button_to '+1'` 建立一個 html 按鈕，內文是 '+1`
+      * `upvote_topic_path(topic)` 建立一個合適的連結來指向我們想要的 action 位置，以此例來說，我們希望增加『被點擊 +1』的那篇 topic
+        * `upvote_topic_path(topic)` 如果該 topic.id 是 42, 則會顯示 `/topics/42/upvote` 這個網址
+      * `method: :post` 確保我們是使用 CRUD 中的 Create(建立) 的動作，而不是 Read(讀取)
+    MARKDOWN
+  end
+
+  step "在瀏覽器上實際操作" do
+    message "前往 <http://localhost:3000/topics> 玩玩看"
+    message "有沒有發現，上述的設定不需要重開 `Rails server`，開心嗎？"
+  end
+}
+
+insert 'consider_deploying_again'
+
+next_step "建立新文章後導回到文章列表"

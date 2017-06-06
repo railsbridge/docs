@@ -1,0 +1,23 @@
+h2 "如果你對這些專有名此感到困惑，這些術語表也許能幫助你"
+
+a '一般', href: '#general-glossary'
+span ", "
+a 'Command Line', href: '#command-line-glossary'
+span ", 和 "
+a 'Ruby 與 Rails', href: '#ruby-and-rails-glossary'
+span "."
+
+a name: 'general-glossary'
+situation "一般" do
+  insert '../installfest/general-glossary'
+end
+
+a name: 'command-line-glossary'
+situation "Command Line" do
+  insert '../installfest/command-line-glossary'
+end
+
+a name: 'ruby-and-rails-glossary'
+situation "Ruby 與 Rails" do
+  insert '../installfest/ruby-and-rails-glossary'
+end

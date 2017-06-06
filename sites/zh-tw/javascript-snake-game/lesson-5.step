@@ -1,0 +1,42 @@
+# Lesson 5 - Make CHUNK move the snake for us
+
+markdown <<-MARKDOWN
+  Hooray! We can both draw and move the snake! Of course, having our users
+  copy and paste lines of code into their javascript console isn't a wonderful
+  idea, so we're going to have CHUNK execute the move and draw commands for us.
+
+  We'll start with an `advanceGame` function
+
+  ```js
+  var advanceGame = function() {
+    snake = moveSnake(snake);
+    drawSnake(snake);
+  }
+  ```
+
+  To get this function running we'll use our CHUNK game engine to CALL the `executeNTimesPerSecond` function. It does exactly that, to do this `executeNTimesPerSecond` takes in two arguments. The first argument advances the game, and the second tells it how many times to move per-second.
+
+  ```js
+  CHUNK.executeNTimesPerSecond(advanceGame, 1);
+  ```
+
+  Bam! Now the snake moves down until it runs off the game screen.
+
+  Because functions are just another kind of value (like numbers, arrays, objects, strings,
+  etc.) we can pass them as arguments to other functions.
+
+MARKDOWN
+
+js_expected_results 'lesson-5'
+
+markdown <<-MARKDOWN
+  ### Play Time!
+
+  * How can you increase the speed at which the snake moves?
+
+  ### Helpful Links
+
+  1. <a href="http://blog.teamtreehouse.com/how-to-create-javascript-functions-with-variable-arguments-treehouse-quick-tip">Writing functions with more than one argument</a>
+MARKDOWN
+
+next_step "lesson-6"

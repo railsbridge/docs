@@ -1,0 +1,28 @@
+message "我們會在 workshop 中使用 Sublime Text 2 程式編輯器，然而你還是可以自由使用其他編輯器。只要它是純文字編輯器，例如 vi 或 TextEdit。"
+
+important <<-MARKDOWN
+  請不要使用 Microsoft Word 或其他文書處理器，包括 TextEdit 和 Notepad。
+
+  不知道用什麼的話，就用 Sublime Text 2。
+  MARKDOWN
+
+step "下載 Sublime Text 2" do
+  message "前往 [Sublime Text 2 installer](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.dmg) 下載"
+end
+
+step 'Select "雙點二下或是在下載視窗選擇「用 DiskImageMounter 打開」' do
+  message "通常是預設值"
+
+  message "它會打開一個安裝程式，裡面有 Sublime Text 2 圖示和你的 Applications folder(應用程式資料夾) 的圖示，像這樣"
+
+  img src: 'img/install_sublime_text.png', alt: 'Contents of the sublime text package showing a sublime text icon and a shortcut to applications'
+
+end
+
+step "把 Sublime Text 2 拖到你的 Applications folder(應用程式資料夾)" do
+  message "它會打開一個安裝程式，裡面有 Sublime Text 2 圖示和你的應用程式資料夾的圖示。把 Sublime Text 2 拖曳到 Applications folder(應用程式資料夾)。"
+end
+
+step "退出安裝程式的磁碟映像檔" do
+  message "把它從桌面拖到垃圾桶即可"
+end

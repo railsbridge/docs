@@ -1,0 +1,18 @@
+step "Configure the Windows Terminal" do
+  tip do
+    message "請確定使用 **Command Prompt with Ruby and Rails** 打開，而不是用 Windows 的 Terminal(終端機)，從 Start(開始) 選單 => **All Programs(所有程式)** => 然後選擇 **Command Prompt with Ruby and Rails**"
+  end
+
+  message "滑鼠右鍵點擊上方選單，並選擇 **Properties**"
+
+  message "在 *Options* 分頁下方，確認 **QuickEdit Mode** 的選項。這個可以讓你方便操作剪下貼上的功能"
+
+  message "在 *Font* 分頁下方，在 chooser box 選擇 Lucida Console 的選項。這個可以讓你看到 non-ascii 的字元"
+
+  message "在 *Layout* 分頁裡，調整 *Window Size(畫面大小* 至少到你螢幕的一半，如果可以的話不要遮到課程教學的選單列表 (當你需要邊看教學編實作並一邊測功能時)"
+
+  message "在 *Layout* 分頁裡，增加 **Screen Buffer Size** 的高度到 1000"
+
+  message "點擊 ok，會有個對話框出現，選擇 **Modify shortcut that started this window.**"
+end
+

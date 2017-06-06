@@ -1,0 +1,83 @@
+message <<-MARKDOWN
+  # What we're going to do
+
+  * Use Rails form helpers to create the HTML for the form
+  * Learn to use the Rails server output for great good
+  * Update the controller so that the form saves submissions to the database
+  * Learn about the beauty of the params hash
+
+  # Side Note: Web forms are not perfectly straightfoward
+
+  Web forms. They're like, the most basic thing about the internet, other than cat gifs, right? So they should be straightforward, right? WRONG! They are exciting and just complicated enough to bake your noodle a bit. But don't worry, Rails has strong opinions about forms, so we won't have to do _too_ much typing.
+
+  # Setting up the page for the form
+
+  Let's take a look at our handy routes, which can help us figure out what we need to do. We're going to follow the same pattern that we did for the main `/jobs` page.
+
+  First, visit the routing page at <http://localhost:3000/rails/info>, and find the route for `/jobs/new`.
+
+  That's the one we want for our form. Let's visit that page and see what it says: <http://localhost:3000/jobs/new>.
+MARKDOWN
+
+error_box "The action 'new' could not be found for JobsController"
+
+source_code_with_message "This looks familiar! Let's add a method to our jobs controller called `new`:", :ruby,
+<<-RUBY
+  def new
+  end
+RUBY
+
+message <<-MARKDOWN
+  Refresh <http://localhost:3000/jobs/new>, and we see that familiar "Template is missing" error. So, let's add that template.
+
+  Under app/views/jobs, add a file called new.html.erb. This will be our form. Add some html to the template to keep things moving along:
+MARKDOWN
+
+source_code :html,
+<<-HTML
+  <h1>Add a job</h1>
+HTML
+
+message <<-MARKDOWN
+  Refresh again: <http://localhost:3000/jobs/new>
+
+  # Add a form!
+
+  Rails has handy helpers for forms. We'll be using a form helper specifically made for use with a model.
+MARKDOWN
+
+source_code_with_message "In the view file you were just editing (app/views/jobs/new), add the following code:", :erb,
+<<-ERB
+  <%= form_for @job do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, size: '60x6' %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>
+ERB
+
+message "Save that file, and reload the page."
+
+error_box "First argument in form cannot contain nil or be empty"
+
+message "What do you think that means? What is the first argument? What is it supposed to be? In order for the method `form_for` to do its job, it has to know about the thing that it's building the form for. So we need to give it an object. We do that in the controller."
+
+source_code_with_message "Open up the jobs_controller, and update the new method:", :ruby,
+<<-RUBY
+  def new
+    @job = Job.new
+  end
+RUBY
+
+message "Now we should see our mostly unstyled form!"
+
+discussion_box "Form HTML", "What HTML did the form helpers produce? Using the web inspector, look through the form code and compare it to the file you've been working on in Sublime."
+
+next_step "make_the_form_work"

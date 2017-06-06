@@ -1,0 +1,53 @@
+goals {
+
+  goal "建立一個有 title 跟 description 欄位，名字是 topics 的資料庫表格(database table)"
+
+  message "在本章我們回瞭解一些關於 Rails 的架構，到最後會幫助你瞭解下圖的概念是什麼"
+
+  ul {
+    li "Table"
+    li "Model"
+    li "View"
+    li "Controller"
+  }
+}
+
+explanation {
+
+  h2 "Rails 架構，以及與它關聯的 Database"
+
+  img(src: "img/mvc.png", alt: "MVC")
+
+  message "Rails 實踐了一個非常具體的 **Model/View/Controller** 模式，指引著如何構築出你的網站"
+
+  h3 "Model"
+  message <<-MARKDOWN
+* 在教學中我們建立了一個 Model，相對應到 database 來讓二者之間溝通。 table 的名稱(以此例來說: topics) 就是 Model 建立出的名稱(以此例來說： Topic) 的複數型態。意思是說，如果我們建立一個 model 叫 'Duck' ，Rails 會自動在一個叫 "ducks" 的資料庫 table 上搜尋或寫入
+* Model 中預設的 Method(方法) 幫助我們簡單地方式自動地跟 Database 溝通，完成寫入或是讀取的動作。
+* Model 是應用程式與 database 間溝通的橋樑
+  MARKDOWN
+
+  h3 "View"
+  message <<-MARKDOWN
+* View 會生出 HTML 檔案，並且顯示在瀏覽器上
+* View 檔案是一種叫 ERB 的樣板語言。它可以在 HTML 上嵌入 Ruby 的程式碼。讓 Ruby 的 Variables(變數) 可以放到 view 裡面，當使用者前往不同頁面時，藉由嵌入 Variables 的方式讓我們在同一個 view 裡面呈現不同的資料
+* (也有其他可用的樣板語言，不過 Railsbridge 始終堅持使用 ERB)
+  MARKDOWN
+
+  h3 "Controller"
+  message <<-MARKDOWN
+* Controllers 會在 Models 跟 Views 之間傳送著 Ruby Object(物件)
+* 不同的網址，在 Controller 裡會有相對應的 Method
+* 當你前往任何 Rails app 的頁面，都會有一個專門在處理該頁面的 Controller 與對應的 Method
+  MARKDOWN
+
+  message <<-MARKDOWN
+當 Models, Views, 與 Controllers 放在一起，它們會依據一個模式來運作：當一個網址進來，Rails 會送到 Controller 的 method(也被稱為 "Action") 來專門為此網址運作。Controller Action 會使用 Model 上的 Method，讓 Model 跟資料庫溝通來取得 / 寫入資料，然後將該執行動作的結果變成一個 Object(物件) 回傳給 Controller。最後 Controller 帶著 Object 與 View 裡的樣板結合，將最終頁面回傳給網頁瀏覽器，變成螢幕呈現的樣子 (Action 正常會有一個相對應的 View 檔案，Rails 會自動找到並且使用它)
+
+Models, Views 與 Controllers 都有各自特殊的任務。這樣的權責劃分，幫助我們更簡單的開發一個網站，尤其當這個網站越來越大的時候 (每個檔案都有它明確的責任與意義，這樣可以更簡單的去修正問題或是開發新的功能)
+  MARKDOWN
+  
+  message <<-MARKDOWN
+  如果你想要瞭解更多關於 Rails 的架構，可以看看以下的影片解說 (3 min 30 sec) [MVC architecture *Youtube*](https://www.youtube.com/watch?v=eTdVkgF_Slo)
+  MARKDOWN
+}

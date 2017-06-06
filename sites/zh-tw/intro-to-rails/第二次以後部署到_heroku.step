@@ -1,0 +1,7 @@
+h2 do
+  span "如果你的應用程式還沒部署到 Heroku 上，請先從 "
+  a '第一次部署到 Heroku', href: '第一次部署到_heroku'
+  span " 開始"
+end
+
+insert '_deploying_to_heroku_again'

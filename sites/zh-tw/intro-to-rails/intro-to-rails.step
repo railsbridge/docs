@@ -1,0 +1,96 @@
+message <<-MARKDOWN
+### 目標
+
+
+我們會用實際的例子來教你 Ruby on Rails。你將會建立一個投票系統來讓你的朋友可以投票
+讓使用者可以使用這些基本的功能：
+
+
+* 檢視主題並依照投票數量來排序
+* 對主題投票
+* 可以建立，編輯和刪除主題
+
+貼張圖讓你看看它會長怎樣:
+
+![Browser window with topic titles that can be voted on, ordered by number of votes](img/finished_app.png)
+
+### 練功目標
+
+當你把今天的目標，製作一個基礎應用程式並上線完成了之後，你應該會學會：
+
+* 基本的 Ruby 語法
+* 如何嘗試你的 Ruby 程式碼 (IRB)
+* 如何把需求變成一個可以動的 Rails 應用程式
+* 如何把你的應用程式放到網路上
+* Rails 工程師會使用的基礎工具 (版本控管，編輯器，console，本地 server)
+
+### 時程
+
+* 約一小時的 Ruby
+* 約四小時的 Rails, 每一個步驟大概一小時左右
+
+這只是個簡略的教學指南，並不是規定。有些地方你會很輕鬆地走過，有些地方你會遭遇到一些困難
+這些都會在今天結束前被解決。大概吧！
+
+### 需求
+
+我們將會用下面這些環境來操作：
+
+* Ruby 2.2 or 2.3 用 RVM 安裝 (Mac or Linux) 或用 RailsInstaller 安裝 (Windows)
+* Rails 5.0.x
+* Bundler
+* SQLite
+* 一個自選的文字編輯器。例如：Sublime, atom
+
+這些東西都應該在前一晚的 install-fest 都安裝好。請在禮拜六的 RailsBridge _之前_ 確定這些一切都正常
+
+你可以利用 Terminal 輸入這些指令來確認一切都是正常的：
+
+```ruby
+> irb
+>> 1 + 2
+# 出現的結果 => 3
+>> require "active_support"
+# 出現的結果 => true
+>> exit
+>
+```
+
+如果上面的指令都可以跑的話，那就大概沒問題了！
+MARKDOWN
+
+insert 'working_effectively_and_efficiently'
+
+message <<-MARKDOWN
+### 格式
+
+每一課看起來大概都會是這個樣子：
+
+<div style="background: white; border: 1px solid black; padding-left: 4em;">
+  <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
+  <div class="goals">
+    <h1>目標：</h1>
+    <p>描述我們現在要做什麼
+    <p>紅色代表很重要的大目標
+  </div>
+  <div class="steps">
+    <h1>步驟：</h1>
+    <pre class="term">要做的步驟</pre>
+    <div class="console">
+      <pre>
+def code_to_write
+  1 + 1
+end</pre>
+    </div>
+    <p>黃色代表實作步驟，但即使做完了仍是知其然卻不知其所以然
+  </div>
+  <div class="explanation">
+    <h1>解釋</h1>
+    <p>詳述這些步驟實際上做了什麼，解釋他們的原因跟效果
+    <p>綠色代表我們把一切 (目標、實作、解釋) 都串起來了。
+  </div>
+</div>
+MARKDOWN
+
+next_step "ruby_語言體驗"
+

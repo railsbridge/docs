@@ -1,0 +1,66 @@
+message <<-MARKDOWN
+  # What we're going to do
+
+  * Remove postings
+
+  Once a job is filled, we don't want a listing for it hanging out forever. Let's add a way to delete postings.
+
+  # Postings be gone!
+
+  If we look at our [handy Routes page](http://localhost:3000/rails/info/routes), we see this:
+MARKDOWN
+
+source_code :html, "job_path   DELETE   /jobs/:id(.:format)   jobs#destroy"
+
+message "So we need to send the DELETE http verb to the server, so we can get to the destroy method on the jobs controller (that we will make soon). It turns out rails link_to helpers accept specific verbs as an argument, so we can add this line below the edit posting link that we just added:"
+
+source_code :erb, "<h5><%= link_to 'Delete Posting', job, method: :delete %></h5>"
+
+message "Go to the index, and try to delete something."
+
+error_box "The action 'destroy' could not be found for JobsController"
+
+message "This is like my favorite error now! First, let's add the method:"
+
+source_code :ruby,
+<<-RUBY
+  def destroy
+  end
+RUBY
+
+message <<-MARKDOWN
+  This fixes the error. But just like updating, we still need to add the logic that actually deletes the job.
+
+  See if you can figure out the right syntax for finding the job, deleting it, and then redirecting to a useful page.
+
+  **Don't scroll down!!!**
+MARKDOWN
+
+message <<-MARKDOWN
+ * here
+ * is
+ * even
+ * more
+ * strategic
+ * white
+ * space
+ * so
+ * the
+ * answer
+ * isn't
+ * immediately
+ * visible!
+
+ Okay, here's the answer:
+MARKDOWN
+
+source_code :ruby,
+<<-RUBY
+  @job = Job.find(params[:id])
+  @job.destroy
+  redirect_to jobs_path
+RUBY
+
+message "Try it again, and... kablammo! We're destroying job listings left and right!"
+
+next_step "add_more_things"

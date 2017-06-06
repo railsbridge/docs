@@ -1,0 +1,42 @@
+goals do
+  goal "Write some straight JavaScript"
+  goal "Compare that JavaScript to jQuery"
+end
+
+steps do
+  
+  step do
+    message "On the last page, we wrote some jQuery that looked like this. Let's comment it out for now, and see if we can replicate the same functionality in straight JavaScript. Add comment tags before these lines. In JavaScript, the easiest way to comment out a line is to put a `//` at the beginning. Go ahead and try this:"
+    source_code :js, <<-JS
+//$("#copyright").click(function(){ 
+//  $(this).css('color','purple'); 
+//});"
+    JS
+    message "Now if you save the page, refresh, and click the copyright line, nothing should happen."
+  end
+  
+  step do
+    message "Underneath the lines you just commented out, let's take a shot at writing the same functionality in straight JavaScript. There are a number of ways to do this. Here's an example:"
+    source_code :js, <<-JS
+document.getElementById('copyright').addEventListener("click", function() {
+  this.style.color = 'purple';
+});
+    JS
+    message "If you save the page, refresh, and click, you should see the same visual result (purple text). jQuery's `click` is very similar to using `addEventListener` with `\"click\"`. Read more about [addEventListener on MDN](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)."
+  end
+  
+end
+  
+explanation do
+
+  message <<-MARKDOWN
+
+## So Should I Use regular JavaScript or jQuery?
+
+Don't forget that everything you can do with jQuery you can do with regular JavaScript. If you want to start building cool user interfaces that use JavaScript right away, jQuery will probably help you do that the fastest. It's worth learning how to do things with regular JavaScript too, because you won't always want or need to use jQuery.
+
+  MARKDOWN
+  
+end
+
+next_step 'resources'

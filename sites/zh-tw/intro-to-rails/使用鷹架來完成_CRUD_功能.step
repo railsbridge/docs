@@ -1,0 +1,89 @@
+---
+goals {
+
+  message <<-MARKDOWN
+    基本上，動態網站裡的 Database(資料庫) 都是做同樣的事情。需要儲存與提供紀錄，大都依據以下四種行為：
+
+    * **C** (Create, 建立) 新的紀錄到 Database
+    * **R** (Read, 讀取) 或是顯示 Database 上的某筆紀錄
+    * **U** (Update, 更新) 目前已有的紀錄
+    * **D** (Destroy, 刪除) 某筆紀錄
+
+    因為這四種動作 (簡稱 CRUD) 是如此的常見，Rails 的 Scaffold(鷹架) 指令自動幫我們將這四個功能做出來了
+  MARKDOWN
+}
+
+steps {
+
+  step {
+    console "rails server"
+  }
+
+  step {
+    message "打開瀏覽器前往 [http://localhost:3000/topics](http://localhost:3000/topics)"
+    message "應該會看到標題為 \"Listing topics\" 的頁面，底下有 title 與 description，還有一個 `new topic` 的連結 (如下圖)："
+
+    img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
+  }
+
+  step {
+    message <<-MARKDOWN
+  * 點擊 "New Topic"
+  * 在表單上寫入一些東西，並按下 "Create Topic"
+  * 應該會看到你新建的的 topic 與訊息： "Topic was successfully created.":
+    MARKDOWN
+
+    img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
+  }
+
+  step {
+    message <<-MARKDOWN
+      * 點擊 "Back"
+      * 應該會回到標題為 \"Listing topics\" 的頁面，這時底下 title 跟 description 會列出剛剛建的新資料：
+
+      ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
+
+      * 試試看點擊 "Show", "Edit", 與 "Destroy" 連結會發生什麼事
+      * 恭喜你成功建出一個基本的動態網站！
+    MARKDOWN
+  }
+}
+
+explanation {
+
+  message <<-MARKDOWN
+  這些頁面是如何跟資料庫的 CRUD 做結合？ Rails 的 Scaffold(鷹架) 幫你做了一些事情。
+
+  讓我們仔細看看這過程中 Rails 建了什麼檔案
+
+  * `app/models/topic.rb`
+    * 這個檔案包含了我們的 Model Topic。 如果打開此檔案，會發現幾乎空空如也，跟 Database 做 CRUD 方面的溝通功能都內建在 Rails 裡了 (譯注：可以看該檔案的第一行，就是讓它去繼承 Rails Model 的基本功能)
+
+  * `app/views/topics`
+    * 這個 View 資料夾包括了所有 topics 的前端視覺檔案。包括剛剛在建立資料時所用的表單。這些都由 Rails 的 Scaffold(鷹架) 自動建立出來的。
+    * 如果你寫過 HTML，有許多內容看起來會很熟雞。 Rails Views 其實就是在 HTML 裡嵌入物件(來自於 database 的資料)，來讓頁面可以在不同資料內容下動態顯示
+
+  * `app/views/topics/index.html.erb`
+    * 此檔案是列出全部 topic 資料的頁面
+    * Index 是一個 "預設" 的網站頁面名稱，當你前往 http://localhost:3000/topics 時，實際上會呼叫到 topics/index.html.erb 這個檔案並變成實際的頁面
+
+  * `app/views/topics/show.html.erb`
+    * 當你在 Index 上點擊 "Show" 連結時出現的頁面
+
+  * `app/views/topics/new.html.erb`
+    * 當你點擊 "New Topic" 連結時出現的頁面
+
+  * `app/views/topics/edit.html.erb`
+    * 當你點擊 "Edit" 連結時出現的頁面
+
+  * `app/views/topics/_form.html.erb`
+    * 你也許會發現 Edit 跟 New 這二個頁面看起來都很像，因為它們都有相同的 form(表單)。來自於這個檔案被稱為 "Partial" 的檔案。只要在檔名前面加上 _(下底線) ，就會變成 Partial ，而它只會用於某頁面的一部份，不會變成獨立的頁面
+    * 小小挑戰：你可以找出是在 new.html.erb 跟 edit.html.erb 中，是哪一行呼叫了 form 這個 Partial 嗎?
+
+  * `app/controllers/topics_controller.rb`
+    * 這個檔案是由 Rails 的 Scaffold(鷹架) 自動建立出來的
+    * 你會看到裡面有各種與 View 對應的 method (`def` 開頭)，但除了 _form.html.erb
+    MARKDOWN
+}
+
+next_step "預設頁面的設定"

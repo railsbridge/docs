@@ -6,6 +6,7 @@ require 'titleizer'
 require 'html5_page'
 require 'flags'
 require 'erb'
+require 'cgi'
 
 class DocPage < Html5Page
   needs :site, :doc_title, :doc_path, :page_name, :src, :locale
@@ -41,7 +42,7 @@ class DocPage < Html5Page
   end
 
   def git_url
-    "https://github.com/railsbridge/docs/blob/master/sites/#{@locale}/#{site.name}/#{file_name}"
+    "https://github.com/sdlong/railsbridge-docs/blob/zh-tw/sites/#{@locale}/#{site.name}/#{file_name}"
   end
 
   def src_url
@@ -105,8 +106,8 @@ class DocPage < Html5Page
 
         div.back {
           text I18n.t("general.back_to") + " "
-          a(class: "back", href: back_url) do
-            text Titleizer.title_for_page(page_name)
+          a(class: "back", href: CGI::unescape(back_url)) do
+            text CGI::unescape(Titleizer.title_for_page(page_name))
           end
         }
       end
@@ -114,20 +115,20 @@ class DocPage < Html5Page
 
     footer {
       p do
-        text "Going through this curriculum on your own? Get help on "
-        a "our Discourse forum", href: "http://discourse.bridgefoundry.org/c/railsbridge-help", target: "_blank"
-        text ", where RailsBridge volunteers can answer your questions."
+        text "有翻譯或是其他相關問題，請至 "
+        a "https://github.com/sdlong/railsbridge-docs", href: "https://github.com/sdlong/railsbridge-docs"
+        text " 發送 "
+        a "pull request", href: "https://github.com/sdlong/railsbridge-docs/pulls"
+        text " 給技術上的建議"
       end
       p do
-        text "If you have a suggestion for improving the docs, please make a "
-        a "pull request ", href: "https://github.com/railsbridge/docs"
-        text "or "
-        a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
-        text "via GitHub Issues (no technical knowledge required)."
+        text "或到 "
+        a "issue ", href: "https://github.com/sdlong/railsbridge-docs/issues"
+        text "做詢問及 bug 回報 (不需要任何技術知識)"
       end
       p do
-        text "Source: "
-        url "https://github.com/railsbridge/docs"
+        text "本站原始碼: "
+        url "https://github.com/sdlong/railsbridge-docs"
       end
     }
   end

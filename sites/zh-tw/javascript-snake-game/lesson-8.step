@@ -1,0 +1,39 @@
+# Lesson 8 - Ending the Game When A Wall Is Hit
+
+markdown <<-MARKDOWN
+  Games aren't much fun if you can't lose them! Let's make it so when you hit
+  a wall. CHUNK comes with a function to detect collisions between things, so
+  we'll use that.
+  
+  Add an `if` statement to the `advanceGame` function like so:
+  
+  ```js
+  var advanceGame = function() {
+    snake = moveSnake(snake);
+    if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
+      CHUNK.endGame();
+      CHUNK.flashMessage("Whoops! you hit a wall!");
+    }
+    drawSnake(snake);
+  }
+  ```
+  
+  Now, when there is a collision between the snake and the border we can have
+  CHUNK end the game and let the player know the game is over.
+MARKDOWN
+
+js_expected_results 'lesson-8'
+
+markdown <<-MARKDOWN
+  ### Syntax Breakdown
+  
+  `CHUNK.detectCollisionBetween` takes two collections of coordinates and
+  returns true if the collections share any pixels
+  
+  `CHUNK.endGame` tells chunk to stop calling the advanceGame function,
+  effectively ending the game.
+  
+  `CHUNK.flashMessage` displays text to the user.
+MARKDOWN
+
+next_step 'lesson-9'

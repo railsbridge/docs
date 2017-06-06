@@ -1,0 +1,9 @@
+h2 do
+  span "如果你已經部署你的應用程式到 Heroku 上了，前往 "
+  a '第二次 (以後) 部署到 Heroku', href: "第二次以後部署到_heroku"
+end
+
+insert '_deploying_to_heroku'
+
+insert '_deploying_to_heroku_again'
+

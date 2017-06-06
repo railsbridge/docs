@@ -1,0 +1,85 @@
+message <<-MARKDOWN
+  # What we're going to do:
+
+  * Review what a database is
+  * Create a table in the database for jobs
+  * Learn what a migration file is
+MARKDOWN
+
+discussion_box "Databases & SQL",
+<<-MARKDOWN
+  Review how relational databases are structured, how we communicate with them (hint: SQL!).
+MARKDOWN
+
+message <<-MARKDOWN
+  # Make a jobs model & migration
+
+  In order to make it possible for users to create jobs, we need:
+
+   * A place to store the jobs (a table in the database)
+   * Rails to know what a job is (a model)
+
+  We're going to use another Rails generator; this time to make our migration and model!
+MARKDOWN
+
+console "rails g model job"
+
+message <<-MARKDOWN
+  (The g stands for *generate*, which has many more letters than is necessary to type.)
+
+  That generated two files: a migration and models/job.rb.
+
+  # Make that migration file useful
+
+  Open up the migration file that you just made (cmd+p / ctl+p, type 'create jobs', and hit enter) and you'll see the following:
+MARKDOWN
+
+source_code :ruby, <<-RUBY
+  class CreateJobs < ActiveRecord::Migration[5.0]
+    def change
+      create_table :jobs do |t|
+
+        t.timestamps
+      end
+    end
+  end
+RUBY
+
+message <<-MARKDOWN
+  Running this code will make a table in our database called jobs. Right now it just has the timestamps (`created_at` and `updated_at`). What else should a job have? Let's start with a title and description.
+
+  Add the the title and description so it looks like this:
+MARKDOWN
+
+source_code :ruby, <<-RUBY
+  create_table :jobs do |t|
+    t.text :title
+    t.text :description
+    t.timestamps
+  end
+RUBY
+
+message "Now we need to execute this file, so that the database schema gets updated."
+
+console "rake db:migrate"
+
+message <<-MARKDOWN
+  This uses a utility called rake to run a task called `db:migrate`, which in turn looks through all of your migration files and runs any that haven't already been run at some point in the past.
+MARKDOWN
+
+discussion_box "Why do we use migrations?",
+<<-MARKDOWN
+  Talk about the pros and cons of using migrations to update the database, instead of just updating the schema directly. Also, discuss what the database schema is!
+
+  (Pro-tip: *never* update the schema directly.)
+MARKDOWN
+
+message <<-MARKDOWN
+  # Check out the model
+
+  The migration we just ran updated the database, but that doesn't mean that we can talk to the database using Ruby yet. Look at the file `app/models/job.rb`. The `Job` class inherits from ApplicationRecord, so that we can talk to the database with Ruby instead of SQL!
+
+  Okay, so we've got some place to store our jobs. But how can we make any? THROUGH THE MAGIC OF FORMS!!!
+MARKDOWN
+
+next_step "add_a_new_job_form"
