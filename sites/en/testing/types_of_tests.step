@@ -1,7 +1,7 @@
 message <<-MARKDOWN
   Now, that you know what tests are, let's discuss the different types of tests!
 
-  In your Rails app, you have models, views, and controllers -> is MVC ringing a bell? :) Well, it should be no surprise that tests can be written for models, views, and controllers.
+  In your Rails app, you have models, views, and controllers. It should be no surprise that tests can be written for models, views, and controllers.
 
   As you learned in the previous section, tests are used to verify that your code is working as expected. So, a couple things we can test right off the bat are that a tree should have certain associations and validations. Let's start by writing some model tests also known as unit tests! This link might come in handy to remember singular vs. plural Rails conventions: https://alexander-clark.com/blog/rails-conventions-singular-or-plural/
 MARKDOWN
@@ -24,19 +24,19 @@ steps do
     message "You will see a report with one pending test. When you generated your Orange model, RSpec also generated a matching spec file. Copy the test below into spec/models/orange_spec.rb and run 'bundle exec rspec' on the terminal again."
 
 
-    console_without_message <<-RUBY
-    RSpec.describe Orange, :type => :model do
-      context 'ActiveRecord associations' do
-        it 'Orange belongs to tree' do
-          expect(Orange.reflect_on_association(:tree).macro).to be (:belongs_to)
+    source_code :ruby, <<-RUBY
+      RSpec.describe Orange, :type => :model do
+        context 'ActiveRecord associations' do
+          it 'Orange belongs to tree' do
+            expect(Orange.reflect_on_association(:tree).macro).to be (:belongs_to)
+          end
         end
       end
-    end
     RUBY
 
     message "Run 'bundle exec rspec'. This test fails! Let's add an associaton to our model. Add a belongs_to association to orange.rb:"
 
-    console_without_message <<-RUBY
+    source_code :ruby, <<-RUBY
     class Orange < ActiveRecord::Base
       belongs_to :tree
     end
@@ -66,20 +66,20 @@ steps do
 
     message "You should see a report with some passing tests but those are just the model tests you wrote. So, let's add some controller tests! Copy the below test, paste it into the oranges controller spec file, create the relevant view files and then run 'bundle exec rspec' on the terminal again."
 
-    console_without_message <<-RUBY
-    RSpec.describe OrangesController do
-      context '#index' do
-        it "renders the index view" do
-          get :index
-          expect(response).to render_template("index")
-        end
-
-        it "renders html" do
-          process :index, method: :get
-          expect(response.content_type).to eq "text/html"
+    source_code :ruby, <<-RUBY
+      RSpec.describe OrangesController do
+        context '#index' do
+          it "renders the index view" do
+            get :index
+            expect(response).to render_template("index")
+          end
+  
+          it "renders html" do
+            process :index, method: :get
+            expect(response.content_type).to eq "text/html"
+          end
         end
       end
-    end
     RUBY
 
     message "You should see two failing tests. You'll need to add a route, index action, and a view. Not sure where to start? Read the errors in your failing tests for a hint. Run 'bundle exec rspec' after each change until both tests pass."
@@ -90,26 +90,25 @@ steps do
   step do
     message "Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
   end
-end
 
-message <<-MARKDOWN
-  Last but not least: view tests! Below is an short snippet of a possible Orange show HTML page you can create in your app:
-MARKDOWN
-console_without_message <<-HTML
-<br>
-Orange title: <%= @orange.name %>
-<br>
-<br>
-Orange tree id: <%= @orange.tree_id %>
-<br>
-HTML
-
-message <<-MARKDOWN
-  So, based on the orange you create, the show page should render HTML with the orange's name and tree id. Let's verify that with a few tests.
-MARKDOWN
-
-steps do
   step do
+    message <<-MARKDOWN
+      Last but not least: view tests! Below is an short snippet of a possible Orange show HTML page you can create in your app:
+    MARKDOWN
+
+    source_code :erb, <<-ERB
+      <br>
+      Orange title: <%= @orange.name %>
+      <br>
+      <br>
+      Orange tree id: <%= @orange.tree_id %>
+      <br>
+    ERB
+
+    message <<-MARKDOWN
+      So, based on the orange you create, the show page should render HTML with the orange's name and tree id. Let's verify that with a few tests.
+    MARKDOWN
+
     message "First, create a views folder in the spec folder. Then, create an oranges folder in the views folder. Lastly, create an oranges view spec file in the oranges folder. Type these commands in the terminal:"
 
     console_without_message "mkdir app/spec/views"
