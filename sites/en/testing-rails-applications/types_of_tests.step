@@ -51,9 +51,7 @@ steps do
 
     message "On to controller tests! Just like the Orange model, you will create the OrangesController, which will also create spec files in the /spec/controllers folder of your app."
   end
-end
 
-steps do
   step do
     message "First, create the oranges controller and relevant spec files by typing this in the terminal:"
 
