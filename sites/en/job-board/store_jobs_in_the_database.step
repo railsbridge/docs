@@ -48,7 +48,7 @@ RUBY
 message <<-MARKDOWN
   Running this code will make a table in our database called jobs. Right now it just has the timestamps (`created_at` and `updated_at`). What else should a job have? Let's start with a title and description.
 
-  Add the the title and description so it looks like this:
+  Add the title and description so it looks like this:
 MARKDOWN
 
 source_code :ruby, <<-RUBY

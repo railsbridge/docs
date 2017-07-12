@@ -41,7 +41,7 @@ message <<-MARKDOWN
   (You must have at least one window open, so if that option is greyed out, open a window with cmd+n (Mac) or ctl+n (PC))
 MARKDOWN
 
-discussion_box "Text Editor vs Command Line", "Review the differences between the the command line and your text editor, even if everyone already knows!"
+discussion_box "Text Editor vs Command Line", "Review the differences between the command line and your text editor, even if everyone already knows!"
 
 message "# Let's Talk About Dependencies"
 
