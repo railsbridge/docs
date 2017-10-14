@@ -58,6 +58,25 @@ MARKDOWN
 js_expected_results 'lesson-6'
 
 markdown <<-MARKDOWN
+  ### Switch statement
+
+  A `switch` statement is another way to organize a seried of `if` and `else if`s. Here's an example:
+
+  ```js
+  switch(color) {
+    case "red":
+      return { action: "stop" };
+    case "orange":
+      return { action: "wait" };
+    case "green":
+      return { action: "go" };
+    default:
+      return { action: "unknown" };
+  }
+  ```
+
+  Can you figure out how to replace our snake game code above with a `switch` statement? (Don't worry, you'll see how we do it in the next lesson)
+
   ### Play Time!
 
   * Use a switch statement instead of a series of ifs
