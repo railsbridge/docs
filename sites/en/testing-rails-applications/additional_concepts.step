@@ -19,13 +19,14 @@ message <<-MARKDOWN
   So, when you write a test that calls the title attribute of the orange double, you'll always get back the string Florida Orange. Got it? Good!
 
   ### Spies
-  With spies, we are not talking about espionage... at least, not in relation to testing :) Spies can be used to verify whether a method was called on an object.
+  With spies, we are not talking about espionage... at least, not in relation to testing :) Spies can be used to verify whether a method was called on an object a certain number of times.
   For instance (assume you already have the orange double from above):
 
   ```ruby
   orange = spy('orange')
   orange.name
-  expect(orange).to have_received(:name)
+  orange.name
+  expect(orange).to receive(:name).exactly(2).times
   ```
 
   Obviously, this is a simplified case. Instead of orange.name, you might have a complicated method that executes many functions internally and that's where spies can come in handy; they can check easily whether one specific method was called. Capiche? Ok, let's keep on trucking!
