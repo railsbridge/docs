@@ -19,7 +19,7 @@ You may have never programmed before. Now you will.
   * most coding happens in a team
   * pair programming is awesome
 
-<http://women2.com/2012/09/04/linda-liukas-what-every-girl-needs-to-know-about-programming/>
+<http://www.women2.com/2012/09/04/20120904linda-liukas-what-every-girl-needs-to-know-about-programming/>
 
 # What is coding?
 
