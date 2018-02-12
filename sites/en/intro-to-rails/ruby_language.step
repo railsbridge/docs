@@ -87,10 +87,8 @@ steps do
   end
 
   step do
-    message <<-MARKDOWN
-      Each class has different **methods** that can be used on **instances** of
-      that class.
-    MARKDOWN
+    message "Each class has different **methods** that can be used on **instances** of
+      that class.""
 
     console_without_message <<-RUBY
       fruits.length
@@ -183,5 +181,7 @@ steps do
     MARKDOWN
   end
 end
+
+important "Before you move on to the next step you must exit IRB by typing 'exit'"
 
 next_step "getting_started"
