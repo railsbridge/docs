@@ -105,9 +105,7 @@ steps do
     RUBY
 
     message <<-MARKDOWN
-      In `fruit.methods.sort` above, `fruit.methods` returns an array, and
-      `.sort` sorts that array. It's exactly like this, but without the `array`
-      variable:
+      In `fruit.methods.sort` above, `fruit.methods` returns an array, and `.sort` sorts that array. It's exactly like this, but without the `array` variable:
     MARKDOWN
 
     console_without_message <<-RUBY
