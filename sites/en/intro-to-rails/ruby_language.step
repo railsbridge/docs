@@ -169,7 +169,7 @@ steps do
   end
 
   step do
-    message "This is an *optional* practice question if you want to brush up on your Ruby. Feel free to skip it! Or talk to your TA if you get stuck, or discuss your solution once you have completed the checkpoint."
+    message "This is an *optional* small group practice question!  Work in groups of 2-3 to solve the problem."
 
     message "Write some Ruby that prints out the names of the people in your group."
 
