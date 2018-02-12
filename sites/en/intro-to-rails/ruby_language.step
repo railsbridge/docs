@@ -87,8 +87,7 @@ steps do
   end
 
   step do
-    message "Each class has different **methods** that can be used on **instances** of
-      that class."
+    message "Each class has different **methods** that can be used on **instances** of that class."
 
     console_without_message <<-RUBY
       fruits.length
