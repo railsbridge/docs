@@ -1,14 +1,14 @@
-goals do
+goals {
 
   message "In this step we'll learn about how the files created by scaffold work together. By the end of this step you should understand the following concepts:"
 
-  ul do
+  ul {
     li "Request Cycle"
     li "Model View Controller (MVC) Architecture"
-  end
-end
+  }
+}
 
-explanation do
+explanation {
 
   h1 "Request Cycle"
 
@@ -84,6 +84,6 @@ explanation do
   always have filenames starting with an underscore character."
   
   message "**Challenge question:** Can you find the line of code in `new.html.erb` and `edit.html.erb` that makes the form partial appear?"
-end
+}
 
 next_step "setting_the_default_page"

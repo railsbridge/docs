@@ -1,5 +1,5 @@
 ---
-goals do
+goals {
 
   message <<-MARKDOWN
     At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
@@ -11,23 +11,23 @@ goals do
 
     Because these 4 actions (CRUD) are so common, Rails includes the scaffold command to make creating them easier.
   MARKDOWN
-end
+}
 
-steps do
+steps {
 
-  step do
-    console "rails server -b0.0.0.0"
-    message "We need the `-b0.0.0.0` part so that Vagrant can connect to your server."
-  end
+  step {
+    console "rails server"
+    tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
+  }
 
-  step do
+  step {
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
     message 'You should see the "Listing Topics" page with headers for title and description, and a link to add a new topic:'
 
     img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
-  end
+  }
 
-  step do
+  step {
     message <<-MARKDOWN
   * Click on "New Topic"
   * Fill in the form and click "Create Topic"
@@ -35,9 +35,9 @@ steps do
     MARKDOWN
 
     img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
-  end
+  }
 
-  step do
+  step {
     message <<-MARKDOWN
       * Click on "Back"
       * You should see the topic list again, this time with your new topic listed:
@@ -47,14 +47,13 @@ steps do
       * Try the "show", "edit", and "destroy" links to see what they do
       * You've created a basic database-driven web site. Congratulations!
     MARKDOWN
-  end
-end
+  }
+}
 
-explanation do
+explanation {
   message <<-MARKDOWN
   How did all those pages get created and hooked together? `rails scaffold` did it for you.
   MARKDOWN
-end
+}
 
 next_step "the_request_cycle_and_rails_architecture"
-
