@@ -53,7 +53,7 @@ explanation {
     end
     ```
 
-    `rake db:migrate` is a task provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. 
+    `rails db:migrate` is a task provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. 
 
   MARKDOWN
 

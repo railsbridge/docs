@@ -78,10 +78,7 @@ explanation {
     * `app/views/topics/_form.html.erb`
   MARKDOWN
 
-  message "You may have noticed that the page for new topics and the page to edit topics looked similar. That's because they both use the
-  code from this file to show a form. This file is called a
-  partial since it only contains code for part of a page. Partials
-  always have filenames starting with an underscore character."
+  message "You may have noticed that the page for new topics and the page to edit topics looked similar. That's because they both use the code from this file to show a form. This file is called a partial since it only contains code for rendering part of a page. Partials are easy to spot as the filename always starts with an underscore character. They are great for organizing page rendering code into smaller, manageable parts."
   
   message "**Challenge question:** Can you find the line of code in `new.html.erb` and `edit.html.erb` that makes the form partial appear?"
 }
