@@ -85,7 +85,7 @@ expected: #< Tree @age=1 >
 </div>
 
 ## Matchers
-Remember our example in the RSpec Basics section above? The 'to eq' is a matcher! RSpec has many built-in matchers. Matchers evaluates our expectations. In our example, we are saying that we expect orange_tree's age to equal an integer of 1.
+Remember our example in the RSpec Basics section above? The 'to eq' is a matcher! RSpec has many built-in matchers. You can think of them as ways to equate or check certain values or expressions to what you think or expect they would "match" to. In our example, we are saying that we expect orange_tree's age to equal an integer of 1.
 
 Check out the other built-in matchers!
 https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
