@@ -25,6 +25,7 @@ message <<-MARKDOWN
   ```ruby
   orange = spy('orange')
   orange.name
+  expect(orange).to receive(:name)
   orange.name
   expect(orange).to receive(:name).exactly(2).times
   ```
