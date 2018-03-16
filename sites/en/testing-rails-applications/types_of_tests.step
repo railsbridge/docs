@@ -27,7 +27,7 @@ steps do
     source_code :ruby, <<-RUBY
       RSpec.describe Orange, :type => :model do
         context 'ActiveRecord associations' do
-          it 'Orange belongs to tree' do
+          it 'belongs to tree' do
             expect(Orange.reflect_on_association(:tree).macro).to be (:belongs_to)
           end
         end
@@ -47,7 +47,7 @@ steps do
 
   step do
 
-    message "Now let's write a has_many association test for the relationship between the Tree model and the Orange model! (hint: this doesn't exist yet so you'll have to create the model and migrate!)"
+    message "Now let's write a has_many association test for the relationship between the Tree model and the Orange model! (<strong>hint: this doesn't exist yet so you'll have to create the model and migrate!</strong>)"
 
     message "On to controller tests! Just like the Orange model, you will create the OrangesController, which will also create spec files in the /spec/controllers folder of your app."
   end
@@ -71,7 +71,7 @@ steps do
             get :index
             expect(response).to render_template("index")
           end
-  
+
           it "renders html" do
             process :index, method: :get
             expect(response.content_type).to eq "text/html"
@@ -80,13 +80,13 @@ steps do
       end
     RUBY
 
-    message "You should see two failing tests. You'll need to add a route, index action, and a view. Not sure where to start? Read the errors in your failing tests for a hint. Run 'bundle exec rspec' after each change until both tests pass."
+    message "You should see two failing tests. <strong>Hint: You'll need to add a route, index action, and a view.</strong> Not sure where to start? Read the errors in your failing tests for a hint. Run 'bundle exec rspec' after each change until both tests pass."
 
     message "Note: as you write the controller tests, you may be prompted to install a missing gem called 'rails-controller-testing' to use the assert_template method. If prompted, please add it to your Gemfile and do a bundle install!"
   end
 
   step do
-    message "Now, write another controller test for the new action (hint: you might need to look up what a mock is)."
+    message "Now, write another controller test for the new action (<strong>hint: you might need to look up what a mock is</strong>)."
   end
 
   step do
@@ -109,14 +109,15 @@ steps do
 
     message "First, create a views folder in the spec folder. Then, create an oranges folder in the views folder. Lastly, create an oranges view spec file in the oranges folder. Type these commands in the terminal:"
 
-    console_without_message "mkdir app/spec/views"
-    console_without_message "mkdir app/spec/views/oranges"
-    console_without_message "cd app/spec/views/oranges"
+    console_without_message "mkdir spec/views"
+    console_without_message "mkdir spec/views/oranges"
+    console_without_message "cd spec/views/oranges"
     console_without_message "touch show.html.erb_spec.rb"
   end
   step do
-    message "Then, run rspec."
+    message "Change directory back to the root directory of your app. Then, run rspec."
 
+    console_without_message "cd ../../.."
     console_without_message "bundle exec rspec"
 
     message "You should see a report with some passing tests but those are just the model and controller tests you wrote. So, let's add some view tests!"
