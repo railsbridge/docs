@@ -62,7 +62,7 @@ message "# Look at your empty app"
 
 tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
 
-console_with_message "Start the Rails server by running this command in the terminal:", "rails server"
+console_with_message "Start the Rails server by running this command in the terminal:", "rails server -b0.0.0.0"
 
 message <<-MARKDOWN
   Now, let's check out our default home page
