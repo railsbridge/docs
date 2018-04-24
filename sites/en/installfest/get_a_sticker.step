@@ -4,27 +4,37 @@ step "Have a volunteer check your tool versions" do
 
   verify "tool installation" do
 
-    tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
+    option_half "Without Docker" do
+      tip "Most of the time, the version numbers don't have to match exactly. In general, if the *first two* numbers match, or if the full number you have is *greater* than the one below, then you're cool."
 
-    h3 "If you're on OSX or Linux:"
+      h3 "If you're on OSX or Linux:"
 
-    console "rvm -v"
-    fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.io/]{/FUZZY}"
+      console "rvm -v"
+      fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.io/]{/FUZZY}"
 
-    h3 "On all operating systems:"
+      h3 "On all operating systems:"
 
-    console "ruby -v"
-    fuzzy_result "ruby 2.3{FUZZY}.3p222 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
+      console "ruby -v"
+      fuzzy_result "ruby 2.3{FUZZY}.3p222 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
 
-    tip "As long as your Ruby version is #{version_string(:ruby_short)} or above, you're good to go."
+      tip "As long as your Ruby version is #{version_string(:ruby_short)} or above, you're good to go."
 
-    console "bundle -v"
-    fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
+      console "bundle -v"
+      fuzzy_result "Bundler version 1{FUZZY}.x.x{/FUZZY}"
 
-    console "rails -v"
-    fuzzy_result "Rails 5.0{FUZZY}.x{/FUZZY}"
+      console "rails -v"
+      fuzzy_result "Rails 5.0{FUZZY}.x{/FUZZY}"
 
-    tip 'The RailsBridge curriculum is written for Rails 5, so if you still have Rails 4.x or earlier, you need to install Rails 5 with `gem install rails`.'
+      tip 'The RailsBridge curriculum is written for Rails 5, so if you still have Rails 4.x or earlier, you need to install Rails 5 with `gem install rails`.'
+    end
+
+    option_half "With Docker" do
+      message "The following should output `ruby` version `2.5.1-slim` and `postgres` version `10.3`:"
+      console "docker images"
+
+      console "docker-compose run web rails -v"
+      fuzzy_result "Rails 5.2.0"
+    end
   end
 end
 

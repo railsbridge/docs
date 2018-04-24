@@ -56,6 +56,10 @@ step "Deploy your app to Heroku" do
 
   step "Prepare your rails app for deploying to Heroku" do
     message <<-MARKDOWN
+      **SKIP THIS STEP IF YOU'RE USING DOCKER**
+    MARKDOWN
+
+    message <<-MARKDOWN
       Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\railsbridge\\test_app` and on Linux/OS X, it should be under `~/railsbridge/test_app`.)
 
       Inside this file, change the line:
