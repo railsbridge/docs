@@ -12,7 +12,12 @@ goals {
 steps {
 
   step {
-    console "rails generate scaffold topic title:string description:text"
+    option_half "Without Docker" {
+      console "rails generate scaffold topic title:string description:text"
+    }
+    option_half "With Docker" {
+      console "docker-compose run web rails generate scaffold topic title:string description:text"
+    }
     message <<-MARKDOWN
 * `generate scaffold` tells Rails to create everything necessary to get up and running with topics.
 * `topic` tells Rails the name of the new model.
@@ -25,7 +30,12 @@ steps {
   }
 
   step {
-    console "rails db:migrate"
+    option_half "Without Docker" {
+      console "rails db:migrate"
+    }
+    option_half "With Docker" {
+      console "docker-compose run web rails db:migrate"
+    }
     message "This tells Rails to update the database to include a table for our new model."
   }
 }
@@ -34,6 +44,7 @@ explanation {
 
   message <<-MARKDOWN
 Here, `rails db:migrate` is a command provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
+`docker-compose run web <commands>` is a way to run commands in docker web service we specified in `docker-compose.yml` earlier.
 
   MARKDOWN
 

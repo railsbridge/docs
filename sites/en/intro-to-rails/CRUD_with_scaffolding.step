@@ -16,9 +16,16 @@ goals {
 steps {
 
   step {
-    console "rails server"
+    option_half "Without Docker" {
+      console "rails server"
+    }
+
+    option_half "With Docker" {
+      console "docker-compose up"
+    }
 
     tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
+    tip "Docker users should have a tab that is running rails server, `docker-compose up`, a tab that is running bash in the docker web service container, `docker-compose run web bash`, where you can run all your rails related commands and `irb`, and another tab to interact with git, heroku, or bringing down the server, `docker-compose down`."
   }
 
   step {

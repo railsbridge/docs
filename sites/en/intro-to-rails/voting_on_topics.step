@@ -8,6 +8,7 @@ goals {
 }
 
 steps {
+  tip "Docker users should be running this in a terminal tab running `docker-compose run web bash`."
   console <<-SHELL
 rails generate model vote topic_id:integer
 rails db:migrate

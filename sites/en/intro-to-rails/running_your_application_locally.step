@@ -7,7 +7,12 @@ steps do
   step do
     message "Make sure that you're in the `suggestotron` folder. You can type `pwd` (**p**rint **w**orking **d**irectory) in the terminal to see what folder you are in."
 
-    console "rails server"
+    option_half "Without Docker" do
+      console "rails server"
+    end
+    option_half "With Docker" do
+      console "docker-compose up"
+    end
     message "This will print some stuff and stay running forever, printing more stuff
 every time you visit a page in your app."
   end
@@ -20,8 +25,12 @@ every time you visit a page in your app."
   step do
     message "While the server is running, whatever you type in that terminal tab
 will be ignored."
-    message "To get back to the terminal, you can stop the server by typing
-`Control-c`."
+    option_half "Without Docker" do
+      message "To get back to the terminal, you can stop the server by typing `Control-c`."
+    end
+    option_half "With Docker" do
+      message "To get back to the terminal, you can stop the server by typing in a new terminal tab `docker-compose down`. Make sure you're still in `suggestotron` directory."
+    end
     result <<-STOPPING_RAILS_SERVER
 ^CExiting
     STOPPING_RAILS_SERVER
@@ -32,7 +41,7 @@ explanation do
   message "`rails server` ran your application locally just like Heroku will be running it on their servers."
   message "This provides a very simple means to see your changes before you commit and push them to Heroku."
   message "`Control-c` is a way of closing or cancelling terminal programs. Since
-`rails server` runs forever, you need to interrupt it with `Control-c`."
+  message "`docker-compose down` is a way of bringing down the docker web service contianer that is running `rails server`."
 end
 
 next_step "creating_a_migration"

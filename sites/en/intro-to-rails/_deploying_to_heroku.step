@@ -4,6 +4,7 @@ step "Create a Heroku application" do
 end
 
 step "Edit the Gemfile" do
+  tip "Docker users can skip this step since we're already using `pg` gem."
   important "Each application has its own `Gemfile`. Be sure you're opening the one inside your app's folder."
 
   message "Heroku will run our application slightly differently than our development computer does, which requires us to make a small change to our `Gemfile`."
@@ -28,6 +29,7 @@ end
 end
 
 step "Apply the Gemfile changes" do
+  tip "Docker users can skip this step since we're already using `pg` gem."
   console "bundle install --without production"
   message "Every time the `Gemfile` changes, you need to run ``bundle install`` for the changes to be processed. The processed version of the changes is stored in another file called ``Gemfile.lock``."
   message "Here we are bundling without the gems in the group ``production``."

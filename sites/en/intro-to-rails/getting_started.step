@@ -41,13 +41,95 @@ steps do
   end
 
   step do
-    console "rails new suggestotron"
+    option_half "Without Docker" do
+      console "rails new suggestotron"
+    end
+
+    option_half "With Docker" do
+      console "mkdir suggestotron"
+      console "cd suggestotron"
+      message "In your editor, create a new file called `Gemfile`"
+      message "Copy the following into `Gemfile`:"
+      source_code :ruby, <<-CONTENTS
+        source "https://rubygems.org"
+        gem "rails", "5.2.0"
+      CONTENTS
+      console "touch Gemfile.lock"
+      message "In your editor, create a new file called `Dockerfile`:"
+      message "Copy the following into `Dockerfile`:"
+      source_code :text, <<-CONTENTS
+        FROM ruby:2.5.1-slim
+
+        RUN apt-get update -qq && apt-get install -y build-essential libpq-dev git vim nodejs postgresql-client build-essential
+
+        ENV APP_HOME /suggestotron
+        RUN mkdir -p $APP_HOME
+        WORKDIR $APP_HOME
+        COPY Gemfile* $APP_HOME/
+        RUN bundle install --binstubs
+        COPY . $APP_HOME
+      CONTENTS
+      message "In your editor, create a new file called `docker-compose.yml`:"
+      message "Copy the following into `docker-compose.yml`:"
+      source_code :text, <<-CONTENTS
+        version: '3'
+        services:
+          db:
+            image: postgres:10.3
+            volumes:
+              - db_data:/var/lib/postgresql/data
+          web:
+            build: .
+            environment:
+              DB_HOST: db
+            tty: true
+            stdin_open: true
+            volumes:
+              - .:/suggestotron
+            command: bin/rails s -p 3000 -b '0.0.0.0'
+            ports:
+              - "3000:3000"
+            depends_on:
+              - db
+        volumes:
+          db_data:
+            driver: local
+      CONTENTS
+      message "Build your rails app:"
+      console "docker-compose run web rails new . --force --database=postgresql"
+      console "docker-compose build"
+      message "Setup the database:"
+      message "In your editor, open up `config/database.yml` and change it to the following:"
+      source_code :ruby, <<-CONTENTS
+        default: &default
+          adapter: postgresql
+          encoding: unicode
+          username: postgres
+          password:
+          pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+          host: <%= ENV.fetch("DB_HOST") %>
+        development:
+          <<: *default
+          database: suggestotron_development
+        test:
+          <<: *default
+          database: suggestotron_test
+        production:
+          <<: *default
+          database: suggestotron_production
+          password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+      CONTENTS
+      console "docker-compose run web bin/rails db:create"
+      console "docker-compose run web bin/rails db:migrate"
+    end
+
     message "`rails new` creates a new Rails project with the name you give."
     message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
     message "This will print a lot of stuff to the screen and can take a while to finish."
   end
 
   step do
+    tip "skip if you're using Docker"
     console "cd suggestotron"
     message "`cd suggestotron` makes suggestotron our current directory."
   end
