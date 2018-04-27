@@ -25,6 +25,28 @@ message <<-MARKDOWN
   * Error messages are your friend! Read them carefully, and practice understanding what Rails is telling you. Seeing an error and just diving back into your code is a natural reaction, but stop! Then read, think, and talk about what the error means before fixing it.
 MARKDOWN
 
+message <<-MARKDOWN
+  # Useful Docker commands:
+  * `docker-compose run web <<commands>>`, runs commands in web service container
+  E.g.,
+  ```
+  $ docker-compose run web bin/rails c
+  ```
+  * `docker-compose run web bash`, runs bash to interact with the directory inside the web service container
+  * `docker-compose build`, build image when `Dockerfile` changes or when you want
+    to update or add gems.
+  * `docker-compose up`, starts up containers.
+  * `docker-compose up -d`, starts up containers **in the background**.
+  * `docker-compose down`, stops containers.
+  * `docker-compose ps`, view container processes, container name, container id.
+  * `docker attach <<contianer_name>>`, attach container to interact with
+    `binding.pry`. `Control + p` `Control + q `, detach from container.
+
+  # Useful Docker guides:
+  * [https://docs.docker.com/compose](https://docs.docker.com/compose)
+  * [https://docs.docker.com/compose/rails/#build-the-project](https://docs.docker.com/compose/rails/#build-the-project)
+MARKDOWN
+
 insert '../intro-to-rails/working_effectively_and_efficiently'
 
 next_step "create_a_rails_app"

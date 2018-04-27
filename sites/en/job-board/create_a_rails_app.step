@@ -20,13 +20,99 @@ message <<-MARKDOWN
   # Rails New!!!
 MARKDOWN
 
-console "rails new job_board -T --skip-turbolinks"
+option_half "Without Docker" do
+  console "rails new job_board -T --skip-turbolinks"
+
+  message <<-MARKDOWN
+    The `-T` in that command means that when you make new files using Rails generators, it doesn't automatically create test files using Test::Unit (the default Rails testing framework).
+
+    Watch all the files that are created! Wow!
+  MARKDOWN
+end
+
+option_half "With Docker" do
+  console "mkdir job_board"
+  console "cd job_board"
+
+  message "In your editor, create a new file called `Gemfile`"
+  message "Copy the following into `Gemfile`:"
+  source_code :ruby, <<-CONTENTS
+    source "https://rubygems.org"
+    gem "rails", "5.2.0"
+  CONTENTS
+  console "touch Gemfile.lock"
+
+  message "In your editor, create a new file called `Dockerfile`:"
+  message "Copy the following into `Dockerfile`:"
+  source_code :text, <<-CONTENTS
+    FROM ruby:2.5.1-slim
+
+    RUN apt-get update -qq && apt-get install -y build-essential libpq-dev git vim nodejs postgresql-client build-essential
+
+    ENV APP_HOME /job_board
+    RUN mkdir -p $APP_HOME
+    WORKDIR $APP_HOME
+    COPY Gemfile* $APP_HOME/
+    RUN bundle install --binstubs
+    COPY . $APP_HOME
+  CONTENTS
+
+  message "In your editor, create a new file called `docker-compose.yml`:"
+  message "Copy the following into `docker-compose.yml`:"
+  source_code :text, <<-CONTENTS
+    version: '3'
+    services:
+      db:
+        image: postgres:10.3
+        volumes:
+          - db_data:/var/lib/postgresql/data
+      web:
+        build: .
+        environment:
+          DB_HOST: db
+        tty: true
+        stdin_open: true
+        volumes:
+          - .:/job_board
+        command: bin/rails s -p 3000 -b '0.0.0.0'
+        ports:
+          - "3000:3000"
+        depends_on:
+          - db
+    volumes:
+      db_data:
+        driver: local
+  CONTENTS
+
+  message "Build your rails app:"
+  console "docker-compose run web rails new . --force --database=postgresql -T --skip-turbolinks"
+  console "docker-compose build"
+
+  message "Setup the database:"
+  message "In your editor, open up `config/database.yml` and change it to the following:"
+  source_code :ruby, <<-CONTENTS
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      username: postgres
+      password:
+      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+      host: <%= ENV.fetch("DB_HOST") %>
+    development:
+      <<: *default
+      database: job_board_development
+    test:
+      <<: *default
+      database: job_board_test
+    production:
+      <<: *default
+      database: job_board_production
+      password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  CONTENTS
+  console "docker-compose run web bin/rails db:create"
+end
 
 message <<-MARKDOWN
-  The `-T` in that command means that when you make new files using Rails generators, it doesn't automatically create test files using Test::Unit (the default Rails testing framework).
-
-  Watch all the files that are created! Wow!
-
   # Open the project in Atom
 MARKDOWN
 
@@ -35,8 +121,7 @@ console_with_message "Move into the directory for your new Rails app:", "cd job_
 message <<-MARKDOWN
   And open the project in Atom:
 
-  * Open Atom
-  * Under Project, choose "Add Folder to Project"
+  * Open Atom * Under Project, choose "Add Folder to Project"
 
   (You must have at least one window open, so if that option is greyed out, open a window with cmd+n (Mac) or ctl+n (PC))
 MARKDOWN
@@ -62,7 +147,14 @@ message "# Look at your empty app"
 
 tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
 
-console_with_message "Start the Rails server by running this command in the terminal:", "rails server -b0.0.0.0"
+message "Start the Rails server by running this command in the terminal:"
+option_half "Without Docker" do
+  console "rails server -b 0.0.0.0"
+end
+option_half "With Docker" do
+  console "docker-compose up"
+  message "`docker-compose down` in another terminal to stop rails server"
+end
 
 message <<-MARKDOWN
   Now, let's check out our default home page
