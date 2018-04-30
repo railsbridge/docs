@@ -1,17 +1,17 @@
 step "Install Docker" do
   option "Docker for Mac" do
-    message "Visit [Docker for Mac download page](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+    message "Visit [Docker for Mac download page](https://store.docker.com/editions/community/docker-ce-desktop-mac)"
     message "Download and install the **Stable** verion"
   end
 
   option "Docker for Windows" do
-    message "Visit [Docker for Windows download page](https://store.docker.com/editions/community/docker-ce-desktop-windows)
-    message "Download and install the **Stable** verion"
+    message "Visit [Docker for Windows download page](https://store.docker.com/editions/community/docker-ce-desktop-windows)"
+    message "Download and install the **Stable** version"
   end
 
   option "Docker for Ubuntu" do
-    message "Visit [Docker for Ubuntu download page](https://store.docker.com/editions/community/docker-ce-server-ubuntu)
-    message "Download and install the **Stable** verion"
+    message "Visit [Docker for Ubuntu download page](https://store.docker.com/editions/community/docker-ce-server-ubuntu)"
+    message "Download and install the **Stable** version"
   end
 
   option "Docker for other platforms" do
