@@ -20,7 +20,7 @@ message <<-MARKDOWN
   # Rails New!!!
 MARKDOWN
 
-option_half "Without Docker" do
+option "Without Docker" do
   console "rails new job_board -T --skip-turbolinks"
 
   message <<-MARKDOWN
@@ -28,9 +28,11 @@ option_half "Without Docker" do
 
     Watch all the files that are created! Wow!
   MARKDOWN
+
+  console_with_message "Move into the directory for your new Rails app:", "cd job_board"
 end
 
-option_half "With Docker" do
+option "With Docker" do
   console "mkdir job_board"
   console "cd job_board"
 
@@ -116,10 +118,8 @@ message <<-MARKDOWN
   # Open the project in Atom
 MARKDOWN
 
-console_with_message "Move into the directory for your new Rails app:", "cd job_board"
-
 message <<-MARKDOWN
-  And open the project in Atom:
+  Open the project in Atom:
 
   * Open Atom * Under Project, choose "Add Folder to Project"
 
@@ -132,7 +132,15 @@ message "# Let's Talk About Dependencies"
 
 message "When we created a new Rails app, it installed a bunch of stuff by default. The list of things Rails installed is in a file called `Gemfile`. If you want to add any additional third party code (aka **gems**), you can add more lines to the `Gemfile` and install them with `bundle`."
 
-console_with_message "Rails has already installed all the stuff we need, but you can always run bundle again to re-install gems, or install gems newly added to the Gemfile. In the command line, run the following command:", "bundle install"
+message "Rails has already installed all the stuff we need, but you can always run bundle again to re-install gems, or install gems newly added to the Gemfile. In the command line, run the following command:"
+
+option "Without Docker" do
+  console "bundle install"
+end
+
+option "With Docker" do
+  console "docker-compose run web bundle install"
+end
 
 discussion_box "What does 'bundle' do?", <<-MARKDOWN
  Bundler is the tool the Ruby community uses for dependency management.
@@ -148,10 +156,10 @@ message "# Look at your empty app"
 tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
 
 message "Start the Rails server by running this command in the terminal:"
-option_half "Without Docker" do
+option "Without Docker" do
   console "rails server -b 0.0.0.0"
 end
-option_half "With Docker" do
+option "With Docker" do
   console "docker-compose up"
   message "`docker-compose down` in another terminal to stop rails server"
 end
