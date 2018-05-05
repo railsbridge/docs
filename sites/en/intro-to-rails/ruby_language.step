@@ -11,11 +11,11 @@ steps do
   step do
     message "Type this in the terminal to start the Interactive Ruby Shell, a program which lets you try out Ruby code:"
 
-    option_half "Without Docker" do
+    option "Without Docker" do
       console_without_message "irb"
     end
 
-    option_half "With Docker" do
+    option "With Docker" do
       console_without_message "docker run -it --rm ruby:2.5.1-slim"
     end
 

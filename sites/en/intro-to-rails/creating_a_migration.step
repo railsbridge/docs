@@ -1,4 +1,4 @@
-goals {
+goals do
 
   model_diagram header: 'Topics', fields: %w(id title description)
 
@@ -7,49 +7,49 @@ goals {
   goal "Create a simple *Table* in the database for topics with a title and a description"
   goal "Automatically generate the corresponding *Scaffold* in Rails (namely, the *Model*, the *View*, and the *Controller*)."
 
-}
+end
 
-steps {
+steps do
 
-  step {
-    option_half "Without Docker" {
+  step do
+    option "Without Docker" do
       console "rails generate scaffold topic title:string description:text"
-    }
-    option_half "With Docker" {
+    end
+    option "With Docker" do
       console "docker-compose run web rails generate scaffold topic title:string description:text"
-    }
-    message <<-MARKDOWN
-* `generate scaffold` tells Rails to create everything necessary to get up and running with topics.
-* `topic` tells Rails the name of the new model.
-* `title:string` says that topics have a title, which is a "string".
-* `description:text` says that topics have a description which is a "text". (What's the difference between "string" and "text"? Basically "text" is for strings that might be very long.)
-
-    MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
-    link "rails_architecture"
-  }
-
-  step {
-    option_half "Without Docker" {
-      console "rails db:migrate"
-    }
-    option_half "With Docker" {
-      console "docker-compose run web rails db:migrate"
-    }
-    message "This tells Rails to update the database to include a table for our new model."
-  }
-}
-
-explanation {
+    end
+  end
 
   message <<-MARKDOWN
-Here, `rails db:migrate` is a command provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
-`docker-compose run web <commands>` is a way to run commands in docker web service we specified in `docker-compose.yml` earlier.
+    * `generate scaffold` tells Rails to create everything necessary to get up and running with topics.
+    * `topic` tells Rails the name of the new model.
+    * `title:string` says that topics have a title, which is a "string".
+    * `description:text` says that topics have a description which is a "text". (What's the difference between "string" and "text"? Basically "text" is for strings that might be very long.)
+  MARKDOWN
 
+  message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
+  link "rails_architecture"
+
+
+  step do
+    option "Without Docker" do
+      console "rails db:migrate"
+    end
+    option "With Docker" do
+      console "docker-compose run web rails db:migrate"
+    end
+  end
+  message "This tells Rails to update the database to include a table for our new model."
+end
+
+explanation do
+
+  message <<-MARKDOWN
+    Here, `rails db:migrate` is a command provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
+    `docker-compose run web <commands>` is a way to run commands in docker web service we specified in `docker-compose.yml` earlier.
   MARKDOWN
 
   tip "You can run `rails --help` to see a list of all the `rails` commands your app currently responds to, along with a short description of each one."
-}
-
+end
 
 next_step "CRUD_with_scaffolding"

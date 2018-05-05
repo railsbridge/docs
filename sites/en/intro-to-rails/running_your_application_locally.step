@@ -2,7 +2,6 @@ goals do
   goal "Let's fire up the application locally"
 end
 
-
 steps do
   step do
     message "Make sure that you're in the `suggestotron` folder. You can type `pwd` (**p**rint **w**orking **d**irectory) in the terminal to see what folder you are in."
@@ -13,9 +12,10 @@ steps do
     option_half "With Docker" do
       console "docker-compose up"
     end
-    message "This will print some stuff and stay running forever, printing more stuff
-every time you visit a page in your app."
   end
+
+  message "This will print some stuff and stay running forever, printing more stuff every time you visit a page in your app."
+
   step do
     text "Point your web browser to "
     url "http://localhost:3000"
@@ -31,17 +31,17 @@ will be ignored."
     option_half "With Docker" do
       message "To get back to the terminal, you can stop the server by typing in a new terminal tab `docker-compose down`. Make sure you're still in `suggestotron` directory."
     end
-    result <<-STOPPING_RAILS_SERVER
-^CExiting
-    STOPPING_RAILS_SERVER
   end
+  result <<-STOPPING_RAILS_SERVER
+    ^CExiting
+  STOPPING_RAILS_SERVER
 end
 
 explanation do
   message "`rails server` ran your application locally just like Heroku will be running it on their servers."
   message "This provides a very simple means to see your changes before you commit and push them to Heroku."
-  message "`Control-c` is a way of closing or cancelling terminal programs. Since
-  message "`docker-compose down` is a way of bringing down the docker web service contianer that is running `rails server`."
+  message "`Control-c` is a way of closing or cancelling terminal programs."
+  message "`docker-compose down` is a way of bringing down the docker web service container that is running `rails server`."
 end
 
 next_step "creating_a_migration"

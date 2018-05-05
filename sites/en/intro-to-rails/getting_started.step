@@ -41,11 +41,13 @@ steps do
   end
 
   step do
-    option_half "Without Docker" do
+    option "Without Docker" do
       console "rails new suggestotron"
+      console "cd suggestotron"
+      message "`cd suggestotron` makes suggestotron our current directory."
     end
 
-    option_half "With Docker" do
+    option "With Docker" do
       console "mkdir suggestotron"
       console "cd suggestotron"
       message "In your editor, create a new file called `Gemfile`"
@@ -126,12 +128,6 @@ steps do
     message "`rails new` creates a new Rails project with the name you give."
     message "In this case we told it to create a new project called `suggestotron`. We'll go into detail on what it created shortly."
     message "This will print a lot of stuff to the screen and can take a while to finish."
-  end
-
-  step do
-    tip "skip if you're using Docker"
-    console "cd suggestotron"
-    message "`cd suggestotron` makes suggestotron our current directory."
   end
 
   step do
