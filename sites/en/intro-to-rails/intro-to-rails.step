@@ -38,10 +38,10 @@ day. Probably.
 
 We're going to be working with:
 
-* Ruby 2.3 or greater installed via RVM (Mac or Linux) or RailsInstaller (Windows)
+* Ruby 2.3 or greater installed via RVM (Mac or Linux), RailsInstaller (Windows), or Docker
 * Rails 5.0.x
 * Bundler
-* SQLite
+* SQLite (or PostgreSQL if you installed Docker)
 * The text editor of your choice
 
 Everything should be set up the night before during our
@@ -50,16 +50,31 @@ show up for RailsBridge on Saturday.
 
 You can verify that you have everything working by trying this out in your terminal:
 
-<div class="console"><pre>
-$ irb
->> 1 + 2
-=> 3
->> require "active_support"
-=> true
->> exit
-$
-</pre>
-</div>
+option_half "Without Docker" do
+  <div class="console"><pre>
+  $ irb
+  >> 1 + 2
+  => 3
+  >> require "active_support"
+  => true
+  >> exit
+  $
+  </pre>
+  </div>
+end
+
+option_half "With Docker" do
+  <div class="console"><pre>
+  $ docker run -it --rm ruby:2.5.1-slim
+  >> 1 + 2
+  => 3
+  >> require "active_support"
+  => true
+  >> exit
+  $
+  </pre>
+  </div>
+end
 
 If you can do that, you are probably good to go.
 MARKDOWN

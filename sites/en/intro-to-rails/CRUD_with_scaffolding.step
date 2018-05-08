@@ -1,5 +1,4 @@
----
-goals {
+goals do
 
   message <<-MARKDOWN
     At the core, most database driven web sites are the same. They need to store records and provide a way to do the following:
@@ -11,34 +10,41 @@ goals {
 
     Because these 4 actions (CRUD) are so common, Rails includes the scaffold command to make creating them easier.
   MARKDOWN
-}
+end
 
-steps {
+steps do
 
-  step {
-    console "rails server"
+  step do
+    option_half "Without Docker" do
+      console "rails server"
+    end
 
-    tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
-  }
+    option_half "With Docker" do
+      console "docker-compose up"
+    end
+  end
 
-  step {
+  tip "Now is a good time to figure out how to have multiple tabs or windows of your terminal or command prompt. Starting and stopping the Rails server all day is tedious, so it's good to have one terminal tab or window for running commands, and a separate one for the server."
+  tip "Docker users should have a tab that is running rails server, `docker-compose up`, a tab that is running bash in the docker web service container, `docker-compose run web bash`, where you can run all your rails related commands and `irb`, and another tab to interact with git, heroku, or bringing down the server, `docker-compose down`."
+
+  step do
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
     message "You should see the \"Topics\" page with headers for title and description, and a link to add a new topic:"
 
     img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
-  }
+  end
 
-  step {
+  step do
     message <<-MARKDOWN
-  * Click "New Topic"
-  * Fill in the form and click "Create Topic"
-  * You should see a page showing your new topic with a message that your topic was successfully created:
+      * Click "New Topic"
+      * Fill in the form and click "Create Topic"
+      * You should see a page showing your new topic with a message that your topic was successfully created:
     MARKDOWN
 
     img alt: "Screenshot of topic detail page with confirmation message", src: "img/Seattle_topic_created.png"
-  }
+  end
 
-  step {
+  step do
     message <<-MARKDOWN
       * Click "Back"
       * You should see the topic list again, this time with your new topic listed:
@@ -48,10 +54,10 @@ steps {
       * Try the "Show", "Edit", and "Destroy" links to see what they do
       * You've created a basic database driven web site, congrats!
     MARKDOWN
-  }
-}
+  end
+end
 
-explanation {
+explanation do
 
   message <<-MARKDOWN
   How did all those pages get created and hooked together? The Rails scaffold did it for you.
@@ -104,6 +110,6 @@ explanation {
       <code>def</code>) for each of the views listed above (except
       `_form.html.erb`)
     MARKDOWN
-}
+end
 
 next_step "setting_the_default_page"
