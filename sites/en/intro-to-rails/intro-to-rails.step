@@ -49,35 +49,33 @@ install-fest. Please ensure you have everything working _before_ you
 show up for RailsBridge on Saturday.
 
 You can verify that you have everything working by trying this out in your terminal:
-
-option_half "Without Docker" do
-  <div class="console"><pre>
-  $ irb
-  >> 1 + 2
-  => 3
-  >> require "active_support"
-  => true
-  >> exit
-  $
-  </pre>
-  </div>
-end
-
-option_half "With Docker" do
-  <div class="console"><pre>
-  $ docker run -it --rm ruby:2.5.1-slim
-  >> 1 + 2
-  => 3
-  >> require "active_support"
-  => true
-  >> exit
-  $
-  </pre>
-  </div>
-end
-
-If you can do that, you are probably good to go.
 MARKDOWN
+option "Without Docker" do
+  console <<-BASH
+    $ irb
+    >> 1 + 2
+    => 3
+    >> require "active_support"
+    => true
+    >> exit
+    $
+  BASH
+end
+
+option "With Docker" do
+  console <<-BASH
+    $ docker run -it --rm ruby:2.5.1-slim
+    >> 1 + 2
+    => 3
+    >> require "active_support"
+    => true
+    >> exit
+    $
+  BASH
+end
+
+message "If you can do that, you are probably good to go."
+
 
 insert 'working_effectively_and_efficiently'
 
