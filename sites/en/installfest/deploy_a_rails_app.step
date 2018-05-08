@@ -55,6 +55,10 @@ step "Deploy your app to Heroku" do
   end
 
   step "Prepare your rails app for deploying to Heroku" do
+    tip do
+      message "**WAIT!  If you are using Docker, SKIP this step and proceed to Step 2.3**"
+    end
+
     message <<-MARKDOWN
       Launch your text editor and open the "Gemfile" file located inside of your test_app folder. (On Windows, this should be in `C:\\Sites\\railsbridge\\test_app` and on Linux/OS X, it should be under `~/railsbridge/test_app`.)
 

@@ -4,8 +4,10 @@ span "Have a look at the "
 a 'general Glossary', href: '#general-glossary'
 span ", the "
 a 'Command Line Glossary', href: '#command-line-glossary'
-span ", and the "
+span ", the "
 a 'Ruby and Rails Glossary', href: '#ruby-and-rails-glossary'
+span ", and the "
+a 'Docker Glossary', href: '#docker-glossary'
 span "."
 
 a name: 'general-glossary'
@@ -21,4 +23,9 @@ end
 a name: 'ruby-and-rails-glossary'
 situation "Ruby and Rails Glossary" do
   insert '../installfest/ruby-and-rails-glossary'
+end
+
+a name: 'docker-glossary'
+situation "Docker Glossary" do
+  insert 'docker-glossary'
 end

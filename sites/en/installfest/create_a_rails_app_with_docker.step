@@ -1,0 +1,143 @@
+step "Change to your home directory" do
+  insert 'switch_to_home_directory'
+end
+
+step "Create a railsbridge directory" do
+  console "mkdir railsbridge"
+  message "`mkdir` stands for make directory (folder)."
+  message "We've made a folder called `railsbridge`."
+end
+
+step "Change to your new railsbridge directory" do
+  console "cd railsbridge"
+end
+
+step "Create a new Rails app" do
+  console "mkdir test_app"
+  console "cd test_app"
+
+  message "In your editor, create a new file called `Gemfile`"
+  message "Copy the following into `Gemfile`:"
+  source_code :ruby, <<-CONTENTS
+    source "https://rubygems.org"
+    gem "rails", "5.2.0"
+  CONTENTS
+  console "touch Gemfile.lock"
+
+  message "In your editor, create a new file called `Dockerfile`:"
+  message "Copy the following into `Dockerfile`:"
+  source_code :text, <<-CONTENTS
+    FROM ruby:2.5.1-slim
+
+    RUN apt-get update -qq && apt-get install -y build-essential libpq-dev git vim nodejs postgresql-client build-essential
+
+    ENV APP_HOME /test_app
+    RUN mkdir -p $APP_HOME
+    WORKDIR $APP_HOME
+    COPY Gemfile* $APP_HOME/
+    RUN bundle install --binstubs
+    COPY . $APP_HOME
+  CONTENTS
+
+  message "In your editor, create a new file called `docker-compose.yml`:"
+  message "Copy the following into `docker-compose.yml`:"
+  source_code :text, <<-CONTENTS
+    version: '3'
+    services:
+      db:
+        image: postgres:10.3
+        volumes:
+          - db_data:/var/lib/postgresql/data
+      web:
+        build: .
+        environment:
+          DB_HOST: db
+        tty: true
+        stdin_open: true
+        volumes:
+          - .:/test_app
+        command: bin/rails s -p 3000 -b '0.0.0.0'
+        ports:
+          - "3000:3000"
+        depends_on:
+          - db
+    volumes:
+      db_data:
+        driver: local
+  CONTENTS
+
+  message "Build your rails app:"
+  console "docker-compose run web rails new . --force --database=postgresql"
+  console "docker-compose build"
+
+  message "Setup the database:"
+  message "In your editor, open up `config/database.yml` and change it to the following:"
+  source_code :ruby, <<-CONTENTS
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      username: postgres
+      password:
+      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+      host: <%= ENV.fetch("DB_HOST") %>
+    development:
+      <<: *default
+      database: test_app_development
+    test:
+      <<: *default
+      database: test_app_test
+    production:
+      <<: *default
+      database: test_app_production
+      password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  CONTENTS
+  console "docker-compose run web bin/rails db:create"
+  console "docker-compose run web bin/rails db:migrate"
+
+  console "docker-compose up"
+  tip "`docker-compose up` will execute the command, `bin/rails s -p 3000 -b '0.0.0.0'`, in `docker-compose.yml`"
+
+  message "In your browser, go to <http://localhost:3000>"
+  img src: "img/successful_rails_install.png", alt: "Screenshot of the browser on localhost 3000 showing the rails intro page"
+
+  message "Open a new terminal tab, and stop the server."
+  console "docker-compose down"
+end
+
+step "Generate a database model" do
+  tip "If your prompt doesn't already show that you are (still) in the test_app folder" do
+    console "cd test_app"
+  end
+
+  message "Run the following in terminal:"
+  console "docker-compose run web bash"
+
+  console <<-BASH
+    rails generate scaffold drink name:string temperature:integer
+  BASH
+
+  console <<-BASH
+    rails db:migrate
+  BASH
+
+  message "Open another tab in terminal to bring the rails server up in Docker with:"
+  console <<-BASH
+    docker-compose up
+  BASH
+
+  message <<-MARKDOWN
+    In the browser, visit <http://localhost:3000/drinks>
+
+    1. Click on "New drink"
+    2. Enter Cappuccino for the name
+    3. Enter 135 for the temperature.
+    4. Click on "Create Drink".
+
+    You should see: ![Screenshot of the drink detail page](img/get_a_sticker_you_should_see.png)
+
+  MARKDOWN
+  message "Open a new terminal tab, and stop the server."
+  console "docker-compose down"
+end
+
+next_step "deploy_a_rails_app"

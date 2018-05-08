@@ -20,3 +20,7 @@ step "Delete the test_app from your computer" do
     console "rm -rf ~/railsbridge/test_app"
   end
 end
+
+step "Delete the test_app Docker image from your computer" do
+  console "docker rmi testapp_web"
+end

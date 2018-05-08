@@ -18,3 +18,12 @@ div(class: "os-button") do
     h3 "Linux"
   end
 end
+
+h2 "Or install Docker"
+
+div(class: "os-button") do
+  simple_link "docker" do
+    img src: "/img/docker.png"
+    h3 "Docker"
+  end
+end
