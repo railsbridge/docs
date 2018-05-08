@@ -29,7 +29,7 @@ steps do
 
   step do
     message "Point your browser to [http://localhost:3000/topics](http://localhost:3000/topics)"
-    message "You should see the \"Topics\" page with headers for title and description, and a link to add a new topic:"
+    message 'You should see the "Listing Topics" page with headers for title and description, and a link to add a new topic:'
 
     img src: "img/Seattle_topic_list_page.png", alt: "Screenshot of topic list page"
   end
@@ -46,70 +46,21 @@ steps do
 
   step do
     message <<-MARKDOWN
-      * Click "Back"
+      * Click on "Back"
       * You should see the topic list again, this time with your new topic listed:
 
       ![Screenshot of topic list with new topic](img/Seattle_list_with_topic.png)
 
-      * Try the "Show", "Edit", and "Destroy" links to see what they do
-      * You've created a basic database driven web site, congrats!
+      * Try the "show", "edit", and "destroy" links to see what they do
+      * You've created a basic database-driven web site. Congratulations!
     MARKDOWN
   end
 end
 
-explanation do
-
+explanation {
   message <<-MARKDOWN
-  How did all those pages get created and hooked together? The Rails scaffold did it for you.
+  How did all those pages get created and hooked together? `rails scaffold` did it for you.
+  MARKDOWN
+}
 
-  Let's take a closer look at some of the files Rails created:
-
-  * `app/models/topic.rb`
-    * This file contains code for our topic model. If you look at it,
-      it's nearly blank. Creating, reading, updating, and deleting
-      records are built into Rails.
-
-  * `app/views/topics`
-    * This folder contains all the views for our topics model. This is
-      where the code for the forms you used above is stored. Rails
-      created all of these pages as part of the scaffold.
-    * If you've written HTML before, many lines in the views should
-      look familiar. Rails views are HTML with some extra code added
-      to display data from the database.
-
-  * `app/views/topics/index.html.erb`
-    * This is the code for the page that lists all the topics.
-    * Index is the name given to the "default" page for a web site or a
-      section of a web site. When you navigate to
-      http://localhost:3000/topics the topics index page is what is
-      sent to your computer.
-
-  * `app/views/topics/show.html.erb`
-    * This is the page you get when you click the "Show" link on the
-      "Listing topics" page.
-
-  * `app/views/topics/new.html.erb`
-    * This is the page you get when you click "New Topic".
-
-  * `app/views/topics/edit.html.erb`
-    * This is the page you get when you click "Edit".
-
-  * `app/views/topics/_form.html.erb`
-    * You may have noticed that the page for new topics and the page
-      to edit topics looked similar. That's because they both use the
-      code from this file to show a form. This file is called a
-      partial since it only contains code for part of a page. Partials
-      always have filenames starting with an underscore character.
-
-    * Challenge question: Can you find the line of code in new.html.erb
-      and edit.html.erb that makes the form partial appear?
-
-  * `app/controllers/topics_controller.rb`
-    * This is the controller file that Rails created as part of the scaffold
-    * If you look you'll see a method (a line beginning with
-      <code>def</code>) for each of the views listed above (except
-      `_form.html.erb`)
-    MARKDOWN
-end
-
-next_step "setting_the_default_page"
+next_step "the_request_cycle_and_rails_architecture"
