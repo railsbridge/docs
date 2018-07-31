@@ -1,9 +1,9 @@
 h2 "What's your operating system?"
 
 div(class: "os-button") do
-  simple_link "macintosh" do
-    img src: "/img/macface.jpg"
-    h3 "Macintosh"
+  simple_link "macOS" do
+    img src: "/img/macos.png"
+    h3 "macOS"
   end
 end
 div(class: "os-button") do
