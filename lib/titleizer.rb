@@ -19,7 +19,8 @@ module Titleizer
 
     special_cases = {
       'jquery' => 'jQuery',
-      'osx' => 'OS X'
+      'osx' => 'OS X',
+      'macos' => 'macOS'
     }
 
     page_name.split(/[-_]/).map do |w|
@@ -27,8 +28,8 @@ module Titleizer
         w.upcase
       elsif to_be_lowercased.include?(w.downcase)
         w.downcase
-      elsif special_cases.include?(w)
-        special_cases[w]
+      elsif special_cases.include?(w.downcase)
+        special_cases[w.downcase]
       else
         w.capitalize
       end
