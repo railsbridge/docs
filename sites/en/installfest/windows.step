@@ -6,7 +6,7 @@ MARKDOWN
 
 step "Run RailsInstaller" do
   message "RailsInstaller includes Rails, Ruby, Git and SQLite."
-  message "Go to <http://railsinstaller.org/>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby #{version_string(:ruby_short)}."
+  message "Go to <http://railsinstaller.org/en>, scroll to the 'Downloads' section, and download the RailsInstaller for Windows/Ruby #{version_string(:ruby_short)}."
   message "Click on the downloaded file to run the install wizard.  Click Next at each step to accept the defaults."
   message "Be sure to check the boxes for *Install git (recommended)* and  *Add executables for Ruby, DevKit Git (if checked above) to the PATH*"
 
