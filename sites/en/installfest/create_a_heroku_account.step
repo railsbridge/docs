@@ -24,11 +24,11 @@ step "Install the Heroku CLI" do
     console "heroku version"
     fuzzy_result <<-TEXT
       {FUZZY}heroku-toolbelt/3.30.6 (x86_64-darwin10.8.0) ruby/1.9.3{/FUZZY}
-      heroku-cli{FUZZY}/5.6.8-9647e01 (darwin-amd64) go1.7.4{/FUZZY}
+      heroku{FUZZY}/7.6.0 darwin-x64 node-v10.6.0{/FUZZY}
       {FUZZY}You have no installed plugins.{/FUZZY}
     TEXT
   end
-  message "The output could be different, depending on whether this is the first time you've installed the Heroku CLI, but it should always have `heroku-cli` in it."
+  message "The output could be different, depending on whether this is the first time you've installed the Heroku CLI, but it should always have `heroku` in it."
   message "If `heroku version` doesn't work, try the command again in a new terminal window."
 end
 
