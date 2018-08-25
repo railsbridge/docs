@@ -33,8 +33,8 @@ steps do
   step do
     message "You can also do math with variables:"
     console_without_message <<-RUBY
-my_variable + 2
-my_variable * 3
+      my_variable + 2
+      my_variable * 3
     RUBY
   end
 
@@ -48,8 +48,8 @@ my_variable * 3
 
   step do
     console <<-RUBY
-fruits = fruits + ["orange"]
-fruits = fruits - ["kiwi"]
+      fruits = fruits + ["orange"]
+      fruits = fruits - ["kiwi"]
     RUBY
 
     message "`+` and `-` are called operators. We can use them with the array of fruits just like we can use them with numbers."
@@ -57,42 +57,69 @@ fruits = fruits - ["kiwi"]
   end
 
   step do
+    message "A **hash** is a dictionary-like collection of unique **keys** and their **values**."
+
+    console <<-RUBY
+      fruit_dictionary = { strawberry: "a sweet soft red...", plum: "an oval, purple fruit...", orange: "a round juicy citrus fruit..." }
+    RUBY
+
+    message "We're creating a hash which associates the name of a fruit (**key**) with the definition of the fruit (**value**)."
+  end
+
+  step do
+    console <<-RUBY
+      fruit_dictionary[:strawberry]
+    RUBY
+
+    message "Here we're using the **key**, `:strawberry`, to look up the associated **value**, the definition of 'strawberry' in the fruit dictionary."
+  end
+
+  step do
     message "Everything in Ruby has a **class**. Type this into IRB:"
 
     console_without_message <<-RUBY
-7.class
-"kiwi".class
-fruits.class
-RUBY
+      7.class
+      "kiwi".class
+      fruits.class
+    RUBY
 
-    message "These are the three data types introduced so far: **Fixnum** (numbers), **String** (text), and **Array** (lists)."
+    message "These are the four data types introduced so far: **Fixnum** (numbers), **String** (text), **Array** (lists), and **Hash** (dictionaries)."
   end
 
   step do
     message "Each class has different **methods** that can be used on **instances** of that class."
 
     console_without_message <<-RUBY
-fruits.length
-fruits.first
+      fruits.length
+      fruits.first
     RUBY
 
     message "You can see all the methods available for an object:"
     console_without_message <<-RUBY
-fruits.methods
+      fruits.methods
     RUBY
 
-    message "And **chain** methods together:"
+    message "And you can call multiple methods in a row:"
     console_without_message <<-RUBY
-fruits.methods.sort
+      fruits.methods.sort
+    RUBY
+
+    message <<-MARKDOWN
+      In `fruit.methods.sort` above, `fruit.methods` returns an array, and `.sort` sorts that array. It's exactly like this, but without the `array` variable:
+    MARKDOWN
+
+    console_without_message <<-RUBY
+      array = fruits.methods
+      array.sort
     RUBY
   end
 
   step do
     message "Arrays have a method called **each** which iterates through the list running code on each item."
     console_without_message <<-RUBY
-fruits.each do |fruit|
-  puts fruit
-end
+      fruits.each do |fruit|
+        puts fruit
+      end
     RUBY
     message "This takes the first item from the `fruits` array (`\"strawberry\"`), assigns it to the variable `fruit`, and runs the code between `do` and `end`. Then it does the same thing for each other item in the list. The code above should print a list of the fruits."
   end
@@ -101,9 +128,9 @@ end
     message "A **conditional** runs code only when a statement evaluates to true."
 
     console_without_message <<-RUBY
-if my_variable > 1
-  puts "YAY!"
-end
+      if my_variable > 1
+        puts "YAY!"
+      end
     RUBY
 
     message "This prints `YAY!` if the value stored in `my_variable` is greater than 1."
@@ -113,21 +140,21 @@ end
     message "If you want to do something else when the statement evaluates to false, you can use an `else`:"
 
     console_without_message <<-RUBY
-if my_variable > 1
-  puts "YAY!"
-else
-  puts "BOO!"
-end
+      if my_variable > 1   
+        puts "YAY!"    
+      else   
+        puts "BOO!"    
+      end    
     RUBY
   end
 
   step do
     message "You can also make your own methods:"
     console_without_message <<-RUBY
-def pluralize(word)
-  word + "s"
-end
-pluralize("kiwi")
+      def pluralize(word)
+        word + "s"
+      end
+      pluralize("kiwi")
     RUBY
 
     message "Methods take **parameters**, which are the variables they work on. In this case, we made a method called pluralize that takes one parameter, a word."
@@ -136,22 +163,19 @@ pluralize("kiwi")
   end
 
   step do
-    message "Putting it all together, let's make a method that says your opinion of some fruits:"
-    message "**Don't try to type this all in!** Just paste it into irb and see what happens."
-    console_without_message <<-RUBY
-def my_opinion(fruits)
-  fruits.each do |fruit|
-    if fruit == "pizza"
-      puts "pizza is the best!!!"
-    else
-      puts pluralize(fruit) + " are pretty good, I guess..."
-    end
-  end
-end
-my_opinion(["apple", "pizza", "orange"])
-    RUBY
+    message "This is an *optional* small group practice question!  Work in groups of 2-3 to solve the problem."
 
-    message "Try changing this method to say what your favorite fruit is."
+    message "Write some Ruby that prints out the names of the people in your group."
+
+    message <<-MARKDOWN
+      Hints:
+
+      1. Start by opening up `irb`.
+      1. Create the names as strings in an array.
+      1. Store that array to a variable.
+      1. Then use the `.each` method on the stored array to loop through each of the names.
+      1. Use the `puts` method to print out the names.
+    MARKDOWN
   end
 end
 
