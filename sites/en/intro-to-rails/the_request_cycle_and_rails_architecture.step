@@ -1,0 +1,86 @@
+goals {
+
+  message "In this step we'll learn about how the files created by scaffold work together. By the end of this step you should understand the following concepts:"
+
+  ul {
+    li "Request Cycle"
+    li "Model View Controller (MVC) Architecture"
+  }
+}
+
+explanation {
+
+  h1 "Request Cycle"
+
+  message "<img src='img/request-cycle.png'>"
+
+  discussion_box "What is this diagram?", <<-MARKDOWN
+    Talk through this diagram of the request cycle!
+  MARKDOWN
+
+  h1 "Model View Controller (MVC) Architecture"
+
+  message "Rails implements a very specific notion of the **Model/View/Controller** pattern, which guides how you structure your web applications."
+
+  h2 "Controller"
+  message <<-MARKDOWN
+  * When you visit any page in your application, that request will be handled by a method in a Controller.
+  * Controllers use the Models to create, read, update, and delete data from the database.
+  * Controllers pass Ruby objects to the Views.
+
+  MARKDOWN
+
+  message "**Let's take a look at the Controller file in suggestotron:**"
+  
+  message <<-MARKDOWN
+    * `app/controllers/topics_controller.rb`
+  MARKDOWN
+
+  message "You'll see a method (a line beginning with
+      <code>def</code>) for each of the views listed above (except
+      _form.html.erb)."
+
+  h2 "Model"
+  message <<-MARKDOWN
+  * The Model is a bridge between the database and your application's code.
+  * For all the Models we create in RailsBridge, Model objects have a corresponding record in the database. The name of the table in the database is the plural version of the Model's class name.
+  MARKDOWN
+
+  message "**Let's take a look at the Topic Model in suggestotron:**"
+
+  message <<-MARKDOWN
+  * `app/models/topic.rb`
+  MARKDOWN
+
+  h2 "View"
+  message <<-MARKDOWN
+  * The View generates the HTML that will be displayed in the browser.
+  * View files are written in ERB, a templating language. It contains HTML with Ruby code embedded in it. The ruby variables in the view stand as placeholders for content that will be filled in when a user requests the page.
+  MARKDOWN
+
+  message "**Let's take a look at the Topic View files in suggestotron and match each View file with the corresponding page in the browser.**"
+
+  message <<-MARKDOWN
+  The file **`app/views/topics/index.html.erb`** in your **text editor (Sublime)**:
+
+  ![Screenshot of topic index view file in Sublime](img/Topics_Index_File_Viewed_In_Sublime.png)
+
+  Creates this **page** in your **web browser**:
+
+  ![Screenshot of topic index page in a web browser read](img/Seattle_list_with_topic.png)
+  
+  Match the rest of the Topic View files (in your text editor, Sublime) to a page in your web browser:
+  MARKDOWN
+  message <<-MARKDOWN
+    * `app/views/topics/show.html.erb`
+    * `app/views/topics/new.html.erb`
+    * `app/views/topics/edit.html.erb`
+    * `app/views/topics/_form.html.erb`
+  MARKDOWN
+
+  message "You may have noticed that the page for new topics and the page to edit topics looked similar. That's because they both use the code from this file to show a form. This file is called a partial since it only contains code for rendering part of a page. Partials are easy to spot as the filename always starts with an underscore character. They are great for organizing page rendering code into smaller, manageable parts."
+  
+  message "**Challenge question:** Can you find the line of code in `new.html.erb` and `edit.html.erb` that makes the form partial appear?"
+}
+
+next_step "setting_the_default_page"
