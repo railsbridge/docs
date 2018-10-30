@@ -3,66 +3,28 @@ require "contents"
 require "site_index"
 require 'erector_scss'
 require 'titleizer'
-require 'docs_external_renderer'
+require 'html5_page'
+require 'flags'
+require 'erb'
 
-class DocPage < Erector::Widgets::Page
-  needs :site_name, :doc_title, :doc_path, :page_name
+class DocPage < Html5Page
+  needs :site, :doc_title, :doc_path, :page_name, :src, :locale
   needs :back => nil
-  attr_reader :site_name, :doc_title, :page_name
-
-  needs :src
-  attr_reader :src
-
-  def self.css_path
-    here = File.expand_path File.dirname(__FILE__)
-    File.expand_path "#{here}/../public/css"
-  end
-
-  # wire up the DocsExternalRenderer
-  def included_head_content
-    included_widgets = [self.class] + output.widgets.to_a + extra_widgets
-    DocsExternalRenderer.new(:classes => included_widgets).to_html
-  end
-
-  def doctype
-    '<!doctype html>'
-  end
-
-  def html_attributes
-    {:lang => 'en'}
-  end
+  attr_reader :site, :doc_title, :page_name, :src
 
   def head_content
     title page_title
-    script :src => "/jquery.min.js"
-    script :src => "/js/bootstrap.min.js"
-    script :src => "/js/doc_page.js"
-    link   :href => "/font-awesome/css/font-awesome.min.css", :rel => "stylesheet"
+    script :src => "/assets/application.js"
+    link   :href => "/assets/application.css", :rel => "stylesheet"
   end
 
   def site_title
-    "#{site_name.split(/[-_]/).map(&:capitalize).join(" ")}"
+    Titleizer.title_for_page(site.name)
   end
 
   def page_title
     "#{doc_title} - #{site_title}"
   end
-
-  external :style, scss(File.read("#{css_path}/header.scss"))
-  external :style, scss(File.read("#{css_path}/toc.scss"))
-  external :style, scss(File.read("#{css_path}/doc_page.scss"))
-
-  # this is how to load the Open Sans font when we know we're online
-  # external :style,  <<-CSS
-  # @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
-  # CSS
-
-  # but this is to load the Open Sans font when we might be offline
-  external :style,  <<-CSS
-  @import url(/fonts/opensans.css);
-  @import url(/fonts/aleo.css);
-  @import url(/css/coderay.css);
-  CSS
 
   class TopLink < Erector::Widget
     needs :name, :href, :toggle_selector => nil, :extraclass => nil
@@ -74,14 +36,12 @@ class DocPage < Erector::Widgets::Page
     end
   end
 
-  # todo: test
   def file_name
-    @doc_path.split('/').last
+    File.basename(@doc_path)
   end
 
-  # todo: test
   def git_url
-    "https://github.com/railsbridge/docs/blob/master/sites/#{@site_name}/#{file_name}"
+    "https://github.com/railsbridge/docs/blob/master/sites/#{@locale}/#{site.name}/#{file_name}"
   end
 
   def src_url
@@ -91,25 +51,34 @@ class DocPage < Erector::Widgets::Page
   def top_links
     [
       TopLink.new(name: "toc", href: "#", extraclass: 'show-when-small', toggle_selector: '#table_of_contents'),
-      TopLink.new(name: "src", href: src_url),
-      TopLink.new(name: "git", href: git_url),
+      TopLink.new(name: "src", href: src_url, extraclass: 'hidden-sm'),
+      TopLink.new(name: "git", href: git_url, extraclass: 'hidden-sm'),
     ]
+  end
+
+  def body_attributes
+    if site.name == 'docs'
+      {class: 'no-toc'}
+    else
+      {}
+    end
   end
 
   def body_content
     nav(class: "top cf", role: "navigation") {
 
       div(class: "navbar-header cf title") {
-        a(href: "/#{site_name}") {
+        a(href: "/#{site.name}") {
           span("RailsBridge ", class: "brand")
           text site_title
         }
       }
       ul(class: "navbar-nav nav") {
+        widget Flags, locale: @locale
 
         li(class: "dropdown") {
           a("sites", href: "#", class: "dropdown-toggle", "data-toggle" => "dropdown")
-          widget SiteIndex, site_name: site_title
+          widget SiteIndex, site_name: site.name, locale: @locale
         }
 
         top_links.each do |top_link|
@@ -118,27 +87,39 @@ class DocPage < Erector::Widgets::Page
       }
     }
 
-    widget Contents, site_name: site_name, page_name: page_name
+    widget Contents, site: site, page_name: page_name
 
-    div(class: :main) {
+    main {
+      before_title
       h1 doc_title, class: "doc_title"
       div(class: :doc) {
         doc_content
       }
       if @back
+        # Encode page name and fragment name separately so that
+        # the fragment indicator '#' won't be escaped.
+        page_name, fragment = @back.split('#')
+        url_components = [ERB::Util.u(page_name)]
+        url_components << ERB::Util.u(fragment) if fragment
+        back_url = url_components.join('#')
+
         div.back {
-          text "Back to "
-          a(class: "back", href: @back) do
-            text Titleizer.title_for_page(@back.split('#').first)
+          text I18n.t("general.back_to") + " "
+          a(class: "back", href: back_url) do
+            text Titleizer.title_for_page(page_name)
           end
         }
       end
     }
 
-    div(class: 'bottom') {
-      p "RailsBridge Docs is maintained by RailsBridge volunteers."
+    footer {
       p do
-        text "If you find something that could be improved, please make a "
+        text "Going through this curriculum on your own? Get help on "
+        a "our Discourse forum", href: "http://discourse.bridgefoundry.org/c/railsbridge-help", target: "_blank"
+        text ", where RailsBridge volunteers can answer your questions."
+      end
+      p do
+        text "If you have a suggestion for improving the docs, please make a "
         a "pull request ", href: "https://github.com/railsbridge/docs"
         text "or "
         a "drop us a note ", href: "https://github.com/railsbridge/docs/issues/new"
@@ -149,6 +130,10 @@ class DocPage < Erector::Widgets::Page
         url "https://github.com/railsbridge/docs"
       end
     }
+  end
+
+  def before_title
+    # placeholder for subclass override
   end
 
 end

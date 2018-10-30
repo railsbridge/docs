@@ -1,0 +1,145 @@
+body {
+  font-family: 'Open Sans', helvetica, arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+main, footer {
+  display: block;
+}
+
+body > footer {
+  clear: both;
+  min-height: 60px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  font-size: 0.8em;
+}
+
+.visible {
+  display: block !important;
+}
+
+main {
+  position: relative;
+  margin-left: 300px;
+  margin-right: 20px;
+  padding-left: 15px;
+}
+
+@media (max-width: 1100px) {
+  main {
+    margin-left: 40px;
+  }
+}
+
+main h1.doc_title {
+  font-family: "Aleo Bold", serif;
+  color: #6c266f;
+  font-weight: 100;
+  font-size: 2em;
+  padding-top: 5px;
+  margin-bottom: .5em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid #ccc;
+}
+
+.doc {
+  max-width: 50em;
+
+  pre {
+    background: #f2f2f2;
+    padding: .5em 1em;
+    font-size: 13pt;
+    overflow-x: auto;
+  }
+
+  code {
+    font-size: 13pt;
+    background: #f2f2f2;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  h1 {
+    border-bottom: 2px solid #EEE;
+  }
+
+  blockquote {
+    margin: 0.5em 0 .5em 20px;
+  }
+}
+
+img {
+  margin: auto;
+  display: block; /* otherwise centering doesn't happen */
+  max-width: 100%;
+}
+
+.model-diagram {
+  margin: 0 auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+
+  th {
+    background-color: lightblue;
+  }
+
+  td {
+    padding: 0 5px;
+    border: 1px solid black;
+  }
+}
+
+.horiz-line {
+  position: absolute;
+  height: 1px;
+  border-bottom: 1px solid blue;
+}
+
+.vert-line {
+  position: absolute;
+  width: 1px;
+  border-left: 1px solid blue;
+}
+
+.arrow-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+
+  border-right: 8px solid blue;
+}
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+  display: table;
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+@media print {
+  main {
+    margin-left: 20px;
+    font-size: 13px;
+  }
+
+  .doc pre {
+    font-size: 10px;
+    overflow-x: visible;
+    background-color: white;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}

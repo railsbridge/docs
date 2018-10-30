@@ -1,0 +1,131 @@
+goals do
+  goal "Make an AJAX request and update the page based on the server's response."
+  goal "Load your list's items every time a user visits the page."
+end
+
+overview do
+  message <<-MARKDOWN
+    Now that we've learned about AJAX requests and React, let's tie everything together.
+    Here's what we want to happen.
+
+      1. Every time a user visits our site, we'll ask ListStore to load all items from the server.
+      2. It will use jQuery's AJAX function to make a request to http://listalous.herokuapp.com/ and
+    get all the data about our list's items.
+      3. We will then use our React Components to render all of our items!
+  MARKDOWN
+end
+
+steps do
+  step do
+    message <<-MARKDOWN
+First, we need to tell ListStore to call the loadItems function whenever a user visits
+the page. Open up index.html, and add this line of code to the bottom of the page, before the end
+of the script tag:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      ListStore.loadItems()
+    JAVASCRIPT
+
+    message "the end of index.html should now look like this:"
+
+    source_code :HTML, <<-HTML
+          React.render(<CreationForm />, document.getElementById('form-container') )
+          React.render(<List />, document.getElementById('list-container') )
+          ListStore.loadItems()
+        </script>
+      </body>
+    HTML
+  end
+
+  step do
+    message <<-MARKDOWN
+Now, we have to write the loadItems function! open up Store.js, and add the following code
+to the loadItems function. Replace 'YOUR-LIST-NAME-HERE' with the name of the list you created.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      loadItems: function() {
+        var loadRequest = $.ajax({
+          type: 'GET',
+          url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/"
+        })
+      },
+
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Refresh the page, and click over to your browser's network tab. You should see
+a new request there, that visits our server at https://listalous.herokuapp.com/.
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Now that we've made the request, we need to update ListStore whenever the request
+succeeds. Add the following lines of code to the bottom of the LoadItems function.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      loadRequest.done(function(dataFromServer) {
+        items = dataFromServer.items
+        notifyComponents()
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+      Now refresh the page. Once the AJAX request succeeds, your site should now display
+      all the items you created last lesson! If not, flag an instructor down to help you
+      debug the problem.
+    MARKDOWN
+  end
+
+end
+
+
+explanation do
+  message "Store.js should now look like this."
+  source_code :javascript, <<-JAVASCRIPT
+    ListStore = {
+
+      getItems: function() {
+        return items
+      },
+
+      loadItems: function() {
+        var loadRequest = $.ajax({
+          type: 'GET',
+          url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/"
+        })
+
+        loadRequest.done(function(dataFromServer) {
+          items = dataFromServer.items
+          notifyComponents()
+        })
+      },
+      addItem: function(itemDescription) {},
+      toggleCompleteness: function(itemId) {}
+
+  JAVASCRIPT
+
+  message <<-MARKDOWN
+Let's walk through what just happened:
+
+  1. When the user visited the page, we told the ListStore to load items.
+  2. The ListStore used jQuery's AJAX function to make a request to our server.
+  3. The server responded with all the items associated with our list.
+  4. We saved the server's response in the items variable, and notified the components
+  that it was time to re-render themselves.
+  5. The components heard the message, and updated! The List component used ListStore's getItems
+  function to get all the items data we had stored in the items variable.
+
+Your web page has made its first successful AJAX request! Now, your page will
+load your list's items whenever you visit it. Once we host this page on the internet,
+you will be able to see your list on any computer, tablet, or phone!
+  MARKDOWN
+end
+
+
+
+
+next_step "adding_an_item"

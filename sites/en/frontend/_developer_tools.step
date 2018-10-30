@@ -1,0 +1,67 @@
+goals do
+  goal "Get oriented with your browser's developer tools. They're a great jumping-off point for continuing to build your HTML, CSS, and JavaScript knowledge."
+  tip "The screenshots below are specific to the Chrome web browser, which is available for Mac, PC, and Linux and has great developer tools. If you're partial to another browser, there's usually a similar set of tools you can use."
+end
+
+steps do
+
+  step do
+    message <<-MARKDOWN
+      First, you've got to turn on your developer tools. They're hidden by default.
+
+      <img src='/frontend/img/devtools.png'>
+
+      In Chrome, you can do this by clicking _View > Developer > Developer Tools_.
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+      Click on the 'Elements' button to check out your HTML.
+
+      <img src='/frontend/img/devtools_elements.png'>
+
+      Clicking on an HTML tag in the elements panel will highlight that element in the browser window. It's a great tool for debugging styling problems. On the right side of the panel, you'll even get a list of styles that are being applied to that element.
+    MARKDOWN
+    tip "Chrome's Elements panel will update to match the state of your DOM as you modify it with JavaScript. Some elements panels don't do this &mdash; they just show what the HTML looked like on page load."
+  end
+
+  step do
+    message <<-MARKDOWN
+      In the 'Network' panel, you can see what other files and resources your HTML page is loading.
+
+      <img src='/frontend/img/devtools_network.png'>
+
+      If you click on a file name, you can take a look at the contents of that file. This panel is a great place for debugging script linking or loading issues. (You can see HTTP headers and request params here too, with a little digging.)
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+      The 'Console' is the JavaScript developer's secret weapon. It lets you run JavaScript by typing it in directly &mdash; and it runs your scripts _in the context of your page_, so you can interact directly with objects and functions you've defined. It's helpful for debugging and experimenting.
+
+      <img src='/frontend/img/devtools_console.png'>
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+      The 'Sources' panel is another JavaScript pro tool. If you're used to working with an IDE (Integrated Development Environment) that has a debugger, you'll be able to use many of the same techniques (like breakpoints, stack traces, and watch expressions) right here in the browser.
+
+      <img src='/frontend/img/devtools_script.png'>
+    MARKDOWN
+  end
+end
+
+explanation do
+
+  message <<-MARKDOWN
+
+## Keep Learning with Developer Tools
+
+With good browser developer tools, you can pick apart every website you visit. If you see cool
+CSS styles or JavaScript animations, you can always look under the hood and figure out how
+they're done. It's a great way to keep learning as a front-end developer.
+
+  MARKDOWN
+end

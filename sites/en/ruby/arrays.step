@@ -1,0 +1,102 @@
+goals do
+  goal "Make some arrays and do stuff with them"
+  goal "Retrieve data from arrays"
+end
+
+step do
+  irb <<IRB
+fruits = ["kiwi", "strawberry", "plum"]
+IRB
+  message 'An array is a list of things in square brackets, separated by commas.'
+  message 'We generally call the individual things in an array **elements**.'
+  irb <<-IRB
+things = [5, 'tree', 19.5]
+things.length
+  IRB
+  message 'An array can contain all sorts of things, not just strings.'
+  message '`length` is a method that tells you how many **elements** are in an array.'
+  irb <<-IRB
+  empty_array = []
+  empty_array.length
+  IRB
+  message 'The simplest kind of array is the empty array.'
+end
+
+step do
+  irb <<IRB
+fruits[0]
+fruits[1]
+fruits[2]
+IRB
+  message 'Array elements are stored in order. You can retrieve them by using the square brackets to access them by their **index**.'
+  message 'Arrays are ordered: elements remain in the same order they started in.'
+  message 'Ruby starts counting at zero: the first element is `fruits[0]`.'
+  irb <<IRB
+fruits.first
+fruits.last
+IRB
+  message 'Ruby gives us some helpful ways to get the first and last element from an array.'
+end
+
+step do
+	irb <<IRB
+['salt'] + ['pepper']
+IRB
+  message 'Arrays can be added together with the plus operator.'
+  irb <<IRB
+fruits + ['mango']
+fruits
+IRB
+  message 'The plus operator doesn\'t modify the existing array, it makes a new one. How could you write that last piece of code to also modify the fruits array?'
+end
+
+step do
+  irb <<IRB
+fruits = ["kiwi", "strawberry", "plum"]
+fruits.push('apple')
+fruits.pop()
+IRB
+  message 'Ruby has many methods for modifying arrays. What did these two methods do?'
+end
+
+explanation do
+  message "Arrays are used whenever you need to work with a large group of similar items."
+  message 'A short list of methods for Array:'
+  table class: 'bordered' do
+    tr do
+      td 'length'
+      td 'how long is this array (how many elements)'
+    end
+    tr do
+      td 'first'
+      td 'get the first element of the array (same as array[0])'
+    end
+    tr do
+      td 'last'
+      td 'get the last element of the array (same as array[-1])'
+    end
+    tr do
+      td 'push'
+      td 'add a new element to the end of the array'
+    end
+    tr do
+      td 'pop'
+      td 'remove (and return) the element at the end of the array'
+    end
+  end
+
+  message "We are learning that different types of objects in ruby have different sets of methods. We can call `pop` on object of type `Array`, but we can't call it on an object of type `Float`."
+
+  irb <<IRB
+[].pop
+3.0.pop
+IRB
+
+  message "In object oriented programming, each type of object shares a common list of methods. This list of methods is different for every type of object. When you attempt to call a method that is not available for the object's type, you get a `NoMethodError` and the interpreter stops running the program."
+end
+
+further_reading do
+  a "Ruby's documentation for Array", href: 'http://ruby-doc.org/core-2.2.0/Array.html'
+end
+
+next_step 'hashes'

@@ -1,0 +1,14 @@
+
+console %q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+
+message "You may have to press 'ENTER' when prompted and type in your password."
+
+important "If that doesn't work, visit <https://github.com/Homebrew/homebrew/wiki/installation> and follow the instructions there."
+
+verify do
+  console "brew -v"
+  fuzzy_result <<-TEXT
+    Homebrew 1{FUZZY}.1.13-19-g55c02ae77
+    Homebrew/homebrew-core (git revision 4075; last commit 2017-04-18){/FUZZY}
+  TEXT
+end

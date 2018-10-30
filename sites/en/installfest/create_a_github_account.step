@@ -1,0 +1,79 @@
+message "You can use GitHub to store your code online and access it from anywhere. This step isn't necessary to deploy your apps to the web though."
+
+step "Visit the GitHub web site" do
+  url "https://github.com/"
+end
+
+step "Create an account" do
+
+  message "Click the green **Sign Up for GitHub** button (it's about halfway down the page)"
+  message "Enter a username, your email address and a password."
+  important "Use the same email address for heroku, git, github, and ssh. Be sure to use an email account you can log into immediately."
+
+end
+
+step "Select a plan" do
+
+  message "GitHub provides several levels of account plans but you can create unlimited public repositories with a free plan so for now, you can select that one. Hit **Finish sign up**."
+
+end
+
+
+step "Set up SSH authentication with GitHub" do
+
+  message "Adding an SSH key to GitHub allows you to pull and push data without typing in your password all the time. First we'll copy the key we generated in the **Create an SSH Key** step and add it to your GitHub account. We'll use a terminal command to do that, so that we don't add any newlines or whitespace that could cause an error."
+
+    h2 "Mac users"
+    console "pbcopy < ~/.ssh/id_rsa.pub"
+
+    h2 "Linux users"
+    console <<-BASH
+    sudo apt-get install xclip
+    xclip -sel clip < ~/.ssh/id_rsa.pub
+    BASH
+
+    message "`sudo apt-get install xclip` installs a tiny application, xclip, that lets us copy the contents of a file without opening it. Mac and Windows users have similar things already installed (`pbcopy` and `clip`)."
+
+    h2 "Windows users"
+    console "clip < \"%userprofile%\\.ssh\\id_rsa.pub\""
+
+  message "Now that you have copied the key to your clipboard, you can add it to the GitHub account you created earlier."
+
+  h1 "Add your SSH key to GitHub"
+
+  message "Navigate to github.com and make sure you are logged in. On any page on the GitHub site, click your profile photo in the top right corner to the right of the plus sign. In the dropdown menu, click **Settings** to go to the account settings page."
+
+  message "On the account settings page, select **SSH and GPG keys** from the column on the left."
+
+  message "At the top right of this page, click the button that says **New SSH key**. In the title field, give a name for your SSH key, you might call it **My PC** or **Personal MacBook**. In the key field, paste the key you copied."
+
+  message "Click **Add SSH key**"
+
+  message "Confirm the action by providing your GitHub Password"
+end
+
+step "Confirm SSH Authentication" do
+
+  message "Confirm that you have successfully set up SSH Authentication for GitHub"
+
+  message "Windows users cannot perform this step."
+
+  console "ssh -T git@github.com"
+
+  result <<-OUTPUT
+    The authenticity of host 'github.com (207.97.227.239)' can't be established.
+    RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+    Are you sure you want to continue connecting (yes/no)?
+  OUTPUT
+
+  message "You might see a message like this to confirm your key, if it's your correct key continue connecting by typing yes"
+
+  result <<-OUTPUT
+    Hi username! You've successfully authenticated, but GitHub does not
+    provide shell access.
+  OUTPUT
+
+  message "If the username is your username, you've successfully authenticated GitHub with SSH!"
+
+  next_step 'create_a_rails_app'
+end

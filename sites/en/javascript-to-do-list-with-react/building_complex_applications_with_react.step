@@ -1,0 +1,179 @@
+goals do
+  goal "Understand how modern web developers organize their code."
+  goal "Familiarize with Stores, JSX, and other features of a React application."
+end
+
+overview do
+  message <<-MARKDOWN
+    When the web was in its infancy, JavaScript was often an afterthought. Web developers
+    were mostly concerned writing complex servers, and thought of JavaScript as a language to
+    simply make things move on their user's pages. Consequently, their JavaScript code
+    was often unorganized, untested, and hard to maintain.
+
+    But as browsers became more advanced, JavaScript was suddenly asked to do much more – web
+    developers used JavaScript for complex animations, making requests to servers, even doing
+    complex calculations in the browser! The old approach of writing all your code in one place,
+    with all the logic jumbled together, quickly became untenable. In response to that, the
+    JavaScript community has started developing patterns to help themselves organize their code,
+    making it more readable. Most of these patterns separate code into two buckets:
+
+      * __Views (or Components, or View Controllers)__ are in charge or rendering HTML elements, and
+      listening for user's actions like clicks and form submissions.
+      * __Models (or Stores)__ are responsible for the logic of your JavaScript application.
+
+    There are many JavaScript libraries and frameworks that implement this structure, including
+    [AngularJS](https://angularjs.org/), [Ember.js](http://emberjs.com/), and [Backbone.js](http://backbonejs.org/).
+     They each have their own strengths and weaknesses. and we wouldn't presume to tell you
+    which one is "better." As you continue learning, you'll form your own opinions!
+
+    For this tutorial, we'll be using [React](http://facebook.github.io/react/), a rendering library written by Facebook that has
+    grown in popularity over the last few years. To use React, you write your HTML as a series of __components__
+    in a language called __JSX__. Don't worry, JSX looks a lot like HTML! These components handle
+    the rendering of your HTML elements, as well as listen for user actions.
+
+    You'll be using React to make your view objects, and we'll use a simple JavaScript object as a model. We've
+    already built a lot of this structure for you! Let's walk through the code together.
+  MARKDOWN
+end
+
+
+
+
+steps do
+  step do
+    message <<-MARKDOWN
+Open up store.js in your text editor. There, you should see a ListStore object defined like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      ListStore = {
+        getItems: function() {
+          return items
+        },
+        loadItems: function() {},
+        addItem: function(itemDescription) {},
+        toggleCompleteness: function(itemId) {}
+      }
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+This is where all the logic of our application will be performed! Whenever we need to execute a calcuation, or
+make an AJAX request, our program will call a function on the ListStore object. For instance, when we want to load
+all items from our server, you would write a line of code like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      ListStore.loadItems()
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+In future lessons, we'll be writing the logic to make these functions work! Whenever the store changes – when an item
+is added or marked as completed, for example – we'll use the notifyComponents function to update the user's page.
+    MARKDOWN
+  end
+
+  step do
+
+    message <<-MARKDOWN
+Now that we've looked at the store, let's take a look at our components. Open index.html, and find the Item component. It should
+look like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+        var Item = React.createClass({
+          render: function() {
+            var itemClass = this.props.completed ? 'item completed' : 'item'
+            return (
+              <li className={itemClass}>
+                <span className='complete-button'>{'\\u2714'}</span>
+                <div className='description'>{this.props.description}</div>
+                <span className='delete-button'>{'\\u2718'}</span>
+              </li>
+            )
+          },
+        })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+This is a React component. It is responsible for rendering the HTML for our list's items! Every React component has
+to have a render function, which are written in a language called JSX. It looks a like HTML, except you can write it
+alongside your JavaScript code. Here's the HTML this component renders:
+    MARKDOWN
+
+    source_code :HTML, <<-HTML
+      <li class='item completed'>
+        <span class='complete-button'>&#10004;</span>
+        <div class='description'>A gallon of milk.</div>
+        <span class='delete-button'>&#10008;</span>
+      </li>
+    HTML
+
+    message <<-MARKDOWN
+Take a look at the other components on the page. What do you think List component does, and how does it know to render
+items? How about the CreationForm component?
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Now you know what a React component looks like, but how does it work? Well, components can have __state__.
+Whenever a component's state changes, it re-renders itself to the page! State can change in a handful
+of ways. We've already written a function to make List's state change whenever the notifyComponents
+function is called. This will be helpful later on!
+
+Components with state usually also implement a getInitialState function that tells the component what
+to render immediately after the page loads. Our List component has one that looks like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+        getInitialState: function() {
+          return (
+            {items: [
+              {description: 'a gallon of milk',  completed: true, id: 1},
+              {description: 'a stick of butter', completed: false, id: 2}
+            ]}
+          )
+        },
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Does that data look familiar? It's the default items that our list renders! Try changing these values.
+Refresh your browser, and see what's changed!
+
+Before we move on, let's remove the default items altogether. Not everyone wants a gallon of milk!
+Your code should look like this:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+        getInitialState: function() {
+          return (
+            {items: []}
+          )
+        },
+    JAVASCRIPT
+  end
+end
+explanation do
+
+  message <<-MARKDOWN
+
+### Getting Comfortable with React.
+
+You've just looked at your first React application! There are a lot of moving parts, we know.
+Don't worry if you don't understand how everything works just yet – as you keep playing with it,
+it will become much clearer. Big picture, our web application has two parts:
+
+* A ListStore, which is responsible for fetching data from the server using AJAX, and keeps
+track of all the items on our list. Whenever a new item has been added or updated, it will notify
+all the components that it has changed.
+
+* A series of components that render our list as HTML. The List component updates whenever
+the ListStore changes, and it renders a series of Item components. The CreationForm component
+will be responsible for creating new items!
+
+Next, we'll write our first store function to load items when the user visits the page!
+  MARKDOWN
+end
+
+
+next_step 'loading_items'

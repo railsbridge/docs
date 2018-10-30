@@ -1,0 +1,48 @@
+message <<-MARKDOWN
+### Goal
+
+To teach you testing we are going to start with the basics and have you learn by doing through small challenges and then a final large.
+
+When you have completed this curriculum you should understand:
+
+* what tests are
+* why they're used
+* how they're used
+* what types of tests exist
+* what types of frameworks exist
+* some additional concepts in testing such as doubles, stubs, spies, and Webmock
+* how to write tests
+* how to break tests
+* how to fix tests
+
+### Requirements
+
+We're going to be working with:
+
+* Ruby on Rails
+* A command line program
+* A text editor of your choice
+
+MARKDOWN
+
+tip "This is not a self-paced curriculum. You should use the discussion sections on each page to make sure everyone is together!"
+
+message <<-MARKDOWN
+### Notable things
+
+  As you might have noticed, we're assuming you've already been to a RailsBridge workshop before or have otherwise already explored a Rails app, and are ready for deeper knowledge.
+
+MARKDOWN
+
+important "This curriculum is written for Rails 5. Things will get awkward / broken if you're using an earlier version of Rails, so if you skipped the Installfest, you need to upgrade to Rails 5 now."
+
+message <<-MARKDOWN
+### Tips for everyone
+
+  * When adding code, it's awesome for students to walk through the code line by line and say out loud what is happening. (i.e., "The string is being stored in the instance variable" or "The method `snorgle` is being defined"). If you do it every time, you'll get really comfortable with the vocabulary of Rails!
+  * Error messages are your friend! Read them carefully, and practice understanding what Rails is telling you. Seeing an error and just diving back into your code is a natural reaction, but stop! Then read, think, and talk about what the error means before fixing it.
+MARKDOWN
+
+insert '../intro-to-rails/working_effectively_and_efficiently'
+
+next_step "what_are_tests"

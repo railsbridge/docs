@@ -1,0 +1,42 @@
+message <<-MARKDOWN
+## Assumptions made by this curriculum
+* You’ve gone through the standard RailsBridge installfest and have successfully completed the <a href="/installfest/get_a_sticker">Get a Sticker</a> step.
+* You’ve gone through the RailsBridge <a href="/intro-to-rails">Suggestotron curriculum</a> and the  <a href="/job-board">Job Board curriculum</a> at least once before, or maybe a couple of times, or maybe you feel decently comfortable with Rails for some other reason.
+* You want to learn more Rails!!!
+
+## Goals
+* Make a thing!
+* Understand what the models, views, and controllers of a Rails app do and how they work together.
+* Get more comfortable using error messages as guideposts and not as scary things.
+
+## What’s Going to Happen?
+* We’re going to build a message board system, where there are posts on the front page and you click through to see the original post plus discussion below.
+
+* We’ve divided this into challenges:
+  * Challenge 1: Create a new rails app with a static home page
+  * Challenge 2: Install Devise
+  * Challenge 3: Make it pretty with Bootstrap
+  * Challenge 4: Add pages to create and look at individual posts
+  * Challenge 5: Make a posts index page
+  * Challenge 6: Add replying
+  * Challenge 7: Inline replying on a post
+  * Challenge ∞: Other features of your choice
+
+* Each time you get your app into a functional state, before adding any more features, COMMIT TO GIT! The new features will probably break things, which is neat, but you’ll want to be able to roll back to a prior version if necessary.
+
+MAJORLY IMPORTANT NOTE: <b>We called the sections challenges because they are challenging!</b> This curriculum will be most fun as a collaboration — talk things through with your teacher, TAs, and other students. This is a very different style of curriculum than Suggestotron, so don’t be discouraged if you aren't quite sure what to do next.
+
+## How to use this curriculum
+* <b>Challenges</b> are the big chunks of stuff to work on at a given time. These are gated by requirements — once you (or your group) has completed a set of requirements, go on to the next set.
+
+* <b>Requirements</b> in this curriculum are not entirely divorced from what a requirement is in the agile software development methodology — things that should be in the application as defined by whoever is designing/deciding things about the product. Except here, we’ve also thrown in some non-application requirements, like the ability to explain a concept to a peer.
+
+* <b>Discussions</b> are led by the teacher; this is the closest this curriculum gets to lecture-y teaching.
+
+* <b>Hints</b> are what they sound like, as are <b>Tools & References</b>.
+
+
+* Teachers only!: there's a teaching guide at http://bit.ly/int-railsbridge-guide
+MARKDOWN
+
+next_step "create_a_new_rails_app_with_a_static_home_page"

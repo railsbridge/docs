@@ -1,0 +1,43 @@
+goals do
+  goal "Add some starter files"
+end
+
+steps do
+  step do
+    message <<-MARKDOWN
+      Download the .zip file from <a href="front-end-lesson.zip">this link</a>
+      When the file download finishes, find it on your computer and unzip it.
+    MARKDOWN
+  end
+  
+  step do
+    message <<-MARKDOWN
+      The zip file should contain a file called index.html and a directory of resources.
+
+      <img src='img/zip.png'>
+
+      Drag the file called index.html and resources folder into your project folder. Go ahead and replace the index.html file you may already have in there.
+    MARKDOWN
+  end
+end
+
+explanation do
+  message <<-MARKDOWN
+
+## What Are These Files?
+
+Just to save you some time, we've supplied a bare bones HTML document, a CSS stylesheet,
+a JavaScript file, and a placeholder image.
+
+If you are starting a new project in the future, try typing it all out by hand a few times
+to get the hang of it, and then try starting with some other people's HTML boilerplate code
+that they've shared:
+
+* [HTML5 Boilerplate](http://html5boilerplate.com/), a blank template with lots of tips for high-performance best practices.
+* [Bootstrap](http://getbootstrap.com/), an HTML / CSS / JS base with a big library of styles to test out.
+* [Foundation](http://foundation.zurb.com/), another HTML / CSS / JS framework you can test out.
+
+  MARKDOWN
+end
+
+next_step "make_a_web_page"

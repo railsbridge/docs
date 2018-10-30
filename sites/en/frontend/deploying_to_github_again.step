@@ -1,0 +1,34 @@
+h2 do
+  span "If you haven't deployed your app to GitHub yet, start at "
+  a 'Deploying to GitHub', href: 'deploying_to_github'
+  span "."
+end
+
+important "If you have any problems with these steps, ask a volunteer for help. If you don't know if you have Git installed or have a GitHub account, it's okay to do these steps later instead."
+
+goals do
+  goal "Commit your changes to locally"
+  goal "Push your changes to GitHub"
+end
+
+step "Commit any pending changes to git" do
+  message "GitHub will only receive the files we've committed into our local git repository. So we need to make sure all changed files have been committed."
+  console "git status"
+  message "`git status` shows you any pending changes you've created. If it has no output, you're already ready to deploy! Otherwise..."
+
+  console <<-SHELL
+git add .
+git commit -m "Some helpful message for your future self"
+  SHELL
+  message "Your commit message should reference whatever your outstanding changes are: something like 'added new cat picture'."
+end
+
+step "Push changes to GitHub" do
+  console "git push origin master"
+  message "This takes all changes you've committed locally and pushes them to GitHub."
+end
+
+step "Visit your site" do
+  message "Go to your browser and navigate to **[your-github-user-name].github.io**"
+  message "You should see the changes you made, but ON THE INTERNET!"
+end

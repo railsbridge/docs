@@ -1,0 +1,126 @@
+goals do
+  goal "Learn basic CSS syntax"
+  goal "Write some basic CSS styles"
+end
+
+overview do
+  message <<-MARKDOWN
+## What is CSS?
+
+CSS stands for *C*ascading *S*tyle*s*heets. It's a language for creating **rules** that
+can **select** various elements on the page and change their **visual properties**.
+
+* *C*ascading - this is how the browser determines the correct style rules to apply to
+  each element on the page. As we'll see, CSS has many ways to match rules to elements, and
+  some of those ways count for more than others. The browser allows more important rules to
+  _cascade_ over less important ones.
+
+* *S*tyle*s*heets - CSS files are called 'stylesheets' because they are separate documents - their
+  file type is .css - that only deal with styling information. We add special tags in our HTML files to
+  link them to our stylesheets.
+
+Unlike HTML, which is concerned with the _meaning_ of the content, CSS is **presentational**:
+it's concerned with how that content should look.
+
+
+MARKDOWN
+
+  tip do
+    message "## Why are HTML and CSS separate?"
+    message <<-MARKDOWN
+There are many good reasons to keep HTML and CSS separate. A typical website will reuse styles
+- like the color of links or the sizes of buttons - over and over again; by keeping them separate from the markup, we can
+use the same styles across a site.
+
+This makes our code more efficient and easier to maintain, and keeps the site visually consistent. It also makes it easier to use
+different styles for different devices, so a site can have different looks for different browsers.
+MARKDOWN
+  end
+
+  message <<-MARKDOWN
+## CSS Rules Are Made of a Selector and Attributes
+
+The **selector** is the first part of a CSS rule - it tells the browser how to find, or *select*, the element we want to style.
+On this page, we'll use `h1` and `p` as our selectors, which match the `h1` and `p` elements in our HTML.
+
+<img src='img/css.png'>
+
+The **attributes** are the parts of the rule inside the curly braces - they tell the browser how the elements
+we've selected should appear.
+
+Take a look at the attributes for the `h1` rule above. The part before the colon &mdash; `font-size` &mdash; is the **property**,
+and the part after it &mdash; `20px` &mdash; is the **value**. This attribute tells the browser that all `h1` elements
+should have a `font-size` of 20 pixels.
+
+The semicolons at the end of each attribute are important - if we forget them, the CSS won't work.
+
+
+MARKDOWN
+end
+
+steps do
+
+  step do
+    message "Initially, we're going to add our CSS inside the `<head>` tag, below the line with the page title."
+    message "A standard style tag might look like this:"
+    source_code :html, <<HTML
+<head>
+<title>My Sample HTML page</title>
+<style type="text/css" media="screen">
+
+</style>
+</head>
+HTML
+    message "Now save the file and refresh your browser. Everything should look the same."
+  end
+
+  step do
+    message "Add some styles that will apply to your `h1` and `p` tags."
+    source_code :html, <<HTML
+<style type="text/css" media="screen">
+h1 {
+  font-size: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+p {
+  padding: 10px;
+  background-color: papayaWhip;
+}
+</style>
+HTML
+    message <<-MARKDOWN
+When you save and refresh your browser, you should see the styles you added:
+
+<img src='img/hello_style.png'>
+
+The `type` and `media` attributes inside of the `<style>` tag give the browser more context for how to deal with the included information. In this case, we're telling it that the type is CSS, and that it's being displayed on a screen (as opposed to `media=\"print\"`, which is usually specially styled so it looks reasonable when printed). In HTML5, these are optional, so we could leave them out if we wanted to.
+
+To visualize the relations between elements of **Content**, **Padding**, **Border**, and **Margin**, otherwise known as the CSS Box Model, here is an example of how this fits in:
+
+<img src='img/boxmodel.png'>
+
+    MARKDOWN
+  end
+
+end
+
+
+explanation do
+
+  message <<-MARKDOWN
+
+## CSS is super powerful
+
+Here are two screen shots of the same HTML page. On the left is just the HTML. On the right side, we've added lots of CSS. Almost all of the color and formatting are applied using CSS, and the code snippets and buttons now look great.
+
+### Bundler: Before and After CSS
+
+<img src='img/css_bundler.png'>
+
+
+  MARKDOWN
+
+end
+
+next_step "HTML_attributes"

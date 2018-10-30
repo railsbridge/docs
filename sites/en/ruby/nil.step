@@ -1,0 +1,97 @@
+message <<-CONTENT    
+nil is a special Ruby data type that means "nothing".   It's equivalent to null or None in other programming languages.
+
+
+CONTENT
+
+goals do
+goal "Know what nil is for"
+end
+
+step do
+message <<-CONTENT    
+How do you set a variable to empty?  
+
+Some of the values we could use can be legitimate values, like:
+
+`temperature = 0`
+
+`today_is_friday = false`
+
+`empty_phrase = ""`
+
+Nil to the rescue.  Nil means 'nothing'.  It's used to show that a variable hasn't been assigned anything yet, or that a function didn't return a value.
+
+
+CONTENT
+
+irb <<-IRB
+# Where is the letter "a" in apple?
+"apple".index("a")
+
+# Where is the letter "z"?
+"apple".index("z")
+IRB
+end
+
+step do
+    message "You may have noticed this already:"
+    irb 'puts "What does puts evalute to?"' 
+    message "Ruby returns what an expression evaluated to.  `puts` puts a string on the screen, but always evaluates to nil."
+
+end
+
+
+
+step do
+    message "Here's an error message you will see often."
+irb <<-IRB
+     word = "hello"
+     word.upcase
+     word = nil
+     word.upcase
+IRB
+    result "NoMethodError: undefined method 'downcase' for nil:NilClass"
+    message "What happened?"
+    irb "word.class"
+    message "`word` was set to nil. Let's look at the alphabetized list of methods the Nil class has."
+    irb "word.methods.sort"
+    message "The error message told us Nil doesn't have a method called upcase."
+
+end
+
+step do
+    message "How can we avoid these errors?  There are a few ways to tell if something is nil."
+
+irb <<-IRB
+word = "something"
+word.nil?
+word = nil
+word.nil?
+# Remember, two equals signs asks if something is equal
+word == nil
+IRB
+
+    message "What's going on here?"
+    source_code <<-CONTENT
+    name = nil
+    if name.nil?
+        puts "The name hasn't been set yet."
+    else
+        puts "Your name is \#{name}"
+    end
+CONTENT
+end
+
+
+explanation do
+
+end
+
+further_reading do
+    message "[Nil Class documentation](http://ruby-doc.org/core-2.2.0/NilClass.html)"
+end
+
+
+next_step 'symbols'
+

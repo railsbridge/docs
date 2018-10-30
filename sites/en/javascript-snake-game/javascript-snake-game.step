@@ -1,0 +1,45 @@
+markdown <<-MARKDOWN
+
+  ### Goal
+
+  Today, we're going to recreate the classic game ~SNAKE!~ in the Javascript programming language.
+  By the end of this session, you should understand the basics of the JavaScript language and how you can use it in a web browser.
+
+  The game you are going to create is going to work quite a bit like this:
+
+MARKDOWN
+
+canvas id: 'chunk-game', height: 600, width: 800
+
+script src: 'js/chunk.js'
+
+script src: 'js/snake.js'
+
+markdown <<-MARKDOWN
+
+  ### Meta-Goal
+
+  When you have completed today's goal of creating a browser based game you should understand:
+
+  * The basic syntax of JavaScript
+  * How to create, view and debug JavaScript
+  * How to use JavaScript with external libraries.
+  * How to incrementally build out a JavaScript application.
+
+  ### Schedule
+
+  * 2-ish hours of basic JavaScript syntax.
+  * 3-ish hours of creating and playing with a Javascript game and animations.
+
+  This is just a rough guideline, not a mandate. Some steps you'll go
+  over and some you'll go under. It'll all work out by the end of the
+  day. Probably.
+
+  Before you can start the tutorial, you'll need to <a href="js-snake-game-tutorial.zip">download the tutorial</a>
+  to your computer to edit the source code.
+
+  Once you've downloaded the zip archive file, you will need to extract the contents and open index.html with your browser. If you have trouble extracting the files or opening them, get an instructor to help you out.
+
+MARKDOWN
+
+next_step 'lesson-1'

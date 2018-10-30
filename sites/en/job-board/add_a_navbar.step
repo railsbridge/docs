@@ -1,0 +1,123 @@
+message <<-MARKDOWN
+  # What we're going to do
+
+  * Add top-level navigation
+  * Learn about CSS organization techniques
+  * Add some really, really ugly CSS to our app
+
+  # Application layout
+
+  We'll start with the application layout, which you can find in the views directory, at `app/views/layouts/application.html.erb`.
+MARKDOWN
+
+discussion_box "What's an application layout?", <<-MARKDOWN
+  None of the view pages that we've been working with so far have had the necessary structure for a valid HTML page. No `<head>` or `<body>` or JavaScript or CSS tags. This application layout file is where all of that stuff exists!
+
+  * How is this page related to the individual page content? Try comparing the source in the browser to this file, and see where the individual page's code starts showing up.
+  * If you add something (say, an h1) to this file, where will it show up?
+MARKDOWN
+
+message <<-MARKDOWN
+  # Add the markup
+  Copying and pasting a nav bar onto every. single. page. of our application would be the worst. So instead of putting it into our individual pages, we'll add the nav bar HTML to this file!
+
+  Add the following code **above** the line `<%= yield %>`
+MARKDOWN
+
+source_code :erb, <<-ERB
+  <header class='clearfix'>
+    <div class="left-nav">
+      <ul>
+        <li><%= link_to "Home", jobs_path %></li>
+      </ul>
+    </div>
+    <div class="right-nav">
+      <ul>
+        <li><%= link_to "Add Job", new_job_path %></li>
+      </ul>
+    </div>
+  </header>
+  ERB
+
+message <<-MARKDOWN
+  Additionally, wrap the `<%= yield %>` in a containing wrapper div so it looks like this:
+MARKDOWN
+
+source_code :erb, <<-ERB
+  <div class='content'>
+    <%= yield %>
+  </div>
+ERB
+
+message <<-MARKDOWN
+  Things to note:
+
+  * We use Rails link helpers instead of typing in `<a href="/jobs/new">Add Job</a>`. The reason is that if the url of a page changes in the future, without the link helpers, we’d have to update every single place we link to that page. The link helpers abstract the actual url for us, so if we change a specific url, we update the address in only one place, in the routes file; and all the places we link to it stay the same.
+  * The `<header>` tag is HTML5. Aren't we cool!?
+
+  So let's take a look at it. Refresh, and ... isn't that horrifying looking? Let's make it look like a nav, albeit a very ugly one.
+
+  # Add the styles
+
+  Open up the assets directory, and you should have a file here: app/assets/stylesheets/jobs.scss. This is a Rails-default created stylesheet, and isn't the best. [Smart CSS people](http://www.stubbornella.org/content/2013/09/12/rails-is-mucking-up-my-css-already/) have taught us that CSS should be organized into [reusable components](https://github.com/stubbornella/oocss/wiki), not organized based on where it is used.
+
+  So let's delete that file and make a new one.
+
+  Actually, we're going to make two new ones. Under `app/assets/stylesheets`, add `global.scss`:
+MARKDOWN
+
+source_code :CSS,
+<<-CSS
+  body {
+    margin: 0;
+  }
+
+  .content {
+    margin: 10px auto;
+    width: 70%;
+  }
+
+  .clearfix {
+    overflow: hidden;
+  }
+CSS
+
+message <<-MARKDOWN
+  This is where we put styles that affect the whole app.
+
+  Now, under `app/assets/stylesheets`, add `nav.scss`:
+MARKDOWN
+
+source_code :CSS,
+<<-CSS
+  header {
+    background: grey;
+    padding: 10px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  .left-nav {
+    float: left;
+  }
+
+  .right-nav {
+    float: right;
+  }
+CSS
+
+message <<-MARKDOWN
+  Refresh the page, and ... it's still totally horrific. This CSS is not going to win any awards.
+
+  But it's usable, and we can keep working on that later. It turns out sometimes job descriptions have typos, and need to be updated. Let's make that possible!
+MARKDOWN
+
+next_step "update_job_listings"

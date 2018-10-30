@@ -1,0 +1,42 @@
+requirements do
+message <<-MARKDOWN
+* The user should see a 'New Reply' link or button on a post's show page which takes them to a form. The form should include the title of the post being replied to.
+* The user should be able to create a new reply to a post using the 'New Reply' form.
+* The user should see all the replies to a post on the post’s show page.
+* If the user doesn't submit all required fields, they should see some error messaging, but they shouldn't lose any of their work.
+MARKDOWN
+  table do
+    tr do
+      td do
+        h2 'Create View', class: 'centered'
+      end
+      td do
+        h2 'Show View', class: 'centered'
+      end
+    end
+    tr do
+      td do
+        img class: 'noborder', src: 'img/create_reply.png'
+      end
+      td do
+        img class: 'noborder', src: 'img/show_replies.png'
+      end
+    end
+  end
+end
+
+discussion do
+message <<-MARKDOWN
+* What is a nested resource? When is it appropriate and how does it help?
+* How do the `RepliesController` and `PostsController` interact?
+* What should happen to the routes file for this nesting business to work?
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* RailsGuides - Rails Routing from the Outside In http://guides.rubyonrails.org/routing.html
+MARKDOWN
+end
+
+next_step "inline_replying_on_a_post"

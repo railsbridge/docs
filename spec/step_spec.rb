@@ -1,8 +1,11 @@
 require 'spec_helper'
-
+require "site"
 require "step_page"
 
 describe Step do
+  before do
+    setup_test_translations
+  end
 
   def to_html nokogiri_node
     nokogiri_node.serialize(:save_with => 0).chomp
@@ -28,24 +31,18 @@ describe Step do
     html = to_html(steps.first)
     checkbox_html = %q{<input class="big_checkbox" id="big_checkbox_1" name="big_checkbox_1" type="checkbox" value="valuable"><label for="big_checkbox_1"></label>}
     expected = <<-HTML.strip_heredoc.gsub("\n", '')
-      <div class="step" title="hello">
+      <div class="step">
       <h1>#{checkbox_html}<span class="prefix">Step 1: </span>hello</h1>
       </div>
     HTML
-    assert { html == expected }
-  end
-
-  it "puts titles in based on step names" do
-    steps = html_doc.css(".step")
-    assert { steps.first["title"] == "hello" }
-    assert { steps[1]["title"] == "goodbye" }
+    expect(html).to eq(expected)
   end
 
   it "puts anchors in based on step numbers" do
     steps = html_doc.css(".step")
     steps.each_with_index do |step, i|
-      assert { step.previous }
-      assert { to_html(step.previous) == "<a name=\"step#{i+1}\"></a>" }
+      expect(step.previous).to be_truthy
+      expect(to_html(step.previous)).to eq("<a name=\"step#{i+1}\"></a>")
     end
   end
 
@@ -56,7 +53,7 @@ describe Step do
 
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
-    assert { names == ["step1", "happy_step"] }
+    expect(names).to eq(%w(step1 happy_step))
   end
 
   it "nests anchor numbers" do
@@ -71,16 +68,13 @@ describe Step do
       end
     RUBY
 
-    titles = html_doc.css('.step').map{|div| div["title"]}
-    assert { titles == ["breakfast", "cereal", "eggs", "lunch", "salad", "sandwich"] }
-
     anchors = html_doc.css("a")
     names = anchors.map{|a| a["name"]}
-    assert { names == ["step1", "step1-1", "step1-2", "step2", "step2-1", "step2-2"] }
+    expect(names).to eq(%w(step1 step1-1 step1-2 step2 step2-1 step2-2))
   end
 
   describe 'link' do
-    it "passes in a back parameter, so the following page can come back here" do
+    it "creates a link" do
       html_doc(<<-RUBY)
         step "breakfast" do
           link "choose_breakfast"
@@ -90,9 +84,17 @@ describe Step do
           step "sandwich"
         end
       RUBY
-      a = html_doc.css(".step[title=breakfast] a.link").first
-      hash = URI.escape '#'
-      assert { a["href"] == "choose_breakfast?back=hello#{hash}step1" }
+      a = html_doc.css(".step a.link").first
+      expect(a["href"]).to eq("choose_breakfast")
+    end
+
+    it "has an optional parameter for the caption" do
+      html_doc(<<-RUBY)
+      step "breakfast" do
+        link "breakfast", caption: "Eat some"
+      end
+      RUBY
+      expect(html_doc.css("p.link").text).to eq("Eat some Breakfast")
     end
   end
 
@@ -101,14 +103,14 @@ describe Step do
       html_doc(<<-RUBY)
         source_code "x = 2"
       RUBY
-      assert { @html == "<pre class=\"code\">x = 2</pre>" }
+      expect(@html).to eq("<pre class=\"code\">x = 2</pre>")
     end
 
     it "emits a block of code with a language directive" do
       html_doc(<<-RUBY)
         source_code :ruby, "x = 2"
       RUBY
-      assert { @html == "<pre class=\"code\">\n:::ruby\nx = 2</pre>" }
+      expect(@html).to eq("<pre class=\"code\">\n:::ruby\nx = 2</pre>")
     end
   end
 
@@ -117,9 +119,9 @@ describe Step do
       html_doc(<<-RUBY)
         console "echo hi"
       RUBY
-      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
+      expect(@html).to loosely_equal(<<-HTML.strip_heredoc)
         <div class="console">
-          <span>#{Step::TERMINAL_CAPTION}</span>
+          <span>#{I18n.t('captions.terminal')}</span>
           <pre>echo hi</pre>
         </div>
       HTML
@@ -132,9 +134,9 @@ describe Step do
       result "hi"
       RUBY
 
-      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
+      expect(@html).to loosely_equal(<<-HTML.strip_heredoc)
         <div class="result">
-          <span>#{Step::RESULT_CAPTION}</span>
+          <span>#{I18n.t("captions.result")}</span>
           <pre>hi</pre>
         </div>
       HTML
@@ -147,9 +149,9 @@ describe Step do
       fuzzy_result "hello {FUZZY}fuzz{/FUZZY} face! nice {FUZZY}banana{/FUZZY}\ni am more text!"
       RUBY
 
-      assert_loosely_equal(@html, <<-HTML.strip_heredoc)
+      expect(@html).to loosely_equal(<<-HTML.strip_heredoc)
         <div class="result fuzzy-result">
-          <span>#{Step::FUZZY_RESULT_CAPTION}</span>
+          <span>#{I18n.t("captions.fuzzy_result")}</span>
           <pre>
             hello <span class="fuzzy-lightened">fuzz</span> face! nice <span class="fuzzy-lightened">banana</span>
             i am more text!
@@ -177,31 +179,12 @@ describe Step do
       outer_path = File.join(path, 'outer.step')
       html = step_obj_for(outer_path).to_html
 
-      assert_loosely_equal html, <<-HTML.strip_heredoc
+      expect(html).to loosely_equal(<<-HTML.strip_heredoc)
         <div>hello</div>
         <div>yum</div>
         <div>yum</div>
         <div>goodbye</div>
       HTML
-    end
-
-    it "crafts 'back' links that go back to the containing page rather than the partial itself" do
-      path = dir 'testing-insert-links' do
-        file "outer.step", <<-RUBY.strip_heredoc
-          div 'this is the outer page'
-          insert 'inner'
-        RUBY
-        file "_inner.step", <<-RUBY.strip_heredoc
-          div 'this is the inner page'
-          link 'somewhere_else'
-        RUBY
-      end
-
-      outer_path = File.join(path, 'outer.step')
-
-      page = Nokogiri.parse("<html>#{step_obj_for(outer_path).to_html}</html>")
-
-      assert { page.css('a').first[:href] == "somewhere_else?back=outer%23step" }
     end
   end
 end

@@ -1,0 +1,50 @@
+goals do
+  goal "Make some hashes and get data back out of them"
+  goal "Understand why we might use a Hash"
+  goal "Understand the differences between Arrays and Hashes"
+end
+
+step do
+  irb <<-IRB
+states = {"CA" => "California", "DE" => "Delaware"}
+  IRB
+  message "Arrays are ideal when we want to store an ordered list of items. We can access elements in an array by their position, but sometimes the position doesn't really help us much. We may want to access items in the list based on a name, or **key**. A hash stores pairs of items, associating **keys** with **values**."
+  message 'The `{` character is typically called a \'curly brace\', and the `=>` is called a \'rocket\' or \'hashrocket\''
+  irb <<-IRB
+states.keys
+states.values
+  IRB
+  message 'You can ask a hash for an array of just its keys or its values.'
+  irb <<-IRB
+states['CA']
+states['DE']
+  IRB
+  message 'With arrays, we accessed elements by their **index**, a number. With a hash, we access elements by their **key**.'
+end
+
+step do
+  irb <<-IRB
+  bike_1 = {'make' => 'Trek', 'color' => 'Silver'}
+  bike_2 = {'make' => 'Cannondale', 'color' => 'Blue'}
+  bikes = [bike_1, bike_2]
+IRB
+  message "Hashes are often used to store the properties of some object. Here, each hash stores the properties of a bike."
+  message "The *keys* are often the name of a property (here *make*, *color*) while tha *values* are the value of the property for a given object (here, *Trek*, *silver*)."
+  message "Consider how you might have had to store this data if you didn't have hash. What else might you want to store in a hash?"
+  irb <<-IRB
+  bikes[0]['make']
+  bikes[1]['color']
+IRB
+  message 'When objects are nested deeply in arrays and hashes, you can access elements one after the other like this.'
+  message "For example, on the first line here, we are getting the first *bike* in the *bikes* array (`bikes[0]`) and then getting its *make* (`bikes[0]['make']`)"
+end
+
+explanation do
+  message "Hashes are a fundamental way to group large amounts of related data. In other languages, hashes are called **dictionaries**, **maps**, or **associative arrays**."
+end
+
+further_reading do
+  a "Ruby's documentation for Hash", href: 'http://ruby-doc.org/core-2.2.0/Hash.html'
+end
+
+next_step 'loops'

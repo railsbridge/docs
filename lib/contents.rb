@@ -1,26 +1,17 @@
 require 'titleizer'
 
 class Contents < Erector::Widget
-  attr_accessor :site_dir
-  attr_accessor :page_name
-  needs :page_name, :site_name, :site_dir => nil
+  attr_accessor :page_name, :site
+  needs :page_name, :site
 
   def initialize options
     super options
 
     self.page_name = options[:page_name]
-
-    if options.include? :site_dir
-      self.site_dir = options[:site_dir]
-    else
-      here = File.expand_path File.dirname(__FILE__)
-      top = File.expand_path "#{here}/.."
-      self.site_dir = "#{top}/sites/#{@site_name}"
-    end
   end
 
   def site_files ext
-    Dir.glob("#{site_dir}/*.{#{ext}}").sort
+    Dir.glob(File.join(site.dir, "*.{#{ext}}")).sort
   end
 
   def parseable_site_files
@@ -31,32 +22,40 @@ class Contents < Erector::Widget
     parseable_site_files.reject { |file| File.basename(file).start_with?('_') }
   end
 
+  def content_for filename
+    open(File.join(site.dir, filename)).read
+  end
+
   def subpages_for filename
+    return [] if filename.match(/deck\.md/)
+
     links = []
-    content = open("#{site_dir}/#{filename}").read()
+    content = content_for(filename)
 
     # (markdown) links of the form: [link text](link_page)
-    content.scan /\[.*?\]\((.*?)\)/ do |link, _|
+    # but NOT images of the form ![alt text](image_link.jpg)
+    content.scan /[^!]\[.*?\]\((.*?)\)/ do |link, _|
       next if (link =~ /^http/)
-      next if (link =~ /(jpg|png)$/)
-      links.push(link) if !links.include? link
+      next if (link =~ %r(^.+/)) # cross-links to other sites, e.g. /installfest/editors
+      next if (link =~ %r(^//)) # protocol-less absolute links e.g. //google.com
+      links.push(link)
     end
 
     # (stepfiles) links of the form: link "next page"
     content.scan /link\s*["'](.*?)["']/ do |link, _|
-      links.push(link) if !links.include? link
+      links.push(link)
     end
 
     # (stepfiles) links of the form: site_desc "some site"
     content.scan /site_desc\s*["'](.*?)["']/ do |link, _|
-      links.push('/' + link) if !links.include? link
+      links.push('/' + link)
     end
 
-    links
+    links.uniq
   end
 
   def next_step_for filename
-    content = open("#{site_dir}/#{filename}").read()
+    content = content_for(filename)
 
     # (stepfiles) links of the form: stepfile "next page"
     content.scan /next_step\s*["'](.*?)["']/ do |link, _|
@@ -106,7 +105,7 @@ class Contents < Erector::Widget
   #   while another goes to next_step "that").
   def hierarchy
     result = []
-    next_page = File.basename(site_dir)
+    next_page = File.basename(site.dir)
     while next_page do
       this_page = next_page
 
@@ -142,41 +141,96 @@ class Contents < Erector::Widget
     @nextpages ||= _page_links("next_step")
   end
 
-  def toc_link page
+  def _toggler
+    span(class: 'toggler') do
+      i(class: 'fa fa-plus-square-o')
+      i(class: 'fa fa-minus-square-o')
+    end
+  end
+
+  def toc_link page, options = {}
     link_text = Titleizer.title_for_page(page.sub(%r{^/}, ''))
-    path = page.start_with?('/') ? page : "/#{@site_name}/" + page
-    li do
+    path = page.start_with?('/') ? page : "/#{site.name}/" + page
+    collapse_classes = if options[:collapsable]
+                         options[:collapsed] ? 'collapsable closed' : 'collapsable'
+                       else
+                         ''
+                       end
+    li(class: collapse_classes) do
       if page == page_name
+        _toggler if options[:collapsable]
         span link_text, class: 'current'
       else
-        a link_text, href: path
+        a href: path do
+          _toggler if options[:collapsable]
+          text link_text
+        end
       end
       yield if block_given?
     end
   end
 
-  def toc_list toc_items
+  # Given the nested set of arrays produced by the 'hierarchy' method above,
+  # annotate each item noting whether it should be collapsed
+  # An element is 'collapsed' if it does not contain the page currently
+  # being viewed.
+  def mark_open_and_closed hierarchy
+    result = {items: [], contains_current_page: false}
+    hierarchy.each do |toc_item|
+      contains_current_page = nil
+      if toc_item.instance_of? Array
+        parent = toc_item[0]
+        children = toc_item[1..toc_item.length]
+        inner_result = mark_open_and_closed(children)
+        contains_current_page = (self.page_name == parent) || inner_result[:contains_current_page]
+        result[:items] << [{title: parent, collapsed: !contains_current_page}] + inner_result[:items]
+      else
+        contains_current_page ||= (self.page_name == toc_item)
+        result[:items] << {title: toc_item, collapsed: !contains_current_page}
+      end
+      result[:contains_current_page] ||= contains_current_page
+    end
+    result
+  end
+
+  def toc_list toc_items, level = 0
     ul do
       toc_items.each do |toc_item|
         if toc_item.instance_of? Array
-          toc_link toc_item.first do
-            toc_list toc_item[1..toc_item.length]
+          item = toc_item.first
+          toc_link item[:title], collapsable: true, collapsed: item[:collapsed] do
+            toc_list toc_item[1..toc_item.length], level + 1
           end
         else
-          toc_link toc_item
+          toc_link toc_item[:title]
         end
+      end
+    end
+  end
+
+  def has_collapsables toc_items
+    toc_items.any? do |toc_item|
+      if toc_item.instance_of? Array
+        return true
       end
     end
   end
 
   def content
     div id: "table_of_contents", class: "toc page-list" do
-      toc_list hierarchy
+      toc_list(mark_open_and_closed(hierarchy)[:items])
 
       unless orphans.empty?
-        h1 "Other Pages"
+        h1 I18n.t("general.other_pages")
         ul do
           orphans.each { |orphan| toc_link orphan }
+        end
+      end
+
+      if has_collapsables(hierarchy)
+        span class: "expand-all" do
+          i class: "fa fa-arrows-alt"
+          text I18n.t("general.expand_all")
         end
       end
     end

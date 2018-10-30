@@ -1,0 +1,74 @@
+goals {
+
+  message <<-MARKDOWN
+  When a user creates a new topic, or edits an existing topic, they are
+  currently shown a page with just that topic. For our voting app it makes
+  more sense that they would be taken back to the topic list.
+
+  In this step we'll change the flow of our app so that the user is taken back to the topics list after they add a new topic (create) or
+  edit an existing topic (update).
+  MARKDOWN
+}
+
+steps {
+
+  step "Change the topics controller" do
+
+    message "Open `app/controllers/topics_controller.rb` and look at the create method. "
+
+    message "Find the line:"
+
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully created.' }"
+
+
+    message 'and change `@topic` to `topics_path` like this:'
+
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }"
+
+    message 'so that the file looks like this:'
+
+    source_code :ruby, <<-RUBY
+def create
+  @topic = Topic.new(topic_params)
+
+  respond_to do |format|
+    if @topic.save
+      format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }
+      format.json { render :show, status: :created, location: @topic }
+    else
+      format.html { render :new }
+      format.json { render json: @topic.errors, status: :unprocessable_entity }
+    end
+  end
+end
+    RUBY
+
+message "In the same file, locate the update method. "
+
+    message "Find the line:"
+
+    source_code :ruby, "format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }"
+
+
+    message 'and change `@topic` to `topics_path` like before:'
+
+    source_code :ruby, "format.html { redirect_to topics_path, notice: 'Topic was successfully updated.' }"
+  end
+
+  step "Confirm your changes" do
+    message "Look at <http://localhost:3000>."
+  end
+}
+
+
+explanation {
+
+  message <<-MARKDOWN
+  * `format.html { redirect_to topics_path, notice: 'Topic was successfully created.' }`:
+    * `format.html` means that the server should send HTML back to the browser
+    * `redirect_to topics_path` means show the **topics list page** when we're done creating or updating a topic
+    * `notice: 'Topic was successfully created/updated.'` puts the message into the flash so it will be displayed on the topics list
+  MARKDOWN
+}
+
+next_step "make_the_topic_title_a_link"

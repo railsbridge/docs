@@ -5,80 +5,108 @@ require "rack/test"
 
 # todo: use a dummy set of sites instead of the real "installfest" and "curriculum"
 
+# Here we need to use a trick to get ahold of the real Sinatra app instance
+# because Sinatra uses dup on every call
+class ::InstallFest
+  def dup *args
+    @@latest_instance = super
+  end
+
+  def self.latest_instance
+    @@latest_instance
+  end
+end
+
 describe InstallFest do
-  include Rack::Test::Methods
+  include Rack::Test::Methods # see http://www.sinatrarb.com/testing.html
 
   def app
-    @app ||= InstallFest.new
+    InstallFest
   end
 
   # find the actual InstallFest app, discarding Rack middleware
   def true_app
-    true_app = app
-    until true_app.is_a? InstallFest
-      next_app =
-        true_app.respond_to?(:app) ?
-          true_app.app :
-          true_app.instance_variable_get(:@app)
-      break if next_app.nil?
-      true_app = next_app
-    end
-    true_app
+    InstallFest.latest_instance
   end
 
   def get! *args
     get *args
-    assert { last_response.status == 200 }
+    follow_redirect! while last_response.redirect?
+    expect(last_response.status).to eq(200)
   end
 
   it "is a sinatra app" do
-    assert { true_app.is_a? InstallFest }
-    assert { true_app.class.ancestors.include? Sinatra::Application }
+    get '/'
+    expect(true_app).to be_a(InstallFest)
+    expect(true_app.class.ancestors).to include(Sinatra::Application)
   end
 
   it "redirects / to the default site" do
-    get "/"
-    assert { last_response.redirect? }
-    follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/docs/" }
+    get! "/"
+    expect(last_request.path).to eq("/docs/")
   end
 
   it "redirects /site to /site/" do
-    get "/installfest"
-    follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/" }
+    get! "/installfest"
+    expect(last_request.path).to eq("/installfest/")
   end
 
   it "redirects /site/page/ to /site/page" do
-    get "/installfest/linux/"
-    follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/installfest/linux" }
+    get! "/installfest/linux/"
+    expect(last_request.path).to eq("/installfest/linux")
   end
 
   it "has a default site" do
-    assert { true_app.default_site == "docs" }
+    expect(true_app.default_site).to eq("docs")
   end
 
   describe "settings" do
     # note: I'd rather pass settings into the constructor, but Sinatra uses that interface (for a downstream app)
 
-    it "accepts default_site via setter" do
-      true_app.default_site = "intro-to-rails"
-      assert { true_app.default_site == "intro-to-rails" }
-    end
+    before { get '/' }
 
-    it "can configure the sites_dir" do
-      foo_dir = dir "foo"
-      true_app.sites_dir = foo_dir
-      assert { true_app.sites_dir == foo_dir }
+    describe "learns the locale from" do
+      it "the locale parameter" do
+        true_app.params = {locale: 'es'}
+        expect(true_app.dynamic_locale).to eq('es')
+      end
+
+      it "the l parameter" do
+        true_app.params = {l: 'es'}
+        expect(true_app.dynamic_locale).to eq('es')
+      end
+
+      it "the subdomain" do
+        true_app.request = Rack::Request.new({"HTTP_HOST" => "es.example.com"})
+        expect(true_app.dynamic_locale).to eq('es')
+      end
+
+      it "the SITE_LOCALE environment var" do
+        begin
+          ENV["SITE_LOCALE"] = "es"
+          expect(true_app.dynamic_locale).to eq('es')
+        ensure
+          ENV["SITE_LOCALE"] = nil
+        end
+      end
     end
   end
 
   it "looks for a site named the same as the host" do
     get "/", {}, {"HTTP_HOST" => "docs.example.com"}
-    assert { last_response.redirect? }
+    expect(last_response).to be_redirect
     follow_redirect! while last_response.redirect?
-    assert { last_request.path == "/docs/" }
+    expect(last_request.path).to eq("/docs/")
+  end
+
+  describe "in the 'es' locale" do
+    it "uses the 'es' subdir as the sites_dir" do
+      get "/", locale: "es"
+
+      es_dir = File.expand_path(File.join(__FILE__, "..", "..", "sites", "es"))
+      expect(true_app.sites_dir).to eq(es_dir)
+    end
+
   end
 
   describe "page headers" do
@@ -91,54 +119,5 @@ describe InstallFest do
     it "should contain the html5 doctype" do
       @body.should match(/<!doctype html>/i)
     end
-
-    it "should render style tags without any attributes" do
-      @body.should match(/<style>/i)
-    end
   end
-
-  describe "an app with slides" do
-    require "deck"
-    before do
-      breakfast = <<-MARKDOWN
-# Eggs
-
-* scrambled
-* fried
-
-# Cereal
-
-* Frosted Mini-Wheats
-* Corn Flakes
-* Raisin Bran
-      MARKDOWN
-
-      true_app.sites_dir = dir "sites"  do
-        dir "meals" do
-          f = file "breakfast.deck.md", breakfast
-        end
-      end
-      @breakfast = breakfast
-    end
-
-    it "renders a deck" do
-      get! "/meals/breakfast"
-      rendered_breakfast = Deck::SlideDeck.new(:slides => Deck::Slide.split(@breakfast)).to_pretty
-      assert { last_response.body.include?(rendered_breakfast) }
-    end
-
-    # todo: include deck.js source right inside the HTML
-    it "serves up deck.js and other public assets" do
-      get! "/deck.js/core/deck.core.js"
-      assert { last_response.body.include?("Deck JS - deck.core")}
-
-      get! "/deck.js/jquery-1.7.2.min.js"
-      assert { last_response.body.include?("jQuery v1.7.2 jquery.com")}
-
-      get! "/coderay.css"
-      assert { last_response.body.include?("/* Code ray css */")}
-    end
-
-  end
-
 end

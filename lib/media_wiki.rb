@@ -7,9 +7,9 @@ module MediaWiki
     gsub(/^\*\*\* /, "  * ").
 
     # square-bullet lists (turn into regular bullets)
-    gsub(/^\# /, "\n* ").
-    gsub(/^\#\# /, " * ").
-    gsub(/^\#\#\# /, "  * ").
+    gsub(/^# /, "\n* ").
+    gsub(/^## /, " * ").
+    gsub(/^### /, "  * ").
 
     # headings
     gsub(/^==== ?(.*)( *====)\s*$/, "### \\1").
@@ -50,7 +50,7 @@ module MediaWiki
     gsub(/^\{\|(.*)$/) {"<table #{$1}>\n<tr>\n"}.
     gsub(/^\|-/, "<tr>").
     gsub(/^\|\+(.*)/, "<tr><th>\\1<tr>").
-    gsub(/^\! /, "<th>").
+    gsub(/^! /, "<th>").
     gsub(/^\| /, "<td>").
     gsub(/^\|\}/, "</table>")
   end

@@ -1,0 +1,24 @@
+h2 "If you are ever stuck trying to make sense of all this alphabet soup - these glossaries may be helpful!"
+
+span "Have a look at the "
+a 'general Glossary', href: '#general-glossary'
+span ", the "
+a 'Command Line Glossary', href: '#command-line-glossary'
+span ", and the "
+a 'Ruby and Rails Glossary', href: '#ruby-and-rails-glossary'
+span "."
+
+a name: 'general-glossary'
+situation "General Glossary" do
+  insert '../installfest/general-glossary'
+end
+
+a name: 'command-line-glossary'
+situation "Command Line Glossary" do
+  insert '../installfest/command-line-glossary'
+end
+
+a name: 'ruby-and-rails-glossary'
+situation "Ruby and Rails Glossary" do
+  insert '../installfest/ruby-and-rails-glossary'
+end

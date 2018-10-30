@@ -1,0 +1,144 @@
+goals do
+  goal "Allow a user to mark an item as complete or incomplete."
+  goal "Understand how to bind a complex event listener that requires event delegation."
+  goal "Understand how to parse complex information from the page."
+  goal "Understand how to make nuanced changes to the page."
+end
+
+overview do
+  message <<-MARKDOWN
+In this lesson, we'll allow our users to mark items as complete and incomplete. As they
+do, we will ask the server to update the item's status in its database. This process will look
+a lot like the process for adding an item, with some additional complexity.
+
+First off, the event listener is slightly more complex. Instead of binding a listener to
+a single form (like we did in the last lesson), we'll be binding a listener to every check
+mark in the list. jQuery's .on function allows you to do this, using __event delegation__.
+
+Secondly, it will be slightly harder to get the required information from the page when
+the user clicks a check mark. We need to know which item they clicked, its id (so the server
+can identify it), and whether it has been completed or not.
+
+And finally, we need to use jQuery to add and remove classes based on whether the item is completed.
+Let's get started!
+  MARKDOWN
+end
+
+
+steps do
+  step do
+    message "Add the following code the bottom of app.js."
+
+    source_code :javascript, <<-JAVASCRIPT
+      $('#list').on('click', '.complete-button', function(event) {
+        alert('trying to complete an item!')
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Refresh the page and try completing an item. An alert should pop up!
+    MARKDOWN
+  end
+
+  step do
+    message "Now, we're going to get all the information we need from the page. Remove the alert from last step, and add the following code."
+
+    source_code :javascript, <<-JAVASCRIPT
+      var item = $(event.target).parent()
+      var isItemCompleted = item.hasClass('completed')
+      var itemId = item.attr('data-id')
+      alert('clicked item ' + itemId + ', which has completed currently set to ' + isItemCompleted)
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Try marking an item complete again. Does the alert reference the correct item and the correct
+completed value? Mark a few other items complete. Does it still work?
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Now that we have the necessary information, we'll make another request to the server.
+This is a url and type we haven't used before! What do you think it does?
+
+Remove the alert we wrote in the last step, and replace it with the following code.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var updateRequest = $.ajax({
+        type: 'PUT',
+        url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items/" + itemId,
+        data: { completed: !isItemCompleted }
+      })
+
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Refresh the page and try marking an item as complete. Check the network tab to see if
+a new request was made!
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Finally, we'll update the item that has been marked as incomplete or complete.
+Instead of creating a new item, we'll simple add or remove the class 'completed'
+from the specified item (using jQuery's helpful addClass and removeClass functions).
+This will cause the browser to render the item differently, based on the rules
+written in styles.css. Add this line of code after the updateRequest.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      updateRequest.done(function(itemData) {
+        if (itemData.completed) {
+          item.addClass('completed')
+        } else {
+          item.removeClass('completed')
+        }
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Mark an item as complete, and see it turn gray! If you mark a completed item as incomplete,
+it should change colors, too.
+    MARKDOWN
+  end
+end
+
+explanation do
+
+  message "Here's what the bottom of app.js should now look like:"
+
+  source_code :javascript, <<-JAVASCRIPT
+    $('#list').on('click', '.complete-button', function(event) {
+      var item = $(event.target).parent()
+      var isItemCompleted = item.hasClass('completed')
+      var itemId = item.attr('data-id')
+
+      var updateRequest = $.ajax({
+        type: 'PUT',
+        url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items/" + itemId,
+        data: { completed: !isItemCompleted }
+      })
+
+      updateRequest.done(function(itemData) {
+        if (itemData.completed) {
+          item.addClass('completed')
+        } else {
+          item.removeClass('completed')
+        }
+      })
+    })
+
+  JAVASCRIPT
+
+  message <<-MARKDOWN
+You've now written three ajax requests, making a modern, dynamic web page. Don't worry if you
+didn't understand every line of code – JavaScript is complex stuff!
+
+There are many more features you could add (deleting items, sorting items, etc.) but in our next
+lesson, we'll add the most important feature: the ability of users to actually use your site!
+  MARKDOWN
+end
+
+next_step "deploying_your_site"

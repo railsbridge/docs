@@ -1,0 +1,17 @@
+
+message <<-SUMMARY
+We\'ve explored the basic tools for writing and running Ruby programs.
+<UL>
+<LI>How do you open the console on your laptop?
+</LI><LI>How do you find out what directory you\'re in on the command line? How can you move to a different directory?
+</LI><LI>How do you start the RailsBridge VM and connect to it?
+</LI><LI>Where should you save files when you're using the RailsBridge VM? Can you show it in Finder or File Explorer?
+</LI><LI>How do you run a Ruby program?
+</LI><LI>How can you experiment with Ruby interactively?
+ </LI>
+</UL>
+Let's dive into the ABCs of Ruby.
+
+SUMMARY
+
+next_step 'overview:_building_blocks'

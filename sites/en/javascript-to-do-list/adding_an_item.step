@@ -1,0 +1,143 @@
+goals do
+  goal "Allow a user to create a new item."
+  goal "Understand how to make an AJAX request when prompted by a user's action."
+end
+
+overview do
+  message <<-MARKDOWN
+JavaScript allows us to make our web page dynamic, and responsive to
+the actions of our users. In this lesson, we'll allow our users to create
+a new item for our list, and ask the server to save it to the database.
+
+To do so, we're going to use JavaScript's ability to perform a task when a
+user has taken an action on the page. JavaScript refers to these actions as
+__events__, and we can trigger code to run by using an __event listener__. We will
+be using jQuery to accomplish this, as it provides a powerful and readable interface
+to respond to user events.
+
+Our code will take the following steps.
+
+1. When the user loads the page, our code will start listening for when the user
+   submits the form at the top of the page.
+
+2. When a user submits the form (by pressing enter), we will prevent the page
+  from refreshing, which is the normal behavior for a form.
+
+3. We will make an AJAX request to our server, creating an item with the
+  description our user just provided.
+
+4. Once the request succeeds, we will add a new item to the page!
+  MARKDOWN
+end
+
+steps do
+  step do
+    message "Add the following code the bottom of app.js."
+
+    source_code :javascript, <<-JAVASCRIPT
+      $('#add-form').on('submit', function(event) {
+        var itemDescription = event.target.itemDescription.value
+        alert('trying to create a new item with a description ' + itemDescription)
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Refresh the page and try creating an item. An alert should pop up when you try! What
+happens after that? why?
+    MARKDOWN
+  end
+
+  step do
+    message "Before the alert we wrote in the last step, add the following line of code."
+
+    source_code :javascript, <<-JAVASCRIPT
+      event.preventDefault()
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Try creating an item again. What changed? Why did it change?
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Now that we've successfully listened for a form submission and prevented the page from
+refreshing, we're going to ask the server to save this item into the database. Remove
+the alert that you wrote in step one, and replace it with the following code. replace
+'YOUR-LIST-NAME-HERE' with your list's name.
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      var creationRequest = $.ajax({
+        type: 'POST',
+        url: "http://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items",
+        data: { description: itemDescription, completed: false }
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+Try creating an item again. After you submit the form, look at the network tab. A
+new request should have occurred to http://listalous.herokuapp.com/ !
+    MARKDOWN
+  end
+
+  step do
+    message <<-MARKDOWN
+Finally, we need to add the new item to the list. We'll use our addItemToPage function
+again to do so. After the creationRequest, add the following code:
+    MARKDOWN
+
+    source_code :javascript, <<-JAVASCRIPT
+      creationRequest.done(function(itemDataFromServer) {
+        addItemToPage(itemDataFromServer)
+      })
+    JAVASCRIPT
+
+    message <<-MARKDOWN
+      Try creating an item one more time. Once you hit enter, a new item should appear
+      on the page! If not, flag an instructor down to help you debug the problem.
+    MARKDOWN
+  end
+end
+
+explanation do
+
+  message "Here's what the bottom of app.js should now look like:"
+
+  source_code :javascript, <<-JAVASCRIPT
+    $('#add-form').on('submit', function(event) {
+      event.preventDefault()
+      var itemDescription = event.target.itemDescription.value
+      var creationRequest = $.ajax({
+         type: 'POST',
+         url: "https://listalous.herokuapp.com/lists/YOUR-LIST-NAME-HERE/items",
+         data: { description: itemDescription, completed: false }
+       })
+
+      creationRequest.done(function(itemDataFromServer) {
+        addItemToPage(itemDataFromServer)
+      })
+    })
+
+  JAVASCRIPT
+
+  message <<-MARKDOWN
+
+### The AJAX process
+
+You've just done something that many JavaScript developers do daily: Use JavaScript
+to make a request to a server, and then update the page with the data with which
+the server responds. This abstract process is repeated over and over again:
+
+1. Add an event listener.
+2. Parse out the information the user is submitting.
+3. Prevent the default action from occurring, if necessary.
+4. Make a request to the server using AJAX.
+5. When the request succeeds, parse the data the server sends back.
+6. Update the page with the newly received data.
+
+This process is the basis of most modern web pages!
+  MARKDOWN
+end
+
+next_step "marking_an_item_as_complete"

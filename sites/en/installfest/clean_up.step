@@ -1,0 +1,22 @@
+message <<-MARKDOWN
+
+Ok, there is one more step. You won't be using the test applications in the workshop; we just created them to make sure everything was working. **You should delete them now to reduce confusion during the workshop.** Don't worry about losing information - you'll repeat all the steps tomorrow, but more slowly so you can better understand what's going on under the hood.
+MARKDOWN
+
+step "Delete the apps from Heroku" do
+  message "Go to <https://heroku.com/myapps>, login if needed, and then click on your first (lyrical) app name. Click on settings. Scroll to the bottom of the page and click Delete App. Enter app name, confirm, and then repeat for the second app."
+end
+
+step "Delete the test_app from your computer" do
+  option "Windows" do
+    message "From the Explorer, right click on the test_app folder (inside C:\\Sites\\railsbridge) and choose Delete."
+    message "**- or -**"
+    console_with_message "From the command prompt, run the following command:", "rmdir /s /q c:\\Sites\\railsbridge\\test_app"
+  end
+  option "Mac" do
+    message "Open your home directory and drag the test_app folder to the trash."
+  end
+  option "Linux" do
+    console "rm -rf ~/railsbridge/test_app"
+  end
+end

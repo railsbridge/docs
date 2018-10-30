@@ -1,0 +1,38 @@
+message <<-MARKDOWN
+RVM stands for Ruby Version Manager and is the easiest way to install and manage Ruby.  The [official RVM install instructions](https://rvm.io/rvm/install) are available here, but this should work for you:
+MARKDOWN
+
+step "Install RVM" do
+  console "curl -L get.rvm.io | bash -s stable"
+  message "This will download and install RVM."
+
+  important do
+    message <<-EOT
+      You might see an error like "**GPG signature verification failed**"
+
+      If so, run the suggested command to add RVM's GPG keys:
+
+      `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`"
+
+      (the command may start with `gpg` or `gpg2` -- use whichever was provided in the RVM error message)
+
+      Afterward, try installing RVM again:
+
+      `curl -L get.rvm.io | bash -s stable`
+    EOT
+  end
+end
+
+step "Configure your shell" do
+
+  message "Every time you open a new terminal window, rvm will be active inside it. Close your terminal window and open a new one."
+
+  verify do
+    console "type rvm | head -1"
+    result "rvm is a function"
+
+    console "rvm -v"
+    fuzzy_result "rvm 1{FUZZY}.x.x (stable) by Wayne E. Seguin (wayneeseguin@gmail.com), Michal Papis <mpapis@gmail.com> [https://rvm.io/]{/FUZZY}"
+  end
+
+end

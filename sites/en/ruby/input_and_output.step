@@ -1,0 +1,67 @@
+goals do
+goal "Print to the screen with puts"
+goal "Read user input with gets"
+end
+
+message ''
+
+step do
+  irb <<-IRB
+puts 'Hello World'
+  IRB
+  message '`puts` (**put** **s**tring) is a way of printing information to the user of your program.'
+  message 'Take some time to contemplate the output of `puts` in irb:'
+  result <<-RESULT
+irb :006 > puts 'Hello World'
+Hello World
+ => nil
+irb :007 >
+  RESULT
+  message 'The method `puts` always has the **return value** of `nil`, which is what we see after the `=>` in the output. Printing \'Hello World\' to the screen is just a side-effect.'
+end
+
+
+step do
+  message "`print` is like `puts` but doesn't make a new line after printing."
+
+  message 'Create a new file called input\_and\_output.rb'
+  type_in_file 'input_and_output.rb', <<-'CONTENTS'
+print "All"
+print " "
+print "in"
+print " "
+print "a"
+print " "
+print "row"
+CONTENTS
+  message "Save the file and exit out of irb."
+  console 'ruby input_and_output.rb'
+end
+
+
+step do
+  message 'Create a new file called conditionals_test.rb'
+  type_in_file 'conditionals_test.rb', <<-'CONTENTS'
+print "How many apples do you have? > "
+apple_count = gets.to_i
+puts "You have #{apple_count} apples."
+  CONTENTS
+  message "Save the file and exit out of irb."
+  console 'ruby conditionals_test.rb'
+  message 'When prompted, type in a number of apples and press enter.'
+  message "`print` is like `puts` but doesn't make a new line after printing."
+  message "`gets`, or **get** **s**tring, pauses your program and waits for the user to type something and hit the enter key. It then returns the value back to your program and continues execution. Since the user could have typed anything ('banana', '19.2', '<<!!@@') we use to_i to ensure what comes out is an integer. If the user didn't type a valid integer, `to_i` returns `0`."
+end
+
+challenge do
+  message 'Create a program that echoes (or repeats) user input. Use `puts` and `gets` to make this program work.'
+
+  message 'Here is a sample of how the program might run. The `>` has been used below to indicate that the user should input the value proceeding it.'
+
+  source_code <<-'CONTENTS'
+What do you want to say?
+> sally sells seashells
+You said: sally sells seashells
+CONTENTS
+end
+next_step "numbers_and_arithmetic"

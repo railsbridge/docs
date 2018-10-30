@@ -1,0 +1,58 @@
+requirements do
+  message <<-MARKDOWN
+* The site should use Bootstrap for a superfun modern look. 
+* When logged in, the user's email address should appear in the upper-right corner of a navigation bar.
+MARKDOWN
+  img class: 'noborder', src: 'img/header.png'
+end
+
+important do
+  h2 "Timebox It!"
+  p "The purpose of this section is to make your app a bit prettier and demonstrate how to add CSS frameworks like Bootstrap using the Gemfile. Don't get snagged on the details of getting your CSS exactly right, unless that's valuable to you."
+end
+
+discussion do
+message <<-MARKDOWN
+* Chrome developer tools / Firefox Firebug plugin — how to use ’em!
+* What’s Bootstrap and (optional) why is everyone totally in love with it (or at least using it all over the place)?
+* Maybe review the home/index.html.erb view file as it relates to the layouts/application.html.erb view file again, and where you might want to make some edits to take advantage of Bootstrap.
+* Someone should explain how erb works — you'll be using it to show the user email address in right side
+MARKDOWN
+end
+
+tools_and_references do
+message <<-MARKDOWN
+* A gem for Bootstrap!! Here's where to get it https://github.com/twbs/bootstrap-sass
+* Bootstrap docs: http://getbootstrap.com/css/
+* Here's a link to the navbar section: http://getbootstrap.com/components/#nav
+* Reference for HTML and CSS: http://www.htmldog.com/
+MARKDOWN
+end
+
+hints do
+message <<-MARKDOWN
+* Don't forget to read the readme!
+* There are a couple of Bootstrappy ways to move text around — look for "Component alignment" in the docs. 
+* Devise has a helper method for accessing the current user - go back to the Devise readme to find it.
+MARKDOWN
+end
+
+h1 "Really Big Hint"
+message "If you can't get the right HTML mojo for the Bootstrap nav bar, or want to move on quickly to the next page, here's some code you can drop into your layout (after installing Bootstrap!) that should work. The code should go immediately after your &lt;body&gt; tag."
+pre <<-MARKDOWN
+<div class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Message Board</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+    </ul>
+    <p class="navbar-text pull-right">logged_in_user@email.com | <a href="log_out_link_here">Log Out</a></p>
+  </div>
+</div>
+MARKDOWN
+
+message "***You still have to add code to show the real logged in user and add a real log out button!***"
+
+next_step "add_pages_to_create_and_look_at_individual_posts"

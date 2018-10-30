@@ -1,0 +1,97 @@
+goals do
+  goal "Understand the purposes of HTML and CSS."
+  goal "Write some basic code in each language."
+end
+
+overview do
+
+  message <<-MARKDOWN
+
+## What makes a website?
+
+Modern websites are built using three languages: __HTML, CSS, and JavaScript__.
+
+  * __HTML__ stands for __H__yper-__t__ext __M__arkup __L__anguage. It provides the structure for your website, using a system of nested __tags__.
+
+  * __CSS__ stands for __C__ascading __S__tyle__s__heets. It's a language for creating rules that can select various elements on the page and change their visual properties. A CSS stylesheet is composed of __rules__ that dictate how your site is presented.
+
+  * __JavaScript__ allows users to interact with your website, making it dynamic and customizable. It's a powerful language that can be used for extraordinarily complex tasks.
+
+In this lesson, we'll be reviewing HTML and CSS at a high level, and see how they interact.
+You'll need to fire up your text editor for these steps.
+MARKDOWN
+end
+
+steps do
+
+  step do
+    message <<MARKDOWN
+First thing's first: we'll be modifying our HTML. Open up index.html in your text editor. You should see something like this:
+
+<img src='img/text_editor_html.png' alt="image of an html page open in a text editor">
+
+Take a look around. What are the different elements doing? Why are some lines indented deeper
+than others? What are those strange series of numbers and ampersands?
+
+Finally, you should find this line of code in index.html:
+MARKDOWN
+      source_code :html, <<-HTML
+        <h1>Your List App</h1>
+      HTML
+    message "and change the text whatever you want your list application to be called. Save your file. Go back to chrome and refresh the page. Your list application should have changed!"
+  end
+
+  step do
+    message <<MARKDOWN
+Next, we'll be editing our site's look by modifying our CSS. Open up styles.css in your text editor.
+Each set of curly braces is a __rule__. It's preceded by a __selector__ that identifies certain HTML
+elements on the page. Inside the braces are the rule's __attributes__. Your web browser uses these
+attributes to determine how to display your html.
+
+Can you tell which html elements are styled by a given rule? Feel free to change the colors, fonts,
+and position of elements to your liking.
+
+There are some complex CSS selectors and attributes in this particular file. Don't worry, we don't
+expect you to know everything that's going on, and we won't be writing much CSS going forward in
+this lesson. If you are interested, though, flag an instructor and have them explain what a
+given attribute or selector does.
+
+We are going to make you style the name of your list, so that it matches the rest of the page.
+Find the following rule in styles.css:
+MARKDOWN
+    source_code :CSS, <<-CSS
+      h1 {
+        margin: 20px;
+      }
+    CSS
+
+    message "and add a color attribute, like this:"
+    source_code :CSS, <<-CSS
+      h1 {
+        margin: 20px;
+        color: #7d82b0;
+      }
+  CSS
+
+
+  end
+
+  step do
+    message <<-MARKDOWN
+Finally, we're going to remove some of the placeholder HTML on the page. Not everyone wants a gallon of milk! In index.html,
+delete everything inside the ul element (lines 15 through 23). index.html should now look like this:
+    MARKDOWN
+
+    source_code :HTML, <<-HTML
+      <form id='add-form'>
+        <input id="create" name="itemDescription" type="text" placeholder="Add something to the list!">
+      </form>
+      <ul id='list'>
+      </ul>
+    HTML
+  end
+
+
+end
+
+next_step "developer_tools"

@@ -11,7 +11,7 @@ class HTMLwithCodeRay < Redcarpet::Render::HTML
   end
 end
 
-MarkdownRenderer = Redcarpet::Markdown.new(
+MARKDOWN_RENDERER = Redcarpet::Markdown.new(
     HTMLwithCodeRay,
     :autolink => true,
     :space_after_headers => true,

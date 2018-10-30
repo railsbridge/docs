@@ -1,0 +1,46 @@
+# Lesson 11 - Making an Apple Appear on the Screen
+
+markdown <<-MARKDOWN
+  Let's make it so an apple appears on the screen!
+
+  ```js
+  var draw = function(snakeToDraw, apple) {
+    var drawableSnake = { color: "green", pixels: snakeToDraw };
+    var drawableApple = { color: "red", pixels: [apple] };
+    var drawableObjects = [drawableSnake, drawableApple];
+    CHUNK.draw(drawableObjects);
+  }
+  ```
+
+  We renamed the `drawSnake` function and let it take multiple arguments so it
+  can draw an apple.
+
+  Next, let's make sure we pass the `apple` to the `draw` function, when we call it!
+
+  ```js
+  var advanceGame = function() {
+    snake = moveSnake(snake);
+    if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
+      CHUNK.endGame();
+      CHUNK.flashMessage("Whoops! you hit a wall!");
+    }
+    draw(snake, apple);
+  }
+  ```
+
+  Finally, let's create an apple to be drawn!
+
+  ```js
+  var apple = { top: 8, left: 10 };
+  ```
+MARKDOWN
+
+js_expected_results 'lesson-11'
+
+markdown <<-MARKDOWN
+  ### Play Time!
+  
+  * Why do you think we put `[]` around the apple in the `draw` function?
+MARKDOWN
+
+next_step 'lesson-12'

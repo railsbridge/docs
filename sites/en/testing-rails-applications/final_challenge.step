@@ -1,0 +1,8 @@
+message <<-MARKDOWN
+
+Congratulations! Take a second and give yourself a pat on your back. You've come far, my young padawan. This is the final test (no pun intended haha!) :)
+
+# The final challenge
+Essentially, you will clone this repo (https://github.com/akanshmurthy/railsbridge-testfest) that has broken tests and fix all the broken tests. The broken tests will consist of a variety of different types of tests, incorporating everything you have learned thus far. Good luck, keep calm, and test on!
+
+MARKDOWN

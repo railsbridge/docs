@@ -1,23 +1,43 @@
 class SiteIndex < Erector::Widget
-  @@here = File.expand_path(File.dirname(__FILE__))
-  @@project_root = File.dirname(@@here)
-  @@sites_dir = File.expand_path("sites", @@project_root)
-
-  needs :site_name
+  needs :site_name, :locale
   attr_accessor :site_name
 
-  def initialize(options)
-    self.site_name = options[:site_name]
+  def categorized_sites
+    {
+      'setup' => [
+        'installfest'
+      ],
+      'rails' => [
+        'intro-to-rails',
+        'job-board',
+        'message-board',
+        'testing-rails-applications'
+      ],
+      'frontend' => [
+        'frontend',
+        'javascript-snake-game',
+        'javascript-to-do-list',
+        'javascript-to-do-list-with-react'
+      ],
+      'ruby' => [
+        'learn-to-code',
+        'ruby'
+      ]
+    }
   end
 
   def sites
     return @sites if @sites
-    @sites = Dir.glob("#{@@sites_dir}/**").map { |filename| File.basename(filename) }.sort
+    @sites = Dir.glob("#{Site.sites_dir(@locale)}/**").map { |filename| File.basename(filename) }.sort
+  end
+
+  def site_category category
+    li Titleizer.title_for_page(category), class: 'category'
   end
 
   def site_link site
     if site == site_name
-      return li site_name, class: 'current'
+      return li Titleizer.title_for_page(site_name), class: 'current'
     end
 
     path = "/#{site}/"
@@ -28,7 +48,14 @@ class SiteIndex < Erector::Widget
 
   def content
     ul :class => "dropdown-menu" do
-      sites.each do |site|
+      categorized_sites.each do |category, category_sites|
+        site_category category
+        category_sites.each do |site|
+          site_link site
+        end
+      end
+      site_category I18n.t('sites.other_categories')
+      (sites - categorized_sites.values.flatten).each do |site|
         site_link site
       end
     end

@@ -1,0 +1,30 @@
+message "Xcode Command Line Tools include lots of tools your computer needs to set up new software."
+
+verify "if you already have the tools installed" do
+  console "gcc --version"
+  result "Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 6.0 (clang-600.0.54) (based on LLVM 3.5svn)
+Target: x86_64-apple-darwin14.0.0
+Thread model: posix"
+  message "If you see something about Darwin and LLVM, you are good to go. If not, use one of the steps below to install the tools. Come back afterwords and run this command to make sure it works!"
+end
+
+option "Install XCode Command Line Tools using software update" do
+  message "You can install these tools by trying to run a command that requires them."
+
+  step "Run the xcode-select command" do
+    console "xcode-select --install"
+  end
+
+  step "Install the tools" do
+    message "Click on the \"Install\" button. When the download finishes, go back and run the test to make sure it works."
+    img src: 'img/xcode-tools-install.png', alt: "install dialog"
+  end
+end
+
+option "Install Command Line Tools for XCode" do
+  message "Visit the [Apple Developer Downloads Page](https://developer.apple.com/downloads)"
+  message "Download and install the latest **Command Line Tools for Xcode** package for your operating system. This requires you to register for an Apple Developer account."
+end
+
+next_step 'osx_rvm'

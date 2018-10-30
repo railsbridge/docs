@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+span.prefix {
+  padding-left: 8px;
+}
+
+h1 {
+  padding-top: 30px;
+  font-family: "Aleo Regular" ;
+}
+
+.step h1 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  padding-top: 10px;
+  border: 0;
+}
+
+h1.option {
+  font-size: 1.3em;
+}
+
+.step h1 span.prefix {
+  padding-left: 0;
+  padding-right: 8px;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+img.noborder {
+  border: none;
+  display: inline;
+}
+
+.centered {
+  text-align: center;
+}
+
+.message img.icon {
+  float: left;
+  border: none;
+  margin-right: 1em;
+}
+
+.message.todo {
+  margin: 1em;
+  background-color: #f5e1f0;
+  font-style: italic;
+  padding: .25em 1em;
+}
+
+.important, .tip {
+  padding: .5em 1em;
+  margin: 1em 0;
+}
+
+.important {
+  background-color: #FFEBDD;
+  border: solid 5px #E65D00;
+  border-radius: 4px;
+  min-height: 43px;
+}
+
+.important > p {
+  margin: 0;
+}
+
+.important > i {
+  color: #E65D00;
+  float: left;
+}
+
+.important > i, .tip > i, .discussion > i {
+  padding-right: 20px;
+}
+
+.tip {
+  padding: 1em;
+  background-color: #F7FDFF;
+  border: solid 5px #006E92;
+  border-radius: 4px;
+  min-height: 43px;
+}
+
+.tip > i {
+  color: #006E92;
+  float: left;
+}
+
+.tip > span {
+  font-size: 14pt;
+}
+
+.tip span.name {
+  font-weight: bold;
+}
+
+.tip span.prefix {
+  font-weight: bold;
+  color: #E77902;
+}
+
+.discussion_box {
+  padding: 1em;
+  background-color: #FFF5AE;
+  border-radius: 4px;
+  margin: 30px 0 10px 0;
+}
+
+.discussion_box > h4, .error_box > h4 {
+  text-align: center;
+  margin: 0;
+  font-family: 'Aleo Regular';
+  font-weight: 100;
+  font-size: 1.2em;
+}
+
+.discussion_box > hr {
+  border-color: black;
+  width: 60%;
+}
+
+.error_box > h4 {
+  padding-bottom: 10px;
+}
+
+.error_box {
+  padding: 1em;
+  color: black;
+  background-color: rgb(202, 255, 178);
+  border-radius: 4px;
+  min-height: 43px;
+}
+
+.error_box > p:first-of-type {
+  background: white;
+  padding: 10px 5px;
+  margin: 2px;
+}
+
+.step.next_step p.link:after {
+  content: " →";
+}
+
+div.back:before {
+  content: "← ";
+}
+
+table.bordered td,
+table.bordered tr {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.requirements > h1:before,
+.discussion > h1:before,
+.hints > h1:before,
+.tools_and_references > h1:before,
+.goals > h1:before,
+.steps > h1:before,
+.explanation > h1:before,
+.deploying > h1:before,
+.overview > h1:before,
+.challenge > h1:before,
+.further-reading > h1:before {
+  content: "\00a0";
+  display: inline-block;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.goals > h1:before {
+  background-color: #FECACD;
+}
+
+.steps > h1:before {
+  background-color: #FBFFCA;
+}
+
+.challenge > h1:before {
+  background-color: #FFD188;
+}
+
+.explanation > h1:before {
+  background-color: #C8FFC9;
+}
+
+.overview > h1:before {
+  background-color: rgb(176, 220, 250);
+}
+
+.deploying > h1:before {
+  background-color: #B0DEE7;
+}
+
+.further-reading > h1:before {
+  background-color: #87e5f2;
+}
+
+.requirements > h1:before {
+  background-color: #93B5DA;
+}
+
+.discussion > h1:before {
+  background-color: #92F59A;
+}
+
+.hints > h1:before {
+  background-color: #86DFD4;
+}
+
+.tools_and_references > h1:before {
+  background-color: #C8A9E0;
+}
+
+.console > pre {
+  border: 4px solid #dde;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+}
+
+.console {
+  margin-top: 10px;
+}
+
+.fuzzy-result {
+  margin: 20px;
+}
+
+.fuzzy-result > pre {
+  margin-bottom: 0px;
+}
+
+.fuzzy-result .fuzzy-hint {
+  font-size: 12px;
+  text-align: right;
+}
+
+.fuzzy-result .fuzzy-lightened {
+  color: #aaa;
+}
+
+.in_file > pre {
+  border: 4px solid #dde;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background-color: gray;
+  color: white;
+}
+
+.result > pre {
+  border: 4px solid #dde;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.os-button {
+  width: 200px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.os-button img {
+  max-height: 150px;
+}
+
+.os-button a {
+  text-align: center;
+}
+
+.vertical-centerer {
+  display: table;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+}
+
+.vertically-centered {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.vertically-centered > *:first-child,
+.vertically-centered > *:first-child > *:first-child { 
+  margin-top: 0;
+}
+
+.vertically-centered > *:last-child,
+.vertically-centered > *:last-child > *:last-child {
+  margin-bottom: 0;
+}
+
+.half-width {
+  display: inline-block;
+  width: calc(50% - 10px);
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  vertical-align: top;
+  margin-right: 10px;
+  min-height: 145px;
+}
+
+.half-width:last-child{
+  margin-right: 0;
+}
+
+.no-style-type {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-desc p {
+  margin: 0;
+}
+
+.site-desc h2 {
+  margin: 25px 0 5px 0;
+}
+
+#chunk-game {
+  background-color: #000000;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+

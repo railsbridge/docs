@@ -1,0 +1,60 @@
+# Lesson 4 - Moving a Single Segment Snake
+
+markdown <<-MARKDOWN
+  Now that we have a function to draw the snake, we want to move the snake.
+  Let's write a function which takes a snake and changes its segment's top and left
+  values.
+
+  To make our lives easier, let's make some assumptions:
+
+  * The snake is only 1 segment long
+  * The snake always moves down
+
+  By making these assumptions it keeps the code clear and makes it easy to
+  take small steps. Add the following code to your snake.js file:
+
+  ```js
+  var moveSnake = function(snake) {
+    var oldSegment = snake[0];
+    var newSegment = { top: oldSegment.top + 1, left: oldSegment.left };
+    var newSnake = [newSegment];
+    return newSnake;
+  }
+  ```
+
+  Once we have this `moveSnake` function, we can call it and it will give us a
+  snake whose segment's location has changed. We can then call `drawSnake` with
+  that snake and see it move across the screen!
+
+  Type the following lines into your javascript console a few times:
+
+  ```
+  snake = moveSnake(snake);
+  drawSnake(snake);
+  ```
+MARKDOWN
+
+js_expected_results 'lesson-4'
+
+markdown <<-MARKDOWN
+  ### Play Time!
+
+  * Why does adding 1 to a segment's top value move it down?
+  * Can you make the snake move right instead of down?
+  * What happens to the newSnake variable? Can you use it outside of the
+  moveSnake function body (within the curly braces)?
+  * Why are we re-assigning snake the results of moveSnake?
+
+  ### Syntax Breakdown
+
+  `return value` - Tells the function to immediately respond with whatever
+  value it is given. In this case, the newSnake.
+
+  `array[location]` -"Get the value at this location in the array." Arrays in
+  most programming languages are "zero-indexed" i.e. the first element is at 0,
+  the second is at 1, and so on.
+
+  `+` adds the values on the left and right together. Surprise, eh?
+MARKDOWN
+
+next_step 'lesson-5'

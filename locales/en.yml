@@ -1,0 +1,34 @@
+en:
+  captions:
+    terminal: "Type this in the terminal:"
+    irb: "Type this in irb:"
+    result: "Expected result:"
+    fuzzy_result: "Approximate expected result:"
+    link: "Go on to"
+
+  general:
+    type_in_file: "Type this in the file %{filename}:"
+    further_reading: "Further Reading"
+    fuzzy_hint: "The greyed-out text may differ and is not important."
+    step_title: "Step %{num}"
+    step_title_suffix: ": "
+    next_step: "Next Step:"
+    option: "Option %{num}: "
+    verify: "Verify %{text}"
+    goals: "Goals"
+    expand_all: "Expand All"
+    other_pages: "Other Pages"
+    back_to: "Back to"
+
+  header_section:
+    steps: "Steps"
+    explanation: "Explanation"
+    overview: "Overview"
+    discussion: "Discussion Items"
+    hints: "Hints"
+    challenge: "Challenge(s)"
+    tools_and_references: "Tools and References"
+    requirements: "Requirements to advance"
+
+  sites:
+    other_categories: Other Stuff

@@ -1,0 +1,114 @@
+message <<-INTRO
+Some workshops ask OS X and Windows users to use a virtual machine. To
+run Ruby, you need to start and connect to the virtual machine.
+INTRO
+
+tip do
+  message "If students aren't using a virtual machine at your workshop, head back to <a href='command_line'>the curriculum.</a>"
+end
+
+goals do
+  goal "Define virtual machine, Vagrant, and VirtualBox"
+  goal "Find your workspace directory"
+  goal "Start and halt Vagrant"
+  goal "Connect to and exit Vagrant"
+end
+
+message <<-CONTENTS
+Most laptops don't come with Ruby installed. Getting 75+ people ready at a
+workshop is a big logistical challenge.
+
+To get going quickly and to have things work the same for everyone, we're using
+a virtual machine. Using a virtual machine adds some extra steps, which we'll
+practice here.
+CONTENTS
+
+
+step do
+  message "First, let's define \"virtual machine.\""
+  message "A virtual machine - **VM** for short - is a snapshot of all the
+    software on a computer. The snapshot is called an image. You downloaded and
+    saved the image file in the pre-workshop steps."
+  message "We've made an image of a Linux machine with Ruby and other tools
+    installed."
+  end
+
+step do
+  message <<-CONTENTS
+By itself, a VM image is just a file like any other.  It needs something to
+run it.
+
+We're using VirtualBox.  If a VM image is a fish, VirtualBox is the aquarium
+it lives in.
+
+It knows how to translate the features of this Linux image into
+something Windows or OSX understands, and display it on your monitor.  It
+knows how to translate your keyboard and mouse input to something the Linux
+machine can use.
+
+If you're familiar with PC Anywhere, Remote Desktop, Parallels, or
+VMware Fusion, VirtualBox is a bit like that. Essentially, you're accessing
+another computer through your own computer.
+CONTENTS
+end
+
+
+step do
+  message <<-CONTENTS
+Vagrant is a tool for running a virtual machine. It will start and stop the
+VM, and let you connect to it so you can use it.
+
+During the Installfest you made a folder called "workspace" and ran some vagrant
+commands to set up the RailsBridge image.
+
+It created a configuration file named Vagrantfile. Vagrant needs the config
+file in order to run the machine.
+CONTENTS
+end
+
+step do
+  message <<-CONTENTS
+To run Ruby on our image, we have to start the VM and then connect to it.  The
+VM only needs to be started once. It will keep running until you halt it or
+reboot your machine.
+CONTENTS
+  console "vagrant up"
+  result <<-CONTENTS
+Bringing machine 'default' up with 'virtualbox' provider...
+[default] Clearing any previously set forwarded ports...
+[default] Clearing any previously set network interfaces...
+[default] Preparing network interfaces based on configuration...
+[default] Forwarding ports...
+[default] -- 22 => 2222 (adapter 1)
+[default] -- 3000 => 3000 (adapter 1)
+[default] Booting VM...
+[default] Waiting for machine to boot. This may take a few minutes...
+[default] Machine booted and ready!
+[default] The guest additions on this VM do not match the installed version of
+VirtualBox! In most cases this is fine, but in rare cases it can
+prevent things such as shared folders from working properly. If you see
+shared folder errors, please make sure the guest additions within the
+virtual machine match the version of VirtualBox you have installed on
+your host and reload your VM.
+
+Guest Additions Version: 4.2.0
+VirtualBox Version: 4.3
+[default] Mounting shared folders...
+[default] -- /vagrant
+[default] VM already provisioned. Run `vagrant provision` or use `--provision` to force it
+CONTENTS
+  message "What happens if it's already running?"
+  console "vagrant up"
+  result <<-CONTENTS
+Bringing machine 'default' up with 'virtualbox' provider...
+[default] VirtualBox VM is already running.
+CONTENTS
+end
+
+further_reading do
+  message <<-CONTENTS
+"What's virtualization? Why get that nerdy?" Lifehacker explains it all in [The
+Beginner's Guide to Creating VMs with
+VirtualBox](http://lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox)
+CONTENTS
+end

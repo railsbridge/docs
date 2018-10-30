@@ -1,0 +1,47 @@
+message "We'll be using Heroku to put our apps online because it's simple and free for the tier we'll be needing. If you know you already have a Heroku account, you can jump to step 4 on this page."
+
+step "Visit the Heroku web site" do
+  url "http://heroku.com"
+end
+
+step "Create an account" do
+  message "Click the big **Sign Up** button (it's about halfway down the page)"
+  message "Enter your email address."
+  important "Use the same email address for heroku, git, github, and ssh. Be sure to use an email account you can log into immediately."
+end
+
+step "Activate your account" do
+
+  message "Heroku will send you an activation email. Open it and click on the activation link. It will take you to the Heroku site. Enter and confirm your password. Hit Save."
+
+end
+
+step "Install the Heroku CLI" do
+
+  message "Visit https://devcenter.heroku.com/articles/heroku-cli and follow the instructions relevant to your operating system. Afterwards:"
+
+  verify do
+    console "heroku version"
+    fuzzy_result <<-TEXT
+      {FUZZY}heroku-toolbelt/3.30.6 (x86_64-darwin10.8.0) ruby/1.9.3{/FUZZY}
+      heroku{FUZZY}/7.6.0 darwin-x64 node-v10.6.0{/FUZZY}
+      {FUZZY}You have no installed plugins.{/FUZZY}
+    TEXT
+  end
+  message "The output could be different, depending on whether this is the first time you've installed the Heroku CLI, but it should always have `heroku` in it."
+  message "If `heroku version` doesn't work, try the command again in a new terminal window."
+end
+
+step "Add your SSH key to your Heroku account" do
+  console "heroku keys:add"
+
+  message "Enter your Heroku email and password, if prompted, and accept the defaults."
+end
+
+section 'Optional Step: Create a GitHub account' do
+  message "Since by now you should have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+
+  message "You don't need a GitHub account to complete the InstallFest, or the Intro To Rails, Job Board, or Message Board courses."
+end
+
+next_step "create_a_rails_app"

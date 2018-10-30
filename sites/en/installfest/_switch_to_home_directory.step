@@ -1,0 +1,14 @@
+message "`cd` stands for change directory."
+
+message "If you are still in `irb`, type `quit` to exit."
+
+div do
+  option_half "Windows" do
+    console "cd c:\\Sites"
+    message "`cd c:\\Sites` sets our Sites directory to our current directory."
+  end
+  option_half "Mac or Linux" do
+    console "cd ~"
+    message "`cd ~` sets our home directory to our current directory."
+  end
+end
