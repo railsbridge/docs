@@ -48,7 +48,7 @@ RUBY
 message <<-MARKDOWN
   Running this code will make a table in our database called jobs. Right now it just has the timestamps (`created_at` and `updated_at`). What else should a job have? Let's start with a title and description.
 
-  Add the the title and description so it looks like this:
+  Add the title and description so it looks like this:
 MARKDOWN
 
 source_code :ruby, <<-RUBY
@@ -61,10 +61,10 @@ RUBY
 
 message "Now we need to execute this file, so that the database schema gets updated."
 
-console "rake db:migrate"
+console "rails db:migrate"
 
 message <<-MARKDOWN
-  This uses a utility called rake to run a task called `db:migrate`, which in turn looks through all of your migration files and runs any that haven't already been run at some point in the past.
+  This tells Rails to run any migration files that haven't already been run at some point in the past.
 MARKDOWN
 
 discussion_box "Why do we use migrations?",

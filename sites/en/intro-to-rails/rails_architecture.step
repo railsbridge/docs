@@ -22,8 +22,8 @@ explanation {
 
   h3 "Model"
   message <<-MARKDOWN
-* For all the Models we create in RailsBridge, Model objects have a corresponding record in the the database. The name of the table in the database is the plural version of the Model's class name. For example, if the Model is called 'Duck', it will automatically query or write to the 'ducks' table in the database.
-* Methods internal to Rails make it easy to automatically write records to the the database and query the database to get the records again later.
+* For all the Models we create in RailsBridge, Model objects have a corresponding record in the database. The name of the table in the database is the plural version of the Model's class name. For example, if the Model is called 'Duck', it will automatically query or write to the 'ducks' table in the database.
+* Methods internal to Rails make it easy to automatically write records to the database and query the database to get the records again later.
 * The Model is a bridge between the database and your application's code.
   MARKDOWN
 

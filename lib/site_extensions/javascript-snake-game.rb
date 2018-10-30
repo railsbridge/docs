@@ -9,7 +9,7 @@ module StepExtensions
 
       source_code :js, File.read(src_path)
 
-      h4 'How the game should work:'
+      h4 'How the game should work so far:'
 
       canvas id: 'chunk-game', height: '600', width: '800'
 

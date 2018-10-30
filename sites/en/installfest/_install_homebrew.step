@@ -7,5 +7,8 @@ important "If that doesn't work, visit <https://github.com/Homebrew/homebrew/wik
 
 verify do
   console "brew -v"
-  fuzzy_result "Homebrew 0.9{FUZZY}.5{/FUZZY}"
+  fuzzy_result <<-TEXT
+    Homebrew 1{FUZZY}.1.13-19-g55c02ae77
+    Homebrew/homebrew-core (git revision 4075; last commit 2017-04-18){/FUZZY}
+  TEXT
 end

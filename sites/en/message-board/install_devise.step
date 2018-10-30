@@ -16,7 +16,7 @@ discussion do
 message <<-MARKDOWN
 * What is Devise?
 * What files did Devise add to your rails app?
-* Someone Who Knows: explain how to read the output of the command `rake routes`. What does it give you? How is it helpful?
+* Someone Who Knows: explain how to read the output of the command `rails routes`. What does it give you? How is it helpful?
 * How will you add the log out link? What's the syntax for a DELETE action?
 * You're going to be editing your application layout to add error messaging. If you haven't already, discuss the relationship between the application layout and all the other views you'll be creating. 
 MARKDOWN
@@ -36,7 +36,7 @@ message <<-MARKDOWN
 * The convention for naming models is to capitalize the first letter, like: User. 
 * When you run `rails generate devise:install`, you get five instructions for things to configure. 3 & 4 are good to do.
 * The routes file goes through many common types of routes in the comments. This is also your friend.
-* Devise has some magic that will help you with your logout link. Run `rake routes` and look for a route that helps you sign out. 
+* Devise has some magic that will help you with your logout link. Run `rails routes` and look for a route that helps you sign out. 
 * You'll probably want to show the current user's email address only if they are presently signed in, right? Devise has a helper for you.
 * Optional: any time you generate a model in rails, you can use Rails Console to look at that model's methods and behavior interactively.
 MARKDOWN

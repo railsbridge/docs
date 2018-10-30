@@ -10,7 +10,7 @@ A text editor is a word processor that saves in plain text format.  This is
 unlike Word, which saves files in a special format that only Word can read.
 
 We may have recommended a particular text editor during the Installfest, such as
-SublimeText.  You can use any editor you like so long as it saves plain text.
+Atom.  You can use any editor you like so long as it saves plain text. 
 
 It'll helpful to keep your text editor running, since you'll be coming back to
 it often.

@@ -100,6 +100,12 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     }
   end
 
+  def redirect_pages
+    {
+      'installfest/macintosh' => 'installfest/macOS'
+    }
+  end
+
   before do
     begin
       I18n.locale = dynamic_locale
@@ -287,6 +293,12 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/#{params[:name]}"
+      return
+    end
+
+    page_url = "#{params[:site]}/#{params[:name]}"
+    if redirect_pages[page_url]
+      redirect redirect_pages[page_url]
     else
       render_page
     end

@@ -53,8 +53,8 @@ step "Install Rails" do
   end
 end
 
-step "Install Sublime Text 2" do
-  insert "install_sublime_text_2_for_mac"
+step "Install Atom" do
+  insert "install_atom_for_mac"
 end
 
 verify "successful installation" do

@@ -25,22 +25,19 @@ steps {
   }
 
   step {
-    console "rake db:migrate"
+    console "rails db:migrate"
     message "This tells Rails to update the database to include a table for our new model."
   }
 }
 
 explanation {
 
-  h2 "Rake"
   message <<-MARKDOWN
-`rake` (**r**uby m**ake**) is a tool that allows you to run small Ruby programs (**tasks**) that you use often in your application.
-
-Here, `rake db:migrate` is a task provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
+Here, `rails db:migrate` is a command provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
 
   MARKDOWN
 
-  tip "You can run `rake -T` to see a list of all the `rake` commands your app currently responds to, along with a short description of each task."
+  tip "You can run `rails --help` to see a list of all the `rails` commands your app currently responds to, along with a short description of each one."
 }
 
 

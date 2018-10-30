@@ -32,7 +32,7 @@ Create a new [Rails model]
 
 Update the database to match what you have described in your code
 
-    rake db:migrate
+    rails db:migrate
 
 Run the application locally (Ctrl-C to quit)
 
@@ -44,7 +44,7 @@ Start an interactive Ruby session that knows about your Rails models (type 'exit
 
 Print the routes for your application
 
-    rake routes
+    rails routes
 
 ## Browser
 

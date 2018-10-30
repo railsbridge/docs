@@ -78,6 +78,6 @@ RUBY
 
 message "Now we should see our mostly unstyled form!"
 
-discussion_box "Form HTML", "What HTML did the form helpers produce? Using the web inspector, look through the form code and compare it to the file you've been working on in Sublime."
+discussion_box "Form HTML", "What HTML did the form helpers produce? Using the web inspector, look through the form code and compare it to the file you've been working on in Atom."
 
 next_step "make_the_form_work"

@@ -5,7 +5,7 @@ markdown <<-MARKDOWN
   segment further forward in snake to the current segment when it moves. This way
   all segments follow the same path!
 
-  Let's define a new function called `segmentFurtherDown` which takes a
+  Let's define a new function called `segmentFurtherForwardThan` which takes a
   segment index and a snake and returns the segment closer to the head. Let's
   start with:
 

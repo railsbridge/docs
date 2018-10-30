@@ -46,10 +46,9 @@ steps do
       end
 
       step "Install a text editor" do
-        a "Download and install Sublime Text 2", :href => "http://www.sublimetext.com/2"
-        message "Install Sublime Text 2 by double clicking the file you downloaded, then dragging the Sublime Text 2 icon into the Applications folder. Finish up by clicking the eject icon for Sublime Text 2 in your finder window."
+        a "Download and install Atom", :href => "https://atom.io/"
+        message "Install Atom by double clicking the file you downloaded, then dragging the Atom icon into the Applications folder. Finish up by clicking the eject icon for Atom in your finder window."
         a "or install a different editor", :href => "/installfest/editors"
-        message "FYI: Sublime Text 2 is a paid program that you can download and try out for free. If you keep using Sublime Text 2 after the workshop, you'll need to buy a license. There are other editors available you can find on [our editors page](/installfest/editors)."
       end
     end
   end

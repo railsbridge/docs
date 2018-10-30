@@ -4,6 +4,7 @@ step "Learn your Mac OS X Version" do
 * Click on the Apple icon in the top left of your screen.
 * Select "About This Mac"
 * In the window that comes up, under the title "Mac OS X" there will be a version number.
+  * If it starts with 10.13, you have **High Sierra**.
   * If it starts with 10.12, you have **Sierra**.
   * If it starts with 10.11, you have **El Capitan**.
   * If it starts with 10.10, you have **Yosemite**.
@@ -17,7 +18,7 @@ step "Learn your Mac OS X Version" do
 
 * Write down the Mac OS X version you have.
 * In addition, to the right of the "Processor", there will be the a processor type.
-  * If it ends with **Intel Core i7**, **Intel Core i5**, or **Intel Core i3**, you are good to go.
+  * If it ends with **Intel Core i7**, **Intel Core i5**, **Intel Core i3**, or **Intel Core m3** you are good to go.
   * If it ends with **Intel Core 2 Duo**, you are good to go.
   * If it ends with **Intel Core Duo** or something else, you are **NOT** good to go.  Please flag down a volunteer.
 
@@ -32,7 +33,7 @@ end
 
 step "Choose your instructions" do
 
-  option "Sierra/El Capitan/Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
+  option "High Sierra/Sierra/El Capitan/Yosemite/Mavericks/Mountain Lion/Lion/Snow Leopard" do
     link "osx_rvm"
   end
   option "Earlier than Snow Leopard" do

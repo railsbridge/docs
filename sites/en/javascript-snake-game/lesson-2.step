@@ -86,9 +86,26 @@ js_expected_results 'lesson-2'
     MARKDOWN
   end
 
+  step "Comments" do
+    markdown <<-MARKDOWN
+      Sometimes it's nice to leave a clarifying note to future readers of the code (this could very well be you!) in plain English. This is called a comment, and it is only intended for humans to read, the computer knows to ignore them.
+      Here's what comments look like in JavaScript:
+
+    ```js
+    // this is a one line comment, here we're creating an array
+      var drawableObjects = [drawableSnake];
+    /*
+      this is a multi line comment
+      here we're drawing the snake
+    */
+    CHUNK.draw(drawableObjects);
+    ```
+    MARKDOWN
+  end
+
   step "Play Time!" do
     markdown <<-MARKDOWN
-      * Add comments underneath each line explaining what it does in plain old english.
+      * Add comments above each line explaining what it does in plain old english.
       * Change the color of the snake.
       * Make the snake longer than just 1 segment!
       * Draw something in addition to the snake. Perhaps an apple or a wall? Make

@@ -6,8 +6,8 @@ module StepExtensions
           '2.3'
         when :windows_rubygems_min
           '2.6.7'
-        when :windows_rubygems_current
-          '2.6.8'
+        when :windows_rubygems_min_short
+          '2.6'
         else
           raise StandardError, "No version string exists for '#{name}'"
       end
