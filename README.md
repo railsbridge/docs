@@ -1,3 +1,9 @@
+# Techlahoma Fork
+
+This is the Techlahoma fork of the Railsbridge project. The app is hosted here:
+
+http://techlahoma-railsbridge.herokuapp.com/intro-to-rails/intro-to-rails
+
 # The RailsBridge Documentation Project
 
 [![Build Status](https://travis-ci.org/railsbridge/docs.png)](https://travis-ci.org/railsbridge/docs)
