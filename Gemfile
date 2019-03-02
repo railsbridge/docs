@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.3.3'
+ruby '2.5.3'
 
 gem 'activesupport'
 gem "erector", "~> 0.10.0"
