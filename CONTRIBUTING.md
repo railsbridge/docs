@@ -69,7 +69,7 @@ maintainers to love you. :heart:*
 
 # It's My First Time on GitHub Ever What Do I Do?
 
-Relax, you came to the right place. In order to contribute you'll need to be
+Relax, you came to the right place. In order to contribute, you'll need to be
 able to familiarize yourself with some concepts from git and GitHub. It's going
 to be a lot of information, but you're :sparkles:awesome:sparkles:! So you'll
 be fine.
@@ -100,7 +100,7 @@ at <http://gitimmersion.com>. Do it. It's worth it no matter how much git-fu you
 
 Also, [Pro Git](http://git-scm.com/book) is a great (and free!) book about Git.
 
-We apologize for how long this document is! Hopefully it addressed
+We apologize for how long this document is! Hopefully, it addressed
 most of your concerns about git, contributing, and GitHub. Feel free
 to ask more questions on the
 [railsbridge-workshops](http://groups.google.com/group/railsbridge-workshops)
