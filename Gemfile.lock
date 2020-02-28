@@ -56,7 +56,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rake (12.0.0)
+    rake (12.3.3)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
