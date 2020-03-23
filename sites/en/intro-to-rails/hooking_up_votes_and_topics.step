@@ -44,8 +44,8 @@ end
 
     result <<-CONSOLE
       $ rails c
-      Loading development environment (Rails 5.0.0)
-      2.3.0 :001 >
+      Loading development environment (Rails 5.2.4.1)
+      2.5.7 :001 >
     CONSOLE
 
     message "At the console, try the following things"

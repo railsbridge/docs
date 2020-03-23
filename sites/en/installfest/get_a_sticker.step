@@ -14,7 +14,7 @@ step "Have a volunteer check your tool versions" do
     h3 "On all operating systems:"
 
     console "ruby -v"
-    fuzzy_result "ruby 2.3{FUZZY}.3p222 (2015-12-16 revision 53155) [x86_64-darwin13]{/FUZZY}"
+    fuzzy_result "ruby 2.5{FUZZY}.7p206 (2019-10-01 revision 67816) [x86_64-darwin17]{/FUZZY}"
 
     tip "As long as your Ruby version is #{version_string(:ruby_short)} or above, you're good to go."
 
