@@ -8,7 +8,7 @@ console "rvm --default use #{version_string(:ruby_short)}"
 
 verify do
   console "ruby -v"
-  fuzzy_result "ruby #{version_string(:ruby_short)}{FUZZY}.0p0 (2014-12-25 revision 49005) [x86_64-darwin13]{/FUZZY}"
+  fuzzy_result "ruby #{version_string(:ruby_short)}{FUZZY}p206 (2019-10-01 revision 67816) [x86_64-darwin17]{/FUZZY}"
 end
 
 div do

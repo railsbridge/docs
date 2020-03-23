@@ -48,7 +48,7 @@ step "Create a new Rails app" do
     => Rails 5.0{FUZZY}.0{/FUZZY} application starting in development on http://localhost:3000
     => Run `rails server -h` for more startup options
     Puma starting in single mode...
-    * Version {FUZZY}3.4.0{/FUZZY} (ruby 2.{FUZZY}2.2-p95{/FUZZY}), codename: {FUZZY}Owl Bowl Brawl{/FUZZY}
+    * Version {FUZZY}3.4.0{/FUZZY} (ruby 2.{FUZZY}5.7-p206{/FUZZY}), codename: {FUZZY}Owl Bowl Brawl{/FUZZY}
     * Min threads: 5, max threads: 5
     * Environment: development
     * Listening on tcp://localhost:3000
