@@ -9,7 +9,7 @@ step "Have a volunteer check your tool versions" do
     h3 "If you're on OSX or Linux:"
 
     console "rvm -v"
-    fuzzy_result "rvm 1{FUZZY}.x.x by Wayne E. Seguin (wayneeseguin@gmail.com) [https://rvm.io/]{/FUZZY}"
+    fuzzy_result "rvm 1{FUZZY}.x.x by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]{/FUZZY}"
 
     h3 "On all operating systems:"
 
