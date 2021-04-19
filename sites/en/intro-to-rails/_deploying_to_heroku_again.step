@@ -12,7 +12,7 @@ changes are: something like \"Added votes to the topics index\"."
 end
 
 step "Push changes to Heroku" do
-  console "git push heroku master"
+  console "git push heroku main"
   message "This takes all changes you've committed locally and pushes them to Heroku."
 end
 
