@@ -59,6 +59,19 @@ initialized a new repository in a hidden directory called `.git`."
 
     message "Now you should see something like `nothing to commit, working directory clean` which means you've committed all of your changes."
   end
+  
+  step do
+    console "git remote add origin https://github.com/your_github_username/railsbridge.git"
+
+    message "`git remote add origin` associates the name `origin` with the remote repository url."
+  end
+
+  step do
+    console "git push -u origin main"
+
+    message "`git push -u origin main` pushes your local changes to your remote repository"
+  end
+ 
 end
 
 explanation do
