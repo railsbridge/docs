@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 
-ruby '2.3.3'
+ruby '2.7.5'
 
 gem 'activesupport'
 gem "erector", "~> 0.10.0"
 gem "sinatra", "~> 1.4.0"
 gem "sinatra-contrib", "~> 1.4.0"
 gem "nokogiri"
-gem "thin"
+gem "thin", "1.8.1"
 gem 'rack-codehighlighter'
 gem 'coderay'
 gem "deckrb", "~> 0.5.2"
@@ -19,6 +19,8 @@ gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 gem 'jquery-cdn'
 gem 'sprockets'
+gem 'ffi', "1.15.5"
+gem 'backports', "3.23.0"
 
 group :development do
   gem "rspec"
