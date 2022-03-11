@@ -148,7 +148,7 @@ source_code_with_message "Here's what the update method should actually look lik
 <<-RUBY
   def update
     @job = Job.find(params[:id])
-    @job.update_attributes(job_params)
+    @job.update(job_params)
     redirect_to jobs_path
   end
 RUBY
