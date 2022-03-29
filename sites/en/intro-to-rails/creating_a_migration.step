@@ -17,11 +17,9 @@ steps {
 * `generate scaffold` tells Rails to create everything necessary to get up and running with topics.
 * `topic` tells Rails the name of the new model.
 * `title:string` says that topics have a title, which is a "string".
-* `description:text` says that topics have a description which is a "text". (What's the difference between "string" and "text"? Basically "text" is for strings that might be very long.)
+* `description:text` says that topics have a description which is a "text". A "text" is like a "string" that might be very long.
 
     MARKDOWN
-    message "If you want, take some time to poke around the files listed in this step. You can learn about them in the [Rails Architecture](rails_architecture) page."
-    link "rails_architecture"
   }
 
   step {
@@ -31,14 +29,35 @@ steps {
 }
 
 explanation {
+  h2 "Databases don't create tables by themselves - they need instructions."
 
   message <<-MARKDOWN
-Here, `rails db:migrate` is a command provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. Database migration files can be crucial to code collaboration.
+    One of the files the scaffold command created will be named something like
+    `db/migrate/20140515115208_create_topics.rb`. The numbers in the name are
+    the date and time the file was made, so yours will be named differently.
+
+    The file contains Ruby code that describes what the table will look like.
+    This is called a migration file.  It tells the database how to transform
+    itself into the new configuration.
+
+    ```ruby
+    class CreateTopics < ActiveRecord::Migration
+      def change
+        create_table :topics do |t|
+          t.string :title
+          t.text :description
+
+          t.timestamps
+        end
+      end
+    end
+    ```
+
+    `rails db:migrate` is a task provided by the Rails framework. It uses the migration file we just created (`db/migrate/201xxxxxxxxxxx_create_topics.rb`) to change the database. 
 
   MARKDOWN
 
-  tip "You can run `rails --help` to see a list of all the `rails` commands your app currently responds to, along with a short description of each one."
+  tip "You can run `rails -T` to see a list of all the `rails` commands your app currently responds to, along with a short description of each task."
 }
-
 
 next_step "CRUD_with_scaffolding"
