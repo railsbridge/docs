@@ -1,0 +1,7 @@
+zh-tw:
+  captions:
+    terminal: "在終端機打這些字："
+    irb: "在 irb 打這些字："
+    result: "預期的結果："
+    fuzzy_result: "大概預期的結果："
+    link: "來這裡："

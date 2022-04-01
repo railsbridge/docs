@@ -1,0 +1,7 @@
+en:
+  captions:
+    terminal: "Type this in the terminal:"
+    irb: "Type this in irb:"
+    result: "Expected result:"
+    fuzzy_result: "Approximate expected result:"
+    link: "Go on to"

@@ -1,0 +1,7 @@
+es:
+  captions:
+    terminal: "Escribe esto en la línea de comandos:"
+    irb: "Escribe esto en irb:"
+    result: "Resultado esperado:"
+    fuzzy_result: "Resultado aproximado esperado:"
+    link: "Ir a"

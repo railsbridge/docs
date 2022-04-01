@@ -1,0 +1,14 @@
+en:
+  general:
+    type_in_file: "Type this in the file %{filename}:"
+    further_reading: "Further Reading"
+    fuzzy_hint: "The greyed-out text may differ and is not important."
+    step_title: "Step %{num}"
+    step_title_suffix: ": "
+    next_step: "Next Step:"
+    option: "Option %{num}: "
+    verify: "Verify %{text}"
+    goals: "Goals"
+    expand_all: "Expand All"
+    other_pages: "Other Pages"
+    back_to: "Back to"

@@ -1,0 +1,10 @@
+en:
+  header_section:
+    steps: "Pasos"
+    explanation: "Explicación"
+    overview: "Resumen"
+    discussion: "Elementos para discusión"
+    hints: "Pistas"
+    challenge: "Reto(s)"
+    tools_and_references: "Herramientas y Referencias"
+    requirements: "Requisitos para avanzar"

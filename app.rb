@@ -9,45 +9,42 @@ require 'bootstrap-sass'
 require 'zip'
 require 'tmpdir'
 
-here = File.expand_path File.dirname(__FILE__)
+here = __dir__
 lib = File.expand_path "#{here}/lib"
 $: << lib
 
-require "doc_page"
-require "step_page"
-require "markdown_page"
-require "media_wiki_page"
-require "raw_page"
-require "deck"
-require "deck/rack_app"
-require "titleizer"
-require "site"
+require 'doc_page'
+require 'step_page'
+require 'markdown_page'
+require 'media_wiki_page'
+require 'raw_page'
+require 'deck'
+require 'deck/rack_app'
+require 'titleizer'
+require 'site'
 require 'sprockets'
 require 'jquery-cdn'
 
-class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
+class InstallFest < Sinatra::Application
+  # TODO: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
-
-  DEFAULT_SITES = {en: "docs", es: "hola", :"zh-tw" => "nihao" }
 
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
-  AVAILABLE_LOCALES = DEFAULT_SITES.keys.map(&:to_s)
+  AVAILABLE_LOCALES = %i[en es zh-tw].freeze
 
   set :assets, Sprockets::Environment.new
-  settings.assets.append_path "assets/stylesheets"
-  settings.assets.append_path "assets/javascripts"
-  settings.assets.append_path "public/fonts"
+  settings.assets.append_path 'assets/stylesheets'
+  settings.assets.append_path 'assets/javascripts'
+  settings.assets.append_path 'public/fonts'
   settings.assets.append_path Bootstrap.javascripts_path
   JqueryCdn.install(settings.assets)
 
-  if settings.environment == :development
-    set :cookie_options, domain: nil
-  end
+  set :cookie_options, domain: nil if settings.environment == :development
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
-    I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
+    I18n.load_path = Dir[File.join(settings.root, 'locales', '**/*.yml')]
     I18n.backend.load_translations
 
     I18n.available_locales = AVAILABLE_LOCALES
@@ -57,28 +54,28 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   def initialize
     super
-    @here = File.expand_path(File.dirname(__FILE__))
+    @here = __dir__
   end
 
   attr_reader :here
   attr_writer :default_site
 
-  # todo: test
+  # TODO: test
   # returns the most-specific hostname component, e.g. "foo" for "foo.example.com"
   def subdomain
-    host.split(".").first
+    host.split('.').first
   end
 
   def default_site
     if host && sites.include?(site = subdomain)
       site
     else
-      DEFAULT_SITES[I18n.locale.to_sym] # no symbol DoS because it's whitelisted
+      'docs'
     end
   end
 
   def host
-    request && request.host
+    request&.host
   end
 
   def site_dir
@@ -86,7 +83,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def sites_dir
-    Site.sites_dir(I18n.locale)
+    Site.sites_dir
   end
 
   def sites
@@ -107,24 +104,20 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   before do
-    begin
-      I18n.locale = dynamic_locale
-    rescue I18n::InvalidLocale
-      I18n.locale = I18n.default_locale
-    end
+    I18n.locale = dynamic_locale
+  rescue I18n::InvalidLocale
+    I18n.locale = I18n.default_locale
   end
 
   after '/:site/*' do
     # Any real page (starts with a site and doesn't end with an extension)
     # gets saved as the 'back' for the next pageload.
-    if sites.include?(params[:site]) && !request.fullpath.match(/\..+\z/)
-      cookies[:docs_back_path] = request.fullpath
-    end
+    cookies[:docs_back_path] = request.fullpath if sites.include?(params[:site]) && !request.fullpath.match(/\..+\z/)
   end
 
   def dynamic_locale
-    (params && (params[:locale] or params[:l])) or
-      (host && AVAILABLE_LOCALES.include?(subdomain) && subdomain) or
+    (params && (params[:locale] || params[:l])) ||
+      (host && AVAILABLE_LOCALES.include?(subdomain) && subdomain) ||
       (ENV['SITE_LOCALE'])
   end
 
@@ -133,7 +126,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def ext
-    $1 if doc_path.match(/\.(.*)/)
+    Regexp.last_match(1) if doc_path.match(/\.(.*)/)
   end
 
   def doc_path
@@ -162,48 +155,46 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def render_page
-    begin
-      options = {
-        site: Site.named(params[:site], I18n.locale),
-        page_name: params[:name],
-        doc_title: Titleizer.title_for_page(params[:name]),
-        doc_path: doc_path,
-        back: back_path,
-        src: src,
-        locale: I18n.locale,
-      }
+    options = {
+      site: Site.named(params[:site]),
+      page_name: params[:name],
+      doc_title: Titleizer.title_for_page(params[:name]),
+      doc_path: doc_path,
+      back: back_path,
+      src: src,
+      locale: I18n.locale
+    }
 
-      case ext
+    case ext
 
-        when "deck.md", "deck"
-          render_deck
+    when 'deck.md', 'deck'
+      render_deck
 
-        when "md"
-          MarkdownPage.new(options).to_html
+    when 'md'
+      MarkdownPage.new(options).to_html
 
-        when "mw"
-          MediaWikiPage.new(options).to_html
+    when 'mw'
+      MediaWikiPage.new(options).to_html
 
-        when "step"
-          StepPage.new(options).to_html
+    when 'step'
+      StepPage.new(options).to_html
 
-        else
-          raise "unknown file type #{doc_path}"
-      end
-
-    rescue Errno::ENOENT => e
-      p e
-      e.backtrace.each do |line|
-        break if line =~ /sinatra\/base.rb/
-        puts "\t"+line
-      end
-      halt 404
+    else
+      raise "unknown file type #{doc_path}"
     end
+  rescue Errno::ENOENT => e
+    p e
+    e.backtrace.each do |line|
+      break if line =~ %r{sinatra/base.rb}
+
+      puts "\t" + line
+    end
+    halt 404
   end
 
   def render_deck
     slides = Deck::Slide.split(src)
-    Deck::SlideDeck.new(:slides => slides).to_pretty
+    Deck::SlideDeck.new(slides: slides).to_pretty
   end
 
   before do
@@ -214,7 +205,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     halt 404
   end
 
-  get "/assets/:file.:ext" do
+  get '/assets/:file.:ext' do
     mime_type = {
       'js' => 'application/javascript',
       'css' => 'text/css',
@@ -230,29 +221,27 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     send_file font_path
   end
 
-  get "/" do
+  get '/' do
     redirect "/#{default_site}/"
   end
 
-  get "/:site/:name/src" do
-    begin
-      RawPage.new(
-        site: Site.named(params[:site], I18n.locale),
-        page_name: params[:name],
-        doc_title: File.basename(doc_path),
-        doc_path: doc_path,
-        src: src,
-        locale: I18n.locale,
-      ).to_html
-    rescue Errno::ENOENT => e
-      p e
-      halt 404
-    end
+  get '/:site/:name/src' do
+    RawPage.new(
+      site: Site.named(params[:site], I18n.locale),
+      page_name: params[:name],
+      doc_title: File.basename(doc_path),
+      doc_path: doc_path,
+      src: src,
+      locale: I18n.locale
+    ).to_html
+  rescue Errno::ENOENT => e
+    p e
+    halt 404
   end
 
-  get "/:site/:name.zip" do
+  get '/:site/:name.zip' do
     manifest_path = "#{site_dir}/#{params[:name]}.zip-manifest"
-    if File.exists?(manifest_path)
+    if File.exist?(manifest_path)
       manifest_files = File.read(manifest_path).split("\n")
       zip_path = File.join(Dir.tmpdir, "#{params[:name]}.zip")
       FileUtils.rm_rf(zip_path)
@@ -268,9 +257,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
-  get "/:site/:name.:ext" do
+  get '/:site/:name.:ext' do
     if sites.include?(params[:site])
-      if params[:ext] == "deck"  # to show a markdown page as slides, change the ".md" to ".deck"
+      if params[:ext] == 'deck' # to show a markdown page as slides, change the ".md" to ".deck"
         render_deck
       else
         send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
@@ -278,18 +267,16 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
-  get "/:site/:subdir/:name.:ext" do
-    if sites.include?(params[:site])
-      send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}"
-    end
+  get '/:site/:subdir/:name.:ext' do
+    send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}" if sites.include?(params[:site])
   end
 
-  get "/:site/:name/" do
+  get '/:site/:name/' do
     # remove any extraneous slash from otherwise well-formed page URLs
     redirect request.fullpath.chomp('/')
   end
 
-  get "/:site/:name" do
+  get '/:site/:name' do
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/#{params[:name]}"
@@ -304,22 +291,22 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     end
   end
 
-  get "/:site/:name/:section/" do
+  get '/:site/:name/:section/' do
     # remove any extraneous slash from otherwise well-formed page URLs
     redirect request.fullpath.chomp('/')
   end
 
-  get "/:site/:name/:section" do
+  get '/:site/:name/:section' do
     render_page
   end
 
-  get "/:site" do
+  get '/:site' do
     # add a slash to any URLs that contain only a site
     # (otherwise paths in that site's pages would resolve relative to the root)
     redirect "#{request.fullpath}/"
   end
 
-  get "/:site/" do
+  get '/:site/' do
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/"
