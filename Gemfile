@@ -4,8 +4,8 @@ ruby '2.7.5'
 
 gem 'activesupport'
 gem "erector", "~> 0.10.0"
-gem "sinatra", "~> 1.4.0"
-gem "sinatra-contrib", "~> 1.4.0"
+gem "sinatra", "~> 2.2.0"
+gem "sinatra-contrib", "~> 2.2.0"
 gem "nokogiri"
 gem "thin", "1.8.1"
 gem 'rack-codehighlighter'
