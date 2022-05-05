@@ -51,7 +51,7 @@ irb <<-IRB
      word = nil
      word.upcase
 IRB
-    result "NoMethodError: undefined method 'downcase' for nil:NilClass"
+    result "NoMethodError: undefined method 'upcase' for nil:NilClass"
     message "What happened?"
     irb "word.class"
     message "`word` was set to nil. Let's look at the alphabetized list of methods the Nil class has."
