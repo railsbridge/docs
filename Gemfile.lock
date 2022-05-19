@@ -45,7 +45,7 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     multi_json (1.12.1)
-    nokogiri (1.13.2)
+    nokogiri (1.13.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     polyglot (0.3.5)
