@@ -45,7 +45,7 @@ Here's a list of tools you'll be installing. As you go through the workshop, we'
 * **Git**. A revision or source control system. It creates a _repository_ (sometimes called a _repo_ for short), which is a complete history of your changes to what you're working on. This means you can undo changes and roll back to previous versions of your work if something has gone wrong.
 * **GitHub** (optional). A place to store your Git repository online, so you can access it from any computer.
 * **Heroku**. An _application server_, which hosts your application while you're working on it. This allows you to access your app online and interact with it from any browser, instead of just on your local computer.
-* **Atom** (or [some other editor](editors)). To write programs in Ruby, you need a text editor to create, edit and save Ruby files.
+* **VS Code** (or [some other editor](editors)). To write programs in Ruby, you need a text editor to create, edit and save Ruby files.
 * A couple of useful **Ruby gems**. Ruby gems are useful bits of Ruby code that someone has created for reuse, so you don't have to write it yourself.
 
 If you've already installed the above tools and are confident they are setup correctly, skip ahead to the <a href="get_a_sticker">Get a Sticker</a> step.

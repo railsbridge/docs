@@ -77,12 +77,12 @@ step "Install Rails" do
   console "gem install rails"
 end
 
-step "Atom" do
+step "VS Code" do
   message <<-MARKDOWN
 
-If you don't have a preferred code editor, you can install Atom.
+If you don't have a preferred code editor, you can install VS Code.
 
-Checkout this section of the [Atom manual](http://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux) for the latest instructions.
+See [the VS Code Website](https://code.visualstudio.com/Download) for the latest instructions.
 MARKDOWN
 end
 

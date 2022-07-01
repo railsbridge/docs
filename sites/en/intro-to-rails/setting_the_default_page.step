@@ -14,7 +14,7 @@ goals {
 steps {
 
   step "Add a root route" do
-    message "Open the file `config/routes.rb` in an editor (In the InstallFest yesterday, we suggested that you install and use **Atom** as your editor)."
+    message "Open the file `config/routes.rb` in an editor (In the InstallFest yesterday, we suggested that you install and use **VS Code** as your editor)."
 
     message "Look for the line `Rails.application.routes.draw` at the beginning of the file, and add the line `root 'topics#index'` after it. When you are done the start of the file should look like this:"
 

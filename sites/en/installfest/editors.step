@@ -1,8 +1,8 @@
 message <<-MARKDOWN
 
-There are a number of different editors designed for programming. You may already have a favorite editor; if so you can continue using that editor. If you have never used a programming editor, there are a number of good editors available, several of them free of charge. Many RailsBridge instructors use the Atom editor, so you may want to install Atom; if you end up asking for help during your class it may be easier for an instructor or TA to help you if you are using Atom. Here is a list of some of the more widely used editors:
+There are a number of different editors designed for programming. You may already have a favorite editor; if so you can continue using that editor. If you have never used a programming editor, there are a number of good editors available, several of them free of charge. Many RailsBridge instructors use the VS Code editor, so you may want to install VS Code; if you end up asking for help during your class it may be easier for an instructor or TA to help you if you are using VS Code. Here is a list of some of the more widely used editors:
 
-* <a href="https://atom.io/" target="_blank">Atom</a> is a free, open-source editor that can be customized to your liking using its rich ecosystem of add-on packages. A download is available for OS X 10.8+, Windows 7/8, and Ubuntu/RedHat linux.
+* <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> is a free editor that can be customized to your liking using its rich ecosystem of add-on packages. A download is available for OS X 10.11+, Windows 8/10/11, and Ubuntu/RedHat linux.
 * <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> is popular with many Ruby and Rails users. You can use it free for evaluation, then must pay to continue using it.
 * <a href="http://komodoide.com/download/" target="_blank">Komodo</a> is a very good free programming editor, that is not used as widely as in the past. It is relatively easy to use.
 * <a href="http://macromates.com/" target="_blank">TextMate</a> is very popular in the Ruby and Rails community. It is not free.

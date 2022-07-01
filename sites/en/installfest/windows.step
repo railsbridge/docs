@@ -173,11 +173,11 @@ step "Install a Text Editor" do
 
   message "Notepad is not a good programming editor, but it will work in a pinch."
 
-  important "**When in doubt, use Atom.**"
+  important "**When in doubt, use Visual Studio Code (VS Code).**"
 
-  message "[Atom](https://atom.io) is a good option, if you don't have one yet."
+  message "[Visual Studio Code](https://code.visualstudio.com/) is a good option, if you don't have one yet."
 
-  message "Download Atom here: <https://atom.io/download/windows>"
+  message "Download Visual Studio Code here: <https://code.visualstudio.com/>"
 end
 
 next_step "create_a_heroku_account"

@@ -1,21 +1,19 @@
-message "We'll be using the Atom text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate."
+message "We'll be using the VS Code text editor during the workshop, though you are free to use a different editor if you prefer. It must be a plain-text editor, such as vi or TextMate."
 
 important <<-MARKDOWN
   Microsoft Word and other word processing programs, including TextEdit and Notepad, will not work.
 
-  When in doubt, use Atom.
+  When in doubt, use VS Code.
   MARKDOWN
 
-step "Download Atom" do
-  message "Download the [Atom installer](https://atom.io/download/mac)."
+step "Download VS Code" do
+  message "Download the [VS Code installer](https://code.visualstudio.com/)."
 end
 
 step 'Find the downloaded file in Finder' do
   message "If you weren't asked where to save it, it's probably in the Downloads folder."
 end
 
-step "Extract Atom and move it to your Applications folder." do
-  message "Double click the Atom `.zip` file to extract it. Drag Atom into your Applications folder."
-
-  img src: 'img/install_atom_mac.gif', alt: 'Animation of extracting the Atom zip file and moving the contents to the Applications folder'
+step "Extract Visual Studio Code and move it to your Applications folder." do
+  message "Double click the Visual Studio Code `.zip` file to extract it. Drag Visual Studio Code into your Applications folder."
 end

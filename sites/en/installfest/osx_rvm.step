@@ -53,8 +53,8 @@ step "Install Rails" do
   end
 end
 
-step "Install Atom" do
-  insert "install_atom_for_mac"
+step "Install VS Code" do
+  insert "install_vscode_for_mac"
 end
 
 verify "successful installation" do

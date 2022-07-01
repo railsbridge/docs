@@ -27,16 +27,16 @@ message <<-MARKDOWN
 
   Watch all the files that are created! Wow!
 
-  # Open the project in Atom
+  # Open the project in VS Code
 MARKDOWN
 
 console_with_message "Move into the directory for your new Rails app:", "cd job_board"
 
 message <<-MARKDOWN
-  And open the project in Atom:
+  And open the project in VS Code:
 
-  * Open Atom
-  * Under Project, choose "Add Folder to Project"
+  * Open VS Code
+  * Under File, "Open FolderProject"
 
   (You must have at least one window open, so if that option is greyed out, open a window with cmd+n (Mac) or ctl+n (PC))
 MARKDOWN
