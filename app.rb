@@ -32,6 +32,7 @@ class InstallFest < Sinatra::Application
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
   AVAILABLE_LOCALES = %i[en es zh-tw].freeze
+  DEFAULT_SITE = "docs"
 
   set :assets, Sprockets::Environment.new
   settings.assets.append_path 'assets/stylesheets'
@@ -70,7 +71,7 @@ class InstallFest < Sinatra::Application
     if host && sites.include?(site = subdomain)
       site
     else
-      'docs'
+      DEFAULT_SITE
     end
   end
 
