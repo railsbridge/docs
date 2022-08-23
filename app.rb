@@ -192,8 +192,8 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     rescue Errno::ENOENT => e
       p e
       e.backtrace.each do |line|
-        break if line =~ %r{sinatra/base.rb}
-        puts "\t" + line
+        break if line =~ /sinatra\/base.rb/
+        puts "\t"+line
       end
       halt 404
     end
@@ -277,7 +277,9 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   get "/:site/:subdir/:name.:ext" do
-    send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}" if sites.include?(params[:site])
+    if sites.include?(params[:site])
+      send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}"
+    end
   end
 
   get "/:site/:name/" do

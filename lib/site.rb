@@ -9,7 +9,7 @@ class Site
   end
 
   def self.all
-    Dir[File.join(sites_dir, '*')].map { |dir| Site.new(dir) }
+    Dir[File.join(sites_dir, '*')].map{|dir| Site.new(dir)}
   end
 
   def self.named name
@@ -48,5 +48,6 @@ class Site
     def name
       filename.split('.').first
     end
+
   end
 end
