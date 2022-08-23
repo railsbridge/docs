@@ -189,15 +189,14 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         else
           raise "unknown file type #{doc_path}"
       end
+    rescue Errno::ENOENT => e
+      p e
+      e.backtrace.each do |line|
+        break if line =~ %r{sinatra/base.rb}
+        puts "\t" + line
+      end
+      halt 404
     end
-  rescue Errno::ENOENT => e
-    p e
-    e.backtrace.each do |line|
-      break if line =~ %r{sinatra/base.rb}
-
-      puts "\t" + line
-    end
-    halt 404
   end
 
   def render_deck
