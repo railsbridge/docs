@@ -16,7 +16,7 @@ describe Site do
     doc_filenames.should include("configure_git.step")
   end
 
-  it "finds the sites_dir" do
-    Site.sites_dir.should == File.expand_path(File.join(File.dirname(__FILE__), "..", "sites", "en"))
+  it "finds the default sites_dir" do
+    Site.sites_dir.should == File.expand_path(File.join(File.dirname(__FILE__), "..", "sites"))
   end
 end

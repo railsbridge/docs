@@ -9,7 +9,7 @@ describe SiteIndex do
   end
 
   it "lists all sites in the /sites/ directory" do
-    all_sites = Dir['sites/en/**'].map { |site_path| site_path.sub('sites/en/', '') }
+    all_sites = Dir['sites/**'].map { |site_path| site_path.sub('sites/', '') }
     @site_index.sites.should =~  all_sites
   end
 

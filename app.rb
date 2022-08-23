@@ -30,7 +30,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
-  AVAILABLE_LOCALES = %i[en es zh-tw].freeze
+  AVAILABLE_LOCALES = %w[en es zh-tw].freeze
   DEFAULT_SITE = "docs"
 
   set :assets, Sprockets::Environment.new

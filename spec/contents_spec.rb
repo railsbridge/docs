@@ -16,8 +16,8 @@ describe Contents do
 
   describe "absolute links" do
     let(:site_name) { 'docs' }
-    let(:site_dir) { "#{real_sites_dir}/en/#{site_name}" }
-    let(:page_name) { 'docs' }    
+    let(:site_dir) { "#{real_sites_dir}/#{site_name}" }
+    let(:page_name) { 'docs' }
     before do
       @toc_html = Nokogiri.parse(@toc.to_html)
     end
@@ -30,7 +30,7 @@ describe Contents do
 
   describe 'capitalization' do
     let(:site_name) { 'installfest' }
-    let(:site_dir) { "#{real_sites_dir}/en/#{site_name}" }
+    let(:site_dir) { "#{real_sites_dir}/#{site_name}" }
     let(:page_name) { 'installfest' }
     before do
       @toc_html = Nokogiri.parse(@toc.to_html)

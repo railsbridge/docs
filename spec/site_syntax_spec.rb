@@ -16,7 +16,7 @@ describe "Syntax check all sites" do
 
   InstallFest::AVAILABLE_LOCALES.each do |locale|
     describe "in locale '#{locale}'" do
-      Site.all(locale).each do |site|
+      Site.all.each do |site|
         describe "#{site.name} pages..." do
           it 'uses all images in the /img folder' do
             site_folder = File.expand_path(File.join(here, '..', 'sites', locale, site.name))
