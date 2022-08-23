@@ -113,7 +113,9 @@ class InstallFest < Sinatra::Application
   after '/:site/*' do
     # Any real page (starts with a site and doesn't end with an extension)
     # gets saved as the 'back' for the next pageload.
-    cookies[:docs_back_path] = request.fullpath if sites.include?(params[:site]) && !request.fullpath.match(/\..+\z/)
+    if sites.include?(params[:site]) && !request.fullpath.match(/\..+\z/)
+      cookies[:docs_back_path] = request.fullpath
+    end
   end
 
   def dynamic_locale
