@@ -159,32 +159,34 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
   end
 
   def render_page
-    options = {
-      site: Site.named(params[:site]),
-      page_name: params[:name],
-      doc_title: Titleizer.title_for_page(params[:name]),
-      doc_path: doc_path,
-      back: back_path,
-      src: src,
-      locale: I18n.locale
-    }
+    begin
+      options = {
+        site: Site.named(params[:site]),
+        page_name: params[:name],
+        doc_title: Titleizer.title_for_page(params[:name]),
+        doc_path: doc_path,
+        back: back_path,
+        src: src,
+        locale: I18n.locale
+      }
 
-    case ext
+      case ext
 
-    when "deck.md", "deck"
-      render_deck
+      when "deck.md", "deck"
+        render_deck
 
-    when "md"
-      MarkdownPage.new(options).to_html
+      when "md"
+        MarkdownPage.new(options).to_html
 
-    when "mw"
-      MediaWikiPage.new(options).to_html
+      when "mw"
+        MediaWikiPage.new(options).to_html
 
-    when "step"
-      StepPage.new(options).to_html
+      when "step"
+        StepPage.new(options).to_html
 
-    else
-      raise "unknown file type #{doc_path}"
+      else
+        raise "unknown file type #{doc_path}"
+      end
     end
   rescue Errno::ENOENT => e
     p e
@@ -205,7 +207,7 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
     expires 3600, :public
   end
 
-  get "/favicon.ico" do
+  get '/favicon.ico' do
     halt 404
   end
 
@@ -220,7 +222,7 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
     settings.assets["#{params[:file]}.#{params[:ext]}"]
   end
 
-  get "/fonts/font-awesome/:file" do
+  get '/fonts/font-awesome/:file' do
     font_path = File.join(FontAwesome::Sass.gem_path, 'assets', 'fonts', 'font-awesome', params[:file])
     send_file font_path
   end
@@ -230,6 +232,19 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
   end
 
   get "/:site/:name/src" do
+    begin
+      RawPage.new(
+        site: Site.named(params[:site], I18n.locale),
+        page_name: params[:name],
+        doc_title: File.basename(doc_path),
+        doc_path: doc_path,
+        src: src,
+        locale: I18n.locale,
+      ).to_html
+    rescue Errno::ENOENT => e
+      p e
+      halt 404
+    end
     RawPage.new(
       site: Site.named(params[:site], I18n.locale),
       page_name: params[:name],
@@ -263,7 +278,7 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
 
   get "/:site/:name.:ext" do
     if sites.include?(params[:site])
-      if params[:ext] == "deck" # to show a markdown page as slides, change the ".md" to ".deck"
+      if params[:ext] == "deck"  # to show a markdown page as slides, change the ".md" to ".deck"
         render_deck
       else
         send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
