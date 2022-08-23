@@ -22,10 +22,10 @@ require "deck"
 require "deck/rack_app"
 require "titleizer"
 require "site"
-require "sprockets"
-require "jquery-cdn"
+require 'sprockets'
+require 'jquery-cdn'
 
-class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with more explicit config
+class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
   # Set available locales in Array of Strings; this is also used when
@@ -106,9 +106,11 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
   end
 
   before do
-    I18n.locale = dynamic_locale
-  rescue I18n::InvalidLocale
-    I18n.locale = I18n.default_locale
+    begin
+      I18n.locale = dynamic_locale
+    rescue I18n::InvalidLocale
+      I18n.locale = I18n.default_locale
+    end
   end
 
   after '/:site/*' do
@@ -130,7 +132,7 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
   end
 
   def ext
-    Regexp.last_match(1) if doc_path.match(/\.(.*)/)
+    $1 if doc_path.match(/\.(.*)/)
   end
 
   def doc_path
@@ -167,25 +169,25 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
         doc_path: doc_path,
         back: back_path,
         src: src,
-        locale: I18n.locale
+        locale: I18n.locale,
       }
 
       case ext
 
-      when "deck.md", "deck"
-        render_deck
+        when "deck.md", "deck"
+          render_deck
 
-      when "md"
-        MarkdownPage.new(options).to_html
+        when "md"
+          MarkdownPage.new(options).to_html
 
-      when "mw"
-        MediaWikiPage.new(options).to_html
+        when "mw"
+          MediaWikiPage.new(options).to_html
 
-      when "step"
-        StepPage.new(options).to_html
+        when "step"
+          StepPage.new(options).to_html
 
-      else
-        raise "unknown file type #{doc_path}"
+        else
+          raise "unknown file type #{doc_path}"
       end
     end
   rescue Errno::ENOENT => e
@@ -245,17 +247,6 @@ class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with
       p e
       halt 404
     end
-    RawPage.new(
-      site: Site.named(params[:site], I18n.locale),
-      page_name: params[:name],
-      doc_title: File.basename(doc_path),
-      doc_path: doc_path,
-      src: src,
-      locale: I18n.locale
-    ).to_html
-  rescue Errno::ENOENT => e
-    p e
-    halt 404
   end
 
   get "/:site/:name.zip" do
