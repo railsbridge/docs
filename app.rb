@@ -9,24 +9,23 @@ require 'bootstrap-sass'
 require 'zip'
 require 'tmpdir'
 
-here = __dir__
+here = File.expand_path File.dirname(__FILE__)
 lib = File.expand_path "#{here}/lib"
 $: << lib
 
-require 'doc_page'
-require 'step_page'
-require 'markdown_page'
-require 'media_wiki_page'
-require 'raw_page'
-require 'deck'
-require 'deck/rack_app'
-require 'titleizer'
-require 'site'
-require 'sprockets'
-require 'jquery-cdn'
+require "doc_page"
+require "step_page"
+require "markdown_page"
+require "media_wiki_page"
+require "raw_page"
+require "deck"
+require "deck/rack_app"
+require "titleizer"
+require "site"
+require "sprockets"
+require "jquery-cdn"
 
-class InstallFest < Sinatra::Application
-  # TODO: use Sinatra::Base instead, with more explicit config
+class InstallFest < Sinatra::Application # TODO: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
   # Set available locales in Array of Strings; this is also used when
@@ -35,13 +34,15 @@ class InstallFest < Sinatra::Application
   DEFAULT_SITE = "docs"
 
   set :assets, Sprockets::Environment.new
-  settings.assets.append_path 'assets/stylesheets'
-  settings.assets.append_path 'assets/javascripts'
-  settings.assets.append_path 'public/fonts'
+  settings.assets.append_path "assets/stylesheets"
+  settings.assets.append_path "assets/javascripts"
+  settings.assets.append_path "public/fonts"
   settings.assets.append_path Bootstrap.javascripts_path
   JqueryCdn.install(settings.assets)
 
-  set :cookie_options, domain: nil if settings.environment == :development
+  if settings.environment == :development
+    set :cookie_options, domain: nil
+  end
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
@@ -55,16 +56,16 @@ class InstallFest < Sinatra::Application
 
   def initialize
     super
-    @here = __dir__
+    @here = File.expand_path(File.dirname(__FILE__))
   end
 
   attr_reader :here
   attr_writer :default_site
 
-  # TODO: test
+  # todo: test
   # returns the most-specific hostname component, e.g. "foo" for "foo.example.com"
   def subdomain
-    host.split('.').first
+    host.split(".").first
   end
 
   def default_site
@@ -76,7 +77,7 @@ class InstallFest < Sinatra::Application
   end
 
   def host
-    request&.host
+    request && request.host
   end
 
   def site_dir
@@ -170,16 +171,16 @@ class InstallFest < Sinatra::Application
 
     case ext
 
-    when 'deck.md', 'deck'
+    when "deck.md", "deck"
       render_deck
 
-    when 'md'
+    when "md"
       MarkdownPage.new(options).to_html
 
-    when 'mw'
+    when "mw"
       MediaWikiPage.new(options).to_html
 
-    when 'step'
+    when "step"
       StepPage.new(options).to_html
 
     else
@@ -197,18 +198,18 @@ class InstallFest < Sinatra::Application
 
   def render_deck
     slides = Deck::Slide.split(src)
-    Deck::SlideDeck.new(slides: slides).to_pretty
+    Deck::SlideDeck.new(:slides => slides).to_pretty
   end
 
   before do
     expires 3600, :public
   end
 
-  get '/favicon.ico' do
+  get "/favicon.ico" do
     halt 404
   end
 
-  get '/assets/:file.:ext' do
+  get "/assets/:file.:ext" do
     mime_type = {
       'js' => 'application/javascript',
       'css' => 'text/css',
@@ -219,16 +220,16 @@ class InstallFest < Sinatra::Application
     settings.assets["#{params[:file]}.#{params[:ext]}"]
   end
 
-  get '/fonts/font-awesome/:file' do
+  get "/fonts/font-awesome/:file" do
     font_path = File.join(FontAwesome::Sass.gem_path, 'assets', 'fonts', 'font-awesome', params[:file])
     send_file font_path
   end
 
-  get '/' do
+  get "/" do
     redirect "/#{default_site}/"
   end
 
-  get '/:site/:name/src' do
+  get "/:site/:name/src" do
     RawPage.new(
       site: Site.named(params[:site], I18n.locale),
       page_name: params[:name],
@@ -242,9 +243,9 @@ class InstallFest < Sinatra::Application
     halt 404
   end
 
-  get '/:site/:name.zip' do
+  get "/:site/:name.zip" do
     manifest_path = "#{site_dir}/#{params[:name]}.zip-manifest"
-    if File.exist?(manifest_path)
+    if File.exists?(manifest_path)
       manifest_files = File.read(manifest_path).split("\n")
       zip_path = File.join(Dir.tmpdir, "#{params[:name]}.zip")
       FileUtils.rm_rf(zip_path)
@@ -260,9 +261,9 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  get '/:site/:name.:ext' do
+  get "/:site/:name.:ext" do
     if sites.include?(params[:site])
-      if params[:ext] == 'deck' # to show a markdown page as slides, change the ".md" to ".deck"
+      if params[:ext] == "deck" # to show a markdown page as slides, change the ".md" to ".deck"
         render_deck
       else
         send_file "#{site_dir}/#{params[:name]}.#{params[:ext]}"
@@ -270,16 +271,16 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  get '/:site/:subdir/:name.:ext' do
+  get "/:site/:subdir/:name.:ext" do
     send_file "#{site_dir}/#{params[:subdir]}/#{params[:name]}.#{params[:ext]}" if sites.include?(params[:site])
   end
 
-  get '/:site/:name/' do
+  get "/:site/:name/" do
     # remove any extraneous slash from otherwise well-formed page URLs
     redirect request.fullpath.chomp('/')
   end
 
-  get '/:site/:name' do
+  get "/:site/:name" do
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/#{params[:name]}"
@@ -294,22 +295,22 @@ class InstallFest < Sinatra::Application
     end
   end
 
-  get '/:site/:name/:section/' do
+  get "/:site/:name/:section/" do
     # remove any extraneous slash from otherwise well-formed page URLs
     redirect request.fullpath.chomp('/')
   end
 
-  get '/:site/:name/:section' do
+  get "/:site/:name/:section" do
     render_page
   end
 
-  get '/:site' do
+  get "/:site" do
     # add a slash to any URLs that contain only a site
     # (otherwise paths in that site's pages would resolve relative to the root)
     redirect "#{request.fullpath}/"
   end
 
-  get '/:site/' do
+  get "/:site/" do
     site_name = params[:site]
     if redirect_sites[site_name]
       redirect "#{redirect_sites[site_name]}/"
