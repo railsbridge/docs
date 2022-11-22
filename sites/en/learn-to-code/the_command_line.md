@@ -7,7 +7,7 @@
 * very low level, based entirely on text and typing, not graphics and mousing
 * when you type into the terminal, you are always issuing COMMANDS
   * which is why it's called the Command Line
-  
+
 # Opening the Terminal
 
 * to open your terminal:
@@ -40,9 +40,9 @@
 # Making a directory
 
 * when you type `mkdir` ("make dir") it creates a new SUBDIRECTORY inside the current directory
-        
+
         mkdir code
-        
+
 # Changing directories
 
 * `cd` ("change dir") moves you into a different directory
@@ -76,7 +76,7 @@
 * a text editor is a program that edits a text file
 * a text editor is *like* a word processor
 * but a text editor is **not** a word processor
-* You probably have *Atom* 
+* You probably have *VS Code*
   * or [another text editor](/installfest/editors)
   * but **NOT** *TextEdit* or *Notepad* or *Microsoft Word*
 
@@ -99,7 +99,7 @@
 
         puts "Hello, World!"
 
-5. Save the file 
+5. Save the file
 6. Go back to the terminal
 7. Run this file using `ruby hello.rb`
 

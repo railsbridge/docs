@@ -1,6 +1,6 @@
 message <<-MARKDOWN
 
-Atom isn't compatible with versions of OS X lower than 10.6 so we'll use Textmate (which is still widely used by Rails developers), you are free to use a different editor if you prefer. It must be a plain-text editor.
+VS Code isn't compatible with versions of OS X lower than 10.11 so we'll use Textmate (which is still widely used by Rails developers), you are free to use a different editor if you prefer. It must be a plain-text editor.
 
 MARKDOWN
 

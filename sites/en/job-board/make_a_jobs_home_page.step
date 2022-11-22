@@ -21,13 +21,13 @@ message <<-MARKDOWN
 
   So it's looking for a route, but can't find one. Let's add one!
 
-  Open up the routes file. It's in the config directory, called `routes.rb`. If you're using Atom, you can open it using keyboard shortcuts:
+  Open up the routes file. It's in the config directory, called `routes.rb`. If you're using VS Code, you can open it using keyboard shortcuts:
 
    * Hitting cmd + p (on Mac) or ctl + p (on PC)
    * typing in `route`
    * hitting enter
 
-  Magic! (Atom is using fuzzy search, so you can use the entire file path, or just part of the filename to go to files.)
+  Magic! (VS Code is using fuzzy search, so you can use the entire file path, or just part of the filename to go to files.)
 MARKDOWN
 
 source_code_with_message "We're going to need a resource route, which will create EIGHT different routes for us. Add this to line two:", :ruby, "resources :jobs"

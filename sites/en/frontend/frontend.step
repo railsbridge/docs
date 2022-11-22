@@ -30,10 +30,10 @@ We're going to be working with:
 * [Chrome](https://www.google.com/chrome)
   (If you're experienced with the developer tools in another browser, that may work too.);
 * The code editor of your choice.
-    * [Atom](https://atom.io/) is a free, open-source editor that can be customized with HTML, CSS, and JavaScript. A download is available for OS X 10.8+, Windows 7/8, and Ubuntu/RedHat linux.
+    * [Visual Studio Code](https://code.visualstudio.com/) is a free  editor that can be customized with HTML, CSS, and JavaScript. A download is available for OS X 10.11+, Windows 8/10/11, and Ubuntu/RedHat linux.
     * [or install a different editor](/installfest/editors)
 
-Optional tools if you're deploying to GitHub: 
+Optional tools if you're deploying to GitHub:
 
 * Git;
 * Your [GitHub](http://github.com) account.

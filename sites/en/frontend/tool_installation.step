@@ -46,8 +46,8 @@ steps do
       end
 
       step "Install a text editor" do
-        a "Download and install Atom", :href => "https://atom.io/"
-        message "Install Atom by double clicking the file you downloaded, then dragging the Atom icon into the Applications folder. Finish up by clicking the eject icon for Atom in your finder window."
+        a "Download and install VS Code", :href => "https://code.visualstudio.com/"
+        message "Install VS Code by double clicking the file you downloaded, then dragging the VS Code icon into the Applications folder. Finish up by clicking the eject icon for VS Code in your finder window."
         a "or install a different editor", :href => "/installfest/editors"
       end
     end
