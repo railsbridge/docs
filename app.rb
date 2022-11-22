@@ -148,7 +148,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def back_path
-    path_parts = cookies[:docs_back_path].try(:split, '/')
+    path_parts = cookies[:docs_back_path]&.split('/')
     return unless path_parts && path_parts.length > 2
 
     current_path_parts = request.fullpath.split('/')
