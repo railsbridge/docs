@@ -1,0 +1,10 @@
+zh-tw:
+  header_section:
+    steps: "步驟"
+    explanation: "解說"
+    overview: "摘要"
+    discussion: "討論"
+    hints: "秘訣"
+    challenge: "挑戰"
+    tools_and_references: "工具、參考資料"
+    requirements: "通關條件"

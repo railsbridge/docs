@@ -100,10 +100,10 @@ describe InstallFest do
   end
 
   describe "in the 'es' locale" do
-    it "uses the 'es' subdir as the sites_dir" do
+    it "uses the same subdir as the sites_dir" do
       get "/", locale: "es"
 
-      es_dir = File.expand_path(File.join(__FILE__, "..", "..", "sites", "es"))
+      es_dir = File.expand_path(File.join(__FILE__, "..", "..", "sites"))
       expect(true_app.sites_dir).to eq(es_dir)
     end
 

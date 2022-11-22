@@ -1,0 +1,14 @@
+zh-tw:
+  general:
+    type_in_file: "在 %{filename} 檔裡面打這些字："
+    further_reading: "延伸閱讀"
+    fuzzy_hint: "塗灰的字可能有所不同，不重要。"
+    goals: "目標"
+    verify: "檢查 %{text}"
+    option: "選項 %{num}："
+    next_step: "下一步："
+    step_title: "步驟 %{num}"
+    step_title_suffix: "："
+    expand_all: "全部展開"
+    other_pages: "其他頁面"
+    back_to: "回到"

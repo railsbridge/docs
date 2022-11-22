@@ -28,11 +28,10 @@ require 'jquery-cdn'
 class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, with more explicit config
   include Erector::Mixin
 
-  DEFAULT_SITES = {en: "docs", es: "hola", :"zh-tw" => "nihao" }
-
   # Set available locales in Array of Strings; this is also used when
   # checking availability in dynamic locale assignment, they must be strings.
-  AVAILABLE_LOCALES = DEFAULT_SITES.keys.map(&:to_s)
+  AVAILABLE_LOCALES = %w[en es zh-tw].freeze
+  DEFAULT_SITE = "docs"
 
   set :assets, Sprockets::Environment.new
   settings.assets.append_path "assets/stylesheets"
@@ -47,7 +46,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   configure do
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
-    I18n.load_path = Dir[File.join(settings.root, 'locales', '*.yml')]
+    I18n.load_path = Dir[File.join(settings.root, 'locales', '**/*.yml')]
     I18n.backend.load_translations
 
     I18n.available_locales = AVAILABLE_LOCALES
@@ -73,7 +72,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
     if host && sites.include?(site = subdomain)
       site
     else
-      DEFAULT_SITES[I18n.locale.to_sym] # no symbol DoS because it's whitelisted
+      DEFAULT_SITE
     end
   end
 
@@ -86,7 +85,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def sites_dir
-    Site.sites_dir(I18n.locale)
+    Site.sites_dir
   end
 
   def sites
@@ -123,8 +122,8 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   end
 
   def dynamic_locale
-    (params && (params[:locale] or params[:l])) or
-      (host && AVAILABLE_LOCALES.include?(subdomain) && subdomain) or
+    (params && (params[:locale] || params[:l])) ||
+      (host && AVAILABLE_LOCALES.include?(subdomain) && subdomain) ||
       (ENV['SITE_LOCALE'])
   end
 
@@ -164,7 +163,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
   def render_page
     begin
       options = {
-        site: Site.named(params[:site], I18n.locale),
+        site: Site.named(params[:site]),
         page_name: params[:name],
         doc_title: Titleizer.title_for_page(params[:name]),
         doc_path: doc_path,
@@ -190,7 +189,6 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
         else
           raise "unknown file type #{doc_path}"
       end
-
     rescue Errno::ENOENT => e
       p e
       e.backtrace.each do |line|

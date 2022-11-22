@@ -4,18 +4,18 @@ class Site
   @@here = File.expand_path(File.dirname(__FILE__))
   @@project_root = File.dirname(@@here)
 
-  def self.sites_dir locale = "en"
-    sites_dir = File.join(["sites", locale.to_s].compact)
-    File.expand_path(sites_dir, @@project_root)
+  def self.sites_dir
+    File.expand_path('sites', @@project_root)
   end
 
-  def self.all locale = "en"
-    Dir[File.join(sites_dir(locale), '*')].map{|dir| Site.new(dir)}
+  def self.all
+    Dir[File.join(sites_dir, '*')].map{|dir| Site.new(dir)}
   end
 
-  def self.named name, locale = "en"
-    site = all(locale).detect { |site| site.name == name }
-    raise "No site found with the name '#{name}' in locale '#{locale}'" unless site
+  def self.named name
+    site = all.detect { |folder| folder.name == name }
+    raise "No site found with the name '#{name}'" unless site
+
     site
   end
 

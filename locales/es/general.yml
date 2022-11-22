@@ -1,0 +1,14 @@
+es:
+  general:
+    type_in_file: "Escribe esto en el archivo %{filename}:"
+    further_reading: "Lectura adicional"
+    fuzzy_hint: "El texto en gris puede variar y no es tan importante."
+    step_title: "Paso %{num}"
+    step_title_suffix: ": "
+    next_step: "Próximo paso:"
+    option: "Opción %{num}: "
+    verify: "Verifica %{text}"
+    goals: "Objetivos"
+    expand_all: "Expandir Todo"
+    other_pages: "Otras Páginas"
+    back_to: "Regresar a"

@@ -1,4 +1,5 @@
 require 'i18n'
+require_relative '../../app'
 
 module I18nHelper
   def setup_test_translations
@@ -6,10 +7,10 @@ module I18nHelper
     top = File.expand_path "#{here}/../.."
 
     I18n::Backend::Simple.include(I18n::Backend::Fallbacks)
-    I18n.load_path = Dir[File.join(top, 'locales', '*.yml')]
+    I18n.load_path = Dir[File.join(top, 'locales', '**/*.yml')]
     I18n.backend.load_translations
 
-    I18n.available_locales = Dir['sites/*'].map { |path| File.basename(path).to_sym }
+    I18n.available_locales = ::InstallFest::AVAILABLE_LOCALES
     I18n.locale = :en
   end
 end
