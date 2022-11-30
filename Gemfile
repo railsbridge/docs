@@ -4,7 +4,7 @@ ruby '2.7.6'
 
 gem 'activesupport'
 gem "erector", "~> 0.10.0"
-gem "sinatra", "~> 3.0.3"
+gem "sinatra", "~> 3.0.4"
 gem "sinatra-contrib", "~> 3.0.3"
 gem "nokogiri"
 gem "thin", "1.8.1"
