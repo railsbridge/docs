@@ -52,7 +52,7 @@ GEM
       racc (~> 1.4)
     polyglot (0.3.5)
     racc (1.6.0)
-    rack (2.2.4)
+    rack (2.2.6.2)
     rack-codehighlighter (0.6.0)
       nokogiri (>= 1.4.1)
       rack (>= 2.0.0)
