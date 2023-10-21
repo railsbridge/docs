@@ -7,7 +7,7 @@ There are three hosting options, depending on how much of a challenge you are lo
 for:
 
 * Use a static site hosting service
-* Use git and Github Pages
+* Use git and GitHub Pages
 * Roll your own with a hosting provider
 
 ### Using a Static Site Hosting Service
@@ -24,10 +24,10 @@ javascript and have a working website. An easy one is
 Now you have a fully functioning site hosted online! Share the link
 with your friends and family and wow them with your skills!
 
-### Using Git and Github Pages
+### Using Git and GitHub Pages
 
 If you like with git and github, take a stab at setting up your site
-with [Github Pages](http://pages.github.com/). The easiest thing to do is:
+with [GitHub Pages](http://pages.github.com/). The easiest thing to do is:
 cd .
 
 1. From the terminal, `cd` into your project directory
@@ -36,7 +36,7 @@ cd .
 1. Commit all the files
 1. Create a remote repository on github for the project.
 1. Follow their instructions for adding the github remote to your existing repo
-1. Follow the instructions on [Github Pages](http://pages.github.com) for
+1. Follow the instructions on [GitHub Pages](http://pages.github.com) for
    setting up a project site from scratch.
 1. Make the `gh-pages` the default branch
 1. Push it on up!

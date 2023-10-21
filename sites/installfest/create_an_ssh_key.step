@@ -1,6 +1,6 @@
 message "An SSH key uniquely identifies you (and your computer) when your computer is communicating with other computers. Think of an SSH key as a fancy password."
 
-message "You'll need one of these to create your Heroku and Github accounts."
+message "You'll need one of these to create your Heroku and GitHub accounts."
 
 option "Did you use RailsInstaller on Windows?" do
   message "Congratulations, you already have an ssh key!"
@@ -61,7 +61,7 @@ The key fingerprint is:
       message "If you look inside `~/.ssh/`, you will notice two files with the same name: `id_rsa` and `id_rsa.pub`."
       message "`id_rsa.pub` is your **public key** and can be shared freely."
       message "`id_rsa` is your **private key** and must be kept secret."
-      message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or Github accounts and cause mischief!"
+      message "If someone else gets your private key and your passphrase, then they can pretend to be you and log on to your Heroku or GitHub accounts and cause mischief!"
     end
   end
 

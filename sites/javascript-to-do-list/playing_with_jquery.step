@@ -7,7 +7,7 @@ overview do
   message <<-MARKDOWN
 In addition to being a powerful programming language, Javascript allows you to make your web site interactive.
 You can use it to build anything from a simple animation to a giant web application like Twitter
-or Github. It gives you total control to add, remove, or modify content you've made with HTML.
+or GitHub. It gives you total control to add, remove, or modify content you've made with HTML.
 You can also use it to change styles and add or remove classes.
 
 In this lesson, we'll also be using jQuery to make interacting with the page easier.

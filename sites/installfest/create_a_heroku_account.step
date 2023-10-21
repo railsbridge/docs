@@ -39,7 +39,7 @@ step "Add your SSH key to your Heroku account" do
 end
 
 section 'Optional Step: Create a GitHub account' do
-  message "Since by now you should have both Git and an SSH key, you can optionally [Create a Github account](create_a_github_account) to share code with your friends."
+  message "Since by now you should have both Git and an SSH key, you can optionally [Create a GitHub account](create_a_github_account) to share code with your friends."
 
   message "You don't need a GitHub account to complete the InstallFest, or the Intro To Rails, Job Board, or Message Board courses."
 end

@@ -6,7 +6,7 @@
 
 **Git:**  A type of **Version Control Software (VCS)**.
 
-**Github:**  A site that hosts git repositories. Github also adds a number of tools that aid interaction between developers collaborating on software.
+**GitHub:**  A site that hosts git repositories. GitHub also adds a number of tools that aid interaction between developers collaborating on software.
 
 **Grouping:**  Indents and whitespaces are used for grouping code together and simplify readability. Ruby also uses do … end to group.
 
