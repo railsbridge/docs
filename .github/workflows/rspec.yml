@@ -1,0 +1,28 @@
+name: RSpec
+
+on:
+  push:
+    branches:
+    - "main"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run test and linter
+        run: |
+          bundle exec rake
