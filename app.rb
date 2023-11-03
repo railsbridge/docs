@@ -250,7 +250,7 @@ class InstallFest < Sinatra::Application   # todo: use Sinatra::Base instead, wi
 
   get "/:site/:name.zip" do
     manifest_path = "#{site_dir}/#{params[:name]}.zip-manifest"
-    if File.exists?(manifest_path)
+    if File.exist?(manifest_path)
       manifest_files = File.read(manifest_path).split("\n")
       zip_path = File.join(Dir.tmpdir, "#{params[:name]}.zip")
       FileUtils.rm_rf(zip_path)

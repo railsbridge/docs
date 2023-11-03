@@ -1,3 +1,4 @@
+require "cgi"
 require "spec_helper"
 require_relative "../app"
 
@@ -29,7 +30,7 @@ describe "Syntax check all sites" do
 
           site.docs.each do |doc|
             it "renders #{doc.filename}" do
-              path = URI.escape "/#{site.name}/#{doc.name}"
+              path = CGI.escape "/#{site.name}/#{doc.name}"
               get path, locale: locale
               if (last_response.status != 200)
                 errors = last_response.errors
