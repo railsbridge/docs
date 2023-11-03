@@ -74,7 +74,7 @@ class Step < Erector::Widget
   ## steps
 
   %w[
-    steps explanation overview discussion hints challenge 
+    steps explanation overview discussion hints challenge
     tools_and_references requirements
   ].each do |type|
     define_method type.to_sym do |&block|
@@ -87,7 +87,7 @@ class Step < Erector::Widget
     end
   end
 
-  def step name = nil, options = {}
+  def step name = nil, options = {}, &block
     num = next_step_number
     a(name: "step#{current_anchor_num}")
     a(name: options[:anchor_name]) if options[:anchor_name]
@@ -98,7 +98,7 @@ class Step < Erector::Widget
               (!name.nil? ? I18n.t("general.step_title_suffix") : '')
         text name
       end
-      _render_inner_content &Proc.new if block_given?
+      _render_inner_content(&block) if block_given?
     end
   end
 
@@ -131,19 +131,19 @@ class Step < Erector::Widget
     end
   end
 
-  def situation name
+  def situation name, &block
     h1 name
-    _render_inner_content &Proc.new if block_given?
+    _render_inner_content(&block) if block_given?
   end
 
-  def option name
+  def option name, &block
     num = next_step_number
     a(:name => "step#{current_anchor_num}")
     h1 :class => "option" do
       span I18n.t("general.option", :num => num)
       text name
     end
-    _render_inner_content &Proc.new if block_given?
+    _render_inner_content(&block) if block_given?
   end
 
   def option_half title
